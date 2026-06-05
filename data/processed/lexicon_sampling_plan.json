@@ -1,0 +1,151 @@
+{
+  "source": {
+    "repo": "https://github.com/konsheng/Sensitive-lexicon",
+    "local_path": "data/raw/third_party/Sensitive-lexicon",
+    "input_dir": "data/raw/third_party/Sensitive-lexicon/Vocabulary"
+  },
+  "summary": {
+    "unique_terms": 50706,
+    "source_files": 17,
+    "obfuscated_or_mixed_terms": 25320
+  },
+  "category_counts": {
+    "cyber_abuse": 22,
+    "gambling": 77,
+    "illegal_goods": 186,
+    "insulting_abuse": 797,
+    "mixed_unknown": 18383,
+    "platform_censorship_evasion": 5075,
+    "political_history": 1632,
+    "public_affairs": 607,
+    "sexual_content": 1703,
+    "spam_ads_fraud": 21132,
+    "violence_extremism": 157,
+    "weapons_explosives": 935
+  },
+  "bucket_counts": {
+    "context_sensitive": 6041,
+    "direct_policy_risk": 2430,
+    "literal_keyword": 16435,
+    "obfuscated_or_variant": 25320,
+    "transactional_risk": 480
+  },
+  "mechanism_counts": {
+    "A2_拼音/首字母缩写": 21845,
+    "B4_符号/空格/Unicode 干扰": 21876,
+    "C3_数字代指": 14126,
+    "F_组合编码": 1497,
+    "literal_keyword": 25386
+  },
+  "source_file_counts": {
+    "COVID-19词库.txt": 72,
+    "GFW补充词库.txt": 6138,
+    "其他词库.txt": 153,
+    "反动词库.txt": 551,
+    "广告类型.txt": 120,
+    "政治类型.txt": 303,
+    "新思想启蒙.txt": 14,
+    "暴恐词库.txt": 178,
+    "民生词库.txt": 508,
+    "涉枪涉爆.txt": 431,
+    "网易前端过滤敏感词库.txt": 7746,
+    "色情类型.txt": 304,
+    "色情词库.txt": 552,
+    "补充词库.txt": 1063,
+    "贪腐词库.txt": 240,
+    "零时-Tencent.txt": 41567,
+    "非法网址.txt": 14592
+  },
+  "category_sampling_plan": [
+    {
+      "category": "cyber_abuse",
+      "unique_terms": 22,
+      "seed_terms": 21,
+      "target_candidate_samples": 60,
+      "note": "小类，优先覆盖典型语境和反证。"
+    },
+    {
+      "category": "gambling",
+      "unique_terms": 77,
+      "seed_terms": 23,
+      "target_candidate_samples": 60,
+      "note": "小类，优先覆盖典型语境和反证。"
+    },
+    {
+      "category": "illegal_goods",
+      "unique_terms": 186,
+      "seed_terms": 40,
+      "target_candidate_samples": 60,
+      "note": "小类，优先覆盖典型语境和反证。"
+    },
+    {
+      "category": "insulting_abuse",
+      "unique_terms": 797,
+      "seed_terms": 40,
+      "target_candidate_samples": 100,
+      "note": "中等类，覆盖直接命中、变体、上下文和误杀。"
+    },
+    {
+      "category": "mixed_unknown",
+      "unique_terms": 18383,
+      "seed_terms": 40,
+      "target_candidate_samples": 0,
+      "note": "先人工复核，不直接生成训练样本。"
+    },
+    {
+      "category": "platform_censorship_evasion",
+      "unique_terms": 5075,
+      "seed_terms": 40,
+      "target_candidate_samples": 160,
+      "note": "大类，只抽机制代表样本和 hard negative，不逐词扩写。"
+    },
+    {
+      "category": "political_history",
+      "unique_terms": 1632,
+      "seed_terms": 40,
+      "target_candidate_samples": 160,
+      "note": "大类，只抽机制代表样本和 hard negative，不逐词扩写。"
+    },
+    {
+      "category": "public_affairs",
+      "unique_terms": 607,
+      "seed_terms": 40,
+      "target_candidate_samples": 100,
+      "note": "中等类，覆盖直接命中、变体、上下文和误杀。"
+    },
+    {
+      "category": "sexual_content",
+      "unique_terms": 1703,
+      "seed_terms": 40,
+      "target_candidate_samples": 160,
+      "note": "大类，只抽机制代表样本和 hard negative，不逐词扩写。"
+    },
+    {
+      "category": "spam_ads_fraud",
+      "unique_terms": 21132,
+      "seed_terms": 40,
+      "target_candidate_samples": 160,
+      "note": "大类，只抽机制代表样本和 hard negative，不逐词扩写。"
+    },
+    {
+      "category": "violence_extremism",
+      "unique_terms": 157,
+      "seed_terms": 40,
+      "target_candidate_samples": 60,
+      "note": "小类，优先覆盖典型语境和反证。"
+    },
+    {
+      "category": "weapons_explosives",
+      "unique_terms": 935,
+      "seed_terms": 40,
+      "target_candidate_samples": 100,
+      "note": "中等类，覆盖直接命中、变体、上下文和误杀。"
+    }
+  ],
+  "next_steps": [
+    "人工快速复核 lexicon_seed_terms.jsonl 的类别和可用性。",
+    "按 category_sampling_plan 生成少量候选样本，而不是全量逐词扩写。",
+    "每个类别同时生成 direct risk、context-sensitive、low/none hard negative。",
+    "词库命中只作为召回证据，训练标签仍以文本语境和反证为准。"
+  ]
+}

@@ -1,0 +1,272 @@
+{
+  "input": "data/processed/combined_candidates.jsonl",
+  "total": 330,
+  "flag_counts": {
+    "excessive_spacing": 15,
+    "very_short_review_not_auto_rewrite": 14
+  },
+  "important_note": "very_short_review_not_auto_rewrite is a review cue, not an error; short internet memes and coded references may need to stay short.",
+  "flagged": [
+    {
+      "id": "GROK_019_LOW",
+      "source": "grok",
+      "risk_level": "low",
+      "text": "我家小王最近工作很忙",
+      "flags": [
+        "very_short_review_not_auto_rewrite"
+      ]
+    },
+    {
+      "id": "GROK_022_LOW",
+      "source": "grok",
+      "risk_level": "low",
+      "text": "蛤蟆最近叫得特别响",
+      "flags": [
+        "very_short_review_not_auto_rewrite"
+      ]
+    },
+    {
+      "id": "GROK_030_LOW",
+      "source": "grok",
+      "risk_level": "low",
+      "text": "耗子尾汁，好好学习",
+      "flags": [
+        "very_short_review_not_auto_rewrite"
+      ]
+    },
+    {
+      "id": "GROK_034_MEDIUM",
+      "source": "grok",
+      "risk_level": "medium",
+      "text": "小粉红今天又赢麻了",
+      "flags": [
+        "very_short_review_not_auto_rewrite"
+      ]
+    },
+    {
+      "id": "GROK_038_MEDIUM",
+      "source": "grok",
+      "risk_level": "medium",
+      "text": "那只蛤蟆又出来喷水了",
+      "flags": [
+        "very_short_review_not_auto_rewrite"
+      ]
+    },
+    {
+      "id": "GROK_041_LOW",
+      "source": "grok",
+      "risk_level": "low",
+      "text": "我昨天梦到坦克大战了",
+      "flags": [
+        "very_short_review_not_auto_rewrite"
+      ]
+    },
+    {
+      "id": "GROK_043_LOW",
+      "source": "grok",
+      "risk_level": "low",
+      "text": "庆丰年年有余",
+      "flags": [
+        "very_short_review_not_auto_rewrite"
+      ]
+    },
+    {
+      "id": "GROK_044_MEDIUM",
+      "source": "grok",
+      "risk_level": "medium",
+      "text": "这社会越来越河蟹了",
+      "flags": [
+        "very_short_review_not_auto_rewrite"
+      ]
+    },
+    {
+      "id": "GROK_045_LOW",
+      "source": "grok",
+      "risk_level": "low",
+      "text": "我支持正能量内容",
+      "flags": [
+        "very_short_review_not_auto_rewrite"
+      ]
+    },
+    {
+      "id": "GROK_046_LOW",
+      "source": "grok",
+      "risk_level": "low",
+      "text": "勇士一去不复返",
+      "flags": [
+        "very_short_review_not_auto_rewrite"
+      ]
+    },
+    {
+      "id": "GROK_047_NONE",
+      "source": "grok",
+      "risk_level": "none",
+      "text": "我家领导今天心情不错",
+      "flags": [
+        "very_short_review_not_auto_rewrite"
+      ]
+    },
+    {
+      "id": "USER_001_HIGH",
+      "source": "user",
+      "risk_level": "high",
+      "text": "我家狗不让我用",
+      "flags": [
+        "very_short_review_not_auto_rewrite"
+      ]
+    },
+    {
+      "id": "USER_002_MEDIUM",
+      "source": "user",
+      "risk_level": "medium",
+      "text": "小懿你好",
+      "flags": [
+        "very_short_review_not_auto_rewrite"
+      ]
+    },
+    {
+      "id": "USER_006_HIGH",
+      "source": "user",
+      "risk_level": "high",
+      "text": "黄轩再不演就老了",
+      "flags": [
+        "very_short_review_not_auto_rewrite"
+      ]
+    },
+    {
+      "id": "GEMINI_EXPAND_0053_HIGH",
+      "source": "gemini_expansion",
+      "risk_level": "high",
+      "text": "历 史 的 轮 回 终 究 会 降 临 在 这 片 脆 弱 的 封 建 土 泥 上",
+      "flags": [
+        "excessive_spacing"
+      ]
+    },
+    {
+      "id": "GEMINI_EXPAND_0061_LOW",
+      "source": "gemini_expansion",
+      "risk_level": "low",
+      "text": "大 家 好，今 天 我们 来 讨论 一 下 基础 的 物理学 常识",
+      "flags": [
+        "excessive_spacing"
+      ]
+    },
+    {
+      "id": "GEMINI_EXPAND_0063_LOW",
+      "source": "gemini_expansion",
+      "risk_level": "low",
+      "text": "这 个 菜 的 味道 确实 还可以，下次 还会 再 来 买",
+      "flags": [
+        "excessive_spacing"
+      ]
+    },
+    {
+      "id": "GEMINI_EXPAND_0064_LOW",
+      "source": "gemini_expansion",
+      "risk_level": "low",
+      "text": "请 大 家 安 静，会议 马 上 就 要 正 式 开 始 了",
+      "flags": [
+        "excessive_spacing"
+      ]
+    },
+    {
+      "id": "GEMINI_EXPAND_0065_NONE",
+      "source": "gemini_expansion",
+      "risk_level": "none",
+      "text": "招 工：年 龄 1 8 岁 以 上，待 遇 从 优，无 须 经验",
+      "flags": [
+        "excessive_spacing"
+      ]
+    },
+    {
+      "id": "GEMINI_EXPAND_0066_NONE",
+      "source": "gemini_expansion",
+      "risk_level": "none",
+      "text": "特 价！全 场 零 食 8 折，限 时 抢 购，欲 购 从 速",
+      "flags": [
+        "excessive_spacing"
+      ]
+    },
+    {
+      "id": "GEMINI_EXPAND_0067_NONE",
+      "source": "gemini_expansion",
+      "risk_level": "none",
+      "text": "请 勿 在 此 处 倒 车，违 者 罚 款 2 0 0 元",
+      "flags": [
+        "excessive_spacing"
+      ]
+    },
+    {
+      "id": "GEMINI_EXPAND_0068_NONE",
+      "source": "gemini_expansion",
+      "risk_level": "none",
+      "text": "大 家 好，我 的 名字 叫 张 三，请 多 多 关 照",
+      "flags": [
+        "excessive_spacing"
+      ]
+    },
+    {
+      "id": "GEMINI_EXPAND_0103_HIGH",
+      "source": "gemini_expansion",
+      "risk_level": "high",
+      "text": "那 个 夶 z f 正在 倒*车，赶紧 润 吧，xdm",
+      "flags": [
+        "excessive_spacing"
+      ]
+    },
+    {
+      "id": "GEMINI_EXPAND_0115_LOW",
+      "source": "gemini_expansion",
+      "risk_level": "low",
+      "text": "关于 垃圾 分类 的 方 针，大家一定要 配合 z f 的工作",
+      "flags": [
+        "excessive_spacing"
+      ]
+    },
+    {
+      "id": "GEMINI_EXPAND_0116_LOW",
+      "source": "gemini_expansion",
+      "risk_level": "low",
+      "text": "今天 去 氏 王 庙 烧香，求个 护 身 符 挂在车里",
+      "flags": [
+        "excessive_spacing"
+      ]
+    },
+    {
+      "id": "GEMINI_EXPAND_0117_NONE",
+      "source": "gemini_expansion",
+      "risk_level": "none",
+      "text": "我 一 生 中 穿 衣服 都是 Y Y D S",
+      "flags": [
+        "excessive_spacing"
+      ]
+    },
+    {
+      "id": "GEMINI_EXPAND_0118_NONE",
+      "source": "gemini_expansion",
+      "risk_level": "none",
+      "text": "请 勿 在 此 处 倒 * 车，违 者 扣 3 分",
+      "flags": [
+        "excessive_spacing"
+      ]
+    },
+    {
+      "id": "GEMINI_EXPAND_0119_NONE",
+      "source": "gemini_expansion",
+      "risk_level": "none",
+      "text": "这 块 金 戋 牌 的 饼 干，y y d s，吃起来 特 别 酥",
+      "flags": [
+        "excessive_spacing"
+      ]
+    },
+    {
+      "id": "GEMINI_EXPAND_0120_NONE",
+      "source": "gemini_expansion",
+      "risk_level": "none",
+      "text": "招 工 啦：年 龄 1 8 - 4 0 岁，男 女 不 限，包 吃 住",
+      "flags": [
+        "excessive_spacing"
+      ]
+    }
+  ]
+}

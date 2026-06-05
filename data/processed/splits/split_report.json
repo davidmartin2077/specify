@@ -1,0 +1,474 @@
+{
+  "input_count": 675,
+  "ratios": {
+    "train": 0.8,
+    "validation": 0.1,
+    "test": 0.1
+  },
+  "seed": 20260604,
+  "group_count": 226,
+  "leaked_groups": [],
+  "splits": {
+    "train": {
+      "count": 541,
+      "risk_level": {
+        "high": 108,
+        "low": 123,
+        "medium": 170,
+        "none": 140
+      },
+      "source": {
+        "gemini_expansion": 111,
+        "grok": 40,
+        "meme_expansion": 86,
+        "phase2_seed": 80,
+        "phase3_first_wave": 190,
+        "sensitive_lexicon_seed": 27,
+        "user": 7
+      },
+      "hard_negative": 229,
+      "context_required": 492,
+      "group_count": 179,
+      "largest_groups": [
+        [
+          "meme_cluster:平台黑话/自我审查",
+          78
+        ],
+        [
+          "meme_cluster:加速/刹车/倒车",
+          36
+        ],
+        [
+          "meme_cluster:食物/品牌/物品隐喻",
+          29
+        ],
+        [
+          "meme_cluster:日期/数字代指",
+          28
+        ],
+        [
+          "meme_cluster:反讽/阴阳怪气",
+          26
+        ],
+        [
+          "phase3_template:insulting_abuse:insulting_abuse_safe_context:safe_context",
+          5
+        ],
+        [
+          "phase3_template:gambling:gambling_weak_signal:weak_signal",
+          5
+        ],
+        [
+          "phase3_template:insulting_abuse:insulting_abuse_obfuscated:obfuscated",
+          5
+        ],
+        [
+          "phase3_template:spam_ads_fraud:spam_ads_fraud_safe_context:safe_context",
+          5
+        ],
+        [
+          "phase3_template:spam_ads_fraud:spam_ads_fraud_contextual:contextual",
+          5
+        ]
+      ],
+      "phase3_category": {
+        "cyber_abuse": 20,
+        "gambling": 25,
+        "illegal_goods": 20,
+        "insulting_abuse": 25,
+        "platform_censorship_evasion": 12,
+        "political_history": 9,
+        "public_affairs": 9,
+        "sexual_content": 20,
+        "spam_ads_fraud": 20,
+        "violence_extremism": 15,
+        "weapons_explosives": 15
+      },
+      "phase3_contrast_mode": {
+        "contextual": 36,
+        "direct": 46,
+        "obfuscated": 28,
+        "safe_context": 39,
+        "weak_signal": 41
+      }
+    },
+    "validation": {
+      "count": 67,
+      "risk_level": {
+        "high": 7,
+        "low": 10,
+        "medium": 38,
+        "none": 12
+      },
+      "source": {
+        "gemini_expansion": 3,
+        "grok": 6,
+        "meme_expansion": 17,
+        "phase2_seed": 9,
+        "phase3_first_wave": 32
+      },
+      "hard_negative": 21,
+      "context_required": 67,
+      "group_count": 24,
+      "largest_groups": [
+        [
+          "meme_cluster:历史事件影射",
+          20
+        ],
+        [
+          "phase3_template:cyber_abuse:cyber_abuse_obfuscated:obfuscated",
+          5
+        ],
+        [
+          "phase3_template:illegal_goods:illegal_goods_contextual:contextual",
+          5
+        ],
+        [
+          "phase3_template:spam_ads_fraud:spam_ads_fraud_obfuscated:obfuscated",
+          5
+        ],
+        [
+          "phase3_template:sexual_content:sexual_content_safe_context:safe_context",
+          5
+        ],
+        [
+          "phase3_template:political_history:political_history_weak_signal:weak_signal",
+          3
+        ],
+        [
+          "phase3_template:platform_censorship_evasion:platform_censorship_evasion_obfuscated:obfuscated",
+          3
+        ],
+        [
+          "phase3_template:political_history:political_history_obfuscated:obfuscated",
+          3
+        ],
+        [
+          "phase3_template:public_affairs:public_affairs_contextual:contextual",
+          3
+        ],
+        [
+          "phase2_template:meme_forensics:book_quote_hard_negative",
+          1
+        ]
+      ],
+      "phase3_category": {
+        "cyber_abuse": 5,
+        "illegal_goods": 5,
+        "platform_censorship_evasion": 3,
+        "political_history": 6,
+        "public_affairs": 3,
+        "sexual_content": 5,
+        "spam_ads_fraud": 5
+      },
+      "phase3_contrast_mode": {
+        "contextual": 8,
+        "obfuscated": 16,
+        "safe_context": 5,
+        "weak_signal": 3
+      }
+    },
+    "test": {
+      "count": 67,
+      "risk_level": {
+        "high": 11,
+        "low": 12,
+        "medium": 26,
+        "none": 18
+      },
+      "source": {
+        "gemini_expansion": 6,
+        "grok": 4,
+        "meme_expansion": 17,
+        "phase2_seed": 11,
+        "phase3_first_wave": 23,
+        "sensitive_lexicon_seed": 6
+      },
+      "hard_negative": 29,
+      "context_required": 65,
+      "group_count": 23,
+      "largest_groups": [
+        [
+          "meme_cluster:历史人物类比",
+          23
+        ],
+        [
+          "phase3_template:weapons_explosives:weapons_explosives_weak_signal:weak_signal",
+          5
+        ],
+        [
+          "phase3_template:violence_extremism:violence_extremism_safe_context:safe_context",
+          5
+        ],
+        [
+          "phase3_template:violence_extremism:violence_extremism_obfuscated:obfuscated",
+          5
+        ],
+        [
+          "phase3_template:weapons_explosives:weapons_explosives_contextual:contextual",
+          5
+        ],
+        [
+          "lexicon_category:platform_censorship_evasion",
+          3
+        ],
+        [
+          "phase3_template:public_affairs:public_affairs_direct:direct",
+          3
+        ],
+        [
+          "lexicon_category:sexual_content",
+          3
+        ],
+        [
+          "singleton:GROK_030_LOW",
+          1
+        ],
+        [
+          "phase2_template:risk_word_context:petition_hard_negative",
+          1
+        ]
+      ],
+      "phase3_category": {
+        "public_affairs": 3,
+        "violence_extremism": 10,
+        "weapons_explosives": 10
+      },
+      "phase3_contrast_mode": {
+        "contextual": 5,
+        "direct": 3,
+        "obfuscated": 5,
+        "safe_context": 5,
+        "weak_signal": 5
+      }
+    }
+  },
+  "group_assignments": {
+    "lexicon_category:cyber_abuse": "train",
+    "lexicon_category:gambling": "train",
+    "lexicon_category:illegal_goods": "train",
+    "lexicon_category:insulting_abuse": "train",
+    "lexicon_category:platform_censorship_evasion": "test",
+    "lexicon_category:political_history": "train",
+    "lexicon_category:public_affairs": "train",
+    "lexicon_category:sexual_content": "test",
+    "lexicon_category:spam_ads_fraud": "train",
+    "lexicon_category:violence_extremism": "train",
+    "lexicon_category:weapons_explosives": "train",
+    "meme_cluster:加速/刹车/倒车": "train",
+    "meme_cluster:历史事件影射": "validation",
+    "meme_cluster:历史人物类比": "test",
+    "meme_cluster:反讽/阴阳怪气": "train",
+    "meme_cluster:平台黑话/自我审查": "train",
+    "meme_cluster:日期/数字代指": "train",
+    "meme_cluster:食物/品牌/物品隐喻": "train",
+    "phase2_template:meme_forensics:animal_metaphor_contextual": "train",
+    "phase2_template:meme_forensics:animal_metaphor_hard_negative": "train",
+    "phase2_template:meme_forensics:anniversary_contextual": "train",
+    "phase2_template:meme_forensics:anniversary_hard_negative": "train",
+    "phase2_template:meme_forensics:book_quote_contextual": "validation",
+    "phase2_template:meme_forensics:book_quote_hard_negative": "validation",
+    "phase2_template:meme_forensics:character_analogy_contextual": "test",
+    "phase2_template:meme_forensics:color_contextual": "train",
+    "phase2_template:meme_forensics:color_hard_negative": "train",
+    "phase2_template:meme_forensics:date_number_contextual": "train",
+    "phase2_template:meme_forensics:date_number_hard_negative": "test",
+    "phase2_template:meme_forensics:film_review_hard_negative": "train",
+    "phase2_template:meme_forensics:food_metaphor_contextual": "train",
+    "phase2_template:meme_forensics:food_metaphor_hard_negative": "train",
+    "phase2_template:meme_forensics:game_term_contextual": "test",
+    "phase2_template:meme_forensics:game_term_hard_negative": "test",
+    "phase2_template:meme_forensics:historical_name_contextual": "train",
+    "phase2_template:meme_forensics:historical_name_hard_negative": "train",
+    "phase2_template:meme_forensics:history_analogy_contextual": "train",
+    "phase2_template:meme_forensics:history_course_hard_negative": "validation",
+    "phase2_template:meme_forensics:homophone_hard_negative": "train",
+    "phase2_template:meme_forensics:place_name_contextual": "validation",
+    "phase2_template:meme_forensics:place_name_hard_negative": "train",
+    "phase2_template:meme_forensics:public_affairs_contextual": "train",
+    "phase2_template:meme_forensics:vehicle_metaphor_contextual": "validation",
+    "phase2_template:meme_forensics:vehicle_metaphor_hard_negative": "train",
+    "phase2_template:platform_black_slang:abbreviation_contextual": "train",
+    "phase2_template:platform_black_slang:abbreviation_hard_negative": "train",
+    "phase2_template:platform_black_slang:cant_say_contextual": "train",
+    "phase2_template:platform_black_slang:cant_say_hard_negative": "train",
+    "phase2_template:platform_black_slang:emoji_contextual": "train",
+    "phase2_template:platform_black_slang:emoji_hard_negative": "train",
+    "phase2_template:platform_black_slang:group_contextual": "train",
+    "phase2_template:platform_black_slang:group_hard_negative": "train",
+    "phase2_template:platform_black_slang:homepage_contextual": "train",
+    "phase2_template:platform_black_slang:homophone_contextual": "train",
+    "phase2_template:platform_black_slang:initials_contextual": "train",
+    "phase2_template:platform_black_slang:initials_hard_negative": "train",
+    "phase2_template:platform_black_slang:private_message_contextual": "train",
+    "phase2_template:platform_black_slang:private_message_hard_negative": "train",
+    "phase2_template:platform_black_slang:unicode_contextual": "validation",
+    "phase2_template:platform_black_slang:unicode_hard_negative": "train",
+    "phase2_template:risk_word_context:abuse_contextual": "train",
+    "phase2_template:risk_word_context:abuse_quote_hard_negative": "train",
+    "phase2_template:risk_word_context:account_trade_contextual": "train",
+    "phase2_template:risk_word_context:account_trade_hard_negative": "train",
+    "phase2_template:risk_word_context:adult_content_contextual": "train",
+    "phase2_template:risk_word_context:adult_content_hard_negative": "train",
+    "phase2_template:risk_word_context:card_game_contextual": "validation",
+    "phase2_template:risk_word_context:card_game_hard_negative": "train",
+    "phase2_template:risk_word_context:charity_contextual": "train",
+    "phase2_template:risk_word_context:charity_hard_negative": "train",
+    "phase2_template:risk_word_context:commerce_hard_negative": "test",
+    "phase2_template:risk_word_context:cyber_contextual": "train",
+    "phase2_template:risk_word_context:cyber_hard_negative": "test",
+    "phase2_template:risk_word_context:delivery_hard_negative": "train",
+    "phase2_template:risk_word_context:drug_contextual": "train",
+    "phase2_template:risk_word_context:drug_medical_hard_negative": "train",
+    "phase2_template:risk_word_context:exam_contextual": "test",
+    "phase2_template:risk_word_context:explosive_contextual": "train",
+    "phase2_template:risk_word_context:explosive_science_hard_negative": "train",
+    "phase2_template:risk_word_context:fraud_contextual": "train",
+    "phase2_template:risk_word_context:fraud_hard_negative": "train",
+    "phase2_template:risk_word_context:gambling_contextual": "train",
+    "phase2_template:risk_word_context:gambling_hard_negative": "train",
+    "phase2_template:risk_word_context:illegal_goods_contextual": "train",
+    "phase2_template:risk_word_context:insult_contextual": "train",
+    "phase2_template:risk_word_context:insult_hard_negative": "train",
+    "phase2_template:risk_word_context:legal_hard_negative": "train",
+    "phase2_template:risk_word_context:livestream_contextual": "train",
+    "phase2_template:risk_word_context:livestream_hard_negative": "train",
+    "phase2_template:risk_word_context:loan_contextual": "train",
+    "phase2_template:risk_word_context:loan_hard_negative": "train",
+    "phase2_template:risk_word_context:lottery_contextual": "train",
+    "phase2_template:risk_word_context:lottery_hard_negative": "test",
+    "phase2_template:risk_word_context:medical_hard_negative": "train",
+    "phase2_template:risk_word_context:petition_contextual": "train",
+    "phase2_template:risk_word_context:petition_hard_negative": "test",
+    "phase2_template:risk_word_context:privacy_contextual": "train",
+    "phase2_template:risk_word_context:privacy_hard_negative": "train",
+    "phase2_template:risk_word_context:public_affairs_hard_negative": "train",
+    "phase2_template:risk_word_context:recruitment_contextual": "train",
+    "phase2_template:risk_word_context:recruitment_hard_negative": "train",
+    "phase2_template:risk_word_context:refund_contextual": "train",
+    "phase2_template:risk_word_context:refund_hard_negative": "train",
+    "phase2_template:risk_word_context:rumor_contextual": "train",
+    "phase2_template:risk_word_context:rumor_hard_negative": "train",
+    "phase2_template:risk_word_context:school_chat_hard_negative": "train",
+    "phase2_template:risk_word_context:sexual_contextual": "test",
+    "phase2_template:risk_word_context:sexual_hard_negative": "validation",
+    "phase2_template:risk_word_context:stock_contextual": "train",
+    "phase2_template:risk_word_context:stock_hard_negative": "train",
+    "phase2_template:risk_word_context:violence_contextual": "validation",
+    "phase2_template:risk_word_context:violence_hard_negative": "train",
+    "phase2_template:risk_word_context:weapon_contextual": "train",
+    "phase2_template:risk_word_context:weapon_news_hard_negative": "test",
+    "phase3_template:cyber_abuse:cyber_abuse_contextual:contextual": "train",
+    "phase3_template:cyber_abuse:cyber_abuse_direct:direct": "train",
+    "phase3_template:cyber_abuse:cyber_abuse_obfuscated:obfuscated": "validation",
+    "phase3_template:cyber_abuse:cyber_abuse_safe_context:safe_context": "train",
+    "phase3_template:cyber_abuse:cyber_abuse_weak_signal:weak_signal": "train",
+    "phase3_template:gambling:gambling_contextual:contextual": "train",
+    "phase3_template:gambling:gambling_direct:direct": "train",
+    "phase3_template:gambling:gambling_obfuscated:obfuscated": "train",
+    "phase3_template:gambling:gambling_safe_context:safe_context": "train",
+    "phase3_template:gambling:gambling_weak_signal:weak_signal": "train",
+    "phase3_template:illegal_goods:illegal_goods_contextual:contextual": "validation",
+    "phase3_template:illegal_goods:illegal_goods_direct:direct": "train",
+    "phase3_template:illegal_goods:illegal_goods_obfuscated:obfuscated": "train",
+    "phase3_template:illegal_goods:illegal_goods_safe_context:safe_context": "train",
+    "phase3_template:illegal_goods:illegal_goods_weak_signal:weak_signal": "train",
+    "phase3_template:insulting_abuse:insulting_abuse_contextual:contextual": "train",
+    "phase3_template:insulting_abuse:insulting_abuse_direct:direct": "train",
+    "phase3_template:insulting_abuse:insulting_abuse_obfuscated:obfuscated": "train",
+    "phase3_template:insulting_abuse:insulting_abuse_safe_context:safe_context": "train",
+    "phase3_template:insulting_abuse:insulting_abuse_weak_signal:weak_signal": "train",
+    "phase3_template:platform_censorship_evasion:platform_censorship_evasion_contextual:contextual": "train",
+    "phase3_template:platform_censorship_evasion:platform_censorship_evasion_direct:direct": "train",
+    "phase3_template:platform_censorship_evasion:platform_censorship_evasion_obfuscated:obfuscated": "validation",
+    "phase3_template:platform_censorship_evasion:platform_censorship_evasion_safe_context:safe_context": "train",
+    "phase3_template:platform_censorship_evasion:platform_censorship_evasion_weak_signal:weak_signal": "train",
+    "phase3_template:political_history:political_history_contextual:contextual": "train",
+    "phase3_template:political_history:political_history_direct:direct": "train",
+    "phase3_template:political_history:political_history_obfuscated:obfuscated": "validation",
+    "phase3_template:political_history:political_history_safe_context:safe_context": "train",
+    "phase3_template:political_history:political_history_weak_signal:weak_signal": "validation",
+    "phase3_template:public_affairs:public_affairs_contextual:contextual": "validation",
+    "phase3_template:public_affairs:public_affairs_direct:direct": "test",
+    "phase3_template:public_affairs:public_affairs_obfuscated:obfuscated": "train",
+    "phase3_template:public_affairs:public_affairs_safe_context:safe_context": "train",
+    "phase3_template:public_affairs:public_affairs_weak_signal:weak_signal": "train",
+    "phase3_template:sexual_content:sexual_content_contextual:contextual": "train",
+    "phase3_template:sexual_content:sexual_content_direct:direct": "train",
+    "phase3_template:sexual_content:sexual_content_obfuscated:obfuscated": "train",
+    "phase3_template:sexual_content:sexual_content_safe_context:safe_context": "validation",
+    "phase3_template:sexual_content:sexual_content_weak_signal:weak_signal": "train",
+    "phase3_template:spam_ads_fraud:spam_ads_fraud_contextual:contextual": "train",
+    "phase3_template:spam_ads_fraud:spam_ads_fraud_direct:direct": "train",
+    "phase3_template:spam_ads_fraud:spam_ads_fraud_obfuscated:obfuscated": "validation",
+    "phase3_template:spam_ads_fraud:spam_ads_fraud_safe_context:safe_context": "train",
+    "phase3_template:spam_ads_fraud:spam_ads_fraud_weak_signal:weak_signal": "train",
+    "phase3_template:violence_extremism:violence_extremism_contextual:contextual": "train",
+    "phase3_template:violence_extremism:violence_extremism_direct:direct": "train",
+    "phase3_template:violence_extremism:violence_extremism_obfuscated:obfuscated": "test",
+    "phase3_template:violence_extremism:violence_extremism_safe_context:safe_context": "test",
+    "phase3_template:violence_extremism:violence_extremism_weak_signal:weak_signal": "train",
+    "phase3_template:weapons_explosives:weapons_explosives_contextual:contextual": "test",
+    "phase3_template:weapons_explosives:weapons_explosives_direct:direct": "train",
+    "phase3_template:weapons_explosives:weapons_explosives_obfuscated:obfuscated": "train",
+    "phase3_template:weapons_explosives:weapons_explosives_safe_context:safe_context": "train",
+    "phase3_template:weapons_explosives:weapons_explosives_weak_signal:weak_signal": "test",
+    "singleton:GROK_001_LOW": "train",
+    "singleton:GROK_002_MEDIUM": "validation",
+    "singleton:GROK_003_LOW": "train",
+    "singleton:GROK_004_HIGH": "train",
+    "singleton:GROK_005_LOW": "train",
+    "singleton:GROK_006_HIGH": "train",
+    "singleton:GROK_007_LOW": "train",
+    "singleton:GROK_008_HIGH": "train",
+    "singleton:GROK_009_LOW": "train",
+    "singleton:GROK_010_MEDIUM": "test",
+    "singleton:GROK_011_LOW": "train",
+    "singleton:GROK_012_MEDIUM": "validation",
+    "singleton:GROK_013_LOW": "train",
+    "singleton:GROK_014_MEDIUM": "train",
+    "singleton:GROK_015_LOW": "train",
+    "singleton:GROK_016_MEDIUM": "train",
+    "singleton:GROK_017_LOW": "train",
+    "singleton:GROK_018_MEDIUM": "train",
+    "singleton:GROK_019_LOW": "train",
+    "singleton:GROK_020_LOW": "validation",
+    "singleton:GROK_021_LOW": "train",
+    "singleton:GROK_022_LOW": "train",
+    "singleton:GROK_023_MEDIUM": "train",
+    "singleton:GROK_024_LOW": "train",
+    "singleton:GROK_025_LOW": "train",
+    "singleton:GROK_026_LOW": "train",
+    "singleton:GROK_027_MEDIUM": "train",
+    "singleton:GROK_028_LOW": "validation",
+    "singleton:GROK_029_MEDIUM": "train",
+    "singleton:GROK_030_LOW": "test",
+    "singleton:GROK_031_LOW": "train",
+    "singleton:GROK_032_NONE": "train",
+    "singleton:GROK_033_LOW": "train",
+    "singleton:GROK_034_MEDIUM": "train",
+    "singleton:GROK_035_NONE": "train",
+    "singleton:GROK_036_MEDIUM": "validation",
+    "singleton:GROK_037_LOW": "test",
+    "singleton:GROK_038_MEDIUM": "test",
+    "singleton:GROK_039_LOW": "train",
+    "singleton:GROK_040_HIGH": "train",
+    "singleton:GROK_041_LOW": "train",
+    "singleton:GROK_042_LOW": "train",
+    "singleton:GROK_043_LOW": "train",
+    "singleton:GROK_044_MEDIUM": "train",
+    "singleton:GROK_045_LOW": "train",
+    "singleton:GROK_046_LOW": "validation",
+    "singleton:GROK_047_NONE": "train",
+    "singleton:GROK_048_LOW": "train",
+    "singleton:GROK_049_LOW": "train",
+    "singleton:GROK_050_NONE": "train",
+    "singleton:USER_001_HIGH": "train",
+    "singleton:USER_002_MEDIUM": "train",
+    "singleton:USER_003_MEDIUM": "train",
+    "singleton:USER_004_HIGH": "train",
+    "singleton:USER_005_HIGH": "train",
+    "singleton:USER_006_HIGH": "train",
+    "singleton:USER_007_MEDIUM": "train"
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local/schemas/risk-reasoning-sample.schema.json",
+  "title": "Risk Reasoning Annotation Sample",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "id",
+    "text",
+    "risk_level",
+    "encoding_primary",
+    "context_required",
+    "ambiguity",
+    "evidence_strength",
+    "hard_negative",
+    "reasoning"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "split": {
+      "type": "string",
+      "enum": ["train", "validation", "val", "test", "eval", "holdout"]
+    },
+    "source_type": {
+      "type": "string",
+      "enum": ["synthetic", "real", "synthetic_or_real", "mixed", "unknown"]
+    },
+    "platform": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1
+    },
+    "context": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "parent_comment": { "type": "string" },
+        "reply_chain": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "time": { "type": "string" },
+        "topic": { "type": "string" }
+      }
+    },
+    "risk_level": {
+      "type": "string",
+      "enum": ["high", "medium", "low", "none"]
+    },
+    "encoding_primary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "encoding_secondary": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "context_required": {
+      "type": "boolean"
+    },
+    "ambiguity": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+    "evidence_strength": {
+      "type": "string",
+      "enum": ["weak", "moderate", "strong"]
+    },
+    "freshness": {
+      "type": "string",
+      "enum": ["stable", "recent", "expired"]
+    },
+    "hard_negative": {
+      "type": "boolean"
+    },
+    "target_known": {
+      "type": "boolean"
+    },
+    "target_reference": {
+      "type": "string"
+    },
+    "should_explain_target": {
+      "type": "boolean"
+    },
+    "reasoning": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "literal_analysis",
+        "encoding_analysis",
+        "context_analysis",
+        "supporting_evidence",
+        "counter_evidence",
+        "final_rationale"
+      ],
+      "properties": {
+        "literal_analysis": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "encoding_analysis": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "context_analysis": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "supporting_evidence": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "counter_evidence": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "final_rationale": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "quality_status": {
+      "type": "string",
+      "enum": ["draft", "reviewed", "approved", "rejected", "needs_revision"]
+    },
+    "review_notes": {
+      "type": "string"
+    }
+  }
+}
