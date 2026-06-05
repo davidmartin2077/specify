@@ -1,7 +1,100 @@
 {
   "input": "data/raw/phase3_second_wave_candidates.jsonl",
   "total": 185,
-  "flag_counts": {},
+  "flag_counts": {
+    "reviewer_voice": 10
+  },
   "important_note": "very_short_review_not_auto_rewrite is a review cue, not an error; short internet memes and coded references may need to stay short.",
-  "flagged": []
+  "flagged": [
+    {
+      "id": "PHASE3_W2_0020_SEXUAL_CONTENT_WEAK_SIGNAL",
+      "source": "phase3_second_wave",
+      "risk_level": "low",
+      "text": "陪玩可以是正规游戏服务，不能只看这个词",
+      "flags": [
+        "reviewer_voice"
+      ]
+    },
+    {
+      "id": "PHASE3_W2_0043_SPAM_ADS_FRAUD_WEAK_SIGNAL",
+      "source": "phase3_second_wave",
+      "risk_level": "low",
+      "text": "私人客服不够规范，但还不能直接认定诈骗",
+      "flags": [
+        "reviewer_voice"
+      ]
+    },
+    {
+      "id": "PHASE3_W2_0044_SPAM_ADS_FRAUD_WEAK_SIGNAL",
+      "source": "phase3_second_wave",
+      "risk_level": "low",
+      "text": "兼职要求实名认证，需要进一步核验公司主体",
+      "flags": [
+        "reviewer_voice"
+      ]
+    },
+    {
+      "id": "PHASE3_W2_0045_SPAM_ADS_FRAUD_WEAK_SIGNAL",
+      "source": "phase3_second_wave",
+      "risk_level": "low",
+      "text": "限时退款制造焦虑，先保留风险召回",
+      "flags": [
+        "reviewer_voice"
+      ]
+    },
+    {
+      "id": "PHASE3_W2_0062_INSULTING_ABUSE_WEAK_SIGNAL",
+      "source": "phase3_second_wave",
+      "risk_level": "low",
+      "text": "灰头像可能只是界面样式，借代证据不足",
+      "flags": [
+        "reviewer_voice"
+      ]
+    },
+    {
+      "id": "PHASE3_W2_0107_POLITICAL_HISTORY_WEAK_SIGNAL",
+      "source": "phase3_second_wave",
+      "risk_level": "low",
+      "text": "某个日期具有私人纪念意义，不能自动关联公共事件",
+      "flags": [
+        "reviewer_voice"
+      ]
+    },
+    {
+      "id": "PHASE3_W2_0120_PLATFORM_CENSORSHIP_EVASION_WEAK_SIGNAL",
+      "source": "phase3_second_wave",
+      "risk_level": "low",
+      "text": "用截图可能只是方便排版，不一定为了规避",
+      "flags": [
+        "reviewer_voice"
+      ]
+    },
+    {
+      "id": "PHASE3_W2_0136_CYBER_ABUSE_WEAK_SIGNAL",
+      "source": "phase3_second_wave",
+      "risk_level": "low",
+      "text": "查询实名可能是本人业务核验，需确认授权",
+      "flags": [
+        "reviewer_voice"
+      ]
+    },
+    {
+      "id": "PHASE3_W2_0152_VIOLENCE_EXTREMISM_WEAK_SIGNAL",
+      "source": "phase3_second_wave",
+      "risk_level": "low",
+      "text": "敢过去带有挑衅意味，但尚无明确暴力内容",
+      "flags": [
+        "reviewer_voice"
+      ]
+    },
+    {
+      "id": "PHASE3_W2_0181_GAMBLING_WEAK_SIGNAL",
+      "source": "phase3_second_wave",
+      "risk_level": "low",
+      "text": "老地方开桌可能只是朋友聚会，暂无线索证明下注",
+      "flags": [
+        "reviewer_voice"
+      ]
+    }
+  ]
 }

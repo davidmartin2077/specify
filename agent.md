@@ -88,8 +88,10 @@
 74. 已创建 `scripts/build_phase3_second_wave_candidates.py`，按新版覆盖建议生成第三阶段第二波 185 条候选。脚本只写 `data/raw/phase3_second_wave_candidates.jsonl`，使用独立 `PHASE3_W2_*` ID、`phase3_v2_long_tail_boundaries` 批次和新的长尾/困难边界措辞，不修改正式 675 条 processed。
 75. 已校验 `data/raw/phase3_second_wave_candidates.jsonl`：共 185 条，185 个 ID 与 text 均唯一，schema 校验通过；与正式 675 条、phase3 第一波均无新增 ID 或 text 重复。全部保持 `quality_status=needs_revision` 和 `not_merged`，尚未人工抽样确认或入库。
 76. 第二波类别配额：色情低俗、广告/诈骗/导流各 25 条；辱骂/群体攻击、枪爆武器、公共事务、政治历史/鉴证梗、平台规避/审查黑话、网络黑产、暴力极端、违禁交易、赌博各 15 条。风险分布为 high 37、medium 74、low 37、none 37；direct、obfuscated、contextual、weak_signal、safe_context 各 37 条；hard negative 74 条。
-77. 已生成 `data/raw/phase3_second_wave_text_style_audit.json`，未发现审核员口吻、异常短句、大量空格或过长说明；第二波 text 最大长度 24、平均长度 18.1，未发现重复开头集中问题。
+77. 已生成并复核 `data/raw/phase3_second_wave_text_style_audit.json`。初版窄规则未发现问题，但在人工复核准备阶段发现部分 weak_signal 写成审核分析而非真实用户评论，因此已增强 `scripts/audit_text_style.py` 的审核员口吻检测；新版审计标出 10 条 `reviewer_voice`，全部为 low/weak_signal。第二波目前不能整体视为通过，至少需重写这 10 条并复看其余 weak_signal。
 78. 已更新 `scripts/split_dataset.py` 识别 `PHASE3_W2_*` / `phase3_second_wave`，未来入库后可按 `category/cluster/contrast_mode` 保持模板组不跨 split；已用第二波 raw 独立试切，55 个模板组无跨 split 泄漏。
+79. 已创建 `scripts/build_phase3_second_wave_review_sample.py`，从第二波 raw 确定性分层抽取 44 条人工复核样本，每个类别 4 条，固定覆盖 weak_signal 与 safe_context，并轮换 direct/obfuscated/contextual。
+80. 已生成 `data/raw/phase3_second_wave_review_sample.json` 和 `docs/phase3_second_wave_review_sample.md`。复核清单覆盖 11 个类别各 4 条，模式分布为 weak_signal 11、safe_context 11、obfuscated 8、direct 7、contextual 7；清单主动纳入 8 条已标记 reviewer_voice 的争议样本，等待用户逐条确认。
 
 ## 当前状态
 
@@ -182,7 +184,8 @@
 3. 风险分布：high 37、medium 74、low 37、none 37；hard negative 74。
 4. 对照模式：direct、obfuscated、contextual、weak_signal、safe_context 各 37 条。
 5. 与正式 675 条及 phase3 第一波均无新增 ID/text 重复。
-6. `data/raw/phase3_second_wave_text_style_audit.json`：第二波 text 风格审计，当前无标记问题。
+6. `data/raw/phase3_second_wave_text_style_audit.json`：第二波 text 风格审计；当前标出 10 条 reviewer_voice，全部集中于 low/weak_signal，第二波尚不能整体通过。
+7. `data/raw/phase3_second_wave_review_sample.json`、`docs/phase3_second_wave_review_sample.md`：44 条分层人工复核清单，等待用户逐条确认。
 
 当前统一入库准备状态：
 
@@ -235,8 +238,8 @@
 
 下一步优先围绕第二阶段扩数据继续推进：
 
-1. 人工抽样确认第二波 185 条 raw，优先检查 P0 类别、弱信号与 safe_context 对照质量；不要直接批量标 approved。
-2. 第二波获确认后，先生成覆盖增益报告和独立合并预览，校验通过后再考虑正式入库。
+1. 使用 `docs/phase3_second_wave_review_sample.md` 人工确认 44 条分层样本；重点判断 10 条 reviewer_voice 是否退回重写，以及其余 weak_signal 是否仍像审核说明。
+2. 根据人工反馈重写第二波问题样本，重新运行 schema、重复与文本风格审计；第二波获确认后，再生成覆盖增益报告和独立合并预览。
 3. 对正式 675 条候选继续分层复核，重点识别第一、二波模板化表达与标签争议。
 4. 330 条 reasoning 迁移预览已获认可，但暂不正式覆盖 processed；后续需要时再执行。
 
