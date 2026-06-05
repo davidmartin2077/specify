@@ -85,6 +85,11 @@
 71. 已调整 `scripts/analyze_risk_coverage.py` 以适配正式 675 条状态：默认只分析 `data/processed/combined_candidates.jsonl`，支持重复传入 `--input` 分析多个独立候选集，并在输入间出现重复 ID 时直接报错，防止把已入库的 phase2/phase3 raw 再次重复计算。
 72. 已基于正式 675 条重新生成 `data/processed/risk_coverage_report.json`、`data/processed/phase3_sampling_plan.json` 和 `docs/risk_coverage_report.md`。新版分析确认当前风险分布 high 126、medium 234、low 145、none 170，hard negative 279；完整参考缺口由 788 降至 593，下一波建议由 245 条降至 185 条。
 73. 新版覆盖分析中，色情低俗与广告/诈骗/导流仍为 P0；辱骂/群体攻击、枪爆武器、公共事务、政治历史/鉴证梗降为 P1；平台规避、网络黑产、暴力极端、违禁交易、赌博降为 P2。该优先级仅作为抽样复核和下一波设计参考，不能替代人工标签判断。
+74. 已创建 `scripts/build_phase3_second_wave_candidates.py`，按新版覆盖建议生成第三阶段第二波 185 条候选。脚本只写 `data/raw/phase3_second_wave_candidates.jsonl`，使用独立 `PHASE3_W2_*` ID、`phase3_v2_long_tail_boundaries` 批次和新的长尾/困难边界措辞，不修改正式 675 条 processed。
+75. 已校验 `data/raw/phase3_second_wave_candidates.jsonl`：共 185 条，185 个 ID 与 text 均唯一，schema 校验通过；与正式 675 条、phase3 第一波均无新增 ID 或 text 重复。全部保持 `quality_status=needs_revision` 和 `not_merged`，尚未人工抽样确认或入库。
+76. 第二波类别配额：色情低俗、广告/诈骗/导流各 25 条；辱骂/群体攻击、枪爆武器、公共事务、政治历史/鉴证梗、平台规避/审查黑话、网络黑产、暴力极端、违禁交易、赌博各 15 条。风险分布为 high 37、medium 74、low 37、none 37；direct、obfuscated、contextual、weak_signal、safe_context 各 37 条；hard negative 74 条。
+77. 已生成 `data/raw/phase3_second_wave_text_style_audit.json`，未发现审核员口吻、异常短句、大量空格或过长说明；第二波 text 最大长度 24、平均长度 18.1，未发现重复开头集中问题。
+78. 已更新 `scripts/split_dataset.py` 识别 `PHASE3_W2_*` / `phase3_second_wave`，未来入库后可按 `category/cluster/contrast_mode` 保持模板组不跨 split；已用第二波 raw 独立试切，55 个模板组无跨 split 泄漏。
 
 ## 当前状态
 
@@ -170,6 +175,15 @@
 5. 与正式 330 条和 phase2 100 条均无 text 重复。
 6. `data/raw/phase3_first_wave_text_style_audit.json`：第三阶段第一波 text 风格审计，当前无标记问题。
 
+当前第三阶段第二波 raw 状态：
+
+1. `scripts/build_phase3_second_wave_candidates.py`：第三阶段第二波长尾与困难边界候选生成脚本，只写 raw。
+2. `data/raw/phase3_second_wave_candidates.jsonl`：185 条，已通过 schema、重复和风格检查，全部 `needs_revision/not_merged`，尚未人工抽样确认或入库。
+3. 风险分布：high 37、medium 74、low 37、none 37；hard negative 74。
+4. 对照模式：direct、obfuscated、contextual、weak_signal、safe_context 各 37 条。
+5. 与正式 675 条及 phase3 第一波均无新增 ID/text 重复。
+6. `data/raw/phase3_second_wave_text_style_audit.json`：第二波 text 风格审计，当前无标记问题。
+
 当前统一入库准备状态：
 
 1. `scripts/analyze_phase3_coverage_delta.py`：phase3 加入前后覆盖增益分析脚本。
@@ -221,9 +235,9 @@
 
 下一步优先围绕第二阶段扩数据继续推进：
 
-1. 对 675 条候选分层抽样复核，优先检查 phase3 的 P0 类别、弱信号与 safe_context 对照质量；不要直接批量标 approved。
-2. 根据新版覆盖报告设计下一波约 185 条定向扩充，重点补色情低俗、广告/诈骗/导流及 P1 类别的真实长尾与困难边界，避免机械重复第一波模板。
-3. 下一波继续保持 raw-first、`needs_revision/not_merged`，经抽样确认和独立合并预览后再考虑入库。
+1. 人工抽样确认第二波 185 条 raw，优先检查 P0 类别、弱信号与 safe_context 对照质量；不要直接批量标 approved。
+2. 第二波获确认后，先生成覆盖增益报告和独立合并预览，校验通过后再考虑正式入库。
+3. 对正式 675 条候选继续分层复核，重点识别第一、二波模板化表达与标签争议。
 4. 330 条 reasoning 迁移预览已获认可，但暂不正式覆盖 processed；后续需要时再执行。
 
 ## 工作约定

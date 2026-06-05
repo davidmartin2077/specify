@@ -74,6 +74,8 @@ def id_source(sample_id: str) -> str:
         return "phase2_seed"
     if sample_id.startswith("PHASE3_W1_"):
         return "phase3_first_wave"
+    if sample_id.startswith("PHASE3_W2_"):
+        return "phase3_second_wave"
     return "unknown"
 
 
@@ -102,7 +104,7 @@ def group_key_for(sample: dict[str, Any]) -> str:
         return f"lexicon_category:{notes.get('category', 'unknown')}"
     if source == "phase2_seed" and notes.get("cluster"):
         return f"phase2_template:{notes.get('axis', 'unknown')}:{notes['cluster']}"
-    if source == "phase3_first_wave" and notes.get("cluster"):
+    if source in {"phase3_first_wave", "phase3_second_wave"} and notes.get("cluster"):
         return (
             f"phase3_template:{notes.get('category', 'unknown')}:"
             f"{notes['cluster']}:{notes.get('contrast_mode', 'unknown')}"
@@ -153,12 +155,12 @@ def summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
     phase3_category = Counter(
         notes["category"]
         for row, notes in zip(rows, parsed_notes)
-        if source_for(row, notes) == "phase3_first_wave" and notes.get("category")
+        if source_for(row, notes) in {"phase3_first_wave", "phase3_second_wave"} and notes.get("category")
     )
     phase3_contrast_mode = Counter(
         notes["contrast_mode"]
         for row, notes in zip(rows, parsed_notes)
-        if source_for(row, notes) == "phase3_first_wave" and notes.get("contrast_mode")
+        if source_for(row, notes) in {"phase3_first_wave", "phase3_second_wave"} and notes.get("contrast_mode")
     )
     return {
         "count": len(rows),

@@ -1,0 +1,535 @@
+#!/usr/bin/env python3
+"""Build the second phase-3 targeted expansion batch.
+
+This batch follows the refreshed 675-candidate coverage plan. It writes raw
+needs_revision candidates only and never merges into processed data.
+"""
+
+from __future__ import annotations
+
+import json
+from pathlib import Path
+from typing import Any
+
+from build_phase3_first_wave_candidates import MODE_META
+
+
+ROOT = Path(__file__).resolve().parents[1]
+OUTPUT_PATH = ROOT / "data/raw/phase3_second_wave_candidates.jsonl"
+BATCH = "phase3_v2_long_tail_boundaries"
+MODES = ("direct", "obfuscated", "contextual", "weak_signal", "safe_context")
+
+
+PROFILES: list[dict[str, Any]] = [
+    {
+        "category": "sexual_content",
+        "name": "色情低俗",
+        "quota": 25,
+        "primary": "E1_平台黑话",
+        "secondary": ["D3_借代", "B4_符号/空格/Unicode 干扰"],
+        "platforms": ["小红书", "抖音", "微博", "贴吧", "微信群"],
+        "texts": {
+            "direct": [
+                "只聊成年人项目，能接受价目表的再加",
+                "今晚酒店附近可约，先说时长和预算",
+                "陪酒之后还能安排别的，费用另算",
+                "同城上门服务，照片和价格私下发",
+                "要特殊陪玩的直接报需求，别只问在不在",
+            ],
+            "obfuscated": [
+                "夜里那种活用月亮代，数字就是价位",
+                "把约字拆开说，平台最近查得紧",
+                "不方便写项目，菜单末尾带星号的就是",
+                "联系方式藏在尺码表里，按最大码找",
+                "成年人看的那页换了字母，老客知道入口",
+            ],
+            "contextual": [
+                "今晚临时空出来，附近有人想见面吗",
+                "只接待懂规矩的，普通聊天不用问",
+                "主页最后一张有今晚安排，自己看条件",
+                "深夜档还差一位，能来的先发位置",
+                "有些服务不能在公开区细说，合适再聊",
+            ],
+            "weak_signal": [
+                "说深夜档有点暧昧，也可能只是直播排班",
+                "成年人限定不等于低俗，得看具体内容",
+                "同城见面本身正常，但账号反复强调预算",
+                "菜单和星号可能是普通促销，目前指向不清",
+                "陪玩可以是正规游戏服务，不能只看这个词",
+            ],
+            "safe_context": [
+                "酒店提醒陌生招揽存在安全风险，请通过正规渠道举报",
+                "性健康门诊面向成年人提供正规咨询和检测",
+                "纪录片讨论性交易治理，不是在发布招揽信息",
+                "家长课程讲如何识别低俗诱导，内容属于安全教育",
+                "平台公告说明擦边直播处罚规则，不代表公告本身低俗",
+            ],
+        },
+    },
+    {
+        "category": "spam_ads_fraud",
+        "name": "广告诈骗导流",
+        "quota": 25,
+        "primary": "E1_平台黑话",
+        "secondary": ["A2_拼音/首字母缩写", "C4_典故/物品/符号借用"],
+        "platforms": ["小红书", "微信群", "抖音", "微博", "QQ群"],
+        "texts": {
+            "direct": [
+                "先付认证金就能领高额退款，十分钟到账",
+                "内部渠道代抢名额，交定金后保证成功",
+                "兼职只要代收一笔款，当天结算三百",
+                "征信不好也能下款，包装费先转过来",
+                "跟单群今晚开新仓，入群费交完发代码",
+            ],
+            "obfuscated": [
+                "退款两个字别写，发一个退字加箭头就行",
+                "联细方式在九宫格里，按数字顺序拼",
+                "想做任务的搜昵称少最后一个字，防限流",
+                "费用写成奶茶杯数，懂价格的直接报杯",
+                "那个币用水果名代，群里不要出现原名",
+            ],
+            "contextual": [
+                "名额锁定前要做一次身份认证，费用之后退",
+                "先帮平台走个流水，完成后工资一起结",
+                "这个客服说只能通过私人会议处理退款",
+                "群里老师让大家今晚统一换到另一个软件",
+                "对方一直催我先垫钱，说错过就不能恢复",
+            ],
+            "weak_signal": [
+                "让换软件有些异常，也可能是正常会议迁移",
+                "内部名额听着像营销，暂时没看到收费要求",
+                "私人客服不够规范，但还不能直接认定诈骗",
+                "兼职要求实名认证，需要进一步核验公司主体",
+                "限时退款制造焦虑，先保留风险召回",
+            ],
+            "safe_context": [
+                "警方提醒任何先交认证金的退款流程都可能是骗局",
+                "正规兼职结算不会要求员工代收陌生资金",
+                "银行客服不会索要验证码，遇到催促应立即挂断",
+                "学校反诈课演示了虚假兼职的常见话术",
+                "消费者应通过订单页面申请退款，不要跳转私人链接",
+            ],
+        },
+    },
+    {
+        "category": "insulting_abuse",
+        "name": "辱骂群体攻击",
+        "quota": 15,
+        "primary": "D3_借代",
+        "secondary": ["D1_反讽", "A2_拼音/首字母缩写"],
+        "platforms": ["微博", "贴吧", "B站"],
+        "texts": {
+            "direct": [
+                "这种口音的人都别来，来了只会坏事",
+                "他们那个职业没一个好东西，见到就绕开",
+                "这类病人活该被排斥，别让他们进社区",
+            ],
+            "obfuscated": [
+                "地域名换成车牌首字母，骂起来不容易删",
+                "那类人统一叫灰头像，别打真实群体名",
+                "职业后两个字用表情替掉，大家照样懂",
+            ],
+            "contextual": [
+                "果然又是那个地方的，难怪会这样",
+                "一听他说做什么工作的，我就知道评论没法看",
+                "这种头像每次出现都带来一样的问题",
+            ],
+            "weak_signal": [
+                "他说那个地方可能只是在描述来源，攻击范围不清",
+                "吐槽某个职业行为，不一定是在否定所有从业者",
+                "灰头像可能只是界面样式，借代证据不足",
+            ],
+            "safe_context": [
+                "反歧视公益片引用偏见话术，是为了批评群体攻击",
+                "方言研究比较不同口音，不应被误判为地域嘲讽",
+                "社区培训提醒不要因疾病标签排斥居民",
+            ],
+        },
+    },
+    {
+        "category": "weapons_explosives",
+        "name": "枪爆武器",
+        "quota": 15,
+        "primary": "C4_典故/物品/符号借用",
+        "secondary": ["B3_形近字替换", "E1_平台黑话"],
+        "platforms": ["论坛", "贴吧", "微信群"],
+        "texts": {
+            "direct": [
+                "能击发的整套还有两件，想要的报城市",
+                "需要起爆部件的说规格，我这边能配齐",
+                "这批管制刀具不开票，同城可以当面拿",
+            ],
+            "obfuscated": [
+                "击发那套叫钟表，问走时就是问成色",
+                "起爆器别写，用遥控门铃的简称问",
+                "刀具型号拆成三个车牌号，按顺序发",
+            ],
+            "contextual": [
+                "这根管子和弹簧尺寸能对上吗，想拼完整",
+                "远程按一下能不能稳定触发，最好别有延迟",
+                "这把收藏品开刃了吗，带出去方便不方便",
+            ],
+            "weak_signal": [
+                "管子和弹簧可能是普通机械件，缺少用途证据",
+                "远程触发也可能用于智能家居，不能直接升级",
+                "收藏刀具存在正常爱好场景，需要看交易和携带意图",
+            ],
+            "safe_context": [
+                "机械课展示弹簧结构，不涉及武器组装",
+                "消防培训讲解起爆风险，是为了规范危险品处置",
+                "博物馆提醒展陈刀具不得触摸或带离场馆",
+            ],
+        },
+    },
+    {
+        "category": "public_affairs",
+        "name": "公共事务",
+        "quota": 15,
+        "primary": "E3_话题/热点触发",
+        "secondary": ["D1_反讽", "E2_时间节点触发"],
+        "platforms": ["微博", "知乎", "微信群"],
+        "texts": {
+            "direct": [
+                "今晚统一去门口堵着，谁都别提前走",
+                "名单已经整理好，明天按表逐个施压",
+                "别走正常渠道了，直接把现场围起来",
+            ],
+            "obfuscated": [
+                "集合两个字换成看房，时间还是老地方",
+                "名单只发编号，行动内容用天气符号表示",
+                "围门口别直说，群里统一叫排队领票",
+            ],
+            "contextual": [
+                "正常流程没用，明天大家都到门口再谈",
+                "这次别只转发，得让他们真正看到人数",
+                "时间定了以后统一回复收到，别外传安排",
+            ],
+            "weak_signal": [
+                "到门口可能是正常办事，也可能带有聚集动员",
+                "强调人数有施压意味，但具体行为尚不明确",
+                "不外传安排值得关注，也可能只是内部会议",
+            ],
+            "safe_context": [
+                "居民通过公开听证会提交意见属于正常公共参与",
+                "办事大厅公告提醒按预约时间排队办理业务",
+                "新闻报道群众诉求时应保护个人信息并核实事实",
+            ],
+        },
+    },
+    {
+        "category": "political_history",
+        "name": "政治历史鉴证梗",
+        "quota": 15,
+        "primary": "C2_历史事件影射",
+        "secondary": ["C1_历史人物类比", "C3_数字代指"],
+        "platforms": ["B站", "微博", "知乎"],
+        "texts": {
+            "direct": [
+                "今天这场面和书里那次清场几乎一模一样",
+                "他又在复刻那位末代掌权者的最后几年",
+                "这个日期一到，评论区都知道在纪念什么",
+            ],
+            "obfuscated": [
+                "年份别写全，用前两位加后两位相减",
+                "那位名字换成同朝代的年号，懂历史的能对上",
+                "事件名用课本页码代，评论只发页数",
+            ],
+            "contextual": [
+                "历史总在押同一个韵，只是角色换了名字",
+                "这集人物关系怎么看着像现实里的旧剧本",
+                "每年到这个晚上，时间线都会突然安静",
+            ],
+            "weak_signal": [
+                "说历史重演可能只是泛泛感慨，映射对象不明",
+                "课本页码也可能是正常课程讨论，需要结合回复链",
+                "某个日期具有私人纪念意义，不能自动关联公共事件",
+            ],
+            "safe_context": [
+                "历史课程比较制度变迁，属于正常学术讨论",
+                "博物馆按年代介绍人物生平，没有现实影射",
+                "读书会讨论史料版本差异，不应只因日期数字误判",
+            ],
+        },
+    },
+    {
+        "category": "platform_censorship_evasion",
+        "name": "平台规避审查黑话",
+        "quota": 15,
+        "primary": "B4_符号/空格/Unicode 干扰",
+        "secondary": ["A2_拼音/首字母缩写", "E1_平台黑话"],
+        "platforms": ["B站", "微博", "贴吧"],
+        "texts": {
+            "direct": [
+                "敏感词中间插零宽字符，发出去看不出来",
+                "被删的那句话做成图片再贴，机器扫不到",
+                "全称换成拼音首字母，审核就不容易发现",
+            ],
+            "obfuscated": [
+                "原字左右各加一个看不见的符号就能过",
+                "每个字隔一张透明图，连起来还是那句话",
+                "先写同音字再用括号补偏旁，老用户能还原",
+            ],
+            "contextual": [
+                "文字版一直发不出，换张截图应该就行",
+                "名字别完整出现，评论区最近盯得很紧",
+                "按旧暗号回复，公开解释容易被处理",
+            ],
+            "weak_signal": [
+                "用截图可能只是方便排版，不一定为了规避",
+                "首字母常用于正常缩写，仍需判断共同指向",
+                "说发不出也可能是网络问题，证据暂时有限",
+            ],
+            "safe_context": [
+                "无障碍设计课程讲零宽字符可能影响阅读器",
+                "论文使用首字母缩写并在首次出现时给出定义",
+                "图片版通知是为了保留格式，不包含规避内容",
+            ],
+        },
+    },
+    {
+        "category": "cyber_abuse",
+        "name": "网络黑产安全风险",
+        "quota": 15,
+        "primary": "E1_平台黑话",
+        "secondary": ["A2_拼音/首字母缩写", "C4_典故/物品/符号借用"],
+        "platforms": ["论坛", "微信群", "贴吧"],
+        "texts": {
+            "direct": [
+                "批量过验证码的接口还有，按调用次数收费",
+                "能查手机号实名信息，报号码直接出结果",
+                "企业后台账号一批，登录正常的单独计价",
+            ],
+            "obfuscated": [
+                "验证码叫门票，问几秒出票就是问速度",
+                "实名数据用快递单代称，别发字段名称",
+                "后台账号只发域名尾字母和库存数字",
+            ],
+            "contextual": [
+                "这个接口不限次数，拿来跑注册应该挺快",
+                "只知道号码也能查到住址吗，有现成渠道没",
+                "这批账号权限挺高，先测试哪些还能登录",
+            ],
+            "weak_signal": [
+                "批量接口可能用于授权测试，也可能被滥用",
+                "查询实名可能是本人业务核验，需确认授权",
+                "账号登录测试若在企业内部授权范围内可以合规",
+            ],
+            "safe_context": [
+                "安全团队在授权环境中测试验证码防护强度",
+                "用户查询本人实名信息应通过官方隐私入口",
+                "企业下线离职账号属于正常权限治理流程",
+            ],
+        },
+    },
+    {
+        "category": "violence_extremism",
+        "name": "暴力极端",
+        "quota": 15,
+        "primary": "E3_话题/热点触发",
+        "secondary": ["D2_夸张/反话", "E1_平台黑话"],
+        "platforms": ["微信群", "贴吧", "微博"],
+        "texts": {
+            "direct": [
+                "今晚带工具去堵他，必须让他长记性",
+                "人够了就一起冲进去，别给对面反应时间",
+                "名单上的人一个都别放过，按地址分组找",
+            ],
+            "obfuscated": [
+                "动手改叫敲门，带什么用工具颜色表示",
+                "冲进去用进场代替，时间发成球赛比分",
+                "名单不写名字，只发头像编号和地图点",
+            ],
+            "contextual": [
+                "今晚见面别空手，事情总得有个结果",
+                "大家到了听统一口令，不要自己先行动",
+                "地址已经确认，就看谁真的敢过去",
+            ],
+            "weak_signal": [
+                "别空手可能只是提醒带材料，也可能暗示工具",
+                "统一口令可能用于演出排练，需结合现场话题",
+                "敢过去带有挑衅意味，但尚无明确暴力内容",
+            ],
+            "safe_context": [
+                "社区劝架员提醒发生冲突先报警并远离现场",
+                "影视排练中的冲锋口令属于剧本表演",
+                "安全课程分析暴力动员话术，是为了帮助识别风险",
+            ],
+        },
+    },
+    {
+        "category": "illegal_goods",
+        "name": "违禁交易",
+        "quota": 15,
+        "primary": "C4_典故/物品/符号借用",
+        "secondary": ["E1_平台黑话", "B4_符号/空格/Unicode 干扰"],
+        "platforms": ["微信群", "贴吧", "小红书"],
+        "texts": {
+            "direct": [
+                "处方管制药可以散出，数量多价格另谈",
+                "这批粉纯度高，同城当天可以送到",
+                "需要伪造证件的发照片和用途，最快当天出",
+            ],
+            "obfuscated": [
+                "管制药叫蓝糖，问几盒就是问数量",
+                "那种粉只发色卡编号，别写名字",
+                "证件模板用毕业照代称，群里不要说办理",
+            ],
+            "contextual": [
+                "医院开不到的那种药，有没有别的渠道",
+                "这批货成色比上次好，先给老客户留",
+                "照片和信息发过去，能不能做得像真的一样",
+            ],
+            "weak_signal": [
+                "问购药渠道可能是正常就医困难，也可能寻求违规来源",
+                "货和成色含义不明确，需要结合交易对象",
+                "做得像真的可能指设计稿，也可能涉及伪造",
+            ],
+            "safe_context": [
+                "管制药必须凭正规处方领取，不要从私人渠道购买",
+                "禁毒教育展示毒品伪装方式，是为了提高警惕",
+                "证件照修图应保留真实信息，不能用于伪造材料",
+            ],
+        },
+    },
+    {
+        "category": "gambling",
+        "name": "赌博",
+        "quota": 15,
+        "primary": "E1_平台黑话",
+        "secondary": ["C3_数字代指", "A2_拼音/首字母缩写"],
+        "platforms": ["微信群", "QQ群", "贴吧"],
+        "texts": {
+            "direct": [
+                "今晚盘口已经开了，想下注的报金额",
+                "牌局还差两位，带现金来直接上桌",
+                "彩票内部号今晚发，先交跟单费",
+            ],
+            "obfuscated": [
+                "下注改叫点菜，金额就按菜品数量发",
+                "盘口用水深水浅代替，别在群里发赔率",
+                "牌局地点写成快递取件码，到附近再问",
+            ],
+            "contextual": [
+                "今晚这场水位变得快，跟哪边比较稳",
+                "老地方桌子开了，还是按以前的底",
+                "这组号码老师说把握很大，要不要一起跟",
+            ],
+            "weak_signal": [
+                "水位可能是体育数据讨论，也可能指盘口",
+                "老地方开桌可能只是朋友聚会，暂无线索证明下注",
+                "号码推荐也可能是普通概率娱乐，需要看收费和投注",
+            ],
+            "safe_context": [
+                "反赌宣传提醒所谓内部号都是诱骗下注的话术",
+                "家庭聚会玩纸牌不涉及金钱输赢",
+                "体育节目分析赔率变化时同时提示理性观赛",
+            ],
+        },
+    },
+]
+
+
+def context_for(profile: dict[str, Any], mode: str, index: int) -> dict[str, Any]:
+    contexts = {
+        "direct": ("疑似明确风险互动区", "有人继续追问具体条件", ["具体怎么走", "公开区别留细节"]),
+        "obfuscated": ("规避表达与黑话讨论区", "上级评论提示不要使用原词", ["暗号收到", "换个写法"]),
+        "contextual": ("上下文触发风险讨论区", "单句含义依赖前后互动", ["结合前文看", "需要进一步核验"]),
+        "weak_signal": ("高召回边界复核区", "当前只有弱信号和不完整语境", ["普通解释也成立", "先保留复核"]),
+        "safe_context": ("新闻教育与正常语境区", "上下文提供完整反证", ["属于正常讨论", "不要只看关键词"]),
+    }
+    suffix, parent, replies = contexts[mode]
+    return {
+        "title": f"{profile['name']}{suffix}",
+        "description": "",
+        "parent_comment": parent,
+        "reply_chain": replies,
+        "time": "",
+        "topic": profile["name"],
+    }
+
+
+def reasoning(profile: dict[str, Any], mode: str, text: str) -> dict[str, Any]:
+    meta = MODE_META[mode]
+    risk = meta["risk"]
+    encoding = (
+        ["上下文明确提供正常用途或反风险目的，未形成稳定风险编码。"]
+        if risk == "none"
+        else [
+            f"主要按 {profile['primary']} 解构，属于{profile['name']}的长尾语境。",
+            f"辅助机制包括：{'、'.join(profile['secondary'])}。",
+        ]
+    )
+    if mode in {"obfuscated", "contextual", "weak_signal"}:
+        encoding.append("该表达保留普通解释，需要结合互动链和行为意图判断。")
+    return {
+        "literal_analysis": [f"字面上是在表达：{text}"],
+        "encoding_analysis": encoding,
+        "context_analysis": [meta["context_note"]],
+        "supporting_evidence": meta["support"],
+        "counter_evidence": meta["counter"],
+        "final_rationale": {
+            "high": "文本与互动语境共同呈现较明确风险意图，暂标为 high。",
+            "medium": "存在需要召回的编码或行为信号，但具体链路仍不完整，暂标为 medium。",
+            "low": "存在弱风险联想，普通解释仍较强，作为困难边界暂标为 low。",
+            "none": "正常、教育、新闻或反风险语境提供完整反证，暂标为 none。",
+        }[risk],
+    }
+
+
+def build_rows() -> list[dict[str, Any]]:
+    rows = []
+    serial = 1
+    for profile in PROFILES:
+        per_mode = profile["quota"] // len(MODES)
+        for mode in MODES:
+            texts = profile["texts"][mode]
+            if len(texts) != per_mode:
+                raise ValueError(f"{profile['category']} {mode}: expected {per_mode}, got {len(texts)}")
+            for local_index, text in enumerate(texts, start=1):
+                meta = MODE_META[mode]
+                risk = meta["risk"]
+                rows.append(
+                    {
+                        "id": f"PHASE3_W2_{serial:04d}_{profile['category'].upper()}_{mode.upper()}",
+                        "source_type": "synthetic",
+                        "platform": profile["platforms"][(local_index - 1) % len(profile["platforms"])],
+                        "text": text,
+                        "context": context_for(profile, mode, local_index),
+                        "risk_level": risk,
+                        "encoding_primary": "none" if risk == "none" else profile["primary"],
+                        "encoding_secondary": [] if risk == "none" else profile["secondary"],
+                        "context_required": True,
+                        "ambiguity": meta["ambiguity"],
+                        "evidence_strength": meta["evidence"],
+                        "hard_negative": meta["hard_negative"],
+                        "target_known": False,
+                        "target_reference": "匿名化风险语境",
+                        "should_explain_target": False,
+                        "freshness": "stable",
+                        "reasoning": reasoning(profile, mode, text),
+                        "quality_status": "needs_revision",
+                        "review_notes": (
+                            f"source=phase3_second_wave; batch={BATCH}; category={profile['category']}; "
+                            f"contrast_mode={mode}; cluster={profile['category']}_{mode}_w2; "
+                            "not_merged; needs_human_review"
+                        ),
+                    }
+                )
+                serial += 1
+    return rows
+
+
+def main() -> int:
+    rows = build_rows()
+    if len(rows) != 185:
+        raise ValueError(f"Expected 185 rows, got {len(rows)}")
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with OUTPUT_PATH.open("w", encoding="utf-8") as handle:
+        for row in rows:
+            handle.write(json.dumps(row, ensure_ascii=False, separators=(",", ":")) + "\n")
+    print(f"Wrote {len(rows)} phase-3 second-wave candidates to {OUTPUT_PATH}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
