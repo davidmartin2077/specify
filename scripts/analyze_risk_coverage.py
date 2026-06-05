@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Analyze lexicon coverage against current processed and phase-2 candidates.
+"""Analyze lexicon coverage against current candidate datasets.
 
 The lexicon is treated as a capability map and sampling pool, not as a list to
 expand one term at a time.
@@ -7,6 +7,7 @@ expand one term at a time.
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
 from collections import Counter, defaultdict
@@ -19,7 +20,6 @@ LEXICON_TERMS = ROOT / "data/processed/lexicon_terms.jsonl"
 LEXICON_SEEDS = ROOT / "data/processed/lexicon_seed_terms.jsonl"
 LEXICON_PLAN = ROOT / "data/processed/lexicon_sampling_plan.json"
 PROCESSED = ROOT / "data/processed/combined_candidates.jsonl"
-PHASE2 = ROOT / "data/raw/phase2_seed_candidates.jsonl"
 REPORT_JSON = ROOT / "data/processed/risk_coverage_report.json"
 PHASE3_PLAN_JSON = ROOT / "data/processed/phase3_sampling_plan.json"
 REPORT_MD = ROOT / "docs/risk_coverage_report.md"
@@ -432,12 +432,13 @@ def phase3_plan(
 
 def render_markdown(report: dict[str, Any], plan: dict[str, Any]) -> str:
     summary = report["candidate_summary"]
+    input_names = "、".join(report["inputs"]["candidates"])
     lines = [
         "# 风险词覆盖分析报告",
         "",
         "## 结论",
         "",
-        f"当前分析覆盖正式候选与 phase2 raw，共 {summary['count']} 条。词库含 {report['lexicon_summary']['unique_terms']:,} 个去重词条。",
+        f"当前分析输入为 {input_names}，共 {summary['count']} 条。词库含 {report['lexicon_summary']['unique_terms']:,} 个去重词条。",
         "",
         "词库的作用是发现能力缺口、选择代表性风险簇、生成对照样本和构建压力测试；低词面命中率是正常现象，不应逐词扩写。",
         "",
@@ -448,8 +449,8 @@ def render_markdown(report: dict[str, Any], plan: dict[str, Any]) -> str:
     ]
     for risk, count in summary["risk_counts"].items():
         lines.append(f"- {risk}: {count}")
-    lines.extend(["", f"- hard negative: {summary['hard_negative']}", "", "## 类别覆盖与第三阶段建议", ""])
-    lines.append("| 优先级 | 类别 | 当前推断样本 | high/medium/low/none | hard negative | 第一波 | 完整阶段缺口 |")
+    lines.extend(["", f"- hard negative: {summary['hard_negative']}", "", "## 类别覆盖与下一波扩充建议", ""])
+    lines.append("| 优先级 | 类别 | 当前推断样本 | high/medium/low/none | hard negative | 下一波建议 | 完整阶段缺口 |")
     lines.append("|---|---|---:|---|---:|---:|---:|")
     for item in plan["categories"]:
         risks = item["current_risk_counts"]
@@ -484,12 +485,37 @@ def render_markdown(report: dict[str, Any], plan: dict[str, Any]) -> str:
     return "\n".join(lines) + "\n"
 
 
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(description="Analyze risk-category and lexicon coverage.")
+    parser.add_argument(
+        "--input",
+        type=Path,
+        action="append",
+        dest="inputs",
+        help="Candidate JSONL to analyze. Repeat for multiple datasets. Defaults to formal processed candidates.",
+    )
+    return parser.parse_args()
+
+
+def display_path(path: Path) -> str:
+    resolved = path.resolve()
+    return str(resolved.relative_to(ROOT)) if resolved.is_relative_to(ROOT) else str(path)
+
+
+def ensure_unique_ids(samples: list[dict[str, Any]]) -> None:
+    ids = [str(sample.get("id", "")) for sample in samples]
+    duplicates = [sample_id for sample_id, count in Counter(ids).items() if count > 1]
+    if duplicates:
+        raise ValueError(f"Duplicate candidate ids across analysis inputs: {duplicates[:10]}")
+
+
 def main() -> int:
+    args = parse_args()
+    input_paths = args.inputs or [PROCESSED]
     terms = load_jsonl(LEXICON_TERMS)
     seeds = load_jsonl(LEXICON_SEEDS)
-    processed = load_jsonl(PROCESSED)
-    phase2 = load_jsonl(PHASE2)
-    samples = processed + phase2
+    samples = [row for path in input_paths for row in load_jsonl(path)]
+    ensure_unique_ids(samples)
     sampling_plan = json.loads(LEXICON_PLAN.read_text(encoding="utf-8"))
 
     summary = sample_summary(samples)
@@ -497,8 +523,7 @@ def main() -> int:
     plan = phase3_plan(sampling_plan, summary, seeds, covered_keys)
     report = {
         "inputs": {
-            "processed": str(PROCESSED.relative_to(ROOT)),
-            "phase2": str(PHASE2.relative_to(ROOT)),
+            "candidates": [display_path(path) for path in input_paths],
             "lexicon_terms": str(LEXICON_TERMS.relative_to(ROOT)),
             "lexicon_seeds": str(LEXICON_SEEDS.relative_to(ROOT)),
         },
@@ -522,7 +547,7 @@ def main() -> int:
 
     print(f"Analyzed {len(samples)} candidates against {len(terms)} lexicon terms.")
     print(f"Wrote coverage report to {REPORT_JSON}")
-    print(f"Wrote phase-3 sampling plan to {PHASE3_PLAN_JSON}")
+    print(f"Wrote next-wave sampling plan to {PHASE3_PLAN_JSON}")
     print(f"Wrote readable report to {REPORT_MD}")
     return 0
 

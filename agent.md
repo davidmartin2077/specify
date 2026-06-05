@@ -82,6 +82,9 @@
 68. 已更新 `scripts/split_dataset.py`：补充 `PHASE2_SEED_*` 和 `PHASE3_W1_*` 来源识别；phase2 按 `axis/cluster`、phase3 按 `category/cluster/contrast_mode` 生成稳定模板组；split 报告新增 phase3 category 与 contrast_mode 分布，用于审计对照模板泄漏。
 69. 已重新运行 `scripts/build_sft_dataset.py`，生成 675 条 `data/mvp/sft_candidates.jsonl/.json`；SFT ID 顺序与正式 processed 完全一致，JSONL 与 JSON 内容一致。
 70. 已重新运行 `scripts/split_dataset.py` 并校验三份 split。当前 train 541、validation 67、test 67，合计覆盖 675 个唯一 ID；`split_report.json` 记录 226 个防泄漏组，0 个跨 split 泄漏组；55 个 phase3 模板组均未跨 split。
+71. 已调整 `scripts/analyze_risk_coverage.py` 以适配正式 675 条状态：默认只分析 `data/processed/combined_candidates.jsonl`，支持重复传入 `--input` 分析多个独立候选集，并在输入间出现重复 ID 时直接报错，防止把已入库的 phase2/phase3 raw 再次重复计算。
+72. 已基于正式 675 条重新生成 `data/processed/risk_coverage_report.json`、`data/processed/phase3_sampling_plan.json` 和 `docs/risk_coverage_report.md`。新版分析确认当前风险分布 high 126、medium 234、low 145、none 170，hard negative 279；完整参考缺口由 788 降至 593，下一波建议由 245 条降至 185 条。
+73. 新版覆盖分析中，色情低俗与广告/诈骗/导流仍为 P0；辱骂/群体攻击、枪爆武器、公共事务、政治历史/鉴证梗降为 P1；平台规避、网络黑产、暴力极端、违禁交易、赌博降为 P2。该优先级仅作为抽样复核和下一波设计参考，不能替代人工标签判断。
 
 ## 当前状态
 
@@ -148,14 +151,15 @@
 
 当前风险词覆盖分析状态：
 
-1. `scripts/analyze_risk_coverage.py`：风险词覆盖分析脚本，只读当前候选与词库索引。
+1. `scripts/analyze_risk_coverage.py`：风险词覆盖分析脚本，默认只读正式 processed 与词库索引；可通过多个 `--input` 分析额外独立候选集，并拒绝重复 ID。
 2. `data/processed/risk_coverage_report.json`：机器可读覆盖报告。
-3. `data/processed/phase3_sampling_plan.json`：第三阶段定向采样计划；完整参考缺口 788 条，建议第一波 245 条。
+3. `data/processed/phase3_sampling_plan.json`：下一波定向采样参考；完整参考缺口 593 条，建议下一波 185 条。
 4. `docs/risk_coverage_report.md`：可读版覆盖分析报告。
-5. 当前 430 条候选合计风险分布：high 77、medium 136、low 96、none 121；hard negative 181。
-6. 第一波优先机制：拼音/首字母、字形/符号干扰、语义映射/鉴证梗、平台/时间/话题上下文。
-7. 第一波 P0 类别建议各补约 25 条：色情低俗、广告/诈骗/导流、辱骂/群体攻击、枪爆武器、网络黑产、暴力极端、违禁交易、赌博。
-8. 第一波 P1 类别建议各补约 15 条：公共事务、政治历史/鉴证梗、平台规避/审查黑话。
+5. 当前正式 675 条候选合计风险分布：high 126、medium 234、low 145、none 170；hard negative 279。
+6. 下一波仍优先机制：拼音/首字母、字形/符号干扰、语义映射/鉴证梗、平台/时间/话题上下文。
+7. 当前 P0 类别：色情低俗、广告/诈骗/导流，各建议下一波约 25 条。
+8. 当前 P1 类别：辱骂/群体攻击、枪爆武器、公共事务、政治历史/鉴证梗，各建议下一波约 15 条。
+9. 当前 P2 类别：平台规避/审查黑话、网络黑产、暴力极端、违禁交易、赌博；已有一定基础，下一波应优先补真实长尾与困难边界，而非重复现有模板。
 
 当前第三阶段第一波 raw 状态：
 
@@ -217,9 +221,9 @@
 
 下一步优先围绕第二阶段扩数据继续推进：
 
-1. 正式入库后重新生成风险覆盖报告，作为下一波定向扩充依据。
-2. 对 675 条候选分层抽样复核，优先检查 phase3 风险类别、弱信号与 safe_context 对照质量；不要直接批量标 approved。
-3. 根据新版覆盖报告继续设计下一波定向扩充，仍保持 raw-first 和 `needs_revision`。
+1. 对 675 条候选分层抽样复核，优先检查 phase3 的 P0 类别、弱信号与 safe_context 对照质量；不要直接批量标 approved。
+2. 根据新版覆盖报告设计下一波约 185 条定向扩充，重点补色情低俗、广告/诈骗/导流及 P1 类别的真实长尾与困难边界，避免机械重复第一波模板。
+3. 下一波继续保持 raw-first、`needs_revision/not_merged`，经抽样确认和独立合并预览后再考虑入库。
 4. 330 条 reasoning 迁移预览已获认可，但暂不正式覆盖 processed；后续需要时再执行。
 
 ## 工作约定
@@ -230,3 +234,5 @@
 - 当前状态。
 - 下一步建议。
 - 重要设计决策或约束。
+
+每完成一个可独立交接的阶段，还应创建本地 Git commit 并推送到 `origin/main`，确保 GitHub 与本地进度同步。
