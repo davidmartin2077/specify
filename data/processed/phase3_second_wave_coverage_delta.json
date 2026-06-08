@@ -1,0 +1,356 @@
+{
+  "inputs": {
+    "processed": 675,
+    "phase3_second_wave": 185
+  },
+  "before": {
+    "count": 675,
+    "source_counts": {
+      "gemini_expansion": 120,
+      "grok": 50,
+      "meme_expansion": 120,
+      "phase2_seed": 100,
+      "phase3_first_wave": 245,
+      "sensitive_lexicon_seed": 33,
+      "user": 7
+    },
+    "category_counts": {
+      "cyber_abuse": 33,
+      "gambling": 37,
+      "illegal_goods": 34,
+      "insulting_abuse": 32,
+      "mixed_unknown": 160,
+      "platform_censorship_evasion": 125,
+      "political_history": 102,
+      "public_affairs": 39,
+      "sexual_content": 32,
+      "spam_ads_fraud": 54,
+      "violence_extremism": 33,
+      "weapons_explosives": 32
+    },
+    "category_risk": {
+      "cyber_abuse": {
+        "high": 7,
+        "low": 5,
+        "medium": 14,
+        "none": 7
+      },
+      "gambling": {
+        "high": 6,
+        "low": 6,
+        "medium": 14,
+        "none": 11
+      },
+      "illegal_goods": {
+        "high": 9,
+        "low": 5,
+        "medium": 12,
+        "none": 8
+      },
+      "insulting_abuse": {
+        "high": 5,
+        "low": 6,
+        "medium": 13,
+        "none": 8
+      },
+      "mixed_unknown": {
+        "high": 23,
+        "low": 50,
+        "medium": 38,
+        "none": 49
+      },
+      "platform_censorship_evasion": {
+        "high": 26,
+        "low": 29,
+        "medium": 41,
+        "none": 29
+      },
+      "political_history": {
+        "high": 26,
+        "low": 16,
+        "medium": 43,
+        "none": 17
+      },
+      "public_affairs": {
+        "high": 5,
+        "low": 9,
+        "medium": 18,
+        "none": 7
+      },
+      "sexual_content": {
+        "high": 7,
+        "low": 5,
+        "medium": 13,
+        "none": 7
+      },
+      "spam_ads_fraud": {
+        "high": 9,
+        "low": 5,
+        "medium": 23,
+        "none": 17
+      },
+      "violence_extremism": {
+        "high": 8,
+        "low": 5,
+        "medium": 13,
+        "none": 7
+      },
+      "weapons_explosives": {
+        "high": 9,
+        "low": 5,
+        "medium": 11,
+        "none": 7
+      }
+    },
+    "category_hard_negative": {
+      "cyber_abuse": 12,
+      "gambling": 17,
+      "illegal_goods": 13,
+      "insulting_abuse": 14,
+      "mixed_unknown": 85,
+      "platform_censorship_evasion": 37,
+      "political_history": 32,
+      "public_affairs": 15,
+      "sexual_content": 12,
+      "spam_ads_fraud": 22,
+      "violence_extremism": 12,
+      "weapons_explosives": 12
+    },
+    "mechanism_counts": {
+      "A1_普通谐音": 7,
+      "A2_拼音/首字母缩写": 43,
+      "B1_拆字": 10,
+      "B3_形近字替换": 17,
+      "B4_符号/空格/Unicode 干扰": 62,
+      "C1_历史人物类比": 35,
+      "C2_历史事件影射": 26,
+      "C3_数字代指": 45,
+      "C4_典故/物品/符号借用": 196,
+      "D1_反讽": 56,
+      "D2_夸张/反话": 23,
+      "D2_隐喻": 21,
+      "D3_借代": 26,
+      "E1_平台黑话": 239,
+      "E2_时间节点触发": 51,
+      "E3_回复链/互动触发": 48,
+      "E3_话题/热点触发": 38,
+      "F_组合编码": 32,
+      "none": 170
+    },
+    "mechanism_group_counts": {
+      "combined": 32,
+      "contextual": 328,
+      "literal_keyword": 170,
+      "phonetic_or_initials": 50,
+      "rhetorical": 126,
+      "semantic_mapping": 302,
+      "shape_or_symbol": 89
+    },
+    "risk_counts": {
+      "high": 126,
+      "low": 145,
+      "medium": 234,
+      "none": 170
+    },
+    "hard_negative": 279
+  },
+  "after": {
+    "count": 860,
+    "source_counts": {
+      "gemini_expansion": 120,
+      "grok": 50,
+      "meme_expansion": 120,
+      "phase2_seed": 100,
+      "phase3_first_wave": 245,
+      "phase3_second_wave": 185,
+      "sensitive_lexicon_seed": 33,
+      "user": 7
+    },
+    "category_counts": {
+      "cyber_abuse": 48,
+      "gambling": 52,
+      "illegal_goods": 49,
+      "insulting_abuse": 47,
+      "mixed_unknown": 160,
+      "platform_censorship_evasion": 140,
+      "political_history": 117,
+      "public_affairs": 54,
+      "sexual_content": 57,
+      "spam_ads_fraud": 79,
+      "violence_extremism": 48,
+      "weapons_explosives": 47
+    },
+    "category_risk": {
+      "cyber_abuse": {
+        "high": 12,
+        "low": 8,
+        "medium": 18,
+        "none": 10
+      },
+      "gambling": {
+        "high": 10,
+        "low": 9,
+        "medium": 19,
+        "none": 14
+      },
+      "illegal_goods": {
+        "high": 12,
+        "low": 8,
+        "medium": 18,
+        "none": 11
+      },
+      "insulting_abuse": {
+        "high": 8,
+        "low": 9,
+        "medium": 19,
+        "none": 11
+      },
+      "mixed_unknown": {
+        "high": 23,
+        "low": 50,
+        "medium": 38,
+        "none": 49
+      },
+      "platform_censorship_evasion": {
+        "high": 29,
+        "low": 32,
+        "medium": 47,
+        "none": 32
+      },
+      "political_history": {
+        "high": 29,
+        "low": 19,
+        "medium": 49,
+        "none": 20
+      },
+      "public_affairs": {
+        "high": 8,
+        "low": 12,
+        "medium": 24,
+        "none": 10
+      },
+      "sexual_content": {
+        "high": 13,
+        "low": 10,
+        "medium": 22,
+        "none": 12
+      },
+      "spam_ads_fraud": {
+        "high": 14,
+        "low": 10,
+        "medium": 33,
+        "none": 22
+      },
+      "violence_extremism": {
+        "high": 11,
+        "low": 8,
+        "medium": 19,
+        "none": 10
+      },
+      "weapons_explosives": {
+        "high": 12,
+        "low": 8,
+        "medium": 17,
+        "none": 10
+      }
+    },
+    "category_hard_negative": {
+      "cyber_abuse": 18,
+      "gambling": 23,
+      "illegal_goods": 19,
+      "insulting_abuse": 20,
+      "mixed_unknown": 85,
+      "platform_censorship_evasion": 43,
+      "political_history": 38,
+      "public_affairs": 21,
+      "sexual_content": 22,
+      "spam_ads_fraud": 32,
+      "violence_extremism": 18,
+      "weapons_explosives": 18
+    },
+    "mechanism_counts": {
+      "A1_普通谐音": 7,
+      "A2_拼音/首字母缩写": 111,
+      "B1_拆字": 10,
+      "B3_形近字替换": 29,
+      "B4_符号/空格/Unicode 干扰": 106,
+      "C1_历史人物类比": 47,
+      "C2_历史事件影射": 38,
+      "C3_数字代指": 69,
+      "C4_典故/物品/符号借用": 252,
+      "D1_反讽": 80,
+      "D2_夸张/反话": 35,
+      "D2_隐喻": 21,
+      "D3_借代": 58,
+      "E1_平台黑话": 351,
+      "E2_时间节点触发": 63,
+      "E3_回复链/互动触发": 48,
+      "E3_话题/热点触发": 62,
+      "F_组合编码": 32,
+      "none": 207
+    },
+    "mechanism_group_counts": {
+      "combined": 32,
+      "contextual": 476,
+      "literal_keyword": 207,
+      "phonetic_or_initials": 118,
+      "rhetorical": 194,
+      "semantic_mapping": 406,
+      "shape_or_symbol": 145
+    },
+    "risk_counts": {
+      "high": 167,
+      "low": 182,
+      "medium": 304,
+      "none": 207
+    },
+    "hard_negative": 353
+  },
+  "delta": {
+    "count": 185,
+    "risk_counts": {
+      "high": 41,
+      "low": 37,
+      "medium": 70,
+      "none": 37
+    },
+    "hard_negative": 74,
+    "category_counts": {
+      "cyber_abuse": 15,
+      "gambling": 15,
+      "illegal_goods": 15,
+      "insulting_abuse": 15,
+      "mixed_unknown": 0,
+      "platform_censorship_evasion": 15,
+      "political_history": 15,
+      "public_affairs": 15,
+      "sexual_content": 25,
+      "spam_ads_fraud": 25,
+      "violence_extremism": 15,
+      "weapons_explosives": 15
+    },
+    "category_hard_negative": {
+      "cyber_abuse": 6,
+      "gambling": 6,
+      "illegal_goods": 6,
+      "insulting_abuse": 6,
+      "mixed_unknown": 0,
+      "platform_censorship_evasion": 6,
+      "political_history": 6,
+      "public_affairs": 6,
+      "sexual_content": 10,
+      "spam_ads_fraud": 10,
+      "violence_extremism": 6,
+      "weapons_explosives": 6
+    },
+    "mechanism_group_counts": {
+      "combined": 0,
+      "contextual": 148,
+      "literal_keyword": 37,
+      "phonetic_or_initials": 68,
+      "rhetorical": 68,
+      "semantic_mapping": 104,
+      "shape_or_symbol": 56
+    }
+  }
+}

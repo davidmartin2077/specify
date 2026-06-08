@@ -99,6 +99,9 @@
 85. 已按用户反馈修订 `scripts/build_phase3_second_wave_candidates.py`，重写第二波中审核员语气、客服/tips、官方宣传、陈述句、黑话教学和部分不自然上下文模板；重点将 weak_signal 改为二次回复中的普通解释，将 safe_context 改为普通用户转述，将 obfuscated 改为更像真实群聊/私聊话术。正式 675 条 processed 未修改。
 86. 已重新生成 `data/raw/phase3_second_wave_candidates.jsonl`、`data/raw/phase3_second_wave_text_style_audit.json`、`data/raw/phase3_second_wave_review_sample.json` 和 `docs/phase3_second_wave_review_sample.md`。第二波仍为 185 条、ID/text 全唯一，全部仍为 `needs_revision/not_merged`；schema 校验通过，风格审计当前 0 个标记；与正式 675 条和 phase3 第一波无 ID/text 重复。
 87. 根据独立裁判式复看，已继续小修第二波中黑话自然度、safe_context 的 tips/正式感，以及若干风险等级偏低样本：`PHASE3_W2_0009`、`PHASE3_W2_0129`、`PHASE3_W2_0133`、`PHASE3_W2_0178` 已从 medium 调整为 high；`果汁群/老钟表/门票/点菜` 等话术和若干 safe_context 文本也已打磨。当前第二波风险分布为 high 41、medium 70、low 37、none 37；hard negative 74；风格审计仍为 0 个标记。
+88. 已创建并运行 `scripts/analyze_phase3_second_wave_delta.py`，生成 `data/processed/phase3_second_wave_coverage_delta.json` 和 `docs/phase3_second_wave_coverage_delta.md`。加入第二波 raw 后，候选池能力地图从 675 增至 860，风险分布从 high 126、medium 234、low 145、none 170 变为 high 167、medium 304、low 182、none 207，hard negative 从 279 增至 353。
+89. 已创建并运行 `scripts/import_phase3_second_wave.py`，生成独立合并预览 `data/processed/combined_candidates_phase3_w2_preview.jsonl/.json`，共 860 条；正式 `data/processed/combined_candidates.*` 仍保持 675 条，尚未执行 `--apply`。
+90. 第二波合并预览已校验通过：schema 通过，860 个 ID 全唯一，原正式 675 条前缀逐条完全不变，新增 185 条保持 `needs_revision`；预览副本 review_notes 已从 `not_merged` 转为 `merged_processed`，raw 第二波仍保持 `not_merged`；重复运行预览哈希一致，从已含 W2 的预览再次构建仍为 860 条，不会重复追加。
 
 ## 当前状态
 
@@ -195,6 +198,14 @@
 7. `data/raw/phase3_second_wave_review_sample.json`、`docs/phase3_second_wave_review_sample.md`：44 条分层人工复核清单，已随第二波修订重建，等待用户二次确认。
 8. `docs/phase3_second_wave_human_feedback.md`：用户对 44 条复核样本的逐条反馈与重写原则；当前仅记录反馈，尚未修改第二波候选本体。
 
+当前第三阶段第二波入库前预览状态：
+
+1. `scripts/analyze_phase3_second_wave_delta.py`：第二波加入前后覆盖增益分析脚本。
+2. `data/processed/phase3_second_wave_coverage_delta.json`、`docs/phase3_second_wave_coverage_delta.md`：第二波覆盖增益报告。
+3. `scripts/import_phase3_second_wave.py`：第二波幂等导入脚本；默认 preview，`--apply` 才会修改正式 processed。
+4. `data/processed/combined_candidates_phase3_w2_preview.jsonl/.json`：860 条合并预览，已校验通过。
+5. 正式 processed 仍为 675 条；第二波尚未正式入库。
+
 当前统一入库准备状态：
 
 1. `scripts/analyze_phase3_coverage_delta.py`：phase3 加入前后覆盖增益分析脚本。
@@ -246,8 +257,9 @@
 
 下一步优先围绕第二阶段扩数据继续推进：
 
-1. 请用户二次确认 `docs/phase3_second_wave_review_sample.md` 中重建后的 44 条分层样本；重点看是否仍有人机感、客服/tips、审核说明或黑话教学口吻。
-2. 第二波获确认后，再生成覆盖增益报告和独立合并预览；如仍有问题，继续只修 raw，不动正式 675 条。
+1. 请用户二次确认是否接受第二波修订版与 860 条合并预览。
+2. 如果确认入库，运行 `python3 scripts/import_phase3_second_wave.py --apply`，随后校验正式 860 条、重建 SFT、重建 split，并重新运行覆盖分析。
+3. 如果仍有问题，继续只修第二波 raw 与预览，不动正式 675 条。
 3. 对正式 675 条候选继续分层复核，重点识别第一、二波模板化表达与标签争议。
 4. 330 条 reasoning 迁移预览已获认可，但暂不正式覆盖 processed；后续需要时再执行。
 

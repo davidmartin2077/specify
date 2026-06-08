@@ -21,6 +21,7 @@
 | 防泄漏 group | 226 个，0 个跨 split 泄漏 |
 | 第三阶段第二波 raw | 185 条，尚未入库 |
 | 第二波人工复核清单 | 44 条，已按反馈重建，等待二次确认 |
+| 第二波合并预览 | 860 条，已生成并校验，尚未 apply |
 
 正式候选集：
 
@@ -64,6 +65,54 @@ test         67
 - `data/raw/phase3_second_wave_review_sample.json`
 
 下一步应二次确认这 44 条分层样本，再决定是否生成覆盖增益报告和合并预览。不要在人工确认前运行合并入库。
+
+## 第二波入库前预览
+
+已生成独立预览，但**正式 processed 仍是 675 条**。
+
+预览文件：
+
+- `data/processed/combined_candidates_phase3_w2_preview.jsonl`
+- `data/processed/combined_candidates_phase3_w2_preview.json`
+- `docs/phase3_second_wave_coverage_delta.md`
+- `data/processed/phase3_second_wave_coverage_delta.json`
+
+预览组成：
+
+```text
+正式 processed       675
+phase3 第二波 raw    185
+合计                 860
+```
+
+预览分布：
+
+```text
+high    167
+medium  304
+low     182
+none    207
+
+hard_negative 353
+```
+
+已完成校验：
+
+- schema 通过
+- 860 个 ID 唯一
+- 原正式 675 条逐条不变
+- 新增 185 条仍为 `needs_revision`
+- 预览副本标记为 `merged_processed`
+- raw 第二波仍保持 `not_merged`
+- 重复运行预览不会重复追加
+
+正式入库命令是：
+
+```bash
+python3 scripts/import_phase3_second_wave.py --apply
+```
+
+只有在人工确认后才应执行该命令。
 
 ## 样本编号规则
 
@@ -281,8 +330,8 @@ python3 scripts/build_phase3_second_wave_review_sample.py
 
 优先处理：
 
-1. 人工点评 `docs/phase3_second_wave_review_sample.md` 中的 44 条样本。
-2. 如果二次确认仍发现人机感、客服/tips、审核说明或黑话教学口吻，继续重写问题样本。
-3. 人工确认第二波通过后，再生成覆盖增益报告和合并预览。
+1. 人工确认第二波 44 条新版复核清单是否可以接受。
+2. 若仍发现人机感、客服/tips、审核说明或黑话教学口吻，继续只修 raw。
+3. 若确认可以，执行 `python3 scripts/import_phase3_second_wave.py --apply` 正式入库，再重建 SFT、split 和覆盖分析。
 
 不要急着训练。当前 675 条仍只是数据骨架，第二波 raw 也还未通过人工复核。
