@@ -19,6 +19,13 @@ OUTPUT_PATH = ROOT / "data/raw/phase3_second_wave_candidates.jsonl"
 BATCH = "phase3_v2_long_tail_boundaries"
 MODES = ("direct", "obfuscated", "contextual", "weak_signal", "safe_context")
 
+RISK_OVERRIDES = {
+    ("sexual_content", "obfuscated", 4): "high",
+    ("cyber_abuse", "obfuscated", 1): "high",
+    ("cyber_abuse", "contextual", 2): "high",
+    ("gambling", "contextual", 2): "high",
+}
+
 
 PROFILES: list[dict[str, Any]] = [
     {
@@ -59,7 +66,7 @@ PROFILES: list[dict[str, Any]] = [
             ],
             "safe_context": [
                 "酒店群里有人提醒别信陌生招揽，直接举报就行",
-                "性健康门诊面向成年人提供正规咨询和检测",
+                "刚陪朋友去性健康门诊，医生讲得挺正规",
                 "这纪录片是在讲治理问题，不是在帮谁打广告",
                 "家长群转这个课，是教孩子识别擦边诱导的",
                 "平台那条公告是在说处罚规则，不是擦边内容",
@@ -85,7 +92,7 @@ PROFILES: list[dict[str, Any]] = [
                 "退款两个字别写，发一个退字加箭头就行",
                 "联细方式在九宫格里，按数字顺序拼",
                 "想做任务的搜昵称少最后一个字，防限流",
-                "想进果汁群的别问钱，几杯自己报",
+                "果汁群还有位吗，我按上次那杯数来",
                 "那个币用水果名代，群里不要出现原名",
             ],
             "contextual": [
@@ -160,7 +167,7 @@ PROFILES: list[dict[str, Any]] = [
                 "这批管制刀具不开票，同城可以当面拿",
             ],
             "obfuscated": [
-                "老钟表还有吗，走得响不响你应该懂",
+                "老钟表还有吗，上次那种声音挺准",
                 "起爆器别写，用遥控门铃的简称问",
                 "刀具型号拆成三个车牌号，按顺序发",
             ],
@@ -176,7 +183,7 @@ PROFILES: list[dict[str, Any]] = [
             ],
             "safe_context": [
                 "机械课展示弹簧结构，不涉及武器组装",
-                "消防课讲这个，是提醒别乱碰危险品",
+                "消防课那段是讲事故案例，别自己乱试",
                 "博物馆那把刀具只让看，谁也不能带走",
             ],
         },
@@ -245,7 +252,7 @@ PROFILES: list[dict[str, Any]] = [
                 "我发这个日期是家里纪念日，别往大事上带",
             ],
             "safe_context": [
-                "这节课就是讲制度变迁，老师没提现实人物",
+                "老师这节讲制度史，弹幕别老往现实扯",
                 "博物馆只是按年代讲人物生平，别过度解读",
                 "读书会在核史料版本，不是看到日期就有暗指",
             ],
@@ -265,7 +272,7 @@ PROFILES: list[dict[str, Any]] = [
                 "全称别写了，三个首字母评论区自己懂",
             ],
             "obfuscated": [
-                "左右各垫一点空白，看起来还是原来那几个字",
+                "这几个字我断开贴，你们按顺序拼",
                 "我把每个字隔成小图，你们连着看就行",
                 "先写同音字，括号里补个偏旁，老用户能懂",
             ],
@@ -281,7 +288,7 @@ PROFILES: list[dict[str, Any]] = [
             ],
             "safe_context": [
                 "无障碍设计课程讲零宽字符可能影响阅读器",
-                "论文使用首字母缩写并在首次出现时给出定义",
+                "论文第一次写了全称，后面用缩写很正常",
                 "图片版通知是为了保留格式，不包含规避内容",
             ],
         },
@@ -300,7 +307,7 @@ PROFILES: list[dict[str, Any]] = [
                 "企业后台账号一批，登录正常的单独计价",
             ],
             "obfuscated": [
-                "门票几秒能出来？我这边要批量验一波",
+                "门票还稳吗？今晚那批注册要赶完",
                 "实名数据用快递单代称，别发字段名称",
                 "后台账号只发域名尾字母和库存数字",
             ],
@@ -386,7 +393,7 @@ PROFILES: list[dict[str, Any]] = [
             ],
             "safe_context": [
                 "这药还是得拿处方去医院开，别找私人卖家",
-                "禁毒课放那些伪装图，是提醒大家别上当",
+                "禁毒课那张图是教大家认伪装，不是让人学",
                 "证件照最多修下光线，信息不能乱改",
             ],
         },
@@ -422,7 +429,7 @@ PROFILES: list[dict[str, Any]] = [
             "safe_context": [
                 "反赌宣传片里那个内部号套路，和骗子说的一样",
                 "家庭聚会玩纸牌不涉及金钱输赢",
-                "体育节目聊赔率，也一直提醒别拿它下注",
+                "解说聊赔率只是讲数据，最后还劝别下注",
             ],
         },
     },
@@ -487,7 +494,7 @@ def build_rows() -> list[dict[str, Any]]:
                 raise ValueError(f"{profile['category']} {mode}: expected {per_mode}, got {len(texts)}")
             for local_index, text in enumerate(texts, start=1):
                 meta = MODE_META[mode]
-                risk = meta["risk"]
+                risk = RISK_OVERRIDES.get((profile["category"], mode, local_index), meta["risk"])
                 rows.append(
                     {
                         "id": f"PHASE3_W2_{serial:04d}_{profile['category'].upper()}_{mode.upper()}",

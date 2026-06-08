@@ -87,7 +87,7 @@
 73. 新版覆盖分析中，色情低俗与广告/诈骗/导流仍为 P0；辱骂/群体攻击、枪爆武器、公共事务、政治历史/鉴证梗降为 P1；平台规避、网络黑产、暴力极端、违禁交易、赌博降为 P2。该优先级仅作为抽样复核和下一波设计参考，不能替代人工标签判断。
 74. 已创建 `scripts/build_phase3_second_wave_candidates.py`，按新版覆盖建议生成第三阶段第二波 185 条候选。脚本只写 `data/raw/phase3_second_wave_candidates.jsonl`，使用独立 `PHASE3_W2_*` ID、`phase3_v2_long_tail_boundaries` 批次和新的长尾/困难边界措辞，不修改正式 675 条 processed。
 75. 已校验 `data/raw/phase3_second_wave_candidates.jsonl`：共 185 条，185 个 ID 与 text 均唯一，schema 校验通过；与正式 675 条、phase3 第一波均无新增 ID 或 text 重复。全部保持 `quality_status=needs_revision` 和 `not_merged`，尚未人工抽样确认或入库。
-76. 第二波类别配额：色情低俗、广告/诈骗/导流各 25 条；辱骂/群体攻击、枪爆武器、公共事务、政治历史/鉴证梗、平台规避/审查黑话、网络黑产、暴力极端、违禁交易、赌博各 15 条。风险分布为 high 37、medium 74、low 37、none 37；direct、obfuscated、contextual、weak_signal、safe_context 各 37 条；hard negative 74 条。
+76. 第二波类别配额：色情低俗、广告/诈骗/导流各 25 条；辱骂/群体攻击、枪爆武器、公共事务、政治历史/鉴证梗、平台规避/审查黑话、网络黑产、暴力极端、违禁交易、赌博各 15 条。初版风险分布为 high 37、medium 74、low 37、none 37；direct、obfuscated、contextual、weak_signal、safe_context 各 37 条；hard negative 74 条。
 77. 已生成并复核 `data/raw/phase3_second_wave_text_style_audit.json`。初版窄规则未发现问题，但在人工复核准备阶段发现部分 weak_signal 写成审核分析而非真实用户评论，因此已增强 `scripts/audit_text_style.py` 的审核员口吻检测；新版审计标出 10 条 `reviewer_voice`，全部为 low/weak_signal。第二波目前不能整体视为通过，至少需重写这 10 条并复看其余 weak_signal。
 78. 已更新 `scripts/split_dataset.py` 识别 `PHASE3_W2_*` / `phase3_second_wave`，未来入库后可按 `category/cluster/contrast_mode` 保持模板组不跨 split；已用第二波 raw 独立试切，55 个模板组无跨 split 泄漏。
 79. 已创建 `scripts/build_phase3_second_wave_review_sample.py`，从第二波 raw 确定性分层抽取 44 条人工复核样本，每个类别 4 条，固定覆盖 weak_signal 与 safe_context，并轮换 direct/obfuscated/contextual。
@@ -97,7 +97,8 @@
 83. 用户已对第二波 44 条人工复核清单给出逐条反馈，并已整理到 `docs/phase3_second_wave_human_feedback.md`。核心结论：审核员语气可以出现在 reasoning/逻辑链中，但 `text` 应是实际评论、弹幕、回复、私聊或二次回复，不应把审核标准、审核指导、风控提示直接搬成样本文本；陈述句、客服/tips、官方宣传、安全提示和黑话教学口吻都需要减少或改写成真实语境。
 84. 第二波抽样反馈初步显示：可基本保留的样本包括 2、3、11、12、20、23、24、26、35、36、39；直球风险但需控制比例或可能调高的包括 4、15、32、44；审核员语气/审核说明需重写的包括 1、5、9、10、13、17、21、22、25、33、34、37、41；tips/宣传/陈述句口吻需改写的包括 6、14、18、29、30、38、42；黑话教学或“敌人解读”感需重写的包括 7、16、19、27、28、31、40、43。
 85. 已按用户反馈修订 `scripts/build_phase3_second_wave_candidates.py`，重写第二波中审核员语气、客服/tips、官方宣传、陈述句、黑话教学和部分不自然上下文模板；重点将 weak_signal 改为二次回复中的普通解释，将 safe_context 改为普通用户转述，将 obfuscated 改为更像真实群聊/私聊话术。正式 675 条 processed 未修改。
-86. 已重新生成 `data/raw/phase3_second_wave_candidates.jsonl`、`data/raw/phase3_second_wave_text_style_audit.json`、`data/raw/phase3_second_wave_review_sample.json` 和 `docs/phase3_second_wave_review_sample.md`。第二波仍为 185 条、ID/text 全唯一、风险分布保持 high 37、medium 74、low 37、none 37，hard negative 74，全部仍为 `needs_revision/not_merged`；schema 校验通过，风格审计当前 0 个标记；与正式 675 条和 phase3 第一波无 ID/text 重复。
+86. 已重新生成 `data/raw/phase3_second_wave_candidates.jsonl`、`data/raw/phase3_second_wave_text_style_audit.json`、`data/raw/phase3_second_wave_review_sample.json` 和 `docs/phase3_second_wave_review_sample.md`。第二波仍为 185 条、ID/text 全唯一，全部仍为 `needs_revision/not_merged`；schema 校验通过，风格审计当前 0 个标记；与正式 675 条和 phase3 第一波无 ID/text 重复。
+87. 根据独立裁判式复看，已继续小修第二波中黑话自然度、safe_context 的 tips/正式感，以及若干风险等级偏低样本：`PHASE3_W2_0009`、`PHASE3_W2_0129`、`PHASE3_W2_0133`、`PHASE3_W2_0178` 已从 medium 调整为 high；`果汁群/老钟表/门票/点菜` 等话术和若干 safe_context 文本也已打磨。当前第二波风险分布为 high 41、medium 70、low 37、none 37；hard negative 74；风格审计仍为 0 个标记。
 
 ## 当前状态
 
@@ -187,7 +188,7 @@
 
 1. `scripts/build_phase3_second_wave_candidates.py`：第三阶段第二波长尾与困难边界候选生成脚本，只写 raw。
 2. `data/raw/phase3_second_wave_candidates.jsonl`：185 条，已通过 schema、重复和风格检查，全部 `needs_revision/not_merged`，尚未人工抽样确认或入库。
-3. 风险分布：high 37、medium 74、low 37、none 37；hard negative 74。
+3. 风险分布：high 41、medium 70、low 37、none 37；hard negative 74。
 4. 对照模式：direct、obfuscated、contextual、weak_signal、safe_context 各 37 条。
 5. 与正式 675 条及 phase3 第一波均无新增 ID/text 重复。
 6. `data/raw/phase3_second_wave_text_style_audit.json`：第二波 text 风格审计；按用户反馈修订后当前 0 个标记。

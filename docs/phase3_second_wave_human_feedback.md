@@ -13,6 +13,8 @@
 
 本轮修订未修改正式 `data/processed/combined_candidates.jsonl`。第二波仍为 185 条 raw、`needs_revision/not_merged`，等待用户二次确认。
 
+随后又按独立复看标准做了一轮小修：继续打磨黑话自然度和 safe_context 的 tips/正式感，并将 4 条风险偏低样本从 medium 调整为 high。当前第二波风险分布为 high 41、medium 70、low 37、none 37；风格审计仍为 0 个标记。
+
 ## 总体原则反馈
 
 1. 审核员语气并非完全不能出现，否则模型可能把审核员自己的说明误判为应封禁内容。
