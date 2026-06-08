@@ -92,6 +92,7 @@
 78. 已更新 `scripts/split_dataset.py` 识别 `PHASE3_W2_*` / `phase3_second_wave`，未来入库后可按 `category/cluster/contrast_mode` 保持模板组不跨 split；已用第二波 raw 独立试切，55 个模板组无跨 split 泄漏。
 79. 已创建 `scripts/build_phase3_second_wave_review_sample.py`，从第二波 raw 确定性分层抽取 44 条人工复核样本，每个类别 4 条，固定覆盖 weak_signal 与 safe_context，并轮换 direct/obfuscated/contextual。
 80. 已生成 `data/raw/phase3_second_wave_review_sample.json` 和 `docs/phase3_second_wave_review_sample.md`。复核清单覆盖 11 个类别各 4 条，模式分布为 weak_signal 11、safe_context 11、obfuscated 8、direct 7、contextual 7；清单主动纳入 8 条已标记 reviewer_voice 的争议样本，等待用户逐条确认。
+81. 已重写 `README.md` 为 GitHub 首页式项目状态页，明确当前正式 processed 为 675 条、SFT 为 675 条、split 已校验、phase3 第二波 185 条仍是 raw 且存在 10 条 reviewer_voice 问题，并列出关键文件、常用命令、入库原则和当前下一步，方便进入 GitHub 后直观了解项目进度。
 
 ## 当前状态
 
