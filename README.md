@@ -65,6 +65,117 @@ test         67
 
 下一步应先人工点评这 44 条分层样本，再决定是否重写第二波问题样本。不要在人工确认前运行合并入库。
 
+## 样本编号规则
+
+样本 ID 主要用于追踪来源、批次、序号、类别和对照模式。最常见格式如下：
+
+```text
+PHASE3_W2_0020_SEXUAL_CONTENT_WEAK_SIGNAL
+│      │  │    │              │
+│      │  │    │              └─ 对照模式：weak_signal 弱信号边界
+│      │  │    └─ 类别：sexual_content 色情低俗
+│      │  └─ 批内流水号：第 20 条
+│      └─ 波次：W2 = 第三阶段第二波
+└─ 阶段：PHASE3 = 第三阶段扩充
+```
+
+当前主要前缀：
+
+| 前缀 | 含义 | 是否已入正式 processed |
+|---|---|---|
+| `GROK_*` | Grok 生成候选规整样本 | 是 |
+| `USER_*` | 用户手写候选规整样本 | 是 |
+| `MEME_EXPAND_*` | 第一份外部扩写清洗样本 | 是 |
+| `GEMINI_EXPAND_*` | 第二份外部扩写清洗样本 | 是 |
+| `LEXICON_SEED_*` | 敏感词库 seed 候选 | 是 |
+| `PHASE2_SEED_*` | 第二阶段语境边界扩充 | 是 |
+| `PHASE3_W1_*` | 第三阶段第一波覆盖缺口扩充 | 是 |
+| `PHASE3_W2_*` | 第三阶段第二波长尾/困难边界扩充 | 否，仍在 raw |
+
+`PHASE3_W1_*` 和 `PHASE3_W2_*` 后半段通常由这些字段组成：
+
+| 字段 | 示例 | 含义 |
+|---|---|---|
+| 阶段 | `PHASE3` | 第三阶段风险覆盖扩充 |
+| 波次 | `W1` / `W2` | 第一波 / 第二波 |
+| 流水号 | `0020` | 该波内部序号 |
+| 类别 | `SEXUAL_CONTENT` | 风险类别 |
+| 模式 | `WEAK_SIGNAL` | 对照模式 |
+
+当前第二波类别代码：
+
+| 类别代码 | 中文含义 |
+|---|---|
+| `SEXUAL_CONTENT` | 色情低俗 |
+| `SPAM_ADS_FRAUD` | 广告/诈骗/导流 |
+| `INSULTING_ABUSE` | 辱骂/群体攻击 |
+| `WEAPONS_EXPLOSIVES` | 枪爆武器 |
+| `PUBLIC_AFFAIRS` | 公共事务 |
+| `POLITICAL_HISTORY` | 政治历史/鉴证梗 |
+| `PLATFORM_CENSORSHIP_EVASION` | 平台规避/审查黑话 |
+| `CYBER_ABUSE` | 网络黑产/安全风险 |
+| `VIOLENCE_EXTREMISM` | 暴力极端 |
+| `ILLEGAL_GOODS` | 违禁交易 |
+| `GAMBLING` | 赌博 |
+
+当前第二波对照模式：
+
+| 模式 | 含义 | 通常标签 |
+|---|---|---|
+| `DIRECT` | 明确风险表达 | high |
+| `OBFUSCATED` | 暗号、替代词、规避写法 | medium |
+| `CONTEXTUAL` | 单句模糊，依赖上下文触发风险 | medium |
+| `WEAK_SIGNAL` | 弱风险信号，普通解释较强 | low + hard negative |
+| `SAFE_CONTEXT` | 新闻、科普、举报、正规业务等安全语境 | none + hard negative |
+
+## 人工审核回复格式
+
+请优先审核 `docs/phase3_second_wave_review_sample.md` 里的 44 条。你可以直接按编号回复，不需要复制整条样本。
+
+最推荐格式：
+
+```text
+1：退回，人机感，像审核说明，不像真实评论
+2：通过
+3：改 medium，理由是表达暧昧但没有明确交易链
+4：退回，暗号太刻意，现实中不像这么说
+```
+
+也可以用样本 ID：
+
+```text
+PHASE3_W2_0020_SEXUAL_CONTENT_WEAK_SIGNAL：退回，像客服 tips，不像评论
+PHASE3_W2_0022_SEXUAL_CONTENT_SAFE_CONTEXT：通过
+```
+
+审核结论建议使用这几类：
+
+| 结论 | 含义 | 我后续会怎么处理 |
+|---|---|---|
+| `通过` | 文本自然，当前标签基本可接受 | 保留 |
+| `退回` | 文本不自然、太人机、太像客服/tips/审核说明 | 重写 |
+| `改 high/medium/low/none` | 文本可保留，但风险等级需调整 | 改标签并同步 reasoning |
+| `改类别` | 类别不对，例如应从公共事务改到诈骗 | 改 category/encoding/reasoning |
+| `改模式` | direct/obfuscated/contextual/weak_signal/safe_context 不合适 | 改 contrast_mode 与相关标签 |
+| `删掉` | 样本方向不好，不值得救 | 后续从候选中移除或替换 |
+
+请特别标注这些问题：
+
+1. `人机感`：像模型生成的陈述句，不像真实评论/弹幕。
+2. `客服/tips`：像平台提示、公益提示、医院/银行/学校官方提示。
+3. `审核说明`：像“证据不足、需要核验、不能只看词”这类标注员分析。
+4. `暗号太刻意`：黑话设计不自然，现实用户不太会这么说。
+5. `过度联想`：风险解释牵强，应降级或改 none。
+6. `漏召回`：看起来应该更高风险，当前标签偏低。
+
+如果你只想快速给方向，也可以这样写：
+
+```text
+1、5、9、13 这种 weak_signal 都像审核说明，后续同类重写成真实用户吐槽。
+safe_context 里医院/银行/学校官方提示太 tips，减少这类，改成评论区普通用户转述。
+direct 基本可以，但诈骗类暗号要更像真实引流话术。
+```
+
 ## 关键文档
 
 - `agent.md`：项目交接记忆。新窗口接手时必须先读。
