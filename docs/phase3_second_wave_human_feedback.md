@@ -2,6 +2,17 @@
 
 本文件记录用户对 `docs/phase3_second_wave_review_sample.md` 中 44 条分层抽样样本的人工点评。当前只作为后续重写依据，不修改候选本体、不改标签、不入库。
 
+## 修订执行状态
+
+已按本文件反馈完成一轮第二波 raw 修订，并重新生成：
+
+- `data/raw/phase3_second_wave_candidates.jsonl`
+- `data/raw/phase3_second_wave_text_style_audit.json`
+- `data/raw/phase3_second_wave_review_sample.json`
+- `docs/phase3_second_wave_review_sample.md`
+
+本轮修订未修改正式 `data/processed/combined_candidates.jsonl`。第二波仍为 185 条 raw、`needs_revision/not_merged`，等待用户二次确认。
+
 ## 总体原则反馈
 
 1. 审核员语气并非完全不能出现，否则模型可能把审核员自己的说明误判为应封禁内容。

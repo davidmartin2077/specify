@@ -20,7 +20,7 @@
 | 默认 train/validation/test split | 已生成并校验 |
 | 防泄漏 group | 226 个，0 个跨 split 泄漏 |
 | 第三阶段第二波 raw | 185 条，尚未入库 |
-| 第二波人工复核清单 | 44 条，等待人工点评 |
+| 第二波人工复核清单 | 44 条，已按反馈重建，等待二次确认 |
 
 正式候选集：
 
@@ -55,15 +55,15 @@ test         67
 - `data/raw/phase3_second_wave_candidates.jsonl`
 - 全部为 `needs_revision/not_merged`
 - 已通过 schema、ID/text 查重
-- 但风格审计标出 10 条 `reviewer_voice`
-- 问题集中在 `weak_signal`，部分 text 像审核分析，不像真实评论
+- 已按人工反馈重写审核员语气、tips/宣传句、黑话教学口吻和部分上下文模板
+- 当前风格审计 0 个标记
 
 请优先查看：
 
 - `docs/phase3_second_wave_review_sample.md`
 - `data/raw/phase3_second_wave_review_sample.json`
 
-下一步应先人工点评这 44 条分层样本，再决定是否重写第二波问题样本。不要在人工确认前运行合并入库。
+下一步应二次确认这 44 条分层样本，再决定是否生成覆盖增益报告和合并预览。不要在人工确认前运行合并入库。
 
 ## 样本编号规则
 
@@ -275,15 +275,14 @@ python3 scripts/build_phase3_second_wave_review_sample.py
 6. 扩充 phase3 第一波 245 条，并经用户抽样确认后入库。
 7. 正式 processed 达到 675 条，SFT 与防泄漏 split 均已重建。
 8. 基于 675 条重跑覆盖分析，得到下一波 185 条建议。
-9. 生成 phase3 第二波 raw 185 条，但当前发现 10 条审核员口吻问题，等待人工反馈后重写。
+9. 生成 phase3 第二波 raw 185 条；首次人工抽样发现审核员口吻、tips、黑话教学等问题后，已按反馈重写并重建复核清单。
 
 ## 当前下一步
 
 优先处理：
 
 1. 人工点评 `docs/phase3_second_wave_review_sample.md` 中的 44 条样本。
-2. 根据反馈重写第二波中的 `reviewer_voice` 与其他人机感样本。
-3. 重新运行 schema、重复和风格审计。
-4. 人工确认第二波通过后，再生成覆盖增益报告和合并预览。
+2. 如果二次确认仍发现人机感、客服/tips、审核说明或黑话教学口吻，继续重写问题样本。
+3. 人工确认第二波通过后，再生成覆盖增益报告和合并预览。
 
 不要急着训练。当前 675 条仍只是数据骨架，第二波 raw 也还未通过人工复核。

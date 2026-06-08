@@ -96,6 +96,8 @@
 82. 已在 `README.md` 补充样本编号规则与人工审核回复格式，解释 `PHASE3_W2_0020_SEXUAL_CONTENT_WEAK_SIGNAL` 等 ID 的阶段、波次、流水号、类别和模式含义，并约定用户可用“通过/退回/改标签/改类别/改模式/删掉”等结论反馈，重点标注人机感、客服/tips、审核说明、暗号刻意、过度联想和漏召回。
 83. 用户已对第二波 44 条人工复核清单给出逐条反馈，并已整理到 `docs/phase3_second_wave_human_feedback.md`。核心结论：审核员语气可以出现在 reasoning/逻辑链中，但 `text` 应是实际评论、弹幕、回复、私聊或二次回复，不应把审核标准、审核指导、风控提示直接搬成样本文本；陈述句、客服/tips、官方宣传、安全提示和黑话教学口吻都需要减少或改写成真实语境。
 84. 第二波抽样反馈初步显示：可基本保留的样本包括 2、3、11、12、20、23、24、26、35、36、39；直球风险但需控制比例或可能调高的包括 4、15、32、44；审核员语气/审核说明需重写的包括 1、5、9、10、13、17、21、22、25、33、34、37、41；tips/宣传/陈述句口吻需改写的包括 6、14、18、29、30、38、42；黑话教学或“敌人解读”感需重写的包括 7、16、19、27、28、31、40、43。
+85. 已按用户反馈修订 `scripts/build_phase3_second_wave_candidates.py`，重写第二波中审核员语气、客服/tips、官方宣传、陈述句、黑话教学和部分不自然上下文模板；重点将 weak_signal 改为二次回复中的普通解释，将 safe_context 改为普通用户转述，将 obfuscated 改为更像真实群聊/私聊话术。正式 675 条 processed 未修改。
+86. 已重新生成 `data/raw/phase3_second_wave_candidates.jsonl`、`data/raw/phase3_second_wave_text_style_audit.json`、`data/raw/phase3_second_wave_review_sample.json` 和 `docs/phase3_second_wave_review_sample.md`。第二波仍为 185 条、ID/text 全唯一、风险分布保持 high 37、medium 74、low 37、none 37，hard negative 74，全部仍为 `needs_revision/not_merged`；schema 校验通过，风格审计当前 0 个标记；与正式 675 条和 phase3 第一波无 ID/text 重复。
 
 ## 当前状态
 
@@ -188,8 +190,8 @@
 3. 风险分布：high 37、medium 74、low 37、none 37；hard negative 74。
 4. 对照模式：direct、obfuscated、contextual、weak_signal、safe_context 各 37 条。
 5. 与正式 675 条及 phase3 第一波均无新增 ID/text 重复。
-6. `data/raw/phase3_second_wave_text_style_audit.json`：第二波 text 风格审计；当前标出 10 条 reviewer_voice，全部集中于 low/weak_signal，第二波尚不能整体通过。
-7. `data/raw/phase3_second_wave_review_sample.json`、`docs/phase3_second_wave_review_sample.md`：44 条分层人工复核清单，等待用户逐条确认。
+6. `data/raw/phase3_second_wave_text_style_audit.json`：第二波 text 风格审计；按用户反馈修订后当前 0 个标记。
+7. `data/raw/phase3_second_wave_review_sample.json`、`docs/phase3_second_wave_review_sample.md`：44 条分层人工复核清单，已随第二波修订重建，等待用户二次确认。
 8. `docs/phase3_second_wave_human_feedback.md`：用户对 44 条复核样本的逐条反馈与重写原则；当前仅记录反馈，尚未修改第二波候选本体。
 
 当前统一入库准备状态：
@@ -243,8 +245,8 @@
 
 下一步优先围绕第二阶段扩数据继续推进：
 
-1. 根据 `docs/phase3_second_wave_human_feedback.md` 重写第二波问题样本，尤其是审核员语气、tips/宣传句、陈述句和黑话教学口吻；重写时保持 raw-first，不修改正式 675 条。
-2. 重写后重新运行 schema、重复与文本风格审计，并再次抽样让用户确认；第二波获确认后，再生成覆盖增益报告和独立合并预览。
+1. 请用户二次确认 `docs/phase3_second_wave_review_sample.md` 中重建后的 44 条分层样本；重点看是否仍有人机感、客服/tips、审核说明或黑话教学口吻。
+2. 第二波获确认后，再生成覆盖增益报告和独立合并预览；如仍有问题，继续只修 raw，不动正式 675 条。
 3. 对正式 675 条候选继续分层复核，重点识别第一、二波模板化表达与标签争议。
 4. 330 条 reasoning 迁移预览已获认可，但暂不正式覆盖 processed；后续需要时再执行。
 
