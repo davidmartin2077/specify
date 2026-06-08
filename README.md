@@ -15,13 +15,13 @@
 
 | 项目 | 状态 |
 |---|---:|
-| 正式 processed 候选 | 675 条 |
-| SFT 数据 | 675 条 |
+| 正式 processed 候选 | 860 条 |
+| SFT 数据 | 860 条 |
 | 默认 train/validation/test split | 已生成并校验 |
-| 防泄漏 group | 226 个，0 个跨 split 泄漏 |
-| 第三阶段第二波 raw | 185 条，尚未入库 |
-| 第二波人工复核清单 | 44 条，已按反馈重建，等待二次确认 |
-| 第二波合并预览 | 860 条，已生成并校验，尚未 apply |
+| 防泄漏 group | 281 个，0 个跨 split 泄漏 |
+| 第三阶段第二波 | 185 条已正式入库 |
+| 第二波人工复核清单 | 44 条，已按反馈重建并用于入库判断 |
+| 覆盖分析 | 已基于 860 条重新生成 |
 
 正式候选集：
 
@@ -31,61 +31,63 @@
 正式数据分布：
 
 ```text
-high    126
-medium  234
-low     145
-none    170
+high    167
+medium  304
+low     182
+none    207
 
-hard_negative        279
-context_required     624
+hard_negative        353
+context_required     809
 quality_status       全部 needs_revision
 ```
 
 当前 split：
 
 ```text
-train       541
-validation   67
-test         67
+train       688
+validation   86
+test         86
 ```
 
 ## 当前最重要的注意事项
 
-第二波 185 条只是 raw 候选，**不要直接入库**：
+第二波 185 条已正式入库，但仍是 `needs_revision` 质量状态：
 
 - `data/raw/phase3_second_wave_candidates.jsonl`
-- 全部为 `needs_revision/not_merged`
+- raw 文件仍保留原始 `not_merged` 状态
+- processed 入库副本已标记为 `merged_processed`
 - 已通过 schema、ID/text 查重
 - 已按人工反馈重写审核员语气、tips/宣传句、黑话教学口吻和部分上下文模板
 - 当前风格审计 0 个标记
 
-请优先查看：
+复核参考文件：
 
 - `docs/phase3_second_wave_review_sample.md`
 - `data/raw/phase3_second_wave_review_sample.json`
 
-下一步应二次确认这 44 条分层样本，再决定是否生成覆盖增益报告和合并预览。不要在人工确认前运行合并入库。
+下一步不要重复执行第二波入库；应转向对正式 860 条做分层复核，或基于新版覆盖报告规划下一轮扩充。
 
-## 第二波入库前预览
+## 第二波正式入库状态
 
-已生成独立预览，但**正式 processed 仍是 675 条**。
+第二波入库前预览已经生成并校验，随后已正式 apply。当前正式 processed 为 860 条。
 
-预览文件：
+相关文件：
 
 - `data/processed/combined_candidates_phase3_w2_preview.jsonl`
 - `data/processed/combined_candidates_phase3_w2_preview.json`
 - `docs/phase3_second_wave_coverage_delta.md`
 - `data/processed/phase3_second_wave_coverage_delta.json`
+- `scripts/import_phase3_second_wave.py`
 
-预览组成：
+正式组成：
 
 ```text
-正式 processed       675
+原正式 processed     675
 phase3 第二波 raw    185
 合计                 860
 ```
 
-预览分布：
+正式分布：
 
 ```text
 high    167
@@ -102,17 +104,13 @@ hard_negative 353
 - 860 个 ID 唯一
 - 原正式 675 条逐条不变
 - 新增 185 条仍为 `needs_revision`
-- 预览副本标记为 `merged_processed`
+- processed 入库副本标记为 `merged_processed`
 - raw 第二波仍保持 `not_merged`
 - 重复运行预览不会重复追加
+- SFT 已重建为 860 条
+- train/validation/test 已重切为 688/86/86，0 个 group 泄漏
 
-正式入库命令是：
-
-```bash
-python3 scripts/import_phase3_second_wave.py --apply
-```
-
-只有在人工确认后才应执行该命令。
+不要再次执行第二波 `--apply` 作为常规操作；如需复核，先查看正式 processed 与上述报告。
 
 ## 样本编号规则
 
@@ -230,7 +228,7 @@ direct 基本可以，但诈骗类暗号要更像真实引流话术。
 - `agent.md`：项目交接记忆。新窗口接手时必须先读。
 - `docs/encoding_taxonomy.md`：编码方式分类手册。
 - `docs/annotation_guideline.md`：标注规范、JSONL 字段、风险等级、hard negative 规则。
-- `docs/risk_coverage_report.md`：基于正式 675 条的风险覆盖分析。
+- `docs/risk_coverage_report.md`：基于正式 860 条的风险覆盖分析。
 - `docs/phase3_coverage_delta.md`：phase2 + phase3 第一波入库前后的覆盖增益。
 - `docs/phase3_second_wave_review_sample.md`：第二波 44 条人工复核清单。
 - `docs/high_recall_style_migration.md`：高召回风格迁移原则。
@@ -278,7 +276,7 @@ python3 scripts/build_sft_dataset.py
 python3 scripts/split_dataset.py
 ```
 
-重跑正式 675 条覆盖分析：
+重跑正式 860 条覆盖分析：
 
 ```bash
 python3 scripts/analyze_risk_coverage.py
@@ -325,13 +323,14 @@ python3 scripts/build_phase3_second_wave_review_sample.py
 7. 正式 processed 达到 675 条，SFT 与防泄漏 split 均已重建。
 8. 基于 675 条重跑覆盖分析，得到下一波 185 条建议。
 9. 生成 phase3 第二波 raw 185 条；首次人工抽样发现审核员口吻、tips、黑话教学等问题后，已按反馈重写并重建复核清单。
+10. phase3 第二波 185 条已正式入库，processed/SFT 达到 860 条，防泄漏 split 已重建并校验。
 
 ## 当前下一步
 
 优先处理：
 
-1. 人工确认第二波 44 条新版复核清单是否可以接受。
-2. 若仍发现人机感、客服/tips、审核说明或黑话教学口吻，继续只修 raw。
-3. 若确认可以，执行 `python3 scripts/import_phase3_second_wave.py --apply` 正式入库，再重建 SFT、split 和覆盖分析。
+1. 对正式 860 条做分层人工复核，优先抽查第二波入库样本、hard negative、high/medium 边界和 safe_context。
+2. 基于新版 `docs/risk_coverage_report.md` 规划下一轮扩充，不要逐词机械生成。
+3. 后续新增候选仍先进入 raw，人工抽查、预览校验后再入库。
 
-不要急着训练。当前 675 条仍只是数据骨架，第二波 raw 也还未通过人工复核。
+不要急着训练。当前 860 条仍只是数据骨架，质量状态全部为 `needs_revision`，还需要继续复核和分层扩充。

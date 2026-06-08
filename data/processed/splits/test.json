@@ -1157,26 +1157,26 @@
     "review_notes": "source=gemini_expansion; original_id=EXPAND_0109; generated_expansion; needs_human_review; original_primary=F_组合编码; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比"
   },
   {
-    "id": "PHASE3_W1_0091_WEAPONS_EXPLOSIVES_WEAK_SIGNAL",
+    "id": "PHASE3_W2_0041_SPAM_ADS_FRAUD_WEAK_SIGNAL",
     "source_type": "synthetic",
-    "platform": "论坛",
-    "text": "说成套零件有点可疑，也可能是机械维修",
+    "platform": "小红书",
+    "text": "怎么又让我换软件开会，正常面试也这样吗",
     "context": {
-      "title": "枪爆武器语境边界讨论",
+      "title": "广告诈骗导流二次回复里的普通解释",
       "description": "",
-      "parent_comment": "目前缺少完整上下文",
+      "parent_comment": "有人把原话往风险方向理解",
       "reply_chain": [
-        "先别下结论",
-        "需要更多信息"
+        "也可能就是普通意思",
+        "先看前后文"
       ],
       "time": "",
-      "topic": "枪爆武器"
+      "topic": "广告诈骗导流"
     },
     "risk_level": "low",
-    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [
-      "E1_平台黑话",
-      "B4_符号/空格/Unicode 干扰"
+      "A2_拼音/首字母缩写",
+      "C4_典故/物品/符号借用"
     ],
     "context_required": true,
     "ambiguity": "high",
@@ -1188,12 +1188,12 @@
     "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：说成套零件有点可疑，也可能是机械维修"
+        "字面上是在表达：怎么又让我换软件开会，正常面试也这样吗"
       ],
       "encoding_analysis": [
-        "主要按 C4_典故/物品/符号借用 解构，属于枪爆武器语境。",
-        "辅助机制包括：E1_平台黑话、B4_符号/空格/Unicode 干扰。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "主要按 E1_平台黑话 解构，属于广告诈骗导流的长尾语境。",
+        "辅助机制包括：A2_拼音/首字母缩写、C4_典故/物品/符号借用。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
       ],
       "context_analysis": [
         "文本存在弱风险联想，但普通解释仍然更完整。"
@@ -1205,88 +1205,33 @@
         "缺少明确目标、规避意图或行为链。",
         "普通解释目前更强。"
       ],
-      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，暂标为 low。"
+      "final_rationale": "存在弱风险联想，普通解释仍较强，作为困难边界暂标为 low。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=weapons_explosives; contrast_mode=weak_signal; cluster=weapons_explosives_weak_signal; merged_processed; needs_human_review",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=spam_ads_fraud; contrast_mode=weak_signal; cluster=spam_ads_fraud_weak_signal_w2; merged_processed; needs_human_review",
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0092_WEAPONS_EXPLOSIVES_WEAK_SIGNAL",
-    "source_type": "synthetic",
-    "platform": "贴吧",
-    "text": "提到声音大不一定是在说危险物品",
-    "context": {
-      "title": "枪爆武器语境边界讨论",
-      "description": "",
-      "parent_comment": "目前缺少完整上下文",
-      "reply_chain": [
-        "先别下结论",
-        "需要更多信息"
-      ],
-      "time": "",
-      "topic": "枪爆武器"
-    },
-    "risk_level": "low",
-    "encoding_primary": "C4_典故/物品/符号借用",
-    "encoding_secondary": [
-      "E1_平台黑话",
-      "B4_符号/空格/Unicode 干扰"
-    ],
-    "context_required": true,
-    "ambiguity": "high",
-    "evidence_strength": "weak",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：提到声音大不一定是在说危险物品"
-      ],
-      "encoding_analysis": [
-        "主要按 C4_典故/物品/符号借用 解构，属于枪爆武器语境。",
-        "辅助机制包括：E1_平台黑话、B4_符号/空格/Unicode 干扰。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
-      ],
-      "context_analysis": [
-        "文本存在弱风险联想，但普通解释仍然更完整。"
-      ],
-      "supporting_evidence": [
-        "存在值得高召回关注的弱信号。"
-      ],
-      "counter_evidence": [
-        "缺少明确目标、规避意图或行为链。",
-        "普通解释目前更强。"
-      ],
-      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，暂标为 low。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=weapons_explosives; contrast_mode=weak_signal; cluster=weapons_explosives_weak_signal; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE3_W1_0093_WEAPONS_EXPLOSIVES_WEAK_SIGNAL",
+    "id": "PHASE3_W2_0042_SPAM_ADS_FRAUD_WEAK_SIGNAL",
     "source_type": "synthetic",
     "platform": "微信群",
-    "text": "这个玩具可能真的是模型收藏",
+    "text": "内部名额听着像卖课话术，但还没让交钱",
     "context": {
-      "title": "枪爆武器语境边界讨论",
+      "title": "广告诈骗导流二次回复里的普通解释",
       "description": "",
-      "parent_comment": "目前缺少完整上下文",
+      "parent_comment": "有人把原话往风险方向理解",
       "reply_chain": [
-        "先别下结论",
-        "需要更多信息"
+        "也可能就是普通意思",
+        "先看前后文"
       ],
       "time": "",
-      "topic": "枪爆武器"
+      "topic": "广告诈骗导流"
     },
     "risk_level": "low",
-    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [
-      "E1_平台黑话",
-      "B4_符号/空格/Unicode 干扰"
+      "A2_拼音/首字母缩写",
+      "C4_典故/物品/符号借用"
     ],
     "context_required": true,
     "ambiguity": "high",
@@ -1298,12 +1243,12 @@
     "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：这个玩具可能真的是模型收藏"
+        "字面上是在表达：内部名额听着像卖课话术，但还没让交钱"
       ],
       "encoding_analysis": [
-        "主要按 C4_典故/物品/符号借用 解构，属于枪爆武器语境。",
-        "辅助机制包括：E1_平台黑话、B4_符号/空格/Unicode 干扰。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "主要按 E1_平台黑话 解构，属于广告诈骗导流的长尾语境。",
+        "辅助机制包括：A2_拼音/首字母缩写、C4_典故/物品/符号借用。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
       ],
       "context_analysis": [
         "文本存在弱风险联想，但普通解释仍然更完整。"
@@ -1315,287 +1260,36 @@
         "缺少明确目标、规避意图或行为链。",
         "普通解释目前更强。"
       ],
-      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，暂标为 low。"
+      "final_rationale": "存在弱风险联想，普通解释仍较强，作为困难边界暂标为 low。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=weapons_explosives; contrast_mode=weak_signal; cluster=weapons_explosives_weak_signal; merged_processed; needs_human_review",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=spam_ads_fraud; contrast_mode=weak_signal; cluster=spam_ads_fraud_weak_signal_w2; merged_processed; needs_human_review",
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0094_WEAPONS_EXPLOSIVES_WEAK_SIGNAL",
-    "source_type": "synthetic",
-    "platform": "B站",
-    "text": "编号交流看着隐晦，但物品类型还不明",
-    "context": {
-      "title": "枪爆武器语境边界讨论",
-      "description": "",
-      "parent_comment": "目前缺少完整上下文",
-      "reply_chain": [
-        "先别下结论",
-        "需要更多信息"
-      ],
-      "time": "",
-      "topic": "枪爆武器"
-    },
-    "risk_level": "low",
-    "encoding_primary": "C4_典故/物品/符号借用",
-    "encoding_secondary": [
-      "E1_平台黑话",
-      "B4_符号/空格/Unicode 干扰"
-    ],
-    "context_required": true,
-    "ambiguity": "high",
-    "evidence_strength": "weak",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：编号交流看着隐晦，但物品类型还不明"
-      ],
-      "encoding_analysis": [
-        "主要按 C4_典故/物品/符号借用 解构，属于枪爆武器语境。",
-        "辅助机制包括：E1_平台黑话、B4_符号/空格/Unicode 干扰。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
-      ],
-      "context_analysis": [
-        "文本存在弱风险联想，但普通解释仍然更完整。"
-      ],
-      "supporting_evidence": [
-        "存在值得高召回关注的弱信号。"
-      ],
-      "counter_evidence": [
-        "缺少明确目标、规避意图或行为链。",
-        "普通解释目前更强。"
-      ],
-      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，暂标为 low。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=weapons_explosives; contrast_mode=weak_signal; cluster=weapons_explosives_weak_signal; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE3_W1_0095_WEAPONS_EXPLOSIVES_WEAK_SIGNAL",
-    "source_type": "synthetic",
-    "platform": "微博",
-    "text": "金属配件本身有正常工业用途",
-    "context": {
-      "title": "枪爆武器语境边界讨论",
-      "description": "",
-      "parent_comment": "目前缺少完整上下文",
-      "reply_chain": [
-        "先别下结论",
-        "需要更多信息"
-      ],
-      "time": "",
-      "topic": "枪爆武器"
-    },
-    "risk_level": "low",
-    "encoding_primary": "C4_典故/物品/符号借用",
-    "encoding_secondary": [
-      "E1_平台黑话",
-      "B4_符号/空格/Unicode 干扰"
-    ],
-    "context_required": true,
-    "ambiguity": "high",
-    "evidence_strength": "weak",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：金属配件本身有正常工业用途"
-      ],
-      "encoding_analysis": [
-        "主要按 C4_典故/物品/符号借用 解构，属于枪爆武器语境。",
-        "辅助机制包括：E1_平台黑话、B4_符号/空格/Unicode 干扰。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
-      ],
-      "context_analysis": [
-        "文本存在弱风险联想，但普通解释仍然更完整。"
-      ],
-      "supporting_evidence": [
-        "存在值得高召回关注的弱信号。"
-      ],
-      "counter_evidence": [
-        "缺少明确目标、规避意图或行为链。",
-        "普通解释目前更强。"
-      ],
-      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，暂标为 low。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=weapons_explosives; contrast_mode=weak_signal; cluster=weapons_explosives_weak_signal; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE3_W1_0146_VIOLENCE_EXTREMISM_SAFE_CONTEXT",
-    "source_type": "synthetic",
-    "platform": "微信群",
-    "text": "安全演练里的危险动作都是反面教材，现实中不要模仿",
-    "context": {
-      "title": "暴力极端新闻/教育/正常语境",
-      "description": "",
-      "parent_comment": "内容用于提醒、科普、举报或正常讨论",
-      "reply_chain": [
-        "别误判",
-        "结合语境看"
-      ],
-      "time": "",
-      "topic": "暴力极端"
-    },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "context_required": true,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：安全演练里的危险动作都是反面教材，现实中不要模仿"
-      ],
-      "encoding_analysis": [
-        "未形成稳定风险编码；风险词或相关概念只作为召回线索。"
-      ],
-      "context_analysis": [
-        "上下文明确属于新闻、教育、举报、科普或正常生活语境。"
-      ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "文本没有招揽、交易、攻击、规避或现实动员意图。",
-        "普通语境和反证完整。"
-      ],
-      "final_rationale": "新闻、教育、举报或正常语境的反证完整，暂标为 none，避免仅凭词面误判。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=violence_extremism; contrast_mode=safe_context; cluster=violence_extremism_safe_context; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE3_W1_0147_VIOLENCE_EXTREMISM_SAFE_CONTEXT",
-    "source_type": "synthetic",
-    "platform": "微博",
-    "text": "新闻报道极端事件是为了说明危害，不是宣传行为",
-    "context": {
-      "title": "暴力极端新闻/教育/正常语境",
-      "description": "",
-      "parent_comment": "内容用于提醒、科普、举报或正常讨论",
-      "reply_chain": [
-        "别误判",
-        "结合语境看"
-      ],
-      "time": "",
-      "topic": "暴力极端"
-    },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "context_required": true,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：新闻报道极端事件是为了说明危害，不是宣传行为"
-      ],
-      "encoding_analysis": [
-        "未形成稳定风险编码；风险词或相关概念只作为召回线索。"
-      ],
-      "context_analysis": [
-        "上下文明确属于新闻、教育、举报、科普或正常生活语境。"
-      ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "文本没有招揽、交易、攻击、规避或现实动员意图。",
-        "普通语境和反证完整。"
-      ],
-      "final_rationale": "新闻、教育、举报或正常语境的反证完整，暂标为 none，避免仅凭词面误判。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=violence_extremism; contrast_mode=safe_context; cluster=violence_extremism_safe_context; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE3_W1_0148_VIOLENCE_EXTREMISM_SAFE_CONTEXT",
-    "source_type": "synthetic",
-    "platform": "贴吧",
-    "text": "家长提醒孩子远离暴力内容属于安全教育",
-    "context": {
-      "title": "暴力极端新闻/教育/正常语境",
-      "description": "",
-      "parent_comment": "内容用于提醒、科普、举报或正常讨论",
-      "reply_chain": [
-        "别误判",
-        "结合语境看"
-      ],
-      "time": "",
-      "topic": "暴力极端"
-    },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "context_required": true,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：家长提醒孩子远离暴力内容属于安全教育"
-      ],
-      "encoding_analysis": [
-        "未形成稳定风险编码；风险词或相关概念只作为召回线索。"
-      ],
-      "context_analysis": [
-        "上下文明确属于新闻、教育、举报、科普或正常生活语境。"
-      ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "文本没有招揽、交易、攻击、规避或现实动员意图。",
-        "普通语境和反证完整。"
-      ],
-      "final_rationale": "新闻、教育、举报或正常语境的反证完整，暂标为 none，避免仅凭词面误判。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=violence_extremism; contrast_mode=safe_context; cluster=violence_extremism_safe_context; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE3_W1_0149_VIOLENCE_EXTREMISM_SAFE_CONTEXT",
+    "id": "PHASE3_W2_0043_SPAM_ADS_FRAUD_WEAK_SIGNAL",
     "source_type": "synthetic",
     "platform": "抖音",
-    "text": "历史课程讨论战争不能被当成现实动员",
+    "text": "这个私人客服怪怪的，我先不点他发的链接",
     "context": {
-      "title": "暴力极端新闻/教育/正常语境",
+      "title": "广告诈骗导流二次回复里的普通解释",
       "description": "",
-      "parent_comment": "内容用于提醒、科普、举报或正常讨论",
+      "parent_comment": "有人把原话往风险方向理解",
       "reply_chain": [
-        "别误判",
-        "结合语境看"
+        "也可能就是普通意思",
+        "先看前后文"
       ],
       "time": "",
-      "topic": "暴力极端"
+      "topic": "广告诈骗导流"
     },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
+    "risk_level": "low",
+    "encoding_primary": "E1_平台黑话",
+    "encoding_secondary": [
+      "A2_拼音/首字母缩写",
+      "C4_典故/物品/符号借用"
+    ],
     "context_required": true,
-    "ambiguity": "low",
+    "ambiguity": "high",
     "evidence_strength": "weak",
     "hard_negative": true,
     "target_known": false,
@@ -1604,46 +1298,53 @@
     "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：历史课程讨论战争不能被当成现实动员"
+        "字面上是在表达：这个私人客服怪怪的，我先不点他发的链接"
       ],
       "encoding_analysis": [
-        "未形成稳定风险编码；风险词或相关概念只作为召回线索。"
+        "主要按 E1_平台黑话 解构，属于广告诈骗导流的长尾语境。",
+        "辅助机制包括：A2_拼音/首字母缩写、C4_典故/物品/符号借用。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
       ],
       "context_analysis": [
-        "上下文明确属于新闻、教育、举报、科普或正常生活语境。"
+        "文本存在弱风险联想，但普通解释仍然更完整。"
       ],
-      "supporting_evidence": [],
+      "supporting_evidence": [
+        "存在值得高召回关注的弱信号。"
+      ],
       "counter_evidence": [
-        "文本没有招揽、交易、攻击、规避或现实动员意图。",
-        "普通语境和反证完整。"
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
       ],
-      "final_rationale": "新闻、教育、举报或正常语境的反证完整，暂标为 none，避免仅凭词面误判。"
+      "final_rationale": "存在弱风险联想，普通解释仍较强，作为困难边界暂标为 low。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=violence_extremism; contrast_mode=safe_context; cluster=violence_extremism_safe_context; merged_processed; needs_human_review",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=spam_ads_fraud; contrast_mode=weak_signal; cluster=spam_ads_fraud_weak_signal_w2; merged_processed; needs_human_review",
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0150_VIOLENCE_EXTREMISM_SAFE_CONTEXT",
+    "id": "PHASE3_W2_0044_SPAM_ADS_FRAUD_WEAK_SIGNAL",
     "source_type": "synthetic",
-    "platform": "论坛",
-    "text": "社区用户劝大家冷静并报警，应视为反风险表达",
+    "platform": "微博",
+    "text": "兼职一上来就要实名，我得先查下公司名",
     "context": {
-      "title": "暴力极端新闻/教育/正常语境",
+      "title": "广告诈骗导流二次回复里的普通解释",
       "description": "",
-      "parent_comment": "内容用于提醒、科普、举报或正常讨论",
+      "parent_comment": "有人把原话往风险方向理解",
       "reply_chain": [
-        "别误判",
-        "结合语境看"
+        "也可能就是普通意思",
+        "先看前后文"
       ],
       "time": "",
-      "topic": "暴力极端"
+      "topic": "广告诈骗导流"
     },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
+    "risk_level": "low",
+    "encoding_primary": "E1_平台黑话",
+    "encoding_secondary": [
+      "A2_拼音/首字母缩写",
+      "C4_典故/物品/符号借用"
+    ],
     "context_required": true,
-    "ambiguity": "low",
+    "ambiguity": "high",
     "evidence_strength": "weak",
     "hard_negative": true,
     "target_known": false,
@@ -1652,640 +1353,1987 @@
     "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：社区用户劝大家冷静并报警，应视为反风险表达"
+        "字面上是在表达：兼职一上来就要实名，我得先查下公司名"
       ],
       "encoding_analysis": [
-        "未形成稳定风险编码；风险词或相关概念只作为召回线索。"
+        "主要按 E1_平台黑话 解构，属于广告诈骗导流的长尾语境。",
+        "辅助机制包括：A2_拼音/首字母缩写、C4_典故/物品/符号借用。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
       ],
       "context_analysis": [
-        "上下文明确属于新闻、教育、举报、科普或正常生活语境。"
-      ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "文本没有招揽、交易、攻击、规避或现实动员意图。",
-        "普通语境和反证完整。"
-      ],
-      "final_rationale": "新闻、教育、举报或正常语境的反证完整，暂标为 none，避免仅凭词面误判。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=violence_extremism; contrast_mode=safe_context; cluster=violence_extremism_safe_context; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE3_W1_0131_VIOLENCE_EXTREMISM_OBFUSCATED",
-    "source_type": "synthetic",
-    "platform": "微信群",
-    "text": "那个动作别写，用火焰表情表示",
-    "context": {
-      "title": "暴力极端相关边缘话题",
-      "description": "",
-      "parent_comment": "原评论疑似因写得太直接被删除",
-      "reply_chain": [
-        "懂了",
-        "别写全"
-      ],
-      "time": "",
-      "topic": "暴力极端"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E3_话题/热点触发",
-    "encoding_secondary": [
-      "D2_夸张/反话",
-      "E1_平台黑话"
-    ],
-    "context_required": true,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：那个动作别写，用火焰表情表示"
-      ],
-      "encoding_analysis": [
-        "主要按 E3_话题/热点触发 解构，属于暴力极端语境。",
-        "辅助机制包括：D2_夸张/反话、E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
-      ],
-      "context_analysis": [
-        "文本使用替代词、缩写、符号或平台规避表达，语境支持风险解读。"
+        "文本存在弱风险联想，但普通解释仍然更完整。"
       ],
       "supporting_evidence": [
-        "存在规避直接表达的编码信号。",
-        "上下文出现共同理解或私下沟通暗示。"
+        "存在值得高召回关注的弱信号。"
       ],
       "counter_evidence": [
-        "具体目标或行为仍未完全展开，不宜直接判最高风险。"
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在弱风险联想，普通解释仍较强，作为困难边界暂标为 low。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=violence_extremism; contrast_mode=obfuscated; cluster=violence_extremism_obfuscated; merged_processed; needs_human_review",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=spam_ads_fraud; contrast_mode=weak_signal; cluster=spam_ads_fraud_weak_signal_w2; merged_processed; needs_human_review",
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0132_VIOLENCE_EXTREMISM_OBFUSCATED",
+    "id": "PHASE3_W2_0045_SPAM_ADS_FRAUD_WEAK_SIGNAL",
     "source_type": "synthetic",
-    "platform": "微博",
-    "text": "现场两个字容易删，群里改叫看电影",
+    "platform": "QQ群",
+    "text": "他说退款今晚截止，我越听越像催人转账",
     "context": {
-      "title": "暴力极端相关边缘话题",
+      "title": "广告诈骗导流二次回复里的普通解释",
       "description": "",
-      "parent_comment": "原评论疑似因写得太直接被删除",
+      "parent_comment": "有人把原话往风险方向理解",
       "reply_chain": [
-        "懂了",
-        "别写全"
+        "也可能就是普通意思",
+        "先看前后文"
       ],
       "time": "",
-      "topic": "暴力极端"
+      "topic": "广告诈骗导流"
     },
-    "risk_level": "medium",
-    "encoding_primary": "E3_话题/热点触发",
+    "risk_level": "low",
+    "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [
-      "D2_夸张/反话",
-      "E1_平台黑话"
-    ],
-    "context_required": true,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：现场两个字容易删，群里改叫看电影"
-      ],
-      "encoding_analysis": [
-        "主要按 E3_话题/热点触发 解构，属于暴力极端语境。",
-        "辅助机制包括：D2_夸张/反话、E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
-      ],
-      "context_analysis": [
-        "文本使用替代词、缩写、符号或平台规避表达，语境支持风险解读。"
-      ],
-      "supporting_evidence": [
-        "存在规避直接表达的编码信号。",
-        "上下文出现共同理解或私下沟通暗示。"
-      ],
-      "counter_evidence": [
-        "具体目标或行为仍未完全展开，不宜直接判最高风险。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=violence_extremism; contrast_mode=obfuscated; cluster=violence_extremism_obfuscated; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE3_W1_0133_VIOLENCE_EXTREMISM_OBFUSCATED",
-    "source_type": "synthetic",
-    "platform": "贴吧",
-    "text": "家伙别说全，按工具箱来问",
-    "context": {
-      "title": "暴力极端相关边缘话题",
-      "description": "",
-      "parent_comment": "原评论疑似因写得太直接被删除",
-      "reply_chain": [
-        "懂了",
-        "别写全"
-      ],
-      "time": "",
-      "topic": "暴力极端"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E3_话题/热点触发",
-    "encoding_secondary": [
-      "D2_夸张/反话",
-      "E1_平台黑话"
-    ],
-    "context_required": true,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：家伙别说全，按工具箱来问"
-      ],
-      "encoding_analysis": [
-        "主要按 E3_话题/热点触发 解构，属于暴力极端语境。",
-        "辅助机制包括：D2_夸张/反话、E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
-      ],
-      "context_analysis": [
-        "文本使用替代词、缩写、符号或平台规避表达，语境支持风险解读。"
-      ],
-      "supporting_evidence": [
-        "存在规避直接表达的编码信号。",
-        "上下文出现共同理解或私下沟通暗示。"
-      ],
-      "counter_evidence": [
-        "具体目标或行为仍未完全展开，不宜直接判最高风险。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=violence_extremism; contrast_mode=obfuscated; cluster=violence_extremism_obfuscated; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE3_W1_0134_VIOLENCE_EXTREMISM_OBFUSCATED",
-    "source_type": "synthetic",
-    "platform": "抖音",
-    "text": "统一行动用三个字母代替，别留痕",
-    "context": {
-      "title": "暴力极端相关边缘话题",
-      "description": "",
-      "parent_comment": "原评论疑似因写得太直接被删除",
-      "reply_chain": [
-        "懂了",
-        "别写全"
-      ],
-      "time": "",
-      "topic": "暴力极端"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E3_话题/热点触发",
-    "encoding_secondary": [
-      "D2_夸张/反话",
-      "E1_平台黑话"
-    ],
-    "context_required": true,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：统一行动用三个字母代替，别留痕"
-      ],
-      "encoding_analysis": [
-        "主要按 E3_话题/热点触发 解构，属于暴力极端语境。",
-        "辅助机制包括：D2_夸张/反话、E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
-      ],
-      "context_analysis": [
-        "文本使用替代词、缩写、符号或平台规避表达，语境支持风险解读。"
-      ],
-      "supporting_evidence": [
-        "存在规避直接表达的编码信号。",
-        "上下文出现共同理解或私下沟通暗示。"
-      ],
-      "counter_evidence": [
-        "具体目标或行为仍未完全展开，不宜直接判最高风险。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=violence_extremism; contrast_mode=obfuscated; cluster=violence_extremism_obfuscated; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE3_W1_0135_VIOLENCE_EXTREMISM_OBFUSCATED",
-    "source_type": "synthetic",
-    "platform": "论坛",
-    "text": "名单不发文字，只发颜色和编号",
-    "context": {
-      "title": "暴力极端相关边缘话题",
-      "description": "",
-      "parent_comment": "原评论疑似因写得太直接被删除",
-      "reply_chain": [
-        "懂了",
-        "别写全"
-      ],
-      "time": "",
-      "topic": "暴力极端"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E3_话题/热点触发",
-    "encoding_secondary": [
-      "D2_夸张/反话",
-      "E1_平台黑话"
-    ],
-    "context_required": true,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：名单不发文字，只发颜色和编号"
-      ],
-      "encoding_analysis": [
-        "主要按 E3_话题/热点触发 解构，属于暴力极端语境。",
-        "辅助机制包括：D2_夸张/反话、E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
-      ],
-      "context_analysis": [
-        "文本使用替代词、缩写、符号或平台规避表达，语境支持风险解读。"
-      ],
-      "supporting_evidence": [
-        "存在规避直接表达的编码信号。",
-        "上下文出现共同理解或私下沟通暗示。"
-      ],
-      "counter_evidence": [
-        "具体目标或行为仍未完全展开，不宜直接判最高风险。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=violence_extremism; contrast_mode=obfuscated; cluster=violence_extremism_obfuscated; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE3_W1_0086_WEAPONS_EXPLOSIVES_CONTEXTUAL",
-    "source_type": "synthetic",
-    "platform": "论坛",
-    "text": "这套零件成色不错，装起来应该挺顺",
-    "context": {
-      "title": "枪爆武器相关讨论区",
-      "description": "",
-      "parent_comment": "上级评论语义含糊",
-      "reply_chain": [
-        "这话什么意思",
-        "有点可疑"
-      ],
-      "time": "",
-      "topic": "枪爆武器"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "C4_典故/物品/符号借用",
-    "encoding_secondary": [
-      "E1_平台黑话",
-      "B4_符号/空格/Unicode 干扰"
+      "A2_拼音/首字母缩写",
+      "C4_典故/物品/符号借用"
     ],
     "context_required": true,
     "ambiguity": "high",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
+    "evidence_strength": "weak",
+    "hard_negative": true,
     "target_known": false,
     "target_reference": "匿名化风险语境",
     "should_explain_target": false,
     "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：这套零件成色不错，装起来应该挺顺"
+        "字面上是在表达：他说退款今晚截止，我越听越像催人转账"
       ],
       "encoding_analysis": [
-        "主要按 C4_典故/物品/符号借用 解构，属于枪爆武器语境。",
-        "辅助机制包括：E1_平台黑话、B4_符号/空格/Unicode 干扰。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "主要按 E1_平台黑话 解构，属于广告诈骗导流的长尾语境。",
+        "辅助机制包括：A2_拼音/首字母缩写、C4_典故/物品/符号借用。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
       ],
       "context_analysis": [
-        "单看文本存在普通解释，但标题、上级评论或回复链使风险解释值得召回复核。"
+        "文本存在弱风险联想，但普通解释仍然更完整。"
       ],
       "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
+        "存在值得高召回关注的弱信号。"
       ],
       "counter_evidence": [
-        "脱离当前语境时可能只是普通表达。"
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在弱风险联想，普通解释仍较强，作为困难边界暂标为 low。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=weapons_explosives; contrast_mode=contextual; cluster=weapons_explosives_contextual; merged_processed; needs_human_review",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=spam_ads_fraud; contrast_mode=weak_signal; cluster=spam_ads_fraud_weak_signal_w2; merged_processed; needs_human_review",
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0087_WEAPONS_EXPLOSIVES_CONTEXTUAL",
+    "id": "PHASE3_W2_0036_SPAM_ADS_FRAUD_CONTEXTUAL",
     "source_type": "synthetic",
-    "platform": "贴吧",
-    "text": "声音够不够大，远一点还能听见吗",
+    "platform": "小红书",
+    "text": "名额锁定前要做一次身份认证，费用之后退",
     "context": {
-      "title": "枪爆武器相关讨论区",
+      "title": "广告诈骗导流回复链里的追问",
       "description": "",
-      "parent_comment": "上级评论语义含糊",
+      "parent_comment": "前文正在讨论类似情况",
       "reply_chain": [
-        "这话什么意思",
-        "有点可疑"
+        "这话接着前面看",
+        "感觉不太对劲"
       ],
       "time": "",
-      "topic": "枪爆武器"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "C4_典故/物品/符号借用",
-    "encoding_secondary": [
-      "E1_平台黑话",
-      "B4_符号/空格/Unicode 干扰"
-    ],
-    "context_required": true,
-    "ambiguity": "high",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：声音够不够大，远一点还能听见吗"
-      ],
-      "encoding_analysis": [
-        "主要按 C4_典故/物品/符号借用 解构，属于枪爆武器语境。",
-        "辅助机制包括：E1_平台黑话、B4_符号/空格/Unicode 干扰。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
-      ],
-      "context_analysis": [
-        "单看文本存在普通解释，但标题、上级评论或回复链使风险解释值得召回复核。"
-      ],
-      "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
-      ],
-      "counter_evidence": [
-        "脱离当前语境时可能只是普通表达。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=weapons_explosives; contrast_mode=contextual; cluster=weapons_explosives_contextual; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE3_W1_0088_WEAPONS_EXPLOSIVES_CONTEXTUAL",
-    "source_type": "synthetic",
-    "platform": "微信群",
-    "text": "老型号的配件还有没有，想补一套",
-    "context": {
-      "title": "枪爆武器相关讨论区",
-      "description": "",
-      "parent_comment": "上级评论语义含糊",
-      "reply_chain": [
-        "这话什么意思",
-        "有点可疑"
-      ],
-      "time": "",
-      "topic": "枪爆武器"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "C4_典故/物品/符号借用",
-    "encoding_secondary": [
-      "E1_平台黑话",
-      "B4_符号/空格/Unicode 干扰"
-    ],
-    "context_required": true,
-    "ambiguity": "high",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：老型号的配件还有没有，想补一套"
-      ],
-      "encoding_analysis": [
-        "主要按 C4_典故/物品/符号借用 解构，属于枪爆武器语境。",
-        "辅助机制包括：E1_平台黑话、B4_符号/空格/Unicode 干扰。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
-      ],
-      "context_analysis": [
-        "单看文本存在普通解释，但标题、上级评论或回复链使风险解释值得召回复核。"
-      ],
-      "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
-      ],
-      "counter_evidence": [
-        "脱离当前语境时可能只是普通表达。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=weapons_explosives; contrast_mode=contextual; cluster=weapons_explosives_contextual; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE3_W1_0089_WEAPONS_EXPLOSIVES_CONTEXTUAL",
-    "source_type": "synthetic",
-    "platform": "B站",
-    "text": "图里那几个金属件能单独出吗",
-    "context": {
-      "title": "枪爆武器相关讨论区",
-      "description": "",
-      "parent_comment": "上级评论语义含糊",
-      "reply_chain": [
-        "这话什么意思",
-        "有点可疑"
-      ],
-      "time": "",
-      "topic": "枪爆武器"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "C4_典故/物品/符号借用",
-    "encoding_secondary": [
-      "E1_平台黑话",
-      "B4_符号/空格/Unicode 干扰"
-    ],
-    "context_required": true,
-    "ambiguity": "high",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：图里那几个金属件能单独出吗"
-      ],
-      "encoding_analysis": [
-        "主要按 C4_典故/物品/符号借用 解构，属于枪爆武器语境。",
-        "辅助机制包括：E1_平台黑话、B4_符号/空格/Unicode 干扰。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
-      ],
-      "context_analysis": [
-        "单看文本存在普通解释，但标题、上级评论或回复链使风险解释值得召回复核。"
-      ],
-      "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
-      ],
-      "counter_evidence": [
-        "脱离当前语境时可能只是普通表达。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=weapons_explosives; contrast_mode=contextual; cluster=weapons_explosives_contextual; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE3_W1_0090_WEAPONS_EXPLOSIVES_CONTEXTUAL",
-    "source_type": "synthetic",
-    "platform": "微博",
-    "text": "懂结构的看看，这个尺寸是不是刚好",
-    "context": {
-      "title": "枪爆武器相关讨论区",
-      "description": "",
-      "parent_comment": "上级评论语义含糊",
-      "reply_chain": [
-        "这话什么意思",
-        "有点可疑"
-      ],
-      "time": "",
-      "topic": "枪爆武器"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "C4_典故/物品/符号借用",
-    "encoding_secondary": [
-      "E1_平台黑话",
-      "B4_符号/空格/Unicode 干扰"
-    ],
-    "context_required": true,
-    "ambiguity": "high",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：懂结构的看看，这个尺寸是不是刚好"
-      ],
-      "encoding_analysis": [
-        "主要按 C4_典故/物品/符号借用 解构，属于枪爆武器语境。",
-        "辅助机制包括：E1_平台黑话、B4_符号/空格/Unicode 干扰。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
-      ],
-      "context_analysis": [
-        "单看文本存在普通解释，但标题、上级评论或回复链使风险解释值得召回复核。"
-      ],
-      "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
-      ],
-      "counter_evidence": [
-        "脱离当前语境时可能只是普通表达。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=weapons_explosives; contrast_mode=contextual; cluster=weapons_explosives_contextual; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "LEXICON_SEED_0013_CONTEXTUAL_EVASION",
-    "split": "test",
-    "source_type": "synthetic",
-    "platform": "微信群",
-    "text": "首字母都打不出来了，这评论区也太安静了",
-    "context": {
-      "title": "时事视频评论区",
-      "description": "",
-      "parent_comment": "刚删了一批评论",
-      "reply_chain": [
-        "懂的都懂",
-        "别写全"
-      ],
-      "time": "",
-      "topic": "平台规避/自我审查"
+      "topic": "广告诈骗导流"
     },
     "risk_level": "medium",
     "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [],
+    "encoding_secondary": [
+      "A2_拼音/首字母缩写",
+      "C4_典故/物品/符号借用"
+    ],
     "context_required": true,
-    "ambiguity": "medium",
+    "ambiguity": "high",
     "evidence_strength": "moderate",
-    "freshness": "stable",
     "hard_negative": false,
     "target_known": false,
-    "target_reference": "匿名化目标对象或事件",
+    "target_reference": "匿名化风险语境",
     "should_explain_target": false,
+    "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：首字母都打不出来了，这评论区也太安静了"
+        "字面上是在表达：名额锁定前要做一次身份认证，费用之后退"
       ],
       "encoding_analysis": [
-        "候选类别为平台规避/自我审查，主编码暂归为 E1_平台黑话。"
+        "主要按 E1_平台黑话 解构，属于广告诈骗导流的长尾语境。",
+        "辅助机制包括：A2_拼音/首字母缩写、C4_典故/物品/符号借用。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
       ],
       "context_analysis": [
-        "上下文含规避平台检测和群体默契。"
+        "单看文本存在普通解释，但标题、上级评论或回复链使风险解释值得召回复核。"
       ],
       "supporting_evidence": [
-        "文本和上下文共同提供风险信号。",
-        "存在语境依赖的非字面、攻击、规避或敏感讨论信号。"
+        "文本与当前话题组合后出现风险联想。",
+        "上下文提供了独立支持。"
       ],
       "counter_evidence": [
-        "仍需人工复核，避免只根据词库命中下最终结论。"
+        "脱离当前语境时可能只是普通表达。"
       ],
-      "final_rationale": "综合词库召回和上下文，暂标为 medium；该条为词库种子候选。"
+      "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，暂标为 medium。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=sensitive_lexicon_seed; category=platform_censorship_evasion; risk_family=contextual_risk; variant=contextual_evasion; bucket=context_sensitive; matched_term=①肖; term_source_files=GFW补充词库.txt,零时-Tencent.txt; needs_human_review; merged_processed"
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=spam_ads_fraud; contrast_mode=contextual; cluster=spam_ads_fraud_contextual_w2; merged_processed; needs_human_review",
+    "split": "test"
   },
   {
-    "id": "LEXICON_SEED_0014_CONTEXTUAL_NORMAL_ABBREV",
-    "split": "test",
+    "id": "PHASE3_W2_0037_SPAM_ADS_FRAUD_CONTEXTUAL",
     "source_type": "synthetic",
-    "platform": "小红书",
-    "text": "NB 这双偏大半码吗？脚背高能穿不",
+    "platform": "微信群",
+    "text": "先帮平台走个流水，完成后工资一起结",
     "context": {
-      "title": "运动鞋测评",
+      "title": "广告诈骗导流回复链里的追问",
       "description": "",
-      "parent_comment": "求尺码建议",
+      "parent_comment": "前文正在讨论类似情况",
       "reply_chain": [
-        "偏大半码"
+        "这话接着前面看",
+        "感觉不太对劲"
       ],
       "time": "",
-      "topic": "平台规避/自我审查"
+      "topic": "广告诈骗导流"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "E1_平台黑话",
+    "encoding_secondary": [
+      "A2_拼音/首字母缩写",
+      "C4_典故/物品/符号借用"
+    ],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "moderate",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：先帮平台走个流水，完成后工资一起结"
+      ],
+      "encoding_analysis": [
+        "主要按 E1_平台黑话 解构，属于广告诈骗导流的长尾语境。",
+        "辅助机制包括：A2_拼音/首字母缩写、C4_典故/物品/符号借用。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
+      ],
+      "context_analysis": [
+        "单看文本存在普通解释，但标题、上级评论或回复链使风险解释值得召回复核。"
+      ],
+      "supporting_evidence": [
+        "文本与当前话题组合后出现风险联想。",
+        "上下文提供了独立支持。"
+      ],
+      "counter_evidence": [
+        "脱离当前语境时可能只是普通表达。"
+      ],
+      "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，暂标为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=spam_ads_fraud; contrast_mode=contextual; cluster=spam_ads_fraud_contextual_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0038_SPAM_ADS_FRAUD_CONTEXTUAL",
+    "source_type": "synthetic",
+    "platform": "抖音",
+    "text": "这个客服说只能通过私人会议处理退款",
+    "context": {
+      "title": "广告诈骗导流回复链里的追问",
+      "description": "",
+      "parent_comment": "前文正在讨论类似情况",
+      "reply_chain": [
+        "这话接着前面看",
+        "感觉不太对劲"
+      ],
+      "time": "",
+      "topic": "广告诈骗导流"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "E1_平台黑话",
+    "encoding_secondary": [
+      "A2_拼音/首字母缩写",
+      "C4_典故/物品/符号借用"
+    ],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "moderate",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：这个客服说只能通过私人会议处理退款"
+      ],
+      "encoding_analysis": [
+        "主要按 E1_平台黑话 解构，属于广告诈骗导流的长尾语境。",
+        "辅助机制包括：A2_拼音/首字母缩写、C4_典故/物品/符号借用。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
+      ],
+      "context_analysis": [
+        "单看文本存在普通解释，但标题、上级评论或回复链使风险解释值得召回复核。"
+      ],
+      "supporting_evidence": [
+        "文本与当前话题组合后出现风险联想。",
+        "上下文提供了独立支持。"
+      ],
+      "counter_evidence": [
+        "脱离当前语境时可能只是普通表达。"
+      ],
+      "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，暂标为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=spam_ads_fraud; contrast_mode=contextual; cluster=spam_ads_fraud_contextual_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0039_SPAM_ADS_FRAUD_CONTEXTUAL",
+    "source_type": "synthetic",
+    "platform": "微博",
+    "text": "群里老师让大家今晚统一换到另一个软件",
+    "context": {
+      "title": "广告诈骗导流回复链里的追问",
+      "description": "",
+      "parent_comment": "前文正在讨论类似情况",
+      "reply_chain": [
+        "这话接着前面看",
+        "感觉不太对劲"
+      ],
+      "time": "",
+      "topic": "广告诈骗导流"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "E1_平台黑话",
+    "encoding_secondary": [
+      "A2_拼音/首字母缩写",
+      "C4_典故/物品/符号借用"
+    ],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "moderate",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：群里老师让大家今晚统一换到另一个软件"
+      ],
+      "encoding_analysis": [
+        "主要按 E1_平台黑话 解构，属于广告诈骗导流的长尾语境。",
+        "辅助机制包括：A2_拼音/首字母缩写、C4_典故/物品/符号借用。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
+      ],
+      "context_analysis": [
+        "单看文本存在普通解释，但标题、上级评论或回复链使风险解释值得召回复核。"
+      ],
+      "supporting_evidence": [
+        "文本与当前话题组合后出现风险联想。",
+        "上下文提供了独立支持。"
+      ],
+      "counter_evidence": [
+        "脱离当前语境时可能只是普通表达。"
+      ],
+      "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，暂标为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=spam_ads_fraud; contrast_mode=contextual; cluster=spam_ads_fraud_contextual_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0040_SPAM_ADS_FRAUD_CONTEXTUAL",
+    "source_type": "synthetic",
+    "platform": "QQ群",
+    "text": "他一直催我先垫钱，说错过就不能恢复",
+    "context": {
+      "title": "广告诈骗导流回复链里的追问",
+      "description": "",
+      "parent_comment": "前文正在讨论类似情况",
+      "reply_chain": [
+        "这话接着前面看",
+        "感觉不太对劲"
+      ],
+      "time": "",
+      "topic": "广告诈骗导流"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "E1_平台黑话",
+    "encoding_secondary": [
+      "A2_拼音/首字母缩写",
+      "C4_典故/物品/符号借用"
+    ],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "moderate",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：他一直催我先垫钱，说错过就不能恢复"
+      ],
+      "encoding_analysis": [
+        "主要按 E1_平台黑话 解构，属于广告诈骗导流的长尾语境。",
+        "辅助机制包括：A2_拼音/首字母缩写、C4_典故/物品/符号借用。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
+      ],
+      "context_analysis": [
+        "单看文本存在普通解释，但标题、上级评论或回复链使风险解释值得召回复核。"
+      ],
+      "supporting_evidence": [
+        "文本与当前话题组合后出现风险联想。",
+        "上下文提供了独立支持。"
+      ],
+      "counter_evidence": [
+        "脱离当前语境时可能只是普通表达。"
+      ],
+      "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，暂标为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=spam_ads_fraud; contrast_mode=contextual; cluster=spam_ads_fraud_contextual_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W1_0076_WEAPONS_EXPLOSIVES_DIRECT",
+    "source_type": "synthetic",
+    "platform": "论坛",
+    "text": "要成套零件的来问，能装起来的优先",
+    "context": {
+      "title": "枪爆武器相关可疑互动区",
+      "description": "",
+      "parent_comment": "有人询问具体方式或条件",
+      "reply_chain": [
+        "怎么联系",
+        "别在公开区说"
+      ],
+      "time": "",
+      "topic": "枪爆武器"
+    },
+    "risk_level": "high",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话",
+      "B4_符号/空格/Unicode 干扰"
+    ],
+    "context_required": true,
+    "ambiguity": "medium",
+    "evidence_strength": "strong",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：要成套零件的来问，能装起来的优先"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于枪爆武器语境。",
+        "辅助机制包括：E1_平台黑话、B4_符号/空格/Unicode 干扰。"
+      ],
+      "context_analysis": [
+        "文本与互动语境共同显示明确风险意图或招揽信号。"
+      ],
+      "supporting_evidence": [
+        "文本含较明确的风险意图。",
+        "上下文回复进一步强化风险解释。"
+      ],
+      "counter_evidence": [
+        "未提供完整行为链或具体对象，仍需人工复核。"
+      ],
+      "final_rationale": "风险意图与语境相互印证，按高召回目标暂标为 high。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=weapons_explosives; contrast_mode=direct; cluster=weapons_explosives_direct; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W1_0077_WEAPONS_EXPLOSIVES_DIRECT",
+    "source_type": "synthetic",
+    "platform": "贴吧",
+    "text": "这批弹药还有，数量不多，先到先得",
+    "context": {
+      "title": "枪爆武器相关可疑互动区",
+      "description": "",
+      "parent_comment": "有人询问具体方式或条件",
+      "reply_chain": [
+        "怎么联系",
+        "别在公开区说"
+      ],
+      "time": "",
+      "topic": "枪爆武器"
+    },
+    "risk_level": "high",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话",
+      "B4_符号/空格/Unicode 干扰"
+    ],
+    "context_required": true,
+    "ambiguity": "medium",
+    "evidence_strength": "strong",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：这批弹药还有，数量不多，先到先得"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于枪爆武器语境。",
+        "辅助机制包括：E1_平台黑话、B4_符号/空格/Unicode 干扰。"
+      ],
+      "context_analysis": [
+        "文本与互动语境共同显示明确风险意图或招揽信号。"
+      ],
+      "supporting_evidence": [
+        "文本含较明确的风险意图。",
+        "上下文回复进一步强化风险解释。"
+      ],
+      "counter_evidence": [
+        "未提供完整行为链或具体对象，仍需人工复核。"
+      ],
+      "final_rationale": "风险意图与语境相互印证，按高召回目标暂标为 high。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=weapons_explosives; contrast_mode=direct; cluster=weapons_explosives_direct; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W1_0078_WEAPONS_EXPLOSIVES_DIRECT",
+    "source_type": "synthetic",
+    "platform": "微信群",
+    "text": "想找真家伙的别在评论问，直接联系",
+    "context": {
+      "title": "枪爆武器相关可疑互动区",
+      "description": "",
+      "parent_comment": "有人询问具体方式或条件",
+      "reply_chain": [
+        "怎么联系",
+        "别在公开区说"
+      ],
+      "time": "",
+      "topic": "枪爆武器"
+    },
+    "risk_level": "high",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话",
+      "B4_符号/空格/Unicode 干扰"
+    ],
+    "context_required": true,
+    "ambiguity": "medium",
+    "evidence_strength": "strong",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：想找真家伙的别在评论问，直接联系"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于枪爆武器语境。",
+        "辅助机制包括：E1_平台黑话、B4_符号/空格/Unicode 干扰。"
+      ],
+      "context_analysis": [
+        "文本与互动语境共同显示明确风险意图或招揽信号。"
+      ],
+      "supporting_evidence": [
+        "文本含较明确的风险意图。",
+        "上下文回复进一步强化风险解释。"
+      ],
+      "counter_evidence": [
+        "未提供完整行为链或具体对象，仍需人工复核。"
+      ],
+      "final_rationale": "风险意图与语境相互印证，按高召回目标暂标为 high。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=weapons_explosives; contrast_mode=direct; cluster=weapons_explosives_direct; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W1_0079_WEAPONS_EXPLOSIVES_DIRECT",
+    "source_type": "synthetic",
+    "platform": "B站",
+    "text": "材料和成品都有，只接懂行的人",
+    "context": {
+      "title": "枪爆武器相关可疑互动区",
+      "description": "",
+      "parent_comment": "有人询问具体方式或条件",
+      "reply_chain": [
+        "怎么联系",
+        "别在公开区说"
+      ],
+      "time": "",
+      "topic": "枪爆武器"
+    },
+    "risk_level": "high",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话",
+      "B4_符号/空格/Unicode 干扰"
+    ],
+    "context_required": true,
+    "ambiguity": "medium",
+    "evidence_strength": "strong",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：材料和成品都有，只接懂行的人"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于枪爆武器语境。",
+        "辅助机制包括：E1_平台黑话、B4_符号/空格/Unicode 干扰。"
+      ],
+      "context_analysis": [
+        "文本与互动语境共同显示明确风险意图或招揽信号。"
+      ],
+      "supporting_evidence": [
+        "文本含较明确的风险意图。",
+        "上下文回复进一步强化风险解释。"
+      ],
+      "counter_evidence": [
+        "未提供完整行为链或具体对象，仍需人工复核。"
+      ],
+      "final_rationale": "风险意图与语境相互印证，按高召回目标暂标为 high。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=weapons_explosives; contrast_mode=direct; cluster=weapons_explosives_direct; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W1_0080_WEAPONS_EXPLOSIVES_DIRECT",
+    "source_type": "synthetic",
+    "platform": "微博",
+    "text": "需要特殊装备的报数量和地点",
+    "context": {
+      "title": "枪爆武器相关可疑互动区",
+      "description": "",
+      "parent_comment": "有人询问具体方式或条件",
+      "reply_chain": [
+        "怎么联系",
+        "别在公开区说"
+      ],
+      "time": "",
+      "topic": "枪爆武器"
+    },
+    "risk_level": "high",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话",
+      "B4_符号/空格/Unicode 干扰"
+    ],
+    "context_required": true,
+    "ambiguity": "medium",
+    "evidence_strength": "strong",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：需要特殊装备的报数量和地点"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于枪爆武器语境。",
+        "辅助机制包括：E1_平台黑话、B4_符号/空格/Unicode 干扰。"
+      ],
+      "context_analysis": [
+        "文本与互动语境共同显示明确风险意图或招揽信号。"
+      ],
+      "supporting_evidence": [
+        "文本含较明确的风险意图。",
+        "上下文回复进一步强化风险解释。"
+      ],
+      "counter_evidence": [
+        "未提供完整行为链或具体对象，仍需人工复核。"
+      ],
+      "final_rationale": "风险意图与语境相互印证，按高召回目标暂标为 high。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=weapons_explosives; contrast_mode=direct; cluster=weapons_explosives_direct; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W1_0116_CYBER_ABUSE_WEAK_SIGNAL",
+    "source_type": "synthetic",
+    "platform": "论坛",
+    "text": "问复现可能是安全研究，也可能越界",
+    "context": {
+      "title": "网络黑产安全风险语境边界讨论",
+      "description": "",
+      "parent_comment": "目前缺少完整上下文",
+      "reply_chain": [
+        "先别下结论",
+        "需要更多信息"
+      ],
+      "time": "",
+      "topic": "网络黑产安全风险"
+    },
+    "risk_level": "low",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话"
+    ],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：问复现可能是安全研究，也可能越界"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于网络黑产安全风险语境。",
+        "辅助机制包括：E1_平台黑话。",
+        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+      ],
+      "context_analysis": [
+        "文本存在弱风险联想，但普通解释仍然更完整。"
+      ],
+      "supporting_evidence": [
+        "存在值得高召回关注的弱信号。"
+      ],
+      "counter_evidence": [
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
+      ],
+      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，暂标为 low。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=weak_signal; cluster=cyber_abuse_weak_signal; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W1_0117_CYBER_ABUSE_WEAK_SIGNAL",
+    "source_type": "synthetic",
+    "platform": "B站",
+    "text": "说捞账号不一定是黑产，可能只是官方申诉",
+    "context": {
+      "title": "网络黑产安全风险语境边界讨论",
+      "description": "",
+      "parent_comment": "目前缺少完整上下文",
+      "reply_chain": [
+        "先别下结论",
+        "需要更多信息"
+      ],
+      "time": "",
+      "topic": "网络黑产安全风险"
+    },
+    "risk_level": "low",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话"
+    ],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：说捞账号不一定是黑产，可能只是官方申诉"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于网络黑产安全风险语境。",
+        "辅助机制包括：E1_平台黑话。",
+        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+      ],
+      "context_analysis": [
+        "文本存在弱风险联想，但普通解释仍然更完整。"
+      ],
+      "supporting_evidence": [
+        "存在值得高召回关注的弱信号。"
+      ],
+      "counter_evidence": [
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
+      ],
+      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，暂标为 low。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=weak_signal; cluster=cyber_abuse_weak_signal; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W1_0118_CYBER_ABUSE_WEAK_SIGNAL",
+    "source_type": "synthetic",
+    "platform": "知乎",
+    "text": "后台截图可疑，但还不能确认是真实数据",
+    "context": {
+      "title": "网络黑产安全风险语境边界讨论",
+      "description": "",
+      "parent_comment": "目前缺少完整上下文",
+      "reply_chain": [
+        "先别下结论",
+        "需要更多信息"
+      ],
+      "time": "",
+      "topic": "网络黑产安全风险"
+    },
+    "risk_level": "low",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话"
+    ],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：后台截图可疑，但还不能确认是真实数据"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于网络黑产安全风险语境。",
+        "辅助机制包括：E1_平台黑话。",
+        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+      ],
+      "context_analysis": [
+        "文本存在弱风险联想，但普通解释仍然更完整。"
+      ],
+      "supporting_evidence": [
+        "存在值得高召回关注的弱信号。"
+      ],
+      "counter_evidence": [
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
+      ],
+      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，暂标为 low。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=weak_signal; cluster=cyber_abuse_weak_signal; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W1_0119_CYBER_ABUSE_WEAK_SIGNAL",
+    "source_type": "synthetic",
+    "platform": "微信群",
+    "text": "工具绕验证听着危险，具体用途未知",
+    "context": {
+      "title": "网络黑产安全风险语境边界讨论",
+      "description": "",
+      "parent_comment": "目前缺少完整上下文",
+      "reply_chain": [
+        "先别下结论",
+        "需要更多信息"
+      ],
+      "time": "",
+      "topic": "网络黑产安全风险"
+    },
+    "risk_level": "low",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话"
+    ],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：工具绕验证听着危险，具体用途未知"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于网络黑产安全风险语境。",
+        "辅助机制包括：E1_平台黑话。",
+        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+      ],
+      "context_analysis": [
+        "文本存在弱风险联想，但普通解释仍然更完整。"
+      ],
+      "supporting_evidence": [
+        "存在值得高召回关注的弱信号。"
+      ],
+      "counter_evidence": [
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
+      ],
+      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，暂标为 low。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=weak_signal; cluster=cyber_abuse_weak_signal; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W1_0120_CYBER_ABUSE_WEAK_SIGNAL",
+    "source_type": "synthetic",
+    "platform": "贴吧",
+    "text": "讨论号库可能是在举报泄露事件",
+    "context": {
+      "title": "网络黑产安全风险语境边界讨论",
+      "description": "",
+      "parent_comment": "目前缺少完整上下文",
+      "reply_chain": [
+        "先别下结论",
+        "需要更多信息"
+      ],
+      "time": "",
+      "topic": "网络黑产安全风险"
+    },
+    "risk_level": "low",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话"
+    ],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：讨论号库可能是在举报泄露事件"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于网络黑产安全风险语境。",
+        "辅助机制包括：E1_平台黑话。",
+        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+      ],
+      "context_analysis": [
+        "文本存在弱风险联想，但普通解释仍然更完整。"
+      ],
+      "supporting_evidence": [
+        "存在值得高召回关注的弱信号。"
+      ],
+      "counter_evidence": [
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
+      ],
+      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，暂标为 low。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=weak_signal; cluster=cyber_abuse_weak_signal; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0016_SEXUAL_CONTENT_WEAK_SIGNAL",
+    "source_type": "synthetic",
+    "platform": "小红书",
+    "text": "深夜档是直播排班吧，这个标题别想太多",
+    "context": {
+      "title": "色情低俗二次回复里的普通解释",
+      "description": "",
+      "parent_comment": "有人把原话往风险方向理解",
+      "reply_chain": [
+        "也可能就是普通意思",
+        "先看前后文"
+      ],
+      "time": "",
+      "topic": "色情低俗"
+    },
+    "risk_level": "low",
+    "encoding_primary": "E1_平台黑话",
+    "encoding_secondary": [
+      "D3_借代",
+      "B4_符号/空格/Unicode 干扰"
+    ],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：深夜档是直播排班吧，这个标题别想太多"
+      ],
+      "encoding_analysis": [
+        "主要按 E1_平台黑话 解构，属于色情低俗的长尾语境。",
+        "辅助机制包括：D3_借代、B4_符号/空格/Unicode 干扰。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
+      ],
+      "context_analysis": [
+        "文本存在弱风险联想，但普通解释仍然更完整。"
+      ],
+      "supporting_evidence": [
+        "存在值得高召回关注的弱信号。"
+      ],
+      "counter_evidence": [
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
+      ],
+      "final_rationale": "存在弱风险联想，普通解释仍较强，作为困难边界暂标为 low。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=sexual_content; contrast_mode=weak_signal; cluster=sexual_content_weak_signal_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0017_SEXUAL_CONTENT_WEAK_SIGNAL",
+    "source_type": "synthetic",
+    "platform": "抖音",
+    "text": "成年人限定可能只是电影分级，不一定擦边",
+    "context": {
+      "title": "色情低俗二次回复里的普通解释",
+      "description": "",
+      "parent_comment": "有人把原话往风险方向理解",
+      "reply_chain": [
+        "也可能就是普通意思",
+        "先看前后文"
+      ],
+      "time": "",
+      "topic": "色情低俗"
+    },
+    "risk_level": "low",
+    "encoding_primary": "E1_平台黑话",
+    "encoding_secondary": [
+      "D3_借代",
+      "B4_符号/空格/Unicode 干扰"
+    ],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：成年人限定可能只是电影分级，不一定擦边"
+      ],
+      "encoding_analysis": [
+        "主要按 E1_平台黑话 解构，属于色情低俗的长尾语境。",
+        "辅助机制包括：D3_借代、B4_符号/空格/Unicode 干扰。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
+      ],
+      "context_analysis": [
+        "文本存在弱风险联想，但普通解释仍然更完整。"
+      ],
+      "supporting_evidence": [
+        "存在值得高召回关注的弱信号。"
+      ],
+      "counter_evidence": [
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
+      ],
+      "final_rationale": "存在弱风险联想，普通解释仍较强，作为困难边界暂标为 low。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=sexual_content; contrast_mode=weak_signal; cluster=sexual_content_weak_signal_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0018_SEXUAL_CONTENT_WEAK_SIGNAL",
+    "source_type": "synthetic",
+    "platform": "微博",
+    "text": "同城见面正常，但他老提预算我有点膈应",
+    "context": {
+      "title": "色情低俗二次回复里的普通解释",
+      "description": "",
+      "parent_comment": "有人把原话往风险方向理解",
+      "reply_chain": [
+        "也可能就是普通意思",
+        "先看前后文"
+      ],
+      "time": "",
+      "topic": "色情低俗"
+    },
+    "risk_level": "low",
+    "encoding_primary": "E1_平台黑话",
+    "encoding_secondary": [
+      "D3_借代",
+      "B4_符号/空格/Unicode 干扰"
+    ],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：同城见面正常，但他老提预算我有点膈应"
+      ],
+      "encoding_analysis": [
+        "主要按 E1_平台黑话 解构，属于色情低俗的长尾语境。",
+        "辅助机制包括：D3_借代、B4_符号/空格/Unicode 干扰。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
+      ],
+      "context_analysis": [
+        "文本存在弱风险联想，但普通解释仍然更完整。"
+      ],
+      "supporting_evidence": [
+        "存在值得高召回关注的弱信号。"
+      ],
+      "counter_evidence": [
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
+      ],
+      "final_rationale": "存在弱风险联想，普通解释仍较强，作为困难边界暂标为 low。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=sexual_content; contrast_mode=weak_signal; cluster=sexual_content_weak_signal_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0019_SEXUAL_CONTENT_WEAK_SIGNAL",
+    "source_type": "synthetic",
+    "platform": "贴吧",
+    "text": "菜单末尾那个星号，像店里普通促销标记",
+    "context": {
+      "title": "色情低俗二次回复里的普通解释",
+      "description": "",
+      "parent_comment": "有人把原话往风险方向理解",
+      "reply_chain": [
+        "也可能就是普通意思",
+        "先看前后文"
+      ],
+      "time": "",
+      "topic": "色情低俗"
+    },
+    "risk_level": "low",
+    "encoding_primary": "E1_平台黑话",
+    "encoding_secondary": [
+      "D3_借代",
+      "B4_符号/空格/Unicode 干扰"
+    ],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：菜单末尾那个星号，像店里普通促销标记"
+      ],
+      "encoding_analysis": [
+        "主要按 E1_平台黑话 解构，属于色情低俗的长尾语境。",
+        "辅助机制包括：D3_借代、B4_符号/空格/Unicode 干扰。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
+      ],
+      "context_analysis": [
+        "文本存在弱风险联想，但普通解释仍然更完整。"
+      ],
+      "supporting_evidence": [
+        "存在值得高召回关注的弱信号。"
+      ],
+      "counter_evidence": [
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
+      ],
+      "final_rationale": "存在弱风险联想，普通解释仍较强，作为困难边界暂标为 low。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=sexual_content; contrast_mode=weak_signal; cluster=sexual_content_weak_signal_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0020_SEXUAL_CONTENT_WEAK_SIGNAL",
+    "source_type": "synthetic",
+    "platform": "微信群",
+    "text": "陪玩不就是游戏上分吗，别一看到陪就歪",
+    "context": {
+      "title": "色情低俗二次回复里的普通解释",
+      "description": "",
+      "parent_comment": "有人把原话往风险方向理解",
+      "reply_chain": [
+        "也可能就是普通意思",
+        "先看前后文"
+      ],
+      "time": "",
+      "topic": "色情低俗"
+    },
+    "risk_level": "low",
+    "encoding_primary": "E1_平台黑话",
+    "encoding_secondary": [
+      "D3_借代",
+      "B4_符号/空格/Unicode 干扰"
+    ],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：陪玩不就是游戏上分吗，别一看到陪就歪"
+      ],
+      "encoding_analysis": [
+        "主要按 E1_平台黑话 解构，属于色情低俗的长尾语境。",
+        "辅助机制包括：D3_借代、B4_符号/空格/Unicode 干扰。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
+      ],
+      "context_analysis": [
+        "文本存在弱风险联想，但普通解释仍然更完整。"
+      ],
+      "supporting_evidence": [
+        "存在值得高召回关注的弱信号。"
+      ],
+      "counter_evidence": [
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
+      ],
+      "final_rationale": "存在弱风险联想，普通解释仍较强，作为困难边界暂标为 low。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=sexual_content; contrast_mode=weak_signal; cluster=sexual_content_weak_signal_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0177_GAMBLING_CONTEXTUAL",
+    "source_type": "synthetic",
+    "platform": "微信群",
+    "text": "今晚这场水位变得快，跟哪边比较稳",
+    "context": {
+      "title": "赌博回复链里的追问",
+      "description": "",
+      "parent_comment": "前文正在讨论类似情况",
+      "reply_chain": [
+        "这话接着前面看",
+        "感觉不太对劲"
+      ],
+      "time": "",
+      "topic": "赌博"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "E1_平台黑话",
+    "encoding_secondary": [
+      "C3_数字代指",
+      "A2_拼音/首字母缩写"
+    ],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "moderate",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：今晚这场水位变得快，跟哪边比较稳"
+      ],
+      "encoding_analysis": [
+        "主要按 E1_平台黑话 解构，属于赌博的长尾语境。",
+        "辅助机制包括：C3_数字代指、A2_拼音/首字母缩写。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
+      ],
+      "context_analysis": [
+        "单看文本存在普通解释，但标题、上级评论或回复链使风险解释值得召回复核。"
+      ],
+      "supporting_evidence": [
+        "文本与当前话题组合后出现风险联想。",
+        "上下文提供了独立支持。"
+      ],
+      "counter_evidence": [
+        "脱离当前语境时可能只是普通表达。"
+      ],
+      "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，暂标为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=gambling; contrast_mode=contextual; cluster=gambling_contextual_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0178_GAMBLING_CONTEXTUAL",
+    "source_type": "synthetic",
+    "platform": "QQ群",
+    "text": "老地方桌子开了，还是按以前的底",
+    "context": {
+      "title": "赌博回复链里的追问",
+      "description": "",
+      "parent_comment": "前文正在讨论类似情况",
+      "reply_chain": [
+        "这话接着前面看",
+        "感觉不太对劲"
+      ],
+      "time": "",
+      "topic": "赌博"
+    },
+    "risk_level": "high",
+    "encoding_primary": "E1_平台黑话",
+    "encoding_secondary": [
+      "C3_数字代指",
+      "A2_拼音/首字母缩写"
+    ],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "moderate",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：老地方桌子开了，还是按以前的底"
+      ],
+      "encoding_analysis": [
+        "主要按 E1_平台黑话 解构，属于赌博的长尾语境。",
+        "辅助机制包括：C3_数字代指、A2_拼音/首字母缩写。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
+      ],
+      "context_analysis": [
+        "单看文本存在普通解释，但标题、上级评论或回复链使风险解释值得召回复核。"
+      ],
+      "supporting_evidence": [
+        "文本与当前话题组合后出现风险联想。",
+        "上下文提供了独立支持。"
+      ],
+      "counter_evidence": [
+        "脱离当前语境时可能只是普通表达。"
+      ],
+      "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，暂标为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=gambling; contrast_mode=contextual; cluster=gambling_contextual_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0179_GAMBLING_CONTEXTUAL",
+    "source_type": "synthetic",
+    "platform": "贴吧",
+    "text": "这组号码老师说把握很大，要不要一起跟",
+    "context": {
+      "title": "赌博回复链里的追问",
+      "description": "",
+      "parent_comment": "前文正在讨论类似情况",
+      "reply_chain": [
+        "这话接着前面看",
+        "感觉不太对劲"
+      ],
+      "time": "",
+      "topic": "赌博"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "E1_平台黑话",
+    "encoding_secondary": [
+      "C3_数字代指",
+      "A2_拼音/首字母缩写"
+    ],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "moderate",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：这组号码老师说把握很大，要不要一起跟"
+      ],
+      "encoding_analysis": [
+        "主要按 E1_平台黑话 解构，属于赌博的长尾语境。",
+        "辅助机制包括：C3_数字代指、A2_拼音/首字母缩写。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
+      ],
+      "context_analysis": [
+        "单看文本存在普通解释，但标题、上级评论或回复链使风险解释值得召回复核。"
+      ],
+      "supporting_evidence": [
+        "文本与当前话题组合后出现风险联想。",
+        "上下文提供了独立支持。"
+      ],
+      "counter_evidence": [
+        "脱离当前语境时可能只是普通表达。"
+      ],
+      "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，暂标为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=gambling; contrast_mode=contextual; cluster=gambling_contextual_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0156_ILLEGAL_GOODS_DIRECT",
+    "source_type": "synthetic",
+    "platform": "微信群",
+    "text": "处方管制药可以散出，数量多价格另谈",
+    "context": {
+      "title": "违禁交易评论区私聊暗示",
+      "description": "",
+      "parent_comment": "有人继续追问具体条件",
+      "reply_chain": [
+        "具体怎么走",
+        "公开区别留细节"
+      ],
+      "time": "",
+      "topic": "违禁交易"
+    },
+    "risk_level": "high",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话",
+      "B4_符号/空格/Unicode 干扰"
+    ],
+    "context_required": true,
+    "ambiguity": "medium",
+    "evidence_strength": "strong",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：处方管制药可以散出，数量多价格另谈"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于违禁交易的长尾语境。",
+        "辅助机制包括：E1_平台黑话、B4_符号/空格/Unicode 干扰。"
+      ],
+      "context_analysis": [
+        "文本与互动语境共同显示明确风险意图或招揽信号。"
+      ],
+      "supporting_evidence": [
+        "文本含较明确的风险意图。",
+        "上下文回复进一步强化风险解释。"
+      ],
+      "counter_evidence": [
+        "未提供完整行为链或具体对象，仍需人工复核。"
+      ],
+      "final_rationale": "文本与互动语境共同呈现较明确风险意图，暂标为 high。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=illegal_goods; contrast_mode=direct; cluster=illegal_goods_direct_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0157_ILLEGAL_GOODS_DIRECT",
+    "source_type": "synthetic",
+    "platform": "贴吧",
+    "text": "这批粉纯度高，同城当天可以送到",
+    "context": {
+      "title": "违禁交易评论区私聊暗示",
+      "description": "",
+      "parent_comment": "有人继续追问具体条件",
+      "reply_chain": [
+        "具体怎么走",
+        "公开区别留细节"
+      ],
+      "time": "",
+      "topic": "违禁交易"
+    },
+    "risk_level": "high",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话",
+      "B4_符号/空格/Unicode 干扰"
+    ],
+    "context_required": true,
+    "ambiguity": "medium",
+    "evidence_strength": "strong",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：这批粉纯度高，同城当天可以送到"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于违禁交易的长尾语境。",
+        "辅助机制包括：E1_平台黑话、B4_符号/空格/Unicode 干扰。"
+      ],
+      "context_analysis": [
+        "文本与互动语境共同显示明确风险意图或招揽信号。"
+      ],
+      "supporting_evidence": [
+        "文本含较明确的风险意图。",
+        "上下文回复进一步强化风险解释。"
+      ],
+      "counter_evidence": [
+        "未提供完整行为链或具体对象，仍需人工复核。"
+      ],
+      "final_rationale": "文本与互动语境共同呈现较明确风险意图，暂标为 high。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=illegal_goods; contrast_mode=direct; cluster=illegal_goods_direct_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0158_ILLEGAL_GOODS_DIRECT",
+    "source_type": "synthetic",
+    "platform": "小红书",
+    "text": "需要伪造证件的发照片和用途，最快当天出",
+    "context": {
+      "title": "违禁交易评论区私聊暗示",
+      "description": "",
+      "parent_comment": "有人继续追问具体条件",
+      "reply_chain": [
+        "具体怎么走",
+        "公开区别留细节"
+      ],
+      "time": "",
+      "topic": "违禁交易"
+    },
+    "risk_level": "high",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话",
+      "B4_符号/空格/Unicode 干扰"
+    ],
+    "context_required": true,
+    "ambiguity": "medium",
+    "evidence_strength": "strong",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：需要伪造证件的发照片和用途，最快当天出"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于违禁交易的长尾语境。",
+        "辅助机制包括：E1_平台黑话、B4_符号/空格/Unicode 干扰。"
+      ],
+      "context_analysis": [
+        "文本与互动语境共同显示明确风险意图或招揽信号。"
+      ],
+      "supporting_evidence": [
+        "文本含较明确的风险意图。",
+        "上下文回复进一步强化风险解释。"
+      ],
+      "counter_evidence": [
+        "未提供完整行为链或具体对象，仍需人工复核。"
+      ],
+      "final_rationale": "文本与互动语境共同呈现较明确风险意图，暂标为 high。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=illegal_goods; contrast_mode=direct; cluster=illegal_goods_direct_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0093_PUBLIC_AFFAIRS_SAFE_CONTEXT",
+    "source_type": "synthetic",
+    "platform": "微博",
+    "text": "小区群说去公开听证会提意见，流程挺正常",
+    "context": {
+      "title": "公共事务普通用户转述正常场景",
+      "description": "",
+      "parent_comment": "前文在分享新闻、课程或正规流程",
+      "reply_chain": [
+        "这个是在提醒大家",
+        "别只截半句话"
+      ],
+      "time": "",
+      "topic": "公共事务"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "context_required": true,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：小区群说去公开听证会提意见，流程挺正常"
+      ],
+      "encoding_analysis": [
+        "上下文明确提供正常用途或反风险目的，未形成稳定风险编码。"
+      ],
+      "context_analysis": [
+        "上下文明确属于新闻、教育、举报、科普或正常生活语境。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "文本没有招揽、交易、攻击、规避或现实动员意图。",
+        "普通语境和反证完整。"
+      ],
+      "final_rationale": "正常、教育、新闻或反风险语境提供完整反证，暂标为 none。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=public_affairs; contrast_mode=safe_context; cluster=public_affairs_safe_context_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0094_PUBLIC_AFFAIRS_SAFE_CONTEXT",
+    "source_type": "synthetic",
+    "platform": "知乎",
+    "text": "办事大厅让大家按预约排队，别现场挤成一团",
+    "context": {
+      "title": "公共事务普通用户转述正常场景",
+      "description": "",
+      "parent_comment": "前文在分享新闻、课程或正规流程",
+      "reply_chain": [
+        "这个是在提醒大家",
+        "别只截半句话"
+      ],
+      "time": "",
+      "topic": "公共事务"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "context_required": true,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：办事大厅让大家按预约排队，别现场挤成一团"
+      ],
+      "encoding_analysis": [
+        "上下文明确提供正常用途或反风险目的，未形成稳定风险编码。"
+      ],
+      "context_analysis": [
+        "上下文明确属于新闻、教育、举报、科普或正常生活语境。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "文本没有招揽、交易、攻击、规避或现实动员意图。",
+        "普通语境和反证完整。"
+      ],
+      "final_rationale": "正常、教育、新闻或反风险语境提供完整反证，暂标为 none。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=public_affairs; contrast_mode=safe_context; cluster=public_affairs_safe_context_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0095_PUBLIC_AFFAIRS_SAFE_CONTEXT",
+    "source_type": "synthetic",
+    "platform": "微信群",
+    "text": "新闻把当事人电话打码了，这点还挺必要",
+    "context": {
+      "title": "公共事务普通用户转述正常场景",
+      "description": "",
+      "parent_comment": "前文在分享新闻、课程或正规流程",
+      "reply_chain": [
+        "这个是在提醒大家",
+        "别只截半句话"
+      ],
+      "time": "",
+      "topic": "公共事务"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "context_required": true,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：新闻把当事人电话打码了，这点还挺必要"
+      ],
+      "encoding_analysis": [
+        "上下文明确提供正常用途或反风险目的，未形成稳定风险编码。"
+      ],
+      "context_analysis": [
+        "上下文明确属于新闻、教育、举报、科普或正常生活语境。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "文本没有招揽、交易、攻击、规避或现实动员意图。",
+        "普通语境和反证完整。"
+      ],
+      "final_rationale": "正常、教育、新闻或反风险语境提供完整反证，暂标为 none。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=public_affairs; contrast_mode=safe_context; cluster=public_affairs_safe_context_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0066_WEAPONS_EXPLOSIVES_DIRECT",
+    "source_type": "synthetic",
+    "platform": "论坛",
+    "text": "能击发的整套还有两件，想要的报城市",
+    "context": {
+      "title": "枪爆武器评论区私聊暗示",
+      "description": "",
+      "parent_comment": "有人继续追问具体条件",
+      "reply_chain": [
+        "具体怎么走",
+        "公开区别留细节"
+      ],
+      "time": "",
+      "topic": "枪爆武器"
+    },
+    "risk_level": "high",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "B3_形近字替换",
+      "E1_平台黑话"
+    ],
+    "context_required": true,
+    "ambiguity": "medium",
+    "evidence_strength": "strong",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：能击发的整套还有两件，想要的报城市"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于枪爆武器的长尾语境。",
+        "辅助机制包括：B3_形近字替换、E1_平台黑话。"
+      ],
+      "context_analysis": [
+        "文本与互动语境共同显示明确风险意图或招揽信号。"
+      ],
+      "supporting_evidence": [
+        "文本含较明确的风险意图。",
+        "上下文回复进一步强化风险解释。"
+      ],
+      "counter_evidence": [
+        "未提供完整行为链或具体对象，仍需人工复核。"
+      ],
+      "final_rationale": "文本与互动语境共同呈现较明确风险意图，暂标为 high。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=weapons_explosives; contrast_mode=direct; cluster=weapons_explosives_direct_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0067_WEAPONS_EXPLOSIVES_DIRECT",
+    "source_type": "synthetic",
+    "platform": "贴吧",
+    "text": "需要起爆部件的说规格，我这边能配齐",
+    "context": {
+      "title": "枪爆武器评论区私聊暗示",
+      "description": "",
+      "parent_comment": "有人继续追问具体条件",
+      "reply_chain": [
+        "具体怎么走",
+        "公开区别留细节"
+      ],
+      "time": "",
+      "topic": "枪爆武器"
+    },
+    "risk_level": "high",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "B3_形近字替换",
+      "E1_平台黑话"
+    ],
+    "context_required": true,
+    "ambiguity": "medium",
+    "evidence_strength": "strong",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：需要起爆部件的说规格，我这边能配齐"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于枪爆武器的长尾语境。",
+        "辅助机制包括：B3_形近字替换、E1_平台黑话。"
+      ],
+      "context_analysis": [
+        "文本与互动语境共同显示明确风险意图或招揽信号。"
+      ],
+      "supporting_evidence": [
+        "文本含较明确的风险意图。",
+        "上下文回复进一步强化风险解释。"
+      ],
+      "counter_evidence": [
+        "未提供完整行为链或具体对象，仍需人工复核。"
+      ],
+      "final_rationale": "文本与互动语境共同呈现较明确风险意图，暂标为 high。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=weapons_explosives; contrast_mode=direct; cluster=weapons_explosives_direct_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0068_WEAPONS_EXPLOSIVES_DIRECT",
+    "source_type": "synthetic",
+    "platform": "微信群",
+    "text": "这批管制刀具不开票，同城可以当面拿",
+    "context": {
+      "title": "枪爆武器评论区私聊暗示",
+      "description": "",
+      "parent_comment": "有人继续追问具体条件",
+      "reply_chain": [
+        "具体怎么走",
+        "公开区别留细节"
+      ],
+      "time": "",
+      "topic": "枪爆武器"
+    },
+    "risk_level": "high",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "B3_形近字替换",
+      "E1_平台黑话"
+    ],
+    "context_required": true,
+    "ambiguity": "medium",
+    "evidence_strength": "strong",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：这批管制刀具不开票，同城可以当面拿"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于枪爆武器的长尾语境。",
+        "辅助机制包括：B3_形近字替换、E1_平台黑话。"
+      ],
+      "context_analysis": [
+        "文本与互动语境共同显示明确风险意图或招揽信号。"
+      ],
+      "supporting_evidence": [
+        "文本含较明确的风险意图。",
+        "上下文回复进一步强化风险解释。"
+      ],
+      "counter_evidence": [
+        "未提供完整行为链或具体对象，仍需人工复核。"
+      ],
+      "final_rationale": "文本与互动语境共同呈现较明确风险意图，暂标为 high。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=weapons_explosives; contrast_mode=direct; cluster=weapons_explosives_direct_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0060_INSULTING_ABUSE_WEAK_SIGNAL",
+    "source_type": "synthetic",
+    "platform": "微博",
+    "text": "他说那个地方来的，也可能只是说快递发货地",
+    "context": {
+      "title": "辱骂群体攻击二次回复里的普通解释",
+      "description": "",
+      "parent_comment": "有人把原话往风险方向理解",
+      "reply_chain": [
+        "也可能就是普通意思",
+        "先看前后文"
+      ],
+      "time": "",
+      "topic": "辱骂群体攻击"
+    },
+    "risk_level": "low",
+    "encoding_primary": "D3_借代",
+    "encoding_secondary": [
+      "D1_反讽",
+      "A2_拼音/首字母缩写"
+    ],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：他说那个地方来的，也可能只是说快递发货地"
+      ],
+      "encoding_analysis": [
+        "主要按 D3_借代 解构，属于辱骂群体攻击的长尾语境。",
+        "辅助机制包括：D1_反讽、A2_拼音/首字母缩写。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
+      ],
+      "context_analysis": [
+        "文本存在弱风险联想，但普通解释仍然更完整。"
+      ],
+      "supporting_evidence": [
+        "存在值得高召回关注的弱信号。"
+      ],
+      "counter_evidence": [
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
+      ],
+      "final_rationale": "存在弱风险联想，普通解释仍较强，作为困难边界暂标为 low。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=insulting_abuse; contrast_mode=weak_signal; cluster=insulting_abuse_weak_signal_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0061_INSULTING_ABUSE_WEAK_SIGNAL",
+    "source_type": "synthetic",
+    "platform": "贴吧",
+    "text": "他骂的是这一个司机吧，别扩大到整个职业",
+    "context": {
+      "title": "辱骂群体攻击二次回复里的普通解释",
+      "description": "",
+      "parent_comment": "有人把原话往风险方向理解",
+      "reply_chain": [
+        "也可能就是普通意思",
+        "先看前后文"
+      ],
+      "time": "",
+      "topic": "辱骂群体攻击"
+    },
+    "risk_level": "low",
+    "encoding_primary": "D3_借代",
+    "encoding_secondary": [
+      "D1_反讽",
+      "A2_拼音/首字母缩写"
+    ],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：他骂的是这一个司机吧，别扩大到整个职业"
+      ],
+      "encoding_analysis": [
+        "主要按 D3_借代 解构，属于辱骂群体攻击的长尾语境。",
+        "辅助机制包括：D1_反讽、A2_拼音/首字母缩写。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
+      ],
+      "context_analysis": [
+        "文本存在弱风险联想，但普通解释仍然更完整。"
+      ],
+      "supporting_evidence": [
+        "存在值得高召回关注的弱信号。"
+      ],
+      "counter_evidence": [
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
+      ],
+      "final_rationale": "存在弱风险联想，普通解释仍较强，作为困难边界暂标为 low。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=insulting_abuse; contrast_mode=weak_signal; cluster=insulting_abuse_weak_signal_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE3_W2_0062_INSULTING_ABUSE_WEAK_SIGNAL",
+    "source_type": "synthetic",
+    "platform": "B站",
+    "text": "灰头像不就是默认头像吗，别见一个就扣帽子",
+    "context": {
+      "title": "辱骂群体攻击二次回复里的普通解释",
+      "description": "",
+      "parent_comment": "有人把原话往风险方向理解",
+      "reply_chain": [
+        "也可能就是普通意思",
+        "先看前后文"
+      ],
+      "time": "",
+      "topic": "辱骂群体攻击"
+    },
+    "risk_level": "low",
+    "encoding_primary": "D3_借代",
+    "encoding_secondary": [
+      "D1_反讽",
+      "A2_拼音/首字母缩写"
+    ],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：灰头像不就是默认头像吗，别见一个就扣帽子"
+      ],
+      "encoding_analysis": [
+        "主要按 D3_借代 解构，属于辱骂群体攻击的长尾语境。",
+        "辅助机制包括：D1_反讽、A2_拼音/首字母缩写。",
+        "该表达保留普通解释，需要结合互动链和行为意图判断。"
+      ],
+      "context_analysis": [
+        "文本存在弱风险联想，但普通解释仍然更完整。"
+      ],
+      "supporting_evidence": [
+        "存在值得高召回关注的弱信号。"
+      ],
+      "counter_evidence": [
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
+      ],
+      "final_rationale": "存在弱风险联想，普通解释仍较强，作为困难边界暂标为 low。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=insulting_abuse; contrast_mode=weak_signal; cluster=insulting_abuse_weak_signal_w2; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "LEXICON_SEED_0016_CONTEXTUAL_HISTORY_COURSE",
+    "split": "test",
+    "source_type": "synthetic",
+    "platform": "微博",
+    "text": "老师讲的是史料版本差异，别啥都往现实上带",
+    "context": {
+      "title": "历史公开课",
+      "description": "",
+      "parent_comment": "老师在讲文献来源",
+      "reply_chain": [
+        "只讨论史实"
+      ],
+      "time": "",
+      "topic": "政治历史语境"
     },
     "risk_level": "none",
     "encoding_primary": "none",
@@ -2300,13 +3348,13 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：NB 这双偏大半码吗？脚背高能穿不"
+        "字面上是在表达：老师讲的是史料版本差异，别啥都往现实上带"
       ],
       "encoding_analysis": [
         "词库命中只作为召回线索，不能单独决定风险。"
       ],
       "context_analysis": [
-        "上下文明确是商品缩写，不是规避表达。"
+        "上下文明确是历史课程和史料讨论。"
       ],
       "supporting_evidence": [],
       "counter_evidence": [
@@ -2316,44 +3364,94 @@
       "final_rationale": "普通解释和反证更强，暂标为 none；该条用于训练模型避免关键词误杀。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=sensitive_lexicon_seed; category=platform_censorship_evasion; risk_family=contextual_risk; variant=contextual_normal_abbrev; bucket=context_sensitive; matched_term=②肖; term_source_files=GFW补充词库.txt,零时-Tencent.txt; needs_human_review; merged_processed"
+    "review_notes": "source=sensitive_lexicon_seed; category=political_history; risk_family=contextual_risk; variant=contextual_history_course; bucket=context_sensitive; matched_term=党; term_source_files=GFW补充词库.txt,零时-Tencent.txt; needs_human_review; merged_processed"
   },
   {
-    "id": "LEXICON_SEED_0015_CONTEXTUAL_SELF_CENSOR",
+    "id": "LEXICON_SEED_0017_CONTEXTUAL_ALLUSION",
     "split": "test",
     "source_type": "synthetic",
-    "platform": "B站",
-    "text": "最近少发声吧，吵来吵去也没意思",
+    "platform": "抖音",
+    "text": "这一段越看越眼熟，历史剧都不敢这么拍",
     "context": {
-      "title": "小群闲聊",
+      "title": "历史剧剪辑",
       "description": "",
-      "parent_comment": "大家别争了",
+      "parent_comment": "评论突然少了一片",
       "reply_chain": [
-        "先冷静两天"
+        "别点名",
+        "懂的人自然懂"
       ],
       "time": "",
-      "topic": "平台规避/自我审查"
+      "topic": "政治历史语境"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [],
+    "context_required": true,
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "freshness": "stable",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化目标对象或事件",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：这一段越看越眼熟，历史剧都不敢这么拍"
+      ],
+      "encoding_analysis": [
+        "候选类别为政治历史语境，主编码暂归为 C4_典故/物品/符号借用。"
+      ],
+      "context_analysis": [
+        "上下文有借古讽今和规避点名信号。"
+      ],
+      "supporting_evidence": [
+        "文本和上下文共同提供风险信号。",
+        "存在语境依赖的非字面、攻击、规避或敏感讨论信号。"
+      ],
+      "counter_evidence": [
+        "仍需人工复核，避免只根据词库命中下最终结论。"
+      ],
+      "final_rationale": "综合词库召回和上下文，暂标为 medium；该条为词库种子候选。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=sensitive_lexicon_seed; category=political_history; risk_family=contextual_risk; variant=contextual_allusion; bucket=context_sensitive; matched_term=一党; term_source_files=GFW补充词库.txt,零时-Tencent.txt; needs_human_review; merged_processed"
+  },
+  {
+    "id": "LEXICON_SEED_0018_CONTEXTUAL_QUOTE",
+    "split": "test",
+    "source_type": "synthetic",
+    "platform": "贴吧",
+    "text": "这本书哪个版本注释更全？我只想补一下背景",
+    "context": {
+      "title": "读书笔记区",
+      "description": "",
+      "parent_comment": "求这本书的版本",
+      "reply_chain": [
+        "有电子版吗"
+      ],
+      "time": "",
+      "topic": "政治历史语境"
     },
     "risk_level": "low",
-    "encoding_primary": "E1_平台黑话",
+    "encoding_primary": "C4_典故/物品/符号借用",
     "encoding_secondary": [],
     "context_required": true,
     "ambiguity": "high",
     "evidence_strength": "weak",
     "freshness": "stable",
-    "hard_negative": false,
+    "hard_negative": true,
     "target_known": false,
     "target_reference": "",
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：最近少发声吧，吵来吵去也没意思"
+        "字面上是在表达：这本书哪个版本注释更全？我只想补一下背景"
       ],
       "encoding_analysis": [
-        "候选类别为平台规避/自我审查，主编码暂归为 E1_平台黑话。"
+        "候选类别为政治历史语境，主编码暂归为 C4_典故/物品/符号借用。"
       ],
       "context_analysis": [
-        "存在自我审查语气，但目标不明确。"
+        "上下文更支持正常阅读讨论。"
       ],
       "supporting_evidence": [
         "存在词库命中或弱风险信号。"
@@ -2365,183 +3463,77 @@
       "final_rationale": "仅保留低风险复核价值，暂标为 low。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=sensitive_lexicon_seed; category=platform_censorship_evasion; risk_family=contextual_risk; variant=contextual_self_censor; bucket=context_sensitive; matched_term=③肖; term_source_files=GFW补充词库.txt,零时-Tencent.txt; needs_human_review; merged_processed"
+    "review_notes": "source=sensitive_lexicon_seed; category=political_history; risk_family=contextual_risk; variant=contextual_quote; bucket=context_sensitive; matched_term=中珙; term_source_files=政治类型.txt,贪腐词库.txt,零时-Tencent.txt; needs_human_review; merged_processed"
   },
   {
-    "id": "PHASE3_W1_0201_PUBLIC_AFFAIRS_DIRECT",
-    "source_type": "synthetic",
-    "platform": "微博",
-    "text": "流程都是摆设，今晚直接去门口堵着",
-    "context": {
-      "title": "公共事务相关可疑互动区",
-      "description": "",
-      "parent_comment": "有人询问具体方式或条件",
-      "reply_chain": [
-        "怎么联系",
-        "别在公开区说"
-      ],
-      "time": "",
-      "topic": "公共事务"
-    },
-    "risk_level": "high",
-    "encoding_primary": "D1_反讽",
-    "encoding_secondary": [
-      "E3_话题/热点触发"
-    ],
-    "context_required": true,
-    "ambiguity": "medium",
-    "evidence_strength": "strong",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：流程都是摆设，今晚直接去门口堵着"
-      ],
-      "encoding_analysis": [
-        "主要按 D1_反讽 解构，属于公共事务语境。",
-        "辅助机制包括：E3_话题/热点触发。"
-      ],
-      "context_analysis": [
-        "文本与互动语境共同显示明确风险意图或招揽信号。"
-      ],
-      "supporting_evidence": [
-        "文本含较明确的风险意图。",
-        "上下文回复进一步强化风险解释。"
-      ],
-      "counter_evidence": [
-        "未提供完整行为链或具体对象，仍需人工复核。"
-      ],
-      "final_rationale": "风险意图与语境相互印证，按高召回目标暂标为 high。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=public_affairs; contrast_mode=direct; cluster=public_affairs_direct; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE3_W1_0202_PUBLIC_AFFAIRS_DIRECT",
-    "source_type": "synthetic",
-    "platform": "知乎",
-    "text": "别再等通知了，大家一起到现场讨说法",
-    "context": {
-      "title": "公共事务相关可疑互动区",
-      "description": "",
-      "parent_comment": "有人询问具体方式或条件",
-      "reply_chain": [
-        "怎么联系",
-        "别在公开区说"
-      ],
-      "time": "",
-      "topic": "公共事务"
-    },
-    "risk_level": "high",
-    "encoding_primary": "D1_反讽",
-    "encoding_secondary": [
-      "E3_话题/热点触发"
-    ],
-    "context_required": true,
-    "ambiguity": "medium",
-    "evidence_strength": "strong",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：别再等通知了，大家一起到现场讨说法"
-      ],
-      "encoding_analysis": [
-        "主要按 D1_反讽 解构，属于公共事务语境。",
-        "辅助机制包括：E3_话题/热点触发。"
-      ],
-      "context_analysis": [
-        "文本与互动语境共同显示明确风险意图或招揽信号。"
-      ],
-      "supporting_evidence": [
-        "文本含较明确的风险意图。",
-        "上下文回复进一步强化风险解释。"
-      ],
-      "counter_evidence": [
-        "未提供完整行为链或具体对象，仍需人工复核。"
-      ],
-      "final_rationale": "风险意图与语境相互印证，按高召回目标暂标为 high。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=public_affairs; contrast_mode=direct; cluster=public_affairs_direct; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE3_W1_0203_PUBLIC_AFFAIRS_DIRECT",
-    "source_type": "synthetic",
-    "platform": "B站",
-    "text": "名单已经整理好，明天统一去反映",
-    "context": {
-      "title": "公共事务相关可疑互动区",
-      "description": "",
-      "parent_comment": "有人询问具体方式或条件",
-      "reply_chain": [
-        "怎么联系",
-        "别在公开区说"
-      ],
-      "time": "",
-      "topic": "公共事务"
-    },
-    "risk_level": "high",
-    "encoding_primary": "D1_反讽",
-    "encoding_secondary": [
-      "E3_话题/热点触发"
-    ],
-    "context_required": true,
-    "ambiguity": "medium",
-    "evidence_strength": "strong",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：名单已经整理好，明天统一去反映"
-      ],
-      "encoding_analysis": [
-        "主要按 D1_反讽 解构，属于公共事务语境。",
-        "辅助机制包括：E3_话题/热点触发。"
-      ],
-      "context_analysis": [
-        "文本与互动语境共同显示明确风险意图或招揽信号。"
-      ],
-      "supporting_evidence": [
-        "文本含较明确的风险意图。",
-        "上下文回复进一步强化风险解释。"
-      ],
-      "counter_evidence": [
-        "未提供完整行为链或具体对象，仍需人工复核。"
-      ],
-      "final_rationale": "风险意图与语境相互印证，按高召回目标暂标为 high。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=public_affairs; contrast_mode=direct; cluster=public_affairs_direct; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "LEXICON_SEED_0022_STRICT_SEXUAL_LEAD",
+    "id": "LEXICON_SEED_0001_STRICT_CYBER_LEAD",
     "split": "test",
     "source_type": "synthetic",
     "platform": "B站",
-    "text": "同城有人吗，晚上无聊，主页第一条",
+    "text": "这库都能拖出来，后台也太纸糊了吧",
     "context": {
-      "title": "同城生活评论区",
+      "title": "安全新闻评论区",
       "description": "",
-      "parent_comment": "刚注册的小号",
+      "parent_comment": "疑似泄露截图被反复转发",
       "reply_chain": [
-        "主页有联系方式",
-        "类似评论重复出现"
+        "这不是演示环境吧",
+        "别扩散"
       ],
       "time": "",
-      "topic": "色情低俗"
+      "topic": "网络黑产/安全风险"
+    },
+    "risk_level": "high",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "B4_符号/空格/Unicode 干扰",
+      "F_组合编码"
+    ],
+    "context_required": true,
+    "ambiguity": "medium",
+    "evidence_strength": "strong",
+    "freshness": "stable",
+    "hard_negative": false,
+    "target_known": true,
+    "target_reference": "匿名化目标对象或事件",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：这库都能拖出来，后台也太纸糊了吧"
+      ],
+      "encoding_analysis": [
+        "候选类别为网络黑产/安全风险，主编码暂归为 C4_典故/物品/符号借用。"
+      ],
+      "context_analysis": [
+        "上下文含疑似数据泄露和异常炫耀信号。"
+      ],
+      "supporting_evidence": [
+        "文本和上下文共同提供风险信号。",
+        "该类更接近强规则召回，不宜训练模型寻找放行理由。"
+      ],
+      "counter_evidence": [
+        "仍需人工复核，避免只根据词库命中下最终结论。"
+      ],
+      "final_rationale": "综合词库召回和上下文，暂标为 high；该条为词库种子候选。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=sensitive_lexicon_seed; category=cyber_abuse; risk_family=strict_redline; variant=strict_cyber_lead; bucket=obfuscated_or_variant; matched_term=卫星遭黑客攻击*; term_source_files=零时-Tencent.txt; needs_human_review; merged_processed"
+  },
+  {
+    "id": "LEXICON_SEED_0002_STRICT_CYBER_EVASION",
+    "split": "test",
+    "source_type": "synthetic",
+    "platform": "微博",
+    "text": "防护文章下面问怎么复现，这味儿就不对了",
+    "context": {
+      "title": "技术帖回复区",
+      "description": "",
+      "parent_comment": "这里只能讲防护",
+      "reply_chain": [
+        "别发教程",
+        "容易被封"
+      ],
+      "time": "",
+      "topic": "网络黑产/安全风险"
     },
     "risk_level": "high",
     "encoding_primary": "C4_典故/物品/符号借用",
@@ -2556,13 +3548,13 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：同城有人吗，晚上无聊，主页第一条"
+        "字面上是在表达：防护文章下面问怎么复现，这味儿就不对了"
       ],
       "encoding_analysis": [
-        "候选类别为色情低俗，主编码暂归为 C4_典故/物品/符号借用。"
+        "候选类别为网络黑产/安全风险，主编码暂归为 C4_典故/物品/符号借用。"
       ],
       "context_analysis": [
-        "上下文含同城、联系方式和疑似低俗导流。"
+        "上下文区别于防护讨论，出现索要复现方法的风险。"
       ],
       "supporting_evidence": [
         "文本和上下文共同提供风险信号。",
@@ -2574,73 +3566,23 @@
       "final_rationale": "综合词库召回和上下文，暂标为 high；该条为词库种子候选。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=sensitive_lexicon_seed; category=sexual_content; risk_family=strict_redline; variant=strict_sexual_lead; bucket=direct_policy_risk; matched_term=乳; term_source_files=零时-Tencent.txt; needs_human_review; merged_processed"
+    "review_notes": "source=sensitive_lexicon_seed; category=cyber_abuse; risk_family=strict_redline; variant=strict_cyber_evasion; bucket=transactional_risk; matched_term=黑客入门; term_source_files=零时-Tencent.txt; needs_human_review; merged_processed"
   },
   {
-    "id": "LEXICON_SEED_0023_STRICT_SEXUAL_EVASION",
-    "split": "test",
-    "source_type": "synthetic",
-    "platform": "微博",
-    "text": "写直了发不出来，那就换个大家都看得懂的说法",
-    "context": {
-      "title": "交友帖回复区",
-      "description": "",
-      "parent_comment": "评论被删了几次",
-      "reply_chain": [
-        "别写那么直",
-        "看懂就行"
-      ],
-      "time": "",
-      "topic": "色情低俗"
-    },
-    "risk_level": "high",
-    "encoding_primary": "C4_典故/物品/符号借用",
-    "encoding_secondary": [],
-    "context_required": true,
-    "ambiguity": "medium",
-    "evidence_strength": "strong",
-    "freshness": "stable",
-    "hard_negative": false,
-    "target_known": true,
-    "target_reference": "匿名化目标对象或事件",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：写直了发不出来，那就换个大家都看得懂的说法"
-      ],
-      "encoding_analysis": [
-        "候选类别为色情低俗，主编码暂归为 C4_典故/物品/符号借用。"
-      ],
-      "context_analysis": [
-        "上下文含符号规避、低俗导流和异常互动。"
-      ],
-      "supporting_evidence": [
-        "文本和上下文共同提供风险信号。",
-        "该类更接近强规则召回，不宜训练模型寻找放行理由。"
-      ],
-      "counter_evidence": [
-        "仍需人工复核，避免只根据词库命中下最终结论。"
-      ],
-      "final_rationale": "综合词库召回和上下文，暂标为 high；该条为词库种子候选。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=sensitive_lexicon_seed; category=sexual_content; risk_family=strict_redline; variant=strict_sexual_evasion; bucket=direct_policy_risk; matched_term=奸; term_source_files=零时-Tencent.txt; needs_human_review; merged_processed"
-  },
-  {
-    "id": "LEXICON_SEED_0024_STRICT_SEXUAL_REPORT",
+    "id": "LEXICON_SEED_0003_STRICT_CYBER_REPORT",
     "split": "test",
     "source_type": "synthetic",
     "platform": "抖音",
-    "text": "主页第一条自己看，问就是普通交友",
+    "text": "刚才那人是不是在卖号库啊，看着有点吓人",
     "context": {
-      "title": "同城生活评论区",
+      "title": "社区管理反馈",
       "description": "",
-      "parent_comment": "缺少上级评论",
+      "parent_comment": "不要复述原文",
       "reply_chain": [
-        "刚才类似评论被删过"
+        "已举报"
       ],
       "time": "",
-      "topic": "色情低俗"
+      "topic": "网络黑产/安全风险"
     },
     "risk_level": "medium",
     "encoding_primary": "C4_典故/物品/符号借用",
@@ -2655,13 +3597,13 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：主页第一条自己看，问就是普通交友"
+        "字面上是在表达：刚才那人是不是在卖号库啊，看着有点吓人"
       ],
       "encoding_analysis": [
-        "候选类别为色情低俗，主编码暂归为 C4_典故/物品/符号借用。"
+        "候选类别为网络黑产/安全风险，主编码暂归为 C4_典故/物品/符号借用。"
       ],
       "context_analysis": [
-        "文本是审核备注，证据不足以直接判最高风险。"
+        "文本是在举报可疑内容，风险低于直接发布但仍需复核。"
       ],
       "supporting_evidence": [
         "文本和上下文共同提供风险信号。",
@@ -2673,24 +3615,456 @@
       "final_rationale": "综合词库召回和上下文，暂标为 medium；该条为词库种子候选。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=sensitive_lexicon_seed; category=sexual_content; risk_family=strict_redline; variant=strict_sexual_report; bucket=direct_policy_risk; matched_term=妓; term_source_files=零时-Tencent.txt; needs_human_review; merged_processed"
+    "review_notes": "source=sensitive_lexicon_seed; category=cyber_abuse; risk_family=strict_redline; variant=strict_cyber_report; bucket=transactional_risk; matched_term=黑客兵器; term_source_files=零时-Tencent.txt; needs_human_review; merged_processed"
   },
   {
-    "id": "GROK_030_LOW",
-    "split": "test",
+    "id": "PHASE2_SEED_0001_GAMBLE_HN_NONE",
     "source_type": "synthetic",
     "platform": "抖音",
-    "text": "耗子尾汁，好好学习",
+    "text": "珍爱生活，远离赌博，别把一家人的日子都压上去",
     "context": {
-      "title": "励志视频",
+      "title": "反赌公益短片评论区",
+      "description": "",
+      "parent_comment": "",
+      "reply_chain": [
+        "看完真的后怕",
+        "家里有人吃过亏"
+      ],
+      "time": "",
+      "topic": "赌博相关表达"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "context_required": true,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：珍爱生活，远离赌博，别把一家人的日子都压上去"
+      ],
+      "encoding_analysis": [
+        "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
+      ],
+      "context_analysis": [
+        "上下文是反赌公益宣传，评论表达劝阻和警示。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "明确反对赌博，没有招揽、盘口、下注或导流。",
+        "语气是安全教育和家庭劝阻。"
+      ],
+      "final_rationale": "普通语境和反证更强，暂标为 none；该条用于训练模型避免关键词误杀。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=gambling_hard_negative; variant=anti_gambling_slogan; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE2_SEED_0002_GAMBLE_HN_NONE",
+    "source_type": "synthetic",
+    "platform": "微博",
+    "text": "报道里说的赌球链条太吓人了，希望后续能查到底",
+    "context": {
+      "title": "警方通报网络赌博案件",
+      "description": "",
+      "parent_comment": "",
+      "reply_chain": [
+        "别转发那些链接",
+        "支持严查"
+      ],
+      "time": "",
+      "topic": "赌博相关表达"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "context_required": true,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：报道里说的赌球链条太吓人了，希望后续能查到底"
+      ],
+      "encoding_analysis": [
+        "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
+      ],
+      "context_analysis": [
+        "上下文是新闻通报和公众讨论，不是参与或招揽。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "文本要求查处风险行为。",
+        "没有提供参与方式或交易信息。"
+      ],
+      "final_rationale": "普通语境和反证更强，暂标为 none；该条用于训练模型避免关键词误杀。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=gambling_hard_negative; variant=news_report; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE2_SEED_0072_PUBLIC_HN_NONE",
+    "source_type": "synthetic",
+    "platform": "知乎",
+    "text": "政策解读先看原文，别只截一句话带节奏",
+    "context": {
+      "title": "公共政策问答",
+      "description": "",
+      "parent_comment": "",
+      "reply_chain": [
+        "全文链接在这",
+        "断章取义不行"
+      ],
+      "time": "",
+      "topic": "公共事务边界"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "context_required": true,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：政策解读先看原文，别只截一句话带节奏"
+      ],
+      "encoding_analysis": [
+        "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
+      ],
+      "context_analysis": [
+        "上下文是政策解读和信息核验。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "鼓励看原文和避免带节奏。",
+        "没有隐晦攻击或动员。"
+      ],
+      "final_rationale": "普通语境和反证更强，暂标为 none；该条用于训练模型避免关键词误杀。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=public_affairs_hard_negative; variant=policy_explainer; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "GROK_006_HIGH",
+    "split": "test",
+    "source_type": "synthetic",
+    "platform": "X",
+    "text": "细颈瓶里的水位又下降了",
+    "context": {
+      "title": "时政闲聊",
       "description": "",
       "parent_comment": "",
       "reply_chain": [],
       "time": "",
-      "topic": "谐音梗"
+      "topic": "拆字谐音"
+    },
+    "risk_level": "high",
+    "encoding_primary": "A1_普通谐音",
+    "encoding_secondary": [
+      "E1_平台黑话"
+    ],
+    "context_required": true,
+    "ambiguity": "medium",
+    "evidence_strength": "strong",
+    "freshness": "stable",
+    "hard_negative": false,
+    "target_known": true,
+    "target_reference": "匿名化目标对象或事件",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：细颈瓶里的水位又下降了"
+      ],
+      "encoding_analysis": [
+        "候选编码机制为：拆字谐音。",
+        "按项目分类暂归为 A1_普通谐音。"
+      ],
+      "context_analysis": [
+        "可用上下文：时政闲聊。"
+      ],
+      "supporting_evidence": [
+        "原始说明提示：“细颈瓶”常见黑称",
+        "文本与上下文共同支持非字面解读。"
+      ],
+      "counter_evidence": [
+        "仍需避免直接还原具体对象，最终训练输出应保留匿名化或概括表述。"
+      ],
+      "final_rationale": "综合文本、上下文和反证，暂标为 high；该条仍需人工复核后进入正式训练集。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=grok; source_id=GROK_006; original_risk=high; original_note=“细颈瓶”常见黑称"
+  },
+  {
+    "id": "GROK_035_NONE",
+    "split": "test",
+    "source_type": "synthetic",
+    "platform": "宠物群",
+    "text": "我家猫咪叫豆豆，每天都特别粘人",
+    "context": {
+      "title": "宠物昵称",
+      "description": "",
+      "parent_comment": "",
+      "reply_chain": [],
+      "time": "",
+      "topic": "无"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "context_required": false,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "freshness": "stable",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：我家猫咪叫豆豆，每天都特别粘人"
+      ],
+      "encoding_analysis": [],
+      "context_analysis": [
+        "可用上下文：宠物昵称。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "上下文支持普通解释：宠物昵称。",
+        "未发现足够的编码机制或风险语境。",
+        "该样本适合作为 hard negative，训练模型避免关键词误杀。"
+      ],
+      "final_rationale": "综合文本、上下文和反证，暂标为 none；该条仍需人工复核后进入正式训练集。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=grok; source_id=GROK_035; original_risk=none; original_note=hard negative：完全无害宠物分享（已替换原维尼案例）"
+  },
+  {
+    "id": "PHASE2_SEED_0047_PM_CTX_MEDIUM",
+    "source_type": "synthetic",
+    "platform": "小红书",
+    "text": "别在评论区问价，平台看得严，私我按老价走",
+    "context": {
+      "title": "同城服务评论区",
+      "description": "",
+      "parent_comment": "",
+      "reply_chain": [
+        "你又来了",
+        "别留联系方式"
+      ],
+      "time": "",
+      "topic": "私信/导流边界"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "E1_平台黑话",
+    "encoding_secondary": [],
+    "context_required": true,
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：别在评论区问价，平台看得严，私我按老价走"
+      ],
+      "encoding_analysis": [
+        "通过私信绕开平台公开审查。"
+      ],
+      "context_analysis": [
+        "上下文是同城服务，问价、平台严、私我共同形成规避导流。"
+      ],
+      "supporting_evidence": [
+        "明确提到平台看得严。",
+        "涉及价格和私下沟通。"
+      ],
+      "counter_evidence": [
+        "服务内容不明，需人工复核。"
+      ],
+      "final_rationale": "文本和上下文共同支持风险解释，暂标为 medium；仍需人工复核。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=platform_black_slang; cluster=private_message_contextual; variant=avoid_platform; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE2_SEED_0068_ADULT_HN_NONE",
+    "source_type": "synthetic",
+    "platform": "豆瓣",
+    "text": "分级讨论不是低俗，关键是保护未成年人观看边界",
+    "context": {
+      "title": "电影分级制度讨论",
+      "description": "",
+      "parent_comment": "",
+      "reply_chain": [
+        "应该科普",
+        "别一刀切"
+      ],
+      "time": "",
+      "topic": "低俗/分级边界"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "context_required": true,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：分级讨论不是低俗，关键是保护未成年人观看边界"
+      ],
+      "encoding_analysis": [
+        "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
+      ],
+      "context_analysis": [
+        "上下文是电影分级制度讨论。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "文本关注保护边界。",
+        "没有低俗导流或暗示交易。"
+      ],
+      "final_rationale": "普通语境和反证更强，暂标为 none；该条用于训练模型避免关键词误杀。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=adult_content_hard_negative; variant=film_rating; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE2_SEED_0086_PRIVACY_HN_NONE",
+    "source_type": "synthetic",
+    "platform": "小红书",
+    "text": "晒聊天记录记得把手机号和地址打码，保护一下别人隐私",
+    "context": {
+      "title": "吐槽帖发布提醒",
+      "description": "",
+      "parent_comment": "",
+      "reply_chain": [
+        "打码很重要",
+        "别挂素人"
+      ],
+      "time": "",
+      "topic": "隐私/人肉边界"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "context_required": true,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：晒聊天记录记得把手机号和地址打码，保护一下别人隐私"
+      ],
+      "encoding_analysis": [
+        "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
+      ],
+      "context_analysis": [
+        "上下文是隐私保护提醒。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "明确要求打码。",
+        "没有号召搜索或曝光个人信息。"
+      ],
+      "final_rationale": "普通语境和反证更强，暂标为 none；该条用于训练模型避免关键词误杀。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=privacy_hard_negative; variant=privacy_protection; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "PHASE2_SEED_0026_LEGAL_HN_NONE",
+    "source_type": "synthetic",
+    "platform": "微博",
+    "text": "判决书里提到的违禁品只是案件事实，不代表评论区可以求渠道",
+    "context": {
+      "title": "法院案例评论区",
+      "description": "",
+      "parent_comment": "",
+      "reply_chain": [
+        "别问怎么买",
+        "看案例就行"
+      ],
+      "time": "",
+      "topic": "法律新闻"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "context_required": true,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：判决书里提到的违禁品只是案件事实，不代表评论区可以求渠道"
+      ],
+      "encoding_analysis": [
+        "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
+      ],
+      "context_analysis": [
+        "上下文是法律案例，文本提醒不要求渠道。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "明确反对求渠道。",
+        "内容是案件事实讨论。"
+      ],
+      "final_rationale": "普通语境和反证更强，暂标为 none；该条用于训练模型避免关键词误杀。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=legal_hard_negative; variant=case_comment; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "GROK_048_LOW",
+    "split": "test",
+    "source_type": "synthetic",
+    "platform": "情感博主",
+    "text": "蜡烛的光芒虽然小，但能照亮黑暗",
+    "context": {
+      "title": "励志文",
+      "description": "",
+      "parent_comment": "",
+      "reply_chain": [],
+      "time": "",
+      "topic": "悼念"
     },
     "risk_level": "low",
-    "encoding_primary": "A1_普通谐音",
+    "encoding_primary": "C2_历史事件影射",
     "encoding_secondary": [],
     "context_required": true,
     "ambiguity": "high",
@@ -2702,43 +4076,43 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：耗子尾汁，好好学习"
+        "字面上是在表达：蜡烛的光芒虽然小，但能照亮黑暗"
       ],
       "encoding_analysis": [
-        "候选编码机制为：谐音梗。",
-        "按项目分类暂归为 A1_普通谐音。"
+        "候选编码机制为：悼念。",
+        "按项目分类暂归为 C2_历史事件影射。"
       ],
       "context_analysis": [
-        "可用上下文：励志视频。"
+        "可用上下文：励志文。"
       ],
       "supporting_evidence": [
         "存在弱暗示、关键词撞车或候选编码痕迹。"
       ],
       "counter_evidence": [
-        "上下文更支持普通解释：励志视频。",
+        "上下文更支持普通解释：励志文。",
         "证据不足以升为 medium 或 high。",
         "该样本适合作为 hard negative，训练模型避免关键词误杀。"
       ],
       "final_rationale": "综合文本、上下文和反证，暂标为 low；该条仍需人工复核后进入正式训练集。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=grok; source_id=GROK_030; original_risk=low; original_note=hard negative：网络梗"
+    "review_notes": "source=grok; source_id=GROK_048; original_risk=low; original_note=hard negative：普通比喻"
   },
   {
-    "id": "PHASE2_SEED_0098_PETITION_HN_NONE",
+    "id": "PHASE2_SEED_0044_REFUND_HN_NONE",
     "source_type": "synthetic",
     "platform": "小红书",
-    "text": "业主维权先走物业和街道流程，材料留痕比吵架有用",
+    "text": "维权可以走平台客服和消协，别点陌生人发的退款链接",
     "context": {
-      "title": "小区物业问题讨论",
+      "title": "网购售后避坑",
       "description": "",
       "parent_comment": "",
       "reply_chain": [
-        "先收集证据",
-        "别冲动"
+        "退款链接真的很多坑",
+        "走平台最稳"
       ],
       "time": "",
-      "topic": "维权/动员边界"
+      "topic": "退款/诈骗边界"
     },
     "risk_level": "none",
     "encoding_primary": "none",
@@ -2753,188 +4127,184 @@
     "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：业主维权先走物业和街道流程，材料留痕比吵架有用"
+        "字面上是在表达：维权可以走平台客服和消协，别点陌生人发的退款链接"
       ],
       "encoding_analysis": [
         "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
       ],
       "context_analysis": [
-        "上下文是正规维权流程建议。"
+        "上下文是消费者维权提醒。"
       ],
       "supporting_evidence": [],
       "counter_evidence": [
-        "建议走正式渠道。",
-        "没有煽动线下冲突。"
+        "明确要求走平台正规渠道。",
+        "没有诱导点击外部链接。"
       ],
       "final_rationale": "普通语境和反证更强，暂标为 none；该条用于训练模型避免关键词误杀。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=petition_hard_negative; variant=property_rights; merged_processed; needs_human_review",
+    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=refund_hard_negative; variant=consumer_rights; merged_processed; needs_human_review",
     "split": "test"
   },
   {
-    "id": "PHASE2_SEED_0094_GAME_HN_NONE",
-    "source_type": "synthetic",
-    "platform": "B站",
-    "text": "这个 boss 二阶段会狂暴，奶妈留技能就行",
-    "context": {
-      "title": "游戏副本攻略",
-      "description": "",
-      "parent_comment": "",
-      "reply_chain": [
-        "机制讲得清楚",
-        "开荒有用"
-      ],
-      "time": "",
-      "topic": "游戏术语边界"
-    },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "context_required": true,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：这个 boss 二阶段会狂暴，奶妈留技能就行"
-      ],
-      "encoding_analysis": [
-        "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
-      ],
-      "context_analysis": [
-        "上下文是游戏攻略，狂暴和奶妈是游戏术语。"
-      ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "术语含义在游戏语境中明确。",
-        "没有现实暴力或群体攻击指向。"
-      ],
-      "final_rationale": "普通语境和反证更强，暂标为 none；该条用于训练模型避免关键词误杀。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=meme_forensics; cluster=game_term_hard_negative; variant=normal_game_callout; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE2_SEED_0033_SEX_CTX_MEDIUM",
-    "source_type": "synthetic",
-    "platform": "抖音",
-    "text": "同城的别问价，按以前那套说法来，主页有门",
-    "context": {
-      "title": "同城夜生活评论区",
-      "description": "",
-      "parent_comment": "",
-      "reply_chain": [
-        "这个号又来了",
-        "举报了"
-      ],
-      "time": "",
-      "topic": "低俗导流"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [
-      "C4_典故/物品/符号借用"
-    ],
-    "context_required": true,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：同城的别问价，按以前那套说法来，主页有门"
-      ],
-      "encoding_analysis": [
-        "用旧说法和主页有门规避直接表达。"
-      ],
-      "context_analysis": [
-        "上下文是同城夜生活评论区，出现别问价、主页有门等导流暗示。"
-      ],
-      "supporting_evidence": [
-        "出现价格规避和主页导流。",
-        "回复链提示重复可疑账号。"
-      ],
-      "counter_evidence": [
-        "具体服务内容不明，仍需人工复核。"
-      ],
-      "final_rationale": "文本和上下文共同支持风险解释，暂标为 medium；仍需人工复核。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=sexual_contextual; variant=evasive_local; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE2_SEED_0093_EXAM_CTX_MEDIUM",
-    "source_type": "synthetic",
-    "platform": "微信群",
-    "text": "真题不在群里放，想稳的私我，考前最后一批",
-    "context": {
-      "title": "考试资料群",
-      "description": "",
-      "parent_comment": "",
-      "reply_chain": [
-        "多少钱",
-        "保真吗"
-      ],
-      "time": "",
-      "topic": "考试/诈骗边界"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [],
-    "context_required": true,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：真题不在群里放，想稳的私我，考前最后一批"
-      ],
-      "encoding_analysis": [
-        "用真题和想稳包装私下资料交易。"
-      ],
-      "context_analysis": [
-        "上下文是考试资料群，私我、想稳、最后一批带有违规交易或诈骗风险。"
-      ],
-      "supporting_evidence": [
-        "要求私下联系。",
-        "考前最后一批制造紧迫感。"
-      ],
-      "counter_evidence": [
-        "未明确说答案或收费，仍需复核。"
-      ],
-      "final_rationale": "文本和上下文共同支持风险解释，暂标为 medium；仍需人工复核。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=exam_contextual; variant=paid_answer_hint; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "GROK_037_LOW",
+    "id": "GROK_003_LOW",
     "split": "test",
     "source_type": "synthetic",
-    "platform": "家长群",
-    "text": "我支持双减政策，孩子轻松多了",
+    "platform": "小红书",
+    "text": "我家仓鼠今天又偷吃瓜子了，太调皮",
     "context": {
-      "title": "教育讨论",
+      "title": "宠物日常分享",
       "description": "",
       "parent_comment": "",
       "reply_chain": [],
       "time": "",
-      "topic": "政策"
+      "topic": "仓鼠=耗子隐喻"
+    },
+    "risk_level": "low",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "freshness": "stable",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：我家仓鼠今天又偷吃瓜子了，太调皮"
+      ],
+      "encoding_analysis": [
+        "候选编码机制为：仓鼠=耗子隐喻。",
+        "按项目分类暂归为 C4_典故/物品/符号借用。"
+      ],
+      "context_analysis": [
+        "可用上下文：宠物日常分享。"
+      ],
+      "supporting_evidence": [
+        "存在弱暗示、关键词撞车或候选编码痕迹。"
+      ],
+      "counter_evidence": [
+        "上下文更支持普通解释：宠物日常分享。",
+        "证据不足以升为 medium 或 high。",
+        "该样本适合作为 hard negative，训练模型避免关键词误杀。"
+      ],
+      "final_rationale": "综合文本、上下文和反证，暂标为 low；该条仍需人工复核后进入正式训练集。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=grok; source_id=GROK_003; original_risk=low; original_note=hard negative：真实宠物记录"
+  },
+  {
+    "id": "GROK_017_LOW",
+    "split": "test",
+    "source_type": "synthetic",
+    "platform": "知乎",
+    "text": "研究三峡的时候发现工程真伟大",
+    "context": {
+      "title": "水利技术问答",
+      "description": "",
+      "parent_comment": "",
+      "reply_chain": [],
+      "time": "",
+      "topic": "历史关联"
+    },
+    "risk_level": "low",
+    "encoding_primary": "C1_历史人物类比",
+    "encoding_secondary": [],
+    "context_required": true,
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "freshness": "stable",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：研究三峡的时候发现工程真伟大"
+      ],
+      "encoding_analysis": [
+        "候选编码机制为：历史关联。",
+        "按项目分类暂归为 C1_历史人物类比。"
+      ],
+      "context_analysis": [
+        "可用上下文：水利技术问答。"
+      ],
+      "supporting_evidence": [
+        "存在弱暗示、关键词撞车或候选编码痕迹。"
+      ],
+      "counter_evidence": [
+        "上下文更支持普通解释：水利技术问答。",
+        "证据不足以升为 medium 或 high。",
+        "该样本适合作为 hard negative，训练模型避免关键词误杀。"
+      ],
+      "final_rationale": "综合文本、上下文和反证，暂标为 low；该条仍需人工复核后进入正式训练集。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=grok; source_id=GROK_017; original_risk=low; original_note=hard negative：技术讨论"
+  },
+  {
+    "id": "PHASE2_SEED_0080_COLOR_HN_NONE",
+    "source_type": "synthetic",
+    "platform": "小红书",
+    "text": "这个红配黄有点复古，像老海报的配色",
+    "context": {
+      "title": "海报设计点评",
+      "description": "",
+      "parent_comment": "",
+      "reply_chain": [
+        "复古感有了",
+        "字体也搭"
+      ],
+      "time": "",
+      "topic": "颜色符号边界"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "context_required": true,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：这个红配黄有点复古，像老海报的配色"
+      ],
+      "encoding_analysis": [
+        "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
+      ],
+      "context_analysis": [
+        "上下文是设计点评，颜色是视觉风格。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "评论围绕设计元素。",
+        "没有组织、旗帜或现实隐喻。"
+      ],
+      "final_rationale": "普通语境和反证更强，暂标为 none；该条用于训练模型避免关键词误杀。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=meme_forensics; cluster=color_hard_negative; variant=design_color; merged_processed; needs_human_review",
+    "split": "test"
+  },
+  {
+    "id": "GROK_041_LOW",
+    "split": "test",
+    "source_type": "synthetic",
+    "platform": "游戏论坛",
+    "text": "我昨天梦到坦克大战了",
+    "context": {
+      "title": "游戏梦境",
+      "description": "",
+      "parent_comment": "",
+      "reply_chain": [],
+      "time": "",
+      "topic": "坦克人"
     },
     "risk_level": "low",
     "encoding_primary": "D2_隐喻",
@@ -2949,43 +4319,43 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：我支持双减政策，孩子轻松多了"
+        "字面上是在表达：我昨天梦到坦克大战了"
       ],
       "encoding_analysis": [
-        "候选编码机制为：政策。",
+        "候选编码机制为：坦克人。",
         "按项目分类暂归为 D2_隐喻。"
       ],
       "context_analysis": [
-        "可用上下文：教育讨论。"
+        "可用上下文：游戏梦境。"
       ],
       "supporting_evidence": [
         "存在弱暗示、关键词撞车或候选编码痕迹。"
       ],
       "counter_evidence": [
-        "上下文更支持普通解释：教育讨论。",
+        "上下文更支持普通解释：游戏梦境。",
         "证据不足以升为 medium 或 high。",
         "该样本适合作为 hard negative，训练模型避免关键词误杀。"
       ],
       "final_rationale": "综合文本、上下文和反证，暂标为 low；该条仍需人工复核后进入正式训练集。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=grok; source_id=GROK_037; original_risk=low; original_note=hard negative：真实家长"
+    "review_notes": "source=grok; source_id=GROK_041; original_risk=low; original_note=hard negative：游戏"
   },
   {
-    "id": "PHASE2_SEED_0036_LOTTERY_HN_NONE",
+    "id": "PHASE2_SEED_0052_HNAME_HN_NONE",
     "source_type": "synthetic",
     "platform": "B站",
-    "text": "老师拿彩票举例只是讲概率，重点是别把小概率当稳定收益",
+    "text": "这一段讲他早年经历挺细，和后来的选择能对上",
     "context": {
-      "title": "概率论入门课",
+      "title": "历史人物传记解读",
       "description": "",
       "parent_comment": "",
       "reply_chain": [
-        "这个例子很直观",
-        "期望值那里讲明白了"
+        "史料出处在哪",
+        "讲得很客观"
       ],
       "time": "",
-      "topic": "赌博/概率边界"
+      "topic": "历史人物类比边界"
     },
     "risk_level": "none",
     "encoding_primary": "none",
@@ -3000,419 +4370,71 @@
     "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：老师拿彩票举例只是讲概率，重点是别把小概率当稳定收益"
+        "字面上是在表达：这一段讲他早年经历挺细，和后来的选择能对上"
       ],
       "encoding_analysis": [
         "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
       ],
       "context_analysis": [
-        "上下文是概率课程，彩票只是教学例子。"
+        "上下文是历史人物传记，没有现实映射。"
       ],
       "supporting_evidence": [],
       "counter_evidence": [
-        "文本强调小概率不能当收益。",
-        "没有购买、追号、盘口或导流。"
+        "评论关注史料和人物生平。",
+        "没有现实话题或暗示回复链。"
       ],
       "final_rationale": "普通语境和反证更强，暂标为 none；该条用于训练模型避免关键词误杀。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=lottery_hard_negative; variant=statistics_class; merged_processed; needs_human_review",
+    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=meme_forensics; cluster=historical_name_hard_negative; variant=normal_biography; merged_processed; needs_human_review",
     "split": "test"
   },
   {
-    "id": "PHASE2_SEED_0012_SHOP_HN_NONE",
-    "source_type": "synthetic",
-    "platform": "淘宝评论",
-    "text": "尺码问题可以私信客服，页面上也有退换规则",
-    "context": {
-      "title": "鞋子测评评论区",
-      "description": "",
-      "parent_comment": "",
-      "reply_chain": [
-        "客服回复挺快",
-        "按规则退了"
-      ],
-      "time": "",
-      "topic": "正常电商"
-    },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "context_required": true,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：尺码问题可以私信客服，页面上也有退换规则"
-      ],
-      "encoding_analysis": [
-        "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
-      ],
-      "context_analysis": [
-        "上下文是普通电商售后，私信客服属于正常流程。"
-      ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "没有异常导流、规避平台或私下交易。",
-        "页面有公开退换规则。"
-      ],
-      "final_rationale": "普通语境和反证更强，暂标为 none；该条用于训练模型避免关键词误杀。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=commerce_hard_negative; variant=normal_customer_service; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "GROK_010_MEDIUM",
+    "id": "USER_002_MEDIUM",
     "split": "test",
     "source_type": "synthetic",
-    "platform": "B站",
-    "text": "蜡烛点亮了整个夜晚，大家一起守着",
+    "platform": "抖音/b站",
+    "text": "小懿你好",
     "context": {
-      "title": "纪念日直播弹幕",
+      "title": "三国演义司马懿",
       "description": "",
       "parent_comment": "",
       "reply_chain": [],
       "time": "",
-      "topic": "蜡烛悼念"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "C2_历史事件影射",
-    "encoding_secondary": [
-      "E3_回复链/互动触发"
-    ],
-    "context_required": true,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "freshness": "stable",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化目标对象或事件",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：蜡烛点亮了整个夜晚，大家一起守着"
-      ],
-      "encoding_analysis": [
-        "候选编码机制为：蜡烛悼念。",
-        "按项目分类暂归为 C2_历史事件影射。"
-      ],
-      "context_analysis": [
-        "可用上下文：纪念日直播弹幕。"
-      ],
-      "supporting_evidence": [
-        "原始说明提示：常见悼念，但也可能是节日",
-        "存在可疑编码或语境信号。"
-      ],
-      "counter_evidence": [
-        "目标指向或上下文证据仍不充分，普通解释仍可能成立。"
-      ],
-      "final_rationale": "综合文本、上下文和反证，暂标为 medium；该条仍需人工复核后进入正式训练集。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=grok; source_id=GROK_010; original_risk=medium; original_note=常见悼念，但也可能是节日"
-  },
-  {
-    "id": "PHASE2_SEED_0010_CYBER_HN_NONE",
-    "source_type": "synthetic",
-    "platform": "知乎",
-    "text": "这篇漏洞复盘重点是怎么补，不是教人去打别人站",
-    "context": {
-      "title": "Web 安全防护复盘",
-      "description": "",
-      "parent_comment": "",
-      "reply_chain": [
-        "已打码关键细节",
-        "只讲修复方案"
-      ],
-      "time": "",
-      "topic": "网络安全"
-    },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "context_required": true,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：这篇漏洞复盘重点是怎么补，不是教人去打别人站"
-      ],
-      "encoding_analysis": [
-        "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
-      ],
-      "context_analysis": [
-        "上下文是安全防护文章，强调修复和打码。"
-      ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "明确反对攻击他人站点。",
-        "没有给出可执行攻击步骤或目标。"
-      ],
-      "final_rationale": "普通语境和反证更强，暂标为 none；该条用于训练模型避免关键词误杀。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=cyber_hard_negative; variant=defense_article; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "GROK_038_MEDIUM",
-    "split": "test",
-    "source_type": "synthetic",
-    "platform": "新闻评论",
-    "text": "那只蛤蟆又出来喷水了",
-    "context": {
-      "title": "时政",
-      "description": "",
-      "parent_comment": "",
-      "reply_chain": [],
-      "time": "",
-      "topic": "江泽民"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "C4_典故/物品/符号借用",
-    "encoding_secondary": [
-      "E1_平台黑话"
-    ],
-    "context_required": true,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "freshness": "stable",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化目标对象或事件",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：那只蛤蟆又出来喷水了"
-      ],
-      "encoding_analysis": [
-        "候选编码机制为：江泽民。",
-        "按项目分类暂归为 C4_典故/物品/符号借用。"
-      ],
-      "context_analysis": [
-        "可用上下文：时政。"
-      ],
-      "supporting_evidence": [
-        "原始说明提示：经典黑称",
-        "存在可疑编码或语境信号。"
-      ],
-      "counter_evidence": [
-        "目标指向或上下文证据仍不充分，普通解释仍可能成立。"
-      ],
-      "final_rationale": "综合文本、上下文和反证，暂标为 medium；该条仍需人工复核后进入正式训练集。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=grok; source_id=GROK_038; original_risk=medium; original_note=经典黑称"
-  },
-  {
-    "id": "PHASE2_SEED_0019_NUM_HN_NONE",
-    "source_type": "synthetic",
-    "platform": "小红书",
-    "text": "这个 64G 版本够用了，主要是照片不要全存在本地",
-    "context": {
-      "title": "手机容量选择",
-      "description": "",
-      "parent_comment": "",
-      "reply_chain": [
-        "128G 更安心",
-        "我也觉得"
-      ],
-      "time": "",
-      "topic": "普通数字"
-    },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "context_required": true,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：这个 64G 版本够用了，主要是照片不要全存在本地"
-      ],
-      "encoding_analysis": [
-        "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
-      ],
-      "context_analysis": [
-        "上下文是手机容量讨论，数字是存储规格。"
-      ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "数字与商品容量直接相关。",
-        "没有日期、事件或现实影射线索。"
-      ],
-      "final_rationale": "普通语境和反证更强，暂标为 none；该条用于训练模型避免关键词误杀。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=meme_forensics; cluster=date_number_hard_negative; variant=normal_product_code; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE2_SEED_0022_CHAR_CTX_MEDIUM",
-    "source_type": "synthetic",
-    "platform": "B站",
-    "text": "他这套隐忍多年再出来收拾局面的戏码，怎么越看越眼熟",
-    "context": {
-      "title": "现实人物纪录片剪辑",
-      "description": "",
-      "parent_comment": "",
-      "reply_chain": [
-        "别点名",
-        "懂的自然懂"
-      ],
-      "time": "",
-      "topic": "人物代指"
+      "topic": "历史人物代指"
     },
     "risk_level": "medium",
     "encoding_primary": "C1_历史人物类比",
-    "encoding_secondary": [
-      "D3_借代"
-    ],
-    "context_required": true,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：他这套隐忍多年再出来收拾局面的戏码，怎么越看越眼熟"
-      ],
-      "encoding_analysis": [
-        "用剧情化人物叙事映射现实人物经历。"
-      ],
-      "context_analysis": [
-        "标题是现实人物纪录片，回复链提示别点名和共同理解。"
-      ],
-      "supporting_evidence": [
-        "文本强调隐忍多年、出来收拾局面。",
-        "上下文明确现实人物相关。"
-      ],
-      "counter_evidence": [
-        "没有直接目标名称，映射仍需人工确认。"
-      ],
-      "final_rationale": "文本和上下文共同支持风险解释，暂标为 medium；仍需人工复核。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=meme_forensics; cluster=character_analogy_contextual; variant=character_mapping; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE2_SEED_0095_GAME_CTX_MEDIUM",
-    "source_type": "synthetic",
-    "platform": "微博",
-    "text": "这波又开二阶段了，下面小怪都开始排队表忠心",
-    "context": {
-      "title": "现实组织人事变动讨论",
-      "description": "",
-      "parent_comment": "",
-      "reply_chain": [
-        "别用游戏词了",
-        "太形象"
-      ],
-      "time": "",
-      "topic": "游戏术语边界"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "C4_典故/物品/符号借用",
-    "encoding_secondary": [
-      "D1_反讽"
-    ],
-    "context_required": true,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：这波又开二阶段了，下面小怪都开始排队表忠心"
-      ],
-      "encoding_analysis": [
-        "用 boss 二阶段和小怪借代现实组织层级。"
-      ],
-      "context_analysis": [
-        "上下文是现实组织人事变动，游戏术语被用于现实类比。"
-      ],
-      "supporting_evidence": [
-        "标题为现实组织人事变动。",
-        "表忠心强化现实政治/组织语境。"
-      ],
-      "counter_evidence": [
-        "目标对象不具体，仍需人工判断。"
-      ],
-      "final_rationale": "文本和上下文共同支持风险解释，暂标为 medium；仍需人工复核。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=meme_forensics; cluster=game_term_contextual; variant=game_term_mapping; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE2_SEED_0062_WEAPON_HN_NONE",
-    "source_type": "synthetic",
-    "platform": "B站",
-    "text": "博物馆展柜里这些都是历史展品，别拿现代用途乱联想",
-    "context": {
-      "title": "军事博物馆参观记录",
-      "description": "",
-      "parent_comment": "",
-      "reply_chain": [
-        "讲解员说得很清楚",
-        "历史教育"
-      ],
-      "time": "",
-      "topic": "武器/历史展品边界"
-    },
-    "risk_level": "none",
-    "encoding_primary": "none",
     "encoding_secondary": [],
     "context_required": true,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
     "freshness": "stable",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化目标对象或事件",
+    "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：博物馆展柜里这些都是历史展品，别拿现代用途乱联想"
+        "字面上是在表达：小懿你好"
       ],
       "encoding_analysis": [
-        "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
+        "候选编码机制为：历史人物代指。",
+        "按项目分类暂归为 C1_历史人物类比。"
       ],
       "context_analysis": [
-        "上下文是博物馆历史展品介绍。"
+        "可用上下文：三国演义司马懿。"
       ],
-      "supporting_evidence": [],
+      "supporting_evidence": [
+        "原始说明提示：司马懿以忍耐，大器晚成出名，与邓小平经历相似，小懿你好与小平你好，存在天然互通",
+        "存在可疑编码或语境信号。"
+      ],
       "counter_evidence": [
-        "明确是展柜和历史教育。",
-        "没有制作、购买或使用意图。"
+        "目标指向或上下文证据仍不充分，普通解释仍可能成立。"
       ],
-      "final_rationale": "普通语境和反证更强，暂标为 none；该条用于训练模型避免关键词误杀。"
+      "final_rationale": "综合文本、上下文和反证，暂标为 medium；该条仍需人工复核后进入正式训练集。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=weapon_news_hard_negative; variant=museum_exhibit; merged_processed; needs_human_review",
-    "split": "test"
+    "review_notes": "source=user; source_id=USER_002; original_risk=medium; original_note=司马懿以忍耐，大器晚成出名，与邓小平经历相似，小懿你好与小平你好，存在天然互通"
   }
 ]

@@ -2,9 +2,9 @@
 
 ## 重要提醒：不要重复已完成工作
 
-本文件记录的是项目交接记忆。接手新窗口时必须先读本文件，并把“已完成步骤”和“当前状态”视为事实来源；除非用户明确要求回滚、重跑或复核，否则不要重复执行已经完成的导入、合并、校验、SFT 重建、split 生成等流水线，避免浪费算力和意外覆盖数据。当前所有截至本文件记录的工作都已经做过：正式候选集为 675 条，SFT 为 675 条，默认 train/validation/test split 已生成且通过校验。
+本文件记录的是项目交接记忆。接手新窗口时必须先读本文件，并把“已完成步骤”和“当前状态”视为事实来源；除非用户明确要求回滚、重跑或复核，否则不要重复执行已经完成的导入、合并、校验、SFT 重建、split 生成等流水线，避免浪费算力和意外覆盖数据。当前所有截至本文件记录的工作都已经做过：正式候选集为 860 条，SFT 为 860 条，默认 train/validation/test split 已生成且通过校验。
 
-项目初衷是训练一个约 4B 规模的中文语义风险推理/审核微调模型，让小模型具备识别互联网鉴证梗、互联网黑话、风险词语境、隐喻、反讽、指桑骂槐、历史影射、人物代指、上下文风险和反证的能力。当前阶段仍然是数据集准备的初始阶段，还没有进入正式训练配置、训练运行或模型评测阶段。最初 330 条样本只是第一版数据骨架；当前虽已扩充至 675 条，但数量和人工复核深度仍不足以支撑 4B 模型稳定学会这些能力。后续大方向是继续分层扩充和复核高质量数据，而不是急着训练。
+项目初衷是训练一个约 4B 规模的中文语义风险推理/审核微调模型，让小模型具备识别互联网鉴证梗、互联网黑话、风险词语境、隐喻、反讽、指桑骂槐、历史影射、人物代指、上下文风险和反证的能力。当前阶段仍然是数据集准备的初始阶段，还没有进入正式训练配置、训练运行或模型评测阶段。最初 330 条样本只是第一版数据骨架；当前虽已扩充至 860 条，但数量和人工复核深度仍不足以支撑 4B 模型稳定学会这些能力。后续大方向是继续分层扩充和复核高质量数据，而不是急着训练。
 
 ## 项目目标
 
@@ -83,7 +83,7 @@
 69. 已重新运行 `scripts/build_sft_dataset.py`，生成 675 条 `data/mvp/sft_candidates.jsonl/.json`；SFT ID 顺序与正式 processed 完全一致，JSONL 与 JSON 内容一致。
 70. 已重新运行 `scripts/split_dataset.py` 并校验三份 split。当前 train 541、validation 67、test 67，合计覆盖 675 个唯一 ID；`split_report.json` 记录 226 个防泄漏组，0 个跨 split 泄漏组；55 个 phase3 模板组均未跨 split。
 71. 已调整 `scripts/analyze_risk_coverage.py` 以适配正式 675 条状态：默认只分析 `data/processed/combined_candidates.jsonl`，支持重复传入 `--input` 分析多个独立候选集，并在输入间出现重复 ID 时直接报错，防止把已入库的 phase2/phase3 raw 再次重复计算。
-72. 已基于正式 675 条重新生成 `data/processed/risk_coverage_report.json`、`data/processed/phase3_sampling_plan.json` 和 `docs/risk_coverage_report.md`。新版分析确认当前风险分布 high 126、medium 234、low 145、none 170，hard negative 279；完整参考缺口由 788 降至 593，下一波建议由 245 条降至 185 条。
+72. 已基于当时正式 675 条重新生成 `data/processed/risk_coverage_report.json`、`data/processed/phase3_sampling_plan.json` 和 `docs/risk_coverage_report.md`。当时新版分析确认风险分布 high 126、medium 234、low 145、none 170，hard negative 279；完整参考缺口由 788 降至 593，下一波建议由 245 条降至 185 条。
 73. 新版覆盖分析中，色情低俗与广告/诈骗/导流仍为 P0；辱骂/群体攻击、枪爆武器、公共事务、政治历史/鉴证梗降为 P1；平台规避、网络黑产、暴力极端、违禁交易、赌博降为 P2。该优先级仅作为抽样复核和下一波设计参考，不能替代人工标签判断。
 74. 已创建 `scripts/build_phase3_second_wave_candidates.py`，按新版覆盖建议生成第三阶段第二波 185 条候选。脚本只写 `data/raw/phase3_second_wave_candidates.jsonl`，使用独立 `PHASE3_W2_*` ID、`phase3_v2_long_tail_boundaries` 批次和新的长尾/困难边界措辞，不修改正式 675 条 processed。
 75. 已校验 `data/raw/phase3_second_wave_candidates.jsonl`：共 185 条，185 个 ID 与 text 均唯一，schema 校验通过；与正式 675 条、phase3 第一波均无新增 ID 或 text 重复。全部保持 `quality_status=needs_revision` 和 `not_merged`，尚未人工抽样确认或入库。
@@ -92,7 +92,7 @@
 78. 已更新 `scripts/split_dataset.py` 识别 `PHASE3_W2_*` / `phase3_second_wave`，未来入库后可按 `category/cluster/contrast_mode` 保持模板组不跨 split；已用第二波 raw 独立试切，55 个模板组无跨 split 泄漏。
 79. 已创建 `scripts/build_phase3_second_wave_review_sample.py`，从第二波 raw 确定性分层抽取 44 条人工复核样本，每个类别 4 条，固定覆盖 weak_signal 与 safe_context，并轮换 direct/obfuscated/contextual。
 80. 已生成 `data/raw/phase3_second_wave_review_sample.json` 和 `docs/phase3_second_wave_review_sample.md`。复核清单覆盖 11 个类别各 4 条，模式分布为 weak_signal 11、safe_context 11、obfuscated 8、direct 7、contextual 7；清单主动纳入 8 条已标记 reviewer_voice 的争议样本，等待用户逐条确认。
-81. 已重写 `README.md` 为 GitHub 首页式项目状态页，明确当前正式 processed 为 675 条、SFT 为 675 条、split 已校验、phase3 第二波 185 条仍是 raw 且存在 10 条 reviewer_voice 问题，并列出关键文件、常用命令、入库原则和当前下一步，方便进入 GitHub 后直观了解项目进度。
+81. 已重写 `README.md` 为 GitHub 首页式项目状态页，记录当时 675 条 processed/SFT、split 已校验、phase3 第二波 185 条仍是 raw 且存在 10 条 reviewer_voice 问题，并列出关键文件、常用命令、入库原则和当时下一步，方便进入 GitHub 后直观了解项目进度。
 82. 已在 `README.md` 补充样本编号规则与人工审核回复格式，解释 `PHASE3_W2_0020_SEXUAL_CONTENT_WEAK_SIGNAL` 等 ID 的阶段、波次、流水号、类别和模式含义，并约定用户可用“通过/退回/改标签/改类别/改模式/删掉”等结论反馈，重点标注人机感、客服/tips、审核说明、暗号刻意、过度联想和漏召回。
 83. 用户已对第二波 44 条人工复核清单给出逐条反馈，并已整理到 `docs/phase3_second_wave_human_feedback.md`。核心结论：审核员语气可以出现在 reasoning/逻辑链中，但 `text` 应是实际评论、弹幕、回复、私聊或二次回复，不应把审核标准、审核指导、风控提示直接搬成样本文本；陈述句、客服/tips、官方宣传、安全提示和黑话教学口吻都需要减少或改写成真实语境。
 84. 第二波抽样反馈初步显示：可基本保留的样本包括 2、3、11、12、20、23、24、26、35、36、39；直球风险但需控制比例或可能调高的包括 4、15、32、44；审核员语气/审核说明需重写的包括 1、5、9、10、13、17、21、22、25、33、34、37、41；tips/宣传/陈述句口吻需改写的包括 6、14、18、29、30、38、42；黑话教学或“敌人解读”感需重写的包括 7、16、19、27、28、31、40、43。
@@ -102,10 +102,15 @@
 88. 已创建并运行 `scripts/analyze_phase3_second_wave_delta.py`，生成 `data/processed/phase3_second_wave_coverage_delta.json` 和 `docs/phase3_second_wave_coverage_delta.md`。加入第二波 raw 后，候选池能力地图从 675 增至 860，风险分布从 high 126、medium 234、low 145、none 170 变为 high 167、medium 304、low 182、none 207，hard negative 从 279 增至 353。
 89. 已创建并运行 `scripts/import_phase3_second_wave.py`，生成独立合并预览 `data/processed/combined_candidates_phase3_w2_preview.jsonl/.json`，共 860 条；正式 `data/processed/combined_candidates.*` 仍保持 675 条，尚未执行 `--apply`。
 90. 第二波合并预览已校验通过：schema 通过，860 个 ID 全唯一，原正式 675 条前缀逐条完全不变，新增 185 条保持 `needs_revision`；预览副本 review_notes 已从 `not_merged` 转为 `merged_processed`，raw 第二波仍保持 `not_merged`；重复运行预览哈希一致，从已含 W2 的预览再次构建仍为 860 条，不会重复追加。
+91. 已执行 `python3 scripts/import_phase3_second_wave.py --apply`，将 phase3 第二波 185 条正式幂等合并进 `data/processed/combined_candidates.jsonl/.json`；正式候选集从 675 条增至 860 条，原正式 675 条前缀保持不变，新增 W2 入库副本标记为 `merged_processed`。
+92. 已运行 `scripts/validate_dataset.py data/processed/combined_candidates.jsonl`，正式 860 条 processed 校验通过；860 个 ID 全部唯一，风险分布为 high 167、medium 304、low 182、none 207，hard negative 353 条，`context_required=true` 809 条，全部保持 `quality_status=needs_revision`。
+93. 已重新运行 `scripts/build_sft_dataset.py`，生成 860 条 `data/mvp/sft_candidates.jsonl/.json`；SFT `metadata.id` 顺序与正式 processed ID 完全一致，JSONL 与 JSON 内容一致。
+94. 已重新运行 `scripts/split_dataset.py` 并校验三份 split。当前 train 688、validation 86、test 86，合计覆盖 860 个唯一 ID；`split_report.json` 记录 281 个防泄漏组，0 个跨 split 泄漏组。
+95. 已基于正式 860 条重新运行 `scripts/analyze_risk_coverage.py`，更新 `data/processed/risk_coverage_report.json`、`data/processed/phase3_sampling_plan.json` 和 `docs/risk_coverage_report.md`。后续应以新版覆盖报告规划下一轮扩充，不要重复执行第二波入库。
 
 ## 当前状态
 
-项目已经具备规则文档、标注规范、schema、基础目录、数据校验脚本、第一批示例 JSONL 数据、Grok 50 条原始候选样本、用户 7 条原始候选样本、两份外部模型扩写候选原始文件、扩写候选清洗导入脚本、词库候选生成与导入脚本、675 条已规整的待复核训练格式数据、SFT 数据构建脚本、675 条 SFT 训练样本、按 group 防泄漏的数据切分脚本，以及第二、第三阶段扩充产物。当前还没有训练配置；当前重点仍是继续扩充和复核数据。
+项目已经具备规则文档、标注规范、schema、基础目录、数据校验脚本、第一批示例 JSONL 数据、Grok 50 条原始候选样本、用户 7 条原始候选样本、两份外部模型扩写候选原始文件、扩写候选清洗导入脚本、词库候选生成与导入脚本、860 条已规整的待复核训练格式数据、SFT 数据构建脚本、860 条 SFT 训练样本、按 group 防泄漏的数据切分脚本，以及第二、第三阶段扩充产物。当前还没有训练配置；当前重点仍是继续扩充和复核数据。
 
 项目还已接入 `konsheng/Sensitive-lexicon` 作为大词库召回与采样池，但尚未把词库全量变成训练数据。当前词库处理产物：
 
@@ -116,12 +121,12 @@
 
 当前 `data/processed/combined_candidates.jsonl` 风险分布：
 
-1. high：126 条。
-2. medium：234 条。
-3. low：145 条。
-4. none：170 条。
+1. high：167 条。
+2. medium：304 条。
+3. low：182 条。
+4. none：207 条。
 
-当前 hard negative 为 279 条，`context_required=true` 为 624 条，全部 675 条保持 `quality_status=needs_revision`。
+当前 hard negative 为 353 条，`context_required=true` 为 809 条，全部 860 条保持 `quality_status=needs_revision`。
 
 当前来源分布：
 
@@ -132,13 +137,14 @@
 5. sensitive_lexicon_seed：33 条。
 6. phase2_seed：100 条。
 7. phase3_first_wave：245 条。
+8. phase3_second_wave：185 条。
 
 当前 `data/processed/splits/` 默认切分状态：
 
-1. train：541 条；风险分布 high 108、medium 170、low 123、none 140；hard negative 229 条；`context_required=true` 492 条。
-2. validation：67 条；风险分布 high 7、medium 38、low 10、none 12；hard negative 21 条；`context_required=true` 67 条。
-3. test：67 条；风险分布 high 11、medium 26、low 12、none 18；hard negative 29 条；`context_required=true` 65 条。
-4. `data/processed/splits/split_report.json` 记录 226 个 group 分配；当前无 `meme_cluster`、词库 `category`、phase2 `axis/cluster`、phase3 `category/cluster/contrast_mode` 或语义簇跨 split 泄漏。
+1. train：688 条；风险分布 high 132、medium 260、low 129、none 167；hard negative 260 条；`context_required=true` 641 条。
+2. validation：86 条；风险分布 high 14、medium 25、low 26、none 21；hard negative 47 条；`context_required=true` 85 条。
+3. test：86 条；风险分布 high 21、medium 19、low 27、none 19；hard negative 46 条；`context_required=true` 83 条。
+4. `data/processed/splits/split_report.json` 记录 281 个 group 分配；当前无 `meme_cluster`、词库 `category`、phase2 `axis/cluster`、phase3 `category/cluster/contrast_mode` 或语义簇跨 split 泄漏。
 
 当前 `data/processed/lexicon_sampling_plan.json` 词库粗分类分布：
 
@@ -170,13 +176,12 @@
 
 1. `scripts/analyze_risk_coverage.py`：风险词覆盖分析脚本，默认只读正式 processed 与词库索引；可通过多个 `--input` 分析额外独立候选集，并拒绝重复 ID。
 2. `data/processed/risk_coverage_report.json`：机器可读覆盖报告。
-3. `data/processed/phase3_sampling_plan.json`：下一波定向采样参考；完整参考缺口 593 条，建议下一波 185 条。
+3. `data/processed/phase3_sampling_plan.json`：下一波定向采样参考，已基于正式 860 条重新生成。
 4. `docs/risk_coverage_report.md`：可读版覆盖分析报告。
-5. 当前正式 675 条候选合计风险分布：high 126、medium 234、low 145、none 170；hard negative 279。
+5. 当前正式 860 条候选合计风险分布：high 167、medium 304、low 182、none 207；hard negative 353。
 6. 下一波仍优先机制：拼音/首字母、字形/符号干扰、语义映射/鉴证梗、平台/时间/话题上下文。
-7. 当前 P0 类别：色情低俗、广告/诈骗/导流，各建议下一波约 25 条。
-8. 当前 P1 类别：辱骂/群体攻击、枪爆武器、公共事务、政治历史/鉴证梗，各建议下一波约 15 条。
-9. 当前 P2 类别：平台规避/审查黑话、网络黑产、暴力极端、违禁交易、赌博；已有一定基础，下一波应优先补真实长尾与困难边界，而非重复现有模板。
+7. 后续扩充应先看新版覆盖报告和人工复核结果，再决定下一波配额；不要把第二波 185 条再次当 raw 追加。
+8. 下一波应优先补真实长尾与困难边界，而非重复现有模板。
 
 当前第三阶段第一波 raw 状态：
 
@@ -187,24 +192,25 @@
 5. 与正式 330 条和 phase2 100 条均无 text 重复。
 6. `data/raw/phase3_first_wave_text_style_audit.json`：第三阶段第一波 text 风格审计，当前无标记问题。
 
-当前第三阶段第二波 raw 状态：
+当前第三阶段第二波状态：
 
 1. `scripts/build_phase3_second_wave_candidates.py`：第三阶段第二波长尾与困难边界候选生成脚本，只写 raw。
-2. `data/raw/phase3_second_wave_candidates.jsonl`：185 条，已通过 schema、重复和风格检查，全部 `needs_revision/not_merged`，尚未人工抽样确认或入库。
-3. 风险分布：high 41、medium 70、low 37、none 37；hard negative 74。
-4. 对照模式：direct、obfuscated、contextual、weak_signal、safe_context 各 37 条。
-5. 与正式 675 条及 phase3 第一波均无新增 ID/text 重复。
-6. `data/raw/phase3_second_wave_text_style_audit.json`：第二波 text 风格审计；按用户反馈修订后当前 0 个标记。
-7. `data/raw/phase3_second_wave_review_sample.json`、`docs/phase3_second_wave_review_sample.md`：44 条分层人工复核清单，已随第二波修订重建，等待用户二次确认。
-8. `docs/phase3_second_wave_human_feedback.md`：用户对 44 条复核样本的逐条反馈与重写原则；当前仅记录反馈，尚未修改第二波候选本体。
+2. `data/raw/phase3_second_wave_candidates.jsonl`：185 条 raw 候选，已通过 schema、重复和风格检查，raw 保持 `needs_revision/not_merged`。
+3. 第二波 processed 入库副本已经正式合并进 `data/processed/combined_candidates.jsonl/.json`，并标记为 `merged_processed`；不要重复入库。
+4. 风险分布：high 41、medium 70、low 37、none 37；hard negative 74。
+5. 对照模式：direct、obfuscated、contextual、weak_signal、safe_context 各 37 条。
+6. 与入库前正式 675 条及 phase3 第一波均无新增 ID/text 重复。
+7. `data/raw/phase3_second_wave_text_style_audit.json`：第二波 text 风格审计；按用户反馈修订后当前 0 个标记。
+8. `data/raw/phase3_second_wave_review_sample.json`、`docs/phase3_second_wave_review_sample.md`：44 条分层人工复核清单，已随第二波修订重建。
+9. `docs/phase3_second_wave_human_feedback.md`：用户对 44 条复核样本的逐条反馈与重写原则；已用于第二波候选修订。
 
-当前第三阶段第二波入库前预览状态：
+当前第三阶段第二波正式入库状态：
 
 1. `scripts/analyze_phase3_second_wave_delta.py`：第二波加入前后覆盖增益分析脚本。
 2. `data/processed/phase3_second_wave_coverage_delta.json`、`docs/phase3_second_wave_coverage_delta.md`：第二波覆盖增益报告。
-3. `scripts/import_phase3_second_wave.py`：第二波幂等导入脚本；默认 preview，`--apply` 才会修改正式 processed。
+3. `scripts/import_phase3_second_wave.py`：第二波幂等导入脚本；已执行 `--apply`，后续不要常规重复执行。
 4. `data/processed/combined_candidates_phase3_w2_preview.jsonl/.json`：860 条合并预览，已校验通过。
-5. 正式 processed 仍为 675 条；第二波尚未正式入库。
+5. 正式 processed 当前为 860 条；第二波已经正式入库，SFT、split 和覆盖分析均已重建。
 
 当前统一入库准备状态：
 
@@ -212,7 +218,7 @@
 2. `data/processed/phase3_coverage_delta.json`、`docs/phase3_coverage_delta.md`：覆盖增益报告。
 3. `scripts/import_expansion_batches.py`：phase2 + phase3 统一幂等导入脚本；已执行 `--apply`，内存复核确认在正式 675 条基础上再次构建仍为完全相同的 675 条。
 4. `data/processed/combined_candidates_expansion_preview.jsonl/.json`：675 条合并预览，已校验通过。
-5. 正式 processed 当前为 675 条；风险分布为 high 126、medium 234、low 145、none 170，hard negative 279。
+5. 该阶段产物为历史预览；正式 processed 已在后续第二波入库后升至 860 条。
 
 ## 数据来源计划
 
@@ -255,12 +261,11 @@
 
 ## 建议下一步
 
-下一步优先围绕第二阶段扩数据继续推进：
+下一步优先围绕正式 860 条继续做质量复核与下一波规划：
 
-1. 请用户二次确认是否接受第二波修订版与 860 条合并预览。
-2. 如果确认入库，运行 `python3 scripts/import_phase3_second_wave.py --apply`，随后校验正式 860 条、重建 SFT、重建 split，并重新运行覆盖分析。
-3. 如果仍有问题，继续只修第二波 raw 与预览，不动正式 675 条。
-3. 对正式 675 条候选继续分层复核，重点识别第一、二波模板化表达与标签争议。
+1. 对正式 860 条候选继续分层复核，重点抽查第二波入库样本、hard negative、high/medium 边界、weak_signal 和 safe_context。
+2. 基于新版 `docs/risk_coverage_report.md` 和人工复核结果，规划下一轮 raw 扩充；不要重复执行第二波入库。
+3. 后续新增候选仍按“raw 生成 -> 抽样复核 -> 独立预览 -> 校验 -> apply -> 重建 SFT/split”的流程推进。
 4. 330 条 reasoning 迁移预览已获认可，但暂不正式覆盖 processed；后续需要时再执行。
 
 ## 工作约定

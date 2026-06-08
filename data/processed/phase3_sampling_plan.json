@@ -1,22 +1,22 @@
 {
   "objective": "Use lexicon gaps to expand reasoning capabilities. Do not create one training sample per lexicon term.",
   "important_caveat": "Lexicon category assignment and representative seeds are heuristic. Manually review seeds before generation; a term's category is not a training label.",
-  "input_candidate_count": 675,
-  "recommended_total_phase3_quota": 593,
-  "recommended_first_wave_total": 185,
+  "input_candidate_count": 860,
+  "recommended_total_phase3_quota": 439,
+  "recommended_first_wave_total": 158,
   "categories": [
     {
       "category": "sexual_content",
       "name": "色情低俗",
       "priority": "P0",
-      "current_inferred_samples": 32,
+      "current_inferred_samples": 57,
       "current_risk_counts": {
-        "high": 7,
-        "low": 5,
-        "medium": 13,
-        "none": 7
+        "high": 13,
+        "low": 10,
+        "medium": 22,
+        "none": 12
       },
-      "current_hard_negative": 12,
+      "current_hard_negative": 22,
       "reference_target": 160,
       "recommended_phase3_quota": 100,
       "recommended_first_wave_quota": 25,
@@ -99,18 +99,18 @@
     {
       "category": "spam_ads_fraud",
       "name": "广告/诈骗/导流",
-      "priority": "P0",
-      "current_inferred_samples": 54,
+      "priority": "P1",
+      "current_inferred_samples": 79,
       "current_risk_counts": {
-        "high": 9,
-        "low": 5,
-        "medium": 23,
-        "none": 17
+        "high": 14,
+        "low": 10,
+        "medium": 33,
+        "none": 22
       },
-      "current_hard_negative": 22,
+      "current_hard_negative": 32,
       "reference_target": 160,
-      "recommended_phase3_quota": 100,
-      "recommended_first_wave_quota": 25,
+      "recommended_phase3_quota": 81,
+      "recommended_first_wave_quota": 15,
       "reasons": [
         "已有基础覆盖，继续补长尾机制和真实语境"
       ],
@@ -199,16 +199,16 @@
       "category": "insulting_abuse",
       "name": "辱骂/群体攻击",
       "priority": "P1",
-      "current_inferred_samples": 32,
+      "current_inferred_samples": 47,
       "current_risk_counts": {
-        "high": 5,
-        "low": 6,
-        "medium": 13,
-        "none": 8
+        "high": 8,
+        "low": 9,
+        "medium": 19,
+        "none": 11
       },
-      "current_hard_negative": 14,
+      "current_hard_negative": 20,
       "reference_target": 100,
-      "recommended_phase3_quota": 68,
+      "recommended_phase3_quota": 53,
       "recommended_first_wave_quota": 15,
       "reasons": [
         "已有基础覆盖，继续补长尾机制和真实语境"
@@ -290,16 +290,16 @@
       "category": "weapons_explosives",
       "name": "枪爆武器",
       "priority": "P1",
-      "current_inferred_samples": 32,
+      "current_inferred_samples": 47,
       "current_risk_counts": {
-        "high": 9,
-        "low": 5,
-        "medium": 11,
-        "none": 7
+        "high": 12,
+        "low": 8,
+        "medium": 17,
+        "none": 10
       },
-      "current_hard_negative": 12,
+      "current_hard_negative": 18,
       "reference_target": 100,
-      "recommended_phase3_quota": 68,
+      "recommended_phase3_quota": 53,
       "recommended_first_wave_quota": 15,
       "reasons": [
         "已有基础覆盖，继续补长尾机制和真实语境"
@@ -380,17 +380,17 @@
     {
       "category": "public_affairs",
       "name": "公共事务",
-      "priority": "P1",
-      "current_inferred_samples": 39,
+      "priority": "P2",
+      "current_inferred_samples": 54,
       "current_risk_counts": {
-        "high": 5,
-        "low": 9,
-        "medium": 18,
-        "none": 7
+        "high": 8,
+        "low": 12,
+        "medium": 24,
+        "none": 10
       },
-      "current_hard_negative": 15,
+      "current_hard_negative": 21,
       "reference_target": 100,
-      "recommended_phase3_quota": 61,
+      "recommended_phase3_quota": 46,
       "recommended_first_wave_quota": 15,
       "reasons": [
         "已有基础覆盖，继续补长尾机制和真实语境"
@@ -471,17 +471,17 @@
     {
       "category": "political_history",
       "name": "政治历史/鉴证梗",
-      "priority": "P1",
-      "current_inferred_samples": 102,
+      "priority": "P2",
+      "current_inferred_samples": 117,
       "current_risk_counts": {
-        "high": 26,
-        "low": 16,
-        "medium": 43,
-        "none": 17
+        "high": 29,
+        "low": 19,
+        "medium": 49,
+        "none": 20
       },
-      "current_hard_negative": 32,
+      "current_hard_negative": 38,
       "reference_target": 160,
-      "recommended_phase3_quota": 58,
+      "recommended_phase3_quota": 43,
       "recommended_first_wave_quota": 15,
       "reasons": [
         "已有基础覆盖，继续补长尾机制和真实语境"
@@ -563,16 +563,16 @@
       "category": "platform_censorship_evasion",
       "name": "平台规避/审查黑话",
       "priority": "P2",
-      "current_inferred_samples": 125,
+      "current_inferred_samples": 140,
       "current_risk_counts": {
-        "high": 26,
-        "low": 29,
-        "medium": 41,
-        "none": 29
+        "high": 29,
+        "low": 32,
+        "medium": 47,
+        "none": 32
       },
-      "current_hard_negative": 37,
+      "current_hard_negative": 43,
       "reference_target": 160,
-      "recommended_phase3_quota": 35,
+      "recommended_phase3_quota": 20,
       "recommended_first_wave_quota": 15,
       "reasons": [
         "已有基础覆盖，继续补长尾机制和真实语境"
@@ -654,17 +654,17 @@
       "category": "cyber_abuse",
       "name": "网络黑产/安全风险",
       "priority": "P2",
-      "current_inferred_samples": 33,
+      "current_inferred_samples": 48,
       "current_risk_counts": {
-        "high": 7,
-        "low": 5,
-        "medium": 14,
-        "none": 7
+        "high": 12,
+        "low": 8,
+        "medium": 18,
+        "none": 10
       },
-      "current_hard_negative": 12,
+      "current_hard_negative": 18,
       "reference_target": 60,
-      "recommended_phase3_quota": 27,
-      "recommended_first_wave_quota": 15,
+      "recommended_phase3_quota": 12,
+      "recommended_first_wave_quota": 12,
       "reasons": [
         "已有基础覆盖，继续补长尾机制和真实语境"
       ],
@@ -745,17 +745,17 @@
       "category": "violence_extremism",
       "name": "暴力极端",
       "priority": "P2",
-      "current_inferred_samples": 33,
+      "current_inferred_samples": 48,
       "current_risk_counts": {
-        "high": 8,
-        "low": 5,
-        "medium": 13,
-        "none": 7
+        "high": 11,
+        "low": 8,
+        "medium": 19,
+        "none": 10
       },
-      "current_hard_negative": 12,
+      "current_hard_negative": 18,
       "reference_target": 60,
-      "recommended_phase3_quota": 27,
-      "recommended_first_wave_quota": 15,
+      "recommended_phase3_quota": 12,
+      "recommended_first_wave_quota": 12,
       "reasons": [
         "已有基础覆盖，继续补长尾机制和真实语境"
       ],
@@ -836,17 +836,17 @@
       "category": "illegal_goods",
       "name": "违禁交易",
       "priority": "P2",
-      "current_inferred_samples": 34,
+      "current_inferred_samples": 49,
       "current_risk_counts": {
-        "high": 9,
-        "low": 5,
-        "medium": 12,
-        "none": 8
+        "high": 12,
+        "low": 8,
+        "medium": 18,
+        "none": 11
       },
-      "current_hard_negative": 13,
+      "current_hard_negative": 19,
       "reference_target": 60,
-      "recommended_phase3_quota": 26,
-      "recommended_first_wave_quota": 15,
+      "recommended_phase3_quota": 11,
+      "recommended_first_wave_quota": 11,
       "reasons": [
         "已有基础覆盖，继续补长尾机制和真实语境"
       ],
@@ -935,17 +935,17 @@
       "category": "gambling",
       "name": "赌博",
       "priority": "P2",
-      "current_inferred_samples": 37,
+      "current_inferred_samples": 52,
       "current_risk_counts": {
-        "high": 6,
-        "low": 6,
-        "medium": 14,
-        "none": 11
+        "high": 10,
+        "low": 9,
+        "medium": 19,
+        "none": 14
       },
-      "current_hard_negative": 17,
+      "current_hard_negative": 23,
       "reference_target": 60,
-      "recommended_phase3_quota": 23,
-      "recommended_first_wave_quota": 15,
+      "recommended_phase3_quota": 8,
+      "recommended_first_wave_quota": 8,
       "reasons": [
         "已有基础覆盖，继续补长尾机制和真实语境"
       ],
