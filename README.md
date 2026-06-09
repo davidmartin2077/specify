@@ -22,6 +22,7 @@
 | 第三阶段第二波 | 185 条已正式入库 |
 | 第二波人工复核清单 | 44 条，已按反馈重建并用于入库判断 |
 | 覆盖分析 | 已基于 860 条重新生成 |
+| 外部真实评论数据评估 | ToxiCN/COLD/ChineseSafe 已生成 340 条 raw 预览，尚未入库 |
 
 正式候选集：
 
@@ -66,6 +67,48 @@ test         86
 - `data/raw/phase3_second_wave_review_sample.json`
 
 下一步不要重复执行第二波入库；应转向对正式 860 条做分层复核，或基于新版覆盖报告规划下一轮扩充。
+
+## 外部真实评论数据评估
+
+已对 ToxiCN、COLD 和 ChineseSafe 做外部接入评估，用于把数据风格往真实评论区靠拢，同时保留本项目的推理链优势。
+
+相关文件：
+
+- `scripts/analyze_external_safety_datasets.py`
+- `docs/external_safety_datasets_review.md`
+- `docs/external_safety_import_review_sample.md`
+- `docs/duplicate_text_audit.md`
+- `data/raw/external_safety_import_preview.jsonl`
+- `data/raw/external_safety_import_preview.json`
+- `data/raw/external_safety_datasets_report.json`
+
+外部 raw 预览组成：
+
+```text
+ToxiCN        120
+COLD         120
+ChineseSafe  100
+合计          340
+```
+
+外部 raw 预览分布：
+
+```text
+high     36
+medium  186
+low      24
+none     94
+
+hard_negative 94
+```
+
+当前原则：
+
+- 外部标签只作为候选信号，不替代本项目标注。
+- 340 条全部为 `needs_revision/not_merged`，不进入正式 processed。
+- 下一步应先人工抽查 `docs/external_safety_import_review_sample.md`。
+- 适合保留的外部样本需要重塑 `context`、`reasoning`、`counter_evidence` 和风险等级。
+- `docs/duplicate_text_audit.md` 已记录正式 860 条中的 53 组重复 text，后续需要判断哪些是有效语境对照，哪些是早期模板污染。
 
 ## 第二波正式入库状态
 
@@ -231,6 +274,9 @@ direct 基本可以，但诈骗类暗号要更像真实引流话术。
 - `docs/risk_coverage_report.md`：基于正式 860 条的风险覆盖分析。
 - `docs/phase3_coverage_delta.md`：phase2 + phase3 第一波入库前后的覆盖增益。
 - `docs/phase3_second_wave_review_sample.md`：第二波 44 条人工复核清单。
+- `docs/external_safety_datasets_review.md`：ToxiCN/COLD/ChineseSafe 外部数据接入评估。
+- `docs/external_safety_import_review_sample.md`：外部 raw 转换预览抽样。
+- `docs/duplicate_text_audit.md`：正式 860 条重复 text 审计。
 - `docs/high_recall_style_migration.md`：高召回风格迁移原则。
 - `docs/data_expansion_plan.md`：扩充计划。
 
@@ -298,6 +344,13 @@ python3 scripts/audit_text_style.py \
 python3 scripts/build_phase3_second_wave_review_sample.py
 ```
 
+重建外部数据评估与 raw 预览：
+
+```bash
+python3 scripts/analyze_external_safety_datasets.py --include-chinesesafe
+python3 scripts/validate_dataset.py data/raw/external_safety_import_preview.jsonl
+```
+
 ## 数据入库原则
 
 1. raw 候选先人工抽样确认，不直接进入 processed。
@@ -324,13 +377,15 @@ python3 scripts/build_phase3_second_wave_review_sample.py
 8. 基于 675 条重跑覆盖分析，得到下一波 185 条建议。
 9. 生成 phase3 第二波 raw 185 条；首次人工抽样发现审核员口吻、tips、黑话教学等问题后，已按反馈重写并重建复核清单。
 10. phase3 第二波 185 条已正式入库，processed/SFT 达到 860 条，防泄漏 split 已重建并校验。
+11. 已评估 ToxiCN、COLD、ChineseSafe 三个外部真实评论/安全数据源，生成 340 条 raw 转换预览和重复 text 审计；正式 processed 未修改。
 
 ## 当前下一步
 
 优先处理：
 
 1. 对正式 860 条做分层人工复核，优先抽查第二波入库样本、hard negative、high/medium 边界和 safe_context。
-2. 基于新版 `docs/risk_coverage_report.md` 规划下一轮扩充，不要逐词机械生成。
-3. 后续新增候选仍先进入 raw，人工抽查、预览校验后再入库。
+2. 人工抽查 `docs/external_safety_import_review_sample.md`，判断三套外部数据哪些适合重塑推理链。
+3. 基于新版 `docs/risk_coverage_report.md` 和外部数据评估结果规划下一轮扩充，不要逐词机械生成。
+4. 后续新增候选仍先进入 raw，人工抽查、预览校验后再入库。
 
 不要急着训练。当前 860 条仍只是数据骨架，质量状态全部为 `needs_revision`，还需要继续复核和分层扩充。

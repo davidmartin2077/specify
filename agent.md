@@ -107,6 +107,11 @@
 93. 已重新运行 `scripts/build_sft_dataset.py`，生成 860 条 `data/mvp/sft_candidates.jsonl/.json`；SFT `metadata.id` 顺序与正式 processed ID 完全一致，JSONL 与 JSON 内容一致。
 94. 已重新运行 `scripts/split_dataset.py` 并校验三份 split。当前 train 688、validation 86、test 86，合计覆盖 860 个唯一 ID；`split_report.json` 记录 281 个防泄漏组，0 个跨 split 泄漏组。
 95. 已基于正式 860 条重新运行 `scripts/analyze_risk_coverage.py`，更新 `data/processed/risk_coverage_report.json`、`data/processed/phase3_sampling_plan.json` 和 `docs/risk_coverage_report.md`。后续应以新版覆盖报告规划下一轮扩充，不要重复执行第二波入库。
+96. 用户提出 ToxiCN、COLD、ChineseSafe 三个外部数据集更接近真实评论区语感，项目自建 860 条的优势在 `context/reasoning/counter_evidence/hard_negative`，后续方向应让自建数据内容向真实评论区靠拢，同时保留并重塑推理链。
+97. 已安装 Hugging Face `datasets` 并成功加载 `SUSTech/ChineseSafe` test split。ChineseSafe test 共 20,000 条，字段为 `text/label/subject`，标签分布为 `违规` 10,000、`不违规` 10,000；subject 分布为不违规 10,000，加上偏见歧视、淫秽色情、财产隐私、心理健康、违法犯罪、脏话侮辱、身体伤害、政治错误、道德伦理、变体词各 1,000。
+98. 已创建并运行 `scripts/analyze_external_safety_datasets.py`，对 ToxiCN、COLD、ChineseSafe 做外部数据接入评估。生成 `docs/external_safety_datasets_review.md`、`data/raw/external_safety_datasets_report.json`、`data/raw/external_safety_import_preview.jsonl/.json`、`docs/external_safety_import_review_sample.md` 和 `docs/duplicate_text_audit.md`。
+99. 外部 raw 转换预览共 340 条：ToxiCN 120、COLD 120、ChineseSafe 100；风险分布 high 36、medium 186、low 24、none 94；hard negative 94；ID/text 均唯一，已通过 `scripts/validate_dataset.py data/raw/external_safety_import_preview.jsonl` 校验。该预览全部保持 `quality_status=needs_revision` 和 `not_merged`，正式 processed 仍为 860 条，未入库。
+100. 重复 text 审计显示正式 860 条中存在 53 组重复文本、64 条额外重复行，主要集中在早期 `MEME_EXPAND_*`。这些重复不应机械删除；需要判断是有效的同文不同语境对照，还是早期模板污染。
 
 ## 当前状态
 
@@ -212,6 +217,16 @@
 4. `data/processed/combined_candidates_phase3_w2_preview.jsonl/.json`：860 条合并预览，已校验通过。
 5. 正式 processed 当前为 860 条；第二波已经正式入库，SFT、split 和覆盖分析均已重建。
 
+当前外部真实评论数据评估状态：
+
+1. `scripts/analyze_external_safety_datasets.py`：外部数据评估与 raw 预览生成脚本，可读取本地 ToxiCN/COLD CSV，并通过 Hugging Face `datasets` 加载 `SUSTech/ChineseSafe`。
+2. `docs/external_safety_datasets_review.md`：外部数据概览报告。ToxiCN 12,011 条、COLD train 25,726 条、ChineseSafe test 20,000 条；三者都更接近真实评论或中文安全评测语感。
+3. `data/raw/external_safety_import_preview.jsonl/.json`：340 条外部 raw 转换预览，全部 `needs_revision/not_merged`，尚未入库。来源为 ToxiCN 120、COLD 120、ChineseSafe 100。
+4. 外部预览风险分布：high 36、medium 186、low 24、none 94；hard negative 94；schema 校验通过。
+5. `docs/external_safety_import_review_sample.md`：每个外部来源抽 20 条用于人工复核。复核重点是“是否像真实评论”“外部标签是否可信”“是否值得重塑为本项目 reasoning 样本”。
+6. `docs/duplicate_text_audit.md`：正式 860 条重复文本审计。当前 53 组重复、64 条额外重复行，后续需区分有效语境对照与模板污染。
+7. 外部标签只作为候选信号，不替代本项目标注；适合保留的外部样本必须补 `context`、重塑 `reasoning/counter_evidence`，再按预览流程入库。
+
 当前统一入库准备状态：
 
 1. `scripts/analyze_phase3_coverage_delta.py`：phase3 加入前后覆盖增益分析脚本。
@@ -264,9 +279,10 @@
 下一步优先围绕正式 860 条继续做质量复核与下一波规划：
 
 1. 对正式 860 条候选继续分层复核，重点抽查第二波入库样本、hard negative、high/medium 边界、weak_signal 和 safe_context。
-2. 基于新版 `docs/risk_coverage_report.md` 和人工复核结果，规划下一轮 raw 扩充；不要重复执行第二波入库。
-3. 后续新增候选仍按“raw 生成 -> 抽样复核 -> 独立预览 -> 校验 -> apply -> 重建 SFT/split”的流程推进。
-4. 330 条 reasoning 迁移预览已获认可，但暂不正式覆盖 processed；后续需要时再执行。
+2. 人工抽查 `docs/external_safety_import_review_sample.md`，判断 ToxiCN/COLD/ChineseSafe 哪些样本适合接入并重塑推理链。
+3. 基于新版 `docs/risk_coverage_report.md`、外部数据评估和重复文本审计，规划下一轮 raw 扩充；不要重复执行第二波入库。
+4. 后续新增候选仍按“raw 生成 -> 抽样复核 -> 独立预览 -> 校验 -> apply -> 重建 SFT/split”的流程推进。
+5. 330 条 reasoning 迁移预览已获认可，但暂不正式覆盖 processed；后续需要时再执行。
 
 ## 工作约定
 
