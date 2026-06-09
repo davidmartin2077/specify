@@ -28,6 +28,35 @@ EXTERNAL_BINARY_JSONL = ROOT / "data/raw/external_safety_binary_preview.jsonl"
 RISK_EVAL_JSONL = ROOT / "data/eval/risk_test_preview.jsonl"
 NORMAL_EVAL_JSONL = ROOT / "data/eval/normal_test_preview.jsonl"
 
+BINARY_CODES = {
+    "unsafe": "B01",
+    "safe": "B02",
+}
+
+CONTEXT_CLASS_CODES = {
+    "direct_no_context": "C01",
+    "contextual_required": "C02",
+    "safe_without_context": "C03",
+}
+
+CONTEXT_FLAG_CODES = {
+    "generic_or_template_context": "F01",
+    "external_placeholder_context": "F02",
+    "do_not_invent_context_review_needed": "F03",
+    "safe_sample_context_may_be_optional": "F04",
+    "likely_direct_no_context": "F05",
+    "context_required_but_empty": "F06",
+    "context_required_only_title": "F07",
+    "reasoning_claims_context_but_context_thin": "F08",
+}
+
+DUPLICATE_STATUS_CODES = {
+    "unique": "D00",
+    "effective_contrast_candidate": "D01",
+    "same_text_different_context_review": "D02",
+    "template_pollution_candidate": "D03",
+}
+
 DIRECT_RISK_TERMS = (
     "强奸",
     "杀",
@@ -288,13 +317,20 @@ def binary_preview_row(sample: dict[str, Any], dataset: str, duplicate_status: s
     flags = context_flags(sample, dataset)
     bucket = context_bucket(sample, flags)
     row["safety_binary"] = safety_binary(sample)
+    row["safety_binary_code"] = BINARY_CODES[row["safety_binary"]]
     row["context_audit_class"] = bucket
+    row["context_audit_class_code"] = CONTEXT_CLASS_CODES[bucket]
     row["context_audit_flags"] = flags
+    row["context_audit_flag_codes"] = [CONTEXT_FLAG_CODES[flag] for flag in flags]
     row["duplicate_text_status"] = duplicate_status
+    row["duplicate_text_status_code"] = DUPLICATE_STATUS_CODES[duplicate_status]
     row["review_notes"] = (
         f"{row.get('review_notes', '')}; "
-        f"context_audit_class={bucket}; safety_binary={row['safety_binary']}; "
-        f"duplicate_text_status={duplicate_status}; preview_only=true"
+        f"context_audit_class={bucket}; context_audit_class_code={row['context_audit_class_code']}; "
+        f"context_audit_flag_codes={'+'.join(row['context_audit_flag_codes']) or 'none'}; "
+        f"safety_binary={row['safety_binary']}; safety_binary_code={row['safety_binary_code']}; "
+        f"duplicate_text_status={duplicate_status}; duplicate_text_status_code={row['duplicate_text_status_code']}; "
+        f"preview_only=true"
     ).strip("; ")
     return row
 
@@ -339,6 +375,7 @@ def duplicate_group_report(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 "text": first.get("text", ""),
                 "count": len(group),
                 "status": statuses[str(first["id"])],
+                "status_code": DUPLICATE_STATUS_CODES[statuses[str(first["id"])]],
                 "ids": [row.get("id", "") for row in group],
                 "risk_levels": dict(Counter(str(row.get("risk_level", "")) for row in group).most_common()),
                 "source_buckets": dict(
@@ -371,10 +408,14 @@ def build_previews(
             "source_bucket": source_bucket(str(row["id"]), str(row.get("review_notes", ""))),
             "risk_level": row.get("risk_level"),
             "safety_binary": row["safety_binary"],
+            "safety_binary_code": row["safety_binary_code"],
             "context_required": row.get("context_required"),
             "context_audit_class": row["context_audit_class"],
+            "context_audit_class_code": row["context_audit_class_code"],
             "context_audit_flags": row["context_audit_flags"],
+            "context_audit_flag_codes": row["context_audit_flag_codes"],
             "duplicate_text_status": row["duplicate_text_status"],
+            "duplicate_text_status_code": row["duplicate_text_status_code"],
             "text": row.get("text", ""),
             "context_fields": non_empty_context_fields(row),
         }
@@ -392,14 +433,27 @@ def build_previews(
             "total": len(all_preview),
         },
         "binary_counts": dict(Counter(row["safety_binary"] for row in all_preview).most_common()),
+        "binary_code_counts": dict(Counter(row["safety_binary_code"] for row in all_preview).most_common()),
         "context_audit_class_counts": dict(Counter(row["context_audit_class"] for row in all_preview).most_common()),
+        "context_audit_class_code_counts": dict(
+            Counter(row["context_audit_class_code"] for row in all_preview).most_common()
+        ),
         "context_flag_counts": dict(
             Counter(flag for row in all_preview for flag in row["context_audit_flags"]).most_common()
+        ),
+        "context_flag_code_counts": dict(
+            Counter(code for row in all_preview for code in row["context_audit_flag_codes"]).most_common()
         ),
         "combined_duplicate_groups": duplicate_group_report(combined_rows),
         "external_duplicate_groups": duplicate_group_report(external_rows),
         "source_breakdown": source_breakdown(all_preview),
         "audit_items": audit_items,
+        "code_maps": {
+            "safety_binary": BINARY_CODES,
+            "context_audit_class": CONTEXT_CLASS_CODES,
+            "context_audit_flags": CONTEXT_FLAG_CODES,
+            "duplicate_text_status": DUPLICATE_STATUS_CODES,
+        },
         "threshold_recommendation": {
             "phase1_risk_test_unsafe_recall_target": "80%-90%+",
             "phase1_normal_test_false_positive_tolerance": "about 30%",
@@ -420,8 +474,11 @@ def source_breakdown(rows: list[dict[str, Any]]) -> dict[str, Any]:
             "count": len(items),
             "risk_level": dict(Counter(str(row.get("risk_level", "")) for row in items).most_common()),
             "safety_binary": dict(Counter(row["safety_binary"] for row in items).most_common()),
+            "safety_binary_code": dict(Counter(row["safety_binary_code"] for row in items).most_common()),
             "context_audit_class": dict(Counter(row["context_audit_class"] for row in items).most_common()),
+            "context_audit_class_code": dict(Counter(row["context_audit_class_code"] for row in items).most_common()),
             "flags": dict(Counter(flag for row in items for flag in row["context_audit_flags"]).most_common()),
+            "flag_codes": dict(Counter(code for row in items for code in row["context_audit_flag_codes"]).most_common()),
         }
     return output
 
@@ -471,7 +528,7 @@ def render_md(audit: dict[str, Any]) -> str:
         "|---|---:|",
     ]
     for key, value in binary.items():
-        lines.append(f"| {key} | {value} |")
+        lines.append(f"| {BINARY_CODES[key]} / {key} | {value} |")
 
     lines.extend(
         [
@@ -485,7 +542,7 @@ def render_md(audit: dict[str, Any]) -> str:
         ]
     )
     for key, value in classes.items():
-        lines.append(f"| {key} | {value} |")
+        lines.append(f"| {CONTEXT_CLASS_CODES[key]} / {key} | {value} |")
 
     lines.extend(
         [
@@ -501,12 +558,14 @@ def render_md(audit: dict[str, Any]) -> str:
         ]
     )
     for key, value in flags.items():
-        lines.append(f"| {key} | {value} |")
+        lines.append(f"| {CONTEXT_FLAG_CODES[key]} / {key} | {value} |")
 
     lines.extend(
         [
             "",
-            "这些标记是启发式，不是自动判错。优先人工复核 `external_placeholder_context`、`likely_direct_no_context` 和 `reasoning_claims_context_but_context_thin`。",
+            "这些标记是启发式，不是自动判错。优先人工复核 `F02 external_placeholder_context`、`F05 likely_direct_no_context` 和 `F08 reasoning_claims_context_but_context_thin`。",
+            "",
+            "完整代码表见 `docs/context_audit_codebook.md`。这些数字码只服务人工复核和数据命名，不应进入模型训练文本。",
             "",
             "## 重复文本判断",
             "",
@@ -523,7 +582,7 @@ def render_md(audit: dict[str, Any]) -> str:
         lines.extend(
             [
                 f"- `{group['text']}`",
-                f"  count={group['count']}；status=`{group['status']}`；ids={', '.join(group['ids'][:5])}",
+                f"  count={group['count']}；status=`{group['status_code']} / {group['status']}`；ids={', '.join(group['ids'][:5])}",
             ]
         )
 
