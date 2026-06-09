@@ -14,7 +14,9 @@
 6. 外部真实评论/安全数据评估已完成，但尚未入库：`data/raw/external_safety_import_preview.jsonl/.json` 共 340 条，来源为 ToxiCN 120、COLD 120、ChineseSafe 100；全部 `needs_revision/not_merged`。
 7. 外部预览风险分布：high 36、medium 186、low 24、none 94；hard_negative 94；已通过 `scripts/validate_dataset.py` 校验；与正式 860 条 text 重叠为 0。
 8. 正式 860 条存在 53 组重复 text、64 条额外重复行，主要集中在早期 `MEME_EXPAND_*`；见 `docs/duplicate_text_audit.md`。
-9. 当前还没有训练配置、训练运行或模型评测结果；仍处于数据准备、复核、清洗、评测集设计阶段。
+9. 上下文必要性与二元标签审计已完成：`docs/context_requirement_audit.md`、`data/raw/context_requirement_audit.json`、`data/raw/combined_candidates_binary_preview.jsonl`、`data/raw/external_safety_binary_preview.jsonl`、`data/eval/risk_test_preview.jsonl`、`data/eval/normal_test_preview.jsonl` 已生成并通过 schema 校验。
+10. 二元预览合计 1200 条：unsafe 899、safe 301；上下文分层为 `contextual_required` 846、`safe_without_context` 301、`direct_no_context` 53。
+11. 当前还没有训练配置、训练运行或模型评测结果；仍处于数据准备、复核、清洗、评测集设计阶段。
 
 ### 最新用户决策
 
@@ -41,31 +43,19 @@
 6. `scripts/analyze_external_safety_datasets.py`：外部数据评估与 raw 预览生成脚本。
 7. `scripts/validate_dataset.py`：项目 JSONL schema 校验脚本。
 8. `data/processed/combined_candidates.jsonl`：当前正式 860 条。
+9. `scripts/audit_context_and_binary_labels.py`：上下文依赖、二元标签和 eval 草案生成脚本。
+10. `docs/context_requirement_audit.md`：上下文必要性、重复文本和二元评测建议报告。
+11. `data/eval/risk_test_preview.jsonl`、`data/eval/normal_test_preview.jsonl`：高召回/误封率评测集草案。
 
 ### 下一步执行任务
 
-新窗口应优先做以下工作，不要先训练，也不要重复入库：
+新窗口应优先做以下工作，不要先训练，也不要重复入库或重复生成本轮审计：
 
-1. 创建一个新的审计/修正脚本，例如 `scripts/audit_context_and_binary_labels.py`。
-2. 读取正式 860 条和外部 340 条 raw 预览，检查并报告：
-   - 哪些样本被硬凑了 context/title/parent_comment/reply_chain。
-   - 哪些样本其实可以 `context_required=false`。
-   - 哪些样本属于 `direct_no_context`、`contextual_required`、`safe_without_context`。
-   - 当前 860 条中重复 text 的样本是否是有效同文不同语境对照，还是疑似模板污染。
-3. 生成报告，建议文件：
-   - `docs/context_requirement_audit.md`
-   - `data/raw/context_requirement_audit.json`
-4. 给正式 860 条和外部 340 条生成二元标签预览，不直接改正式 processed：
-   - `data/raw/combined_candidates_binary_preview.jsonl`
-   - `data/raw/external_safety_binary_preview.jsonl`
-   推荐字段可以先放在 `review_notes` 或新增预览字段 `safety_binary`，但不要直接修改正式 schema。
-5. 基于二元标签预览，生成两个评测集草案：
-   - `data/eval/risk_test_preview.jsonl`：全风险样本，目标衡量 unsafe recall/封杀率。
-   - `data/eval/normal_test_preview.jsonl`：全正常或 hard negative 样本，目标衡量 false positive/误封率。
-6. 在报告中明确建议阈值：
-   - 第一阶段 risk_test unsafe recall 目标 80%-90%+。
-   - normal_test 误封率暂可容忍约 30%，但后续要通过 hard negative 降低。
-7. 更新 `README.md` 和 `agent.md`，并提交 git。命令行 `git push` 可能因 GitHub 凭据失败；失败后打开 GitHub Desktop 让用户点 `Push origin`。
+1. 人工抽查 `docs/context_requirement_audit.md` 中的 `likely_direct_no_context`、`external_placeholder_context`、`template_pollution_candidate` 样本，决定哪些正式样本后续应把 `context_required` 调为 false，哪些重复 text 属于模板污染。
+2. 人工抽查 `docs/external_safety_import_review_sample.md`，优先筛出 ToxiCN/COLD/ChineseSafe 中适合重塑为项目推理链的真实评论样本。
+3. 基于二元预览和 eval 草案设计第一版离线评测脚本：risk_test 衡量 unsafe recall/封杀率，normal_test 衡量 false positive/误封率。
+4. 如要修改正式数据，先生成独立清洗预览并校验，不要直接改 `data/processed/combined_candidates.*`。
+5. 更新 `README.md` 和 `agent.md`，并提交 git。命令行 `git push` 可能因 GitHub 凭据失败；失败后打开 GitHub Desktop 让用户点 `Push origin`。
 
 ### 禁止/谨慎事项
 
@@ -187,10 +177,11 @@
 98. 已创建并运行 `scripts/analyze_external_safety_datasets.py`，对 ToxiCN、COLD、ChineseSafe 做外部数据接入评估。生成 `docs/external_safety_datasets_review.md`、`data/raw/external_safety_datasets_report.json`、`data/raw/external_safety_import_preview.jsonl/.json`、`docs/external_safety_import_review_sample.md` 和 `docs/duplicate_text_audit.md`。
 99. 外部 raw 转换预览共 340 条：ToxiCN 120、COLD 120、ChineseSafe 100；风险分布 high 36、medium 186、low 24、none 94；hard negative 94；ID/text 均唯一，已通过 `scripts/validate_dataset.py data/raw/external_safety_import_preview.jsonl` 校验。该预览全部保持 `quality_status=needs_revision` 和 `not_merged`，正式 processed 仍为 860 条，未入库。
 100. 重复 text 审计显示正式 860 条中存在 53 组重复文本、64 条额外重复行，主要集中在早期 `MEME_EXPAND_*`。这些重复不应机械删除；需要判断是有效的同文不同语境对照，还是早期模板污染。
+101. 已创建并运行 `scripts/audit_context_and_binary_labels.py`，读取正式 860 条与外部 340 条 raw 预览，生成上下文依赖审计、二元标签预览和 eval 草案。新增产物包括 `docs/context_requirement_audit.md`、`data/raw/context_requirement_audit.json`、`data/raw/combined_candidates_binary_preview.jsonl`、`data/raw/external_safety_binary_preview.jsonl`、`data/eval/risk_test_preview.jsonl`、`data/eval/normal_test_preview.jsonl`；四份 JSONL 均已通过 `scripts/validate_dataset.py` 校验。二元预览合计 unsafe 899、safe 301；上下文分层为 `contextual_required` 846、`safe_without_context` 301、`direct_no_context` 53。正式 processed 未修改，外部 340 条仍未入库。
 
 ## 当前状态
 
-项目已经具备规则文档、标注规范、schema、基础目录、数据校验脚本、第一批示例 JSONL 数据、Grok 50 条原始候选样本、用户 7 条原始候选样本、两份外部模型扩写候选原始文件、扩写候选清洗导入脚本、词库候选生成与导入脚本、860 条已规整的待复核训练格式数据、SFT 数据构建脚本、860 条 SFT 训练样本、按 group 防泄漏的数据切分脚本，以及第二、第三阶段扩充产物。当前还没有训练配置；当前重点仍是继续扩充和复核数据。
+项目已经具备规则文档、标注规范、schema、基础目录、数据校验脚本、第一批示例 JSONL 数据、Grok 50 条原始候选样本、用户 7 条原始候选样本、两份外部模型扩写候选原始文件、扩写候选清洗导入脚本、词库候选生成与导入脚本、860 条已规整的待复核训练格式数据、SFT 数据构建脚本、860 条 SFT 训练样本、按 group 防泄漏的数据切分脚本、第二/第三阶段扩充产物，以及上下文/二元标签/eval 草案审计产物。当前还没有训练配置；当前重点仍是继续复核、清洗和设计评测。
 
 项目还已接入 `konsheng/Sensitive-lexicon` 作为大词库召回与采样池，但尚未把词库全量变成训练数据。当前词库处理产物：
 
@@ -225,6 +216,17 @@
 2. validation：86 条；风险分布 high 14、medium 25、low 26、none 21；hard negative 47 条；`context_required=true` 85 条。
 3. test：86 条；风险分布 high 21、medium 19、low 27、none 19；hard negative 46 条；`context_required=true` 83 条。
 4. `data/processed/splits/split_report.json` 记录 281 个 group 分配；当前无 `meme_cluster`、词库 `category`、phase2 `axis/cluster`、phase3 `category/cluster/contrast_mode` 或语义簇跨 split 泄漏。
+
+当前上下文依赖与二元标签审计状态：
+
+1. `scripts/audit_context_and_binary_labels.py`：只读正式 processed 与外部 raw 预览，生成审计报告、二元预览和 eval 草案，不修改正式 schema。
+2. `docs/context_requirement_audit.md`、`data/raw/context_requirement_audit.json`：合计审计 1200 条，二元标签为 unsafe 899、safe 301。
+3. 上下文分层：`contextual_required` 846、`safe_without_context` 301、`direct_no_context` 53。
+4. 主要审计标记：`generic_or_template_context` 429、`external_placeholder_context` 340、`do_not_invent_context_review_needed` 246、`safe_sample_context_may_be_optional` 166、`likely_direct_no_context` 10、`context_required_but_empty` 1。
+5. 正式 860 条重复 text 仍为 53 组；本轮启发式标记为同文不同语境待复核 45 组、疑似模板污染 8 组。
+6. `data/raw/combined_candidates_binary_preview.jsonl` 860 条、`data/raw/external_safety_binary_preview.jsonl` 340 条，均已校验通过。
+7. `data/eval/risk_test_preview.jsonl` 899 条，用于 unsafe recall/封杀率；`data/eval/normal_test_preview.jsonl` 447 条，用于 false positive/误封率；均已校验通过。
+8. 第一阶段建议阈值已写入报告：risk_test unsafe recall 目标 80%-90%+；normal_test 误封率短期可容忍约 30%，后续靠 hard negative 和真实安全评论降低。
 
 当前 `data/processed/lexicon_sampling_plan.json` 词库粗分类分布：
 
@@ -355,14 +357,13 @@
 
 ## 建议下一步
 
-下一步优先做“上下文必要性 + 二元标签 + 评测集草案”工作：
+下一步优先做“审计结果人工复核 + 离线评测脚本设计”工作：
 
-1. 写脚本审计正式 860 条和外部 340 条 raw 预览，识别硬凑 context、可裸判样本、必须上下文样本、safe_without_context 样本。
-2. 输出 `docs/context_requirement_audit.md` 和 `data/raw/context_requirement_audit.json`，作为下一轮清洗依据。
-3. 生成二元标签预览，不直接修改正式 processed：`data/raw/combined_candidates_binary_preview.jsonl` 和 `data/raw/external_safety_binary_preview.jsonl`。
-4. 生成 `data/eval/risk_test_preview.jsonl` 与 `data/eval/normal_test_preview.jsonl`，用于后续高召回/误封率评测。
-5. 人工抽查 `docs/external_safety_import_review_sample.md`，判断 ToxiCN/COLD/ChineseSafe 哪些样本适合重塑推理链后接入。
-6. 后续新增候选仍按“raw 生成 -> 抽样复核 -> 独立预览 -> 校验 -> apply -> 重建 SFT/split”的流程推进。
+1. 人工抽查 `docs/context_requirement_audit.md` 中的 `likely_direct_no_context`、`external_placeholder_context`、`template_pollution_candidate` 样本，决定哪些正式样本后续应把 `context_required` 调为 false，哪些重复 text 属于模板污染。
+2. 人工抽查 `docs/external_safety_import_review_sample.md`，判断 ToxiCN/COLD/ChineseSafe 哪些真实评论样本适合重塑成本项目的 `context/reasoning/counter_evidence` 格式。
+3. 基于 `data/eval/risk_test_preview.jsonl` 与 `data/eval/normal_test_preview.jsonl` 设计第一版离线评测脚本：risk_test 衡量 unsafe recall/封杀率，normal_test 衡量 false positive/误封率。
+4. 如要修改正式 860 条，先生成独立清洗预览并校验，不要直接改 `data/processed/combined_candidates.*`。
+5. 后续新增候选仍按“raw 生成 -> 抽样复核 -> 独立预览 -> 校验 -> apply -> 重建 SFT/split”的流程推进。
 
 ## 工作约定
 

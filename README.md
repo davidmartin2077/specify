@@ -23,6 +23,7 @@
 | 第二波人工复核清单 | 44 条，已按反馈重建并用于入库判断 |
 | 覆盖分析 | 已基于 860 条重新生成 |
 | 外部真实评论数据评估 | ToxiCN/COLD/ChineseSafe 已生成 340 条 raw 预览，尚未入库 |
+| 上下文/二元标签审计 | 已生成审计报告、二元预览和 eval 草案 |
 
 正式候选集：
 
@@ -48,6 +49,18 @@ quality_status       全部 needs_revision
 train       688
 validation   86
 test         86
+```
+
+上下文与二元标签预览：
+
+```text
+combined binary preview   860
+external binary preview   340
+risk_test_preview         899
+normal_test_preview       447
+
+safety_binary: unsafe 899 / safe 301
+context classes: contextual_required 846 / safe_without_context 301 / direct_no_context 53
 ```
 
 ## 当前最重要的注意事项
@@ -81,6 +94,13 @@ test         86
 - `data/raw/external_safety_import_preview.jsonl`
 - `data/raw/external_safety_import_preview.json`
 - `data/raw/external_safety_datasets_report.json`
+- `scripts/audit_context_and_binary_labels.py`
+- `docs/context_requirement_audit.md`
+- `data/raw/context_requirement_audit.json`
+- `data/raw/combined_candidates_binary_preview.jsonl`
+- `data/raw/external_safety_binary_preview.jsonl`
+- `data/eval/risk_test_preview.jsonl`
+- `data/eval/normal_test_preview.jsonl`
 
 外部 raw 预览组成：
 
@@ -106,7 +126,8 @@ hard_negative 94
 
 - 外部标签只作为候选信号，不替代本项目标注。
 - 340 条全部为 `needs_revision/not_merged`，不进入正式 processed。
-- 下一步应先人工抽查 `docs/external_safety_import_review_sample.md`。
+- 外部样本已纳入二元标签与上下文依赖预览，但仍未入库。
+- 下一步应先人工抽查 `docs/external_safety_import_review_sample.md` 与 `docs/context_requirement_audit.md`。
 - 适合保留的外部样本需要重塑 `context`、`reasoning`、`counter_evidence` 和风险等级。
 - `docs/duplicate_text_audit.md` 已记录正式 860 条中的 53 组重复 text，后续需要判断哪些是有效语境对照，哪些是早期模板污染。
 
@@ -180,7 +201,7 @@ PHASE3_W2_0020_SEXUAL_CONTENT_WEAK_SIGNAL
 | `LEXICON_SEED_*` | 敏感词库 seed 候选 | 是 |
 | `PHASE2_SEED_*` | 第二阶段语境边界扩充 | 是 |
 | `PHASE3_W1_*` | 第三阶段第一波覆盖缺口扩充 | 是 |
-| `PHASE3_W2_*` | 第三阶段第二波长尾/困难边界扩充 | 否，仍在 raw |
+| `PHASE3_W2_*` | 第三阶段第二波长尾/困难边界扩充 | 是 |
 
 `PHASE3_W1_*` 和 `PHASE3_W2_*` 后半段通常由这些字段组成：
 
