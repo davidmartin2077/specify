@@ -1,5 +1,80 @@
 # 项目记忆
 
+## 新窗口接手速读
+
+请新窗口先读本节，再按“下一步执行任务”继续。下面事实为当前基准状态，不要被后面的历史步骤中的旧数字误导。
+
+### 当前基准事实
+
+1. 正式 processed 数据为 `data/processed/combined_candidates.jsonl/.json`，共 860 条。
+2. SFT 数据为 `data/mvp/sft_candidates.jsonl/.json`，共 860 条。
+3. 默认 split 已重建并校验：train 688、validation 86、test 86；`data/processed/splits/split_report.json` 记录 281 个防泄漏 group，0 个跨 split 泄漏。
+4. 正式 860 条风险分布：high 167、medium 304、low 182、none 207；hard_negative 353；context_required 809；全部 `quality_status=needs_revision`。
+5. phase3 第二波 185 条已经正式入库。不要重复执行 `python3 scripts/import_phase3_second_wave.py --apply`。
+6. 外部真实评论/安全数据评估已完成，但尚未入库：`data/raw/external_safety_import_preview.jsonl/.json` 共 340 条，来源为 ToxiCN 120、COLD 120、ChineseSafe 100；全部 `needs_revision/not_merged`。
+7. 外部预览风险分布：high 36、medium 186、low 24、none 94；hard_negative 94；已通过 `scripts/validate_dataset.py` 校验；与正式 860 条 text 重叠为 0。
+8. 正式 860 条存在 53 组重复 text、64 条额外重复行，主要集中在早期 `MEME_EXPAND_*`；见 `docs/duplicate_text_audit.md`。
+9. 当前还没有训练配置、训练运行或模型评测结果；仍处于数据准备、复核、清洗、评测集设计阶段。
+
+### 最新用户决策
+
+1. 不是每条样本都必须有上下文、标题、上级评论或回复链。模型必须具备“裸看单条评论也能识别风险”的能力。
+2. 不要为了满足 schema 或显得完整而硬编上下文、硬编回复链。没有上下文就留空或标明无额外上下文。
+3. 数据应分成：
+   - `direct_no_context`：单条文本本身足以判断风险。
+   - `contextual_required`：必须依赖标题、上级评论、时间、话题或回复链。
+   - `safe_without_context`：单条文本正常，不应硬凑风险语境。
+4. 用户倾向安全优先、高召回策略：宁可误封率较高，也要先把风险召回做上去。目标可先设为风险测试集封杀率/unsafe recall 达到 80%-90% 以上；正常测试集误封率即使约 30% 也可暂时接受。
+5. 建议保留多级 `risk_level`，同时新增/派生二元视角 `safety_binary`：
+   - high/medium/low -> unsafe 或 unsafe_candidate
+   - none -> safe
+   二元标签服务封杀率/召回评测，多级标签与 reasoning 服务解释和分层治理。
+6. ToxiCN/COLD/ChineseSafe 的真实语感值得学习；自建 860 条的优势是 `reasoning/counter_evidence/hard_negative`，后续方向是“用外部数据的真实评论感 + 自建数据的推理链格式”。
+
+### 关键文件
+
+1. `README.md`：GitHub 首页式项目进度。
+2. `docs/external_safety_import_review_sample.md`：外部 340 条 raw 预览的人工抽样清单，每个来源 20 条。
+3. `docs/external_safety_datasets_review.md`：ToxiCN/COLD/ChineseSafe 的规模、字段、标签和接入评估。
+4. `data/raw/external_safety_import_preview.jsonl`：外部 340 条 raw 转换预览，未入库。
+5. `docs/duplicate_text_audit.md`：正式 860 条重复 text 审计。
+6. `scripts/analyze_external_safety_datasets.py`：外部数据评估与 raw 预览生成脚本。
+7. `scripts/validate_dataset.py`：项目 JSONL schema 校验脚本。
+8. `data/processed/combined_candidates.jsonl`：当前正式 860 条。
+
+### 下一步执行任务
+
+新窗口应优先做以下工作，不要先训练，也不要重复入库：
+
+1. 创建一个新的审计/修正脚本，例如 `scripts/audit_context_and_binary_labels.py`。
+2. 读取正式 860 条和外部 340 条 raw 预览，检查并报告：
+   - 哪些样本被硬凑了 context/title/parent_comment/reply_chain。
+   - 哪些样本其实可以 `context_required=false`。
+   - 哪些样本属于 `direct_no_context`、`contextual_required`、`safe_without_context`。
+   - 当前 860 条中重复 text 的样本是否是有效同文不同语境对照，还是疑似模板污染。
+3. 生成报告，建议文件：
+   - `docs/context_requirement_audit.md`
+   - `data/raw/context_requirement_audit.json`
+4. 给正式 860 条和外部 340 条生成二元标签预览，不直接改正式 processed：
+   - `data/raw/combined_candidates_binary_preview.jsonl`
+   - `data/raw/external_safety_binary_preview.jsonl`
+   推荐字段可以先放在 `review_notes` 或新增预览字段 `safety_binary`，但不要直接修改正式 schema。
+5. 基于二元标签预览，生成两个评测集草案：
+   - `data/eval/risk_test_preview.jsonl`：全风险样本，目标衡量 unsafe recall/封杀率。
+   - `data/eval/normal_test_preview.jsonl`：全正常或 hard negative 样本，目标衡量 false positive/误封率。
+6. 在报告中明确建议阈值：
+   - 第一阶段 risk_test unsafe recall 目标 80%-90%+。
+   - normal_test 误封率暂可容忍约 30%，但后续要通过 hard negative 降低。
+7. 更新 `README.md` 和 `agent.md`，并提交 git。命令行 `git push` 可能因 GitHub 凭据失败；失败后打开 GitHub Desktop 让用户点 `Push origin`。
+
+### 禁止/谨慎事项
+
+1. 不要修改正式 `data/processed/combined_candidates.*`，除非用户明确要求 apply。
+2. 不要把外部 340 条 raw 预览直接入库。
+3. 不要把 ChineseSafe 全量当训练集；它更适合类别补齐和 eval，变体词/色情/违法/隐私等可优先筛选。
+4. 不要把 COLD/ToxiCN 的外部标签当最终标签；外部 label=0 不一定是项目里的 none，尤其涉及群体称呼、刻板印象、性/辱骂/地域争议时需要高召回复核。
+5. 不要硬编上下文。没有上下文就是没有上下文，模型应同时学习单条文本判断和上下文增强判断。
+
 ## 重要提醒：不要重复已完成工作
 
 本文件记录的是项目交接记忆。接手新窗口时必须先读本文件，并把“已完成步骤”和“当前状态”视为事实来源；除非用户明确要求回滚、重跑或复核，否则不要重复执行已经完成的导入、合并、校验、SFT 重建、split 生成等流水线，避免浪费算力和意外覆盖数据。当前所有截至本文件记录的工作都已经做过：正式候选集为 860 条，SFT 为 860 条，默认 train/validation/test split 已生成且通过校验。
@@ -260,6 +335,10 @@
 2. 模型需要输出风险等级、编码方式、证据、反证和简洁结论。
 3. 训练重点是让模型学会“看到黑话大概知道它在讽刺/隐喻/代指什么类型的对象”，而不是直接实现审核系统的 `block/review/allow` 动作。
 4. 后续工作应围绕 SFT 数据、偏好数据、GRPO/RL 奖励、评测集和训练配置展开。
+5. 最新决策：上下文不是必需品。模型必须能在没有标题、上级评论、回复链的情况下判断单条评论风险；只有文本本身模糊时才依赖上下文。
+6. 最新决策：不要为了 schema 或模板完整性硬编上下文。没有上下文就留空，或在报告中标为 direct_no_context/safe_without_context/contextual_required。
+7. 最新决策：可以引入二元安全标签视角 `safety_binary`，用于高召回评测。建议先从预览做起，不直接修改正式 schema。高召回第一阶段可将 high/medium/low 视为 unsafe，将 none 视为 safe。
+8. 最新策略目标：安全优先，风险测试集的 unsafe recall/封杀率先冲到 80%-90%+；正常测试集误封率短期可容忍约 30%，后续再靠 hard negative 和反证逐步降低。
 
 ## 词库扩展策略
 
@@ -276,13 +355,14 @@
 
 ## 建议下一步
 
-下一步优先围绕正式 860 条继续做质量复核与下一波规划：
+下一步优先做“上下文必要性 + 二元标签 + 评测集草案”工作：
 
-1. 对正式 860 条候选继续分层复核，重点抽查第二波入库样本、hard negative、high/medium 边界、weak_signal 和 safe_context。
-2. 人工抽查 `docs/external_safety_import_review_sample.md`，判断 ToxiCN/COLD/ChineseSafe 哪些样本适合接入并重塑推理链。
-3. 基于新版 `docs/risk_coverage_report.md`、外部数据评估和重复文本审计，规划下一轮 raw 扩充；不要重复执行第二波入库。
-4. 后续新增候选仍按“raw 生成 -> 抽样复核 -> 独立预览 -> 校验 -> apply -> 重建 SFT/split”的流程推进。
-5. 330 条 reasoning 迁移预览已获认可，但暂不正式覆盖 processed；后续需要时再执行。
+1. 写脚本审计正式 860 条和外部 340 条 raw 预览，识别硬凑 context、可裸判样本、必须上下文样本、safe_without_context 样本。
+2. 输出 `docs/context_requirement_audit.md` 和 `data/raw/context_requirement_audit.json`，作为下一轮清洗依据。
+3. 生成二元标签预览，不直接修改正式 processed：`data/raw/combined_candidates_binary_preview.jsonl` 和 `data/raw/external_safety_binary_preview.jsonl`。
+4. 生成 `data/eval/risk_test_preview.jsonl` 与 `data/eval/normal_test_preview.jsonl`，用于后续高召回/误封率评测。
+5. 人工抽查 `docs/external_safety_import_review_sample.md`，判断 ToxiCN/COLD/ChineseSafe 哪些样本适合重塑推理链后接入。
+6. 后续新增候选仍按“raw 生成 -> 抽样复核 -> 独立预览 -> 校验 -> apply -> 重建 SFT/split”的流程推进。
 
 ## 工作约定
 
