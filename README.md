@@ -95,6 +95,7 @@ context classes: contextual_required 846 / safe_without_context 301 / direct_no_
 - `data/raw/external_safety_import_preview.json`
 - `data/raw/external_safety_datasets_report.json`
 - `scripts/audit_context_and_binary_labels.py`
+- `docs/manual_review_packet.md`
 - `docs/context_audit_codebook.md`
 - `docs/context_requirement_audit.md`
 - `data/raw/context_requirement_audit.json`

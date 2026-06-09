@@ -44,9 +44,10 @@
 7. `scripts/validate_dataset.py`：项目 JSONL schema 校验脚本。
 8. `data/processed/combined_candidates.jsonl`：当前正式 860 条。
 9. `scripts/audit_context_and_binary_labels.py`：上下文依赖、二元标签和 eval 草案生成脚本。
-10. `docs/context_audit_codebook.md`：`B/C/F/D` 数字码代码表，用于人工复核和后续数据集命名。
-11. `docs/context_requirement_audit.md`：上下文必要性、重复文本和二元评测建议报告。
-12. `data/eval/risk_test_preview.jsonl`、`data/eval/normal_test_preview.jsonl`：高召回/误封率评测集草案。
+10. `docs/manual_review_packet.md`：人工复核包，集中说明要看哪些文件、审什么、反馈格式和推荐顺序。
+11. `docs/context_audit_codebook.md`：`B/C/F/D` 数字码代码表，用于人工复核和后续数据集命名。
+12. `docs/context_requirement_audit.md`：上下文必要性、重复文本和二元评测建议报告。
+13. `data/eval/risk_test_preview.jsonl`、`data/eval/normal_test_preview.jsonl`：高召回/误封率评测集草案。
 
 ### 下一步执行任务
 
@@ -180,6 +181,7 @@
 100. 重复 text 审计显示正式 860 条中存在 53 组重复文本、64 条额外重复行，主要集中在早期 `MEME_EXPAND_*`。这些重复不应机械删除；需要判断是有效的同文不同语境对照，还是早期模板污染。
 101. 已创建并运行 `scripts/audit_context_and_binary_labels.py`，读取正式 860 条与外部 340 条 raw 预览，生成上下文依赖审计、二元标签预览和 eval 草案。新增产物包括 `docs/context_requirement_audit.md`、`data/raw/context_requirement_audit.json`、`data/raw/combined_candidates_binary_preview.jsonl`、`data/raw/external_safety_binary_preview.jsonl`、`data/eval/risk_test_preview.jsonl`、`data/eval/normal_test_preview.jsonl`；四份 JSONL 均已通过 `scripts/validate_dataset.py` 校验。二元预览合计 unsafe 899、safe 301；上下文分层为 `contextual_required` 846、`safe_without_context` 301、`direct_no_context` 53。正式 processed 未修改，外部 340 条仍未入库。
 102. 已创建 `docs/context_audit_codebook.md`，解释 `external_placeholder_context`、`likely_direct_no_context`、`reasoning_claims_context_but_context_thin` 等下划线字段，并建立数字码映射：`B01/B02` 二元标签，`C01-C03` 上下文分层，`F01-F08` 审计标记，`D00-D03` 重复文本状态。脚本已同步输出 `safety_binary_code`、`context_audit_class_code`、`context_audit_flag_codes`、`duplicate_text_status_code`；这些字段只用于人工复核和命名，不应进入模型训练文本。
+103. 已创建 `docs/manual_review_packet.md`，把当前要人工复核的文件、优先级、每类文件审什么、`B/C/F/D` 代码速查、反馈格式、外部样本复核口径和训练影响说明集中成一份操作手册，方便用户直接开始复核。
 
 ## 当前状态
 
@@ -222,14 +224,15 @@
 当前上下文依赖与二元标签审计状态：
 
 1. `scripts/audit_context_and_binary_labels.py`：只读正式 processed 与外部 raw 预览，生成审计报告、二元预览和 eval 草案，不修改正式 schema。
-2. `docs/context_audit_codebook.md`：上下文审计代码表，解释英文下划线字段并建立数字码映射。
-3. `docs/context_requirement_audit.md`、`data/raw/context_requirement_audit.json`：合计审计 1200 条，二元标签为 unsafe 899、safe 301。
-4. 上下文分层：`C02/contextual_required` 846、`C03/safe_without_context` 301、`C01/direct_no_context` 53。
-5. 主要审计标记：`F01/generic_or_template_context` 429、`F02/external_placeholder_context` 340、`F03/do_not_invent_context_review_needed` 246、`F04/safe_sample_context_may_be_optional` 166、`F05/likely_direct_no_context` 10、`F06/context_required_but_empty` 1。
-6. 正式 860 条重复 text 仍为 53 组；本轮启发式标记为 `D02` 同文不同语境待复核 45 组、`D03` 疑似模板污染 8 组。
-7. `data/raw/combined_candidates_binary_preview.jsonl` 860 条、`data/raw/external_safety_binary_preview.jsonl` 340 条，均已校验通过。
-8. `data/eval/risk_test_preview.jsonl` 899 条，用于 unsafe recall/封杀率；`data/eval/normal_test_preview.jsonl` 447 条，用于 false positive/误封率；均已校验通过。
-9. 第一阶段建议阈值已写入报告：risk_test unsafe recall 目标 80%-90%+；normal_test 误封率短期可容忍约 30%，后续靠 hard negative 和真实安全评论降低。
+2. `docs/manual_review_packet.md`：人工复核包，说明先看什么、审什么、怎么写结论。
+3. `docs/context_audit_codebook.md`：上下文审计代码表，解释英文下划线字段并建立数字码映射。
+4. `docs/context_requirement_audit.md`、`data/raw/context_requirement_audit.json`：合计审计 1200 条，二元标签为 unsafe 899、safe 301。
+5. 上下文分层：`C02/contextual_required` 846、`C03/safe_without_context` 301、`C01/direct_no_context` 53。
+6. 主要审计标记：`F01/generic_or_template_context` 429、`F02/external_placeholder_context` 340、`F03/do_not_invent_context_review_needed` 246、`F04/safe_sample_context_may_be_optional` 166、`F05/likely_direct_no_context` 10、`F06/context_required_but_empty` 1。
+7. 正式 860 条重复 text 仍为 53 组；本轮启发式标记为 `D02` 同文不同语境待复核 45 组、`D03` 疑似模板污染 8 组。
+8. `data/raw/combined_candidates_binary_preview.jsonl` 860 条、`data/raw/external_safety_binary_preview.jsonl` 340 条，均已校验通过。
+9. `data/eval/risk_test_preview.jsonl` 899 条，用于 unsafe recall/封杀率；`data/eval/normal_test_preview.jsonl` 447 条，用于 false positive/误封率；均已校验通过。
+10. 第一阶段建议阈值已写入报告：risk_test unsafe recall 目标 80%-90%+；normal_test 误封率短期可容忍约 30%，后续靠 hard negative 和真实安全评论降低。
 
 当前 `data/processed/lexicon_sampling_plan.json` 词库粗分类分布：
 
