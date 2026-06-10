@@ -87,7 +87,6 @@ def format_input(sample: dict[str, Any]) -> str:
 
     return "\n".join(
         [
-            f"平台: {sample.get('platform', 'unknown')}",
             f"文本: {sample.get('text', '')}",
             "上下文:",
             context_text,
@@ -174,11 +173,6 @@ def write_jsonl(records: list[dict[str, Any]], path: Path) -> None:
             handle.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\n")
 
 
-def write_json(records: list[dict[str, Any]], path: Path) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8") as handle:
-        json.dump(records, handle, ensure_ascii=False, indent=2)
-
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Build SFT instruction data from annotated JSONL samples.")
@@ -191,14 +185,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output-jsonl",
         type=Path,
-        default=Path("data/mvp/sft_candidates.jsonl"),
+        default=Path("data/processed/sft/sft_candidates.jsonl"),
         help="Output SFT JSONL path.",
-    )
-    parser.add_argument(
-        "--output-json",
-        type=Path,
-        default=Path("data/mvp/sft_candidates.json"),
-        help="Output SFT JSON array path.",
     )
     parser.add_argument(
         "--approved-only",
@@ -216,10 +204,8 @@ def main() -> int:
 
     records = [build_record(sample) for sample in samples]
     write_jsonl(records, args.output_jsonl)
-    write_json(records, args.output_json)
 
     print(f"Wrote {len(records)} SFT records to {args.output_jsonl}")
-    print(f"Wrote {len(records)} SFT records to {args.output_json}")
     return 0
 
 

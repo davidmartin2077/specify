@@ -14,11 +14,13 @@
   "candidate_summary": {
     "count": 1255,
     "source_counts": {
+      "batch1_natural": 56,
+      "batch2_natural": 27,
+      "batch3_natural": 46,
+      "batch4_natural": 47,
       "chinesesafe": 160,
       "cold": 160,
-      "gemini_expansion": 120,
-      "grok": 50,
-      "meme_expansion": 35,
+      "gemini_expansion": 29,
       "phase2_seed": 100,
       "phase3_first_wave": 245,
       "phase3_second_wave": 185,
@@ -28,17 +30,17 @@
     },
     "category_counts": {
       "cyber_abuse": 54,
-      "gambling": 52,
+      "gambling": 51,
       "illegal_goods": 50,
       "insulting_abuse": 62,
-      "mixed_unknown": 538,
-      "platform_censorship_evasion": 114,
-      "political_history": 102,
-      "public_affairs": 55,
+      "mixed_unknown": 603,
+      "platform_censorship_evasion": 64,
+      "political_history": 90,
+      "public_affairs": 47,
       "sexual_content": 71,
-      "spam_ads_fraud": 82,
-      "violence_extremism": 65,
-      "weapons_explosives": 47
+      "spam_ads_fraud": 81,
+      "violence_extremism": 64,
+      "weapons_explosives": 48
     },
     "category_risk": {
       "cyber_abuse": {
@@ -48,7 +50,7 @@
         "none": 12
       },
       "gambling": {
-        "high": 10,
+        "high": 9,
         "low": 9,
         "medium": 19,
         "none": 14
@@ -66,27 +68,27 @@
         "none": 13
       },
       "mixed_unknown": {
-        "high": 87,
-        "low": 38,
-        "medium": 188,
-        "none": 225
+        "high": 99,
+        "low": 33,
+        "medium": 229,
+        "none": 242
       },
       "platform_censorship_evasion": {
-        "high": 19,
-        "low": 28,
-        "medium": 40,
-        "none": 27
+        "high": 10,
+        "low": 12,
+        "medium": 25,
+        "none": 17
       },
       "political_history": {
-        "high": 24,
-        "low": 15,
-        "medium": 42,
-        "none": 21
+        "high": 22,
+        "low": 10,
+        "medium": 41,
+        "none": 17
       },
       "public_affairs": {
-        "high": 9,
-        "low": 12,
-        "medium": 24,
+        "high": 8,
+        "low": 7,
+        "medium": 22,
         "none": 10
       },
       "sexual_content": {
@@ -98,19 +100,19 @@
       "spam_ads_fraud": {
         "high": 15,
         "low": 10,
-        "medium": 34,
+        "medium": 33,
         "none": 23
       },
       "violence_extremism": {
         "high": 26,
         "low": 8,
-        "medium": 21,
+        "medium": 20,
         "none": 10
       },
       "weapons_explosives": {
         "high": 12,
         "low": 8,
-        "medium": 17,
+        "medium": 18,
         "none": 10
       }
     },
@@ -119,53 +121,56 @@
       "gambling": 23,
       "illegal_goods": 19,
       "insulting_abuse": 22,
-      "mixed_unknown": 250,
-      "platform_censorship_evasion": 34,
-      "political_history": 35,
-      "public_affairs": 21,
+      "mixed_unknown": 268,
+      "platform_censorship_evasion": 23,
+      "political_history": 27,
+      "public_affairs": 17,
       "sexual_content": 22,
       "spam_ads_fraud": 33,
       "violence_extremism": 18,
       "weapons_explosives": 18
     },
     "mechanism_counts": {
-      "A1_普通谐音": 6,
-      "A2_拼音/首字母缩写": 105,
-      "B1_拆字": 10,
-      "B3_形近字替换": 29,
-      "B4_符号/空格/Unicode 干扰": 100,
-      "C1_历史人物类比": 39,
-      "C2_历史事件影射": 31,
-      "C3_数字代指": 53,
+      "A1_普通谐音": 3,
+      "A2_拼音/首字母缩写": 93,
+      "A3_方言谐音": 1,
+      "B1_拆字": 7,
+      "B3_形近字替换": 18,
+      "B4_符号/空格/Unicode 干扰": 85,
+      "C1_历史人物类比": 49,
+      "C2_历史事件影射": 37,
+      "C3_数字代指": 56,
       "C4_典故/物品/符号借用": 237,
-      "D1_反讽": 69,
+      "C5_概念替换": 2,
+      "D1_反讽": 81,
       "D2_夸张/反话": 35,
-      "D2_隐喻": 14,
-      "D3_借代": 96,
-      "E1_平台黑话": 336,
-      "E2_时间节点触发": 46,
-      "E3_上下文/互动触发": 27,
-      "E3_话题/热点触发": 62,
-      "F_组合编码": 34,
+      "D2_隐喻": 18,
+      "D3_借代": 103,
+      "E1_平台黑话": 341,
+      "E2_时间节点触发": 39,
+      "E3_上下文/互动触发": 10,
+      "E3_话题/热点触发": 68,
+      "E4_热点绑定": 1,
+      "F_组合编码": 38,
       "literal_keyword": 244,
-      "none": 382
+      "none": 392
     },
     "mechanism_group_counts": {
-      "combined": 34,
-      "contextual": 444,
-      "literal_keyword": 626,
-      "phonetic_or_initials": 111,
-      "rhetorical": 214,
-      "semantic_mapping": 360,
-      "shape_or_symbol": 139
+      "combined": 38,
+      "contextual": 448,
+      "literal_keyword": 636,
+      "phonetic_or_initials": 97,
+      "rhetorical": 237,
+      "semantic_mapping": 379,
+      "shape_or_symbol": 110
     },
     "risk_counts": {
-      "high": 251,
-      "low": 162,
-      "medium": 460,
-      "none": 382
+      "high": 253,
+      "low": 132,
+      "medium": 485,
+      "none": 385
     },
-    "hard_negative": 509
+    "hard_negative": 504
   },
   "literal_term_coverage": {
     "note": "Term hit rate measures literal/normalized occurrence only. Low hit rate is expected and does not mean the model must receive one sample per term.",
@@ -192,13 +197,13 @@
       },
       "mixed_unknown": {
         "lexicon_terms": 18383,
-        "exact_or_normalized_term_hits": 256,
-        "hit_rate": 0.0139
+        "exact_or_normalized_term_hits": 251,
+        "hit_rate": 0.0137
       },
       "platform_censorship_evasion": {
         "lexicon_terms": 5075,
-        "exact_or_normalized_term_hits": 76,
-        "hit_rate": 0.015
+        "exact_or_normalized_term_hits": 75,
+        "hit_rate": 0.0148
       },
       "political_history": {
         "lexicon_terms": 1632,
@@ -207,13 +212,13 @@
       },
       "public_affairs": {
         "lexicon_terms": 607,
-        "exact_or_normalized_term_hits": 10,
-        "hit_rate": 0.0165
+        "exact_or_normalized_term_hits": 11,
+        "hit_rate": 0.0181
       },
       "sexual_content": {
         "lexicon_terms": 1703,
-        "exact_or_normalized_term_hits": 31,
-        "hit_rate": 0.0182
+        "exact_or_normalized_term_hits": 32,
+        "hit_rate": 0.0188
       },
       "spam_ads_fraud": {
         "lexicon_terms": 21132,
@@ -234,13 +239,13 @@
     "buckets": {
       "literal_or_direct": {
         "lexicon_terms": 25386,
-        "exact_or_normalized_term_hits": 395,
-        "hit_rate": 0.0156
+        "exact_or_normalized_term_hits": 389,
+        "hit_rate": 0.0153
       },
       "obfuscated_or_variant": {
         "lexicon_terms": 25320,
-        "exact_or_normalized_term_hits": 36,
-        "hit_rate": 0.0014
+        "exact_or_normalized_term_hits": 38,
+        "hit_rate": 0.0015
       }
     },
     "mechanisms": {
@@ -256,8 +261,8 @@
       },
       "C3_数字代指": {
         "lexicon_terms": 14126,
-        "exact_or_normalized_term_hits": 5,
-        "hit_rate": 0.0004
+        "exact_or_normalized_term_hits": 7,
+        "hit_rate": 0.0005
       },
       "F_组合编码": {
         "lexicon_terms": 1497,
@@ -266,8 +271,8 @@
       },
       "literal_keyword": {
         "lexicon_terms": 25386,
-        "exact_or_normalized_term_hits": 395,
-        "hit_rate": 0.0156
+        "exact_or_normalized_term_hits": 389,
+        "hit_rate": 0.0153
       }
     }
   },
