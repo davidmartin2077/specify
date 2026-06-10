@@ -8,17 +8,16 @@
 
 - `data/processed/combined_candidates.jsonl`
 - `data/processed/combined_candidates.json`
-- 样本数：775
+- 样本数：1255
 
 分布：
 
 ```text
-high    155
-medium  268
+high    251
+medium  460
 low     162
-none    190
+none    382
 
-hard_negative  322
 needs_context  237
 ```
 
@@ -26,17 +25,17 @@ needs_context  237
 
 - `data/mvp/sft_candidates.jsonl`
 - `data/mvp/sft_candidates.json`
-- 样本数：775
+- 样本数：1255
 
 切分：
 
 ```text
-train       621
-validation   77
-test         77
+train       1005
+validation   125
+test         125
 ```
 
-`data/processed/splits/split_report.json` 当前记录 281 个防泄漏 group，0 个跨 split 泄漏。
+`data/processed/splits/split_report.json` 当前记录 607 个防泄漏 group，0 个跨 split 泄漏。
 
 ## 当前原则
 
@@ -45,7 +44,7 @@ test         77
 - high 不强制需要上下文；直白风险、强暗号、稳定代指可以裸判。
 - 面向弹幕、应用评论、音乐评论等短文本场景；不可公开存在或不可观测的敏感背景不能用来抬高风险。
 - 已固化、出圈、高频的鉴证圈结构梗本身就是文本证据，可以无上下文判 high。
-- 外部数据先保留为 raw 预览，不直接入正式训练集。
+- ToxiCN、COLD、ChineseSafe 已各融合 160 条真实/评测文本。
 - 训练前所有正式 JSONL 必须通过 `scripts/validate_dataset.py`。
 
 ## 核心文件
@@ -69,6 +68,6 @@ python3 scripts/analyze_risk_coverage.py
 
 ## 下一步
 
-1. 继续把陈述句、人机感、病句样本替换成真实评论口吻。
-2. 从外部 340 条真实评论预览中筛选可重塑样本。
-3. 设计离线评测脚本，先测 unsafe recall 和 false positive。
+1. 继续把人机感强、模板感强的旧合成样本替换成真实评论口吻。
+2. 设计离线评测脚本，先测 unsafe recall 和 false positive。
+3. 后续外部数据再入库时走 `scripts/fuse_external_real_datasets.py`。

@@ -163,7 +163,6 @@ def build_record(sample: dict[str, Any]) -> dict[str, Any]:
             "evidence_strength": sample.get("evidence_strength", ""),
             "hard_negative": sample.get("hard_negative", False),
             "quality_status": sample.get("quality_status", ""),
-            "review_notes": sample.get("review_notes", ""),
         },
     }
 

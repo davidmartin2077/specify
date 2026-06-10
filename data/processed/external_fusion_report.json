@@ -1,0 +1,35 @@
+{
+  "previous_count": 775,
+  "removed_previous_external": 480,
+  "added_count": 480,
+  "new_count": 1255,
+  "added_by_source": {
+    "toxicn": 160,
+    "cold": 160,
+    "chinesesafe": 160
+  },
+  "added_risk": {
+    "high": 96,
+    "medium": 192,
+    "none": 192
+  },
+  "total_risk": {
+    "low": 162,
+    "medium": 460,
+    "high": 251,
+    "none": 382
+  },
+  "total_source": {
+    "grok": 50,
+    "user": 7,
+    "meme_expansion": 35,
+    "gemini_expansion": 120,
+    "sensitive_lexicon_seed": 33,
+    "phase2_seed": 100,
+    "phase3_first_wave": 245,
+    "phase3_second_wave": 185,
+    "toxicn": 160,
+    "cold": 160,
+    "chinesesafe": 160
+  }
+}

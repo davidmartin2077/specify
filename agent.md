@@ -2,24 +2,23 @@
 
 ## 当前基准
 
-正式数据已经从 860 条清洗为 775 条，重复文本人工反馈已应用。当前不要再回头复核那 53 组重复 text。
+正式数据已经从 860 条清洗为 775 条，随后融合 ToxiCN/COLD/ChineseSafe 各 160 条。当前正式数据为 1255 条。
 
 核心产物：
 
-- `data/processed/combined_candidates.jsonl`：正式样本 775 条。
-- `data/mvp/sft_candidates.jsonl`：SFT 样本 775 条。
-- `data/processed/splits/`：train 621、validation 77、test 77。
-- `docs/risk_coverage_report.md`：基于 775 条重新生成的覆盖报告。
+- `data/processed/combined_candidates.jsonl`：正式样本 1255 条。
+- `data/mvp/sft_candidates.jsonl`：SFT 样本 1255 条。
+- `data/processed/splits/`：train 1005、validation 125、test 125。
+- `docs/risk_coverage_report.md`：基于 1255 条重新生成的覆盖报告。
 
 正式分布：
 
 ```text
-high    155
-medium  268
+high    251
+medium  460
 low     162
-none    190
+none    382
 
-hard_negative  322
 needs_context  237
 ```
 
@@ -34,6 +33,9 @@ sensitive_lexicon_seed    33
 phase2_seed              100
 phase3_first_wave        245
 phase3_second_wave       185
+toxicn                  160
+cold                    160
+chinesesafe             160
 ```
 
 ## 已做完
@@ -43,7 +45,8 @@ phase3_second_wave       185
 - 已按复核结果应用清洗：正式数据从 860 条降到 775 条。
 - 已重建 SFT 数据和 train/validation/test split。
 - `scripts/build_sft_dataset.py` 已移除 SFT 输入里的合成回复上下文。
-- 覆盖分析已基于 775 条重跑。
+- `scripts/fuse_external_real_datasets.py` 已把 ToxiCN、COLD、ChineseSafe 各 160 条融合进正式数据；脚本会先移除旧外部融合样本再重融，避免重复追加。
+- 覆盖分析已基于 1255 条重跑。
 
 ## 当前决策
 
@@ -55,13 +58,13 @@ phase3_second_wave       185
 - SFT 输入已改为：`needs_context=false` 时不喂标题/话题，只给“无明确上下文”。
 - 目标场景是弹幕、应用宝应用评论、QQ 音乐评论等短文本；不可公开存在或不可观测的敏感事件背景不能硬套到普通句子上。
 - 但已固化、出圈、高频的鉴证圈结构梗本身就是文本证据，例如用户指出的“我家狗不让我用”“小懿你好”“这个问题我想了一百遍都想不通”“黄轩再不演就老了”“我是来xx的，你们要干什么？”均已恢复为 high。
-- 外部数据的真实评论感有价值，但标签和推理链都要重塑后再入库。
+- 外部数据的真实评论感有价值；当前已融合三源各 160 条，并过滤 ChineseSafe 中的问答题、填空题、改写题、应用简介等非评论文本。
 
 ## 下一步
 
-1. 继续替换人机感强、像说明书、像审核员视角的样本。
-2. 筛外部 340 条真实评论预览，挑一批适合重塑进正式数据。
-3. 建第一版离线评测脚本，分别测 unsafe recall 和 false positive。
+1. 继续替换人机感强、像说明书、像审核员视角的旧合成样本。
+2. 建第一版离线评测脚本，分别测 unsafe recall 和 false positive。
+3. 后续扩充优先复用真实评论数据，不再批量生成模板评论。
 
 ## 工作纪律
 
