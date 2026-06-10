@@ -13,13 +13,13 @@
 分布：
 
 ```text
-high    152
-medium  272
-low     163
-none    188
+high    150
+medium  268
+low     162
+none    195
 
-hard_negative     315
-context_required  242
+hard_negative     322
+context_required  237
 ```
 
 训练格式：
@@ -43,6 +43,7 @@ test         77
 - 单条文本能判断的，不硬凑上下文。
 - 合成回复上下文不再作为强证据，也不进入 SFT 输入。
 - high 不强制需要上下文；直白风险、强暗号、稳定代指可以裸判。
+- 面向弹幕、应用评论、音乐评论等短文本场景；不可公开存在或不可观测的敏感背景不能用来抬高风险。
 - 外部数据先保留为 raw 预览，不直接入正式训练集。
 - 训练前所有正式 JSONL 必须通过 `scripts/validate_dataset.py`。
 

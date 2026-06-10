@@ -2017,7 +2017,7 @@
         "字面上是在表达：这个不像摆件啊，真有现货的话报个价"
       ],
       "encoding_analysis": [
-        "候选类别为枪爆武器，主编码暂归为 C4_典故/物品/符号借用。"
+        "候选类别为枪爆武器，主编码归为 C4_典故/物品/符号借用。"
       ],
       "context_analysis": [
         "无明确上下文；按文本本身和常见语用判断。"
@@ -2062,7 +2062,7 @@
         "字面上是在表达：这几个字拆开写就行，连起来太扎眼"
       ],
       "encoding_analysis": [
-        "候选类别为枪爆武器，主编码暂归为 C4_典故/物品/符号借用。"
+        "候选类别为枪爆武器，主编码归为 C4_典故/物品/符号借用。"
       ],
       "context_analysis": [
         "无明确上下文；按文本本身和常见语用判断。"
@@ -2107,7 +2107,7 @@
         "字面上是在表达：电影道具哪有这个质感，真渠道有吗"
       ],
       "encoding_analysis": [
-        "候选类别为枪爆武器，主编码暂归为 C4_典故/物品/符号借用。"
+        "候选类别为枪爆武器，主编码归为 C4_典故/物品/符号借用。"
       ],
       "context_analysis": [
         "无明确上下文；按文本本身和常见语用判断。"
@@ -2642,7 +2642,7 @@
         "字面上是在表达：这场水太深了，临场那个变化懂球的都懂"
       ],
       "encoding_analysis": [
-        "候选类别为赌博相关表达，主编码暂归为 C4_典故/物品/符号借用。"
+        "候选类别为赌博相关表达，主编码归为 C4_典故/物品/符号借用。"
       ],
       "context_analysis": [
         "上下文有盘口、赔率等疑似赌博语境，但缺少完整证据。"
@@ -3070,20 +3070,20 @@
         "字面上是在表达：大家要理性爱国，不要冲动"
       ],
       "encoding_analysis": [
-        "候选编码机制为：反战狼。",
-        "按项目分类暂归为 D2_隐喻。"
+        "可疑编码机制：反战狼。",
+        "主要归为 D2_隐喻。"
       ],
       "context_analysis": [
         "背景备注：热点事件。"
       ],
       "supporting_evidence": [
-        "原始说明提示：委婉批评",
+        "可疑点：委婉批评",
         "存在可疑编码或语境信号。"
       ],
       "counter_evidence": [
         "目标指向或上下文证据仍不充分，普通解释仍可能成立。"
       ],
-      "final_rationale": "综合文本信号和反证，判为 medium；该条后进入正式训练集。"
+      "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=grok; source_id=GROK_036; original_risk=medium; original_note=委婉批评"
@@ -3145,14 +3145,14 @@
       "time": "",
       "topic": "四通桥"
     },
-    "risk_level": "low",
-    "encoding_primary": "C2_历史事件影射",
+    "risk_level": "none",
+    "encoding_primary": "none",
     "encoding_secondary": [],
-    "context_required": true,
-    "ambiguity": "high",
+    "context_required": false,
+    "ambiguity": "low",
     "evidence_strength": "weak",
     "freshness": "stable",
-    "hard_negative": false,
+    "hard_negative": true,
     "target_known": false,
     "target_reference": "",
     "should_explain_target": false,
@@ -3161,23 +3161,20 @@
         "字面上是在表达：勇士一去不复返"
       ],
       "encoding_analysis": [
-        "候选编码机制为：四通桥。",
-        "按项目分类暂归为 C2_历史事件影射。"
+        "未发现足够稳定的编码机制。"
       ],
       "context_analysis": [
-        "背景备注：古诗改编。"
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
       ],
-      "supporting_evidence": [
-        "存在弱暗示、关键词撞车或候选编码痕迹。"
-      ],
+      "supporting_evidence": [],
       "counter_evidence": [
-        "普通解释更强：古诗改编。",
-        "证据不足以升为 medium 或 high。"
+        "古诗化普通表达，裸文本没有稳定风险指向。",
+        "不应把不可见或无法公开存在的敏感背景硬套到普通短句上。"
       ],
-      "final_rationale": "综合文本信号和反证，判为 low；该条后进入正式训练集。"
+      "final_rationale": "按裸文本判断，普通解释明显更强，判为 none。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=grok; source_id=GROK_046; original_risk=medium; original_note=可能文学"
+    "review_notes": "source=grok; source_id=GROK_046; original_risk=medium; original_note=可能文学; downgraded_unobservable_context"
   },
   {
     "id": "GROK_002_MEDIUM",
@@ -3207,20 +3204,20 @@
         "字面上是在表达：最近车开得越来越快了，刹车好像不太灵"
       ],
       "encoding_analysis": [
-        "候选编码机制为：加速主义隐喻。",
-        "按项目分类暂归为 C4_典故/物品/符号借用。"
+        "可疑编码机制：加速主义隐喻。",
+        "主要归为 C4_典故/物品/符号借用。"
       ],
       "context_analysis": [
         "无明确上下文；按文本本身和常见语用判断。"
       ],
       "supporting_evidence": [
-        "原始说明提示：‘加速’+‘刹车’组合在政治语境下是常见黑话，但也可能是真实开车吐槽",
+        "可疑点：‘加速’+‘刹车’组合在政治语境下是常见黑话，但也可能是真实开车吐槽",
         "存在可疑编码或语境信号。"
       ],
       "counter_evidence": [
         "目标指向或上下文证据仍不充分，普通解释仍可能成立。"
       ],
-      "final_rationale": "综合文本信号和反证，判为 medium；该条后进入正式训练集。"
+      "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=grok; source_id=GROK_002; original_risk=medium; original_note=‘加速’+‘刹车’组合在政治语境下是常见黑话，但也可能是真实开车吐槽"
@@ -3255,20 +3252,20 @@
         "字面上是在表达：总有人想踩油门，我们得稳一点"
       ],
       "encoding_analysis": [
-        "候选编码机制为：加速反义。",
-        "按项目分类暂归为 E1_平台黑话。"
+        "可疑编码机制：加速反义。",
+        "主要归为 E1_平台黑话。"
       ],
       "context_analysis": [
         "无明确上下文；按文本本身和常见语用判断。"
       ],
       "supporting_evidence": [
-        "原始说明提示：隐晦反对激进",
+        "可疑点：隐晦反对激进",
         "存在可疑编码或语境信号。"
       ],
       "counter_evidence": [
         "目标指向或上下文证据仍不充分，普通解释仍可能成立。"
       ],
-      "final_rationale": "综合文本信号和反证，判为 medium；该条后进入正式训练集。"
+      "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=grok; source_id=GROK_012; original_risk=medium; original_note=隐晦反对激进"
@@ -3438,8 +3435,8 @@
         "字面上是在表达：我买了只小熊玩偶送给侄子"
       ],
       "encoding_analysis": [
-        "候选编码机制为：维尼熊。",
-        "按项目分类暂归为 D2_隐喻。"
+        "可疑编码机制：维尼熊。",
+        "主要归为 D2_隐喻。"
       ],
       "context_analysis": [
         "背景备注：玩具评价。"
@@ -3452,7 +3449,7 @@
         "证据不足以升为 medium 或 high。",
         "该样本适合作为 hard negative，训练模型避免关键词误杀。"
       ],
-      "final_rationale": "综合文本信号和反证，判为 low；该条后进入正式训练集。"
+      "final_rationale": "综合文本信号和反证，判为 low。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=grok; source_id=GROK_028; original_risk=low; original_note=hard negative：儿童玩具"
@@ -3528,8 +3525,8 @@
         "字面上是在表达：坦克模型我又买了一套，细节真棒"
       ],
       "encoding_analysis": [
-        "候选编码机制为：坦克人联想。",
-        "按项目分类暂归为 D2_隐喻。"
+        "可疑编码机制：坦克人联想。",
+        "主要归为 D2_隐喻。"
       ],
       "context_analysis": [
         "无明确上下文；按文本本身和常见语用判断。"
@@ -3542,7 +3539,7 @@
         "证据不足以升为 medium 或 high。",
         "该样本适合作为 hard negative，训练模型避免关键词误杀。"
       ],
-      "final_rationale": "综合文本信号和反证，判为 low；该条后进入正式训练集。"
+      "final_rationale": "综合文本信号和反证，判为 low。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=grok; source_id=GROK_020; original_risk=low; original_note=hard negative：模型爱好"

@@ -14,13 +14,13 @@
 正式分布：
 
 ```text
-high    152
-medium  272
-low     163
-none    188
+high    150
+medium  268
+low     162
+none    195
 
-hard_negative     315
-context_required  242
+hard_negative     322
+context_required  237
 ```
 
 来源分布：
@@ -53,6 +53,7 @@ phase3_second_wave       185
 - 单条文本正常的，不为了制造风险而补上下文。
 - high 不强制需要上下文；上下文只给真正单句无法稳定判断的样本。
 - SFT 输入已改为：`context_required=false` 时不喂标题/话题，只给“无明确上下文”。
+- 目标场景是弹幕、应用宝应用评论、QQ 音乐评论等短文本；不可公开存在或不可观测的敏感事件背景不能硬套到普通句子上。
 - 外部数据的真实评论感有价值，但标签和推理链都要重塑后再入库。
 
 ## 下一步

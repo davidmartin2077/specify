@@ -2424,7 +2424,7 @@
         "字面上是在表达：别光看了，真有胆子的今晚就出来"
       ],
       "encoding_analysis": [
-        "候选类别为暴恐极端，主编码暂归为 C4_典故/物品/符号借用。"
+        "候选类别为暴恐极端，主编码归为 C4_典故/物品/符号借用。"
       ],
       "context_analysis": [
         "无明确上下文；按文本本身和常见语用判断。"
@@ -2469,7 +2469,7 @@
         "字面上是在表达：前半句我发了，后半句你们接，别连着打"
       ],
       "encoding_analysis": [
-        "候选类别为暴恐极端，主编码暂归为 C4_典故/物品/符号借用。"
+        "候选类别为暴恐极端，主编码归为 C4_典故/物品/符号借用。"
       ],
       "context_analysis": [
         "无明确上下文；按文本本身和常见语用判断。"
@@ -2514,7 +2514,7 @@
         "字面上是在表达：那张图别再转了，真的会出事"
       ],
       "encoding_analysis": [
-        "候选类别为暴恐极端，主编码暂归为 C4_典故/物品/符号借用。"
+        "候选类别为暴恐极端，主编码归为 C4_典故/物品/符号借用。"
       ],
       "context_analysis": [
         "无明确上下文；按文本本身和常见语用判断。"
@@ -2988,8 +2988,8 @@
         "字面上是在表达：耗子尾汁，好好学习"
       ],
       "encoding_analysis": [
-        "候选编码机制为：谐音梗。",
-        "按项目分类暂归为 A1_普通谐音。"
+        "可疑编码机制：谐音梗。",
+        "主要归为 A1_普通谐音。"
       ],
       "context_analysis": [
         "背景备注：励志视频。"
@@ -3002,7 +3002,7 @@
         "证据不足以升为 medium 或 high。",
         "该样本适合作为 hard negative，训练模型避免关键词误杀。"
       ],
-      "final_rationale": "综合文本信号和反证，判为 low；该条后进入正式训练集。"
+      "final_rationale": "综合文本信号和反证，判为 low。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=grok; source_id=GROK_030; original_risk=low; original_note=hard negative：网络梗"
@@ -3213,8 +3213,8 @@
         "字面上是在表达：我支持双减政策，孩子轻松多了"
       ],
       "encoding_analysis": [
-        "候选编码机制为：政策。",
-        "按项目分类暂归为 D2_隐喻。"
+        "可疑编码机制：政策。",
+        "主要归为 D2_隐喻。"
       ],
       "context_analysis": [
         "背景备注：教育讨论。"
@@ -3227,7 +3227,7 @@
         "证据不足以升为 medium 或 high。",
         "该样本适合作为 hard negative，训练模型避免关键词误杀。"
       ],
-      "final_rationale": "综合文本信号和反证，判为 low；该条后进入正式训练集。"
+      "final_rationale": "综合文本信号和反证，判为 low。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=grok; source_id=GROK_037; original_risk=low; original_note=hard negative：真实家长"
@@ -3348,20 +3348,20 @@
         "字面上是在表达：蜡烛点亮了整个夜晚，大家一起守着"
       ],
       "encoding_analysis": [
-        "候选编码机制为：蜡烛悼念。",
-        "按项目分类暂归为 C2_历史事件影射。"
+        "可疑编码机制：蜡烛悼念。",
+        "主要归为 C2_历史事件影射。"
       ],
       "context_analysis": [
         "无明确上下文；按文本本身和常见语用判断。"
       ],
       "supporting_evidence": [
-        "原始说明提示：常见悼念，但也可能是节日",
+        "可疑点：常见悼念，但也可能是节日",
         "存在可疑编码或语境信号。"
       ],
       "counter_evidence": [
         "目标指向或上下文证据仍不充分，普通解释仍可能成立。"
       ],
-      "final_rationale": "综合文本信号和反证，判为 medium；该条后进入正式训练集。"
+      "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=grok; source_id=GROK_010; original_risk=medium; original_note=常见悼念，但也可能是节日"
@@ -3439,20 +3439,20 @@
         "字面上是在表达：那只蛤蟆又出来喷水了"
       ],
       "encoding_analysis": [
-        "候选编码机制为：江泽民。",
-        "按项目分类暂归为 C4_典故/物品/符号借用。"
+        "可疑编码机制：江泽民。",
+        "主要归为 C4_典故/物品/符号借用。"
       ],
       "context_analysis": [
         "背景备注：时政。"
       ],
       "supporting_evidence": [
-        "原始说明提示：经典黑称",
+        "可疑点：经典黑称",
         "存在可疑编码或语境信号。"
       ],
       "counter_evidence": [
         "目标指向或上下文证据仍不充分，普通解释仍可能成立。"
       ],
-      "final_rationale": "综合文本信号和反证，判为 medium；该条后进入正式训练集。"
+      "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=grok; source_id=GROK_038; original_risk=medium; original_note=经典黑称"

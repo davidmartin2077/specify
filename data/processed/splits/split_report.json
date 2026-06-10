@@ -12,10 +12,10 @@
     "train": {
       "count": 621,
       "risk_level": {
-        "high": 118,
+        "high": 116,
         "low": 142,
-        "medium": 196,
-        "none": 165
+        "medium": 192,
+        "none": 171
       },
       "source": {
         "gemini_expansion": 105,
@@ -27,8 +27,8 @@
         "sensitive_lexicon_seed": 24,
         "user": 7
       },
-      "hard_negative": 273,
-      "context_required": 188,
+      "hard_negative": 279,
+      "context_required": 184,
       "group_count": 223,
       "largest_groups": [
         [
@@ -97,9 +97,9 @@
       "count": 77,
       "risk_level": {
         "high": 18,
-        "low": 12,
+        "low": 11,
         "medium": 42,
-        "none": 5
+        "none": 6
       },
       "source": {
         "gemini_expansion": 9,
@@ -110,8 +110,8 @@
         "phase3_second_wave": 14,
         "sensitive_lexicon_seed": 6
       },
-      "hard_negative": 15,
-      "context_required": 31,
+      "hard_negative": 16,
+      "context_required": 30,
       "group_count": 29,
       "largest_groups": [
         [

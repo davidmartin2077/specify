@@ -63,10 +63,10 @@
         "none": 11
       },
       "mixed_unknown": {
-        "high": 18,
-        "low": 39,
-        "medium": 28,
-        "none": 38
+        "high": 17,
+        "low": 38,
+        "medium": 26,
+        "none": 42
       },
       "platform_censorship_evasion": {
         "high": 19,
@@ -75,10 +75,10 @@
         "none": 27
       },
       "political_history": {
-        "high": 20,
+        "high": 19,
         "low": 15,
-        "medium": 31,
-        "none": 17
+        "medium": 29,
+        "none": 20
       },
       "public_affairs": {
         "high": 8,
@@ -116,9 +116,9 @@
       "gambling": 23,
       "illegal_goods": 19,
       "insulting_abuse": 20,
-      "mixed_unknown": 63,
+      "mixed_unknown": 67,
       "platform_censorship_evasion": 34,
-      "political_history": 31,
+      "political_history": 34,
       "public_affairs": 21,
       "sexual_content": 22,
       "spam_ads_fraud": 32,
@@ -131,37 +131,37 @@
       "B1_拆字": 10,
       "B3_形近字替换": 29,
       "B4_符号/空格/Unicode 干扰": 100,
-      "C1_历史人物类比": 40,
-      "C2_历史事件影射": 31,
-      "C3_数字代指": 53,
-      "C4_典故/物品/符号借用": 237,
+      "C1_历史人物类比": 37,
+      "C2_历史事件影射": 29,
+      "C3_数字代指": 52,
+      "C4_典故/物品/符号借用": 236,
       "D1_反讽": 69,
       "D2_夸张/反话": 35,
       "D2_隐喻": 14,
       "D3_借代": 58,
       "E1_平台黑话": 336,
       "E2_时间节点触发": 46,
-      "E3_上下文/互动触发": 28,
+      "E3_上下文/互动触发": 27,
       "E3_话题/热点触发": 62,
       "F_组合编码": 24,
-      "none": 188
+      "none": 195
     },
     "mechanism_group_counts": {
       "combined": 24,
       "contextual": 444,
-      "literal_keyword": 188,
+      "literal_keyword": 195,
       "phonetic_or_initials": 110,
       "rhetorical": 176,
-      "semantic_mapping": 361,
+      "semantic_mapping": 354,
       "shape_or_symbol": 139
     },
     "risk_counts": {
-      "high": 152,
-      "low": 163,
-      "medium": 272,
-      "none": 188
+      "high": 150,
+      "low": 162,
+      "medium": 268,
+      "none": 195
     },
-    "hard_negative": 315
+    "hard_negative": 322
   },
   "literal_term_coverage": {
     "note": "Term hit rate measures literal/normalized occurrence only. Low hit rate is expected and does not mean the model must receive one sample per term.",
