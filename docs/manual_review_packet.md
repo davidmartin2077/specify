@@ -9,13 +9,14 @@
 1. `docs/context_requirement_audit.md`
 2. `docs/duplicate_text_review.md`
 3. `docs/duplicate_text_human_feedback.md`
-4. `docs/context_policy_decision.md`
-5. `docs/external_safety_import_review_sample.md`
-6. `docs/context_audit_codebook.md`
-7. `data/raw/combined_candidates_binary_preview.jsonl`
-8. `data/raw/external_safety_binary_preview.jsonl`
-9. `data/eval/risk_test_preview.jsonl`
-10. `data/eval/normal_test_preview.jsonl`
+4. `docs/duplicate_cleaning_preview.md`
+5. `docs/context_policy_decision.md`
+6. `docs/external_safety_import_review_sample.md`
+7. `docs/context_audit_codebook.md`
+8. `data/raw/combined_candidates_binary_preview.jsonl`
+9. `data/raw/external_safety_binary_preview.jsonl`
+10. `data/eval/risk_test_preview.jsonl`
+11. `data/eval/normal_test_preview.jsonl`
 
 如果只想先做一小时复核，先看第 1 和第 2 个文件。
 
@@ -26,6 +27,7 @@
 | `docs/context_requirement_audit.md` | 看上下文是否硬凑、哪些样本可裸判、哪些重复文本疑似模板污染。 | 标出 `C01/F05` 可改 `context_required=false`；标出 `D03` 应删/重写/降权。 |
 | `docs/duplicate_text_review.md` | 正式 860 条里的全部 53 组重复 text。 | 逐组判断保留、删掉、退回重写或降权。 |
 | `docs/duplicate_text_human_feedback.md` | 用户对 53 组重复 text 的人工复核结论。 | 后续生成清洗预览的依据。 |
+| `docs/duplicate_cleaning_preview.md` | 根据人工反馈生成的重复文本清洗预览报告。 | 确认是否接受 860 -> 775 的预览方向。 |
 | `docs/context_policy_decision.md` | 最新上下文策略：弱化合成回复链。 | 审核时默认不把 `parent_comment/reply_chain` 当强证据。 |
 | `docs/external_safety_import_review_sample.md` | 看外部真实评论是否值得重塑进入项目格式。 | 决定通过、退回、改标签、改 reasoning、删掉。 |
 | `docs/context_audit_codebook.md` | 查数字码含义。 | 人工复核时统一用 `B/C/F/D` 代码。 |
@@ -169,9 +171,10 @@ MEME_EXPAND_0044_MEDIUM：D03，退回重写；风险主要靠合成回复链成
 
 第二批：
 
-1. `data/raw/external_safety_binary_preview.jsonl` 中 `F02/F03/B01` 样本。
-2. `data/raw/combined_candidates_binary_preview.jsonl` 中 `F04/C03` 样本。
-3. `data/eval/normal_test_preview.jsonl` 中容易误封的 hard negative。
+1. `docs/duplicate_cleaning_preview.md`，确认重复文本清洗预览是否可以后续 apply。
+2. `data/raw/external_safety_binary_preview.jsonl` 中 `F02/F03/B01` 样本。
+3. `data/raw/combined_candidates_binary_preview.jsonl` 中 `F04/C03` 样本。
+4. `data/eval/normal_test_preview.jsonl` 中容易误封的 hard negative。
 
 第三批：
 
