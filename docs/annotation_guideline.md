@@ -41,7 +41,7 @@
   "risk_level": "high",
   "encoding_primary": "C1_历史人物类比",
   "encoding_secondary": ["D3_借代"],
-  "context_required": true,
+  "needs_context": true,
   "ambiguity": "medium",
   "evidence_strength": "strong",
   "hard_negative": false,
@@ -70,7 +70,7 @@
 | text | 是 | 待判断文本 |
 | risk_level | 是 | high/medium/low/none |
 | encoding_primary | 是 | 主编码方式；无风险样本可填 none |
-| context_required | 是 | 单看 text 是否无法稳定判断；默认 false |
+| needs_context | 是 | 单看 text 是否无法稳定判断；默认 false |
 | ambiguity | 是 | low/medium/high |
 | evidence_strength | 是 | weak/moderate/strong |
 | hard_negative | 是 | 是否困难负样本 |
@@ -179,12 +179,12 @@ none 样本必须认真写 counter_evidence，不能只写“无风险”。
 
 ## 5. 上下文标注规范
 
-### 5.1 context_required
+### 5.1 needs_context
 
 默认标 false。只有单看 text 无法做出稳定判断，且上下文是真实、必要、非硬编时，才标：
 
 ```json
-"context_required": true
+"needs_context": true
 ```
 
 常见情况：
@@ -293,7 +293,7 @@ none: 30%
 
 ```text
 none 中 hard_negative ≥ 50%
-low 中 context_required ≥ 30%
+low 中 needs_context ≥ 30%
 ```
 
 ### 8.3 构造方法
@@ -528,7 +528,7 @@ GRPO 不应主要奖励格式关键词。
 重点抽检：
 
 - high 样本。
-- context_required 样本。
+- needs_context 样本。
 - hard_negative 样本。
 - C1/C2/C4 类语义编码样本。
 
@@ -645,7 +645,7 @@ none: 300
 
 ```text
 hard_negative: ≥ 150
-context_required: ≥ 250
+needs_context: ≥ 250
 每个一级编码类别: ≥ 100
 每个重点二级类别: ≥ 40
 ```
@@ -686,7 +686,7 @@ Step 3：填写基础字段
 Step 4：写字面层、编码层、语境层分析
 Step 5：写支持证据和反证
 Step 6：标 risk_level
-Step 7：标 ambiguity/evidence_strength/context_required
+Step 7：标 ambiguity/evidence_strength/needs_context
 Step 8：复核
 Step 9：构造配对 hard negative
 Step 10：进入训练集或评测集

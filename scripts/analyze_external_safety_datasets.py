@@ -295,7 +295,7 @@ def make_sample(
         "risk_level": risk_level,
         "encoding_primary": encoding_primary,
         "encoding_secondary": [],
-        "context_required": risk_level != "none",
+        "needs_context": risk_level != "none",
         "ambiguity": "high" if risk_level in {"low", "none"} else "medium",
         "evidence_strength": evidence_strength,
         "freshness": "stable",

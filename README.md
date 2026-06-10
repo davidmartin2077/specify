@@ -18,8 +18,8 @@ medium  268
 low     162
 none    190
 
-hard_negative     322
-context_required  237
+hard_negative  322
+needs_context  237
 ```
 
 训练格式：

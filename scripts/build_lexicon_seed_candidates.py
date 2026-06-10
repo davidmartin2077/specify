@@ -505,7 +505,7 @@ def make_sample(seed: dict[str, Any], index: int, template: dict[str, Any]) -> d
     secondary = [] if primary == "none" else secondary_for_seed(seed, primary)
 
     return {
-        "id": f"LEXICON_SEED_{index:04d}_{str(template['variant']).upper()}",
+        "id": f"{index:06d}",
         "split": "train",
         "source_type": "synthetic",
         "platform": PLATFORMS[(index - 1) % len(PLATFORMS)],
@@ -514,7 +514,7 @@ def make_sample(seed: dict[str, Any], index: int, template: dict[str, Any]) -> d
         "risk_level": risk,
         "encoding_primary": primary,
         "encoding_secondary": secondary,
-        "context_required": risk != "none",
+        "needs_context": risk != "none",
         "ambiguity": ambiguity_for_risk(risk),
         "evidence_strength": evidence_for_risk(risk),
         "freshness": "stable",

@@ -9,7 +9,7 @@
     "text",
     "risk_level",
     "encoding_primary",
-    "context_required",
+    "needs_context",
     "ambiguity",
     "evidence_strength",
     "hard_negative",
@@ -62,7 +62,7 @@
       "type": "array",
       "items": { "type": "string" }
     },
-    "context_required": {
+    "needs_context": {
       "type": "boolean"
     },
     "ambiguity": {

@@ -82,7 +82,8 @@ def format_input(sample: dict[str, Any]) -> str:
     context = sample.get("context", {})
     if not isinstance(context, dict):
         context = {}
-    context_text = format_context(context) if sample.get("context_required", False) else "无明确上下文"
+    needs_context = bool(sample.get("needs_context", False))
+    context_text = format_context(context) if needs_context else "无明确上下文"
 
     return "\n".join(
         [
@@ -139,7 +140,7 @@ def format_output(sample: dict[str, Any]) -> str:
         f"risk_level: {sample.get('risk_level', 'none')}",
         f"encoding_primary: {sample.get('encoding_primary', 'none')}",
         f"encoding_secondary: {secondary_text}",
-        f"context_required: {str(sample.get('context_required', False)).lower()}",
+        f"needs_context: {str(sample.get('needs_context', False)).lower()}",
         f"confidence: {confidence(sample):.2f}",
         f"rationale: {reasoning.get('final_rationale', '综合判断见上。')}",
     ]
@@ -157,7 +158,7 @@ def build_record(sample: dict[str, Any]) -> dict[str, Any]:
             "risk_level": sample.get("risk_level", ""),
             "encoding_primary": sample.get("encoding_primary", ""),
             "encoding_secondary": sample.get("encoding_secondary", []),
-            "context_required": sample.get("context_required", False),
+            "needs_context": sample.get("needs_context", False),
             "ambiguity": sample.get("ambiguity", ""),
             "evidence_strength": sample.get("evidence_strength", ""),
             "hard_negative": sample.get("hard_negative", False),

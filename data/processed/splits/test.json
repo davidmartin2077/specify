@@ -1,6 +1,6 @@
 [
   {
-    "id": "MEME_EXPAND_0003_HIGH",
+    "id": "000060",
     "split": "test",
     "source_type": "synthetic",
     "platform": "知乎",
@@ -16,7 +16,6 @@
     "encoding_secondary": [
       "E3_上下文/互动触发"
     ],
-    "context_required": true,
     "ambiguity": "medium",
     "evidence_strength": "strong",
     "freshness": "stable",
@@ -46,10 +45,11 @@
       "final_rationale": "文本和上下文相互印证，风险解释明显强于普通解释，标为high。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=meme_expansion; original_id=EXPAND_0003; generated_expansion; needs_human_review; original_primary=B1_拆字; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比"
+    "review_notes": "source=meme_expansion; generated_expansion; needs_human_review; original_primary=B1_拆字; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比",
+    "needs_context": true
   },
   {
-    "id": "MEME_EXPAND_0066_LOW",
+    "id": "000074",
     "split": "test",
     "source_type": "synthetic",
     "platform": "知乎",
@@ -63,7 +63,6 @@
     "risk_level": "low",
     "encoding_primary": "C4_典故/物品/符号借用",
     "encoding_secondary": [],
-    "context_required": true,
     "ambiguity": "high",
     "evidence_strength": "weak",
     "freshness": "stable",
@@ -92,10 +91,11 @@
       "final_rationale": "普通解释更强，仅保留低风险或困难负样本价值，标为low。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=meme_expansion; original_id=EXPAND_0066; generated_expansion; needs_human_review; original_primary=C4_典故/物品/符号借用; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比"
+    "review_notes": "source=meme_expansion; generated_expansion; needs_human_review; original_primary=C4_典故/物品/符号借用; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比",
+    "needs_context": true
   },
   {
-    "id": "MEME_EXPAND_0073_LOW",
+    "id": "000079",
     "split": "test",
     "source_type": "synthetic",
     "platform": "B站",
@@ -111,7 +111,6 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": true,
     "ambiguity": "high",
     "evidence_strength": "weak",
     "freshness": "stable",
@@ -141,10 +140,11 @@
       "final_rationale": "普通解释更强，仅保留低风险或困难负样本价值，标为low。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=meme_expansion; original_id=EXPAND_0073; generated_expansion; needs_human_review; original_primary=B4_符号/空格/Unicode 干扰; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比"
+    "review_notes": "source=meme_expansion; generated_expansion; needs_human_review; original_primary=B4_符号/空格/Unicode 干扰; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比",
+    "needs_context": true
   },
   {
-    "id": "MEME_EXPAND_0094_NONE",
+    "id": "000084",
     "split": "test",
     "source_type": "synthetic",
     "platform": "抖音",
@@ -158,7 +158,6 @@
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
     "freshness": "stable",
@@ -185,10 +184,11 @@
       "final_rationale": "反证充分，风险解释不成立，标为none。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=meme_expansion; original_id=EXPAND_0094; generated_expansion; needs_human_review; original_primary=B1_拆字; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比"
+    "review_notes": "source=meme_expansion; generated_expansion; needs_human_review; original_primary=B1_拆字; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比",
+    "needs_context": false
   },
   {
-    "id": "MEME_EXPAND_0101_NONE",
+    "id": "000089",
     "split": "test",
     "source_type": "synthetic",
     "platform": "微博",
@@ -202,7 +202,6 @@
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
     "freshness": "stable",
@@ -229,10 +228,11 @@
       "final_rationale": "反证充分，风险解释不成立，标为none。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=meme_expansion; original_id=EXPAND_0101; generated_expansion; needs_human_review; original_primary=A2_拼音/首字母缩写; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比"
+    "review_notes": "source=meme_expansion; generated_expansion; needs_human_review; original_primary=A2_拼音/首字母缩写; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比",
+    "needs_context": false
   },
   {
-    "id": "MEME_EXPAND_0108_NONE",
+    "id": "000091",
     "split": "test",
     "source_type": "synthetic",
     "platform": "豆瓣",
@@ -246,7 +246,6 @@
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
     "freshness": "stable",
@@ -273,10 +272,11 @@
       "final_rationale": "反证充分，风险解释不成立，标为none。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=meme_expansion; original_id=EXPAND_0108; generated_expansion; needs_human_review; original_primary=E3_上下文/互动触发; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比"
+    "review_notes": "source=meme_expansion; generated_expansion; needs_human_review; original_primary=E3_上下文/互动触发; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比",
+    "needs_context": false
   },
   {
-    "id": "MEME_EXPAND_0115_NONE",
+    "id": "000092",
     "split": "test",
     "source_type": "synthetic",
     "platform": "论坛",
@@ -290,7 +290,6 @@
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
     "freshness": "stable",
@@ -317,10 +316,11 @@
       "final_rationale": "反证充分，风险解释不成立，标为none。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=meme_expansion; original_id=EXPAND_0115; generated_expansion; needs_human_review; original_primary=F_组合编码; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比"
+    "review_notes": "source=meme_expansion; generated_expansion; needs_human_review; original_primary=F_组合编码; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比",
+    "needs_context": false
   },
   {
-    "id": "GEMINI_EXPAND_0036_HIGH",
+    "id": "000128",
     "split": "test",
     "source_type": "synthetic",
     "platform": "知乎",
@@ -334,7 +334,6 @@
     "risk_level": "high",
     "encoding_primary": "B3_形近字替换",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "freshness": "stable",
@@ -362,10 +361,11 @@
       "final_rationale": "综合文本信号和反证，判为 high。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=gemini_expansion; original_id=EXPAND_0036; generated_expansion; needs_human_review; original_primary=B3_形近字替换; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比"
+    "review_notes": "source=gemini_expansion; generated_expansion; needs_human_review; original_primary=B3_形近字替换; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比",
+    "needs_context": false
   },
   {
-    "id": "GEMINI_EXPAND_0038_MEDIUM",
+    "id": "000130",
     "split": "test",
     "source_type": "synthetic",
     "platform": "B站",
@@ -379,7 +379,6 @@
     "risk_level": "medium",
     "encoding_primary": "B3_形近字替换",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "freshness": "stable",
@@ -407,10 +406,11 @@
       "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=gemini_expansion; original_id=EXPAND_0038; generated_expansion; needs_human_review; original_primary=B3_形近字替换; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比"
+    "review_notes": "source=gemini_expansion; generated_expansion; needs_human_review; original_primary=B3_形近字替换; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比",
+    "needs_context": false
   },
   {
-    "id": "GEMINI_EXPAND_0049_NONE",
+    "id": "000141",
     "split": "test",
     "source_type": "synthetic",
     "platform": "知乎",
@@ -424,7 +424,6 @@
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
     "freshness": "stable",
@@ -450,10 +449,11 @@
       "final_rationale": "综合文本信号和反证，判为 none。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=gemini_expansion; original_id=EXPAND_0049; generated_expansion; needs_human_review; original_primary=B3_形近字替换; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比"
+    "review_notes": "source=gemini_expansion; generated_expansion; needs_human_review; original_primary=B3_形近字替换; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比",
+    "needs_context": false
   },
   {
-    "id": "GEMINI_EXPAND_0056_MEDIUM",
+    "id": "000148",
     "split": "test",
     "source_type": "synthetic",
     "platform": "抖音",
@@ -467,7 +467,6 @@
     "risk_level": "medium",
     "encoding_primary": "B4_符号/空格/Unicode 干扰",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "freshness": "stable",
@@ -495,10 +494,11 @@
       "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=gemini_expansion; original_id=EXPAND_0056; generated_expansion; needs_human_review; original_primary=B4_符号/空格/Unicode 干扰; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比"
+    "review_notes": "source=gemini_expansion; generated_expansion; needs_human_review; original_primary=B4_符号/空格/Unicode 干扰; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比",
+    "needs_context": false
   },
   {
-    "id": "GEMINI_EXPAND_0087_HIGH",
+    "id": "000179",
     "split": "test",
     "source_type": "synthetic",
     "platform": "知乎",
@@ -514,7 +514,6 @@
     "encoding_secondary": [
       "B3_形近字替换"
     ],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "freshness": "stable",
@@ -543,10 +542,11 @@
       "final_rationale": "综合文本信号和反证，判为 high。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=gemini_expansion; original_id=EXPAND_0087; generated_expansion; needs_human_review; original_primary=E3_上下文/互动触发; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比"
+    "review_notes": "source=gemini_expansion; generated_expansion; needs_human_review; original_primary=E3_上下文/互动触发; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比",
+    "needs_context": false
   },
   {
-    "id": "GEMINI_EXPAND_0109_MEDIUM",
+    "id": "000201",
     "split": "test",
     "source_type": "synthetic",
     "platform": "知乎",
@@ -562,7 +562,6 @@
     "encoding_secondary": [
       "B3_形近字替换"
     ],
-    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "freshness": "stable",
@@ -591,10 +590,11 @@
       "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=gemini_expansion; original_id=EXPAND_0109; generated_expansion; needs_human_review; original_primary=F_组合编码; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比"
+    "review_notes": "source=gemini_expansion; generated_expansion; needs_human_review; original_primary=F_组合编码; original_notes=generated_expansion; needs_human_review; meme_cluster=历史人物类比",
+    "needs_context": false
   },
   {
-    "id": "PHASE3_W1_0056_INSULTING_ABUSE_OBFUSCATED",
+    "id": "000401",
     "source_type": "synthetic",
     "platform": "微博",
     "text": "老外号不打了，两个首字母大家都懂",
@@ -610,7 +610,6 @@
       "D3_借代",
       "E1_平台黑话"
     ],
-    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -641,10 +640,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=insulting_abuse; contrast_mode=obfuscated; cluster=insulting_abuse_obfuscated; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0057_INSULTING_ABUSE_OBFUSCATED",
+    "id": "000402",
     "source_type": "synthetic",
     "platform": "贴吧",
     "text": "那个群体名会被删，换成动物叫法就行",
@@ -660,7 +660,6 @@
       "D3_借代",
       "E1_平台黑话"
     ],
-    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -691,10 +690,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=insulting_abuse; contrast_mode=obfuscated; cluster=insulting_abuse_obfuscated; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0058_INSULTING_ABUSE_OBFUSCATED",
+    "id": "000403",
     "source_type": "synthetic",
     "platform": "知乎",
     "text": "别写地域名，用口音那个梗代一下",
@@ -710,7 +710,6 @@
       "D3_借代",
       "E1_平台黑话"
     ],
-    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -741,10 +740,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=insulting_abuse; contrast_mode=obfuscated; cluster=insulting_abuse_obfuscated; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0059_INSULTING_ABUSE_OBFUSCATED",
+    "id": "000404",
     "source_type": "synthetic",
     "platform": "B站",
     "text": "骂人的字拆开打，不然评论发不出",
@@ -760,7 +760,6 @@
       "D3_借代",
       "E1_平台黑话"
     ],
-    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -791,10 +790,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=insulting_abuse; contrast_mode=obfuscated; cluster=insulting_abuse_obfuscated; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0060_INSULTING_ABUSE_OBFUSCATED",
+    "id": "000405",
     "source_type": "synthetic",
     "platform": "微信群",
     "text": "那帮人的简称就三个符号，别写全",
@@ -810,7 +810,6 @@
       "D3_借代",
       "E1_平台黑话"
     ],
-    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -841,10 +840,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=insulting_abuse; contrast_mode=obfuscated; cluster=insulting_abuse_obfuscated; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0156_ILLEGAL_GOODS_OBFUSCATED",
+    "id": "000501",
     "source_type": "synthetic",
     "platform": "贴吧",
     "text": "名字别打，按小白片问就行",
@@ -859,7 +859,6 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": true,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -890,10 +889,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=illegal_goods; contrast_mode=obfuscated; cluster=illegal_goods_obfuscated; merged_processed; needs_human_review",
+    "needs_context": true,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0157_ILLEGAL_GOODS_OBFUSCATED",
+    "id": "000502",
     "source_type": "synthetic",
     "platform": "微信群",
     "text": "那种粉用字母代，群里别写全",
@@ -908,7 +908,6 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -939,10 +938,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=illegal_goods; contrast_mode=obfuscated; cluster=illegal_goods_obfuscated; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0158_ILLEGAL_GOODS_OBFUSCATED",
+    "id": "000503",
     "source_type": "synthetic",
     "platform": "论坛",
     "text": "颜色和批次对上就是，懂货的私下说",
@@ -957,7 +957,6 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -988,10 +987,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=illegal_goods; contrast_mode=obfuscated; cluster=illegal_goods_obfuscated; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0159_ILLEGAL_GOODS_OBFUSCATED",
+    "id": "000504",
     "source_type": "synthetic",
     "platform": "小红书",
     "text": "药那个字会限流，改成糖就好",
@@ -1006,7 +1006,6 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -1037,10 +1036,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=illegal_goods; contrast_mode=obfuscated; cluster=illegal_goods_obfuscated; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0160_ILLEGAL_GOODS_OBFUSCATED",
+    "id": "000505",
     "source_type": "synthetic",
     "platform": "微博",
     "text": "数量用表情发，别留文字记录",
@@ -1055,7 +1055,6 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -1086,10 +1085,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=illegal_goods; contrast_mode=obfuscated; cluster=illegal_goods_obfuscated; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0111_CYBER_ABUSE_CONTEXTUAL",
+    "id": "000456",
     "source_type": "synthetic",
     "platform": "论坛",
     "text": "这个后台也太纸糊了，随便试试就进去了",
@@ -1104,7 +1104,6 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": true,
     "ambiguity": "high",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -1135,10 +1134,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=contextual; cluster=cyber_abuse_contextual; merged_processed; needs_human_review",
+    "needs_context": true,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0112_CYBER_ABUSE_CONTEXTUAL",
+    "id": "000457",
     "source_type": "synthetic",
     "platform": "B站",
     "text": "别讲修复，我只想知道怎么复现",
@@ -1153,7 +1153,6 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": false,
     "ambiguity": "high",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -1184,10 +1183,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=contextual; cluster=cyber_abuse_contextual; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0113_CYBER_ABUSE_CONTEXTUAL",
+    "id": "000458",
     "source_type": "synthetic",
     "platform": "知乎",
     "text": "这个账号还能不能捞回来，有熟手吗",
@@ -1202,7 +1202,6 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": true,
     "ambiguity": "high",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -1233,10 +1232,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=contextual; cluster=cyber_abuse_contextual; merged_processed; needs_human_review",
+    "needs_context": true,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0114_CYBER_ABUSE_CONTEXTUAL",
+    "id": "000459",
     "source_type": "synthetic",
     "platform": "微信群",
     "text": "截图里的数据看着不像演示环境",
@@ -1251,7 +1251,6 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": true,
     "ambiguity": "high",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -1282,10 +1281,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=contextual; cluster=cyber_abuse_contextual; merged_processed; needs_human_review",
+    "needs_context": true,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0115_CYBER_ABUSE_CONTEXTUAL",
+    "id": "000460",
     "source_type": "synthetic",
     "platform": "贴吧",
     "text": "验证那一步有没有更省事的办法",
@@ -1300,7 +1300,6 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": true,
     "ambiguity": "high",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -1331,10 +1330,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=contextual; cluster=cyber_abuse_contextual; merged_processed; needs_human_review",
+    "needs_context": true,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0041_SPAM_ADS_FRAUD_WEAK_SIGNAL",
+    "id": "000386",
     "source_type": "synthetic",
     "platform": "微信群",
     "text": "说是兼职但没写公司名称，先谨慎看看",
@@ -1349,7 +1349,6 @@
     "encoding_secondary": [
       "C4_典故/物品/符号借用"
     ],
-    "context_required": true,
     "ambiguity": "high",
     "evidence_strength": "weak",
     "hard_negative": true,
@@ -1380,10 +1379,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=spam_ads_fraud; contrast_mode=weak_signal; cluster=spam_ads_fraud_weak_signal; merged_processed; needs_human_review",
+    "needs_context": true,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0042_SPAM_ADS_FRAUD_WEAK_SIGNAL",
+    "id": "000387",
     "source_type": "synthetic",
     "platform": "小红书",
     "text": "这个补偿消息像客服，也可能只是通知",
@@ -1398,7 +1398,6 @@
     "encoding_secondary": [
       "C4_典故/物品/符号借用"
     ],
-    "context_required": true,
     "ambiguity": "high",
     "evidence_strength": "weak",
     "hard_negative": true,
@@ -1429,10 +1428,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=spam_ads_fraud; contrast_mode=weak_signal; cluster=spam_ads_fraud_weak_signal; merged_processed; needs_human_review",
+    "needs_context": true,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0043_SPAM_ADS_FRAUD_WEAK_SIGNAL",
+    "id": "000388",
     "source_type": "synthetic",
     "platform": "微博",
     "text": "群里一直说稳赚，但还没看到收费",
@@ -1447,7 +1447,6 @@
     "encoding_secondary": [
       "C4_典故/物品/符号借用"
     ],
-    "context_required": true,
     "ambiguity": "high",
     "evidence_strength": "weak",
     "hard_negative": true,
@@ -1478,10 +1477,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=spam_ads_fraud; contrast_mode=weak_signal; cluster=spam_ads_fraud_weak_signal; merged_processed; needs_human_review",
+    "needs_context": true,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0044_SPAM_ADS_FRAUD_WEAK_SIGNAL",
+    "id": "000389",
     "source_type": "synthetic",
     "platform": "QQ群",
     "text": "让加私人号有点怪，不过可能是正常招聘",
@@ -1496,7 +1496,6 @@
     "encoding_secondary": [
       "C4_典故/物品/符号借用"
     ],
-    "context_required": true,
     "ambiguity": "high",
     "evidence_strength": "weak",
     "hard_negative": true,
@@ -1527,10 +1526,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=spam_ads_fraud; contrast_mode=weak_signal; cluster=spam_ads_fraud_weak_signal; merged_processed; needs_human_review",
+    "needs_context": true,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0045_SPAM_ADS_FRAUD_WEAK_SIGNAL",
+    "id": "000390",
     "source_type": "synthetic",
     "platform": "抖音",
     "text": "限时名额不一定是诈骗，但值得核验",
@@ -1545,7 +1545,6 @@
     "encoding_secondary": [
       "C4_典故/物品/符号借用"
     ],
-    "context_required": true,
     "ambiguity": "high",
     "evidence_strength": "weak",
     "hard_negative": true,
@@ -1576,10 +1575,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=spam_ads_fraud; contrast_mode=weak_signal; cluster=spam_ads_fraud_weak_signal; merged_processed; needs_human_review",
+    "needs_context": true,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0126_VIOLENCE_EXTREMISM_DIRECT",
+    "id": "000471",
     "source_type": "synthetic",
     "platform": "微信群",
     "text": "别只在网上说，今晚都到现场来",
@@ -1595,7 +1595,6 @@
       "D2_夸张/反话",
       "E1_平台黑话"
     ],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
@@ -1625,10 +1624,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=violence_extremism; contrast_mode=direct; cluster=violence_extremism_direct; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0127_VIOLENCE_EXTREMISM_DIRECT",
+    "id": "000472",
     "source_type": "synthetic",
     "platform": "微博",
     "text": "真有胆子的带上家伙一起去",
@@ -1644,7 +1644,6 @@
       "D2_夸张/反话",
       "E1_平台黑话"
     ],
-    "context_required": true,
     "ambiguity": "medium",
     "evidence_strength": "strong",
     "hard_negative": false,
@@ -1674,10 +1673,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=violence_extremism; contrast_mode=direct; cluster=violence_extremism_direct; merged_processed; needs_human_review",
+    "needs_context": true,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0128_VIOLENCE_EXTREMISM_DIRECT",
+    "id": "000473",
     "source_type": "synthetic",
     "platform": "贴吧",
     "text": "这次必须让对面付出代价，一个都别放过",
@@ -1693,7 +1693,6 @@
       "D2_夸张/反话",
       "E1_平台黑话"
     ],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
@@ -1723,10 +1722,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=violence_extremism; contrast_mode=direct; cluster=violence_extremism_direct; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0129_VIOLENCE_EXTREMISM_DIRECT",
+    "id": "000474",
     "source_type": "synthetic",
     "platform": "抖音",
     "text": "人已经叫齐了，到了以后统一行动",
@@ -1742,7 +1742,6 @@
       "D2_夸张/反话",
       "E1_平台黑话"
     ],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
@@ -1772,10 +1771,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=violence_extremism; contrast_mode=direct; cluster=violence_extremism_direct; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0130_VIOLENCE_EXTREMISM_DIRECT",
+    "id": "000475",
     "source_type": "synthetic",
     "platform": "论坛",
     "text": "别劝了，今天就要把事情闹大",
@@ -1791,7 +1791,6 @@
       "D2_夸张/反话",
       "E1_平台黑话"
     ],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
@@ -1821,10 +1820,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=violence_extremism; contrast_mode=direct; cluster=violence_extremism_direct; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W2_0111_PLATFORM_CENSORSHIP_EVASION_DIRECT",
+    "id": "000701",
     "source_type": "synthetic",
     "platform": "B站",
     "text": "原词发不出，我中间垫几个看不见的字符试试",
@@ -1840,7 +1840,6 @@
       "A2_拼音/首字母缩写",
       "E1_平台黑话"
     ],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
@@ -1870,10 +1869,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=platform_censorship_evasion; contrast_mode=direct; cluster=platform_censorship_evasion_direct_w2; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W2_0112_PLATFORM_CENSORSHIP_EVASION_DIRECT",
+    "id": "000702",
     "source_type": "synthetic",
     "platform": "微博",
     "text": "那句话文字版又没了，我改成图再发一遍",
@@ -1889,7 +1889,6 @@
       "A2_拼音/首字母缩写",
       "E1_平台黑话"
     ],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
@@ -1919,10 +1918,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=platform_censorship_evasion; contrast_mode=direct; cluster=platform_censorship_evasion_direct_w2; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W2_0113_PLATFORM_CENSORSHIP_EVASION_DIRECT",
+    "id": "000703",
     "source_type": "synthetic",
     "platform": "贴吧",
     "text": "全称别写了，三个首字母评论区自己懂",
@@ -1938,7 +1938,6 @@
       "A2_拼音/首字母缩写",
       "E1_平台黑话"
     ],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
@@ -1968,10 +1967,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=platform_censorship_evasion; contrast_mode=direct; cluster=platform_censorship_evasion_direct_w2; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W2_0054_INSULTING_ABUSE_OBFUSCATED",
+    "id": "000644",
     "source_type": "synthetic",
     "platform": "微博",
     "text": "地域名换成车牌首字母，骂起来不容易删",
@@ -1987,7 +1987,6 @@
       "D1_反讽",
       "A2_拼音/首字母缩写"
     ],
-    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -2018,10 +2017,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=insulting_abuse; contrast_mode=obfuscated; cluster=insulting_abuse_obfuscated_w2; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W2_0055_INSULTING_ABUSE_OBFUSCATED",
+    "id": "000645",
     "source_type": "synthetic",
     "platform": "贴吧",
     "text": "那类人统一叫灰头像，别打真实群体名",
@@ -2037,7 +2037,6 @@
       "D1_反讽",
       "A2_拼音/首字母缩写"
     ],
-    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -2068,10 +2067,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=insulting_abuse; contrast_mode=obfuscated; cluster=insulting_abuse_obfuscated_w2; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W2_0056_INSULTING_ABUSE_OBFUSCATED",
+    "id": "000646",
     "source_type": "synthetic",
     "platform": "B站",
     "text": "职业后两个字用表情替掉，大家照样懂",
@@ -2087,7 +2087,6 @@
       "D1_反讽",
       "A2_拼音/首字母缩写"
     ],
-    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -2118,10 +2117,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=insulting_abuse; contrast_mode=obfuscated; cluster=insulting_abuse_obfuscated_w2; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W2_0096_POLITICAL_HISTORY_DIRECT",
+    "id": "000686",
     "source_type": "synthetic",
     "platform": "B站",
     "text": "今天这场面和书里那次清场几乎一模一样",
@@ -2137,7 +2137,6 @@
       "C1_历史人物类比",
       "C3_数字代指"
     ],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
@@ -2167,10 +2166,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=political_history; contrast_mode=direct; cluster=political_history_direct_w2; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W2_0097_POLITICAL_HISTORY_DIRECT",
+    "id": "000687",
     "source_type": "synthetic",
     "platform": "微博",
     "text": "他又在复刻那位末代掌权者的最后几年",
@@ -2186,7 +2186,6 @@
       "C1_历史人物类比",
       "C3_数字代指"
     ],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
@@ -2216,10 +2215,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=political_history; contrast_mode=direct; cluster=political_history_direct_w2; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W2_0098_POLITICAL_HISTORY_DIRECT",
+    "id": "000688",
     "source_type": "synthetic",
     "platform": "知乎",
     "text": "这个日期一到，评论区都知道在纪念什么",
@@ -2235,7 +2235,6 @@
       "C1_历史人物类比",
       "C3_数字代指"
     ],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
@@ -2265,10 +2264,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=political_history; contrast_mode=direct; cluster=political_history_direct_w2; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W2_0168_ILLEGAL_GOODS_SAFE_CONTEXT",
+    "id": "000758",
     "source_type": "synthetic",
     "platform": "微信群",
     "text": "这药还是得拿处方去医院开，别找私人卖家",
@@ -2281,7 +2281,6 @@
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
     "hard_negative": true,
@@ -2308,10 +2307,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=illegal_goods; contrast_mode=safe_context; cluster=illegal_goods_safe_context_w2; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W2_0169_ILLEGAL_GOODS_SAFE_CONTEXT",
+    "id": "000759",
     "source_type": "synthetic",
     "platform": "贴吧",
     "text": "禁毒课那张图是教大家认伪装，不是让人学",
@@ -2324,7 +2324,6 @@
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
     "hard_negative": true,
@@ -2351,10 +2350,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=illegal_goods; contrast_mode=safe_context; cluster=illegal_goods_safe_context_w2; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W2_0170_ILLEGAL_GOODS_SAFE_CONTEXT",
+    "id": "000760",
     "source_type": "synthetic",
     "platform": "小红书",
     "text": "证件照最多修下光线，信息不能乱改",
@@ -2367,7 +2367,6 @@
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
     "hard_negative": true,
@@ -2394,10 +2393,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=illegal_goods; contrast_mode=safe_context; cluster=illegal_goods_safe_context_w2; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "LEXICON_SEED_0028_STRICT_EXTREMISM_LEAD",
+    "id": "000240",
     "split": "test",
     "source_type": "synthetic",
     "platform": "小红书",
@@ -2411,7 +2411,6 @@
     "risk_level": "high",
     "encoding_primary": "C4_典故/物品/符号借用",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "freshness": "stable",
@@ -2439,10 +2438,11 @@
       "final_rationale": "综合文本信号，判为 high；该判断来自文本风险信号。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=sensitive_lexicon_seed; category=violence_extremism; risk_family=strict_redline; variant=strict_extremism_lead; bucket=direct_policy_risk; matched_term=伪火; term_source_files=暴恐词库.txt,网易前端过滤敏感词库.txt,零时-Tencent.txt; needs_human_review; merged_processed"
+    "review_notes": "source=sensitive_lexicon_seed; category=violence_extremism; risk_family=strict_redline; variant=strict_extremism_lead; bucket=direct_policy_risk; matched_term=伪火; term_source_files=暴恐词库.txt,网易前端过滤敏感词库.txt,零时-Tencent.txt; needs_human_review; merged_processed",
+    "needs_context": false
   },
   {
-    "id": "LEXICON_SEED_0029_STRICT_EXTREMISM_EVASION",
+    "id": "000241",
     "split": "test",
     "source_type": "synthetic",
     "platform": "B站",
@@ -2456,7 +2456,6 @@
     "risk_level": "high",
     "encoding_primary": "C4_典故/物品/符号借用",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "freshness": "stable",
@@ -2484,10 +2483,11 @@
       "final_rationale": "综合文本信号，判为 high；该判断来自文本风险信号。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=sensitive_lexicon_seed; category=violence_extremism; risk_family=strict_redline; variant=strict_extremism_evasion; bucket=direct_policy_risk; matched_term=圣战; term_source_files=网易前端过滤敏感词库.txt,零时-Tencent.txt; needs_human_review; merged_processed"
+    "review_notes": "source=sensitive_lexicon_seed; category=violence_extremism; risk_family=strict_redline; variant=strict_extremism_evasion; bucket=direct_policy_risk; matched_term=圣战; term_source_files=网易前端过滤敏感词库.txt,零时-Tencent.txt; needs_human_review; merged_processed",
+    "needs_context": false
   },
   {
-    "id": "LEXICON_SEED_0030_STRICT_EXTREMISM_REPORT",
+    "id": "000242",
     "split": "test",
     "source_type": "synthetic",
     "platform": "微博",
@@ -2501,7 +2501,6 @@
     "risk_level": "medium",
     "encoding_primary": "C4_典故/物品/符号借用",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "freshness": "stable",
@@ -2529,10 +2528,11 @@
       "final_rationale": "综合文本信号，判为 medium；该判断来自文本风险信号。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=sensitive_lexicon_seed; category=violence_extremism; risk_family=strict_redline; variant=strict_extremism_report; bucket=direct_policy_risk; matched_term=电鸡; term_source_files=暴恐词库.txt,补充词库.txt; needs_human_review; merged_processed"
+    "review_notes": "source=sensitive_lexicon_seed; category=violence_extremism; risk_family=strict_redline; variant=strict_extremism_report; bucket=direct_policy_risk; matched_term=电鸡; term_source_files=暴恐词库.txt,补充词库.txt; needs_human_review; merged_processed",
+    "needs_context": false
   },
   {
-    "id": "PHASE3_W1_0219_POLITICAL_HISTORY_OBFUSCATED",
+    "id": "000564",
     "source_type": "synthetic",
     "platform": "B站",
     "text": "名字别打，用那位历史角色代一下",
@@ -2548,7 +2548,6 @@
       "C2_历史事件影射",
       "E2_时间节点触发"
     ],
-    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -2579,10 +2578,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=political_history; contrast_mode=obfuscated; cluster=political_history_obfuscated; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0220_POLITICAL_HISTORY_OBFUSCATED",
+    "id": "000565",
     "source_type": "synthetic",
     "platform": "微博",
     "text": "日期不写全，往后多一天大家就懂",
@@ -2598,7 +2598,6 @@
       "C2_历史事件影射",
       "E2_时间节点触发"
     ],
-    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -2629,10 +2628,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=political_history; contrast_mode=obfuscated; cluster=political_history_obfuscated; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W1_0221_POLITICAL_HISTORY_OBFUSCATED",
+    "id": "000566",
     "source_type": "synthetic",
     "platform": "知乎",
     "text": "现实人物用剧中称号说，别直接点名",
@@ -2648,7 +2648,6 @@
       "C2_历史事件影射",
       "E2_时间节点触发"
     ],
-    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -2679,10 +2678,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=political_history; contrast_mode=obfuscated; cluster=political_history_obfuscated; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W2_0102_POLITICAL_HISTORY_CONTEXTUAL",
+    "id": "000692",
     "source_type": "synthetic",
     "platform": "B站",
     "text": "历史总在押同一个韵，只是角色换了名字",
@@ -2698,7 +2698,6 @@
       "C1_历史人物类比",
       "C3_数字代指"
     ],
-    "context_required": true,
     "ambiguity": "high",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -2729,10 +2728,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=political_history; contrast_mode=contextual; cluster=political_history_contextual_w2; merged_processed; needs_human_review",
+    "needs_context": true,
     "split": "test"
   },
   {
-    "id": "PHASE3_W2_0103_POLITICAL_HISTORY_CONTEXTUAL",
+    "id": "000693",
     "source_type": "synthetic",
     "platform": "微博",
     "text": "这集人物关系怎么看着像现实里的旧剧本",
@@ -2748,7 +2748,6 @@
       "C1_历史人物类比",
       "C3_数字代指"
     ],
-    "context_required": true,
     "ambiguity": "high",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -2779,10 +2778,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=political_history; contrast_mode=contextual; cluster=political_history_contextual_w2; merged_processed; needs_human_review",
+    "needs_context": true,
     "split": "test"
   },
   {
-    "id": "PHASE3_W2_0104_POLITICAL_HISTORY_CONTEXTUAL",
+    "id": "000694",
     "source_type": "synthetic",
     "platform": "知乎",
     "text": "每年到这个晚上，时间线都会突然安静",
@@ -2798,7 +2798,6 @@
       "C1_历史人物类比",
       "C3_数字代指"
     ],
-    "context_required": true,
     "ambiguity": "high",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -2829,10 +2828,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=political_history; contrast_mode=contextual; cluster=political_history_contextual_w2; merged_processed; needs_human_review",
+    "needs_context": true,
     "split": "test"
   },
   {
-    "id": "PHASE3_W2_0123_PLATFORM_CENSORSHIP_EVASION_SAFE_CONTEXT",
+    "id": "000713",
     "source_type": "synthetic",
     "platform": "B站",
     "text": "无障碍设计课程讲零宽字符可能影响阅读器",
@@ -2845,7 +2845,6 @@
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
     "hard_negative": true,
@@ -2872,10 +2871,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=platform_censorship_evasion; contrast_mode=safe_context; cluster=platform_censorship_evasion_safe_context_w2; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W2_0124_PLATFORM_CENSORSHIP_EVASION_SAFE_CONTEXT",
+    "id": "000714",
     "source_type": "synthetic",
     "platform": "微博",
     "text": "论文第一次写了全称，后面用缩写很正常",
@@ -2888,7 +2888,6 @@
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
     "hard_negative": true,
@@ -2915,10 +2914,11 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=platform_censorship_evasion; contrast_mode=safe_context; cluster=platform_censorship_evasion_safe_context_w2; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE3_W2_0125_PLATFORM_CENSORSHIP_EVASION_SAFE_CONTEXT",
+    "id": "000715",
     "source_type": "synthetic",
     "platform": "贴吧",
     "text": "图片版通知是为了保留格式，不包含规避内容",
@@ -2931,7 +2931,6 @@
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
     "hard_negative": true,
@@ -2958,24 +2957,116 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=platform_censorship_evasion; contrast_mode=safe_context; cluster=platform_censorship_evasion_safe_context_w2; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "GROK_030_LOW",
-    "split": "test",
+    "id": "000328",
     "source_type": "synthetic",
-    "platform": "抖音",
-    "text": "耗子尾汁，好好学习",
+    "platform": "微信群",
+    "text": "官方太慢，先扫我这个码，名单后面统一补",
     "context": {
-      "title": "励志视频",
+      "title": "灾后互助群",
       "description": "",
       "time": "",
-      "topic": "谐音梗"
+      "topic": "公益/诈骗边界"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "E1_平台黑话",
+    "encoding_secondary": [],
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：官方太慢，先扫我这个码，名单后面统一补"
+      ],
+      "encoding_analysis": [
+        "用互助和补名单包装私人收款。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按文本本身和常见语用判断。"
+      ],
+      "supporting_evidence": [
+        "要求先扫私人码。",
+        "以官方太慢为理由绕开正规渠道。"
+      ],
+      "counter_evidence": [
+        "可能是临时互助，但缺少公开核验。"
+      ],
+      "final_rationale": "文本本身支持风险解释，判为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=charity_contextual; variant=private_qr; merged_processed; needs_human_review",
+    "needs_context": false,
+    "split": "test"
+  },
+  {
+    "id": "000300",
+    "source_type": "synthetic",
+    "platform": "微博",
+    "text": "又到这天了，大家都只发旧照片，话反而不用说出口",
+    "context": {
+      "title": "历史影像转发评论区",
+      "description": "",
+      "time": "",
+      "topic": "时间节点边界"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "E2_时间节点触发",
+    "encoding_secondary": [
+      "C2_历史事件影射"
+    ],
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：又到这天了，大家都只发旧照片，话反而不用说出口"
+      ],
+      "encoding_analysis": [
+        "通过时间节点和旧照片形成隐性纪念。"
+      ],
+      "context_analysis": [
+        "上下文是历史影像转发，文本提到这天和不用说出口。"
+      ],
+      "supporting_evidence": [
+        "出现又到这天和不用说出口。",
+        "标题为历史影像转发。"
+      ],
+      "counter_evidence": [
+        "没有具体日期和事件名称，证据依赖上下文。"
+      ],
+      "final_rationale": "文本本身支持风险解释，判为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=meme_forensics; cluster=anniversary_contextual; variant=public_memory_hint; merged_processed; needs_human_review",
+    "needs_context": true,
+    "split": "test"
+  },
+  {
+    "id": "000048",
+    "split": "test",
+    "source_type": "synthetic",
+    "platform": "情感博主",
+    "text": "蜡烛的光芒虽然小，但能照亮黑暗",
+    "context": {
+      "title": "励志文",
+      "description": "",
+      "time": "",
+      "topic": "悼念"
     },
     "risk_level": "low",
-    "encoding_primary": "A1_普通谐音",
+    "encoding_primary": "C2_历史事件影射",
     "encoding_secondary": [],
-    "context_required": true,
     "ambiguity": "high",
     "evidence_strength": "weak",
     "freshness": "stable",
@@ -2985,133 +3076,89 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：耗子尾汁，好好学习"
+        "字面上是在表达：蜡烛的光芒虽然小，但能照亮黑暗"
       ],
       "encoding_analysis": [
-        "可疑编码机制：谐音梗。",
-        "主要归为 A1_普通谐音。"
+        "可疑编码机制：悼念。",
+        "主要归为 C2_历史事件影射。"
       ],
       "context_analysis": [
-        "背景备注：励志视频。"
+        "背景备注：励志文。"
       ],
       "supporting_evidence": [
         "存在弱暗示、关键词撞车或候选编码痕迹。"
       ],
       "counter_evidence": [
-        "普通解释更强：励志视频。",
+        "普通解释更强：励志文。",
         "证据不足以升为 medium 或 high。",
         "该样本适合作为 hard negative，训练模型避免关键词误杀。"
       ],
       "final_rationale": "综合文本信号和反证，判为 low。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=grok; source_id=GROK_030; original_risk=low; original_note=hard negative：网络梗"
+    "review_notes": "source=grok; original_risk=low; original_note=hard negative：普通比喻",
+    "needs_context": true
   },
   {
-    "id": "PHASE2_SEED_0098_PETITION_HN_NONE",
+    "id": "000035",
+    "split": "test",
     "source_type": "synthetic",
-    "platform": "小红书",
-    "text": "业主维权先走物业和街道流程，材料留痕比吵架有用",
+    "platform": "宠物群",
+    "text": "我家猫咪叫豆豆，每天都特别粘人",
     "context": {
-      "title": "小区物业问题讨论",
+      "title": "宠物昵称",
       "description": "",
       "time": "",
-      "topic": "维权/动员边界"
+      "topic": "无"
     },
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
+    "freshness": "stable",
     "hard_negative": true,
     "target_known": false,
-    "target_reference": "匿名化风险语境",
+    "target_reference": "",
     "should_explain_target": false,
-    "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：业主维权先走物业和街道流程，材料留痕比吵架有用"
+        "字面上是在表达：我家猫咪叫豆豆，每天都特别粘人"
       ],
-      "encoding_analysis": [
-        "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
-      ],
+      "encoding_analysis": [],
       "context_analysis": [
         "无明确上下文；按文本本身和常见语用判断。"
       ],
       "supporting_evidence": [],
       "counter_evidence": [
-        "建议走正式渠道。",
-        "没有煽动线下冲突。"
+        "普通解释更强：宠物昵称。",
+        "未发现足够的编码机制或风险语境。",
+        "该样本适合作为 hard negative，训练模型避免关键词误杀。"
       ],
-      "final_rationale": "普通语境和反证更强，判为 none；该条用于训练模型避免关键词误杀。"
+      "final_rationale": "综合文本信号和反证，判为 none。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=petition_hard_negative; variant=property_rights; merged_processed; needs_human_review",
-    "split": "test"
+    "review_notes": "source=grok; original_risk=none; original_note=hard negative：完全无害宠物分享（已替换原维尼案例）",
+    "needs_context": false
   },
   {
-    "id": "PHASE2_SEED_0094_GAME_HN_NONE",
+    "id": "000272",
     "source_type": "synthetic",
-    "platform": "B站",
-    "text": "这个 boss 二阶段会狂暴，奶妈留技能就行",
+    "platform": "贴吧",
+    "text": "别问名字，老规矩按颜色和批次看，懂货的私下说",
     "context": {
-      "title": "游戏副本攻略",
+      "title": "同城闲置帖",
       "description": "",
       "time": "",
-      "topic": "游戏术语边界"
+      "topic": "违禁交易"
     },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "context_required": false,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：这个 boss 二阶段会狂暴，奶妈留技能就行"
-      ],
-      "encoding_analysis": [
-        "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按文本本身和常见语用判断。"
-      ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "术语含义在游戏语境中明确。",
-        "没有现实暴力或群体攻击指向。"
-      ],
-      "final_rationale": "普通语境和反证更强，判为 none；该条用于训练模型避免关键词误杀。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=meme_forensics; cluster=game_term_hard_negative; variant=normal_game_callout; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE2_SEED_0033_SEX_CTX_MEDIUM",
-    "source_type": "synthetic",
-    "platform": "抖音",
-    "text": "同城的别问价，按以前那套说法来，主页有门",
-    "context": {
-      "title": "同城夜生活评论区",
-      "description": "",
-      "time": "",
-      "topic": "低俗导流"
-    },
-    "risk_level": "medium",
+    "risk_level": "high",
     "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [
       "C4_典故/物品/符号借用"
     ],
-    "context_required": false,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
+    "ambiguity": "low",
+    "evidence_strength": "strong",
     "hard_negative": false,
     "target_known": false,
     "target_reference": "匿名化风险语境",
@@ -3119,88 +3166,43 @@
     "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：同城的别问价，按以前那套说法来，主页有门"
+        "字面上是在表达：别问名字，老规矩按颜色和批次看，懂货的私下说"
       ],
       "encoding_analysis": [
-        "用旧说法和主页有门规避直接表达。"
+        "通过颜色和批次等替代描述规避直接物品名称。"
       ],
       "context_analysis": [
         "无明确上下文；按文本本身和常见语用判断。"
       ],
       "supporting_evidence": [
-        "出现价格规避和主页导流。",
-        "上下文提示重复可疑账号。"
+        "明确要求别问名字。",
+        "上下文延续上次那个和别在楼里写。"
       ],
       "counter_evidence": [
-        "具体服务内容不明，"
+        "未出现具体物品名称，但规避和交易语境强。"
       ],
-      "final_rationale": "文本本身支持风险解释，判为 medium。"
+      "final_rationale": "文本本身支持风险解释，判为 high。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=sexual_contextual; variant=evasive_local; merged_processed; needs_human_review",
+    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=illegal_goods_contextual; variant=coded_channel; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE2_SEED_0093_EXAM_CTX_MEDIUM",
-    "source_type": "synthetic",
-    "platform": "微信群",
-    "text": "真题不在群里放，想稳的私我，考前最后一批",
-    "context": {
-      "title": "考试资料群",
-      "description": "",
-      "time": "",
-      "topic": "考试/诈骗边界"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [],
-    "context_required": true,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：真题不在群里放，想稳的私我，考前最后一批"
-      ],
-      "encoding_analysis": [
-        "用真题和想稳包装私下资料交易。"
-      ],
-      "context_analysis": [
-        "上下文是考试资料群，私我、想稳、最后一批带有违规交易或诈骗风险。"
-      ],
-      "supporting_evidence": [
-        "要求私下联系。",
-        "考前最后一批制造紧迫感。"
-      ],
-      "counter_evidence": [
-        "未明确说答案或收费，仍需复核。"
-      ],
-      "final_rationale": "文本本身支持风险解释，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=exam_contextual; variant=paid_answer_hint; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "GROK_037_LOW",
+    "id": "000041",
     "split": "test",
     "source_type": "synthetic",
-    "platform": "家长群",
-    "text": "我支持双减政策，孩子轻松多了",
+    "platform": "游戏论坛",
+    "text": "我昨天梦到坦克大战了",
     "context": {
-      "title": "教育讨论",
+      "title": "游戏梦境",
       "description": "",
       "time": "",
-      "topic": "政策"
+      "topic": "坦克人"
     },
     "risk_level": "low",
     "encoding_primary": "D2_隐喻",
     "encoding_secondary": [],
-    "context_required": true,
     "ambiguity": "high",
     "evidence_strength": "weak",
     "freshness": "stable",
@@ -3210,43 +3212,43 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：我支持双减政策，孩子轻松多了"
+        "字面上是在表达：我昨天梦到坦克大战了"
       ],
       "encoding_analysis": [
-        "可疑编码机制：政策。",
+        "可疑编码机制：坦克人。",
         "主要归为 D2_隐喻。"
       ],
       "context_analysis": [
-        "背景备注：教育讨论。"
+        "无明确上下文；按文本本身和常见语用判断。"
       ],
       "supporting_evidence": [
         "存在弱暗示、关键词撞车或候选编码痕迹。"
       ],
       "counter_evidence": [
-        "普通解释更强：教育讨论。",
+        "普通解释更强：游戏梦境。",
         "证据不足以升为 medium 或 high。",
         "该样本适合作为 hard negative，训练模型避免关键词误杀。"
       ],
       "final_rationale": "综合文本信号和反证，判为 low。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=grok; source_id=GROK_037; original_risk=low; original_note=hard negative：真实家长"
+    "review_notes": "source=grok; original_risk=low; original_note=hard negative：游戏",
+    "needs_context": false
   },
   {
-    "id": "PHASE2_SEED_0036_LOTTERY_HN_NONE",
+    "id": "000335",
     "source_type": "synthetic",
     "platform": "B站",
-    "text": "老师拿彩票举例只是讲概率，重点是别把小概率当稳定收益",
+    "text": "输入法又把同学打成铜学了，弹幕别笑太大声",
     "context": {
-      "title": "概率论入门课",
+      "title": "课堂切片",
       "description": "",
       "time": "",
-      "topic": "赌博/概率边界"
+      "topic": "谐音/错字边界"
     },
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
     "hard_negative": true,
@@ -3256,7 +3258,7 @@
     "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：老师拿彩票举例只是讲概率，重点是别把小概率当稳定收益"
+        "字面上是在表达：输入法又把同学打成铜学了，弹幕别笑太大声"
       ],
       "encoding_analysis": [
         "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
@@ -3266,30 +3268,75 @@
       ],
       "supporting_evidence": [],
       "counter_evidence": [
-        "文本强调小概率不能当收益。",
-        "没有购买、追号、盘口或导流。"
+        "文本主动解释为输入法错误。",
+        "没有目标代指或风险语境。"
       ],
       "final_rationale": "普通语境和反证更强，判为 none；该条用于训练模型避免关键词误杀。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=lottery_hard_negative; variant=statistics_class; merged_processed; needs_human_review",
+    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=meme_forensics; cluster=homophone_hard_negative; variant=typo_joke; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "PHASE2_SEED_0012_SHOP_HN_NONE",
+    "id": "000290",
     "source_type": "synthetic",
-    "platform": "淘宝评论",
-    "text": "尺码问题可以私信客服，页面上也有退换规则",
+    "platform": "短信截图评论",
+    "text": "订单异常点这个补偿入口，别走平台，平台太慢",
     "context": {
-      "title": "鞋子测评评论区",
+      "title": "疑似客服私信",
       "description": "",
       "time": "",
-      "topic": "正常电商"
+      "topic": "退款/诈骗边界"
+    },
+    "risk_level": "high",
+    "encoding_primary": "E1_平台黑话",
+    "encoding_secondary": [],
+    "ambiguity": "medium",
+    "evidence_strength": "strong",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：订单异常点这个补偿入口，别走平台，平台太慢"
+      ],
+      "encoding_analysis": [
+        "以补偿入口包装外部链接导流。"
+      ],
+      "context_analysis": [
+        "上下文是疑似客服私信，文本引导绕开平台。"
+      ],
+      "supporting_evidence": [
+        "要求别走平台。",
+        "以订单异常和补偿制造紧迫感。"
+      ],
+      "counter_evidence": [
+        "未显示链接内容，但诈骗模式明显。"
+      ],
+      "final_rationale": "文本本身支持风险解释，判为 high。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=refund_contextual; variant=fake_refund_link; merged_processed; needs_human_review",
+    "needs_context": true,
+    "split": "test"
+  },
+  {
+    "id": "000345",
+    "source_type": "synthetic",
+    "platform": "小红书",
+    "text": "跑腿小哥帮我送文件，全程平台下单，别私下转钱",
+    "context": {
+      "title": "同城跑腿体验",
+      "description": "",
+      "time": "",
+      "topic": "同城服务边界"
     },
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
     "hard_negative": true,
@@ -3299,7 +3346,7 @@
     "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：尺码问题可以私信客服，页面上也有退换规则"
+        "字面上是在表达：跑腿小哥帮我送文件，全程平台下单，别私下转钱"
       ],
       "encoding_analysis": [
         "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
@@ -3309,17 +3356,107 @@
       ],
       "supporting_evidence": [],
       "counter_evidence": [
-        "没有异常导流、规避平台或私下交易。",
-        "页面有公开退换规则。"
+        "明确不私下转钱。",
+        "服务内容是送文件。"
       ],
       "final_rationale": "普通语境和反证更强，判为 none；该条用于训练模型避免关键词误杀。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=commerce_hard_negative; variant=normal_customer_service; merged_processed; needs_human_review",
+    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=delivery_hard_negative; variant=normal_errand; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   },
   {
-    "id": "GROK_010_MEDIUM",
+    "id": "000047",
+    "split": "test",
+    "source_type": "synthetic",
+    "platform": "职场群",
+    "text": "我家领导今天心情不错",
+    "context": {
+      "title": "公司内部",
+      "description": "",
+      "time": "",
+      "topic": "领导隐喻"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "freshness": "stable",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：我家领导今天心情不错"
+      ],
+      "encoding_analysis": [],
+      "context_analysis": [
+        "无明确上下文；按文本本身和常见语用判断。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "普通解释更强：公司内部。",
+        "未发现足够的编码机制或风险语境。",
+        "该样本适合作为 hard negative，训练模型避免关键词误杀。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 none。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=grok; original_risk=none; original_note=hard negative：公司领导",
+    "needs_context": false
+  },
+  {
+    "id": "000020",
+    "split": "test",
+    "source_type": "synthetic",
+    "platform": "模型论坛",
+    "text": "坦克模型我又买了一套，细节真棒",
+    "context": {
+      "title": "军事模型爱好",
+      "description": "",
+      "time": "",
+      "topic": "坦克人联想"
+    },
+    "risk_level": "low",
+    "encoding_primary": "D2_隐喻",
+    "encoding_secondary": [],
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "freshness": "stable",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：坦克模型我又买了一套，细节真棒"
+      ],
+      "encoding_analysis": [
+        "可疑编码机制：坦克人联想。",
+        "主要归为 D2_隐喻。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按文本本身和常见语用判断。"
+      ],
+      "supporting_evidence": [
+        "存在弱暗示、关键词撞车或候选编码痕迹。"
+      ],
+      "counter_evidence": [
+        "普通解释更强：军事模型爱好。",
+        "证据不足以升为 medium 或 high。",
+        "该样本适合作为 hard negative，训练模型避免关键词误杀。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 low。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=grok; original_risk=low; original_note=hard negative：模型爱好",
+    "needs_context": false
+  },
+  {
+    "id": "000010",
     "split": "test",
     "source_type": "synthetic",
     "platform": "B站",
@@ -3335,7 +3472,6 @@
     "encoding_secondary": [
       "E3_上下文/互动触发"
     ],
-    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "freshness": "stable",
@@ -3364,114 +3500,118 @@
       "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=grok; source_id=GROK_010; original_risk=medium; original_note=常见悼念，但也可能是节日"
+    "review_notes": "source=grok; original_risk=medium; original_note=常见悼念，但也可能是节日",
+    "needs_context": false
   },
   {
-    "id": "PHASE2_SEED_0010_CYBER_HN_NONE",
-    "source_type": "synthetic",
-    "platform": "知乎",
-    "text": "这篇漏洞复盘重点是怎么补，不是教人去打别人站",
-    "context": {
-      "title": "Web 安全防护复盘",
-      "description": "",
-      "time": "",
-      "topic": "网络安全"
-    },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "context_required": false,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：这篇漏洞复盘重点是怎么补，不是教人去打别人站"
-      ],
-      "encoding_analysis": [
-        "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按文本本身和常见语用判断。"
-      ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "明确反对攻击他人站点。",
-        "没有给出可执行攻击步骤或目标。"
-      ],
-      "final_rationale": "普通语境和反证更强，判为 none；该条用于训练模型避免关键词误杀。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=cyber_hard_negative; variant=defense_article; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "GROK_038_MEDIUM",
+    "id": "000055",
     "split": "test",
     "source_type": "synthetic",
-    "platform": "新闻评论",
-    "text": "那只蛤蟆又出来喷水了",
+    "platform": "抖音",
+    "text": "呼叫清华水利涛哥/拉萨猛虎",
     "context": {
-      "title": "时政",
+      "title": "关于新疆西藏等少数民族的视频",
       "description": "",
       "time": "",
-      "topic": "江泽民"
+      "topic": "经历代指"
     },
-    "risk_level": "medium",
-    "encoding_primary": "C4_典故/物品/符号借用",
+    "risk_level": "high",
+    "encoding_primary": "C1_历史人物类比",
     "encoding_secondary": [
-      "E1_平台黑话"
+      "E3_上下文/互动触发"
     ],
-    "context_required": true,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
+    "ambiguity": "low",
+    "evidence_strength": "strong",
     "freshness": "stable",
     "hard_negative": false,
-    "target_known": false,
+    "target_known": true,
     "target_reference": "匿名化目标对象或事件",
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：那只蛤蟆又出来喷水了"
+        "字面上是在表达：呼叫清华水利涛哥/拉萨猛虎"
       ],
       "encoding_analysis": [
-        "可疑编码机制：江泽民。",
-        "主要归为 C4_典故/物品/符号借用。"
+        "可疑编码机制：经历代指。",
+        "主要归为 C1_历史人物类比。"
       ],
       "context_analysis": [
-        "背景备注：时政。"
+        "无明确上下文；按文本本身和常见语用判断。"
       ],
       "supporting_evidence": [
-        "可疑点：经典黑称",
-        "存在可疑编码或语境信号。"
+        "可疑点：胡锦涛毕业于清华水利，曾在西藏发起戒严",
+        "文本本身支持非字面解读。"
       ],
       "counter_evidence": [
-        "目标指向或上下文证据仍不充分，普通解释仍可能成立。"
+        "仍需避免直接还原具体对象，最终训练输出应保留匿名化或概括表述。"
       ],
-      "final_rationale": "综合文本信号和反证，判为 medium。"
+      "final_rationale": "综合文本信号和反证，判为 high。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=grok; source_id=GROK_038; original_risk=medium; original_note=经典黑称"
+    "review_notes": "source=user; original_risk=high; original_note=胡锦涛毕业于清华水利，曾在西藏发起戒严",
+    "needs_context": false
   },
   {
-    "id": "PHASE2_SEED_0019_NUM_HN_NONE",
+    "id": "000276",
     "source_type": "synthetic",
-    "platform": "小红书",
-    "text": "这个 64G 版本够用了，主要是照片不要全存在本地",
+    "platform": "微信群",
+    "text": "光骂没用，今晚谁真敢来现场就知道了",
     "context": {
-      "title": "手机容量选择",
+      "title": "线下冲突传言群",
       "description": "",
       "time": "",
-      "topic": "普通数字"
+      "topic": "暴力动员"
+    },
+    "risk_level": "high",
+    "encoding_primary": "E3_话题/热点触发",
+    "encoding_secondary": [
+      "D2_夸张/反话"
+    ],
+    "ambiguity": "medium",
+    "evidence_strength": "strong",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "字面上是在表达：光骂没用，今晚谁真敢来现场就知道了"
+      ],
+      "encoding_analysis": [
+        "用真敢来现场表达线下聚集或对抗暗示。"
+      ],
+      "context_analysis": [
+        "上下文是线下冲突传言，文本具有现实动员意味。"
+      ],
+      "supporting_evidence": [
+        "出现今晚、现场等现实行动线索。",
+        "上下文提醒别闹大。"
+      ],
+      "counter_evidence": [
+        "未说明具体行为，但动员语境强。"
+      ],
+      "final_rationale": "文本本身支持风险解释，判为 high。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=violence_contextual; variant=mobilization_hint; merged_processed; needs_human_review",
+    "needs_context": true,
+    "split": "test"
+  },
+  {
+    "id": "000268",
+    "source_type": "synthetic",
+    "platform": "知乎",
+    "text": "社区规则里这些骂人词只是举例，重点还是别攻击具体用户",
+    "context": {
+      "title": "社区治理规则讨论",
+      "description": "",
+      "time": "",
+      "topic": "辱骂攻击"
     },
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
-    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
     "hard_negative": true,
@@ -3481,7 +3621,7 @@
     "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "字面上是在表达：这个 64G 版本够用了，主要是照片不要全存在本地"
+        "字面上是在表达：社区规则里这些骂人词只是举例，重点还是别攻击具体用户"
       ],
       "encoding_analysis": [
         "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
@@ -3491,150 +3631,14 @@
       ],
       "supporting_evidence": [],
       "counter_evidence": [
-        "数字与商品容量直接相关。",
-        "没有日期、事件或现实影射线索。"
+        "文本强调不要攻击用户。",
+        "没有攻击对象或辱骂意图。"
       ],
       "final_rationale": "普通语境和反证更强，判为 none；该条用于训练模型避免关键词误杀。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=meme_forensics; cluster=date_number_hard_negative; variant=normal_product_code; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE2_SEED_0022_CHAR_CTX_MEDIUM",
-    "source_type": "synthetic",
-    "platform": "B站",
-    "text": "他这套隐忍多年再出来收拾局面的戏码，怎么越看越眼熟",
-    "context": {
-      "title": "现实人物纪录片剪辑",
-      "description": "",
-      "time": "",
-      "topic": "人物代指"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "C1_历史人物类比",
-    "encoding_secondary": [
-      "D3_借代"
-    ],
-    "context_required": true,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：他这套隐忍多年再出来收拾局面的戏码，怎么越看越眼熟"
-      ],
-      "encoding_analysis": [
-        "用剧情化人物叙事映射现实人物经历。"
-      ],
-      "context_analysis": [
-        "标题是现实人物纪录片，上下文提示别点名和共同理解。"
-      ],
-      "supporting_evidence": [
-        "文本强调隐忍多年、出来收拾局面。",
-        "上下文明确现实人物相关。"
-      ],
-      "counter_evidence": [
-        "没有直接目标名称，映射仍需人工确认。"
-      ],
-      "final_rationale": "文本本身支持风险解释，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=meme_forensics; cluster=character_analogy_contextual; variant=character_mapping; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE2_SEED_0095_GAME_CTX_MEDIUM",
-    "source_type": "synthetic",
-    "platform": "微博",
-    "text": "这波又开二阶段了，下面小怪都开始排队表忠心",
-    "context": {
-      "title": "现实组织人事变动讨论",
-      "description": "",
-      "time": "",
-      "topic": "游戏术语边界"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "C4_典故/物品/符号借用",
-    "encoding_secondary": [
-      "D1_反讽"
-    ],
-    "context_required": true,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：这波又开二阶段了，下面小怪都开始排队表忠心"
-      ],
-      "encoding_analysis": [
-        "用 boss 二阶段和小怪借代现实组织层级。"
-      ],
-      "context_analysis": [
-        "上下文是现实组织人事变动，游戏术语被用于现实类比。"
-      ],
-      "supporting_evidence": [
-        "标题为现实组织人事变动。",
-        "表忠心强化现实政治/组织语境。"
-      ],
-      "counter_evidence": [
-        "目标对象不具体，仍需人工判断。"
-      ],
-      "final_rationale": "文本本身支持风险解释，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=meme_forensics; cluster=game_term_contextual; variant=game_term_mapping; merged_processed; needs_human_review",
-    "split": "test"
-  },
-  {
-    "id": "PHASE2_SEED_0062_WEAPON_HN_NONE",
-    "source_type": "synthetic",
-    "platform": "B站",
-    "text": "博物馆展柜里这些都是历史展品，别拿现代用途乱联想",
-    "context": {
-      "title": "军事博物馆参观记录",
-      "description": "",
-      "time": "",
-      "topic": "武器/历史展品边界"
-    },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "context_required": false,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "字面上是在表达：博物馆展柜里这些都是历史展品，别拿现代用途乱联想"
-      ],
-      "encoding_analysis": [
-        "未发现稳定的非字面风险编码；关键词或缩写只作为召回线索。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按文本本身和常见语用判断。"
-      ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "明确是展柜和历史教育。",
-        "没有制作、购买或使用意图。"
-      ],
-      "final_rationale": "普通语境和反证更强，判为 none；该条用于训练模型避免关键词误杀。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=weapon_news_hard_negative; variant=museum_exhibit; merged_processed; needs_human_review",
+    "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=insult_hard_negative; variant=quote_moderation_rule; merged_processed; needs_human_review",
+    "needs_context": false,
     "split": "test"
   }
 ]

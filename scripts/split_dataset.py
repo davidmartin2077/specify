@@ -59,28 +59,8 @@ def parse_review_notes(notes: Any) -> dict[str, str]:
     return parsed
 
 
-def id_source(sample_id: str) -> str:
-    if sample_id.startswith("GROK_"):
-        return "grok"
-    if sample_id.startswith("USER_"):
-        return "user"
-    if sample_id.startswith("MEME_EXPAND_"):
-        return "meme_expansion"
-    if sample_id.startswith("GEMINI_EXPAND_"):
-        return "gemini_expansion"
-    if sample_id.startswith("LEXICON_SEED_"):
-        return "sensitive_lexicon_seed"
-    if sample_id.startswith("PHASE2_SEED_"):
-        return "phase2_seed"
-    if sample_id.startswith("PHASE3_W1_"):
-        return "phase3_first_wave"
-    if sample_id.startswith("PHASE3_W2_"):
-        return "phase3_second_wave"
-    return "unknown"
-
-
 def source_for(sample: dict[str, Any], notes: dict[str, str]) -> str:
-    return notes.get("source") or id_source(str(sample.get("id", "")))
+    return notes.get("source") or "unknown"
 
 
 def group_key_for(sample: dict[str, Any]) -> str:
@@ -167,7 +147,7 @@ def summarize(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "risk_level": dict(sorted(risk.items())),
         "source": dict(sorted(source.items())),
         "hard_negative": sum(bool(row.get("hard_negative")) for row in rows),
-        "context_required": sum(bool(row.get("context_required")) for row in rows),
+        "needs_context": sum(bool(row.get("needs_context")) for row in rows),
         "group_count": len(groups),
         "largest_groups": groups.most_common(10),
         "phase3_category": dict(sorted(phase3_category.items())),

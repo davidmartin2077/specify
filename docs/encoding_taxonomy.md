@@ -423,7 +423,7 @@
 **标注要点**：
 
 - 必须保留上文、下文或至少话题标题。
-- 单独抽取该评论会导致误判，应标为 context_required。
+- 单独抽取该评论会导致误判，应标为 needs_context。
 - 训练集中应包含“无上下文版”和“有上下文版”对照样本。
 
 ---
@@ -545,7 +545,7 @@
 |---|---|
 | encoding_primary | 主编码方式 |
 | encoding_secondary | 次级编码方式，可为空 |
-| context_required | 是否必须依赖上下文判断 |
+| needs_context | 是否必须依赖可见上下文判断 |
 | ambiguity | 歧义程度：low/medium/high |
 | evidence_strength | 证据强度：weak/moderate/strong |
 | freshness | 是否依赖近期热点：stable/recent/expired |

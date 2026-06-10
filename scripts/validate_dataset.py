@@ -20,7 +20,7 @@ REQUIRED_FIELDS = {
     "text",
     "risk_level",
     "encoding_primary",
-    "context_required",
+    "needs_context",
     "ambiguity",
     "evidence_strength",
     "hard_negative",
@@ -63,7 +63,7 @@ STRING_FIELDS = {
 }
 
 BOOLEAN_FIELDS = {
-    "context_required",
+    "needs_context",
     "hard_negative",
     "target_known",
     "should_explain_target",
