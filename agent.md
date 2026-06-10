@@ -17,7 +17,8 @@
 9. 上下文必要性与二元标签审计已完成：`docs/context_requirement_audit.md`、`data/raw/context_requirement_audit.json`、`data/raw/combined_candidates_binary_preview.jsonl`、`data/raw/external_safety_binary_preview.jsonl`、`data/eval/risk_test_preview.jsonl`、`data/eval/normal_test_preview.jsonl` 已生成并通过 schema 校验。
 10. 二元预览合计 1200 条：unsafe 899、safe 301；上下文分层为 `contextual_required` 846、`safe_without_context` 301、`direct_no_context` 53。
 11. 最新上下文策略已更新：不再把 `parent_comment/reply_chain` 当作需要单独维护的核心板块；合成回复链默认不作强证据，风险主要靠“像，但别展开/别说像谁/懂就别打全称/缩写就行”等回复链成立的样本优先按模板污染、退回重写或降权处理。
-12. 当前还没有训练配置、训练运行或模型评测结果；仍处于数据准备、复核、清洗、评测集设计阶段。
+12. 用户已完成正式 860 条中 53 组重复 text 的人工复核；结构化结果见 `docs/duplicate_text_human_feedback.md` 和 `data/raw/duplicate_text_human_feedback.json`。总体倾向：删除/排除 21 组、重写 3 组、保留但改标签 13 组、保留或留一条 16 组。
+13. 当前还没有训练配置、训练运行或模型评测结果；仍处于数据准备、复核、清洗、评测集设计阶段。
 
 ### 最新用户决策
 
@@ -48,19 +49,22 @@
 9. `scripts/audit_context_and_binary_labels.py`：上下文依赖、二元标签和 eval 草案生成脚本。
 10. `docs/manual_review_packet.md`：人工复核包，集中说明要看哪些文件、审什么、反馈格式和推荐顺序。
 11. `docs/context_policy_decision.md`：上下文策略更新，记录弱化/废弃合成回复链板块的决策。
-12. `docs/context_audit_codebook.md`：`B/C/F/D` 数字码代码表，用于人工复核和后续数据集命名。
-13. `docs/context_requirement_audit.md`：上下文必要性、重复文本和二元评测建议报告。
-14. `data/eval/risk_test_preview.jsonl`、`data/eval/normal_test_preview.jsonl`：高召回/误封率评测集草案。
+12. `docs/duplicate_text_human_feedback.md`：用户对 53 组重复 text 的人工复核结论。
+13. `data/raw/duplicate_text_human_feedback.json`：重复文本人工反馈的机器可读版本。
+14. `docs/context_audit_codebook.md`：`B/C/F/D` 数字码代码表，用于人工复核和后续数据集命名。
+15. `docs/context_requirement_audit.md`：上下文必要性、重复文本和二元评测建议报告。
+16. `data/eval/risk_test_preview.jsonl`、`data/eval/normal_test_preview.jsonl`：高召回/误封率评测集草案。
 
 ### 下一步执行任务
 
 新窗口应优先做以下工作，不要先训练，也不要重复入库或重复生成本轮审计：
 
-1. 人工抽查 `docs/context_requirement_audit.md` 中的 `likely_direct_no_context`、`external_placeholder_context`、`template_pollution_candidate` 样本，决定哪些正式样本后续应把 `context_required` 调为 false，哪些重复 text 属于模板污染。
-2. 人工抽查 `docs/external_safety_import_review_sample.md`，优先筛出 ToxiCN/COLD/ChineseSafe 中适合重塑为项目推理链的真实评论样本。
-3. 基于二元预览和 eval 草案设计第一版离线评测脚本：risk_test 衡量 unsafe recall/封杀率，normal_test 衡量 false positive/误封率。
-4. 如要修改正式数据，先生成独立清洗预览并校验，不要直接改 `data/processed/combined_candidates.*`。
-5. 更新 `README.md` 和 `agent.md`，并提交 git。命令行 `git push` 可能因 GitHub 凭据失败；失败后打开 GitHub Desktop 让用户点 `Push origin`。
+1. 基于 `data/raw/duplicate_text_human_feedback.json` 生成重复文本清洗预览，不直接改正式 processed。
+2. 人工抽查 `docs/context_requirement_audit.md` 中的 `likely_direct_no_context`、`external_placeholder_context` 样本，决定哪些正式样本后续应把 `context_required` 调为 false。
+3. 人工抽查 `docs/external_safety_import_review_sample.md`，优先筛出 ToxiCN/COLD/ChineseSafe 中适合重塑为项目推理链的真实评论样本。
+4. 基于二元预览和 eval 草案设计第一版离线评测脚本：risk_test 衡量 unsafe recall/封杀率，normal_test 衡量 false positive/误封率。
+5. 如要修改正式数据，先生成独立清洗预览并校验，不要直接改 `data/processed/combined_candidates.*`。
+6. 更新 `README.md` 和 `agent.md`，并提交 git。命令行 `git push` 可能因 GitHub 凭据失败；失败后打开 GitHub Desktop 让用户点 `Push origin`。
 
 ### 禁止/谨慎事项
 
@@ -186,6 +190,7 @@
 102. 已创建 `docs/context_audit_codebook.md`，解释 `external_placeholder_context`、`likely_direct_no_context`、`reasoning_claims_context_but_context_thin` 等下划线字段，并建立数字码映射：`B01/B02` 二元标签，`C01-C03` 上下文分层，`F01-F08` 审计标记，`D00-D03` 重复文本状态。脚本已同步输出 `safety_binary_code`、`context_audit_class_code`、`context_audit_flag_codes`、`duplicate_text_status_code`；这些字段只用于人工复核和命名，不应进入模型训练文本。
 103. 已创建 `docs/manual_review_packet.md`，把当前要人工复核的文件、优先级、每类文件审什么、`B/C/F/D` 代码速查、反馈格式、外部样本复核口径和训练影响说明集中成一份操作手册，方便用户直接开始复核。
 104. 用户明确提出回复链板块是伪命题，合成回复链增加人工成本且容易造成数据污染。已创建 `docs/context_policy_decision.md` 记录新策略：后续不再单独精修 `parent_comment/reply_chain`，这些旧字段默认不作强证据；风险主要依赖合成回复链成立的样本优先按模板污染、退回重写或降权处理。`docs/manual_review_packet.md`、`docs/context_audit_codebook.md`、`docs/duplicate_text_review.md` 和 `scripts/build_duplicate_text_review.py` 已同步更新。
+105. 用户已对 53 组重复文本给出人工复核反馈，并已结构化记录到 `docs/duplicate_text_human_feedback.md` 与 `data/raw/duplicate_text_human_feedback.json`。生成脚本为 `scripts/build_duplicate_human_feedback.py`。反馈倾向：删除/排除 21 组、重写 3 组、保留但改标签 13 组、保留或留一条 16 组。该反馈尚未 apply 到正式 processed，下一步应生成独立清洗预览。
 
 ## 当前状态
 
@@ -235,9 +240,10 @@
 6. 上下文分层：`C02/contextual_required` 846、`C03/safe_without_context` 301、`C01/direct_no_context` 53。
 7. 主要审计标记：`F01/generic_or_template_context` 429、`F02/external_placeholder_context` 340、`F03/do_not_invent_context_review_needed` 246、`F04/safe_sample_context_may_be_optional` 166、`F05/likely_direct_no_context` 10、`F06/context_required_but_empty` 1。
 8. 正式 860 条重复 text 仍为 53 组；本轮启发式标记为 `D02` 同文不同语境待复核 45 组、`D03` 疑似模板污染 8 组。
-9. `data/raw/combined_candidates_binary_preview.jsonl` 860 条、`data/raw/external_safety_binary_preview.jsonl` 340 条，均已校验通过。
-10. `data/eval/risk_test_preview.jsonl` 899 条，用于 unsafe recall/封杀率；`data/eval/normal_test_preview.jsonl` 447 条，用于 false positive/误封率；均已校验通过。
-11. 第一阶段建议阈值已写入报告：risk_test unsafe recall 目标 80%-90%+；normal_test 误封率短期可容忍约 30%，后续靠 hard negative 和真实安全评论降低。
+9. 重复 text 人工反馈已完成：删除/排除 21 组、重写 3 组、保留但改标签 13 组、保留或留一条 16 组；见 `docs/duplicate_text_human_feedback.md`。
+10. `data/raw/combined_candidates_binary_preview.jsonl` 860 条、`data/raw/external_safety_binary_preview.jsonl` 340 条，均已校验通过。
+11. `data/eval/risk_test_preview.jsonl` 899 条，用于 unsafe recall/封杀率；`data/eval/normal_test_preview.jsonl` 447 条，用于 false positive/误封率；均已校验通过。
+12. 第一阶段建议阈值已写入报告：risk_test unsafe recall 目标 80%-90%+；normal_test 误封率短期可容忍约 30%，后续靠 hard negative 和真实安全评论降低。
 
 当前 `data/processed/lexicon_sampling_plan.json` 词库粗分类分布：
 

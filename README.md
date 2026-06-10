@@ -98,6 +98,7 @@ context classes: contextual_required 846 / safe_without_context 301 / direct_no_
 - `docs/manual_review_packet.md`
 - `docs/context_policy_decision.md`
 - `docs/context_audit_codebook.md`
+- `docs/duplicate_text_human_feedback.md`
 - `docs/context_requirement_audit.md`
 - `data/raw/context_requirement_audit.json`
 - `data/raw/combined_candidates_binary_preview.jsonl`
