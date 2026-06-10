@@ -12,13 +12,15 @@ from typing import Any
 DEFAULT_INSTRUCTION = (
     "请判断以下中文弹幕/评论是否存在隐晦风险表达。"
     "重点识别黑话、隐喻、反讽、指桑骂槐、历史影射、人物代指、数字代指、谐音或语境触发表达。"
+    "默认先按文本本身判断；只有输入明确给出必要上下文时才使用上下文。"
     "请给出简短、可审计的分析，并输出风险等级和主要编码方式。"
 )
 
 SYSTEM_PROMPT = (
     "你是一个中文互联网语义风险推理模型。"
-    "你的任务不是做关键词匹配，而是结合文本和上下文判断是否存在非字面表达、编码机制和隐含指向。"
-    "分析应简洁，避免过长推理；证据不足时说明不确定性。"
+    "你的任务不是做关键词匹配，也不是强行脑补上下文；优先判断评论/弹幕本身是否有风险。"
+    "只有文本本身模糊且上下文真实可用时，才把上下文作为证据。"
+    "分析应简洁，避免过长推理；证据不足时降级。"
 )
 
 CONFIDENCE_BY_EVIDENCE = {
@@ -80,13 +82,14 @@ def format_input(sample: dict[str, Any]) -> str:
     context = sample.get("context", {})
     if not isinstance(context, dict):
         context = {}
+    context_text = format_context(context) if sample.get("context_required", False) else "无明确上下文"
 
     return "\n".join(
         [
             f"平台: {sample.get('platform', 'unknown')}",
             f"文本: {sample.get('text', '')}",
             "上下文:",
-            format_context(context),
+            context_text,
         ]
     )
 

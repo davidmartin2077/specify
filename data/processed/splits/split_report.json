@@ -28,7 +28,7 @@
         "user": 7
       },
       "hard_negative": 273,
-      "context_required": 573,
+      "context_required": 188,
       "group_count": 223,
       "largest_groups": [
         [
@@ -111,7 +111,7 @@
         "sensitive_lexicon_seed": 6
       },
       "hard_negative": 15,
-      "context_required": 75,
+      "context_required": 31,
       "group_count": 29,
       "largest_groups": [
         [
@@ -189,7 +189,7 @@
         "sensitive_lexicon_seed": 3
       },
       "hard_negative": 27,
-      "context_required": 76,
+      "context_required": 23,
       "group_count": 29,
       "largest_groups": [
         [

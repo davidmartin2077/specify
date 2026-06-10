@@ -19,7 +19,7 @@ low     163
 none    188
 
 hard_negative     315
-context_required  724
+context_required  242
 ```
 
 训练格式：
@@ -42,6 +42,7 @@ test         77
 
 - 单条文本能判断的，不硬凑上下文。
 - 合成回复上下文不再作为强证据，也不进入 SFT 输入。
+- high 不强制需要上下文；直白风险、强暗号、稳定代指可以裸判。
 - 外部数据先保留为 raw 预览，不直接入正式训练集。
 - 训练前所有正式 JSONL 必须通过 `scripts/validate_dataset.py`。
 
@@ -66,6 +67,6 @@ python3 scripts/analyze_risk_coverage.py
 
 ## 下一步
 
-1. 继续清理 `context_required`，把可裸判样本降为无上下文依赖。
+1. 继续把陈述句、人机感、病句样本替换成真实评论口吻。
 2. 从外部 340 条真实评论预览中筛选可重塑样本。
 3. 设计离线评测脚本，先测 unsafe recall 和 false positive。

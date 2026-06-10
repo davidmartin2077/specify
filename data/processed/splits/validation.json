@@ -17,8 +17,8 @@
       "E1_平台黑话",
       "B4_符号/空格/Unicode 干扰"
     ],
-    "context_required": true,
-    "ambiguity": "medium",
+    "context_required": false,
+    "ambiguity": "low",
     "evidence_strength": "strong",
     "freshness": "stable",
     "hard_negative": false,
@@ -66,8 +66,8 @@
     "encoding_secondary": [
       "A2_拼音/首字母缩写"
     ],
-    "context_required": true,
-    "ambiguity": "medium",
+    "context_required": false,
+    "ambiguity": "low",
     "evidence_strength": "moderate",
     "freshness": "stable",
     "hard_negative": false,
@@ -113,7 +113,7 @@
     "risk_level": "high",
     "encoding_primary": "A2_拼音/首字母缩写",
     "encoding_secondary": [],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "freshness": "stable",
@@ -138,7 +138,7 @@
       "counter_evidence": [
         "不直接还原具体目标名称，保留匿名化或概括表述。"
       ],
-      "final_rationale": "综合文本、上下文和反证，暂标为 high；该条来自 gemini 扩写，仍需人工复核。"
+      "final_rationale": "综合文本信号和反证，判为 high。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=gemini_expansion; original_id=EXPAND_0003; generated_expansion; needs_human_review; original_primary=A2_拼音/首字母缩写; original_notes=generated_expansion; needs_human_review; meme_cluster=反讽/阴阳怪气"
@@ -183,7 +183,7 @@
       "counter_evidence": [
         "目标指向或上下文证据仍不充分，普通解释仍可能成立。"
       ],
-      "final_rationale": "综合文本、上下文和反证，暂标为 medium；该条来自 gemini 扩写，仍需人工复核。"
+      "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=gemini_expansion; original_id=EXPAND_0008; generated_expansion; needs_human_review; original_primary=A2_拼音/首字母缩写; original_notes=generated_expansion; needs_human_review; meme_cluster=反讽/阴阳怪气"
@@ -203,7 +203,7 @@
     "risk_level": "high",
     "encoding_primary": "D1_反讽",
     "encoding_secondary": [],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "freshness": "stable",
@@ -228,7 +228,7 @@
       "counter_evidence": [
         "不直接还原具体目标名称，保留匿名化或概括表述。"
       ],
-      "final_rationale": "综合文本、上下文和反证，暂标为 high；该条来自 gemini 扩写，仍需人工复核。"
+      "final_rationale": "综合文本信号和反证，判为 high。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=gemini_expansion; original_id=EXPAND_0019; generated_expansion; needs_human_review; original_primary=B1_拆字; original_notes=generated_expansion; needs_human_review; meme_cluster=反讽/阴阳怪气"
@@ -248,7 +248,7 @@
     "risk_level": "medium",
     "encoding_primary": "B1_拆字",
     "encoding_secondary": [],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "freshness": "stable",
@@ -273,7 +273,7 @@
       "counter_evidence": [
         "目标指向或上下文证据仍不充分，普通解释仍可能成立。"
       ],
-      "final_rationale": "综合文本、上下文和反证，暂标为 medium；该条来自 gemini 扩写，仍需人工复核。"
+      "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=gemini_expansion; original_id=EXPAND_0021; generated_expansion; needs_human_review; original_primary=B1_拆字; original_notes=generated_expansion; needs_human_review; meme_cluster=反讽/阴阳怪气"
@@ -293,7 +293,7 @@
     "risk_level": "medium",
     "encoding_primary": "B3_形近字替换",
     "encoding_secondary": [],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "freshness": "stable",
@@ -318,7 +318,7 @@
       "counter_evidence": [
         "目标指向或上下文证据仍不充分，普通解释仍可能成立。"
       ],
-      "final_rationale": "综合文本、上下文和反证，暂标为 medium；该条来自 gemini 扩写，仍需人工复核。"
+      "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=gemini_expansion; original_id=EXPAND_0040; generated_expansion; needs_human_review; original_primary=B3_形近字替换; original_notes=generated_expansion; needs_human_review; meme_cluster=反讽/阴阳怪气"
@@ -338,7 +338,7 @@
     "risk_level": "medium",
     "encoding_primary": "E2_时间节点触发",
     "encoding_secondary": [],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "freshness": "stable",
@@ -363,7 +363,7 @@
       "counter_evidence": [
         "目标指向或上下文证据仍不充分，普通解释仍可能成立。"
       ],
-      "final_rationale": "综合文本、上下文和反证，暂标为 medium；该条来自 gemini 扩写，仍需人工复核。"
+      "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=gemini_expansion; original_id=EXPAND_0076; generated_expansion; needs_human_review; original_primary=E2_时间节点触发; original_notes=generated_expansion; needs_human_review; meme_cluster=反讽/阴阳怪气"
@@ -383,7 +383,7 @@
     "risk_level": "low",
     "encoding_primary": "E2_时间节点触发",
     "encoding_secondary": [],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
     "freshness": "stable",
@@ -407,9 +407,9 @@
       ],
       "counter_evidence": [
         "上下文更支持普通解释。",
-        "缺少规避意图、稳定目标映射或强语境共识。"
+        "缺少规避意图或稳定目标映射。"
       ],
-      "final_rationale": "综合文本、上下文和反证，暂标为 low；该条来自 gemini 扩写，仍需人工复核。"
+      "final_rationale": "综合文本信号和反证，判为 low。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=gemini_expansion; original_id=EXPAND_0081; generated_expansion; needs_human_review; original_primary=E2_时间节点触发; original_notes=generated_expansion; needs_human_review; meme_cluster=反讽/阴阳怪气"
@@ -429,7 +429,7 @@
     "risk_level": "medium",
     "encoding_primary": "E3_上下文/互动触发",
     "encoding_secondary": [],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "freshness": "stable",
@@ -454,7 +454,7 @@
       "counter_evidence": [
         "目标指向或上下文证据仍不充分，普通解释仍可能成立。"
       ],
-      "final_rationale": "综合文本、上下文和反证，暂标为 medium；该条来自 gemini 扩写，仍需人工复核。"
+      "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=gemini_expansion; original_id=EXPAND_0090; generated_expansion; needs_human_review; original_primary=E3_上下文/互动触发; original_notes=generated_expansion; needs_human_review; meme_cluster=反讽/阴阳怪气"
@@ -474,7 +474,7 @@
     "risk_level": "medium",
     "encoding_primary": "E3_上下文/互动触发",
     "encoding_secondary": [],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "moderate",
     "freshness": "stable",
@@ -499,7 +499,7 @@
       "counter_evidence": [
         "目标指向或上下文证据仍不充分，普通解释仍可能成立。"
       ],
-      "final_rationale": "综合文本、上下文和反证，暂标为 medium；该条来自 gemini 扩写，仍需人工复核。"
+      "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=gemini_expansion; original_id=EXPAND_0092; generated_expansion; needs_human_review; original_primary=E3_上下文/互动触发; original_notes=generated_expansion; needs_human_review; meme_cluster=反讽/阴阳怪气"
@@ -520,7 +520,7 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -535,7 +535,7 @@
       "encoding_analysis": [
         "主要按 C4_典故/物品/符号借用 解构，属于网络黑产安全风险语境。",
         "辅助机制包括：E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
         "文本使用替代词、缩写、符号或平台规避表达，语境支持风险解读。"
@@ -547,7 +547,7 @@
       "counter_evidence": [
         "具体目标或行为仍未完全展开，不宜直接判最高风险。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=obfuscated; cluster=cyber_abuse_obfuscated; merged_processed; needs_human_review",
@@ -569,7 +569,7 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -584,7 +584,7 @@
       "encoding_analysis": [
         "主要按 C4_典故/物品/符号借用 解构，属于网络黑产安全风险语境。",
         "辅助机制包括：E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
         "文本使用替代词、缩写、符号或平台规避表达，语境支持风险解读。"
@@ -596,7 +596,7 @@
       "counter_evidence": [
         "具体目标或行为仍未完全展开，不宜直接判最高风险。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=obfuscated; cluster=cyber_abuse_obfuscated; merged_processed; needs_human_review",
@@ -618,7 +618,7 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -633,7 +633,7 @@
       "encoding_analysis": [
         "主要按 C4_典故/物品/符号借用 解构，属于网络黑产安全风险语境。",
         "辅助机制包括：E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
         "文本使用替代词、缩写、符号或平台规避表达，语境支持风险解读。"
@@ -645,7 +645,7 @@
       "counter_evidence": [
         "具体目标或行为仍未完全展开，不宜直接判最高风险。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=obfuscated; cluster=cyber_abuse_obfuscated; merged_processed; needs_human_review",
@@ -667,7 +667,7 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -682,7 +682,7 @@
       "encoding_analysis": [
         "主要按 C4_典故/物品/符号借用 解构，属于网络黑产安全风险语境。",
         "辅助机制包括：E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
         "文本使用替代词、缩写、符号或平台规避表达，语境支持风险解读。"
@@ -694,7 +694,7 @@
       "counter_evidence": [
         "具体目标或行为仍未完全展开，不宜直接判最高风险。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=obfuscated; cluster=cyber_abuse_obfuscated; merged_processed; needs_human_review",
@@ -716,7 +716,7 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -731,7 +731,7 @@
       "encoding_analysis": [
         "主要按 C4_典故/物品/符号借用 解构，属于网络黑产安全风险语境。",
         "辅助机制包括：E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
         "文本使用替代词、缩写、符号或平台规避表达，语境支持风险解读。"
@@ -743,7 +743,7 @@
       "counter_evidence": [
         "具体目标或行为仍未完全展开，不宜直接判最高风险。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=obfuscated; cluster=cyber_abuse_obfuscated; merged_processed; needs_human_review",
@@ -781,19 +781,19 @@
       "encoding_analysis": [
         "主要按 D1_反讽 解构，属于辱骂群体攻击语境。",
         "辅助机制包括：D3_借代、E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
         "文本存在弱风险联想，但普通解释仍然更完整。"
       ],
       "supporting_evidence": [
-        "存在值得高召回关注的弱信号。"
+        "存在存在风险信号的弱信号。"
       ],
       "counter_evidence": [
         "缺少明确目标、规避意图或行为链。",
         "普通解释目前更强。"
       ],
-      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，暂标为 low。"
+      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，判为 low。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=insulting_abuse; contrast_mode=weak_signal; cluster=insulting_abuse_weak_signal; merged_processed; needs_human_review",
@@ -831,19 +831,19 @@
       "encoding_analysis": [
         "主要按 D1_反讽 解构，属于辱骂群体攻击语境。",
         "辅助机制包括：D3_借代、E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
         "文本存在弱风险联想，但普通解释仍然更完整。"
       ],
       "supporting_evidence": [
-        "存在值得高召回关注的弱信号。"
+        "存在存在风险信号的弱信号。"
       ],
       "counter_evidence": [
         "缺少明确目标、规避意图或行为链。",
         "普通解释目前更强。"
       ],
-      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，暂标为 low。"
+      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，判为 low。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=insulting_abuse; contrast_mode=weak_signal; cluster=insulting_abuse_weak_signal; merged_processed; needs_human_review",
@@ -881,19 +881,19 @@
       "encoding_analysis": [
         "主要按 D1_反讽 解构，属于辱骂群体攻击语境。",
         "辅助机制包括：D3_借代、E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
         "文本存在弱风险联想，但普通解释仍然更完整。"
       ],
       "supporting_evidence": [
-        "存在值得高召回关注的弱信号。"
+        "存在存在风险信号的弱信号。"
       ],
       "counter_evidence": [
         "缺少明确目标、规避意图或行为链。",
         "普通解释目前更强。"
       ],
-      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，暂标为 low。"
+      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，判为 low。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=insulting_abuse; contrast_mode=weak_signal; cluster=insulting_abuse_weak_signal; merged_processed; needs_human_review",
@@ -931,19 +931,19 @@
       "encoding_analysis": [
         "主要按 D1_反讽 解构，属于辱骂群体攻击语境。",
         "辅助机制包括：D3_借代、E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
         "文本存在弱风险联想，但普通解释仍然更完整。"
       ],
       "supporting_evidence": [
-        "存在值得高召回关注的弱信号。"
+        "存在存在风险信号的弱信号。"
       ],
       "counter_evidence": [
         "缺少明确目标、规避意图或行为链。",
         "普通解释目前更强。"
       ],
-      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，暂标为 low。"
+      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，判为 low。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=insulting_abuse; contrast_mode=weak_signal; cluster=insulting_abuse_weak_signal; merged_processed; needs_human_review",
@@ -981,19 +981,19 @@
       "encoding_analysis": [
         "主要按 D1_反讽 解构，属于辱骂群体攻击语境。",
         "辅助机制包括：D3_借代、E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
         "文本存在弱风险联想，但普通解释仍然更完整。"
       ],
       "supporting_evidence": [
-        "存在值得高召回关注的弱信号。"
+        "存在存在风险信号的弱信号。"
       ],
       "counter_evidence": [
         "缺少明确目标、规避意图或行为链。",
         "普通解释目前更强。"
       ],
-      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，暂标为 low。"
+      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，判为 low。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=insulting_abuse; contrast_mode=weak_signal; cluster=insulting_abuse_weak_signal; merged_processed; needs_human_review",
@@ -1015,8 +1015,8 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": true,
-    "ambiguity": "medium",
+    "context_required": false,
+    "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
     "target_known": false,
@@ -1039,9 +1039,9 @@
         "上下文回复进一步强化风险解释。"
       ],
       "counter_evidence": [
-        "未提供完整行为链或具体对象，仍需人工复核。"
+        "未提供完整行为链或具体对象，"
       ],
-      "final_rationale": "风险意图与语境相互印证，按高召回目标暂标为 high。"
+      "final_rationale": "风险意图与语境相互印证，按风险识别目标判为 high。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=direct; cluster=cyber_abuse_direct; merged_processed; needs_human_review",
@@ -1063,8 +1063,8 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": true,
-    "ambiguity": "medium",
+    "context_required": false,
+    "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
     "target_known": false,
@@ -1087,9 +1087,9 @@
         "上下文回复进一步强化风险解释。"
       ],
       "counter_evidence": [
-        "未提供完整行为链或具体对象，仍需人工复核。"
+        "未提供完整行为链或具体对象，"
       ],
-      "final_rationale": "风险意图与语境相互印证，按高召回目标暂标为 high。"
+      "final_rationale": "风险意图与语境相互印证，按风险识别目标判为 high。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=direct; cluster=cyber_abuse_direct; merged_processed; needs_human_review",
@@ -1111,8 +1111,8 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": true,
-    "ambiguity": "medium",
+    "context_required": false,
+    "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
     "target_known": false,
@@ -1135,9 +1135,9 @@
         "上下文回复进一步强化风险解释。"
       ],
       "counter_evidence": [
-        "未提供完整行为链或具体对象，仍需人工复核。"
+        "未提供完整行为链或具体对象，"
       ],
-      "final_rationale": "风险意图与语境相互印证，按高召回目标暂标为 high。"
+      "final_rationale": "风险意图与语境相互印证，按风险识别目标判为 high。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=direct; cluster=cyber_abuse_direct; merged_processed; needs_human_review",
@@ -1159,8 +1159,8 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": true,
-    "ambiguity": "medium",
+    "context_required": false,
+    "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
     "target_known": false,
@@ -1183,9 +1183,9 @@
         "上下文回复进一步强化风险解释。"
       ],
       "counter_evidence": [
-        "未提供完整行为链或具体对象，仍需人工复核。"
+        "未提供完整行为链或具体对象，"
       ],
-      "final_rationale": "风险意图与语境相互印证，按高召回目标暂标为 high。"
+      "final_rationale": "风险意图与语境相互印证，按风险识别目标判为 high。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=direct; cluster=cyber_abuse_direct; merged_processed; needs_human_review",
@@ -1207,8 +1207,8 @@
     "encoding_secondary": [
       "E1_平台黑话"
     ],
-    "context_required": true,
-    "ambiguity": "medium",
+    "context_required": false,
+    "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
     "target_known": false,
@@ -1231,9 +1231,9 @@
         "上下文回复进一步强化风险解释。"
       ],
       "counter_evidence": [
-        "未提供完整行为链或具体对象，仍需人工复核。"
+        "未提供完整行为链或具体对象，"
       ],
-      "final_rationale": "风险意图与语境相互印证，按高召回目标暂标为 high。"
+      "final_rationale": "风险意图与语境相互印证，按风险识别目标判为 high。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=direct; cluster=cyber_abuse_direct; merged_processed; needs_human_review",
@@ -1271,19 +1271,19 @@
       "encoding_analysis": [
         "主要按 E3_话题/热点触发 解构，属于暴力极端语境。",
         "辅助机制包括：D2_夸张/反话、E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
-        "单看文本存在普通解释，但标题、话题或背景使风险解释值得召回复核。"
+        "单看文本已有可疑表达；若普通解释更强则降级。"
       ],
       "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
+        "文本表达存在风险联想。",
+        "无需为该判断额外编造上下文。"
       ],
       "counter_evidence": [
         "脱离当前语境时可能只是普通表达。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=violence_extremism; contrast_mode=contextual; cluster=violence_extremism_contextual; merged_processed; needs_human_review",
@@ -1321,19 +1321,19 @@
       "encoding_analysis": [
         "主要按 E3_话题/热点触发 解构，属于暴力极端语境。",
         "辅助机制包括：D2_夸张/反话、E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
-        "单看文本存在普通解释，但标题、话题或背景使风险解释值得召回复核。"
+        "单看文本已有可疑表达；若普通解释更强则降级。"
       ],
       "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
+        "文本表达存在风险联想。",
+        "无需为该判断额外编造上下文。"
       ],
       "counter_evidence": [
         "脱离当前语境时可能只是普通表达。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=violence_extremism; contrast_mode=contextual; cluster=violence_extremism_contextual; merged_processed; needs_human_review",
@@ -1371,19 +1371,19 @@
       "encoding_analysis": [
         "主要按 E3_话题/热点触发 解构，属于暴力极端语境。",
         "辅助机制包括：D2_夸张/反话、E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
-        "单看文本存在普通解释，但标题、话题或背景使风险解释值得召回复核。"
+        "单看文本已有可疑表达；若普通解释更强则降级。"
       ],
       "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
+        "文本表达存在风险联想。",
+        "无需为该判断额外编造上下文。"
       ],
       "counter_evidence": [
         "脱离当前语境时可能只是普通表达。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=violence_extremism; contrast_mode=contextual; cluster=violence_extremism_contextual; merged_processed; needs_human_review",
@@ -1421,19 +1421,19 @@
       "encoding_analysis": [
         "主要按 E3_话题/热点触发 解构，属于暴力极端语境。",
         "辅助机制包括：D2_夸张/反话、E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
-        "单看文本存在普通解释，但标题、话题或背景使风险解释值得召回复核。"
+        "单看文本已有可疑表达；若普通解释更强则降级。"
       ],
       "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
+        "文本表达存在风险联想。",
+        "无需为该判断额外编造上下文。"
       ],
       "counter_evidence": [
         "脱离当前语境时可能只是普通表达。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=violence_extremism; contrast_mode=contextual; cluster=violence_extremism_contextual; merged_processed; needs_human_review",
@@ -1471,19 +1471,19 @@
       "encoding_analysis": [
         "主要按 E3_话题/热点触发 解构，属于暴力极端语境。",
         "辅助机制包括：D2_夸张/反话、E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
-        "单看文本存在普通解释，但标题、话题或背景使风险解释值得召回复核。"
+        "单看文本已有可疑表达；若普通解释更强则降级。"
       ],
       "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
+        "文本表达存在风险联想。",
+        "无需为该判断额外编造上下文。"
       ],
       "counter_evidence": [
         "脱离当前语境时可能只是普通表达。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=violence_extremism; contrast_mode=contextual; cluster=violence_extremism_contextual; merged_processed; needs_human_review",
@@ -1506,7 +1506,7 @@
       "A2_拼音/首字母缩写",
       "C4_典故/物品/符号借用"
     ],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -1533,7 +1533,7 @@
       "counter_evidence": [
         "具体目标或行为仍未完全展开，不宜直接判最高风险。"
       ],
-      "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，暂标为 medium。"
+      "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=spam_ads_fraud; contrast_mode=obfuscated; cluster=spam_ads_fraud_obfuscated_w2; merged_processed; needs_human_review",
@@ -1556,7 +1556,7 @@
       "A2_拼音/首字母缩写",
       "C4_典故/物品/符号借用"
     ],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -1583,7 +1583,7 @@
       "counter_evidence": [
         "具体目标或行为仍未完全展开，不宜直接判最高风险。"
       ],
-      "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，暂标为 medium。"
+      "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=spam_ads_fraud; contrast_mode=obfuscated; cluster=spam_ads_fraud_obfuscated_w2; merged_processed; needs_human_review",
@@ -1606,7 +1606,7 @@
       "A2_拼音/首字母缩写",
       "C4_典故/物品/符号借用"
     ],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -1633,7 +1633,7 @@
       "counter_evidence": [
         "具体目标或行为仍未完全展开，不宜直接判最高风险。"
       ],
-      "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，暂标为 medium。"
+      "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=spam_ads_fraud; contrast_mode=obfuscated; cluster=spam_ads_fraud_obfuscated_w2; merged_processed; needs_human_review",
@@ -1656,7 +1656,7 @@
       "A2_拼音/首字母缩写",
       "C4_典故/物品/符号借用"
     ],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -1683,7 +1683,7 @@
       "counter_evidence": [
         "具体目标或行为仍未完全展开，不宜直接判最高风险。"
       ],
-      "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，暂标为 medium。"
+      "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=spam_ads_fraud; contrast_mode=obfuscated; cluster=spam_ads_fraud_obfuscated_w2; merged_processed; needs_human_review",
@@ -1706,7 +1706,7 @@
       "A2_拼音/首字母缩写",
       "C4_典故/物品/符号借用"
     ],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -1733,7 +1733,7 @@
       "counter_evidence": [
         "具体目标或行为仍未完全展开，不宜直接判最高风险。"
       ],
-      "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，暂标为 medium。"
+      "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=spam_ads_fraud; contrast_mode=obfuscated; cluster=spam_ads_fraud_obfuscated_w2; merged_processed; needs_human_review",
@@ -1771,19 +1771,19 @@
       "encoding_analysis": [
         "主要按 D1_反讽 解构，属于辱骂群体攻击语境。",
         "辅助机制包括：D3_借代、E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
-        "单看文本存在普通解释，但标题、话题或背景使风险解释值得召回复核。"
+        "单看文本已有可疑表达；若普通解释更强则降级。"
       ],
       "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
+        "文本表达存在风险联想。",
+        "无需为该判断额外编造上下文。"
       ],
       "counter_evidence": [
         "脱离当前语境时可能只是普通表达。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=insulting_abuse; contrast_mode=contextual; cluster=insulting_abuse_contextual; merged_processed; needs_human_review",
@@ -1821,19 +1821,19 @@
       "encoding_analysis": [
         "主要按 D1_反讽 解构，属于辱骂群体攻击语境。",
         "辅助机制包括：D3_借代、E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
-        "单看文本存在普通解释，但标题、话题或背景使风险解释值得召回复核。"
+        "单看文本已有可疑表达；若普通解释更强则降级。"
       ],
       "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
+        "文本表达存在风险联想。",
+        "无需为该判断额外编造上下文。"
       ],
       "counter_evidence": [
         "脱离当前语境时可能只是普通表达。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=insulting_abuse; contrast_mode=contextual; cluster=insulting_abuse_contextual; merged_processed; needs_human_review",
@@ -1871,19 +1871,19 @@
       "encoding_analysis": [
         "主要按 D1_反讽 解构，属于辱骂群体攻击语境。",
         "辅助机制包括：D3_借代、E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
-        "单看文本存在普通解释，但标题、话题或背景使风险解释值得召回复核。"
+        "单看文本已有可疑表达；若普通解释更强则降级。"
       ],
       "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
+        "文本表达存在风险联想。",
+        "无需为该判断额外编造上下文。"
       ],
       "counter_evidence": [
         "脱离当前语境时可能只是普通表达。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=insulting_abuse; contrast_mode=contextual; cluster=insulting_abuse_contextual; merged_processed; needs_human_review",
@@ -1921,19 +1921,19 @@
       "encoding_analysis": [
         "主要按 D1_反讽 解构，属于辱骂群体攻击语境。",
         "辅助机制包括：D3_借代、E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
-        "单看文本存在普通解释，但标题、话题或背景使风险解释值得召回复核。"
+        "单看文本已有可疑表达；若普通解释更强则降级。"
       ],
       "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
+        "文本表达存在风险联想。",
+        "无需为该判断额外编造上下文。"
       ],
       "counter_evidence": [
         "脱离当前语境时可能只是普通表达。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=insulting_abuse; contrast_mode=contextual; cluster=insulting_abuse_contextual; merged_processed; needs_human_review",
@@ -1971,19 +1971,19 @@
       "encoding_analysis": [
         "主要按 D1_反讽 解构，属于辱骂群体攻击语境。",
         "辅助机制包括：D3_借代、E1_平台黑话。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
-        "单看文本存在普通解释，但标题、话题或背景使风险解释值得召回复核。"
+        "单看文本已有可疑表达；若普通解释更强则降级。"
       ],
       "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
+        "文本表达存在风险联想。",
+        "无需为该判断额外编造上下文。"
       ],
       "counter_evidence": [
         "脱离当前语境时可能只是普通表达。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=insulting_abuse; contrast_mode=contextual; cluster=insulting_abuse_contextual; merged_processed; needs_human_review",
@@ -2004,8 +2004,8 @@
     "risk_level": "high",
     "encoding_primary": "C4_典故/物品/符号借用",
     "encoding_secondary": [],
-    "context_required": true,
-    "ambiguity": "medium",
+    "context_required": false,
+    "ambiguity": "low",
     "evidence_strength": "strong",
     "freshness": "stable",
     "hard_negative": false,
@@ -2023,13 +2023,13 @@
         "上下文从爱好讨论转向疑似交易和渠道询问。"
       ],
       "supporting_evidence": [
-        "文本和上下文共同提供风险信号。",
+        "文本本身提供主要风险信号。",
         "该类更接近强规则召回，不宜训练模型寻找放行理由。"
       ],
       "counter_evidence": [
-        "仍需人工复核，避免只根据词库命中下最终结论。"
+        "避免只根据词库命中下最终结论。"
       ],
-      "final_rationale": "综合词库召回和上下文，暂标为 high；该条为词库种子候选。"
+      "final_rationale": "综合文本信号，判为 high；该判断来自文本风险信号。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=sensitive_lexicon_seed; category=weapons_explosives; risk_family=strict_redline; variant=strict_weapon_lead; bucket=direct_policy_risk; matched_term=子弹; term_source_files=零时-Tencent.txt; needs_human_review; merged_processed"
@@ -2049,8 +2049,8 @@
     "risk_level": "high",
     "encoding_primary": "C4_典故/物品/符号借用",
     "encoding_secondary": [],
-    "context_required": true,
-    "ambiguity": "medium",
+    "context_required": false,
+    "ambiguity": "low",
     "evidence_strength": "strong",
     "freshness": "stable",
     "hard_negative": false,
@@ -2068,13 +2068,13 @@
         "上下文含字形规避、暗号和线下/外部转移信号。"
       ],
       "supporting_evidence": [
-        "文本和上下文共同提供风险信号。",
+        "文本本身提供主要风险信号。",
         "该类更接近强规则召回，不宜训练模型寻找放行理由。"
       ],
       "counter_evidence": [
-        "仍需人工复核，避免只根据词库命中下最终结论。"
+        "避免只根据词库命中下最终结论。"
       ],
-      "final_rationale": "综合词库召回和上下文，暂标为 high；该条为词库种子候选。"
+      "final_rationale": "综合文本信号，判为 high；该判断来自文本风险信号。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=sensitive_lexicon_seed; category=weapons_explosives; risk_family=strict_redline; variant=strict_weapon_evasion; bucket=direct_policy_risk; matched_term=弓单; term_source_files=反动词库.txt,零时-Tencent.txt; needs_human_review; merged_processed"
@@ -2094,7 +2094,7 @@
     "risk_level": "medium",
     "encoding_primary": "C4_典故/物品/符号借用",
     "encoding_secondary": [],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "freshness": "stable",
@@ -2113,13 +2113,13 @@
         "文本包含反证和疑点，需要人工复核。"
       ],
       "supporting_evidence": [
-        "文本和上下文共同提供风险信号。",
+        "文本本身提供主要风险信号。",
         "该类更接近强规则召回，不宜训练模型寻找放行理由。"
       ],
       "counter_evidence": [
-        "仍需人工复核，避免只根据词库命中下最终结论。"
+        "避免只根据词库命中下最终结论。"
       ],
-      "final_rationale": "综合词库召回和上下文，暂标为 medium；该条为词库种子候选。"
+      "final_rationale": "综合文本信号，判为 medium；该判断来自文本风险信号。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=sensitive_lexicon_seed; category=weapons_explosives; risk_family=strict_redline; variant=strict_weapon_report; bucket=direct_policy_risk; matched_term=弹药; term_source_files=零时-Tencent.txt; needs_human_review; merged_processed"
@@ -2141,8 +2141,8 @@
       "D1_反讽",
       "E2_时间节点触发"
     ],
-    "context_required": true,
-    "ambiguity": "medium",
+    "context_required": false,
+    "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
     "target_known": false,
@@ -2165,9 +2165,9 @@
         "上下文回复进一步强化风险解释。"
       ],
       "counter_evidence": [
-        "未提供完整行为链或具体对象，仍需人工复核。"
+        "未提供完整行为链或具体对象，"
       ],
-      "final_rationale": "文本与互动语境共同呈现较明确风险意图，暂标为 high。"
+      "final_rationale": "文本与互动语境共同呈现较明确风险意图，判为 high。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=public_affairs; contrast_mode=direct; cluster=public_affairs_direct_w2; merged_processed; needs_human_review",
@@ -2190,8 +2190,8 @@
       "D1_反讽",
       "E2_时间节点触发"
     ],
-    "context_required": true,
-    "ambiguity": "medium",
+    "context_required": false,
+    "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
     "target_known": false,
@@ -2214,9 +2214,9 @@
         "上下文回复进一步强化风险解释。"
       ],
       "counter_evidence": [
-        "未提供完整行为链或具体对象，仍需人工复核。"
+        "未提供完整行为链或具体对象，"
       ],
-      "final_rationale": "文本与互动语境共同呈现较明确风险意图，暂标为 high。"
+      "final_rationale": "文本与互动语境共同呈现较明确风险意图，判为 high。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=public_affairs; contrast_mode=direct; cluster=public_affairs_direct_w2; merged_processed; needs_human_review",
@@ -2239,8 +2239,8 @@
       "D1_反讽",
       "E2_时间节点触发"
     ],
-    "context_required": true,
-    "ambiguity": "medium",
+    "context_required": false,
+    "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
     "target_known": false,
@@ -2263,9 +2263,9 @@
         "上下文回复进一步强化风险解释。"
       ],
       "counter_evidence": [
-        "未提供完整行为链或具体对象，仍需人工复核。"
+        "未提供完整行为链或具体对象，"
       ],
-      "final_rationale": "文本与互动语境共同呈现较明确风险意图，暂标为 high。"
+      "final_rationale": "文本与互动语境共同呈现较明确风险意图，判为 high。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=public_affairs; contrast_mode=direct; cluster=public_affairs_direct_w2; merged_processed; needs_human_review",
@@ -2288,8 +2288,8 @@
       "A2_拼音/首字母缩写",
       "C4_典故/物品/符号借用"
     ],
-    "context_required": true,
-    "ambiguity": "medium",
+    "context_required": false,
+    "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
     "target_known": false,
@@ -2312,9 +2312,9 @@
         "上下文回复进一步强化风险解释。"
       ],
       "counter_evidence": [
-        "未提供完整行为链或具体对象，仍需人工复核。"
+        "未提供完整行为链或具体对象，"
       ],
-      "final_rationale": "文本与互动语境共同呈现较明确风险意图，暂标为 high。"
+      "final_rationale": "文本与互动语境共同呈现较明确风险意图，判为 high。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=cyber_abuse; contrast_mode=direct; cluster=cyber_abuse_direct_w2; merged_processed; needs_human_review",
@@ -2337,8 +2337,8 @@
       "A2_拼音/首字母缩写",
       "C4_典故/物品/符号借用"
     ],
-    "context_required": true,
-    "ambiguity": "medium",
+    "context_required": false,
+    "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
     "target_known": false,
@@ -2361,9 +2361,9 @@
         "上下文回复进一步强化风险解释。"
       ],
       "counter_evidence": [
-        "未提供完整行为链或具体对象，仍需人工复核。"
+        "未提供完整行为链或具体对象，"
       ],
-      "final_rationale": "文本与互动语境共同呈现较明确风险意图，暂标为 high。"
+      "final_rationale": "文本与互动语境共同呈现较明确风险意图，判为 high。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=cyber_abuse; contrast_mode=direct; cluster=cyber_abuse_direct_w2; merged_processed; needs_human_review",
@@ -2386,8 +2386,8 @@
       "A2_拼音/首字母缩写",
       "C4_典故/物品/符号借用"
     ],
-    "context_required": true,
-    "ambiguity": "medium",
+    "context_required": false,
+    "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
     "target_known": false,
@@ -2410,9 +2410,9 @@
         "上下文回复进一步强化风险解释。"
       ],
       "counter_evidence": [
-        "未提供完整行为链或具体对象，仍需人工复核。"
+        "未提供完整行为链或具体对象，"
       ],
-      "final_rationale": "文本与互动语境共同呈现较明确风险意图，暂标为 high。"
+      "final_rationale": "文本与互动语境共同呈现较明确风险意图，判为 high。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=cyber_abuse; contrast_mode=direct; cluster=cyber_abuse_direct_w2; merged_processed; needs_human_review",
@@ -2450,19 +2450,19 @@
       "encoding_analysis": [
         "主要按 E1_平台黑话 解构，属于平台规避审查黑话语境。",
         "辅助机制包括：A2_拼音/首字母缩写、B4_符号/空格/Unicode 干扰。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
-        "单看文本存在普通解释，但标题、话题或背景使风险解释值得召回复核。"
+        "单看文本已有可疑表达；若普通解释更强则降级。"
       ],
       "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
+        "文本表达存在风险联想。",
+        "无需为该判断额外编造上下文。"
       ],
       "counter_evidence": [
         "脱离当前语境时可能只是普通表达。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=platform_censorship_evasion; contrast_mode=contextual; cluster=platform_censorship_evasion_contextual; merged_processed; needs_human_review",
@@ -2485,7 +2485,7 @@
       "A2_拼音/首字母缩写",
       "B4_符号/空格/Unicode 干扰"
     ],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "high",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -2500,19 +2500,19 @@
       "encoding_analysis": [
         "主要按 E1_平台黑话 解构，属于平台规避审查黑话语境。",
         "辅助机制包括：A2_拼音/首字母缩写、B4_符号/空格/Unicode 干扰。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
-        "单看文本存在普通解释，但标题、话题或背景使风险解释值得召回复核。"
+        "单看文本已有可疑表达；若普通解释更强则降级。"
       ],
       "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
+        "文本表达存在风险联想。",
+        "无需为该判断额外编造上下文。"
       ],
       "counter_evidence": [
         "脱离当前语境时可能只是普通表达。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=platform_censorship_evasion; contrast_mode=contextual; cluster=platform_censorship_evasion_contextual; merged_processed; needs_human_review",
@@ -2550,19 +2550,19 @@
       "encoding_analysis": [
         "主要按 E1_平台黑话 解构，属于平台规避审查黑话语境。",
         "辅助机制包括：A2_拼音/首字母缩写、B4_符号/空格/Unicode 干扰。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
-        "单看文本存在普通解释，但标题、话题或背景使风险解释值得召回复核。"
+        "单看文本已有可疑表达；若普通解释更强则降级。"
       ],
       "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
+        "文本表达存在风险联想。",
+        "无需为该判断额外编造上下文。"
       ],
       "counter_evidence": [
         "脱离当前语境时可能只是普通表达。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=platform_censorship_evasion; contrast_mode=contextual; cluster=platform_censorship_evasion_contextual; merged_processed; needs_human_review",
@@ -2606,7 +2606,7 @@
         "上下文明确是宣传、科普、新闻、课程、引用或安全教育。",
         "没有招揽、交易、攻击、规避检测或异常互动共识。"
       ],
-      "final_rationale": "普通解释和反证更强，暂标为 none；该条用于训练模型避免关键词误杀。"
+      "final_rationale": "普通解释和反证更强，判为 none；该条用于训练模型避免关键词误杀。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=sensitive_lexicon_seed; category=gambling; risk_family=contextual_risk; variant=contextual_warning; bucket=obfuscated_or_variant; matched_term=百家乐*; term_source_files=零时-Tencent.txt; needs_human_review; merged_processed"
@@ -2648,13 +2648,13 @@
         "上下文有盘口、赔率等疑似赌博语境，但缺少完整证据。"
       ],
       "supporting_evidence": [
-        "文本和上下文共同提供风险信号。",
-        "存在语境依赖的非字面、攻击、规避或敏感讨论信号。"
+        "文本本身提供主要风险信号。",
+        "存在非字面、攻击、规避或敏感讨论信号。"
       ],
       "counter_evidence": [
-        "仍需人工复核，避免只根据词库命中下最终结论。"
+        "避免只根据词库命中下最终结论。"
       ],
-      "final_rationale": "综合词库召回和上下文，暂标为 medium；该条为词库种子候选。"
+      "final_rationale": "综合文本信号，判为 medium；该判断来自文本风险信号。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=sensitive_lexicon_seed; category=gambling; risk_family=contextual_risk; variant=contextual_suspicious; bucket=obfuscated_or_variant; matched_term=老虎机*; term_source_files=零时-Tencent.txt; needs_human_review; merged_processed"
@@ -2697,7 +2697,7 @@
         "上下文明确是宣传、科普、新闻、课程、引用或安全教育。",
         "没有招揽、交易、攻击、规避检测或异常互动共识。"
       ],
-      "final_rationale": "普通解释和反证更强，暂标为 none；该条用于训练模型避免关键词误杀。"
+      "final_rationale": "普通解释和反证更强，判为 none；该条用于训练模型避免关键词误杀。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=sensitive_lexicon_seed; category=gambling; risk_family=contextual_risk; variant=contextual_news; bucket=obfuscated_or_variant; matched_term=包消费 包赌博; term_source_files=零时-Tencent.txt; needs_human_review; merged_processed"
@@ -2740,13 +2740,13 @@
         "文本存在弱风险联想，但普通解释仍然更完整。"
       ],
       "supporting_evidence": [
-        "存在值得高召回关注的弱信号。"
+        "存在存在风险信号的弱信号。"
       ],
       "counter_evidence": [
         "缺少明确目标、规避意图或行为链。",
         "普通解释目前更强。"
       ],
-      "final_rationale": "存在弱风险联想，普通解释仍较强，作为困难边界暂标为 low。"
+      "final_rationale": "存在弱风险联想，普通解释仍较强，作为困难边界判为 low。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=weapons_explosives; contrast_mode=weak_signal; cluster=weapons_explosives_weak_signal_w2; merged_processed; needs_human_review",
@@ -2790,13 +2790,13 @@
         "文本存在弱风险联想，但普通解释仍然更完整。"
       ],
       "supporting_evidence": [
-        "存在值得高召回关注的弱信号。"
+        "存在存在风险信号的弱信号。"
       ],
       "counter_evidence": [
         "缺少明确目标、规避意图或行为链。",
         "普通解释目前更强。"
       ],
-      "final_rationale": "存在弱风险联想，普通解释仍较强，作为困难边界暂标为 low。"
+      "final_rationale": "存在弱风险联想，普通解释仍较强，作为困难边界判为 low。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=weapons_explosives; contrast_mode=weak_signal; cluster=weapons_explosives_weak_signal_w2; merged_processed; needs_human_review",
@@ -2819,7 +2819,7 @@
       "B3_形近字替换",
       "E1_平台黑话"
     ],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "high",
     "evidence_strength": "weak",
     "hard_negative": true,
@@ -2840,13 +2840,13 @@
         "文本存在弱风险联想，但普通解释仍然更完整。"
       ],
       "supporting_evidence": [
-        "存在值得高召回关注的弱信号。"
+        "存在存在风险信号的弱信号。"
       ],
       "counter_evidence": [
         "缺少明确目标、规避意图或行为链。",
         "普通解释目前更强。"
       ],
-      "final_rationale": "存在弱风险联想，普通解释仍较强，作为困难边界暂标为 low。"
+      "final_rationale": "存在弱风险联想，普通解释仍较强，作为困难边界判为 low。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=weapons_explosives; contrast_mode=weak_signal; cluster=weapons_explosives_weak_signal_w2; merged_processed; needs_human_review",
@@ -2883,19 +2883,19 @@
       "encoding_analysis": [
         "主要按 D1_反讽 解构，属于公共事务语境。",
         "辅助机制包括：E3_话题/热点触发。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
-        "单看文本存在普通解释，但标题、话题或背景使风险解释值得召回复核。"
+        "单看文本已有可疑表达；若普通解释更强则降级。"
       ],
       "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
+        "文本表达存在风险联想。",
+        "无需为该判断额外编造上下文。"
       ],
       "counter_evidence": [
         "脱离当前语境时可能只是普通表达。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=public_affairs; contrast_mode=contextual; cluster=public_affairs_contextual; merged_processed; needs_human_review",
@@ -2932,19 +2932,19 @@
       "encoding_analysis": [
         "主要按 D1_反讽 解构，属于公共事务语境。",
         "辅助机制包括：E3_话题/热点触发。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
-        "单看文本存在普通解释，但标题、话题或背景使风险解释值得召回复核。"
+        "单看文本已有可疑表达；若普通解释更强则降级。"
       ],
       "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
+        "文本表达存在风险联想。",
+        "无需为该判断额外编造上下文。"
       ],
       "counter_evidence": [
         "脱离当前语境时可能只是普通表达。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=public_affairs; contrast_mode=contextual; cluster=public_affairs_contextual; merged_processed; needs_human_review",
@@ -2981,19 +2981,19 @@
       "encoding_analysis": [
         "主要按 D1_反讽 解构，属于公共事务语境。",
         "辅助机制包括：E3_话题/热点触发。",
-        "该信号值得高召回关注，但仍需结合上下文确认具体指向。"
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
-        "单看文本存在普通解释，但标题、话题或背景使风险解释值得召回复核。"
+        "单看文本已有可疑表达；若普通解释更强则降级。"
       ],
       "supporting_evidence": [
-        "文本与当前话题组合后出现风险联想。",
-        "上下文提供了独立支持。"
+        "文本表达存在风险联想。",
+        "无需为该判断额外编造上下文。"
       ],
       "counter_evidence": [
         "脱离当前语境时可能只是普通表达。"
       ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，暂标为 medium。"
+      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=public_affairs; contrast_mode=contextual; cluster=public_affairs_contextual; merged_processed; needs_human_review",
@@ -3013,7 +3013,7 @@
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
     "hard_negative": true,
@@ -3036,7 +3036,7 @@
         "评论明确不联系现实。",
         "讨论停留在文本内部。"
       ],
-      "final_rationale": "普通语境和反证更强，暂标为 none；该条用于训练模型避免关键词误杀。"
+      "final_rationale": "普通语境和反证更强，判为 none；该条用于训练模型避免关键词误杀。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=meme_forensics; cluster=book_quote_hard_negative; variant=literature_quote; merged_processed; needs_human_review",
@@ -3083,7 +3083,7 @@
       "counter_evidence": [
         "目标指向或上下文证据仍不充分，普通解释仍可能成立。"
       ],
-      "final_rationale": "综合文本、上下文和反证，暂标为 medium；该条仍需人工复核后进入正式训练集。"
+      "final_rationale": "综合文本信号和反证，判为 medium；该条后进入正式训练集。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=grok; source_id=GROK_036; original_risk=medium; original_note=委婉批评"
@@ -3102,7 +3102,7 @@
     "risk_level": "medium",
     "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -3127,7 +3127,7 @@
       "counter_evidence": [
         "也可能是普通牌局约人，缺少明确金额。"
       ],
-      "final_rationale": "文本和上下文共同支持风险解释，暂标为 medium；仍需人工复核。"
+      "final_rationale": "文本本身支持风险解释，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=card_game_contextual; variant=private_table; merged_processed; needs_human_review",
@@ -3174,7 +3174,7 @@
         "上下文更支持普通解释：古诗改编。",
         "证据不足以升为 medium 或 high。"
       ],
-      "final_rationale": "综合文本、上下文和反证，暂标为 low；该条仍需人工复核后进入正式训练集。"
+      "final_rationale": "综合文本信号和反证，判为 low；该条后进入正式训练集。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=grok; source_id=GROK_046; original_risk=medium; original_note=可能文学"
@@ -3194,7 +3194,7 @@
     "risk_level": "medium",
     "encoding_primary": "C4_典故/物品/符号借用",
     "encoding_secondary": [],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "freshness": "stable",
@@ -3220,7 +3220,7 @@
       "counter_evidence": [
         "目标指向或上下文证据仍不充分，普通解释仍可能成立。"
       ],
-      "final_rationale": "综合文本、上下文和反证，暂标为 medium；该条仍需人工复核后进入正式训练集。"
+      "final_rationale": "综合文本信号和反证，判为 medium；该条后进入正式训练集。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=grok; source_id=GROK_002; original_risk=medium; original_note=‘加速’+‘刹车’组合在政治语境下是常见黑话，但也可能是真实开车吐槽"
@@ -3242,7 +3242,7 @@
     "encoding_secondary": [
       "E3_上下文/互动触发"
     ],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "freshness": "stable",
@@ -3268,7 +3268,7 @@
       "counter_evidence": [
         "目标指向或上下文证据仍不充分，普通解释仍可能成立。"
       ],
-      "final_rationale": "综合文本、上下文和反证，暂标为 medium；该条仍需人工复核后进入正式训练集。"
+      "final_rationale": "综合文本信号和反证，判为 medium；该条后进入正式训练集。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=grok; source_id=GROK_012; original_risk=medium; original_note=隐晦反对激进"
@@ -3314,7 +3314,7 @@
       "counter_evidence": [
         "没有引用原句和具体对象，存在泛化批评可能。"
       ],
-      "final_rationale": "文本和上下文共同支持风险解释，暂标为 medium；仍需人工复核。"
+      "final_rationale": "文本本身支持风险解释，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=meme_forensics; cluster=book_quote_contextual; variant=quote_mapping; merged_processed; needs_human_review",
@@ -3361,7 +3361,7 @@
       "counter_evidence": [
         "缺少具体时间和地点，仍需复核。"
       ],
-      "final_rationale": "文本和上下文共同支持风险解释，暂标为 medium；仍需人工复核。"
+      "final_rationale": "文本本身支持风险解释，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=meme_forensics; cluster=place_name_contextual; variant=square_hint; merged_processed; needs_human_review",
@@ -3381,7 +3381,7 @@
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
     "hard_negative": true,
@@ -3404,7 +3404,7 @@
         "明确是正规教育语境。",
         "没有低俗招揽或暗示交易。"
       ],
-      "final_rationale": "普通语境和反证更强，暂标为 none；该条用于训练模型避免关键词误杀。"
+      "final_rationale": "普通语境和反证更强，判为 none；该条用于训练模型避免关键词误杀。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=sexual_hard_negative; variant=health_education; merged_processed; needs_human_review",
@@ -3452,7 +3452,7 @@
         "证据不足以升为 medium 或 high。",
         "该样本适合作为 hard negative，训练模型避免关键词误杀。"
       ],
-      "final_rationale": "综合文本、上下文和反证，暂标为 low；该条仍需人工复核后进入正式训练集。"
+      "final_rationale": "综合文本信号和反证，判为 low；该条后进入正式训练集。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=grok; source_id=GROK_028; original_risk=low; original_note=hard negative：儿童玩具"
@@ -3471,7 +3471,7 @@
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
     "hard_negative": true,
@@ -3494,7 +3494,7 @@
         "没有现实对象映射。",
         "文本明确反对机械类比。"
       ],
-      "final_rationale": "普通语境和反证更强，暂标为 none；该条用于训练模型避免关键词误杀。"
+      "final_rationale": "普通语境和反证更强，判为 none；该条用于训练模型避免关键词误杀。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=meme_forensics; cluster=history_course_hard_negative; variant=normal_history_class; merged_processed; needs_human_review",
@@ -3515,7 +3515,7 @@
     "risk_level": "low",
     "encoding_primary": "D2_隐喻",
     "encoding_secondary": [],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "high",
     "evidence_strength": "weak",
     "freshness": "stable",
@@ -3542,7 +3542,7 @@
         "证据不足以升为 medium 或 high。",
         "该样本适合作为 hard negative，训练模型避免关键词误杀。"
       ],
-      "final_rationale": "综合文本、上下文和反证，暂标为 low；该条仍需人工复核后进入正式训练集。"
+      "final_rationale": "综合文本信号和反证，判为 low；该条后进入正式训练集。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=grok; source_id=GROK_020; original_risk=low; original_note=hard negative：模型爱好"
@@ -3588,7 +3588,7 @@
       "counter_evidence": [
         "未说明具体词，风险等级不宜直接最高。"
       ],
-      "final_rationale": "文本和上下文共同支持风险解释，暂标为 medium；仍需人工复核。"
+      "final_rationale": "文本本身支持风险解释，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=platform_black_slang; cluster=unicode_contextual; variant=split_keyword; merged_processed; needs_human_review",
@@ -3635,7 +3635,7 @@
       "counter_evidence": [
         "未说明具体行为，但动员语境强。"
       ],
-      "final_rationale": "文本和上下文共同支持风险解释，暂标为 high；仍需人工复核。"
+      "final_rationale": "文本本身支持风险解释，判为 high。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=risk_word_context; cluster=violence_contextual; variant=mobilization_hint; merged_processed; needs_human_review",
@@ -3657,7 +3657,7 @@
     "encoding_secondary": [
       "C4_典故/物品/符号借用"
     ],
-    "context_required": true,
+    "context_required": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
@@ -3682,7 +3682,7 @@
       "counter_evidence": [
         "仍可能是泛化比喻，缺少明确目标对象。"
       ],
-      "final_rationale": "文本和上下文共同支持风险解释，暂标为 medium；仍需人工复核。"
+      "final_rationale": "文本本身支持风险解释，判为 medium。"
     },
     "quality_status": "needs_revision",
     "review_notes": "source=phase2_seed; batch=phase2_v1_context_hard_negative; axis=meme_forensics; cluster=vehicle_metaphor_contextual; variant=acceleration_meme; merged_processed; needs_human_review",
