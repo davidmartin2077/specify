@@ -44,12 +44,10 @@ grok                        0  ← 已清空
 - 项目结构清理：从 ~85 文件精简至 ~40 文件。
 - platform 字段从所有数据文件和 SFT 格式中移除。
 - **批次替换**：176 条自然口吻样本替换了全部 grok(50) + meme(35) + gemini(91) + phase2_seed(7)。
-  - batch1: 56 条（C1/C2/C3/C4/D1/D2/D3/E1/E2/F）
-  - batch2: 27 条（C1/C2/C4/D1/E2/B1/F + HN）
-  - batch3: 46 条（侧重 LOW 边界和 underrepresented B1/B3/A3/C5/E4）
-  - batch4: 47 条（混合补齐）
+- **literal_analysis 全面修复**：1255 条样本的字面分析从机械重复 text 改为真正的表面含义解读。
+- 所有 ID 已重编号为 000001-001255 顺序排列。
 - 所有替换样本具有非模板 reasoning、自然中文互联网口吻、完整反证。
-- merge 脚本已幂等化（`scripts/merge_replacements.py`）。
+- merge 脚本已幂等化。
 - 覆盖分析已基于 1255 条重跑。
 
 ## 当前决策
