@@ -28,7 +28,6 @@ PREVIEW_JSONL = ROOT / "data/raw/external_safety_import_preview.jsonl"
 PREVIEW_JSON = ROOT / "data/raw/external_safety_import_preview.json"
 REPORT_MD = ROOT / "docs/external_safety_datasets_review.md"
 REVIEW_SAMPLE_MD = ROOT / "docs/external_safety_import_review_sample.md"
-DUPLICATE_MD = ROOT / "docs/duplicate_text_audit.md"
 
 RISK_TERMS = (
     "私聊",
@@ -233,7 +232,7 @@ def make_reasoning(
         if flags:
             supporting.append(f"文本命中若干风险提示词：{', '.join(flags[:5])}。")
         counter = [
-            "外部数据通常缺少标题、上级评论和回复链，需要补上下文后再定级。",
+            "外部数据通常缺少标题、话题和真实事件背景，需要补最小上下文后再定级。",
             "该条可能只是普通争论、引用或转述，需人工复核反证。",
         ]
 
@@ -289,9 +288,7 @@ def make_sample(
         "text": text,
         "context": {
             "title": f"{dataset_name} 外部真实评论样本",
-            "description": "外部数据集原始样本，尚未补充完整评论链。",
-            "parent_comment": "",
-            "reply_chain": [],
+            "description": "外部数据集原始样本，尚未补充最小上下文。",
             "time": "",
             "topic": topic or dataset_name,
         },
@@ -538,7 +535,7 @@ def write_markdown(
             "",
             "1. ToxiCN/COLD 的真实评论质感明显优于当前项目中早期 AI 扩写样本，适合补充辱骂、歧视、地域/性别/race/lgbt 边界。",
             "2. ChineseSafe 更接近安全评测基准，适合补类别体系、变体/谐音和外部评测，不应直接全量转训练。",
-            "3. 外部数据普遍缺少标题、上级评论、回复链和反证；接入后必须重塑 `context` 与 `reasoning`。",
+            "3. 外部数据普遍缺少标题、话题、真实背景和反证；接入后必须重塑 `context` 与 `reasoning`。",
             "4. 下一步应人工抽查转换预览，再决定每个来源保留比例和映射规则。",
             "",
         ]
@@ -693,18 +690,12 @@ def main() -> int:
         row["review_notes"] += f"; preview_index={index}"
 
     conversion_counts = Counter(note_source(row.get("review_notes", "")) for row in deduped_preview)
-    duplicate = duplicate_audit(processed)
-
     report = {
         "summaries": summaries,
         "chinesesafe_status": chinesesafe_status,
         "preview_count": len(deduped_preview),
         "preview_source_counts": dict(sorted(conversion_counts.items())),
         "overlap_with_processed_skipped": overlap_with_processed,
-        "duplicate_audit": {
-            "duplicate_group_count": duplicate["duplicate_group_count"],
-            "duplicate_extra_rows": duplicate["duplicate_extra_rows"],
-        },
     }
 
     write_jsonl(deduped_preview, PREVIEW_JSONL)
@@ -712,12 +703,10 @@ def main() -> int:
     write_json(report, REPORT_JSON)
     write_markdown(summaries, conversion_counts, chinesesafe_status, REPORT_MD)
     write_review_sample(deduped_preview, REVIEW_SAMPLE_MD)
-    write_duplicate_markdown(duplicate, DUPLICATE_MD)
 
     print(f"Wrote {len(deduped_preview)} preview rows to {PREVIEW_JSONL}")
     print(f"Wrote report to {REPORT_MD}")
     print(f"Wrote review sample to {REVIEW_SAMPLE_MD}")
-    print(f"Wrote duplicate audit to {DUPLICATE_MD}")
     print(f"ChineseSafe status: {chinesesafe_status}")
     return 0
 

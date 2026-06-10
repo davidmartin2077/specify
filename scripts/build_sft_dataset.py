@@ -68,17 +68,10 @@ def format_context(context: dict[str, Any]) -> str:
     fields = [
         ("标题/场景", context.get("title", "")),
         ("简介", context.get("description", "")),
-        ("上级评论", context.get("parent_comment", "")),
         ("时间", context.get("time", "")),
         ("话题", context.get("topic", "")),
     ]
     lines = [f"{label}: {value}" for label, value in fields if non_empty(value)]
-
-    reply_chain = context.get("reply_chain", [])
-    if isinstance(reply_chain, list) and reply_chain:
-        replies = " / ".join(str(item) for item in reply_chain if str(item).strip())
-        if replies:
-            lines.append(f"回复链: {replies}")
 
     return "\n".join(lines) if lines else "无明确上下文"
 

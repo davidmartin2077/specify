@@ -138,11 +138,8 @@ def searchable_text(sample: dict[str, Any]) -> str:
     values = [str(sample.get("text", ""))]
     context = sample.get("context", {})
     if isinstance(context, dict):
-        for field in ("title", "description", "parent_comment", "topic"):
+        for field in ("title", "description", "topic"):
             values.append(str(context.get(field, "")))
-        replies = context.get("reply_chain", [])
-        if isinstance(replies, list):
-            values.extend(str(item) for item in replies)
     notes = parse_notes(sample.get("review_notes", ""))
     values.extend(notes.get(key, "") for key in ("meme_cluster", "category", "cluster", "axis"))
     return " ".join(values)
@@ -421,7 +418,7 @@ def phase3_plan(
             {
                 "mechanism_group": "contextual",
                 "priority": "P0",
-                "reason": "高召回工具仍需识别平台、话题、时间与回复链如何改变风险。",
+                "reason": "高召回工具仍需识别标题、话题、时间节点与真实事件背景如何改变风险。",
             },
         ],
         "generation_rule": (

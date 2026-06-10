@@ -1,7 +1,0 @@
-{
-  "input": "data/raw/phase3_second_wave_candidates.jsonl",
-  "total": 185,
-  "flag_counts": {},
-  "important_note": "very_short_review_not_auto_rewrite is a review cue, not an error; short internet memes and coded references may need to stay short.",
-  "flagged": []
-}

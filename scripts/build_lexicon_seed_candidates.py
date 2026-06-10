@@ -116,8 +116,6 @@ def context(topic: str, title: str, parent: str = "", replies: list[str] | None 
     return {
         "title": title,
         "description": "",
-        "parent_comment": parent,
-        "reply_chain": replies or [],
         "time": "",
         "topic": topic,
     }
@@ -245,7 +243,7 @@ def strict_templates(category: str) -> list[dict[str, Any]]:
                 "variant": "strict_sexual_report",
                 "risk": "medium",
                 "text": "主页第一条自己看，问就是普通交友",
-                "context": context(name, "同城生活评论区", "缺少上级评论", ["刚才类似评论被删过"]),
+                "context": context(name, "同城生活评论区", "缺少真实上下文", ["刚才类似评论被删过"]),
                 "note": "文本是审核备注，证据不足以直接判最高风险。",
             },
         ]
