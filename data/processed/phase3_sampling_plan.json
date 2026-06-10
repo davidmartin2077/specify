@@ -201,12 +201,12 @@
       "priority": "P1",
       "current_inferred_samples": 83,
       "current_risk_counts": {
-        "high": 19,
+        "high": 22,
         "low": 15,
         "medium": 29,
-        "none": 20
+        "none": 17
       },
-      "current_hard_negative": 34,
+      "current_hard_negative": 31,
       "reference_target": 160,
       "recommended_phase3_quota": 77,
       "recommended_first_wave_quota": 15,

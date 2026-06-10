@@ -12,10 +12,10 @@
     "train": {
       "count": 621,
       "risk_level": {
-        "high": 116,
+        "high": 121,
         "low": 142,
         "medium": 192,
-        "none": 171
+        "none": 166
       },
       "source": {
         "gemini_expansion": 105,
@@ -27,7 +27,7 @@
         "sensitive_lexicon_seed": 24,
         "user": 7
       },
-      "hard_negative": 279,
+      "hard_negative": 274,
       "context_required": 184,
       "group_count": 223,
       "largest_groups": [

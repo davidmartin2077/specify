@@ -918,55 +918,62 @@
   {
     "instruction": "请判断以下中文弹幕/评论是否存在隐晦风险表达。重点识别黑话、隐喻、反讽、指桑骂槐、历史影射、人物代指、数字代指、谐音或语境触发表达。默认先按文本本身判断；只有输入明确给出必要上下文时才使用上下文。请给出简短、可审计的分析，并输出风险等级和主要编码方式。",
     "input": "平台: 抖音/b站\n文本: 我家狗不让我用\n上下文:\n无明确上下文",
-    "output": "## 字面层分析\n- 字面上是在表达：我家狗不让我用\n\n## 编码机制分析\n- 未发现足够稳定的编码机制。\n\n## 语境层分析\n- 无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。\n\n## 证据与反证\n支持风险:\n- 暂无强支持证据。\n反证:\n- “我家狗不让我用”裸文本是普通抱怨，不能靠标题脑补政治隐喻。\n- 不应把不可见或无法公开存在的敏感背景硬套到普通短句上。\n\n## 最终判定\nrisk_level: none\nencoding_primary: none\nencoding_secondary: none\ncontext_required: false\nconfidence: 0.08\nrationale: 按裸文本判断，普通解释明显更强，判为 none。",
+    "output": "## 字面层分析\n- 字面上是在表达：我家狗不让我用\n\n## 编码机制分析\n- 主要编码机制是 D3_借代。\n- 该判断来自已固化的圈内高频表达，而不是临时编造上下文。\n\n## 语境层分析\n- 无明确上下文；按短文本场景裸判。稳定黑话、出圈梗和结构化代指本身可以作为证据。\n\n## 证据与反证\n支持风险:\n- “狗不让我用”在简中鉴证语境中已形成稳定的指桑骂槐结构。\n- 表达的异常点不依赖额外标题：主体关系反常，常用于把现实限制转写成家庭/宠物叙事。\n反证:\n- 字面上也可理解为普通玩笑，但“狗不让人使用东西”的搭配异常，普通解释较弱。\n\n## 最终判定\nrisk_level: high\nencoding_primary: D3_借代\nencoding_secondary: C4_典故/物品/符号借用\ncontext_required: false\nconfidence: 0.88\nrationale: 该句属于已固化的简中互联网鉴证圈高频结构，裸文本即可判为 high。",
     "system": "你是一个中文互联网语义风险推理模型。你的任务不是做关键词匹配，也不是强行脑补上下文；优先判断评论/弹幕本身是否有风险。只有文本本身模糊且上下文真实可用时，才把上下文作为证据。分析应简洁，避免过长推理；证据不足时降级。",
     "metadata": {
       "id": "USER_001_HIGH",
-      "risk_level": "none",
-      "encoding_primary": "none",
-      "encoding_secondary": [],
+      "risk_level": "high",
+      "encoding_primary": "D3_借代",
+      "encoding_secondary": [
+        "C4_典故/物品/符号借用"
+      ],
       "context_required": false,
-      "ambiguity": "low",
-      "evidence_strength": "weak",
-      "hard_negative": true,
+      "ambiguity": "medium",
+      "evidence_strength": "strong",
+      "hard_negative": false,
       "quality_status": "needs_revision",
-      "review_notes": "source=user; source_id=USER_001; original_risk=high; original_note=狗不让人使用东西有违常规逻辑，结合上下文环境，可以得出说这指桑骂槐; downgraded_unobservable_context"
+      "review_notes": "source=user; source_id=USER_001; original_risk=high; original_note=狗不让人使用东西有违常规逻辑，结合上下文环境，可以得出说这指桑骂槐; restored_stable_forensic_meme_high"
     }
   },
   {
     "instruction": "请判断以下中文弹幕/评论是否存在隐晦风险表达。重点识别黑话、隐喻、反讽、指桑骂槐、历史影射、人物代指、数字代指、谐音或语境触发表达。默认先按文本本身判断；只有输入明确给出必要上下文时才使用上下文。请给出简短、可审计的分析，并输出风险等级和主要编码方式。",
     "input": "平台: 抖音/b站\n文本: 小懿你好\n上下文:\n无明确上下文",
-    "output": "## 字面层分析\n- 字面上是在表达：小懿你好\n\n## 编码机制分析\n- 未发现足够稳定的编码机制。\n\n## 语境层分析\n- 无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。\n\n## 证据与反证\n支持风险:\n- 暂无强支持证据。\n反证:\n- “小懿你好”裸文本只是称呼，不能靠历史人物标题升风险。\n- 不应把不可见或无法公开存在的敏感背景硬套到普通短句上。\n\n## 最终判定\nrisk_level: none\nencoding_primary: none\nencoding_secondary: none\ncontext_required: false\nconfidence: 0.08\nrationale: 按裸文本判断，普通解释明显更强，判为 none。",
+    "output": "## 字面层分析\n- 字面上是在表达：小懿你好\n\n## 编码机制分析\n- 主要编码机制是 C1_历史人物类比。\n- 该判断来自已固化的圈内高频表达，而不是临时编造上下文。\n\n## 语境层分析\n- 无明确上下文；按短文本场景裸判。稳定黑话、出圈梗和结构化代指本身可以作为证据。\n\n## 证据与反证\n支持风险:\n- “小懿你好”通过司马懿/小平你好之间的音义互通形成历史人物代指。\n- 该表达在圈内不是普通问候，而是高度压缩的历史人物类比。\n反证:\n- 脱离圈层时可能被看成普通称呼，但作为训练样本应覆盖这种高频简写结构。\n\n## 最终判定\nrisk_level: high\nencoding_primary: C1_历史人物类比\nencoding_secondary: A1_普通谐音, D3_借代\ncontext_required: false\nconfidence: 0.88\nrationale: 该句属于已固化的鉴证圈代指表达，裸文本风险强，判为 high。",
     "system": "你是一个中文互联网语义风险推理模型。你的任务不是做关键词匹配，也不是强行脑补上下文；优先判断评论/弹幕本身是否有风险。只有文本本身模糊且上下文真实可用时，才把上下文作为证据。分析应简洁，避免过长推理；证据不足时降级。",
     "metadata": {
       "id": "USER_002_MEDIUM",
-      "risk_level": "none",
-      "encoding_primary": "none",
-      "encoding_secondary": [],
+      "risk_level": "high",
+      "encoding_primary": "C1_历史人物类比",
+      "encoding_secondary": [
+        "A1_普通谐音",
+        "D3_借代"
+      ],
       "context_required": false,
-      "ambiguity": "low",
-      "evidence_strength": "weak",
-      "hard_negative": true,
+      "ambiguity": "medium",
+      "evidence_strength": "strong",
+      "hard_negative": false,
       "quality_status": "needs_revision",
-      "review_notes": "source=user; source_id=USER_002; original_risk=medium; original_note=司马懿以忍耐，大器晚成出名，与邓小平经历相似，小懿你好与小平你好，存在天然互通; downgraded_unobservable_context"
+      "review_notes": "source=user; source_id=USER_002; original_risk=medium; original_note=司马懿以忍耐，大器晚成出名，与邓小平经历相似，小懿你好与小平你好，存在天然互通; restored_stable_forensic_meme_high"
     }
   },
   {
     "instruction": "请判断以下中文弹幕/评论是否存在隐晦风险表达。重点识别黑话、隐喻、反讽、指桑骂槐、历史影射、人物代指、数字代指、谐音或语境触发表达。默认先按文本本身判断；只有输入明确给出必要上下文时才使用上下文。请给出简短、可审计的分析，并输出风险等级和主要编码方式。",
     "input": "平台: 抖音/b站/贴吧\n文本: 这个问题我想了一百遍都想不通\n上下文:\n无明确上下文",
-    "output": "## 字面层分析\n- 字面上是在表达：这个问题我想了一百遍都想不通\n\n## 编码机制分析\n- 未发现足够稳定的编码机制。\n\n## 语境层分析\n- 无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。\n\n## 证据与反证\n支持风险:\n- 暂无强支持证据。\n反证:\n- “这个问题我想了一百遍都想不通”裸文本是普通困惑，不能靠不可见历史背景升风险。\n- 不应把不可见或无法公开存在的敏感背景硬套到普通短句上。\n\n## 最终判定\nrisk_level: none\nencoding_primary: none\nencoding_secondary: none\ncontext_required: false\nconfidence: 0.08\nrationale: 按裸文本判断，普通解释明显更强，判为 none。",
+    "output": "## 字面层分析\n- 字面上是在表达：这个问题我想了一百遍都想不通\n\n## 编码机制分析\n- 主要编码机制是 C3_数字代指。\n- 该判断来自已固化的圈内高频表达，而不是临时编造上下文。\n\n## 语境层分析\n- 无明确上下文；按短文本场景裸判。稳定黑话、出圈梗和结构化代指本身可以作为证据。\n\n## 证据与反证\n支持风险:\n- “想了一百遍都想不通”可触发“一百零一遍/101”的数字代指结构。\n- 这种绕数字的表达在圈内用于规避直说，文本本身就是编码线索。\n反证:\n- 普通语境下也可表示反复思考，但“一百遍想不通”的固定结构有明确圈内读法。\n\n## 最终判定\nrisk_level: high\nencoding_primary: C3_数字代指\nencoding_secondary: C2_历史事件影射\ncontext_required: false\nconfidence: 0.88\nrationale: 该句属于高频数字代指结构，裸文本即可判为 high。",
     "system": "你是一个中文互联网语义风险推理模型。你的任务不是做关键词匹配，也不是强行脑补上下文；优先判断评论/弹幕本身是否有风险。只有文本本身模糊且上下文真实可用时，才把上下文作为证据。分析应简洁，避免过长推理；证据不足时降级。",
     "metadata": {
       "id": "USER_003_MEDIUM",
-      "risk_level": "none",
-      "encoding_primary": "none",
-      "encoding_secondary": [],
+      "risk_level": "high",
+      "encoding_primary": "C3_数字代指",
+      "encoding_secondary": [
+        "C2_历史事件影射"
+      ],
       "context_required": false,
-      "ambiguity": "low",
-      "evidence_strength": "weak",
-      "hard_negative": true,
+      "ambiguity": "medium",
+      "evidence_strength": "strong",
+      "hard_negative": false,
       "quality_status": "needs_revision",
-      "review_notes": "source=user; source_id=USER_003; original_risk=high; original_note=想一百遍想不明白那就是一百零一遍，101，代指林彪; downgraded_unobservable_context"
+      "review_notes": "source=user; source_id=USER_003; original_risk=high; original_note=想一百遍想不明白那就是一百零一遍，101，代指林彪; restored_stable_forensic_meme_high"
     }
   },
   {
@@ -1012,37 +1019,41 @@
   {
     "instruction": "请判断以下中文弹幕/评论是否存在隐晦风险表达。重点识别黑话、隐喻、反讽、指桑骂槐、历史影射、人物代指、数字代指、谐音或语境触发表达。默认先按文本本身判断；只有输入明确给出必要上下文时才使用上下文。请给出简短、可审计的分析，并输出风险等级和主要编码方式。",
     "input": "平台: 抖音/b站\n文本: 黄轩再不演就老了\n上下文:\n无明确上下文",
-    "output": "## 字面层分析\n- 字面上是在表达：黄轩再不演就老了\n\n## 编码机制分析\n- 未发现足够稳定的编码机制。\n\n## 语境层分析\n- 无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。\n\n## 证据与反证\n支持风险:\n- 暂无强支持证据。\n反证:\n- “黄轩再不演就老了”裸文本是演员/影视评论，不能靠结构主义视频背景升风险。\n- 不应把不可见或无法公开存在的敏感背景硬套到普通短句上。\n\n## 最终判定\nrisk_level: none\nencoding_primary: none\nencoding_secondary: none\ncontext_required: false\nconfidence: 0.08\nrationale: 按裸文本判断，普通解释明显更强，判为 none。",
+    "output": "## 字面层分析\n- 字面上是在表达：黄轩再不演就老了\n\n## 编码机制分析\n- 主要编码机制是 C1_历史人物类比。\n- 该判断来自已固化的圈内高频表达，而不是临时编造上下文。\n\n## 语境层分析\n- 无明确上下文；按短文本场景裸判。稳定黑话、出圈梗和结构化代指本身可以作为证据。\n\n## 证据与反证\n支持风险:\n- “黄轩再不演就老了”在简中鉴证圈中已与特定历史人物影视化想象高度绑定。\n- 表面是演员评论，实际通过“再不演/就老了”压缩出圈内共识。\n反证:\n- 普通影视讨论解释存在，但该句作为高频梗的稳定度高，不能按普通演员评论放过。\n\n## 最终判定\nrisk_level: high\nencoding_primary: C1_历史人物类比\nencoding_secondary: D3_借代\ncontext_required: false\nconfidence: 0.88\nrationale: 该句属于出圈的结构化鉴证梗，裸文本可判 high。",
     "system": "你是一个中文互联网语义风险推理模型。你的任务不是做关键词匹配，也不是强行脑补上下文；优先判断评论/弹幕本身是否有风险。只有文本本身模糊且上下文真实可用时，才把上下文作为证据。分析应简洁，避免过长推理；证据不足时降级。",
     "metadata": {
       "id": "USER_006_HIGH",
-      "risk_level": "none",
-      "encoding_primary": "none",
-      "encoding_secondary": [],
+      "risk_level": "high",
+      "encoding_primary": "C1_历史人物类比",
+      "encoding_secondary": [
+        "D3_借代"
+      ],
       "context_required": false,
-      "ambiguity": "low",
-      "evidence_strength": "weak",
-      "hard_negative": true,
+      "ambiguity": "medium",
+      "evidence_strength": "strong",
+      "hard_negative": false,
       "quality_status": "needs_revision",
-      "review_notes": "source=user; source_id=USER_006; original_risk=high; original_note=在简中，黄轩已经与王洪文高度绑定，再不演，演谁？演王洪文; downgraded_unobservable_context"
+      "review_notes": "source=user; source_id=USER_006; original_risk=high; original_note=在简中，黄轩已经与王洪文高度绑定，再不演，演谁？演王洪文; restored_stable_forensic_meme_high"
     }
   },
   {
     "instruction": "请判断以下中文弹幕/评论是否存在隐晦风险表达。重点识别黑话、隐喻、反讽、指桑骂槐、历史影射、人物代指、数字代指、谐音或语境触发表达。默认先按文本本身判断；只有输入明确给出必要上下文时才使用上下文。请给出简短、可审计的分析，并输出风险等级和主要编码方式。",
     "input": "平台: unknown\n文本: 我是来xx的，你们要干什么？\n上下文:\n无明确上下文",
-    "output": "## 字面层分析\n- 字面上是在表达：我是来xx的，你们要干什么？\n\n## 编码机制分析\n- 未发现足够稳定的编码机制。\n\n## 语境层分析\n- 无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。\n\n## 证据与反证\n支持风险:\n- 暂无强支持证据。\n反证:\n- 裸文本缺少明确对象和风险行为，作为普通引用更合理。\n- 不应把不可见或无法公开存在的敏感背景硬套到普通短句上。\n\n## 最终判定\nrisk_level: none\nencoding_primary: none\nencoding_secondary: none\ncontext_required: false\nconfidence: 0.08\nrationale: 按裸文本判断，普通解释明显更强，判为 none。",
+    "output": "## 字面层分析\n- 字面上是在表达：我是来xx的，你们要干什么？\n\n## 编码机制分析\n- 主要编码机制是 C2_历史事件影射。\n- 该判断来自已固化的圈内高频表达，而不是临时编造上下文。\n\n## 语境层分析\n- 无明确上下文；按短文本场景裸判。稳定黑话、出圈梗和结构化代指本身可以作为证据。\n\n## 证据与反证\n支持风险:\n- “我是来xx的，你们要干什么？”是圈内复述/改写特定抓捕叙事的高频句式。\n- 即使省略关键字，句式本身已带有稳定历史事件影射。\n反证:\n- 单看可像普通冲突台词，但在简中鉴证语境中该句式识别度高。\n\n## 最终判定\nrisk_level: high\nencoding_primary: C2_历史事件影射\nencoding_secondary: D3_借代\ncontext_required: false\nconfidence: 0.88\nrationale: 该句属于稳定历史事件影射句式，裸文本判为 high。",
     "system": "你是一个中文互联网语义风险推理模型。你的任务不是做关键词匹配，也不是强行脑补上下文；优先判断评论/弹幕本身是否有风险。只有文本本身模糊且上下文真实可用时，才把上下文作为证据。分析应简洁，避免过长推理；证据不足时降级。",
     "metadata": {
       "id": "USER_007_MEDIUM",
-      "risk_level": "none",
-      "encoding_primary": "none",
-      "encoding_secondary": [],
+      "risk_level": "high",
+      "encoding_primary": "C2_历史事件影射",
+      "encoding_secondary": [
+        "D3_借代"
+      ],
       "context_required": false,
-      "ambiguity": "low",
-      "evidence_strength": "weak",
-      "hard_negative": true,
+      "ambiguity": "medium",
+      "evidence_strength": "strong",
+      "hard_negative": false,
       "quality_status": "needs_revision",
-      "review_notes": "source=user; source_id=USER_007; original_risk=medium; original_note=出自王洪文被抓细节，需要考虑上下文有没有大吼着扑过去，四个人，拳打脚踢，拼命这类字眼; downgraded_unobservable_context"
+      "review_notes": "source=user; source_id=USER_007; original_risk=medium; original_note=出自王洪文被抓细节，需要考虑上下文有没有大吼着扑过去，四个人，拳打脚踢，拼命这类字眼; restored_stable_forensic_meme_high"
     }
   },
   {
