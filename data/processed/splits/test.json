@@ -1,743 +1,21 @@
 [
   {
-    "id": "000653",
+    "id": "000683",
     "source_type": "synthetic",
-    "text": "想空闲赚点的来问，流程很简单",
+    "text": "这句他们可能只是指帖子里的几个人",
     "context": {
-      "title": "",
+      "title": "辱骂群体攻击语境边界讨论",
       "description": "",
       "time": "",
-      "topic": "广告诈骗导流"
+      "topic": "辱骂群体攻击"
     },
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
+    "risk_level": "low",
+    "encoding_primary": "D1_反讽",
     "encoding_secondary": [
-      "C4_典故/物品/符号借用"
+      "D3_借代",
+      "E1_平台黑话"
     ],
     "ambiguity": "high",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是发布疑似诈骗招聘：想空闲赚点钱的来问，流程很简单。"
-      ],
-      "encoding_analysis": [
-        "主要按 E1_平台黑话 解构，属于广告诈骗导流语境。",
-        "辅助机制包括：C4_典故/物品/符号借用。",
-        "可疑点来自文本表达本身；证据不足时降级。"
-      ],
-      "context_analysis": [
-        "单看文本已有可疑表达；若普通解释更强则降级。"
-      ],
-      "supporting_evidence": [
-        "文本存在风险信号。",
-        "风险判断主要来自文本本身。"
-      ],
-      "counter_evidence": [
-        "脱离当前语境时可能只是普通表达。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=spam_ads_fraud; contrast_mode=contextual; cluster=spam_ads_fraud_contextual; merged_processed; needs_human_review",
-    "needs_context": true,
-    "split": "test"
-  },
-  {
-    "id": "000654",
-    "source_type": "synthetic",
-    "text": "这个岗位不用经验，先准备一点材料费",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "广告诈骗导流"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [
-      "C4_典故/物品/符号借用"
-    ],
-    "ambiguity": "high",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是发布疑似诈骗招聘：不需要经验但要先准备一点材料费。"
-      ],
-      "encoding_analysis": [
-        "主要按 E1_平台黑话 解构，属于广告诈骗导流语境。",
-        "辅助机制包括：C4_典故/物品/符号借用。",
-        "可疑点来自文本表达本身；证据不足时降级。"
-      ],
-      "context_analysis": [
-        "单看文本已有可疑表达；若普通解释更强则降级。"
-      ],
-      "supporting_evidence": [
-        "文本存在风险信号。",
-        "风险判断主要来自文本本身。"
-      ],
-      "counter_evidence": [
-        "脱离当前语境时可能只是普通表达。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=spam_ads_fraud; contrast_mode=contextual; cluster=spam_ads_fraud_contextual; merged_processed; needs_human_review",
-    "needs_context": true,
-    "split": "test"
-  },
-  {
-    "id": "000655",
-    "source_type": "synthetic",
-    "text": "订单有问题可以走快速补偿通道",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "广告诈骗导流"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [
-      "C4_典故/物品/符号借用"
-    ],
-    "ambiguity": "high",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是声称订单有问题可以走快速补偿通道——疑似引导点击钓鱼链接。"
-      ],
-      "encoding_analysis": [
-        "主要按 E1_平台黑话 解构，属于广告诈骗导流语境。",
-        "辅助机制包括：C4_典故/物品/符号借用。",
-        "可疑点来自文本表达本身；证据不足时降级。"
-      ],
-      "context_analysis": [
-        "单看文本已有可疑表达；若普通解释更强则降级。"
-      ],
-      "supporting_evidence": [
-        "文本存在风险信号。",
-        "风险判断主要来自文本本身。"
-      ],
-      "counter_evidence": [
-        "脱离当前语境时可能只是普通表达。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=spam_ads_fraud; contrast_mode=contextual; cluster=spam_ads_fraud_contextual; merged_processed; needs_human_review",
-    "needs_context": true,
-    "split": "test"
-  },
-  {
-    "id": "000656",
-    "source_type": "synthetic",
-    "text": "进群以后有人带，跟着做就不会错",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "广告诈骗导流"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [
-      "C4_典故/物品/符号借用"
-    ],
-    "ambiguity": "high",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是声称进群后有人带，跟着做就不会出错——疑似传销或诈骗话术。"
-      ],
-      "encoding_analysis": [
-        "主要按 E1_平台黑话 解构，属于广告诈骗导流语境。",
-        "辅助机制包括：C4_典故/物品/符号借用。",
-        "可疑点来自文本表达本身；证据不足时降级。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按文本本身和常见语用判断。"
-      ],
-      "supporting_evidence": [
-        "文本存在风险信号。",
-        "风险判断主要来自文本本身。"
-      ],
-      "counter_evidence": [
-        "脱离当前语境时可能只是普通表达。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=spam_ads_fraud; contrast_mode=contextual; cluster=spam_ads_fraud_contextual; merged_processed; needs_human_review",
-    "needs_context": false,
-    "split": "test"
-  },
-  {
-    "id": "000657",
-    "source_type": "synthetic",
-    "text": "机会不等人，想参加的今晚之前决定",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "广告诈骗导流"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [
-      "C4_典故/物品/符号借用"
-    ],
-    "ambiguity": "high",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是制造紧迫感催促决策：机会不等人，今晚之前决定是否参加。"
-      ],
-      "encoding_analysis": [
-        "主要按 E1_平台黑话 解构，属于广告诈骗导流语境。",
-        "辅助机制包括：C4_典故/物品/符号借用。",
-        "可疑点来自文本表达本身；证据不足时降级。"
-      ],
-      "context_analysis": [
-        "单看文本已有可疑表达；若普通解释更强则降级。"
-      ],
-      "supporting_evidence": [
-        "文本存在风险信号。",
-        "风险判断主要来自文本本身。"
-      ],
-      "counter_evidence": [
-        "脱离当前语境时可能只是普通表达。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=spam_ads_fraud; contrast_mode=contextual; cluster=spam_ads_fraud_contextual; merged_processed; needs_human_review",
-    "needs_context": true,
-    "split": "test"
-  },
-  {
-    "id": "000803",
-    "source_type": "synthetic",
-    "text": "今晚水位挺有意思，老地方碰",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "赌博"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [
-      "C3_数字代指",
-      "C4_典故/物品/符号借用"
-    ],
-    "ambiguity": "high",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是用赌球暗语讨论赔率，约定在私下渠道见面。"
-      ],
-      "encoding_analysis": [
-        "主要按 E1_平台黑话 解构，属于赌博语境。",
-        "辅助机制包括：C3_数字代指、C4_典故/物品/符号借用。",
-        "可疑点来自文本表达本身；证据不足时降级。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按文本本身和常见语用判断。"
-      ],
-      "supporting_evidence": [
-        "文本存在风险信号。",
-        "风险判断主要来自文本本身。"
-      ],
-      "counter_evidence": [
-        "脱离当前语境时可能只是普通表达。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=gambling; contrast_mode=contextual; cluster=gambling_contextual; merged_processed; needs_human_review; voice_fix",
-    "needs_context": false,
-    "split": "test"
-  },
-  {
-    "id": "000804",
-    "source_type": "synthetic",
-    "text": "这桌还缺人，规矩进来再说",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "赌博"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [
-      "C3_数字代指",
-      "C4_典故/物品/符号借用"
-    ],
-    "ambiguity": "high",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是声称牌桌还缺人，规则进来再说——组织赌博。"
-      ],
-      "encoding_analysis": [
-        "主要按 E1_平台黑话 解构，属于赌博语境。",
-        "辅助机制包括：C3_数字代指、C4_典故/物品/符号借用。",
-        "可疑点来自文本表达本身；证据不足时降级。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按文本本身和常见语用判断。"
-      ],
-      "supporting_evidence": [
-        "文本存在风险信号。",
-        "风险判断主要来自文本本身。"
-      ],
-      "counter_evidence": [
-        "脱离当前语境时可能只是普通表达。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=gambling; contrast_mode=contextual; cluster=gambling_contextual; merged_processed; needs_human_review",
-    "needs_context": false,
-    "split": "test"
-  },
-  {
-    "id": "000805",
-    "source_type": "synthetic",
-    "text": "号码看着有戏，想跟的自己判断",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "赌博"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [
-      "C3_数字代指",
-      "C4_典故/物品/符号借用"
-    ],
-    "ambiguity": "high",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是认为号码(博彩)看起来有机会，想跟的人自行判断——引导下注。"
-      ],
-      "encoding_analysis": [
-        "主要按 E1_平台黑话 解构，属于赌博语境。",
-        "辅助机制包括：C3_数字代指、C4_典故/物品/符号借用。",
-        "可疑点来自文本表达本身；证据不足时降级。"
-      ],
-      "context_analysis": [
-        "单看文本已有可疑表达；若普通解释更强则降级。"
-      ],
-      "supporting_evidence": [
-        "文本存在风险信号。",
-        "风险判断主要来自文本本身。"
-      ],
-      "counter_evidence": [
-        "脱离当前语境时可能只是普通表达。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=gambling; contrast_mode=contextual; cluster=gambling_contextual; merged_processed; needs_human_review",
-    "needs_context": true,
-    "split": "test"
-  },
-  {
-    "id": "000806",
-    "source_type": "synthetic",
-    "text": "市场太看好主队了，临场再看看",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "赌博"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [
-      "C3_数字代指",
-      "C4_典故/物品/符号借用"
-    ],
-    "ambiguity": "high",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是分析博彩市场过于看好主队，建议临场再观察——赌博讨论。"
-      ],
-      "encoding_analysis": [
-        "主要按 E1_平台黑话 解构，属于赌博语境。",
-        "辅助机制包括：C3_数字代指、C4_典故/物品/符号借用。",
-        "可疑点来自文本表达本身；证据不足时降级。"
-      ],
-      "context_analysis": [
-        "单看文本已有可疑表达；若普通解释更强则降级。"
-      ],
-      "supporting_evidence": [
-        "文本存在风险信号。",
-        "风险判断主要来自文本本身。"
-      ],
-      "counter_evidence": [
-        "脱离当前语境时可能只是普通表达。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=gambling; contrast_mode=contextual; cluster=gambling_contextual; merged_processed; needs_human_review",
-    "needs_context": true,
-    "split": "test"
-  },
-  {
-    "id": "000807",
-    "source_type": "synthetic",
-    "text": "上次没跟上的，这次别又错过",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "赌博"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [
-      "C3_数字代指",
-      "C4_典故/物品/符号借用"
-    ],
-    "ambiguity": "high",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是制造错失焦虑：上次没跟上的这次别再错过——诱导参与。"
-      ],
-      "encoding_analysis": [
-        "主要按 E1_平台黑话 解构，属于赌博语境。",
-        "辅助机制包括：C3_数字代指、C4_典故/物品/符号借用。",
-        "可疑点来自文本表达本身；证据不足时降级。"
-      ],
-      "context_analysis": [
-        "单看文本已有可疑表达；若普通解释更强则降级。"
-      ],
-      "supporting_evidence": [
-        "文本存在风险信号。",
-        "风险判断主要来自文本本身。"
-      ],
-      "counter_evidence": [
-        "脱离当前语境时可能只是普通表达。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=gambling; contrast_mode=contextual; cluster=gambling_contextual; merged_processed; needs_human_review",
-    "needs_context": true,
-    "split": "test"
-  },
-  {
-    "id": "000623",
-    "source_type": "synthetic",
-    "text": "那个字用茶代替就行，老说法了",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "色情低俗"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [
-      "C4_典故/物品/符号借用"
-    ],
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是教人用'茶'代替某字，称这是老说法——疑似暗语交易。"
-      ],
-      "encoding_analysis": [
-        "主要按 E1_平台黑话 解构，属于色情低俗语境。",
-        "辅助机制包括：C4_典故/物品/符号借用。",
-        "可疑点来自文本表达本身；证据不足时降级。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按文本本身和常见语用判断。"
-      ],
-      "supporting_evidence": [
-        "存在规避直接表达的编码信号。",
-        "上下文出现共同理解或私下沟通暗示。"
-      ],
-      "counter_evidence": [
-        "具体目标或行为仍未完全展开，不宜直接判最高风险。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=sexual_content; contrast_mode=obfuscated; cluster=sexual_content_obfuscated; merged_processed; needs_human_review; voice_fix",
-    "needs_context": false,
-    "split": "test"
-  },
-  {
-    "id": "000624",
-    "source_type": "synthetic",
-    "text": "同城的看门牌号，完整版别在这里问",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "色情低俗"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [
-      "C4_典故/物品/符号借用"
-    ],
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是用暗语引导同城线下交易：看门牌号，完整版不要在公开区域问。"
-      ],
-      "encoding_analysis": [
-        "主要按 E1_平台黑话 解构，属于色情低俗语境。",
-        "辅助机制包括：C4_典故/物品/符号借用。",
-        "可疑点来自文本表达本身；证据不足时降级。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按文本本身和常见语用判断。"
-      ],
-      "supporting_evidence": [
-        "存在规避直接表达的编码信号。",
-        "上下文出现共同理解或私下沟通暗示。"
-      ],
-      "counter_evidence": [
-        "具体目标或行为仍未完全展开，不宜直接判最高风险。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=sexual_content; contrast_mode=obfuscated; cluster=sexual_content_obfuscated; merged_processed; needs_human_review",
-    "needs_context": false,
-    "split": "test"
-  },
-  {
-    "id": "000625",
-    "source_type": "synthetic",
-    "text": "价格不写了，主页第一条",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "色情低俗"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [
-      "C4_典故/物品/符号借用"
-    ],
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是价格不公开写，引导去主页看——疑似规避平台监管的交易。"
-      ],
-      "encoding_analysis": [
-        "主要按 E1_平台黑话 解构，属于色情低俗语境。",
-        "辅助机制包括：C4_典故/物品/符号借用。",
-        "可疑点来自文本表达本身；证据不足时降级。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按文本本身和常见语用判断。"
-      ],
-      "supporting_evidence": [
-        "存在规避直接表达的编码信号。",
-        "上下文出现共同理解或私下沟通暗示。"
-      ],
-      "counter_evidence": [
-        "具体目标或行为仍未完全展开，不宜直接判最高风险。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=sexual_content; contrast_mode=obfuscated; cluster=sexual_content_obfuscated; merged_processed; needs_human_review; voice_fix",
-    "needs_context": false,
-    "split": "test"
-  },
-  {
-    "id": "000626",
-    "source_type": "synthetic",
-    "text": "写直了会没，想懂的按两个表情找",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "色情低俗"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [
-      "C4_典故/物品/符号借用"
-    ],
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是表示写直白了会被删除，想了解的通过两个特定emoji来找。"
-      ],
-      "encoding_analysis": [
-        "主要按 E1_平台黑话 解构，属于色情低俗语境。",
-        "辅助机制包括：C4_典故/物品/符号借用。",
-        "可疑点来自文本表达本身；证据不足时降级。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按文本本身和常见语用判断。"
-      ],
-      "supporting_evidence": [
-        "存在规避直接表达的编码信号。",
-        "上下文出现共同理解或私下沟通暗示。"
-      ],
-      "counter_evidence": [
-        "具体目标或行为仍未完全展开，不宜直接判最高风险。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=sexual_content; contrast_mode=obfuscated; cluster=sexual_content_obfuscated; merged_processed; needs_human_review",
-    "needs_context": false,
-    "split": "test"
-  },
-  {
-    "id": "000627",
-    "source_type": "synthetic",
-    "text": "按以前颜色说，一看就懂",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "色情低俗"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [
-      "C4_典故/物品/符号借用"
-    ],
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "匿名化风险语境",
-    "should_explain_target": false,
-    "freshness": "stable",
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是建议按以前用过的颜色代号来说，对方一看就懂——疑似交易暗语。"
-      ],
-      "encoding_analysis": [
-        "主要按 E1_平台黑话 解构，属于色情低俗语境。",
-        "辅助机制包括：C4_典故/物品/符号借用。",
-        "可疑点来自文本表达本身；证据不足时降级。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按文本本身和常见语用判断。"
-      ],
-      "supporting_evidence": [
-        "存在规避直接表达的编码信号。",
-        "上下文出现共同理解或私下沟通暗示。"
-      ],
-      "counter_evidence": [
-        "具体目标或行为仍未完全展开，不宜直接判最高风险。"
-      ],
-      "final_rationale": "存在值得解构和召回的风险信号，但具体目标或行为链仍不完整，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=sexual_content; contrast_mode=obfuscated; cluster=sexual_content_obfuscated; merged_processed; needs_human_review; voice_fix",
-    "needs_context": false,
-    "split": "test"
-  },
-  {
-    "id": "000883",
-    "source_type": "synthetic",
-    "text": "酒店群里有人提醒别信陌生招揽，直接举报就行",
-    "context": {
-      "title": "色情低俗普通用户转述正常场景",
-      "description": "",
-      "time": "",
-      "topic": "色情低俗"
-    },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "ambiguity": "low",
     "evidence_strength": "weak",
     "hard_negative": true,
     "target_known": false,
@@ -746,40 +24,47 @@
     "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "文本表面是说明酒店群里有人提醒不要相信陌生招揽信息，建议直接举报。"
+        "文本表面是推测'他们'可能仅指帖子中的几个人而非整个群体。"
       ],
       "encoding_analysis": [
-        "上下文明确提供正常用途或反风险目的，未形成稳定风险编码。"
+        "主要按 D1_反讽 解构，属于辱骂群体攻击语境。",
+        "辅助机制包括：D3_借代、E1_平台黑话。",
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
-        "无明确上下文；按文本本身和常见语用判断。"
+        "文本存在弱风险联想，但普通解释仍然更完整。"
       ],
-      "supporting_evidence": [],
+      "supporting_evidence": [
+        "存在存在风险信号的弱信号。"
+      ],
       "counter_evidence": [
-        "文本没有招揽、交易、攻击、规避或现实动员意图。",
-        "普通语境和反证完整。"
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
       ],
-      "final_rationale": "文本提供完整反证，判为 none。"
+      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，判为 low。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=sexual_content; contrast_mode=safe_context; cluster=sexual_content_safe_context_w2; merged_processed; needs_human_review",
-    "needs_context": false,
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=insulting_abuse; contrast_mode=weak_signal; cluster=insulting_abuse_weak_signal; merged_processed; needs_human_review",
+    "needs_context": true,
     "split": "test"
   },
   {
-    "id": "000884",
+    "id": "000684",
     "source_type": "synthetic",
-    "text": "刚陪朋友去性健康门诊，医生讲得挺正规",
+    "text": "吐槽口音不一定是在攻击整个地域",
     "context": {
-      "title": "色情低俗普通用户转述正常场景",
+      "title": "辱骂群体攻击语境边界讨论",
       "description": "",
       "time": "",
-      "topic": "色情低俗"
+      "topic": "辱骂群体攻击"
     },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "ambiguity": "low",
+    "risk_level": "low",
+    "encoding_primary": "D1_反讽",
+    "encoding_secondary": [
+      "D3_借代",
+      "E1_平台黑话"
+    ],
+    "ambiguity": "high",
     "evidence_strength": "weak",
     "hard_negative": true,
     "target_known": false,
@@ -788,40 +73,47 @@
     "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "文本表面是分享陪朋友去性健康门诊的经历，医生讲解很正规。"
+        "文本表面是认为吐槽口音不一定等于攻击整个地域。"
       ],
       "encoding_analysis": [
-        "上下文明确提供正常用途或反风险目的，未形成稳定风险编码。"
+        "主要按 D1_反讽 解构，属于辱骂群体攻击语境。",
+        "辅助机制包括：D3_借代、E1_平台黑话。",
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
-        "无明确上下文；按文本本身和常见语用判断。"
+        "文本存在弱风险联想，但普通解释仍然更完整。"
       ],
-      "supporting_evidence": [],
+      "supporting_evidence": [
+        "存在存在风险信号的弱信号。"
+      ],
       "counter_evidence": [
-        "文本没有招揽、交易、攻击、规避或现实动员意图。",
-        "普通语境和反证完整。"
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
       ],
-      "final_rationale": "文本提供完整反证，判为 none。"
+      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，判为 low。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=sexual_content; contrast_mode=safe_context; cluster=sexual_content_safe_context_w2; merged_processed; needs_human_review",
-    "needs_context": false,
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=insulting_abuse; contrast_mode=weak_signal; cluster=insulting_abuse_weak_signal; merged_processed; needs_human_review",
+    "needs_context": true,
     "split": "test"
   },
   {
-    "id": "000885",
+    "id": "000685",
     "source_type": "synthetic",
-    "text": "这纪录片是在讲治理问题，不是在帮谁打广告",
+    "text": "说没素质有点冲，但目标还不明确",
     "context": {
-      "title": "色情低俗普通用户转述正常场景",
+      "title": "辱骂群体攻击语境边界讨论",
       "description": "",
       "time": "",
-      "topic": "色情低俗"
+      "topic": "辱骂群体攻击"
     },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "ambiguity": "low",
+    "risk_level": "low",
+    "encoding_primary": "D1_反讽",
+    "encoding_secondary": [
+      "D3_借代",
+      "E1_平台黑话"
+    ],
+    "ambiguity": "high",
     "evidence_strength": "weak",
     "hard_negative": true,
     "target_known": false,
@@ -830,40 +122,47 @@
     "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "文本表面是说明这部纪录片是在讨论治理问题，不是在为任何人打广告。"
+        "文本表面是承认说没素质有点冲但目标指向还不明确。"
       ],
       "encoding_analysis": [
-        "上下文明确提供正常用途或反风险目的，未形成稳定风险编码。"
+        "主要按 D1_反讽 解构，属于辱骂群体攻击语境。",
+        "辅助机制包括：D3_借代、E1_平台黑话。",
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
-        "无明确上下文；按文本本身和常见语用判断。"
+        "文本存在弱风险联想，但普通解释仍然更完整。"
       ],
-      "supporting_evidence": [],
+      "supporting_evidence": [
+        "存在存在风险信号的弱信号。"
+      ],
       "counter_evidence": [
-        "文本没有招揽、交易、攻击、规避或现实动员意图。",
-        "普通语境和反证完整。"
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
       ],
-      "final_rationale": "文本提供完整反证，判为 none。"
+      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，判为 low。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=sexual_content; contrast_mode=safe_context; cluster=sexual_content_safe_context_w2; merged_processed; needs_human_review",
-    "needs_context": false,
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=insulting_abuse; contrast_mode=weak_signal; cluster=insulting_abuse_weak_signal; merged_processed; needs_human_review",
+    "needs_context": true,
     "split": "test"
   },
   {
-    "id": "000886",
+    "id": "000686",
     "source_type": "synthetic",
-    "text": "家长群转这个课，是教孩子识别擦边诱导的",
+    "text": "这个外号可能是朋友间玩笑，先别升级",
     "context": {
-      "title": "色情低俗普通用户转述正常场景",
+      "title": "辱骂群体攻击语境边界讨论",
       "description": "",
       "time": "",
-      "topic": "色情低俗"
+      "topic": "辱骂群体攻击"
     },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "ambiguity": "low",
+    "risk_level": "low",
+    "encoding_primary": "D1_反讽",
+    "encoding_secondary": [
+      "D3_借代",
+      "E1_平台黑话"
+    ],
+    "ambiguity": "high",
     "evidence_strength": "weak",
     "hard_negative": true,
     "target_known": false,
@@ -872,40 +171,47 @@
     "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "文本表面是说明家长群转发这门课的目的是教孩子识别擦边诱导内容。"
+        "文本表面是猜测该外号可能是朋友间玩笑，建议不要升级为攻击。"
       ],
       "encoding_analysis": [
-        "上下文明确提供正常用途或反风险目的，未形成稳定风险编码。"
+        "主要按 D1_反讽 解构，属于辱骂群体攻击语境。",
+        "辅助机制包括：D3_借代、E1_平台黑话。",
+        "可疑点来自文本表达本身；证据不足时降级。"
       ],
       "context_analysis": [
-        "无明确上下文；按文本本身和常见语用判断。"
+        "文本存在弱风险联想，但普通解释仍然更完整。"
       ],
-      "supporting_evidence": [],
+      "supporting_evidence": [
+        "存在存在风险信号的弱信号。"
+      ],
       "counter_evidence": [
-        "文本没有招揽、交易、攻击、规避或现实动员意图。",
-        "普通语境和反证完整。"
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
       ],
-      "final_rationale": "文本提供完整反证，判为 none。"
+      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，判为 low。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=sexual_content; contrast_mode=safe_context; cluster=sexual_content_safe_context_w2; merged_processed; needs_human_review",
-    "needs_context": false,
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=insulting_abuse; contrast_mode=weak_signal; cluster=insulting_abuse_weak_signal; merged_processed; needs_human_review",
+    "needs_context": true,
     "split": "test"
   },
   {
-    "id": "000887",
+    "id": "000687",
     "source_type": "synthetic",
-    "text": "平台那条公告是在说处罚规则，不是擦边内容",
+    "text": "反讽味道很重，不过也可能只针对行为",
     "context": {
-      "title": "色情低俗普通用户转述正常场景",
+      "title": "辱骂群体攻击语境边界讨论",
       "description": "",
       "time": "",
-      "topic": "色情低俗"
+      "topic": "辱骂群体攻击"
     },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "ambiguity": "low",
+    "risk_level": "low",
+    "encoding_primary": "D1_反讽",
+    "encoding_secondary": [
+      "D3_借代",
+      "E1_平台黑话"
+    ],
+    "ambiguity": "high",
     "evidence_strength": "weak",
     "hard_negative": true,
     "target_known": false,
@@ -914,23 +220,502 @@
     "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "文本表面是说明平台那条公告是在阐述处罚规则，不是在传播擦边内容。"
+        "文本表面是认为反讽味道重但也可能仅针对具体行为而非群体。"
       ],
       "encoding_analysis": [
-        "上下文明确提供正常用途或反风险目的，未形成稳定风险编码。"
+        "主要按 D1_反讽 解构，属于辱骂群体攻击语境。",
+        "辅助机制包括：D3_借代、E1_平台黑话。",
+        "可疑点来自文本表达本身；证据不足时降级。"
+      ],
+      "context_analysis": [
+        "文本存在弱风险联想，但普通解释仍然更完整。"
+      ],
+      "supporting_evidence": [
+        "存在存在风险信号的弱信号。"
+      ],
+      "counter_evidence": [
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
+      ],
+      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，判为 low。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=insulting_abuse; contrast_mode=weak_signal; cluster=insulting_abuse_weak_signal; merged_processed; needs_human_review",
+    "needs_context": true,
+    "split": "test"
+  },
+  {
+    "id": "000718",
+    "source_type": "synthetic",
+    "text": "这批号库刚拖出来，想要的报量",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "网络黑产安全风险"
+    },
+    "risk_level": "high",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话"
+    ],
+    "ambiguity": "low",
+    "evidence_strength": "strong",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是使用黑客黑话出售泄露数据库：这批号库刚拖出来，想要的报数量。"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于网络黑产安全风险语境。",
+        "辅助机制包括：E1_平台黑话。"
       ],
       "context_analysis": [
         "无明确上下文；按文本本身和常见语用判断。"
       ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "文本没有招揽、交易、攻击、规避或现实动员意图。",
-        "普通语境和反证完整。"
+      "supporting_evidence": [
+        "文本含较明确的风险意图。",
+        "上下文回复进一步强化风险解释。"
       ],
-      "final_rationale": "文本提供完整反证，判为 none。"
+      "counter_evidence": [
+        "未提供完整行为链或具体对象，"
+      ],
+      "final_rationale": "风险意图与语境相互印证，按风险识别目标判为 high。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=sexual_content; contrast_mode=safe_context; cluster=sexual_content_safe_context_w2; merged_processed; needs_human_review",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=direct; cluster=cyber_abuse_direct; merged_processed; needs_human_review",
+    "needs_context": false,
+    "split": "test"
+  },
+  {
+    "id": "000719",
+    "source_type": "synthetic",
+    "text": "能跑的版本还有，原理不聊",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "网络黑产安全风险"
+    },
+    "risk_level": "high",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话"
+    ],
+    "ambiguity": "low",
+    "evidence_strength": "strong",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是提供可直接使用的恶意工具而拒绝讨论原理——黑产服务。"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于网络黑产安全风险语境。",
+        "辅助机制包括：E1_平台黑话。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按文本本身和常见语用判断。"
+      ],
+      "supporting_evidence": [
+        "文本含较明确的风险意图。",
+        "上下文回复进一步强化风险解释。"
+      ],
+      "counter_evidence": [
+        "未提供完整行为链或具体对象，"
+      ],
+      "final_rationale": "风险意图与语境相互印证，按风险识别目标判为 high。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=direct; cluster=cyber_abuse_direct; merged_processed; needs_human_review; voice_fix",
+    "needs_context": false,
+    "split": "test"
+  },
+  {
+    "id": "000720",
+    "source_type": "synthetic",
+    "text": "账号找回团队接单，成功后再算钱",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "网络黑产安全风险"
+    },
+    "risk_level": "high",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话"
+    ],
+    "ambiguity": "low",
+    "evidence_strength": "strong",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是提供账号找回(盗号/申诉)服务，成功后收费——疑似黑产服务。"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于网络黑产安全风险语境。",
+        "辅助机制包括：E1_平台黑话。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按文本本身和常见语用判断。"
+      ],
+      "supporting_evidence": [
+        "文本含较明确的风险意图。",
+        "上下文回复进一步强化风险解释。"
+      ],
+      "counter_evidence": [
+        "未提供完整行为链或具体对象，"
+      ],
+      "final_rationale": "风险意图与语境相互印证，按风险识别目标判为 high。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=direct; cluster=cyber_abuse_direct; merged_processed; needs_human_review",
+    "needs_context": false,
+    "split": "test"
+  },
+  {
+    "id": "000721",
+    "source_type": "synthetic",
+    "text": "后台权限已经拿到，谁要数据自己说",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "网络黑产安全风险"
+    },
+    "risk_level": "high",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话"
+    ],
+    "ambiguity": "low",
+    "evidence_strength": "strong",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是声称已获取后台管理权限，询问谁需要数据——数据黑产交易。"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于网络黑产安全风险语境。",
+        "辅助机制包括：E1_平台黑话。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按文本本身和常见语用判断。"
+      ],
+      "supporting_evidence": [
+        "文本含较明确的风险意图。",
+        "上下文回复进一步强化风险解释。"
+      ],
+      "counter_evidence": [
+        "未提供完整行为链或具体对象，"
+      ],
+      "final_rationale": "风险意图与语境相互印证，按风险识别目标判为 high。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=direct; cluster=cyber_abuse_direct; merged_processed; needs_human_review",
+    "needs_context": false,
+    "split": "test"
+  },
+  {
+    "id": "000722",
+    "source_type": "synthetic",
+    "text": "这套工具专门绕验证，想试的来",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "网络黑产安全风险"
+    },
+    "risk_level": "high",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话"
+    ],
+    "ambiguity": "low",
+    "evidence_strength": "strong",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是提供专门绕过验证的工具，邀请想要的人来试用。"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于网络黑产安全风险语境。",
+        "辅助机制包括：E1_平台黑话。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按文本本身和常见语用判断。"
+      ],
+      "supporting_evidence": [
+        "文本含较明确的风险意图。",
+        "上下文回复进一步强化风险解释。"
+      ],
+      "counter_evidence": [
+        "未提供完整行为链或具体对象，"
+      ],
+      "final_rationale": "风险意图与语境相互印证，按风险识别目标判为 high。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=direct; cluster=cyber_abuse_direct; merged_processed; needs_human_review",
+    "needs_context": false,
+    "split": "test"
+  },
+  {
+    "id": "000733",
+    "source_type": "synthetic",
+    "text": "问复现可能是安全研究，也可能越界",
+    "context": {
+      "title": "网络黑产安全风险语境边界讨论",
+      "description": "",
+      "time": "",
+      "topic": "网络黑产安全风险"
+    },
+    "risk_level": "low",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话"
+    ],
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是认为询问复现可能是安全研究行为但也可能越界为攻击行为。"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于网络黑产安全风险语境。",
+        "辅助机制包括：E1_平台黑话。",
+        "可疑点来自文本表达本身；证据不足时降级。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按文本本身和常见语用判断。"
+      ],
+      "supporting_evidence": [
+        "存在存在风险信号的弱信号。"
+      ],
+      "counter_evidence": [
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
+      ],
+      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，判为 low。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=weak_signal; cluster=cyber_abuse_weak_signal; merged_processed; needs_human_review",
+    "needs_context": false,
+    "split": "test"
+  },
+  {
+    "id": "000734",
+    "source_type": "synthetic",
+    "text": "说捞账号不一定是黑产，可能只是官方申诉",
+    "context": {
+      "title": "网络黑产安全风险语境边界讨论",
+      "description": "",
+      "time": "",
+      "topic": "网络黑产安全风险"
+    },
+    "risk_level": "low",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话"
+    ],
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是认为说捞账号不一定是黑产行为，可能只是正常的官方申诉。"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于网络黑产安全风险语境。",
+        "辅助机制包括：E1_平台黑话。",
+        "可疑点来自文本表达本身；证据不足时降级。"
+      ],
+      "context_analysis": [
+        "文本存在弱风险联想，但普通解释仍然更完整。"
+      ],
+      "supporting_evidence": [
+        "存在存在风险信号的弱信号。"
+      ],
+      "counter_evidence": [
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
+      ],
+      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，判为 low。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=weak_signal; cluster=cyber_abuse_weak_signal; merged_processed; needs_human_review",
+    "needs_context": true,
+    "split": "test"
+  },
+  {
+    "id": "000735",
+    "source_type": "synthetic",
+    "text": "后台截图可疑，但还不能确认是真实数据",
+    "context": {
+      "title": "网络黑产安全风险语境边界讨论",
+      "description": "",
+      "time": "",
+      "topic": "网络黑产安全风险"
+    },
+    "risk_level": "low",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话"
+    ],
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是认为后台截图虽然可疑但不能确认是否为真实泄露数据。"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于网络黑产安全风险语境。",
+        "辅助机制包括：E1_平台黑话。",
+        "可疑点来自文本表达本身；证据不足时降级。"
+      ],
+      "context_analysis": [
+        "文本存在弱风险联想，但普通解释仍然更完整。"
+      ],
+      "supporting_evidence": [
+        "存在存在风险信号的弱信号。"
+      ],
+      "counter_evidence": [
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
+      ],
+      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，判为 low。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=weak_signal; cluster=cyber_abuse_weak_signal; merged_processed; needs_human_review",
+    "needs_context": true,
+    "split": "test"
+  },
+  {
+    "id": "000736",
+    "source_type": "synthetic",
+    "text": "工具绕验证听着危险，具体用途未知",
+    "context": {
+      "title": "网络黑产安全风险语境边界讨论",
+      "description": "",
+      "time": "",
+      "topic": "网络黑产安全风险"
+    },
+    "risk_level": "low",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话"
+    ],
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是认为工具绕验证听起来危险但具体用途未知，不宜直接定论。"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于网络黑产安全风险语境。",
+        "辅助机制包括：E1_平台黑话。",
+        "可疑点来自文本表达本身；证据不足时降级。"
+      ],
+      "context_analysis": [
+        "文本存在弱风险联想，但普通解释仍然更完整。"
+      ],
+      "supporting_evidence": [
+        "存在存在风险信号的弱信号。"
+      ],
+      "counter_evidence": [
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
+      ],
+      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，判为 low。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=weak_signal; cluster=cyber_abuse_weak_signal; merged_processed; needs_human_review",
+    "needs_context": true,
+    "split": "test"
+  },
+  {
+    "id": "000737",
+    "source_type": "synthetic",
+    "text": "讨论号库可能是在举报泄露事件",
+    "context": {
+      "title": "网络黑产安全风险语境边界讨论",
+      "description": "",
+      "time": "",
+      "topic": "网络黑产安全风险"
+    },
+    "risk_level": "low",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话"
+    ],
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "匿名化风险语境",
+    "should_explain_target": false,
+    "freshness": "stable",
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是认为讨论号库可能是在举报数据泄露事件而非进行交易。"
+      ],
+      "encoding_analysis": [
+        "主要按 C4_典故/物品/符号借用 解构，属于网络黑产安全风险语境。",
+        "辅助机制包括：E1_平台黑话。",
+        "可疑点来自文本表达本身；证据不足时降级。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按文本本身和常见语用判断。"
+      ],
+      "supporting_evidence": [
+        "存在存在风险信号的弱信号。"
+      ],
+      "counter_evidence": [
+        "缺少明确目标、规避意图或行为链。",
+        "普通解释目前更强。"
+      ],
+      "final_rationale": "存在弱风险联想，保留召回价值；普通解释目前更强，判为 low。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=phase3_first_wave; batch=phase3_v1_coverage_gaps; category=cyber_abuse; contrast_mode=weak_signal; cluster=cyber_abuse_weak_signal; merged_processed; needs_human_review",
     "needs_context": false,
     "split": "test"
   },
@@ -1145,20 +930,20 @@
     "split": "test"
   },
   {
-    "id": "000979",
+    "id": "000919",
     "source_type": "synthetic",
-    "text": "文字版一直发不出，换张截图应该就行",
+    "text": "果然又是那个地方的，难怪会这样",
     "context": {
       "title": "",
       "description": "",
       "time": "",
-      "topic": "平台规避审查黑话"
+      "topic": "辱骂群体攻击"
     },
     "risk_level": "medium",
-    "encoding_primary": "B4_符号/空格/Unicode 干扰",
+    "encoding_primary": "D3_借代",
     "encoding_secondary": [
-      "A2_拼音/首字母缩写",
-      "E1_平台黑话"
+      "D1_反讽",
+      "A2_拼音/首字母缩写"
     ],
     "ambiguity": "high",
     "evidence_strength": "moderate",
@@ -1169,11 +954,11 @@
     "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "文本表面是表示纯文字版本一直发送失败，改用截图发送应该可以通过审核。"
+        "文本表面是以地域标签对某事件进行归因：果然又是那个地方来的所以会这样。"
       ],
       "encoding_analysis": [
-        "主要按 B4_符号/空格/Unicode 干扰 解构，属于平台规避审查黑话的长尾语境。",
-        "辅助机制包括：A2_拼音/首字母缩写、E1_平台黑话。",
+        "主要按 D3_借代 解构，属于辱骂群体攻击的长尾语境。",
+        "辅助机制包括：D1_反讽、A2_拼音/首字母缩写。",
         "文本有普通解释，需要结合互动链和行为意图判断。"
       ],
       "context_analysis": [
@@ -1189,25 +974,25 @@
       "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=platform_censorship_evasion; contrast_mode=contextual; cluster=platform_censorship_evasion_contextual_w2; merged_processed; needs_human_review",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=insulting_abuse; contrast_mode=contextual; cluster=insulting_abuse_contextual_w2; merged_processed; needs_human_review",
     "needs_context": true,
     "split": "test"
   },
   {
-    "id": "000980",
+    "id": "000920",
     "source_type": "synthetic",
-    "text": "名字别完整出现，评论区最近盯得很紧",
+    "text": "一听他说做什么工作的，我就知道评论没法看",
     "context": {
       "title": "",
       "description": "",
       "time": "",
-      "topic": "平台规避审查黑话"
+      "topic": "辱骂群体攻击"
     },
     "risk_level": "medium",
-    "encoding_primary": "B4_符号/空格/Unicode 干扰",
+    "encoding_primary": "D3_借代",
     "encoding_secondary": [
-      "A2_拼音/首字母缩写",
-      "E1_平台黑话"
+      "D1_反讽",
+      "A2_拼音/首字母缩写"
     ],
     "ambiguity": "high",
     "evidence_strength": "moderate",
@@ -1218,11 +1003,11 @@
     "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "文本表面是提醒不要完整出现某名字，称评论区最近审查非常严格。"
+        "文本表面是声称一听到对方做什么工作就知道评论区会是什么样——职业歧视。"
       ],
       "encoding_analysis": [
-        "主要按 B4_符号/空格/Unicode 干扰 解构，属于平台规避审查黑话的长尾语境。",
-        "辅助机制包括：A2_拼音/首字母缩写、E1_平台黑话。",
+        "主要按 D3_借代 解构，属于辱骂群体攻击的长尾语境。",
+        "辅助机制包括：D1_反讽、A2_拼音/首字母缩写。",
         "文本有普通解释，需要结合互动链和行为意图判断。"
       ],
       "context_analysis": [
@@ -1238,25 +1023,25 @@
       "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=platform_censorship_evasion; contrast_mode=contextual; cluster=platform_censorship_evasion_contextual_w2; merged_processed; needs_human_review",
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=insulting_abuse; contrast_mode=contextual; cluster=insulting_abuse_contextual_w2; merged_processed; needs_human_review",
     "needs_context": true,
     "split": "test"
   },
   {
-    "id": "000981",
+    "id": "000921",
     "source_type": "synthetic",
-    "text": "按旧暗号回复，公开解释容易被处理",
+    "text": "这种头像每次出现都带来一样的问题",
     "context": {
       "title": "",
       "description": "",
       "time": "",
-      "topic": "平台规避审查黑话"
+      "topic": "辱骂群体攻击"
     },
     "risk_level": "medium",
-    "encoding_primary": "B4_符号/空格/Unicode 干扰",
+    "encoding_primary": "D3_借代",
     "encoding_secondary": [
-      "A2_拼音/首字母缩写",
-      "E1_平台黑话"
+      "D1_反讽",
+      "A2_拼音/首字母缩写"
     ],
     "ambiguity": "high",
     "evidence_strength": "moderate",
@@ -1267,15 +1052,15 @@
     "freshness": "stable",
     "reasoning": {
       "literal_analysis": [
-        "文本表面是要求按旧暗号回复，称公开解释容易被处理——有组织规避行为。"
+        "文本表面是声称某种头像特征每次出现都带来同样的问题——以貌取人的群体偏见。"
       ],
       "encoding_analysis": [
-        "主要按 B4_符号/空格/Unicode 干扰 解构，属于平台规避审查黑话的长尾语境。",
-        "辅助机制包括：A2_拼音/首字母缩写、E1_平台黑话。",
+        "主要按 D3_借代 解构，属于辱骂群体攻击的长尾语境。",
+        "辅助机制包括：D1_反讽、A2_拼音/首字母缩写。",
         "文本有普通解释，需要结合互动链和行为意图判断。"
       ],
       "context_analysis": [
-        "无明确上下文；按文本本身和常见语用判断。"
+        "单看文本已有可疑表达；若普通解释更强则降级。"
       ],
       "supporting_evidence": [
         "文本存在风险信号。",
@@ -1287,8 +1072,8 @@
       "final_rationale": "存在需要召回的编码或行为信号，但具体链路仍不完整，判为 medium。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=platform_censorship_evasion; contrast_mode=contextual; cluster=platform_censorship_evasion_contextual_w2; merged_processed; needs_human_review",
-    "needs_context": false,
+    "review_notes": "source=phase3_second_wave; batch=phase3_v2_long_tail_boundaries; category=insulting_abuse; contrast_mode=contextual; cluster=insulting_abuse_contextual_w2; merged_processed; needs_human_review",
+    "needs_context": true,
     "split": "test"
   },
   {
@@ -2000,15 +1785,105 @@
     "split": "test"
   },
   {
-    "id": "000354",
+    "id": "000094",
     "split": "test",
     "source_type": "real",
-    "text": "看看你这个脏话连篇的傻瓜，竟然还想在政治上出头",
+    "text": "以前的男人是运转的燃料御敌的雄狮，可现在的男人也变得有品位会打扮懂得享受生活了，会给自己的生命体征求尊严权益了，这才是最可怕的",
     "context": {
       "title": "",
       "description": "",
       "time": "",
-      "topic": "脏话侮辱"
+      "topic": "gender"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "D3_借代",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "freshness": "stable",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是对比传统男性形象(燃料/雄狮)与现代男性形象(有品位、争取尊严权益)，认为后者更'可怕'。"
+      ],
+      "encoding_analysis": [
+        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [
+        "ToxiCN 标注为 toxic；topic=gender。",
+        "文本呈现群体攻击、侮辱或偏见表达。"
+      ],
+      "counter_evidence": [
+        "需避免只因群体词出现就误判；本条风险来自完整表达。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=toxicn; external_real_fusion; topic=gender"
+  },
+  {
+    "text": "最近这批新来的，都不太爱唱那个歌了",
+    "risk_level": "medium",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "D3_借代"
+    ],
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "split": "test",
+    "source_type": "synthetic",
+    "needs_context": false,
+    "hard_negative": false,
+    "freshness": "stable",
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "id": "batch2_natural_0026",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": ""
+    },
+    "reasoning": {
+      "literal_analysis": [
+        "观察新人不太愿意唱某首歌。"
+      ],
+      "encoding_analysis": [
+        "C4/D3：'那个歌'=某种仪式性/政治性表达，'不爱唱了'=政治态度变化。"
+      ],
+      "context_analysis": [
+        "'那个歌'的模糊化处理暗示了其敏感性质。"
+      ],
+      "supporting_evidence": [
+        "模糊化'那个歌'暗示其不便指名。",
+        "'不爱唱了'暗示态度转变。"
+      ],
+      "counter_evidence": [
+        "可能是学校/公司年会中的表演歌曲。"
+      ],
+      "final_rationale": "有C4可能但具体指涉不明，判medium。"
+    },
+    "quality_status": "approved",
+    "review_notes": "source=batch2_natural; replaces old synthetic"
+  },
+  {
+    "id": "000205",
+    "split": "test",
+    "source_type": "real",
+    "text": "很不中听，但这种事从来是没办法拿到台面上来说的。一旦拿到台面上来那就是惊天地泣鬼神的革命运动了。所以当黑人，女人，工人站起来的时候上面的人就说，我们谈判吧，黑命贵一点，女人包治百病，工人给假期，于是就忽悠过去了，都忘了自己当初想要站起来是怎么回事了。",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "race"
     },
     "risk_level": "medium",
     "encoding_primary": "literal_keyword",
@@ -2023,7 +1898,7 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是用脏话攻击对方，称其为想在政治上出头的傻瓜。"
+        "文本表面是讨论弱势群体(黑人/女性/工人)的权利争取往往通过台面下的革命运动才能获得谈判机会和让步。"
       ],
       "encoding_analysis": [
         "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
@@ -2032,30 +1907,30 @@
         "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
       ],
       "supporting_evidence": [
-        "ChineseSafe 标注为违规；subject=脏话侮辱。",
-        "文本来自真实安全评测分布，语气比合成模板更接近实际输入。"
+        "COLD 标注为 offensive；topic=race。",
+        "文本呈现真实评论里的攻击、贬损或刻板印象。"
       ],
       "counter_evidence": [
-        "该文本整体风险信号足够明确。"
+        "仍需区分引用、反驳和真实攻击；本条按原始标签与文本整体判断。"
       ],
       "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=chinesesafe; external_real_fusion; topic=脏话侮辱"
+    "review_notes": "source=cold; external_real_fusion; topic=race"
   },
   {
-    "id": "000184",
+    "id": "000014",
     "split": "test",
     "source_type": "real",
-    "text": "亲身经历 2014年，冬天，杭州垃圾街租房子，有俩个河南人来了，问房东房价，房东问，哪里人，河南。房东说，要800。 就是后来我住的那间，550 我是福建泉州人。",
+    "text": "4，能担起家庭责任，但长期分居，有同姓好友，有大男子主义和暴力倾向；",
     "context": {
       "title": "",
       "description": "",
       "time": "",
-      "topic": "region"
+      "topic": "lgbt"
     },
     "risk_level": "high",
-    "encoding_primary": "literal_keyword",
+    "encoding_primary": "D3_借代",
     "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "low",
@@ -2067,7 +1942,7 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是分享亲身经历：在杭州租房时房东对河南籍租客加价，自己作为福建人被收了更低的租金。"
+        "文本表面是列举某人的特征：能承担家庭责任但长期分居，有同性好友，有大男子主义和暴力倾向。"
       ],
       "encoding_analysis": [
         "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
@@ -2076,22 +1951,315 @@
         "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
       ],
       "supporting_evidence": [
-        "COLD 标注为 offensive；topic=region。",
-        "文本呈现真实评论里的攻击、贬损或刻板印象。"
+        "ToxiCN 标注为 toxic；topic=lgbt。",
+        "文本呈现群体攻击、侮辱或偏见表达。"
       ],
       "counter_evidence": [
-        "仍需区分引用、反驳和真实攻击；本条按原始标签与文本整体判断。"
+        "需避免只因群体词出现就误判；本条风险来自完整表达。"
       ],
       "final_rationale": "综合文本信号和反证，判为 high。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=cold; external_real_fusion; topic=region"
+    "review_notes": "source=toxicn; external_real_fusion; topic=lgbt"
   },
   {
-    "id": "000450",
+    "id": "000273",
     "split": "test",
     "source_type": "real",
-    "text": "花呗退回成功，但还款金额还是没变是怎么回事",
+    "text": "。。。我就是因为lex有侮辱女性的话取关的他他啥时候成了为女性发声了。。。。。。[捂脸][好奇]这啥情况",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "gender"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "freshness": "stable",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是解释自己因某up主侮辱女性而取关，困惑其何时成了女权代言人。"
+      ],
+      "encoding_analysis": [
+        "未发现稳定风险编码；按短文本本身判断为普通表达。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "COLD 标注为 non-offensive；topic=gender。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 none。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=cold; external_real_fusion; topic=gender"
+  },
+  {
+    "text": "朋友从国外带了本书回来，说国内买不到",
+    "risk_level": "medium",
+    "encoding_primary": "E1_平台黑话",
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "split": "test",
+    "source_type": "synthetic",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "hard_negative": false,
+    "freshness": "stable",
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "id": "batch4_natural_0046",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": ""
+    },
+    "reasoning": {
+      "literal_analysis": [
+        "描述朋友从国外带书。"
+      ],
+      "encoding_analysis": [
+        "E1：'国内买不到'暗示书曾被审查/禁止。"
+      ],
+      "context_analysis": [
+        "日常分享。"
+      ],
+      "supporting_evidence": [
+        "'国内买不到'暗示书的敏感性质。"
+      ],
+      "counter_evidence": [
+        "很多外文书国内没有版权/没有翻译版。",
+        "不一定是禁书。"
+      ],
+      "final_rationale": "有E1信号但不排除版权原因，判medium。"
+    },
+    "quality_status": "approved",
+    "review_notes": "source=batch4_natural; replaces old synthetic"
+  },
+  {
+    "id": "000298",
+    "split": "test",
+    "source_type": "real",
+    "text": "我大概从两点开始看这个问题，目前来看大部分回答和多数细节都是支持男孩子的，希望他早日解决这件事情考个好成绩吧。外校吃瓜群众悄悄为甜心赞一个。",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "gender"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "freshness": "stable",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是围观网友支持某男生解决事件考出好成绩，赞许其善良。"
+      ],
+      "encoding_analysis": [
+        "未发现稳定风险编码；按短文本本身判断为普通表达。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "COLD 标注为 non-offensive；topic=gender。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 none。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=cold; external_real_fusion; topic=gender"
+  },
+  {
+    "id": "B6_0059",
+    "split": "test",
+    "source_type": "synthetic",
+    "text": "大阅兵的装备方队看着真提气",
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "hard_negative": true,
+    "ambiguity": "medium",
+    "evidence_strength": "strong",
+    "reasoning": {
+      "literal_analysis": [
+        "文本字面意思：表达观看阅兵式装备方队的振奋感受。"
+      ],
+      "encoding_analysis": [
+        "这是正常的阅兵式讨论。阅兵式是国家公开发布的重大活动，讨论其内容和感受是正当的爱国表达。没有任何敏感军事信息泄露。"
+      ],
+      "context_analysis": [
+        "正常的公共活动讨论场景。"
+      ],
+      "supporting_evidence": [
+        "讨论公开发布的阅兵式活动内容，属于正常的公共话题讨论。"
+      ],
+      "counter_evidence": [
+        "无风险信号。"
+      ],
+      "final_rationale": "正常公共话题讨论，判为 none。"
+    },
+    "context": {},
+    "quality_status": "reviewed",
+    "review_notes": "source=batch6_gap_fill;"
+  },
+  {
+    "id": "000036",
+    "split": "test",
+    "source_type": "real",
+    "text": "是的，反感和歧视不一样，我反感毁容的人，看着特别恶心，但是我不歧视毁容的人，我觉得他们和正常人都是平等的人",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "lgbt"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "literal_keyword",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "freshness": "stable",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是区分'反感'和'歧视'两个概念，以毁容者为例说明可以不悦目但仍平等对待。"
+      ],
+      "encoding_analysis": [
+        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [
+        "ToxiCN 标注为 toxic；topic=lgbt。",
+        "文本呈现群体攻击、侮辱或偏见表达。"
+      ],
+      "counter_evidence": [
+        "需避免只因群体词出现就误判；本条风险来自完整表达。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=toxicn; external_real_fusion; topic=lgbt"
+  },
+  {
+    "text": "最近'法治建设'的讨论特别多，但大家关心的不是什么法条",
+    "risk_level": "medium",
+    "encoding_primary": "C5_概念替换",
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "split": "test",
+    "source_type": "synthetic",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "hard_negative": false,
+    "freshness": "stable",
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "id": "batch3_natural_0042",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "社会讨论"
+    },
+    "reasoning": {
+      "literal_analysis": [
+        "评论法治讨论增多的现象。"
+      ],
+      "encoding_analysis": [
+        "C5概念替换：用'法治建设'这个安全概念包装敏感的实质讨论。",
+        "'不是法条'暗示讨论焦点是政治而非法律。"
+      ],
+      "context_analysis": [
+        "公共讨论语境。"
+      ],
+      "supporting_evidence": [
+        "'不是法条'暴露了讨论的政治属性。",
+        "概念包装模式明确。"
+      ],
+      "counter_evidence": [
+        "也可以是真正的法律界内行讨论。"
+      ],
+      "final_rationale": "有C5概念替换痕迹但方向不完全确定，判medium。"
+    },
+    "quality_status": "approved",
+    "review_notes": "source=batch3_natural; replaces old synthetic"
+  },
+  {
+    "id": "000386",
+    "split": "test",
+    "source_type": "real",
+    "text": "老年人也可以拥有积极的生活态度",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "偏见歧视"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "literal_keyword",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "freshness": "stable",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是正面的生活态度表达：老年人也可以拥有积极的生活态度。"
+      ],
+      "encoding_analysis": [
+        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [
+        "ChineseSafe 标注为违规；subject=偏见歧视。",
+        "文本来自真实安全评测分布，语气比合成模板更接近实际输入。"
+      ],
+      "counter_evidence": [
+        "该文本整体风险信号足够明确。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=chinesesafe; external_real_fusion; topic=偏见歧视"
+  },
+  {
+    "id": "000424",
+    "split": "test",
+    "source_type": "real",
+    "text": "蚂蚁花呗分期还款有利息吗",
     "context": {
       "title": "",
       "description": "",
@@ -2111,7 +2279,7 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是用户反馈花呗退款成功但还款金额未变的问题。"
+        "文本表面是询问蚂蚁花呗分期还款是否有利息。"
       ],
       "encoding_analysis": [
         "未发现稳定风险编码；按短文本本身判断为普通表达。"
@@ -2129,10 +2297,356 @@
     "review_notes": "source=chinesesafe; external_real_fusion; topic=不违规"
   },
   {
-    "id": "000136",
+    "text": "熊猫是国宝，但你不能因为它可爱就忘了它会咬人",
+    "risk_level": "high",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "D2_隐喻"
+    ],
+    "ambiguity": "low",
+    "evidence_strength": "strong",
+    "split": "test",
+    "source_type": "synthetic",
+    "needs_context": false,
+    "hard_negative": false,
+    "freshness": "stable",
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "id": "batch2_natural_0005",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": ""
+    },
+    "reasoning": {
+      "literal_analysis": [
+        "讨论熊猫可爱但有攻击性。"
+      ],
+      "encoding_analysis": [
+        "C4+D2：熊猫=国家/体制的符号化隐喻。",
+        "'可爱但不能忘了它会咬人'=不能因为表面温和就忽视其强制力。"
+      ],
+      "context_analysis": [
+        "熊猫作为国家符号的隐喻在简中互联网已有固化理解。"
+      ],
+      "supporting_evidence": [
+        "熊猫在互联网政治讽刺中长期作为'国宝/国家'的符号代表。",
+        "会咬人的警告暗示了对权力的警惕。"
+      ],
+      "counter_evidence": [
+        "可以是纯粹动物科普/讨论。",
+        "但句子结构（'不能因为它可爱就忘了'→它会咬人）明显在说人和权力，不是动物。"
+      ],
+      "final_rationale": "熊猫+咬人组合在当代互联网政治隐喻中方向明确，普通动物科普解释权重低，判high。"
+    },
+    "quality_status": "approved",
+    "review_notes": "source=batch2_natural; replaces old synthetic"
+  },
+  {
+    "id": "000307",
     "split": "test",
     "source_type": "real",
-    "text": "图四右边头像非本人",
+    "text": "苹果中国制造，美的亡我中华之心不死，用我们的人赚我们的钱，小米印度制造赚印度的钱，买办企业，讨好印度人，一看就老双标了",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "race"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "freshness": "stable",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是用反讽对比苹果(中国制造)和小米(印度制造)，调侃'美帝亡我之心不死'的双标指控。"
+      ],
+      "encoding_analysis": [
+        "未发现稳定风险编码；按短文本本身判断为普通表达。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "COLD 标注为 non-offensive；topic=race。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 none。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=cold; external_real_fusion; topic=race"
+  },
+  {
+    "text": "这位同志的觉悟很高嘛",
+    "risk_level": "medium",
+    "encoding_primary": "D1_反讽",
+    "encoding_secondary": [
+      "D3_借代"
+    ],
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "split": "test",
+    "source_type": "synthetic",
+    "needs_context": false,
+    "hard_negative": false,
+    "freshness": "stable",
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "id": "001247",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": ""
+    },
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是用老式革命话语夸奖某人的觉悟。"
+      ],
+      "encoding_analysis": [
+        "D1反讽+D3：'同志'+'觉悟高'是老式政治话语，用于日常调侃构成反讽。",
+        "用官方话语格式进行日常表达本身就是一种消解。"
+      ],
+      "context_analysis": [
+        "在当代互联网中'同志觉悟高'几乎总是反讽使用。"
+      ],
+      "supporting_evidence": [
+        "老式政治话语的日常反讽化使用。"
+      ],
+      "counter_evidence": [
+        "老年人/军迷可能真心使用。"
+      ],
+      "final_rationale": "官方话语的反讽化使用，判medium。"
+    },
+    "quality_status": "approved",
+    "review_notes": "source=abstract_batch; abstract/structural encoding sample"
+  },
+  {
+    "id": "000214",
+    "split": "test",
+    "source_type": "real",
+    "text": "是这样强奸罪要求暴力的手段行为女奸男在学术上不用强奸而是以求奸一次不是没有道理的",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "gender"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "literal_keyword",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "freshness": "stable",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是讨论强奸罪的法律定义，从学术角度说明女性对男性的强迫性行为被分类为'求奸'而非强奸有其道理。"
+      ],
+      "encoding_analysis": [
+        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [
+        "COLD 标注为 offensive；topic=gender。",
+        "文本呈现真实评论里的攻击、贬损或刻板印象。"
+      ],
+      "counter_evidence": [
+        "仍需区分引用、反驳和真实攻击；本条按原始标签与文本整体判断。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=cold; external_real_fusion; topic=gender"
+  },
+  {
+    "id": "000282",
+    "split": "test",
+    "source_type": "real",
+    "text": "同行还有男孩子啊，大家就是因为饭量大才聚到一起吃自助的",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "gender"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "freshness": "stable",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是解释一群朋友因饭量大才聚在一起吃自助餐。"
+      ],
+      "encoding_analysis": [
+        "未发现稳定风险编码；按短文本本身判断为普通表达。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "COLD 标注为 non-offensive；topic=gender。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 none。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=cold; external_real_fusion; topic=gender"
+  },
+  {
+    "id": "000314",
+    "split": "test",
+    "source_type": "real",
+    "text": "身边一些广东人也是如此唱两首粤语歌觉得你发音不标准就嘲讽你你把普通话先练练吧你",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "region"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "freshness": "stable",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是吐槽身边一些广东人嘲讽别人粤语发音不准，却自己不练好普通话。"
+      ],
+      "encoding_analysis": [
+        "未发现稳定风险编码；按短文本本身判断为普通表达。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "COLD 标注为 non-offensive；topic=region。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 none。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=cold; external_real_fusion; topic=region"
+  },
+  {
+    "id": "000116",
+    "split": "test",
+    "source_type": "real",
+    "text": "黑人是一个很多的集合，黑人中聪明的智商绝对不差，智商黑人政府社会现在普遍落后，造成的差距。不觉得金发碧眼就比黑人智商高，这有点绝对论。我们小区的是混血，南美混血，长得不一样会被排挤，与金发碧眼关联没多大。小孩子不一定觉得金发碧眼漂亮。",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "race"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "freshness": "stable",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是主张黑人群体中也有高智商个体，非洲落后源于历史和社会因素而非人种，反对以貌取人的种族偏见。"
+      ],
+      "encoding_analysis": [
+        "未发现稳定风险编码；按短文本本身判断为普通表达。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "ToxiCN 标注为 non-toxic；topic=race。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 none。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=toxicn; external_real_fusion; topic=race"
+  },
+  {
+    "id": "000023",
+    "split": "test",
+    "source_type": "real",
+    "text": "那岂不是婊子都不如🤔",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "race"
+    },
+    "risk_level": "high",
+    "encoding_primary": "literal_keyword",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "low",
+    "evidence_strength": "strong",
+    "freshness": "stable",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是用反问句式'那岂不是婊子都不如'表达对某行为或某人的极度贬低。"
+      ],
+      "encoding_analysis": [
+        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [
+        "ToxiCN 标注为 toxic；topic=race。",
+        "文本呈现群体攻击、侮辱或偏见表达。"
+      ],
+      "counter_evidence": [
+        "需避免只因群体词出现就误判；本条风险来自完整表达。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 high。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=toxicn; external_real_fusion; topic=race"
+  },
+  {
+    "id": "000097",
+    "split": "test",
+    "source_type": "real",
+    "text": "西瓜是博士，冰瓜变成了疾控的医生，火豌豆改为七色彩虹",
     "context": {
       "title": "",
       "description": "",
@@ -2152,7 +2666,7 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是指出图四右侧的头像并非发布者本人照片。"
+        "文本表面是用游戏角色设定做比喻：西瓜是博士、冰瓜是疾控医生、火豌豆变成七色彩虹。"
       ],
       "encoding_analysis": [
         "未发现稳定风险编码；按短文本本身判断为普通表达。"
@@ -2168,695 +2682,6 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=toxicn; external_real_fusion; topic=lgbt"
-  },
-  {
-    "id": "000406",
-    "split": "test",
-    "source_type": "real",
-    "text": "[港港體檢] 薪型罐狀病毒檢測雞錄, 摳V的奈聽 忒sting 瑞摳得。 證件號碼/矮滴 No.C A 六九叉叉叉叉；",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "变体词"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "F_组合编码",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "freshness": "stable",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是用谐音加密格式发布新冠检测信息：'新型冠状病毒检测记录，COVID的奈听testing记录。证件号码/ID No.CA69xxxx'。"
-      ],
-      "encoding_analysis": [
-        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
-      ],
-      "supporting_evidence": [
-        "ChineseSafe 标注为违规；subject=变体词。",
-        "文本来自真实安全评测分布，语气比合成模板更接近实际输入。"
-      ],
-      "counter_evidence": [
-        "该文本整体风险信号足够明确。"
-      ],
-      "final_rationale": "综合文本信号和反证，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=chinesesafe; external_real_fusion; topic=变体词"
-  },
-  {
-    "id": "000384",
-    "split": "test",
-    "source_type": "real",
-    "text": "我也打算去澳洲，疫情好了就去，日本太阂至",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "淫秽色情"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "literal_keyword",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "freshness": "stable",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是表达也打算去澳洲，等疫情好转就去，抱怨日本不适合(用'阂至'拆字)。"
-      ],
-      "encoding_analysis": [
-        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
-      ],
-      "supporting_evidence": [
-        "ChineseSafe 标注为违规；subject=淫秽色情。",
-        "文本来自真实安全评测分布，语气比合成模板更接近实际输入。"
-      ],
-      "counter_evidence": [
-        "该文本整体风险信号足够明确。"
-      ],
-      "final_rationale": "综合文本信号和反证，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=chinesesafe; external_real_fusion; topic=淫秽色情"
-  },
-  {
-    "text": "楚虽三户，亡秦必楚",
-    "risk_level": "medium",
-    "encoding_primary": "C1_历史人物类比",
-    "encoding_secondary": [
-      "C2_历史事件影射"
-    ],
-    "needs_context": false,
-    "hard_negative": false,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "reasoning": {
-      "literal_analysis": [
-        "文本字面意思：引用《史记》典故——楚国即使只剩三户人家，灭亡秦国的也一定是楚人。表达不屈的反抗意志。"
-      ],
-      "encoding_analysis": [
-        "引用历史典故表达政治情绪是常见的影射手法。'秦'在当代鉴证话语中常被映射为威权/专制象征，'楚'映射为反抗者。但这个典故本身是中华文化遗产的一部分，在文学、历史讨论中完全正常。"
-      ],
-      "context_analysis": [
-        "无额外上下文。该典故的多义性使其处于文学引用与政治影射的边界。"
-      ],
-      "supporting_evidence": [
-        "在鉴证圈话语体系中，'亡秦必楚'有其特定的政治映射含义。"
-      ],
-      "counter_evidence": [
-        "这是中国历史文化经典典故，被广泛引用在文学、影视、游戏中，绝大多数使用场景是正常的历史文化讨论。"
-      ],
-      "final_rationale": "存在鉴证圈映射的可能但正常文化引用同样成立，判为 medium。"
-    },
-    "context": {},
-    "quality_status": "reviewed",
-    "review_notes": "source=batch5_gap_fill;",
-    "id": "B5_0042",
-    "split": "test",
-    "source_type": "synthetic"
-  },
-  {
-    "id": "000198",
-    "split": "test",
-    "source_type": "real",
-    "text": "这学校能考上绝对强 但这个学校画线特别恶心 歧视学生 会根据本科学校画单科线（听说，可以参考今年刚出的线） 个人认为上海地区华政的知产没得说的强",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "region"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "literal_keyword",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "freshness": "stable",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是评价某学校实力强但招生划线存在歧视，根据本科学校出身划定单科线。"
-      ],
-      "encoding_analysis": [
-        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
-      ],
-      "supporting_evidence": [
-        "COLD 标注为 offensive；topic=region。",
-        "文本呈现真实评论里的攻击、贬损或刻板印象。"
-      ],
-      "counter_evidence": [
-        "仍需区分引用、反驳和真实攻击；本条按原始标签与文本整体判断。"
-      ],
-      "final_rationale": "综合文本信号和反证，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=cold; external_real_fusion; topic=region"
-  },
-  {
-    "id": "batch1_natural_0035",
-    "split": "test",
-    "source_type": "synthetic",
-    "text": "刹车已经踩死了，但车还在往前滑",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": ""
-    },
-    "risk_level": "high",
-    "encoding_primary": "D2_隐喻",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "low",
-    "evidence_strength": "strong",
-    "freshness": "stable",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "描述刹车失效的紧急情况。"
-      ],
-      "encoding_analysis": [
-        "D2隐喻高度固化：刹车=政策纠偏，踩死刹车但车还在滑=纠偏措施无效。",
-        "是简中政治隐喻中最常见的意象之一。"
-      ],
-      "context_analysis": [
-        "'刹车踩死'+'车还往前滑'的完整叙事映射特定政治判断，无需外部上下文。"
-      ],
-      "supporting_evidence": [
-        "该隐喻组合高度固化，映射方向明确。",
-        "'踩死'的强化和'还在滑'的无力感构成完整政治叙事。"
-      ],
-      "counter_evidence": [
-        "极低概率是真在描述打滑的驾驶经历。",
-        "但叙事完整性和细节选择使普通驾驶分享的可能性很低。"
-      ],
-      "final_rationale": "高度固化的政治隐喻，完整的'刹车失效'叙事几乎没有普通解释空间，判high。"
-    },
-    "quality_status": "approved",
-    "review_notes": "source=batch1_natural; replaces old synthetic"
-  },
-  {
-    "id": "000312",
-    "split": "test",
-    "source_type": "real",
-    "text": "我基本上天天去，一天到晚都看不到万csgo的，山东二线，省会都去过",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "region"
-    },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
-    "freshness": "stable",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是吐槽在山东一直找不到玩CSGO的人。"
-      ],
-      "encoding_analysis": [
-        "未发现稳定风险编码；按短文本本身判断为普通表达。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
-      ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "COLD 标注为 non-offensive；topic=region。"
-      ],
-      "final_rationale": "综合文本信号和反证，判为 none。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=cold; external_real_fusion; topic=region"
-  },
-  {
-    "id": "000011",
-    "split": "test",
-    "source_type": "real",
-    "text": "家暴只是给男人定的，男人打女人那叫暴力，女人得到的是同情，男人得到的是谴责；而女打男，得到的却是掌声，男被女打，不仅得不到同情，还会被取笑鄙视。平等吗？到底在哪里？有没有平等？",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "gender"
-    },
-    "risk_level": "high",
-    "encoding_primary": "D3_借代",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "low",
-    "evidence_strength": "strong",
-    "freshness": "stable",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是批评家暴认定中的性别双标：男性施暴受谴责、女性施暴获掌声，质疑性别平等何在。"
-      ],
-      "encoding_analysis": [
-        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
-      ],
-      "supporting_evidence": [
-        "ToxiCN 标注为 toxic；topic=gender。",
-        "文本呈现群体攻击、侮辱或偏见表达。"
-      ],
-      "counter_evidence": [
-        "需避免只因群体词出现就误判；本条风险来自完整表达。"
-      ],
-      "final_rationale": "综合文本信号和反证，判为 high。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=toxicn; external_real_fusion; topic=gender"
-  },
-  {
-    "id": "000034",
-    "split": "test",
-    "source_type": "real",
-    "text": "又胖又黑，体味又重又穷，哎",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "race"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "literal_keyword",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "freshness": "stable",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是以简短的排比句式描述某人或某群体的负面外表特征：胖、黑、体味重、穷。"
-      ],
-      "encoding_analysis": [
-        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
-      ],
-      "supporting_evidence": [
-        "ToxiCN 标注为 toxic；topic=race。",
-        "文本呈现群体攻击、侮辱或偏见表达。"
-      ],
-      "counter_evidence": [
-        "需避免只因群体词出现就误判；本条风险来自完整表达。"
-      ],
-      "final_rationale": "综合文本信号和反证，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=toxicn; external_real_fusion; topic=race"
-  },
-  {
-    "text": "凡是敌人反对的我们就要拥护，凡是敌人拥护的我们就要反对——我说的是打游戏",
-    "risk_level": "medium",
-    "encoding_primary": "C4_典故/物品/符号借用",
-    "encoding_secondary": [
-      "D1_反讽"
-    ],
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "split": "test",
-    "source_type": "synthetic",
-    "needs_context": false,
-    "hard_negative": false,
-    "freshness": "stable",
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "id": "batch2_natural_0024",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": ""
-    },
-    "reasoning": {
-      "literal_analysis": [
-        "引用一句政治语录后加上游戏标签。"
-      ],
-      "encoding_analysis": [
-        "C4+反讽：用著名政治语录包装普通游戏评论，形成反讽效果。"
-      ],
-      "context_analysis": [
-        "'我说的是打游戏'的补充暴露了自觉性——他知道这段语录有政治色彩。"
-      ],
-      "supporting_evidence": [
-        "引用著名政治人物语录在游戏讨论中是异常行为。",
-        "补充'我说的是打游戏'暗示了编码意识。"
-      ],
-      "counter_evidence": [
-        "可能是纯粹的玩梗/恶搞。",
-        "游戏讨论中引用语录作幽默包装是B站常见行为。"
-      ],
-      "final_rationale": "语录引用+补充说明显示编码意识，但游戏语境下降级可能，判medium。"
-    },
-    "quality_status": "approved",
-    "review_notes": "source=batch2_natural; replaces old synthetic"
-  },
-  {
-    "id": "000347",
-    "split": "test",
-    "source_type": "real",
-    "text": "破产的商人们往往会陷入绝望的境地，他们不得不采取一些非法手段来维持生计。",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "违法犯罪"
-    },
-    "risk_level": "high",
-    "encoding_primary": "literal_keyword",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "low",
-    "evidence_strength": "strong",
-    "freshness": "stable",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是认为破产商人陷入绝望后不得不采取非法手段谋生。"
-      ],
-      "encoding_analysis": [
-        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
-      ],
-      "supporting_evidence": [
-        "ChineseSafe 标注为违规；subject=违法犯罪。",
-        "文本来自真实安全评测分布，语气比合成模板更接近实际输入。"
-      ],
-      "counter_evidence": [
-        "该文本整体风险信号足够明确。"
-      ],
-      "final_rationale": "综合文本信号和反证，判为 high。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=chinesesafe; external_real_fusion; topic=违法犯罪"
-  },
-  {
-    "id": "000058",
-    "split": "test",
-    "source_type": "real",
-    "text": "您说得对，毛毛虫先生",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "race"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "literal_keyword",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "freshness": "stable",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是用'毛毛虫先生'的绰号称呼对方，表示附和。"
-      ],
-      "encoding_analysis": [
-        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
-      ],
-      "supporting_evidence": [
-        "ToxiCN 标注为 toxic；topic=race。",
-        "文本呈现群体攻击、侮辱或偏见表达。"
-      ],
-      "counter_evidence": [
-        "需避免只因群体词出现就误判；本条风险来自完整表达。"
-      ],
-      "final_rationale": "综合文本信号和反证，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=toxicn; external_real_fusion; topic=race"
-  },
-  {
-    "id": "000467",
-    "split": "test",
-    "source_type": "real",
-    "text": "体育，约会，女性，休闲，资讯，体育竞技，预定，地图，直播《狂野飙客MotoX3M》是一款摩托车平衡竞速游戏，游戏中玩家需要控制一辆摩托车，挑战不同赛道上的障碍物，每一次的障碍挑战都是一次突破，没有一点驾驶技术那是很困难的呦喜欢摩托的小伙伴们，千万不要错过。测试机型Nexus9Android7.0更新内容更稳定、更优质，邀您一起体验。",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "不违规"
-    },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
-    "freshness": "stable",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是手机游戏《狂野飙客MotoX3M》的推广文案，介绍摩托车障碍竞速玩法。"
-      ],
-      "encoding_analysis": [
-        "未发现稳定风险编码；按短文本本身判断为普通表达。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
-      ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "ChineseSafe 标注为不违规；subject=不违规。"
-      ],
-      "final_rationale": "综合文本信号和反证，判为 none。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=chinesesafe; external_real_fusion; topic=不违规"
-  },
-  {
-    "text": "今天的升旗仪式真壮观，三军仪仗队太帅了",
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "ambiguity": "low",
-    "evidence_strength": "strong",
-    "hard_negative": true,
-    "split": "test",
-    "source_type": "synthetic",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "freshness": "stable",
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "id": "batch2_natural_0013",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": ""
-    },
-    "reasoning": {
-      "literal_analysis": [
-        "分享观看升旗仪式的感受。"
-      ],
-      "encoding_analysis": [
-        "无编码。爱国旅游分享。"
-      ],
-      "context_analysis": [
-        "天安门旅游打卡。"
-      ],
-      "supporting_evidence": [
-        "无风险信号。"
-      ],
-      "counter_evidence": [
-        "纯旅游分享。",
-        "正面积极表达。"
-      ],
-      "final_rationale": "纯旅游爱国主义分享。hard negative。"
-    },
-    "quality_status": "approved",
-    "review_notes": "source=batch2_natural; replaces old synthetic"
-  },
-  {
-    "id": "000297",
-    "split": "test",
-    "source_type": "real",
-    "text": "娜美克星少女",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "gender"
-    },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
-    "freshness": "stable",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是用'娜美克星'(那美克星/龙珠梗)形容某个少女。"
-      ],
-      "encoding_analysis": [
-        "未发现稳定风险编码；按短文本本身判断为普通表达。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
-      ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "COLD 标注为 non-offensive；topic=gender。"
-      ],
-      "final_rationale": "综合文本信号和反证，判为 none。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=cold; external_real_fusion; topic=gender"
-  },
-  {
-    "text": "小区门口的围墙又加高了",
-    "risk_level": "medium",
-    "encoding_primary": "D2_隐喻",
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "split": "test",
-    "source_type": "synthetic",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "hard_negative": false,
-    "freshness": "stable",
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "id": "batch2_natural_0022",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": ""
-    },
-    "reasoning": {
-      "literal_analysis": [
-        "描述小区围墙升高。"
-      ],
-      "encoding_analysis": [
-        "D2隐喻：围墙升高=某种限制/管控加强。"
-      ],
-      "context_analysis": [
-        "在特定时期（如疫情封控期间）此表达有明确映射。"
-      ],
-      "supporting_evidence": [
-        "'围墙加高'在互联网讨论中可隐喻管控升级。"
-      ],
-      "counter_evidence": [
-        "真的可能是小区物业工程。",
-        "社区改造围墙高度很常见。"
-      ],
-      "final_rationale": "有隐喻可能但真实物业管理也常见，判medium。"
-    },
-    "quality_status": "approved",
-    "review_notes": "source=batch2_natural; replaces old synthetic"
-  },
-  {
-    "id": "000126",
-    "split": "test",
-    "source_type": "real",
-    "text": "还有一点我不明白，你现在为什么住南昌呢？",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "region"
-    },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
-    "freshness": "stable",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是追问对方为何现在住在南昌。"
-      ],
-      "encoding_analysis": [
-        "未发现稳定风险编码；按短文本本身判断为普通表达。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
-      ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "ToxiCN 标注为 non-toxic；topic=region。"
-      ],
-      "final_rationale": "综合文本信号和反证，判为 none。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=toxicn; external_real_fusion; topic=region"
   },
   {
     "id": "000065",
@@ -3018,51 +2843,132 @@
     "review_notes": "source=cold; external_real_fusion; topic=race"
   },
   {
-    "text": "今晚八点老地方集合，带好装备",
-    "risk_level": "medium",
-    "encoding_primary": "E2_时间节点触发",
+    "text": "想要的直接看主页背景，不在这回了",
+    "risk_level": "high",
+    "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [
       "C4_典故/物品/符号借用"
     ],
-    "needs_context": true,
+    "needs_context": false,
     "hard_negative": false,
     "ambiguity": "medium",
-    "evidence_strength": "moderate",
+    "evidence_strength": "strong",
     "reasoning": {
       "literal_analysis": [
-        "文本字面意思：通知晚上八点在常去的地点集合，带上装备。"
+        "文本字面意思：让对方去主页背景图查看信息，不想在当前评论区回复。"
       ],
       "encoding_analysis": [
-        "'老地方'是模糊地点暗示，'带好装备'可指代各种物品——从运动器材到危险工具。'集合'可能为正常社交活动也可能为线下动员。具体性质依赖上下文。"
+        "利用平台功能进行导流操作——'主页背景'是头像/背景图藏联系方式的经典手法，'不在这回了'表明规避评论区审核。属于规避平台审查的导流黑话。"
       ],
       "context_analysis": [
-        "在游戏/运动社群中完全正常（如打球、骑行）；在特定语境中可能为线下集结。"
+        "无额外上下文，文本本身的导流意图已足够明确。"
       ],
       "supporting_evidence": [
-        "'集合'+'装备'的组合在某些动员语境中有特定含义。"
+        "'主页背景'是已知的非法引流藏匿点，'不在这回了'暗示评论区存在审核风险。组合信号指向明确的规避性导流行为。"
       ],
       "counter_evidence": [
-        "极其常见的社交活动组织用语，在运动/户外/游戏等正常场景中广泛使用。"
+        "纯字面可解读为不想在评论区讨论私事，但'主页背景'的指定性太强，与正常私信引导不同。"
       ],
-      "final_rationale": "存在微弱风险信号但正常使用压倒性占优，判为 medium，标注 needs_context。"
+      "final_rationale": "规避性导流信号明确，判为 high。"
     },
     "context": {},
     "quality_status": "reviewed",
     "review_notes": "source=batch5_gap_fill;",
-    "id": "B5_0061",
+    "id": "B5_0001",
     "split": "test",
     "source_type": "synthetic"
   },
   {
-    "id": "000352",
+    "id": "B7_0021",
+    "split": "test",
+    "source_type": "synthetic",
+    "text": "1比10，要的来，只做大额",
+    "risk_level": "high",
+    "encoding_primary": "C3_数字代指",
+    "encoding_secondary": [
+      "E1_平台黑话",
+      "F_组合编码"
+    ],
+    "needs_context": false,
+    "hard_negative": false,
+    "ambiguity": "low",
+    "evidence_strength": "strong",
+    "reasoning": {
+      "literal_analysis": [
+        "文本字面意思：以1比10的比率交易，只要大额客户。"
+      ],
+      "encoding_analysis": [
+        "'1比10'在非法交易中常见于：非法换汇（人民币兑外币）、虚拟币交易、赌博筹码兑换或违禁品批发。'只做大额'筛选高价值客户，暗示交易的非个人性质。数字比率+大额筛选在灰色金融交易中极为典型。"
+      ],
+      "context_analysis": [
+        "无额外上下文。数字比率+大额筛选在非法金融交易中有固定模式。"
+      ],
+      "supporting_evidence": [
+        "(1) '1比10'的比率暗示特定交易类型（换汇/虚拟币/筹码）；(2) '只做大额'暗示商业规模而非个人使用；(3) '要的来'的最小信息策略。"
+      ],
+      "counter_evidence": [
+        "可能是有奖兑换/积分交易。但'只做大额'配合模糊表述在正常积分交易中不自然——正常交易会明确说明是什么。"
+      ],
+      "final_rationale": "数字比率+大额筛选，灰色金融交易信号明确，判为 high。"
+    },
+    "context": {},
+    "quality_status": "reviewed",
+    "review_notes": "source=batch7_high_risk;"
+  },
+  {
+    "id": "000247",
     "split": "test",
     "source_type": "real",
-    "text": "我一直梦想成为一个有权有势的人，但我没有能力通过正当手段来获得这个地位，所以我选择了通过犯罪来达成我的目标。",
+    "text": "歧视黄种人，你觉得好笑?你是精神白种人还是精神黑种人？",
     "context": {
       "title": "",
       "description": "",
       "time": "",
-      "topic": "违法犯罪"
+      "topic": "race"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "literal_keyword",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "freshness": "stable",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是质问对方：歧视黄种人你觉得好笑吗？你是精神白种人还是精神黑种人？"
+      ],
+      "encoding_analysis": [
+        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [
+        "COLD 标注为 offensive；topic=race。",
+        "文本呈现真实评论里的攻击、贬损或刻板印象。"
+      ],
+      "counter_evidence": [
+        "仍需区分引用、反驳和真实攻击；本条按原始标签与文本整体判断。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=cold; external_real_fusion; topic=race"
+  },
+  {
+    "id": "000189",
+    "split": "test",
+    "source_type": "real",
+    "text": "赞同 一边哭喊着外国人歧视自己 一边在关于黑人新闻下骂“黑鬼滚蛋” 真是可笑至极",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "race"
     },
     "risk_level": "high",
     "encoding_primary": "literal_keyword",
@@ -3077,7 +2983,7 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是承认梦想成为有权势的人但无能力通过正当手段达成，因此选择犯罪。"
+        "文本表面是讽刺那些既抱怨被外国人歧视又在黑人新闻下发表种族歧视言论的行为自相矛盾。"
       ],
       "encoding_analysis": [
         "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
@@ -3086,30 +2992,30 @@
         "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
       ],
       "supporting_evidence": [
-        "ChineseSafe 标注为违规；subject=违法犯罪。",
-        "文本来自真实安全评测分布，语气比合成模板更接近实际输入。"
+        "COLD 标注为 offensive；topic=race。",
+        "文本呈现真实评论里的攻击、贬损或刻板印象。"
       ],
       "counter_evidence": [
-        "该文本整体风险信号足够明确。"
+        "仍需区分引用、反驳和真实攻击；本条按原始标签与文本整体判断。"
       ],
       "final_rationale": "综合文本信号和反证，判为 high。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=chinesesafe; external_real_fusion; topic=违法犯罪"
+    "review_notes": "source=cold; external_real_fusion; topic=race"
   },
   {
-    "id": "000382",
+    "id": "000399",
     "split": "test",
     "source_type": "real",
-    "text": "【碗忒C】 歪歪歪.f仨点in哎哎",
+    "text": "中国的中等收入群体有被歧视的倾向",
     "context": {
       "title": "",
       "description": "",
       "time": "",
-      "topic": "变体词"
+      "topic": "偏见歧视"
     },
     "risk_level": "medium",
-    "encoding_primary": "F_组合编码",
+    "encoding_primary": "literal_keyword",
     "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "medium",
@@ -3121,7 +3027,7 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是用谐音加英文发布色情网站URL：'歪歪歪.f仨点in哎哎'(www.f3.in aa)。"
+        "文本表面是指出中国的中等收入群体有被歧视的倾向。"
       ],
       "encoding_analysis": [
         "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
@@ -3130,7 +3036,7 @@
         "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
       ],
       "supporting_evidence": [
-        "ChineseSafe 标注为违规；subject=变体词。",
+        "ChineseSafe 标注为违规；subject=偏见歧视。",
         "文本来自真实安全评测分布，语气比合成模板更接近实际输入。"
       ],
       "counter_evidence": [
@@ -3139,103 +3045,25 @@
       "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=chinesesafe; external_real_fusion; topic=变体词"
+    "review_notes": "source=chinesesafe; external_real_fusion; topic=偏见歧视"
   },
   {
-    "id": "000087",
+    "id": "000110",
     "split": "test",
     "source_type": "real",
-    "text": "关键是被默玩腻了就会找老实人接盘",
+    "text": "穆加贝这个恶魔有什么理由说我们，看看他干的那些事",
     "context": {
       "title": "",
       "description": "",
       "time": "",
       "topic": "race"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "literal_keyword",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "freshness": "stable",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是表达担忧：女性被黑人男性交往后会被抛弃，然后找老实男性接盘。"
-      ],
-      "encoding_analysis": [
-        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
-      ],
-      "supporting_evidence": [
-        "ToxiCN 标注为 toxic；topic=race。",
-        "文本呈现群体攻击、侮辱或偏见表达。"
-      ],
-      "counter_evidence": [
-        "需避免只因群体词出现就误判；本条风险来自完整表达。"
-      ],
-      "final_rationale": "综合文本信号和反证，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=toxicn; external_real_fusion; topic=race"
-  },
-  {
-    "id": "B6_0010",
-    "split": "test",
-    "source_type": "synthetic",
-    "text": "举报电话12388，有问题可以直接打",
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "hard_negative": true,
-    "ambiguity": "medium",
-    "evidence_strength": "strong",
-    "reasoning": {
-      "literal_analysis": [
-        "文本字面意思：分享中纪委举报电话，告知可以用于举报问题。"
-      ],
-      "encoding_analysis": [
-        "12388是中纪委官方公布的举报电话，分享此信息是正当的公民行为。没有规避或非法暗示。这是正常的公共服务信息分享。"
-      ],
-      "context_analysis": [
-        "正常的公共信息服务场景。"
-      ],
-      "supporting_evidence": [
-        "分享官方举报渠道是正当的公民行为，有助于反腐败工作。"
-      ],
-      "counter_evidence": [
-        "无风险信号。分享官方举报电话是合法的。"
-      ],
-      "final_rationale": "正常公共服务信息分享，判为 none。"
-    },
-    "context": {},
-    "quality_status": "reviewed",
-    "review_notes": "source=batch6_gap_fill;"
-  },
-  {
-    "id": "batch1_natural_0050",
-    "split": "test",
-    "source_type": "synthetic",
-    "text": "强烈推荐这个历史纪录片，讲的是明代政治制度演变",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": ""
     },
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "low",
-    "evidence_strength": "strong",
+    "evidence_strength": "weak",
     "freshness": "stable",
     "hard_negative": true,
     "target_known": false,
@@ -3243,40 +3071,36 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "推荐关于明代政治制度的纪录片。"
+        "文本表面是批评津巴布韦前总统穆加贝的暴政行为，认为他没有资格指责我们。"
       ],
       "encoding_analysis": [
-        "无编码。正常纪录片推荐。"
+        "未发现稳定风险编码；按短文本本身判断为普通表达。"
       ],
       "context_analysis": [
-        "B站知识区常见内容推荐。"
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
       ],
-      "supporting_evidence": [
-        "有'政治'和'明代'——两个可能触发关键词系统的词。"
-      ],
+      "supporting_evidence": [],
       "counter_evidence": [
-        "纯粹的历史纪录片推荐。",
-        "没有影射现实的任何信号。",
-        "B站知识区正常生态。"
+        "ToxiCN 标注为 non-toxic；topic=race。"
       ],
-      "final_rationale": "正常历史纪录片推荐。重要的hard negative：训练模型识别正常历史讨论。"
+      "final_rationale": "综合文本信号和反证，判为 none。"
     },
-    "quality_status": "approved",
-    "review_notes": "source=batch1_natural; replaces old synthetic"
+    "quality_status": "needs_revision",
+    "review_notes": "source=toxicn; external_real_fusion; topic=race"
   },
   {
-    "id": "000037",
+    "id": "000373",
     "split": "test",
     "source_type": "real",
-    "text": "八成以上男同骗婚，九成骗婚者家暴，一成配偶被传染性病。也许很多反感是这么来的",
+    "text": "中国政府无能之极，毒奶粉又上市销售，其执政能力简直令人发指！",
     "context": {
       "title": "",
       "description": "",
       "time": "",
-      "topic": "lgbt"
+      "topic": "政治错误"
     },
     "risk_level": "medium",
-    "encoding_primary": "D3_借代",
+    "encoding_primary": "literal_keyword",
     "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "medium",
@@ -3288,7 +3112,7 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是用统计数据(八成骗婚/九成家暴/一成传染性病)论证反感男同的合理性。"
+        "文本表面是攻击中国政府无能，以毒奶粉再次上市为例指责其执政能力令人发指。"
       ],
       "encoding_analysis": [
         "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
@@ -3297,22 +3121,66 @@
         "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
       ],
       "supporting_evidence": [
-        "ToxiCN 标注为 toxic；topic=lgbt。",
-        "文本呈现群体攻击、侮辱或偏见表达。"
+        "ChineseSafe 标注为违规；subject=政治错误。",
+        "文本来自真实安全评测分布，语气比合成模板更接近实际输入。"
       ],
       "counter_evidence": [
-        "需避免只因群体词出现就误判；本条风险来自完整表达。"
+        "该文本整体风险信号足够明确。"
       ],
       "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=toxicn; external_real_fusion; topic=lgbt"
+    "review_notes": "source=chinesesafe; external_real_fusion; topic=政治错误"
   },
   {
-    "id": "000050",
+    "id": "000361",
     "split": "test",
     "source_type": "real",
-    "text": "世界第二大经济体的年轻女生就这种素质，太悲哀了。",
+    "text": "希望西方国家和联合国紧急关注香港，因为中共已经向手无寸铁的香港学生和市民下毒手了，中共将再次重演三十年前北京天安门大屠杀，只要你爱民主爱自由反独裁反暴力，务必请你将这些中共暴力镇压平民百姓的证据不停的转发到西方媒体上并且上书各个民主国家的国会和议会谴责中共暴力镇压并实行全方位制栽",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "政治错误"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "literal_keyword",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "freshness": "stable",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是呼吁西方国家关注香港，指控中共暴力镇压学生和市民，将其与'天安门大屠杀'类比，号召传播这些证据。"
+      ],
+      "encoding_analysis": [
+        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [
+        "ChineseSafe 标注为违规；subject=政治错误。",
+        "文本来自真实安全评测分布，语气比合成模板更接近实际输入。"
+      ],
+      "counter_evidence": [
+        "该文本整体风险信号足够明确。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=chinesesafe; external_real_fusion; topic=政治错误"
+  },
+  {
+    "id": "000096",
+    "split": "test",
+    "source_type": "real",
+    "text": "目前，虽然蝴蝶鸡已经滚蛋，但我们还是不能高枕无忧，因为媚黑势力还企图封掉黑人吧（）我觉得我们目前应该吸取广州黑人吧被封的教训，制定出吧规，并严格执行之，免得黑人吧被封。",
     "context": {
       "title": "",
       "description": "",
@@ -3332,7 +3200,7 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是批评世界第二大经济体(中国)的年轻女性素质低，表达悲哀之情。"
+        "文本表面是讨论某反媚黑势力虽已离开但仍需防范，建议制定吧规防止黑人吧被封。"
       ],
       "encoding_analysis": [
         "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
@@ -3353,104 +3221,68 @@
     "review_notes": "source=toxicn; external_real_fusion; topic=race"
   },
   {
-    "id": "B6_0069",
+    "text": "某些地方的规定真的很迷，但不敢说太细",
+    "risk_level": "low",
+    "encoding_primary": "E1_平台黑话",
+    "ambiguity": "high",
+    "evidence_strength": "weak",
     "split": "test",
     "source_type": "synthetic",
-    "text": "只有一种声音的地方，沉默就是最大的声音",
-    "risk_level": "medium",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "hard_negative": false,
+    "freshness": "stable",
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "id": "batch3_natural_0015",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": ""
+    },
+    "reasoning": {
+      "literal_analysis": [
+        "模糊地抱怨某些规定。"
+      ],
+      "encoding_analysis": [
+        "'不敢说太细'有微弱的自我审查信号。",
+        "但整体是模糊的日常抱怨。"
+      ],
+      "context_analysis": [
+        "日常吐槽。"
+      ],
+      "supporting_evidence": [
+        "'不敢说太细'暗示了信息敏感性。"
+      ],
+      "counter_evidence": [
+        "极模糊的表达，可能是任何规定（公司制度、小区规则等）。",
+        "没有具体指涉方向。"
+      ],
+      "final_rationale": "模糊的日常抱怨，微弱编码信号不足以升风险，判low。"
+    },
+    "quality_status": "approved",
+    "review_notes": "source=batch3_natural; replaces old synthetic"
+  },
+  {
+    "text": "有人把权力关进了笼子，有人把笼子关进了权力",
+    "risk_level": "high",
     "encoding_primary": "D2_隐喻",
     "encoding_secondary": [
-      "D1_反讽",
-      "E1_平台黑话"
+      "D1_反讽"
     ],
-    "needs_context": false,
-    "hard_negative": false,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "reasoning": {
-      "literal_analysis": [
-        "文本字面意思：在只有一种声音的地方，选择沉默本身就是最响亮的表态。"
-      ],
-      "encoding_analysis": [
-        "'只有一种声音'隐喻言论控制/审查，'沉默就是最大的声音'表达了消极抵抗的政治态度。这种格言式的表达在政治启蒙/异议话语中常见。其格言形式使其有一定的文学/哲学讨论空间。"
-      ],
-      "context_analysis": [
-        "无额外上下文。格言式表达的多义性使其处于政治表达与哲学反思之间。"
-      ],
-      "supporting_evidence": [
-        "'只有一种声音'的审查隐喻+沉默作为表态的组合指向政治异议话语。"
-      ],
-      "counter_evidence": [
-        "格言式表达可能被用于纯文学/哲学讨论（如对从众心理的社会学反思），不一定是政治性的。"
-      ],
-      "final_rationale": "存在政治异议暗示但格言形式保留了其他解读空间，判为 medium。"
-    },
-    "context": {},
-    "quality_status": "reviewed",
-    "review_notes": "source=batch6_gap_fill;"
-  },
-  {
-    "id": "batch1_natural_0010",
-    "split": "test",
-    "source_type": "synthetic",
-    "text": "苏联当年从开始到结束也就七十来年，值得深思",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "历史/政治比较"
-    },
-    "risk_level": "high",
-    "encoding_primary": "C2_历史事件影射",
-    "encoding_secondary": [],
-    "needs_context": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
-    "freshness": "stable",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "讨论苏联从建立到解体的七十年历程。"
-      ],
-      "encoding_analysis": [
-        "用苏联的历史周期影射另一个大国政权。",
-        "C2影射：苏联的建立—强盛—僵化—解体叙事被作为比较框架。"
-      ],
-      "context_analysis": [
-        "'值得深思'是互联网常用的引导式结尾，暗示读者进行类比。"
-      ],
-      "supporting_evidence": [
-        "苏联类比是简中互联网政治讨论中最常见的C2模式。",
-        "'七十来年'这个具体数字增强了比较意图。"
-      ],
-      "counter_evidence": [
-        "单纯讨论苏联历史也是合理的学术/兴趣讨论。",
-        "没有明确说在比较哪个国家。"
-      ],
-      "final_rationale": "苏联政治类比是高度敏感且固化的C2模式，'值得深思'明确引导读者投射到现实，判high。"
-    },
-    "quality_status": "approved",
-    "review_notes": "source=batch1_natural; replaces old synthetic"
-  },
-  {
-    "text": "明面上是一套，暗地里是另一套，这种事情见多了",
-    "risk_level": "medium",
-    "encoding_primary": "D1_反讽",
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
     "split": "test",
     "source_type": "synthetic",
-    "encoding_secondary": [],
     "needs_context": false,
     "hard_negative": false,
     "freshness": "stable",
     "target_known": false,
     "target_reference": "",
     "should_explain_target": false,
-    "id": "batch4_natural_0026",
+    "id": "batch4_natural_0040",
     "context": {
       "title": "",
       "description": "",
@@ -3459,39 +3291,39 @@
     },
     "reasoning": {
       "literal_analysis": [
-        "感慨言行不一的普遍现象。"
+        "玩文字游戏对比两种治理模式。"
       ],
       "encoding_analysis": [
-        "D1反讽微弱：对社会虚伪的批评。",
-        "泛指可见，不一定政治。"
+        "D2+D1：'权力关进笼子'→'笼子关进权力'的反转暗指法治倒退。"
       ],
       "context_analysis": [
-        "社会观察。"
+        "政治隐喻极为明确。"
       ],
       "supporting_evidence": [
-        "存在泛化批评的可能。"
+        "经典政治隐喻的反转使用。",
+        "映射方向明确。"
       ],
       "counter_evidence": [
-        "生活中言行不一太常见了，不必然涉及政治。"
+        "可以是语言游戏。"
       ],
-      "final_rationale": "大概率是一般社会感慨。判medium因泛化批评有微弱编码可能。"
+      "final_rationale": "经典政治隐喻反转，映射明确，判high。"
     },
     "quality_status": "approved",
     "review_notes": "source=batch4_natural; replaces old synthetic"
   },
   {
-    "id": "000413",
+    "id": "000199",
     "split": "test",
     "source_type": "real",
-    "text": "嗨车，快伞，灰艇，四栖碧中，一对一稳定盈利，鸡巧教学，找Q：3372240491",
+    "text": "你才扯吧，瑞典强奸普遍轻判，女权人士为难民强奸犯点蜡烛号召公众理解他们，比中国女权癌境界不知道高到哪儿去了。中国女权癌恨不得枪毙强奸犯重回严打。看到没，这就是先进和愚昧的区别。",
     "context": {
       "title": "",
       "description": "",
       "time": "",
-      "topic": "变体词"
+      "topic": "race"
     },
     "risk_level": "medium",
-    "encoding_primary": "F_组合编码",
+    "encoding_primary": "literal_keyword",
     "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "medium",
@@ -3503,7 +3335,7 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是用暗语发布赌博/诈骗信息，承诺一对一稳定盈利和技巧教学，附QQ联系方式。"
+        "文本表面是讽刺瑞典女权人士对难民强奸犯的宽容态度，与中国女权人士对强奸犯的严惩态度做对比，反讽地称之为'先进与愚昧的区别'。"
       ],
       "encoding_analysis": [
         "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
@@ -3512,95 +3344,142 @@
         "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
       ],
       "supporting_evidence": [
-        "ChineseSafe 标注为违规；subject=变体词。",
-        "文本来自真实安全评测分布，语气比合成模板更接近实际输入。"
+        "COLD 标注为 offensive；topic=race。",
+        "文本呈现真实评论里的攻击、贬损或刻板印象。"
       ],
       "counter_evidence": [
-        "该文本整体风险信号足够明确。"
+        "仍需区分引用、反驳和真实攻击；本条按原始标签与文本整体判断。"
       ],
       "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=chinesesafe; external_real_fusion; topic=变体词"
+    "review_notes": "source=cold; external_real_fusion; topic=race"
   },
   {
-    "text": "c h e c k 一下这个bug",
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "hard_negative": true,
-    "ambiguity": "medium",
-    "evidence_strength": "strong",
-    "reasoning": {
-      "literal_analysis": [
-        "文本字面意思：让同事/朋友检查一下这个程序错误。英文单词字母间加了空格。"
-      ],
-      "encoding_analysis": [
-        "'c h e c k'是英文单词check的字母分隔写法。在技术讨论中，这可能只是排版习惯或强调写法。'bug'是正常的编程术语。整个文本是正常的开发协作语境。"
-      ],
-      "context_analysis": [
-        "技术开发场景，内容无害。"
-      ],
-      "supporting_evidence": [
-        "纯技术讨论内容，字母分隔是排版习惯。"
-      ],
-      "counter_evidence": [
-        "字母分隔也可用于规避检测（如f u c k），但此处check和bug的组合在开发语境中完全正常。"
-      ],
-      "final_rationale": "正常技术讨论，字母分隔为排版风格，判为 none。"
-    },
-    "context": {},
-    "quality_status": "reviewed",
-    "review_notes": "source=batch5_gap_fill;",
-    "id": "B5_0028",
+    "id": "000300",
     "split": "test",
-    "source_type": "synthetic"
-  },
-  {
-    "text": "只许州官放火，不许百姓点灯",
-    "risk_level": "medium",
-    "encoding_primary": "C1_历史人物类比",
-    "encoding_secondary": [
-      "C4_典故/物品/符号借用"
-    ],
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "split": "test",
-    "source_type": "synthetic",
-    "needs_context": false,
-    "hard_negative": false,
-    "freshness": "stable",
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "id": "batch3_natural_0022",
+    "source_type": "real",
+    "text": "我们不要排挤外地人，外省人，他们仰慕我们上海广东而来，我们要引领他们，教导他们，让他们做一个像我们一样文明有风度的现代中国人。",
     "context": {
       "title": "",
       "description": "",
       "time": "",
-      "topic": ""
+      "topic": "region"
     },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "freshness": "stable",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "引用俗语表达对双重标准的不满。"
+        "文本表面是呼吁不要排挤外地人，主张上海广东人以文明姿态引导外地人成为现代文明中国人。"
       ],
       "encoding_analysis": [
-        "C1+C4：这句俗语在简中互联网常用于影射体制内外的双重标准。"
+        "未发现稳定风险编码；按短文本本身判断为普通表达。"
       ],
       "context_analysis": [
-        "可出现在多种语境下，从公司管理到政治批评。"
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "COLD 标注为 non-offensive；topic=region。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 none。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=cold; external_real_fusion; topic=region"
+  },
+  {
+    "id": "000266",
+    "split": "test",
+    "source_type": "real",
+    "text": "据贵阳警方介绍，调查证实，今年30岁的犯罪嫌疑人徐适有8年精神分裂症病史，系贵州某高校工作人员，其长期服用药物控制情绪，曾多次在毕节市精神病院治疗。事发当天因与家人争吵，情绪不稳，冲向校园准备伤人",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "region"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "freshness": "stable",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是转述贵阳警方对一起校园伤人事件的调查结果，介绍犯罪嫌疑人的精神病史。"
+      ],
+      "encoding_analysis": [
+        "未发现稳定风险编码；按短文本本身判断为普通表达。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "COLD 标注为 non-offensive；topic=region。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 none。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=cold; external_real_fusion; topic=region"
+  },
+  {
+    "id": "000241",
+    "split": "test",
+    "source_type": "real",
+    "text": "美国黑人文化有问题，她说的对。但她说：“不犯罪有多难？”对美国底层黑人来说，就是很难，这正是美国黑人文化的糟糕之处。但这是美国系统性的社会问题。她这一番话仍然避开了核心，",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "race"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "literal_keyword",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "freshness": "stable",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是评价某人对美国黑人文化的批评有道理，但指出'不犯罪有多难'对底层黑人确实很难，这是系统性社会问题。"
+      ],
+      "encoding_analysis": [
+        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
       ],
       "supporting_evidence": [
-        "是高频政治隐喻引用。"
+        "COLD 标注为 offensive；topic=race。",
+        "文本呈现真实评论里的攻击、贬损或刻板印象。"
       ],
       "counter_evidence": [
-        "公司管理、学校规则等非政治场景也常使用。"
+        "仍需区分引用、反驳和真实攻击；本条按原始标签与文本整体判断。"
       ],
-      "final_rationale": "高频引用但有广泛的非政治使用场景，判medium。"
+      "final_rationale": "综合文本信号和反证，判为 medium。"
     },
-    "quality_status": "approved",
-    "review_notes": "source=batch3_natural; replaces old synthetic"
+    "quality_status": "needs_revision",
+    "review_notes": "source=cold; external_real_fusion; topic=race"
   },
   {
     "id": "000315",
@@ -3719,14 +3598,55 @@
     "source_type": "synthetic"
   },
   {
-    "text": "家人们谁懂啊，今天打开微博一看热搜又被洗了一遍",
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
+    "id": "000158",
+    "split": "test",
+    "source_type": "real",
+    "text": "我相信答主代表了大部分人的想法，就是反感还不让说了？天天要求别人认同你的病态本身就是一种病态，你先去问问你父母接不接受再来回答",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "lgbt"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "freshness": "stable",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是支持答主观点，认为反感有权表达，强行要求别人认同才是病态，建议先去问父母是否接受。"
+      ],
+      "encoding_analysis": [
+        "未发现稳定风险编码；按短文本本身判断为普通表达。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "ToxiCN 标注为 non-toxic；topic=lgbt。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 none。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=toxicn; external_real_fusion; topic=lgbt"
+  },
+  {
+    "text": "有人记得三年前这时候发生了什么吗？评论区打暗号",
+    "risk_level": "high",
+    "encoding_primary": "E2_时间节点触发",
     "encoding_secondary": [
-      "D1_反讽"
+      "E1_平台黑话"
     ],
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
+    "ambiguity": "low",
+    "evidence_strength": "strong",
     "split": "test",
     "source_type": "synthetic",
     "needs_context": false,
@@ -3735,7 +3655,7 @@
     "target_known": false,
     "target_reference": "",
     "should_explain_target": false,
-    "id": "001235",
+    "id": "batch2_natural_0021",
     "context": {
       "title": "",
       "description": "",
@@ -3744,90 +3664,80 @@
     },
     "reasoning": {
       "literal_analysis": [
-        "文本表面是用'家人们谁懂啊'的抖音流行开场白吐槽微博热搜被清理。"
+        "邀请评论回忆三年前同期的事件。"
       ],
       "encoding_analysis": [
-        "E1+反讽：'家人们谁懂啊'是2023-2025年抖音流行的吐槽开场白，'热搜被洗'=敏感话题被撤。",
-        "用流行梗包装审查观察。"
+        "E2+E1：特定时间节点触发+'暗号'引导规避讨论。",
+        "明确要求用暗号回复暗示事件敏感。"
       ],
       "context_analysis": [
-        "微博热搜被清理是中文互联网常见现象。"
+        "'三年前这时候'可能是某敏感事件的周年。"
       ],
       "supporting_evidence": [
-        "'热搜被洗'是内容审查的日常观察。",
-        "流行开场白增加了真实用户感。"
+        "'打暗号'明确表明事件不可公开讨论。",
+        "时间触发+暗号邀请的双重编码。"
       ],
       "counter_evidence": [
-        "可能是吐槽明星热搜被撤（非政治）。"
+        "如果不是发生在敏感事件节点上，可能是游戏/社区内部梗。"
       ],
-      "final_rationale": "流行梗+审查观察，自然不做作，判medium。"
+      "final_rationale": "时间节点+暗号的强组合，判high。注意：如果在真实敏感周年则风险更高。"
     },
     "quality_status": "approved",
-    "review_notes": "source=abstract_batch; abstract/structural encoding sample"
+    "review_notes": "source=batch2_natural; replaces old synthetic"
   },
   {
-    "text": "新闻里说人民生活水平持续提高，我看着工资条笑了",
-    "risk_level": "high",
-    "encoding_primary": "D1_反讽",
-    "ambiguity": "low",
-    "evidence_strength": "strong",
-    "split": "test",
-    "source_type": "synthetic",
-    "encoding_secondary": [],
+    "text": "收玩具，成色好的优先",
+    "risk_level": "medium",
+    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_secondary": [
+      "E1_平台黑话"
+    ],
     "needs_context": false,
     "hard_negative": false,
-    "freshness": "stable",
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "id": "batch3_natural_0007",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "社会/经济讨论"
-    },
-    "reasoning": {
-      "literal_analysis": [
-        "表面说看到新闻对生活的正面报道后笑了。"
-      ],
-      "encoding_analysis": [
-        "D1反讽：新闻报喜+个人现实(工资条)的强烈对比制造反讽。",
-        "'笑了'不是开心，是苦笑/嘲讽。"
-      ],
-      "context_analysis": [
-        "这种'新闻说X，我工资条说Y'的比较是固定的互联网反讽模板。"
-      ],
-      "supporting_evidence": [
-        "官方叙事与个人体验的对比是简中互联网经典反讽模式。",
-        "'笑了'在此语境中明确的负面含义。"
-      ],
-      "counter_evidence": [
-        "可以是真心觉得新闻幽默。",
-        "但工资条+笑的组合在当代互联网中几乎反讽是默认解读。"
-      ],
-      "final_rationale": "经典工资条反讽模板，指向明确，判high。"
-    },
-    "quality_status": "approved",
-    "review_notes": "source=batch3_natural; replaces old synthetic"
-  },
-  {
-    "id": "000062",
-    "split": "test",
-    "source_type": "real",
-    "text": "找老婆不能找强势的",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "gender"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "D3_借代",
-    "encoding_secondary": [],
-    "needs_context": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
+    "reasoning": {
+      "literal_analysis": [
+        "文本字面意思：收购玩具，品质好的优先。"
+      ],
+      "encoding_analysis": [
+        "'玩具'在特定圈层中可用于代指枪支/武器（尤其是仿真枪/气枪圈）。'成色好'指物品品相/新旧程度。'收'是收购的口语表达。但这种暗语模式同样可能指向正常的手办/模型交易。"
+      ],
+      "context_analysis": [
+        "在手办/模型交易语境中完全正常；在特定圈子中可能为武器交易暗语。"
+      ],
+      "supporting_evidence": [
+        "'玩具'作为武器代称在某些圈子中有使用记录。"
+      ],
+      "counter_evidence": [
+        "'玩具'在绝大多数场景中指代真正的玩具——手办、模型、潮玩等。'收玩具'是正常收藏圈用语。"
+      ],
+      "final_rationale": "存在暗语可能但正常解释远更常见，判为 medium。"
+    },
+    "context": {},
+    "quality_status": "reviewed",
+    "review_notes": "source=batch5_gap_fill;",
+    "id": "B5_0051",
+    "split": "test",
+    "source_type": "synthetic"
+  },
+  {
+    "id": "000330",
+    "split": "test",
+    "source_type": "real",
+    "text": "插研究生母狗黑逼 4079188693 Issue effect two trade next economic five. 在柳州操过的一个少妇！",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "淫秽色情"
+    },
+    "risk_level": "high",
+    "encoding_primary": "literal_keyword",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "low",
+    "evidence_strength": "strong",
     "freshness": "stable",
     "hard_negative": false,
     "target_known": false,
@@ -3835,7 +3745,7 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是给出择偶建议：不要找性格强势的女性作为妻子。"
+        "文本表面是发布色情招嫖信息，夹杂中英文和联系方式。"
       ],
       "encoding_analysis": [
         "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
@@ -3844,27 +3754,27 @@
         "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
       ],
       "supporting_evidence": [
-        "ToxiCN 标注为 toxic；topic=gender。",
-        "文本呈现群体攻击、侮辱或偏见表达。"
+        "ChineseSafe 标注为违规；subject=淫秽色情。",
+        "文本来自真实安全评测分布，语气比合成模板更接近实际输入。"
       ],
       "counter_evidence": [
-        "需避免只因群体词出现就误判；本条风险来自完整表达。"
+        "该文本整体风险信号足够明确。"
       ],
-      "final_rationale": "综合文本信号和反证，判为 medium。"
+      "final_rationale": "综合文本信号和反证，判为 high。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=toxicn; external_real_fusion; topic=gender"
+    "review_notes": "source=chinesesafe; external_real_fusion; topic=淫秽色情"
   },
   {
-    "id": "000360",
+    "id": "000370",
     "split": "test",
     "source_type": "real",
-    "text": "2001年央视栽赃法轮功“自焚”录像中，警察晃着灭火毯等镜头，被火烧过的王进东，他两腿间盛着汽油的塑料瓶完好翠绿，棉衣裤子烧烂，而最易着火的头发也还完好。后来央视女记者李玉强承认自焚“摆拍”。",
+    "text": "昨天去市场，发现有个老头卖着人流药，真让人心碎，老头还越卖越嚣张",
     "context": {
       "title": "",
       "description": "",
       "time": "",
-      "topic": "政治错误"
+      "topic": "脏话侮辱"
     },
     "risk_level": "medium",
     "encoding_primary": "literal_keyword",
@@ -3879,7 +3789,7 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是指控2001年央视关于法轮功自焚的报道为造假，列举了视频中的可疑细节。"
+        "文本表面是讲述在市场上看到老人兜售人流药物，感到心碎且愤怒。"
       ],
       "encoding_analysis": [
         "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
@@ -3888,7 +3798,7 @@
         "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
       ],
       "supporting_evidence": [
-        "ChineseSafe 标注为违规；subject=政治错误。",
+        "ChineseSafe 标注为违规；subject=脏话侮辱。",
         "文本来自真实安全评测分布，语气比合成模板更接近实际输入。"
       ],
       "counter_evidence": [
@@ -3897,484 +3807,178 @@
       "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=chinesesafe; external_real_fusion; topic=政治错误"
+    "review_notes": "source=chinesesafe; external_real_fusion; topic=脏话侮辱"
   },
   {
-    "text": "管好自己的嘴，不该说的别说",
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
+    "id": "000296",
     "split": "test",
-    "source_type": "synthetic",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "hard_negative": false,
-    "freshness": "stable",
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "id": "batch4_natural_0008",
+    "source_type": "real",
+    "text": "湖北还有武外和黄冈，包揽9个当然不可能。",
     "context": {
       "title": "",
       "description": "",
       "time": "",
-      "topic": ""
+      "topic": "region"
     },
-    "reasoning": {
-      "literal_analysis": [
-        "提醒注意言论。"
-      ],
-      "encoding_analysis": [
-        "E1：'不该说的'暗示存在言论禁区。",
-        "是常见的平台/群组自我审查提醒。"
-      ],
-      "context_analysis": [
-        "群聊/社区提醒。"
-      ],
-      "supporting_evidence": [
-        "暗示了言论限制。"
-      ],
-      "counter_evidence": [
-        "任何社会群体（公司、学校、家庭）都有'不该说的话'。",
-        "不必然指向政治。"
-      ],
-      "final_rationale": "有E1信号但非政治特定，判medium。"
-    },
-    "quality_status": "approved",
-    "review_notes": "source=batch4_natural; replaces old synthetic"
-  },
-  {
-    "id": "B6_0011",
-    "split": "test",
-    "source_type": "synthetic",
-    "text": "这个案例说明内部审计制度真的太重要了",
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
     "needs_context": false,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "freshness": "stable",
     "hard_negative": true,
-    "ambiguity": "medium",
-    "evidence_strength": "strong",
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本字面意思：通过一个案例说明企业内部审计制度的重要性。"
+        "文本表面是讨论湖北名校(武外和黄冈)的竞争格局，认为不可能包揽全部九个名额。"
       ],
       "encoding_analysis": [
-        "这是正常的商业管理讨论。'内部审计制度'是标准的企业管理术语，没有任何规避或腐败暗示。"
+        "未发现稳定风险编码；按短文本本身判断为普通表达。"
       ],
       "context_analysis": [
-        "正常的商业管理讨论场景。"
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "COLD 标注为 non-offensive；topic=region。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 none。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=cold; external_real_fusion; topic=region"
+  },
+  {
+    "id": "000082",
+    "split": "test",
+    "source_type": "real",
+    "text": "近两年“正黄旗大妈，外地人到北京就是孙子，上海绕口令大姐，上海地铁大妈等等。。”这都是民族和谐统一的绊脚石！民族大团结，不应该出现美帝的“种族歧视”！我们要反思！我们要抵制！谁要是排外我们就一起排斥他！中华人民共和国是一个大家庭！不可以搞不团结的事情！",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "region"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "D3_借代",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "freshness": "stable",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是列举北京上海等地的大妈排外言论，呼吁民族团结、抵制地域歧视和种族歧视。"
+      ],
+      "encoding_analysis": [
+        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
       ],
       "supporting_evidence": [
-        "内容为正常的企业管理讨论，术语规范。"
+        "ToxiCN 标注为 toxic；topic=region。",
+        "文本呈现群体攻击、侮辱或偏见表达。"
       ],
       "counter_evidence": [
-        "无风险信号。"
+        "需避免只因群体词出现就误判；本条风险来自完整表达。"
       ],
-      "final_rationale": "正常企业管理讨论，判为 none。"
+      "final_rationale": "综合文本信号和反证，判为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=toxicn; external_real_fusion; topic=region"
+  },
+  {
+    "id": "000180",
+    "split": "test",
+    "source_type": "real",
+    "text": "八年抗战，战火也没有烧到四川，可四川人是怎么表现的，同一个国家面对共同的生死敌人，人类存亡的关键之战你竟然说没打到这里干嘛要去送死？小老百姓收都自私但是没有你说的那么愚蠢，以前农村春耕争水都知道一个村一起上。",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "region"
+    },
+    "risk_level": "high",
+    "encoding_primary": "literal_keyword",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "low",
+    "evidence_strength": "strong",
+    "freshness": "stable",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是以四川在抗战中的积极表现为例，反驳'战火未烧到就不该去送死'的狭隘观点。"
+      ],
+      "encoding_analysis": [
+        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [
+        "COLD 标注为 offensive；topic=region。",
+        "文本呈现真实评论里的攻击、贬损或刻板印象。"
+      ],
+      "counter_evidence": [
+        "仍需区分引用、反驳和真实攻击；本条按原始标签与文本整体判断。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 high。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=cold; external_real_fusion; topic=region"
+  },
+  {
+    "text": "品，细品",
+    "risk_level": "low",
+    "encoding_primary": "D2_夸张/反话",
+    "encoding_secondary": [
+      "E3_话题/热点触发"
+    ],
+    "needs_context": true,
+    "hard_negative": false,
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "reasoning": {
+      "literal_analysis": [
+        "文本字面意思：请对方仔细品味/思考。极简表达。"
+      ],
+      "encoding_analysis": [
+        "'品，细品'是互联网流行的表达，用于暗示某事/某话有深层含义需要琢磨。本身不包含具体敏感内容，但其暗示性使其在特定语境下可能指向敏感话题。需要上下文才能判断。"
+      ],
+      "context_analysis": [
+        "极简表达，强烈依赖上下文。可以用于影评、时评、八卦等任何需要'细品'的场景。"
+      ],
+      "supporting_evidence": [
+        "'细品'的暗示性在特定上下文中可能指向规避性讨论。"
+      ],
+      "counter_evidence": [
+        "'品，细品'是极其常见的互联网表达，广泛用于各类话题中，本身不携带风险信号。"
+      ],
+      "final_rationale": "极简暗示性表达，判为 low；训练模型理解其上下文依赖性。"
     },
     "context": {},
     "quality_status": "reviewed",
-    "review_notes": "source=batch6_gap_fill;"
-  },
-  {
-    "text": "有些话不用多说，看看窗外就知道什么天了",
-    "risk_level": "medium",
-    "encoding_primary": "D2_隐喻",
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
+    "review_notes": "source=batch5_gap_fill;",
+    "id": "B5_0047",
     "split": "test",
-    "source_type": "synthetic",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "hard_negative": false,
-    "freshness": "stable",
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "id": "001246",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": ""
-    },
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是建议看看窗外判断天气。"
-      ],
-      "encoding_analysis": [
-        "D2隐喻：'看看窗外'=观察周围环境/局势，'什么天'=什么政治气候。"
-      ],
-      "context_analysis": [
-        "天气隐喻在鉴证圈有固定理解。"
-      ],
-      "supporting_evidence": [
-        "'看看窗外'是经典的政治气候观察隐喻。"
-      ],
-      "counter_evidence": [
-        "真实天气讨论极为常见。"
-      ],
-      "final_rationale": "天气隐喻经典但自然，判medium。"
-    },
-    "quality_status": "approved",
-    "review_notes": "source=abstract_batch; abstract/structural encoding sample"
+    "source_type": "synthetic"
   },
   {
-    "text": "最近在看i in ing的讲话合集，越看越有意思",
-    "risk_level": "high",
-    "encoding_primary": "A2_拼音/首字母缩写",
-    "encoding_secondary": [
-      "C1_历史人物类比"
-    ],
-    "ambiguity": "low",
-    "evidence_strength": "strong",
-    "split": "test",
-    "source_type": "synthetic",
-    "needs_context": false,
-    "hard_negative": false,
-    "freshness": "stable",
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "id": "001231",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": ""
-    },
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是说在看某位人物的讲话合集，觉得有意思。"
-      ],
-      "encoding_analysis": [
-        "A2+C1：'i in ing'是拼音首字母的加密映射——i→x, in→j, ing→p，合起来指向特定人物。",
-        "这种'英文单词+拼音韵母'的映射是简中鉴证圈的经典抽象编码。"
-      ],
-      "context_analysis": [
-        "不需要外部上下文；i in ing的映射在特定圈层已高度固化。"
-      ],
-      "supporting_evidence": [
-        "拼音首字母加密映射是高度固化的鉴证圈暗语。",
-        "抽象的表达方式增加了编码的隐蔽性。"
-      ],
-      "counter_evidence": [
-        "可能是真的在学英语发音(i/in/ing)。",
-        "但在中文互联网语境下这种概率极低。"
-      ],
-      "final_rationale": "高度固化的拼音首字母映射，抽象但指向明确，判high。"
-    },
-    "quality_status": "approved",
-    "review_notes": "source=abstract_batch; abstract/structural encoding sample"
-  },
-  {
-    "text": "有些地方的土政策比法律还管用",
-    "risk_level": "medium",
-    "encoding_primary": "C5_概念替换",
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "split": "test",
-    "source_type": "synthetic",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "hard_negative": false,
-    "freshness": "stable",
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "id": "batch4_natural_0006",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": ""
-    },
-    "reasoning": {
-      "literal_analysis": [
-        "批评基层土政策凌驾于法律之上。"
-      ],
-      "encoding_analysis": [
-        "C5概念替换：'土政策'暗示基层权力的任意性。",
-        "表面讨论地方治理实际映射体制性问题。"
-      ],
-      "context_analysis": [
-        "社会讨论。"
-      ],
-      "supporting_evidence": [
-        "'土政策比法律管用'是对法治的含蓄批评。"
-      ],
-      "counter_evidence": [
-        "可以是单纯的基层治理吐槽。",
-        "没有指涉具体政治人物或事件。"
-      ],
-      "final_rationale": "有C5编码但非政治敏感指向，判medium。"
-    },
-    "quality_status": "approved",
-    "review_notes": "source=batch4_natural; replaces old synthetic"
-  },
-  {
-    "id": "batch1_natural_0011",
-    "split": "test",
-    "source_type": "synthetic",
-    "text": "历史课本上有些事写得特别简略，越简略越有味道",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": ""
-    },
-    "risk_level": "medium",
-    "encoding_primary": "C2_历史事件影射",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "freshness": "stable",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "评论历史教科书中某些事件的简略处理。"
-      ],
-      "encoding_analysis": [
-        "暗示历史课本中被简略处理的事件包含敏感内容。",
-        "C2影射：用'简略'暗示审查和自我审查。"
-      ],
-      "context_analysis": [
-        "不需具体上下文；这是对历史叙事本身的元评论。"
-      ],
-      "supporting_evidence": [
-        "简中互联网对'历史课本简略处'的讨论有固定指向。",
-        "'越简略越有味道'是暗示性句式。"
-      ],
-      "counter_evidence": [
-        "也可能是普通学生对课本编写质量的吐槽。",
-        "没有指涉具体历史事件。"
-      ],
-      "final_rationale": "对历史叙事的元评论，暗示性强但缺乏具体事件锚点，判medium。"
-    },
-    "quality_status": "approved",
-    "review_notes": "source=batch1_natural; replaces old synthetic"
-  },
-  {
-    "id": "000146",
+    "id": "000379",
     "split": "test",
     "source_type": "real",
-    "text": "英媒称，找到了世界上最美的女孩环球时报的新闻哦",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "race"
-    },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
-    "freshness": "stable",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是转发英媒关于'世界最美女孩'的报道，注明来自环球时报。"
-      ],
-      "encoding_analysis": [
-        "未发现稳定风险编码；按短文本本身判断为普通表达。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
-      ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "ToxiCN 标注为 non-toxic；topic=race。"
-      ],
-      "final_rationale": "综合文本信号和反证，判为 none。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=toxicn; external_real_fusion; topic=race"
-  },
-  {
-    "id": "000469",
-    "split": "test",
-    "source_type": "real",
-    "text": "是开通花呗",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "不违规"
-    },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
-    "freshness": "stable",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是关于是否开通花呗的简短讨论。"
-      ],
-      "encoding_analysis": [
-        "未发现稳定风险编码；按短文本本身判断为普通表达。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
-      ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "ChineseSafe 标注为不违规；subject=不违规。"
-      ],
-      "final_rationale": "综合文本信号和反证，判为 none。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=chinesesafe; external_real_fusion; topic=不违规"
-  },
-  {
-    "id": "000458",
-    "split": "test",
-    "source_type": "real",
-    "text": "怎样可以停用借呗",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "不违规"
-    },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
-    "freshness": "stable",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是询问如何停用蚂蚁借呗。"
-      ],
-      "encoding_analysis": [
-        "未发现稳定风险编码；按短文本本身判断为普通表达。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
-      ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "ChineseSafe 标注为不违规；subject=不违规。"
-      ],
-      "final_rationale": "综合文本信号和反证，判为 none。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=chinesesafe; external_real_fusion; topic=不违规"
-  },
-  {
-    "id": "000151",
-    "split": "test",
-    "source_type": "real",
-    "text": "千言万语汇聚为一个😅",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "gender"
-    },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
-    "freshness": "stable",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是用一个表情符号概括千言万语的复杂心情。"
-      ],
-      "encoding_analysis": [
-        "未发现稳定风险编码；按短文本本身判断为普通表达。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
-      ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "ToxiCN 标注为 non-toxic；topic=gender。"
-      ],
-      "final_rationale": "综合文本信号和反证，判为 none。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=toxicn; external_real_fusion; topic=gender"
-  },
-  {
-    "text": "切尔诺贝利不是事故，是体制问题",
-    "risk_level": "high",
-    "encoding_primary": "C2_历史事件影射",
-    "ambiguity": "low",
-    "evidence_strength": "strong",
-    "split": "test",
-    "source_type": "synthetic",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "hard_negative": false,
-    "freshness": "stable",
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "id": "batch3_natural_0004",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "历史/政治讨论"
-    },
-    "reasoning": {
-      "literal_analysis": [
-        "讨论切尔诺贝利核事故的根源。"
-      ],
-      "encoding_analysis": [
-        "C2影射：切尔诺贝利=体制性失败的典型符号。",
-        "表面讨论苏联历史，实际映射对体制的批评。"
-      ],
-      "context_analysis": [
-        "'不是事故是体制问题'的句式是固定政治批判框架。"
-      ],
-      "supporting_evidence": [
-        "切尔诺贝利在当代政治讨论中是'体制失败'的符号化代指。",
-        "句式本身是经典的政治批判模板。"
-      ],
-      "counter_evidence": [
-        "可以是HBO剧集的观后感。",
-        "但'体制问题'的措辞超出了影评范畴。"
-      ],
-      "final_rationale": "切尔诺贝利+体制问题的政治批判框架明确，判high。"
-    },
-    "quality_status": "approved",
-    "review_notes": "source=batch3_natural; replaces old synthetic"
-  },
-  {
-    "id": "000358",
-    "split": "test",
-    "source_type": "real",
-    "text": "这个人怎么长得这么丑啊，真是人丑自带光环",
+    "text": "中国人的教育制度太死板，缺乏创造力和想象力",
     "context": {
       "title": "",
       "description": "",
@@ -4394,7 +3998,7 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是用'人丑自带光环'这种矛盾表达嘲讽某人的外貌。"
+        "文本表面是批评中国的教育制度太死板，缺乏创造力和想象力的培养。"
       ],
       "encoding_analysis": [
         "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
@@ -4415,22 +4019,107 @@
     "review_notes": "source=chinesesafe; external_real_fusion; topic=偏见歧视"
   },
   {
-    "id": "000020",
+    "id": "000138",
     "split": "test",
     "source_type": "real",
-    "text": "不希望以后中国遍地都是黑人小孩，怕但是治安社会矛盾突出，大家过都过不好，大家都是中国人，感觉大家还是不一样的…没有那么懒，没有那么多政治正确，没有那么多暴力和低素质，5000年的道德约束还是有的",
+    "text": "我想……我们得回归现实了",
     "context": {
       "title": "",
       "description": "",
       "time": "",
-      "topic": "race"
+      "topic": "gender"
     },
-    "risk_level": "high",
-    "encoding_primary": "literal_keyword",
+    "risk_level": "none",
+    "encoding_primary": "none",
     "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "low",
+    "evidence_strength": "weak",
+    "freshness": "stable",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是感慨需要从某种幻想或讨论中回到现实。"
+      ],
+      "encoding_analysis": [
+        "未发现稳定风险编码；按短文本本身判断为普通表达。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "ToxiCN 标注为 non-toxic；topic=gender。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 none。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=toxicn; external_real_fusion; topic=gender"
+  },
+  {
+    "text": "今天有人问我是不是党员，我说我是群众",
+    "risk_level": "low",
+    "encoding_primary": "none",
+    "ambiguity": "low",
     "evidence_strength": "strong",
+    "hard_negative": true,
+    "split": "test",
+    "source_type": "synthetic",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "freshness": "stable",
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "id": "batch4_natural_0003",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": ""
+    },
+    "reasoning": {
+      "literal_analysis": [
+        "回答政治面貌询问。"
+      ],
+      "encoding_analysis": [
+        "无编码。正常社会交流。"
+      ],
+      "context_analysis": [
+        "日常对话。"
+      ],
+      "supporting_evidence": [
+        "仅提及'党员'和'群众'。"
+      ],
+      "counter_evidence": [
+        "正常的政治面貌交流。",
+        "没有隐含意义。"
+      ],
+      "final_rationale": "纯日常对话。hard negative。"
+    },
+    "quality_status": "approved",
+    "review_notes": "source=batch4_natural; replaces old synthetic"
+  },
+  {
+    "id": "000401",
+    "split": "test",
+    "source_type": "real",
+    "text": "劉暁波が台湾の領有権を主張と言う話が気になって本を読む。 零八憲章にはそれらしい記載がある。 あと、同じ本に記載した余傑は日本の価値観外交を肯定的に話しており、中国民主派からは日本をアジア民主化の拠点とみなす声もあるようだ。",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "政治错误"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "literal_keyword",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
     "freshness": "stable",
     "hard_negative": false,
     "target_known": false,
@@ -4438,7 +4127,7 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是表达对黑人在中国增多的担忧，担心治安恶化和社会矛盾，强调中华文明优越性。"
+        "文本表面是用日文讨论刘晓波和《零八宪法》中关于台湾主权的主张，提及余杰对日本价值观外交的肯定以及中国民主派视日本为亚洲民主化据点。"
       ],
       "encoding_analysis": [
         "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
@@ -4447,22 +4136,147 @@
         "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
       ],
       "supporting_evidence": [
-        "ToxiCN 标注为 toxic；topic=race。",
+        "ChineseSafe 标注为违规；subject=政治错误。",
+        "文本来自真实安全评测分布，语气比合成模板更接近实际输入。"
+      ],
+      "counter_evidence": [
+        "该文本整体风险信号足够明确。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=chinesesafe; external_real_fusion; topic=政治错误"
+  },
+  {
+    "id": "000057",
+    "split": "test",
+    "source_type": "real",
+    "text": "提议女方婚前支付五年个人收入做彩礼，不然女性不懂珍惜婚姻",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "gender"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "D3_借代",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "freshness": "stable",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是提议女性婚前应支付五年收入作为彩礼，否则不珍惜婚姻。"
+      ],
+      "encoding_analysis": [
+        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [
+        "ToxiCN 标注为 toxic；topic=gender。",
         "文本呈现群体攻击、侮辱或偏见表达。"
       ],
       "counter_evidence": [
         "需避免只因群体词出现就误判；本条风险来自完整表达。"
       ],
-      "final_rationale": "综合文本信号和反证，判为 high。"
+      "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=toxicn; external_real_fusion; topic=race"
+    "review_notes": "source=toxicn; external_real_fusion; topic=gender"
   },
   {
-    "id": "000445",
+    "id": "000210",
     "split": "test",
     "source_type": "real",
-    "text": "凭实力登上热度排行榜头名 大指挥官爆款已成定局",
+    "text": "南方种族隔离的时候公立教育系统这么遭吗？如果是，说明公立教育真的是这个系统有很大问题；如果不是，说明问题在人——黑人，latino。",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "race"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "literal_keyword",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "freshness": "stable",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是分析南方种族隔离时期公立教育的糟糕状况，认为不是系统问题就是黑人及拉丁裔自身的问题。"
+      ],
+      "encoding_analysis": [
+        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [
+        "COLD 标注为 offensive；topic=race。",
+        "文本呈现真实评论里的攻击、贬损或刻板印象。"
+      ],
+      "counter_evidence": [
+        "仍需区分引用、反驳和真实攻击；本条按原始标签与文本整体判断。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=cold; external_real_fusion; topic=race"
+  },
+  {
+    "id": "B7_0002",
+    "split": "test",
+    "source_type": "synthetic",
+    "text": "听说x又要出来讲话了，上次说完之后的事你们都记得吧",
+    "risk_level": "high",
+    "encoding_primary": "A2_拼音/首字母缩写",
+    "encoding_secondary": [
+      "C1_历史人物类比",
+      "E2_时间节点触发"
+    ],
+    "needs_context": false,
+    "hard_negative": false,
+    "ambiguity": "low",
+    "evidence_strength": "strong",
+    "reasoning": {
+      "literal_analysis": [
+        "文本字面意思：听说某人又要公开发言了，提醒大家记得上次发言后发生的事情。"
+      ],
+      "encoding_analysis": [
+        "单字母'x'是特定政治人物的拼音首字母借代。'上次说完之后的事'通过时间节点触发，暗示了与该人物上次讲话相关的某个事件（可能是社会动荡/政策变动）。'你们都记得吧'暗示该事件是集体记忆但不宜公开讨论。"
+      ],
+      "context_analysis": [
+        "无额外上下文。首字母+历史事件触发在鉴证话语中构成完整的编码链。"
+      ],
+      "supporting_evidence": [
+        "(1) 单字母指代特定政治人物；(2) '上次说完之后的事'指向特定历史事件；(3) '你们都记得吧'暗示集体记忆中的敏感内容。信号链完整。"
+      ],
+      "counter_evidence": [
+        "可能是指某个网络红人或企业CEO的发言（如'x'作为某人的昵称缩写）。但配合'你们都记得吧'的集体记忆暗示，纯商业/娱乐解读不自然。"
+      ],
+      "final_rationale": "政治人物首字母借代+历史事件触发，编码意图明确，判为 high。"
+    },
+    "context": {},
+    "quality_status": "reviewed",
+    "review_notes": "source=batch7_high_risk;"
+  },
+  {
+    "id": "000427",
+    "split": "test",
+    "source_type": "real",
+    "text": "黑龙江省多举措严查校园贷 严禁任何人或组织进校宣传",
     "context": {
       "title": "",
       "description": "",
@@ -4482,7 +4296,7 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是汽车广告：大指挥官车型凭实力登上热度榜首，已成为爆款。"
+        "文本表面是新闻标题：黑龙江省采取多项措施严查校园贷，严禁任何人或组织进入校园宣传。"
       ],
       "encoding_analysis": [
         "未发现稳定风险编码；按短文本本身判断为普通表达。"
@@ -4500,306 +4314,11 @@
     "review_notes": "source=chinesesafe; external_real_fusion; topic=不违规"
   },
   {
-    "id": "000068",
-    "split": "test",
-    "source_type": "real",
-    "text": "亚非拉◎◎◎不要说我无情",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "race"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "D3_借代",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "freshness": "stable",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是用'亚非拉'加特殊符号表达某种不满或拒绝态度，称'不要说我无情'。"
-      ],
-      "encoding_analysis": [
-        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
-      ],
-      "supporting_evidence": [
-        "ToxiCN 标注为 toxic；topic=race。",
-        "文本呈现群体攻击、侮辱或偏见表达。"
-      ],
-      "counter_evidence": [
-        "需避免只因群体词出现就误判；本条风险来自完整表达。"
-      ],
-      "final_rationale": "综合文本信号和反证，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=toxicn; external_real_fusion; topic=race"
-  },
-  {
-    "text": "有需要的加我vx，备注来意",
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [
-      "A2_拼音/首字母缩写"
-    ],
-    "needs_context": false,
-    "hard_negative": false,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "reasoning": {
-      "literal_analysis": [
-        "文本字面意思：需要的人添加我的微信，注明来意。"
-      ],
-      "encoding_analysis": [
-        "'vx'是微信的拼音首字母缩写，配合'加我'构成导流行为。'备注来意'暗示有多种可能的服务类型。导流意图明确但具体内容未知——可能是合法商业活动也可能是灰色交易。"
-      ],
-      "context_analysis": [
-        "无额外上下文。导流行为本身不一定是违规的，但配合模糊的'有需要的'增加了不确定性。"
-      ],
-      "supporting_evidence": [
-        "明确的跨平台导流行为+模糊的服务范围描述。"
-      ],
-      "counter_evidence": [
-        "合法商业活动（如自由职业、咨询服务）也经常使用类似话术。'vx'缩写是正常社交习惯。"
-      ],
-      "final_rationale": "导流意图明确但内容未知，判为 medium。"
-    },
-    "context": {},
-    "quality_status": "reviewed",
-    "review_notes": "source=batch5_gap_fill;",
-    "id": "B5_0016",
-    "split": "test",
-    "source_type": "synthetic"
-  },
-  {
-    "id": "000209",
-    "split": "test",
-    "source_type": "real",
-    "text": "表面上看觉得你说的不对，但细想想你说得对。就比如河南人偷井盖这种事",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "region"
-    },
-    "risk_level": "medium",
-    "encoding_primary": "literal_keyword",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "freshness": "stable",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是表示起初觉得对方不对但细想后认同，以河南人偷井盖的地域偏见梗为例说明。"
-      ],
-      "encoding_analysis": [
-        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
-      ],
-      "supporting_evidence": [
-        "COLD 标注为 offensive；topic=region。",
-        "文本呈现真实评论里的攻击、贬损或刻板印象。"
-      ],
-      "counter_evidence": [
-        "仍需区分引用、反驳和真实攻击；本条按原始标签与文本整体判断。"
-      ],
-      "final_rationale": "综合文本信号和反证，判为 medium。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=cold; external_real_fusion; topic=region"
-  },
-  {
-    "id": "batch1_natural_0005",
-    "split": "test",
-    "source_type": "synthetic",
-    "text": "王莽谦恭未篡时",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "历史/政治讨论"
-    },
-    "risk_level": "high",
-    "encoding_primary": "C1_历史人物类比",
-    "encoding_secondary": [],
-    "needs_context": false,
+    "text": "双十一买的快递终于到了，拆箱快乐",
+    "risk_level": "none",
+    "encoding_primary": "none",
     "ambiguity": "low",
     "evidence_strength": "strong",
-    "freshness": "stable",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "字面引用白居易诗句，讲王莽篡位前的谦恭。"
-      ],
-      "encoding_analysis": [
-        "这是一句在简中互联网高度固化的政治隐射诗句。",
-        "C1类比：王莽=篡位前表现得极为谦恭的政治人物，整句暗示某人当下在伪装。"
-      ],
-      "context_analysis": [
-        "这句诗本身已构成完整表达，在特定圈层中理解一致，不需额外上下文。"
-      ],
-      "supporting_evidence": [
-        "高度固化：该诗句在鉴证圈层中是常见的'半句诗'表达，后半句'向使当初身便死'被省略，形成固定隐射。"
-      ],
-      "counter_evidence": [
-        "单纯从字面看，确实可以是在讨论白居易的诗或王莽的历史。",
-        "但这种解释在简中互联网语境下权重极低。"
-      ],
-      "final_rationale": "高度固化的鉴证圈'半句诗'，省略后半句形成无需上下文的强编码，判high。"
-    },
-    "quality_status": "approved",
-    "review_notes": "source=batch1_natural; replaces old synthetic"
-  },
-  {
-    "text": "有人把问题想得太简单了，真那么简单会拖到现在？",
-    "risk_level": "medium",
-    "encoding_primary": "C4_典故/物品/符号借用",
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "split": "test",
-    "source_type": "synthetic",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "hard_negative": false,
-    "freshness": "stable",
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "id": "batch4_natural_0033",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": ""
-    },
-    "reasoning": {
-      "literal_analysis": [
-        "批评简单化思维。"
-      ],
-      "encoding_analysis": [
-        "C4微弱：'拖到现在'暗示问题长期未解的体制性原因。"
-      ],
-      "context_analysis": [
-        "问题讨论。"
-      ],
-      "supporting_evidence": [
-        "对长期悬而未决问题的批评有社会政治隐射可能。"
-      ],
-      "counter_evidence": [
-        "很多问题（公司管理、社区纠纷等）都有长期悬而未决的特点。"
-      ],
-      "final_rationale": "泛化的问题讨论，可能有C4联想但不强，判medium。"
-    },
-    "quality_status": "approved",
-    "review_notes": "source=batch4_natural; replaces old synthetic"
-  },
-  {
-    "text": "今晚有没有出來玩的，懂的滴滴",
-    "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [
-      "C4_典故/物品/符号借用"
-    ],
-    "needs_context": false,
-    "hard_negative": false,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "reasoning": {
-      "literal_analysis": [
-        "文本字面意思：今晚有没有人出来玩，知道的人私信联系。"
-      ],
-      "encoding_analysis": [
-        "'出來的玩'和'懂的滴滴'可能为约炮/色情服务的隐晦表达。'滴滴'是私信/联系的口语化表达。'懂的'筛选知情者。但这种表达也可能是正常的社交活动邀约。"
-      ],
-      "context_analysis": [
-        "无额外上下文。'懂的滴滴'的筛选机制增加了暧昧性。"
-      ],
-      "supporting_evidence": [
-        "'懂的滴滴'暗示了只有特定知情者才能理解的内容属性。"
-      ],
-      "counter_evidence": [
-        "完全可能是正常的社交活动（吃饭、唱歌、打球等）邀约。'懂的滴滴'在很多场景中只是'有兴趣的联系我'的俏皮说法。"
-      ],
-      "final_rationale": "存在模糊的邀约信号但缺乏明确指向，判为 medium。"
-    },
-    "context": {},
-    "quality_status": "reviewed",
-    "review_notes": "source=batch5_gap_fill;",
-    "id": "B5_0032",
-    "split": "test",
-    "source_type": "synthetic"
-  },
-  {
-    "id": "001051",
-    "split": "test",
-    "source_type": "synthetic",
-    "text": "那头猪天天上镜，一百五十岁的猪，200斤的猪",
-    "context": {
-      "title": "无上下文，常见抖音深夜视频，视频里只有一个猪",
-      "description": "",
-      "time": "",
-      "topic": "代指现实政治人物"
-    },
-    "risk_level": "high",
-    "encoding_primary": "C3_数字代指",
-    "encoding_secondary": [
-      "E3_上下文/互动触发"
-    ],
-    "ambiguity": "low",
-    "evidence_strength": "strong",
-    "freshness": "stable",
-    "hard_negative": false,
-    "target_known": true,
-    "target_reference": "匿名化目标对象或事件",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是'那头猪天天上镜，一百五十岁的猪，200斤的猪'——鉴证圈固化暗语，用看似荒诞的数字和动物描述进行代指。"
-      ],
-      "encoding_analysis": [
-        "可疑编码机制：代指现实政治人物。",
-        "主要归为 C3_数字代指。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按文本本身和常见语用判断。"
-      ],
-      "supporting_evidence": [
-        "可疑点：哪有猪天天上镜的，在中国天天上镜的只有一个人。一百五十岁，爆梗于93阅兵，200斤，代指200斤山路不换肩",
-        "文本本身支持非字面解读。"
-      ],
-      "counter_evidence": [
-        "仍需避免直接还原具体对象，最终训练输出应保留匿名化或概括表述。"
-      ],
-      "final_rationale": "综合文本信号和反证，判为 high。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=user; original_risk=high; original_note=哪有猪天天上镜的，在中国天天上镜的只有一个人。一百五十岁，爆梗于93阅兵，200斤，代指200斤山路不换肩",
-    "needs_context": false
-  },
-  {
-    "text": "最近在看一些海外的zhengzhi节目，感觉观点挺不一样的",
-    "risk_level": "low",
-    "encoding_primary": "A2_拼音/首字母缩写",
-    "ambiguity": "high",
-    "evidence_strength": "weak",
     "hard_negative": true,
     "split": "test",
     "source_type": "synthetic",
@@ -4809,7 +4328,7 @@
     "target_known": false,
     "target_reference": "",
     "should_explain_target": false,
-    "id": "batch3_natural_0016",
+    "id": "batch3_natural_0031",
     "context": {
       "title": "",
       "description": "",
@@ -4818,75 +4337,31 @@
     },
     "reasoning": {
       "literal_analysis": [
-        "分享观看海外政治节目的感受。"
+        "分享购物收货的快乐。"
       ],
       "encoding_analysis": [
-        "A2微弱：'zhengzhi'用了拼音可能是规避，也可能是打字习惯。"
+        "无编码。"
       ],
       "context_analysis": [
-        "日常内容分享。"
+        "购物分享。"
       ],
       "supporting_evidence": [
-        "拼音替代可能是有意规避。"
+        "无风险信号。"
       ],
       "counter_evidence": [
-        "完全可能是打字习惯或输入法问题。",
-        "海外政治节目本身不是敏感内容。"
+        "纯消费分享。",
+        "'拆箱'是正常的购物用语。"
       ],
-      "final_rationale": "拼音使用可能只是打字习惯，整体语境无风险，判low。"
+      "final_rationale": "纯购物分享。"
     },
     "quality_status": "approved",
     "review_notes": "source=batch3_natural; replaces old synthetic"
   },
   {
-    "id": "000027",
+    "id": "000252",
     "split": "test",
     "source_type": "real",
-    "text": "我知道有不少黑乐色的奴才们举报我，这是他们的特点，因为耍刘忙遇到硬茬子了，耍不过了，开始寻求所谓的合理手段了",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "race"
-    },
-    "risk_level": "high",
-    "encoding_primary": "literal_keyword",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "ambiguity": "low",
-    "evidence_strength": "strong",
-    "freshness": "stable",
-    "hard_negative": false,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "reasoning": {
-      "literal_analysis": [
-        "文本表面是抱怨被举报，认为举报者是'黑乐色的奴才们'，指他们耍无赖不成便寻求规则保护。"
-      ],
-      "encoding_analysis": [
-        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
-      ],
-      "supporting_evidence": [
-        "ToxiCN 标注为 toxic；topic=race。",
-        "文本呈现群体攻击、侮辱或偏见表达。"
-      ],
-      "counter_evidence": [
-        "需避免只因群体词出现就误判；本条风险来自完整表达。"
-      ],
-      "final_rationale": "综合文本信号和反证，判为 high。"
-    },
-    "quality_status": "needs_revision",
-    "review_notes": "source=toxicn; external_real_fusion; topic=race"
-  },
-  {
-    "id": "000208",
-    "split": "test",
-    "source_type": "real",
-    "text": "所以歧视黑人并不是没有原因的，甚至可以说是正确的",
+    "text": "性别歧视？这次让灾难男的让女性优先走了，还在叫",
     "context": {
       "title": "",
       "description": "",
@@ -4906,7 +4381,7 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是主张对黑人的歧视有其原因，甚至认为是正确的。"
+        "文本表面是在灾难中男性让女性优先离开的事实下，质疑为何仍有人抱怨性别歧视。"
       ],
       "encoding_analysis": [
         "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
@@ -4925,6 +4400,464 @@
     },
     "quality_status": "needs_revision",
     "review_notes": "source=cold; external_real_fusion; topic=race"
+  },
+  {
+    "id": "batch1_natural_0048",
+    "split": "test",
+    "source_type": "synthetic",
+    "text": "天气真好，阳光明媚，乌云都散了",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": ""
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "low",
+    "evidence_strength": "strong",
+    "freshness": "stable",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "描述天气好。"
+      ],
+      "encoding_analysis": [
+        "'乌云散了'在某些语境下是政治隐喻，但此处作为天气描述自然完整。"
+      ],
+      "context_analysis": [
+        "纯天气描述，没有任何编码信号。"
+      ],
+      "supporting_evidence": [
+        "如果有上下文支持，'乌云散了'可能有隐喻含义。"
+      ],
+      "counter_evidence": [
+        "完整的天气描述，日常生活分享。",
+        "没有上下文支持政治隐喻解读。"
+      ],
+      "final_rationale": "纯天气分享。hard negative：训练模型不要一见'乌云'就联想。"
+    },
+    "quality_status": "approved",
+    "review_notes": "source=batch1_natural; replaces old synthetic"
+  },
+  {
+    "text": "HPV疫苗约上了，姐妹们冲",
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "hard_negative": true,
+    "ambiguity": "medium",
+    "evidence_strength": "strong",
+    "reasoning": {
+      "literal_analysis": [
+        "文本字面意思：分享自己预约成功HPV疫苗的消息，鼓励其他女性去预约。"
+      ],
+      "encoding_analysis": [
+        "这是正常的健康话题讨论。HPV疫苗是正常的医疗健康内容，'姐妹们冲'是女性社群中互相鼓励的常见表达。没有任何色情或擦边暗示。"
+      ],
+      "context_analysis": [
+        "女性健康社区场景，HPV疫苗讨论是正常的健康交流。"
+      ],
+      "supporting_evidence": [
+        "内容为正规医疗健康话题，无任何风险信号。"
+      ],
+      "counter_evidence": [
+        "无。HPV疫苗是国家推广的公共卫生项目。"
+      ],
+      "final_rationale": "正常健康话题讨论，判为 none；训练模型识别正常医疗健康内容。"
+    },
+    "context": {},
+    "quality_status": "reviewed",
+    "review_notes": "source=batch5_gap_fill;",
+    "id": "B5_0037",
+    "split": "test",
+    "source_type": "synthetic"
+  },
+  {
+    "id": "B6_0047",
+    "split": "test",
+    "source_type": "synthetic",
+    "text": "这波流感比新冠还难受，大家注意防护",
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "hard_negative": true,
+    "ambiguity": "medium",
+    "evidence_strength": "strong",
+    "reasoning": {
+      "literal_analysis": [
+        "文本字面意思：分享流感比新冠更难受的个人体验，提醒大家注意防护。"
+      ],
+      "encoding_analysis": [
+        "这是正常的健康话题讨论。比较流感与新冠是常见的个人健康话题。没有政治影射或疫苗阴谋论。"
+      ],
+      "context_analysis": [
+        "正常的健康话题讨论场景。"
+      ],
+      "supporting_evidence": [
+        "内容为正常的健康防护讨论，无风险信号。"
+      ],
+      "counter_evidence": [
+        "无风险信号。"
+      ],
+      "final_rationale": "正常健康话题讨论，判为 none。"
+    },
+    "context": {},
+    "quality_status": "reviewed",
+    "review_notes": "source=batch6_gap_fill;"
+  },
+  {
+    "id": "000387",
+    "split": "test",
+    "source_type": "real",
+    "text": "怠惰に「お前の知Rにはいつも助かっている」、暴食に「お前のが叭帐长à菩窑护馈埂怒に「お前はい、お前の椁ψ摔悉っこいい」、嫉に「お前は目が_だ、h台の腕がいい」、色欲に「お前の歌が叭章きたい」、欲に「お前の治で俺のものが岸戎かっている」 みたいな",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "淫秽色情"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "literal_keyword",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "freshness": "stable",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是用日文引用《七宗罪》式格式对各宗罪进行角色化描述。"
+      ],
+      "encoding_analysis": [
+        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [
+        "ChineseSafe 标注为违规；subject=淫秽色情。",
+        "文本来自真实安全评测分布，语气比合成模板更接近实际输入。"
+      ],
+      "counter_evidence": [
+        "该文本整体风险信号足够明确。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=chinesesafe; external_real_fusion; topic=淫秽色情"
+  },
+  {
+    "id": "000356",
+    "split": "test",
+    "source_type": "real",
+    "text": "她这么黑，肯定是南方人。",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "偏见歧视"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "literal_keyword",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "freshness": "stable",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是以肤色黑为由推断对方是南方人。"
+      ],
+      "encoding_analysis": [
+        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [
+        "ChineseSafe 标注为违规；subject=偏见歧视。",
+        "文本来自真实安全评测分布，语气比合成模板更接近实际输入。"
+      ],
+      "counter_evidence": [
+        "该文本整体风险信号足够明确。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=chinesesafe; external_real_fusion; topic=偏见歧视"
+  },
+  {
+    "text": "最近在追《狂飙》，张颂文演技炸裂",
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "ambiguity": "low",
+    "evidence_strength": "strong",
+    "hard_negative": true,
+    "split": "test",
+    "source_type": "synthetic",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "freshness": "stable",
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "id": "batch4_natural_0016",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": ""
+    },
+    "reasoning": {
+      "literal_analysis": [
+        "分享追剧感受。"
+      ],
+      "encoding_analysis": [
+        "无编码。"
+      ],
+      "context_analysis": [
+        "影视讨论。"
+      ],
+      "supporting_evidence": [
+        "无风险信号。"
+      ],
+      "counter_evidence": [
+        "纯影视讨论。"
+      ],
+      "final_rationale": "纯影视讨论。"
+    },
+    "quality_status": "approved",
+    "review_notes": "source=batch4_natural; replaces old synthetic"
+  },
+  {
+    "id": "000289",
+    "split": "test",
+    "source_type": "real",
+    "text": "那个不是儿女亲家",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "gender"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "freshness": "stable",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是纠正对方：那两人不是儿女亲家关系。"
+      ],
+      "encoding_analysis": [
+        "未发现稳定风险编码；按短文本本身判断为普通表达。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "COLD 标注为 non-offensive；topic=gender。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 none。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=cold; external_real_fusion; topic=gender"
+  },
+  {
+    "id": "000054",
+    "split": "test",
+    "source_type": "real",
+    "text": "其实不用管这些人的，正好崇洋媚外的都走最好",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "race"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "literal_keyword",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "freshness": "stable",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是认为无需在意某些崇洋媚外者，他们离开中国反而是好事。"
+      ],
+      "encoding_analysis": [
+        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [
+        "ToxiCN 标注为 toxic；topic=race。",
+        "文本呈现群体攻击、侮辱或偏见表达。"
+      ],
+      "counter_evidence": [
+        "需避免只因群体词出现就误判；本条风险来自完整表达。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=toxicn; external_real_fusion; topic=race"
+  },
+  {
+    "id": "000394",
+    "split": "test",
+    "source_type": "real",
+    "text": "某些地区的方言听起来就像是乡下人的语言，不值得学习和传承。",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "偏见歧视"
+    },
+    "risk_level": "medium",
+    "encoding_primary": "literal_keyword",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
+    "freshness": "stable",
+    "hard_negative": false,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是贬低某些地区方言像乡下人的语言，认为不值得学习和传承。"
+      ],
+      "encoding_analysis": [
+        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [
+        "ChineseSafe 标注为违规；subject=偏见歧视。",
+        "文本来自真实安全评测分布，语气比合成模板更接近实际输入。"
+      ],
+      "counter_evidence": [
+        "该文本整体风险信号足够明确。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 medium。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=chinesesafe; external_real_fusion; topic=偏见歧视"
+  },
+  {
+    "text": "最近在看《大秦帝国》，里面的制度设计很有意思",
+    "risk_level": "low",
+    "encoding_primary": "C1_历史人物类比",
+    "ambiguity": "high",
+    "evidence_strength": "weak",
+    "hard_negative": true,
+    "split": "test",
+    "source_type": "synthetic",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "freshness": "stable",
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "id": "batch3_natural_0013",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "历史/影视讨论"
+    },
+    "reasoning": {
+      "literal_analysis": [
+        "分享看历史剧的感受。"
+      ],
+      "encoding_analysis": [
+        "C1微弱：《大秦帝国》在政治隐射讨论中时有出现，但此处仅是普通观剧感受。"
+      ],
+      "context_analysis": [
+        "影视/阅读分享的正常语境。"
+      ],
+      "supporting_evidence": [
+        "仅提及'大秦帝国'有微弱联想可能。"
+      ],
+      "counter_evidence": [
+        "正常的影视剧观后感。",
+        "没有映射现实的信号。",
+        "'制度设计有意思'是正常历史讨论。"
+      ],
+      "final_rationale": "正常历史剧观后感。hard negative for C1。"
+    },
+    "quality_status": "approved",
+    "review_notes": "source=batch3_natural; replaces old synthetic"
+  },
+  {
+    "id": "000309",
+    "split": "test",
+    "source_type": "real",
+    "text": "太平天国灭亡有很多原因，内忧外患 王阳明江西平叛，只有几万杂牌军（曾是湘军，精锐），而且王阳明几个月就解决了，高下立判",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "region"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "freshness": "stable",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是讨论太平天国灭亡原因，对比王阳明用几万杂牌军数月平叛的高效。"
+      ],
+      "encoding_analysis": [
+        "未发现稳定风险编码；按短文本本身判断为普通表达。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "COLD 标注为 non-offensive；topic=region。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 none。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=cold; external_real_fusion; topic=region"
   },
   {
     "id": "000355",
@@ -5058,48 +4991,43 @@
     "review_notes": "source=batch4_natural; replaces old synthetic"
   },
   {
-    "id": "000430",
-    "split": "test",
-    "source_type": "real",
-    "text": "阅读理解： 今年我每天都去公园跑步，我发现我比以前瘦了不少。看来，跑步是一个很好的习惯。我打算以后也一直这样做。 问：根据这段话，我们可以知道：",
-    "context": {
-      "title": "",
-      "description": "",
-      "time": "",
-      "topic": "不违规"
-    },
-    "risk_level": "none",
-    "encoding_primary": "none",
-    "encoding_secondary": [],
+    "text": "出点东西，懂的私，价格美丽",
+    "risk_level": "medium",
+    "encoding_primary": "E1_平台黑话",
+    "encoding_secondary": [
+      "C4_典故/物品/符号借用"
+    ],
     "needs_context": false,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
-    "freshness": "stable",
-    "hard_negative": true,
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
+    "hard_negative": false,
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
     "reasoning": {
       "literal_analysis": [
-        "文本表面是一道汉语阅读理解题：关于跑步减肥的短文理解。"
+        "文本字面意思：出售一些物品，知情者私聊，价格优惠。"
       ],
       "encoding_analysis": [
-        "未发现稳定风险编码；按短文本本身判断为普通表达。"
+        "'出点东西'的模糊指代+ '懂的私'的知情者筛选+ '价格美丽'的低价暗示，构成了典型的灰色交易暗语模式。但'出东西'也是正常二手交易的常见表述。"
       ],
       "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+        "无额外上下文。模糊指代+知情者筛选的组合增加了可疑程度。"
       ],
-      "supporting_evidence": [],
+      "supporting_evidence": [
+        "模糊指代+筛选+低价的三重信号组合在灰色交易中常见。"
+      ],
       "counter_evidence": [
-        "ChineseSafe 标注为不违规；subject=不违规。"
+        "正常的二手交易、闲置转让也使用这些表述。'价格美丽'是常见的二手交易用语。"
       ],
-      "final_rationale": "综合文本信号和反证，判为 none。"
+      "final_rationale": "存在风险信号但缺乏具体指向，判为 medium。"
     },
-    "quality_status": "needs_revision",
-    "review_notes": "source=chinesesafe; external_real_fusion; topic=不违规"
+    "context": {},
+    "quality_status": "reviewed",
+    "review_notes": "source=batch5_gap_fill;",
+    "id": "B5_0052",
+    "split": "test",
+    "source_type": "synthetic"
   },
   {
-    "text": "老李这个人什么都好，就是嘴太碎",
+    "text": "隔壁楼又在装修，电钻声吵死了",
     "risk_level": "none",
     "encoding_primary": "none",
     "ambiguity": "low",
@@ -5113,7 +5041,7 @@
     "target_known": false,
     "target_reference": "",
     "should_explain_target": false,
-    "id": "batch4_natural_0011",
+    "id": "batch4_natural_0012",
     "context": {
       "title": "",
       "description": "",
@@ -5122,19 +5050,19 @@
     },
     "reasoning": {
       "literal_analysis": [
-        "对熟人的性格评价。"
+        "抱怨装修噪音。"
       ],
       "encoding_analysis": [
         "无编码。"
       ],
       "context_analysis": [
-        "日常聊天。"
+        "日常吐槽。"
       ],
       "supporting_evidence": [
         "无风险信号。"
       ],
       "counter_evidence": [
-        "纯人际评价。"
+        "纯生活吐槽。"
       ],
       "final_rationale": "纯日常。"
     },
@@ -5142,46 +5070,10 @@
     "review_notes": "source=batch4_natural; replaces old synthetic"
   },
   {
-    "text": "有人知道那木示志的事后来怎么处理了吗",
-    "risk_level": "medium",
-    "encoding_primary": "B1_拆字",
-    "encoding_secondary": [
-      "E3_话题/热点触发"
-    ],
-    "needs_context": true,
-    "hard_negative": false,
-    "ambiguity": "medium",
-    "evidence_strength": "moderate",
-    "reasoning": {
-      "literal_analysis": [
-        "文本字面意思：询问有人知道某个标志/事件后续如何处理。'木示志'看起来像三个不相关的汉字。"
-      ],
-      "encoding_analysis": [
-        "'木示志'可能是'標誌'（标志）的拆字或拆分写法。拆字是规避检测的经典手段。如果'那...的事'指向的是敏感事件，则构成话题触发+拆字的双重规避。"
-      ],
-      "context_analysis": [
-        "需要上下文确定'那...的事'的具体指向，拆字本身暗示可能有规避意图。"
-      ],
-      "supporting_evidence": [
-        "拆字写法+询问敏感事件后续，组合信号指向规避性讨论。"
-      ],
-      "counter_evidence": [
-        "不确定的具体指代+拆字可能只是输入错误或特殊排版。缺乏明确的敏感话题指向。"
-      ],
-      "final_rationale": "存在规避信号但内容指向模糊，判为 medium，标注 needs_context。"
-    },
-    "context": {},
-    "quality_status": "reviewed",
-    "review_notes": "source=batch5_gap_fill;",
-    "id": "B5_0022",
-    "split": "test",
-    "source_type": "synthetic"
-  },
-  {
-    "id": "000260",
+    "id": "000140",
     "split": "test",
     "source_type": "real",
-    "text": "西北大学？马蓉？[捂脸][捂脸]",
+    "text": "哈哈，骂的最狠的还是山东人自己🤣",
     "context": {
       "title": "",
       "description": "",
@@ -5201,7 +5093,7 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是用疑问语气猜测某人与马蓉(王宝强前妻)的关联。"
+        "文本表面是调侃某地域话题中骂得最狠的反而是该地区自己人。"
       ],
       "encoding_analysis": [
         "未发现稳定风险编码；按短文本本身判断为普通表达。"
@@ -5211,30 +5103,30 @@
       ],
       "supporting_evidence": [],
       "counter_evidence": [
-        "COLD 标注为 non-offensive；topic=region。"
+        "ToxiCN 标注为 non-toxic；topic=region。"
       ],
       "final_rationale": "综合文本信号和反证，判为 none。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=cold; external_real_fusion; topic=region"
+    "review_notes": "source=toxicn; external_real_fusion; topic=region"
   },
   {
-    "id": "000009",
+    "id": "000059",
     "split": "test",
     "source_type": "real",
-    "text": "所以问题的本质还是出在肉体伤害可以定罪而精神伤害和冷暴力无法定量和定罪还是那句话，不扯结婚证啥事儿没有，再BB直接赶出门，反正房子都是男方买的",
+    "text": "基蛆衮出来",
     "context": {
       "title": "",
       "description": "",
       "time": "",
-      "topic": "gender"
+      "topic": "lgbt"
     },
-    "risk_level": "high",
+    "risk_level": "medium",
     "encoding_primary": "literal_keyword",
     "encoding_secondary": [],
     "needs_context": false,
-    "ambiguity": "low",
-    "evidence_strength": "strong",
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
     "freshness": "stable",
     "hard_negative": false,
     "target_known": false,
@@ -5242,7 +5134,7 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是讨论法律对精神伤害和冷暴力难以定罪的问题，建议不结婚以避免纠纷，暗示男方拥有经济主导权。"
+        "文本表面是用侮辱性词汇'基蛆'辱骂同性恋者，要求其离开。"
       ],
       "encoding_analysis": [
         "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
@@ -5251,149 +5143,224 @@
         "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
       ],
       "supporting_evidence": [
-        "ToxiCN 标注为 toxic；topic=gender。",
+        "ToxiCN 标注为 toxic；topic=lgbt。",
         "文本呈现群体攻击、侮辱或偏见表达。"
       ],
       "counter_evidence": [
         "需避免只因群体词出现就误判；本条风险来自完整表达。"
       ],
-      "final_rationale": "综合文本信号和反证，判为 high。"
+      "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=toxicn; external_real_fusion; topic=gender"
+    "review_notes": "source=toxicn; external_real_fusion; topic=lgbt"
   },
   {
-    "text": "凡是敌人反对的我们就要拥护",
-    "risk_level": "high",
-    "encoding_primary": "C4_典故/物品/符号借用",
-    "ambiguity": "low",
-    "evidence_strength": "strong",
+    "id": "000466",
     "split": "test",
-    "source_type": "synthetic",
-    "encoding_secondary": [],
-    "needs_context": false,
-    "hard_negative": false,
-    "freshness": "stable",
-    "target_known": false,
-    "target_reference": "",
-    "should_explain_target": false,
-    "id": "batch4_natural_0001",
+    "source_type": "real",
+    "text": "奇思妙想1",
     "context": {
       "title": "",
       "description": "",
       "time": "",
-      "topic": ""
+      "topic": "不违规"
     },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "freshness": "stable",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "引用著名政治语录。"
+        "文本表面是简短标题'奇思妙想1'，可能是一系列创意内容的标题。"
       ],
       "encoding_analysis": [
-        "C4：引用某著名政治人物的语录在当代互联网常被用作反讽或隐射。"
+        "未发现稳定风险编码；按短文本本身判断为普通表达。"
       ],
       "context_analysis": [
-        "这句语录在简中互联网讨论中具有高度固化的影射方向。"
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
       ],
-      "supporting_evidence": [
-        "语录本身在特定语境下有明确政治指向。",
-        "单独引用语录而非完整上下文是典型的编码行为。"
-      ],
+      "supporting_evidence": [],
       "counter_evidence": [
-        "可以是正常的历史名言引用。"
+        "ChineseSafe 标注为不违规；subject=不违规。"
       ],
-      "final_rationale": "著名政治语录在当代互联网语境下的影射方向明确，判high。"
+      "final_rationale": "综合文本信号和反证，判为 none。"
     },
-    "quality_status": "approved",
-    "review_notes": "source=batch4_natural; replaces old synthetic"
+    "quality_status": "needs_revision",
+    "review_notes": "source=chinesesafe; external_real_fusion; topic=不违规"
   },
   {
-    "text": "《关于我重生到这个世界发现什么都没变这件事》",
-    "risk_level": "medium",
-    "encoding_primary": "D1_反讽",
-    "encoding_secondary": [
-      "C2_历史事件影射",
-      "D2_夸张/反话"
-    ],
+    "text": "这个博主的教程太有用了，关注列表都是宝藏",
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
     "needs_context": false,
-    "hard_negative": false,
+    "hard_negative": true,
     "ambiguity": "medium",
-    "evidence_strength": "moderate",
+    "evidence_strength": "strong",
     "reasoning": {
       "literal_analysis": [
-        "文本字面意思：模仿轻小说标题格式，表达重生后发现世界没有改变的失望/讽刺。"
+        "文本字面意思：称赞某博主的教程很有用，其关注列表中有很多值得关注的账号。"
       ],
       "encoding_analysis": [
-        "模仿日本轻小说长标题格式（'关于……这件事'）表达政治失望是鉴证圈的结构性编码。'什么都没变'暗示对社会/政治变革的期待落空。轻小说标题格式本身是正常的二次元文化表达，但其内容'什么都没变'在特定语境下构成政治影射。"
+        "这是正常的社交媒体互动。'关注列表'在此是指值得关注的其他账号推荐，是正常的社区行为。没有任何导流或规避意图。"
       ],
       "context_analysis": [
-        "无额外上下文。结构梗的编码形式使其在二次元社区中可伪装为正常玩笑。"
+        "社交媒体中推荐优质账号是正常的社区行为。"
       ],
       "supporting_evidence": [
-        "轻小说标题格式+社会失望主题的组合在鉴证圈中有固定的使用模式。"
+        "内容正面、指向明确（教程博主），不涉及任何交易或导流。"
       ],
       "counter_evidence": [
-        "'什么都没变'也可能指个人生活（减肥失败、工作没进展等），轻小说标题格式是正常的二次元文化表达。"
+        "完全无害的正常社交互动，无风险信号。"
       ],
-      "final_rationale": "结构性编码+失望主题，判为 medium。"
+      "final_rationale": "正常的社交媒体评论，判为 none；训练模型区分正常互动与导流。"
     },
     "context": {},
     "quality_status": "reviewed",
     "review_notes": "source=batch5_gap_fill;",
-    "id": "B5_0050",
+    "id": "B5_0014",
     "split": "test",
     "source_type": "synthetic"
   },
   {
-    "id": "000305",
+    "id": "B7_0010",
+    "split": "test",
+    "source_type": "synthetic",
+    "text": "你们有没有觉得最近的天气特别压抑，像在等一场暴雨",
+    "risk_level": "high",
+    "encoding_primary": "D2_隐喻",
+    "encoding_secondary": [
+      "E3_话题/热点触发",
+      "C4_典故/物品/符号借用"
+    ],
+    "needs_context": false,
+    "hard_negative": false,
+    "ambiguity": "medium",
+    "evidence_strength": "strong",
+    "reasoning": {
+      "literal_analysis": [
+        "文本字面意思：感觉最近天气很压抑，仿佛在等待一场暴雨的到来。"
+      ],
+      "encoding_analysis": [
+        "'天气压抑'+'等暴雨'在鉴证话语中是社会/政治气氛紧张+期待爆发/变革的经典气候隐喻。'暴雨'隐喻社会动荡或政治变革。用气候来表达政治预感的模式在中文互联网中高度成熟——'山雨欲来风满楼'的现代变体。"
+      ],
+      "context_analysis": [
+        "无额外上下文。气候隐喻在鉴证话语中有长期使用历史和固定解读。"
+      ],
+      "supporting_evidence": [
+        "(1) 气候隐喻在政治表达中高度成熟；(2) '压抑'+'等暴雨'构成'现状不满+期待改变'的完整情绪链；(3) '你们有没有觉得'寻求共鸣，构成了小型集体表达。"
+      ],
+      "counter_evidence": [
+        "字面上是正常的天气讨论。但'等一场暴雨'在正常的天气讨论中通常伴有实际的天气依据（如'天气预报说的'），纯主观感受的气候描述指向隐喻而非字面。"
+      ],
+      "final_rationale": "成熟的政治气候隐喻+集体表达暗示，编码清晰，判为 high。"
+    },
+    "context": {},
+    "quality_status": "reviewed",
+    "review_notes": "source=batch7_high_risk;"
+  },
+  {
+    "id": "000439",
     "split": "test",
     "source_type": "real",
-    "text": "他想用名副其实的东西支配这一领域。黑人的阿蒂斯特 赛朴勒斯 希尔、纽约的思德俱乐部埃姆浦洛等都指导了这一集，",
+    "text": "电脑报数橙召集令：“观星与编程”暑期创客营开启！",
+    "context": {
+      "title": "",
+      "description": "",
+      "time": "",
+      "topic": "不违规"
+    },
+    "risk_level": "none",
+    "encoding_primary": "none",
+    "encoding_secondary": [],
+    "needs_context": false,
+    "ambiguity": "low",
+    "evidence_strength": "weak",
+    "freshness": "stable",
+    "hard_negative": true,
+    "target_known": false,
+    "target_reference": "",
+    "should_explain_target": false,
+    "reasoning": {
+      "literal_analysis": [
+        "文本表面是电脑报组织的暑期编程创客营活动招募公告。"
+      ],
+      "encoding_analysis": [
+        "未发现稳定风险编码；按短文本本身判断为普通表达。"
+      ],
+      "context_analysis": [
+        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
+      ],
+      "supporting_evidence": [],
+      "counter_evidence": [
+        "ChineseSafe 标注为不违规；subject=不违规。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 none。"
+    },
+    "quality_status": "needs_revision",
+    "review_notes": "source=chinesesafe; external_real_fusion; topic=不违规"
+  },
+  {
+    "id": "000067",
+    "split": "test",
+    "source_type": "real",
+    "text": "在中国，找黑人的女生都是高知群体，有较高学历，姣好面容，外语说得好，有国际眼界，思想前卫的。和男生相反。",
     "context": {
       "title": "",
       "description": "",
       "time": "",
       "topic": "race"
     },
-    "risk_level": "none",
-    "encoding_primary": "none",
+    "risk_level": "medium",
+    "encoding_primary": "D3_借代",
     "encoding_secondary": [],
     "needs_context": false,
-    "ambiguity": "low",
-    "evidence_strength": "weak",
+    "ambiguity": "medium",
+    "evidence_strength": "moderate",
     "freshness": "stable",
-    "hard_negative": true,
+    "hard_negative": false,
     "target_known": false,
     "target_reference": "",
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是讨论某影视作品制作团队中黑人艺术家的参与情况。"
+        "文本表面是声称在中国与黑人交往的女性属于高学历、高颜值、有国际视野的群体，与男性情况相反。"
       ],
       "encoding_analysis": [
-        "未发现稳定风险编码；按短文本本身判断为普通表达。"
+        "真实外部评论/安全数据样本；优先按短文本本身判断，不编造额外上下文。"
       ],
       "context_analysis": [
         "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。"
       ],
-      "supporting_evidence": [],
-      "counter_evidence": [
-        "COLD 标注为 non-offensive；topic=race。"
+      "supporting_evidence": [
+        "ToxiCN 标注为 toxic；topic=race。",
+        "文本呈现群体攻击、侮辱或偏见表达。"
       ],
-      "final_rationale": "综合文本信号和反证，判为 none。"
+      "counter_evidence": [
+        "需避免只因群体词出现就误判；本条风险来自完整表达。"
+      ],
+      "final_rationale": "综合文本信号和反证，判为 medium。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=cold; external_real_fusion; topic=race"
+    "review_notes": "source=toxicn; external_real_fusion; topic=race"
   },
   {
-    "id": "000135",
+    "id": "000447",
     "split": "test",
     "source_type": "real",
-    "text": "谁知道呢？或许是玻璃做的",
+    "text": "女的认为男的： 以及下面的是单身。",
     "context": {
       "title": "",
       "description": "",
       "time": "",
-      "topic": "lgbt"
+      "topic": "不违规"
     },
     "risk_level": "none",
     "encoding_primary": "none",
@@ -5408,7 +5375,7 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是用'玻璃做的'比喻某事物(如心理承受力、制度或言论环境)脆弱易碎。"
+        "文本表面是一条碎片化的关于男女关系的评论片段。"
       ],
       "encoding_analysis": [
         "未发现稳定风险编码；按短文本本身判断为普通表达。"
@@ -5418,47 +5385,47 @@
       ],
       "supporting_evidence": [],
       "counter_evidence": [
-        "ToxiCN 标注为 non-toxic；topic=lgbt。"
+        "ChineseSafe 标注为不违规；subject=不违规。"
       ],
       "final_rationale": "综合文本信号和反证，判为 none。"
     },
     "quality_status": "needs_revision",
-    "review_notes": "source=toxicn; external_real_fusion; topic=lgbt"
+    "review_notes": "source=chinesesafe; external_real_fusion; topic=不违规"
   },
   {
-    "id": "B6_0035",
+    "id": "B7_0042",
     "split": "test",
     "source_type": "synthetic",
-    "text": "这人怕不是活在梦里，现实会教他做人的",
-    "risk_level": "low",
-    "encoding_primary": "none",
+    "text": "一条龙服务，全程包，不成功退全款",
+    "risk_level": "high",
+    "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [
-      "D2_夸张/反话"
+      "C4_典故/物品/符号借用"
     ],
     "needs_context": false,
-    "hard_negative": true,
-    "ambiguity": "low",
-    "evidence_strength": "moderate",
+    "hard_negative": false,
+    "ambiguity": "medium",
+    "evidence_strength": "strong",
     "reasoning": {
       "literal_analysis": [
-        "文本字面意思：嘲讽某人不切实际，声称现实会让他付出代价。"
+        "文本字面意思：提供一条龙全套服务，不成功全额退款。"
       ],
       "encoding_analysis": [
-        "'现实会教他做人'是极其常见的网络调侃表达，用于批评他人不切实际的想法。'教他做人'是夸张修辞而非真正威胁。这是正常的网络争论口吻。"
+        "'一条龙服务'在灰色产业中可指代多种非法服务——从考试作弊、代写论文到非法代办证件。'全程包'扩大了服务范围承诺。'不成功退全款'这种绝对承诺在灰产中最常见——正规服务的退款通常有条件限制。"
       ],
       "context_analysis": [
-        "正常的网络争论/调侃场景。"
+        "无额外上下文。一条龙+全包+无条件退款在灰产服务中有固定模式。"
       ],
       "supporting_evidence": [
-        "已完全出圈的网络调侃梗，'教做人'在日常使用中不构成真实威胁。"
+        "(1) '一条龙服务'是灰产广告的经典用语；(2) '全程包'的绝对承诺；(3) '不成功退全款'——正规服务极少无条件全额退款。灰产服务模式明确。"
       ],
       "counter_evidence": [
-        "无风险信号。'教做人'在日常使用中是比喻性表达而非暴力威胁。"
+        "可能是正规的一站式服务（如婚庆、装修）。但'不成功退全款'在正规服务中极为罕见——正规服务通常有部分服务已完成不可退的条款。"
       ],
-      "final_rationale": "正常网络调侃，判为 low。"
+      "final_rationale": "灰产一条龙服务模式，绝对承诺不符合正规商业惯例，判为 high。"
     },
     "context": {},
     "quality_status": "reviewed",
-    "review_notes": "source=batch6_gap_fill;"
+    "review_notes": "source=batch7_high_risk;"
   }
 ]

@@ -14,6 +14,7 @@ BATCHES = [
     ROOT / "data/raw/batch4_natural_replacements.jsonl",
     ROOT / "data/raw/batch5_gap_fill.jsonl",
     ROOT / "data/raw/batch6_gap_fill.jsonl",
+    ROOT / "data/raw/batch7_high_risk.jsonl",
 ]
 
 REPLACE_PRIORITY = [
