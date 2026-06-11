@@ -17,6 +17,7 @@ BATCHES = [
     ROOT / "data/raw/batch7_high_risk.jsonl",
     ROOT / "data/raw/batch8_tieba_style.jsonl",
     ROOT / "data/raw/batch9_national_security.jsonl",
+    ROOT / "data/raw/batch10_new_patterns.jsonl",
 ]
 
 REPLACE_PRIORITY = [

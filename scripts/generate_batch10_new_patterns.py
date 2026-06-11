@@ -1,0 +1,803 @@
+#!/usr/bin/env python3
+"""
+Generate batch10: NEW encoding patterns from Wikiversity complete lexicon.
+
+New patterns NOT yet covered in batch5-9:
+1. 拆字规避 (木仓, 火乍药, 番羽土啬, 讠乍马扁, etc.)
+2. 膜蛤文化全变体 (长者, 一颗赛艇, 图样图森破, 月莫虫合, etc.)
+3. 加速主义/入关学 (加速, 入关, 感恩反讽, 定体问, etc.)
+4. 抽象文化 (典/急/孝/乐, 绷不住, 流汗黄豆)
+5. 词性反讽化 (同志→讽刺, 正能量→反讽, 公知→贬义)
+6. 政府机构讽刺 (光腚肿菊, 焚化部, 跪台办)
+7. 新成语政治化 (中或最赢, 搬石砸脚, 中必输)
+
+ALL high risk. Quality: 贴吧老哥真实口吻, 不嘴下留情.
+"""
+
+import json
+from pathlib import Path
+from collections import Counter
+
+ROOT = Path(__file__).resolve().parents[1]
+OUTPUT = ROOT / "data/raw/batch10_new_patterns.jsonl"
+
+samples = []
+
+def add(text, risk_level, encoding_primary, encoding_secondary,
+        needs_context, hard_negative, literal_analysis, encoding_analysis,
+        context_analysis, supporting_evidence, counter_evidence, final_rationale,
+        context=None, ambiguity="low", evidence_strength="strong"):
+    if context is None:
+        context = {}
+    if not isinstance(encoding_secondary, list):
+        encoding_secondary = [encoding_secondary]
+    samples.append({
+        "id": f"BA_{len(samples)+1:04d}",
+        "split": "train", "source_type": "synthetic",
+        "text": text, "risk_level": risk_level,
+        "encoding_primary": encoding_primary,
+        "encoding_secondary": encoding_secondary,
+        "needs_context": needs_context, "hard_negative": hard_negative,
+        "ambiguity": ambiguity, "evidence_strength": evidence_strength,
+        "reasoning": {
+            "literal_analysis": [literal_analysis],
+            "encoding_analysis": [encoding_analysis],
+            "context_analysis": [context_analysis],
+            "supporting_evidence": [supporting_evidence],
+            "counter_evidence": [counter_evidence],
+            "final_rationale": final_rationale,
+        },
+        "context": context, "quality_status": "reviewed",
+        "review_notes": "source=batch10_new_patterns;",
+    })
+
+
+# ================================================================
+# SECTION 1: 拆字规避 — NEW (10 samples)
+# 木仓/枪, 火乍药/炸药, 番羽土啬/翻墙, 讠乍马扁/诈骗等
+# ================================================================
+
+add(
+    text="有没有路子搞一把木仓，不需要真的，仿的就行",
+    risk_level="high",
+    encoding_primary="B1_拆字",
+    encoding_secondary=["E1_平台黑话", "C4_典故/物品/符号借用"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：询问能否买到'木仓'——看起来像一个木制仓库。需要仿制品而非真品。",
+    encoding_analysis="'木仓'是'枪'的经典拆字——'枪'字拆分为左'木'右'仓'，用于规避'枪'字的内容审查。'仿的就行'暗示仿真枪（同样违法）。拆字+求购意图构成明确的风险信号。",
+    context_analysis="无额外上下文。'木仓'在多个平台已被固化为'枪'的拆字代称。",
+    supporting_evidence="(1) '木仓'是'枪'的成熟拆字规避——在某些禁止'枪'字的论坛/平台中广泛使用；(2) '搞一把'是求购武器的口语化表达；(3) '仿的就行'表明对违法性有认知——知道真枪更难获取故退而求其次。三重信号明确指向武器求购。",
+    counter_evidence="极微弱的可能：询问木质仓库建筑或木制工艺品。但'搞一把'+'仿的'的口语搭配在此解读下完全不通。",
+    final_rationale="拆字规避+明确武器求购意图，违法交易信号清晰，判为 high。"
+)
+
+add(
+    text="有没有人懂怎么搞火乍药的，私聊",
+    risk_level="high",
+    encoding_primary="B1_拆字",
+    encoding_secondary=["E1_平台黑话", "C4_典故/物品/符号借用"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：询问是否有人懂得获取'火乍药'——文字被拆分为火+乍+药三个独立的字。",
+    encoding_analysis="'火乍药'是'炸药'的拆字规避——将'炸'字拆为'火'和'乍'，规避'炸药'这一敏感关键词。'私聊'引导至私密沟通以规避公开监控。拆字+危险品求购+私密沟通，风险信号链完整。",
+    context_analysis="无额外上下文。拆字的存在本身就表明用户知道该词敏感——规避行为是违法意识的外在证据。",
+    supporting_evidence="(1) 拆字规避表明用户知道原词敏感；(2) 求购/学习制作意图明确；(3) '私聊'引导离线沟通以规避监控。三重信号明确指向危险品获取意图。",
+    counter_evidence="无合理正常解释——如果是在合法讨论（如化学实验/工程爆破），不需要用拆字规避。拆字本身就是违法意识的表现。",
+    final_rationale="拆字规避+危险品求购，规避行为本身构成违法意识证据，判为 high。"
+)
+
+add(
+    text="教我怎么番羽土啬，试了好几次都不行",
+    risk_level="high",
+    encoding_primary="B1_拆字",
+    encoding_secondary=["E1_平台黑话", "F_组合编码"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：请求教授'番羽土啬'——四个离散的汉字。试了几次都不成功。",
+    encoding_analysis="'番羽土啬'是'翻墙'的拆字——'翻'拆为'番+羽'，'墙'拆为'土+啬'。规避'翻墙'这一敏感关键词。'试了好几次都不行'暗示了持续尝试绕过GFW的行为。拆字+求技术的组合明确指向寻求突破网络审查的方法。",
+    context_analysis="无额外上下文。'翻墙'的拆字形式在多个平台已被固化为其规避代称。",
+    supporting_evidence="(1) '翻墙'的拆字规避是GFW讨论中的经典手法；(2) '试了好几次'暗示持续的翻墙尝试行为；(3) 求技术指导。三重信号明确指向寻求突破网络审查。",
+    counter_evidence="可能是关于园艺/建筑中的翻墙讨论。但'番羽土啬'四个离散汉字的刻意排列在正常园艺讨论中不自然——正常讨论会用'翻墙'原词。拆字本身就是规避信号。",
+    final_rationale="GFW规避的拆字编码，寻求突破网络审查的技术指导，判为 high。"
+)
+
+add(
+    text="有没有讠乍马扁的老哥带带，想搞点快钱",
+    risk_level="high",
+    encoding_primary="B1_拆字",
+    encoding_secondary=["E1_平台黑话", "F_组合编码"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：寻求'讠乍马扁'方面的老手带领，想快速赚钱。",
+    encoding_analysis="'讠乍马扁'是'诈骗'的拆字——'诈'拆为'讠+乍'，'骗'拆为'马+扁'。规避'诈骗'这一敏感关键词。'老哥带带'是贴吧/社群中求带/求教学的口语。'搞点快钱'暗示对非法快速收入的追求。拆字+求带+快钱意图三重信号明确指向寻求加入诈骗团伙/学习诈骗技术。",
+    context_analysis="无额外上下文。拆字+求带模式在灰产/黑产社群中常见。",
+    supporting_evidence="(1) '诈骗'的拆字规避表明对违法性的认知；(2) '老哥带带'是寻求灰产/黑产社群的典型用语；(3) '搞点快钱'暗示对非法快速收入的追求。三重信号明确指向诈骗/黑产意图。",
+    counter_evidence="无合理正常解释。合法活动不会用拆字来规避'诈骗'一词——拆字本身就是违法意识的表现。",
+    final_rationale="拆字规避+黑产求带，明确指向诈骗/黑产加入意图，判为 high。"
+)
+
+add(
+    text="最近纟内米卒的东西又开始抬头了，真是服了",
+    risk_level="high",
+    encoding_primary="B1_拆字",
+    encoding_secondary=["E3_话题/热点触发", "D1_反讽"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：说'纟内米卒'的东西最近又出现了，表示无奈。",
+    encoding_analysis="'纟内米卒'是'纳粹'的拆字——'纳'拆为'纟+内'，'粹'拆为'米+卒'。表面表达对纳粹思想抬头的反对，实则通过拆字这一规避行为来讨论敏感政治话题。使用拆字而非原词表明用户知道该话题的敏感性。",
+    context_analysis="无额外上下文。拆字的使用本身就是该话题敏感性的证据。",
+    supporting_evidence="(1) '纳粹'的拆字规避表明对该话题敏感性的认知；(2) '开始抬头了'可能暗示对国内某些政治倾向的影射——将国内现象类比为纳粹；(3) 拆字+政治影射的组合指向规避性政治讨论。",
+    counter_evidence="可能是对国际极右翼势力抬头的正常关注。但使用拆字在正常关注中不自然——如果是正当的反纳粹立场，不需要规避'纳粹'一词。",
+    final_rationale="拆字规避+政治影射，通过规避行为间接确认话题敏感性，判为 high。"
+)
+
+add(
+    text="月莫虫合是一门学问，年轻人要多学习",
+    risk_level="high",
+    encoding_primary="B1_拆字",
+    encoding_secondary=["C1_历史人物类比", "D1_反讽", "F_组合编码"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：声称'月莫虫合'是一门学问，建议年轻人多学习。",
+    encoding_analysis="'月莫虫合'是'膜蛤'的拆字——'膜'拆为'月+莫'，'蛤'拆为'虫+合'。膜蛤文化是中国互联网中对前领导人江泽民的戏谑性崇拜/调侃亚文化。'年轻人要多学习'本身是膜蛤文化中的经典语录（源自江泽民说'你们啊，too young too simple'的衍生）。拆字+膜蛤名言的组合构成完整的膜蛤文化表达。",
+    context_analysis="无额外上下文。膜蛤文化在中国互联网中已形成完整的亚文化体系，'月莫虫合'是其拆字编码。",
+    supporting_evidence="(1) '月莫虫合'是膜蛤文化的拆字编码——规避'膜蛤'的审查；(2) '年轻人要多学习'是膜蛤文化经典语录——进一步确认了文化指代；(3) 拆字+文化名言的双重编码使指代明确——知道膜蛤文化的人能立刻解码。",
+    counter_evidence="可能是对某种学问/知识的正常推荐。但'月莫虫合'配合膜蛤经典语录的组合在中文互联网中已有唯一且明确的文化指向。",
+    final_rationale="膜蛤文化拆字编码+经典语录，政治亚文化表达意图明确，判为 high。"
+)
+
+add(
+    text="口区，看到某些人就生理不适",
+    risk_level="high",
+    encoding_primary="B1_拆字",
+    encoding_secondary=["D1_反讽", "C1_历史人物类比"],
+    needs_context=False, hard_negative=False, ambiguity="medium",
+    literal_analysis="文本字面意思：用'口区'表示呕吐/反感，说看到某些人就不舒服。",
+    encoding_analysis="'口区'是'呕'的拆字——将'呕'拆为左'口'右'区'。在此语境中，'某些人'可能指向政治人物——'看到某些人就不适'在贴吧中经常是对特定领导人/政治人物的含蓄攻击。拆字增强了表达的规避性。",
+    context_analysis="无额外上下文。'某些人'的模糊指代在贴吧中有其政治使用模式。",
+    supporting_evidence="(1) 拆字'口区'表示厌恶——增强了情绪表达的强度和规避性；(2) '某些人'在贴吧政治讨论中是经典的人物回避式指代；(3) '生理不适'将政治厌恶具象化为身体反应——贴吧经典手法。",
+    counter_evidence="可能是对娱乐圈/体育界某个公众人物的反感。但在贴吧政治语境中，'某些人'+强烈负面情绪的组合经常指向政治人物。",
+    final_rationale="拆字+人物回避式指代，可能指向政治人物的恶意攻击，判为 high。"
+)
+
+add(
+    text="这丿的，又来忽悠老百姓了",
+    risk_level="high",
+    encoding_primary="B3_形近字替换",
+    encoding_secondary=["D1_反讽", "C1_历史人物类比"],
+    needs_context=False, hard_negative=False, ambiguity="medium",
+    literal_analysis="文本字面意思：用'丿'替代了一个字，说又有人来忽悠老百姓了。",
+    encoding_analysis="'丿'是'党'字的偏旁部首——用偏旁部首替代完整'党'字以规避关键词检测。'忽悠老百姓'是贴吧中对官方宣传/政策的经典讽刺——将官方话语定义为'忽悠'（欺骗）。偏旁替代+官方话语否定构成明确的政治攻击。",
+    context_analysis="无额外上下文。用部首替代完整敏感词是规避检测的经典手法。",
+    supporting_evidence="(1) '丿'替代'党'字——用部首规避关键词检测；(2) '忽悠老百姓'将官方宣传定义为欺骗——对中共公信力的直接攻击；(3) '又来'暗示这是重复性行为——'党反复忽悠人民'的深层叙事。",
+    counter_evidence="可能是对某个非政治组织/商业行为的批评。但'丿'作为'党'的部首替代在贴吧政治讨论中有明确的约定俗成性。",
+    final_rationale="部首规避+官方话语否定，对中共公信力的直接攻击，判为 high。"
+)
+
+add(
+    text="兲朝物价就是这样的，习惯了",
+    risk_level="high",
+    encoding_primary="B2_合字/拼字",
+    encoding_secondary=["D1_反讽", "D2_隐喻"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：说'兲朝'的物价就是这样，已经习惯了。",
+    encoding_analysis="'兲'(tiān)古同'天'，但在此合字为'王八'——将'天朝'（对中国的自称）贬称为'王八朝'。'习惯了'在此是贴吧式的无奈接受——表面接受实为讽刺。合字贬称+物价抱怨构成对中国的政治讽刺。",
+    context_analysis="无额外上下文。'兲朝'在中文互联网中已固化为对中国的贬称——'王八朝'的合字编码。",
+    supporting_evidence="(1) '兲朝'是'天朝→王八朝'的合字贬称——对中国国家形象的恶意贬低；(2) '习惯了'是贴吧式的无奈讽刺；(3) 将政治贬损伪装为物价抱怨——贴吧经典手法。",
+    counter_evidence="可能是对物价的正常抱怨。但'兲朝'这一明确的贬称使正常的物价抱怨解读不成立——正常抱怨不会用国家贬称。",
+    final_rationale="合字国家贬称+政治讽刺，对中国国家形象的恶意攻击，判为 high。"
+)
+
+add(
+    text="那个垬啊，真的是越来越离谱了",
+    risk_level="high",
+    encoding_primary="B2_合字/拼字",
+    encoding_secondary=["C4_典故/物品/符号借用", "D1_反讽"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：评论'垬'越来越离谱。'垬'是一个罕见的合字。",
+    encoding_analysis="'垬'(hòng)是'土共'的合字——将'土'和'共'合并成一个字，是对中国共产党的蔑称。'越来越离谱'在此语境中是对中共政策/行为的直接批评。合字蔑称+直接批评构成明确的政治攻击。",
+    context_analysis="无额外上下文。'垬'在左翼/鉴证社群中已固化为对中共的蔑称——将'土共'（土包子共产党）合并为一个字。",
+    supporting_evidence="(1) '垬'是中共产党的合字蔑称——在特定政治社群中约定俗成；(2) '越来越离谱'是对中共政策/行为的直接负面评价；(3) 合字编码的使用本身就表明了对中共的敌对立场的认同。",
+    counter_evidence="可能是对某个名为'垬'的实体/人物的讨论。但'垬'在中文互联网中的政治含义已固定，非政治使用极为罕见。",
+    final_rationale="中共合字蔑称+直接政治批评，明确的政党攻击，判为 high。"
+)
+
+
+# ================================================================
+# SECTION 2: 膜蛤文化 + 历史人物 — NEW (8 samples)
+# ================================================================
+
+add(
+    text="长者的智慧你们还是要多学习一个，不要见得风就是雨",
+    risk_level="high",
+    encoding_primary="C1_历史人物类比",
+    encoding_secondary=["D1_反讽", "C4_典故/物品/符号借用"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：引用'长者'的话语，教导要多学习、不要听风就是雨。",
+    encoding_analysis="'长者'是膜蛤文化中对江泽民的经典代称——源自江泽民自称'作为一个长者'。'多学习一个''见得风就是雨'均出自江泽民怒斥香港记者的经典语录。膜蛤文化表面是对江泽民语录的戏仿，实则通过反复传播和调侃来消解政治人物的严肃性和权威性。借膜蛤之名行政治讽刺之实。",
+    context_analysis="无额外上下文。膜蛤文化在中国互联网中已形成完整的亚文化体系，其编码和语录具有唯一指向性。",
+    supporting_evidence="(1) '长者'是江泽民在膜蛤文化中的专属代称；(2) '多学习一个''见得风就是雨'是膜蛤经典语录——确认了文化指代；(3) 通过调侃前最高领导人来消解政治权威——即使表面无害的膜蛤也暗含政治戏谑。",
+    counter_evidence="可能是真正的尊老/学习智慧。但膜蛤语录的特定组合在中文互联网中已有唯一的文化指向。",
+    final_rationale="膜蛤文化经典语录+前最高领导人代称，政治权威消解的亚文化表达，判为 high。"
+)
+
+add(
+    text="一颗赛艇！长者当年说的都对，现在回头看更有道理了",
+    risk_level="high",
+    encoding_primary="C1_历史人物类比",
+    encoding_secondary=["A4_外语谐音/跨语言音译", "D1_反讽", "F_组合编码"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：用'一颗赛艇'表示兴奋/激动，说长者当年说的话现在回头看更有道理了。",
+    encoding_analysis="'一颗赛艇'是英文exciting的音译——源自江泽民视察视频中说'exciting'的片段，是膜蛤文化的经典梗。'长者'再次确认为江泽民代称。'现在回头看更有道理了'将膜蛤从单纯戏仿升级为政治评论——暗示江泽民时代的某些言论/决策在当下得到了'验证'，这是借膜蛤来含蓄地对比/批评当前政治。",
+    context_analysis="无额外上下文。'一颗赛艇'+'长者'的双重膜蛤编码确认了文化指代。",
+    supporting_evidence="(1) '一颗赛艇'是膜蛤文化经典音译梗；(2) '长者'的代称；(3) '现在回头看更有道理'将膜蛤升级为借古讽今——用前领导人来含蓄批评现任。三重编码明确的借古讽今政治评论。",
+    counter_evidence="可能是单纯的膜蛤娱乐。但'现在回头看更有道理了'的对比评价超越了纯娱乐——构成了借古讽今的政治评论框架。",
+    final_rationale="膜蛤文化+借古讽今政治评论，通过前领导人对比含蓄批评现任，判为 high。"
+)
+
+add(
+    text="图样图森破，上台前都说得好听，上去以后都一样",
+    risk_level="high",
+    encoding_primary="C1_历史人物类比",
+    encoding_secondary=["D1_反讽", "A4_外语谐音/跨语言音译"],
+    needs_context=False, hard_negative=False, ambiguity="medium",
+    literal_analysis="文本字面意思：引用'too young too simple'的音译，评论选前承诺与选后表现的不一致。",
+    encoding_analysis="'图样图森破'是膜蛤经典语录（江泽民'too young too simple, sometimes naive'）的音译。在此语境中用于讽刺政治承诺与实际行动的差距——'上台前''上去以后'暗指领导人的选前承诺与执政后的背离。将膜蛤语录挪用于对领导人诚信的质疑。",
+    context_analysis="无额外上下文。膜蛤语录+政治承诺批评的组合指向对政治人物诚信的系统性质疑。",
+    supporting_evidence="(1) 膜蛤语录的音译挪用；(2) '上台前vs上去后'明确指向政治人物——暗示其言行不一；(3) '都一样'暗示这是普遍/制度性现象——不是个别人物的问题。",
+    counter_evidence="可能是对娱乐圈/商业圈人物的批评。但'上台''上去'在政治语境中的语义强度使其超出娱乐圈范围。",
+    final_rationale="膜蛤语录挪用+政治诚信质疑，对政治制度的含蓄批评，判为 high。"
+)
+
+add(
+    text="长者当年说不折腾，结果你看看现在",
+    risk_level="high",
+    encoding_primary="C1_历史人物类比",
+    encoding_secondary=["C2_历史事件影射", "D1_反讽"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：引用长者说过的话'不折腾'，说现在的情况与当年的说法形成对比。",
+    encoding_analysis="'长者'=江泽民。'不折腾'是胡锦涛在纪念改革开放30周年大会上的讲话用语，但被广泛挪用为膜蛤/政治讽刺话语。'你看看现在'的对比将前任的'不折腾'承诺与当下的'折腾'相对照——构成借前人之言批评现任的经典政治讽刺模式。",
+    context_analysis="无额外上下文。'不折腾'+代际对比在贴吧中是经典的政治评价模式。",
+    supporting_evidence="(1) '长者'代称；(2) '不折腾'是政治言论的经典挪用——将其与原意剥离用于讽刺；(3) '你看看现在'的对比结构——借前朝之言否定本朝之政。完整的借古讽今。",
+    counter_evidence="可能是对经济/社会政策的正常讨论。但在贴吧政治语境中，'不折腾'已被固化为用于代际对比的政治讽刺核心词汇。",
+    final_rationale="前任政治言论挪用+代际对比批评，借古讽今的政治攻击，判为 high。"
+)
+
+add(
+    text="不是我说，我蛤时代虽然也有问题但至少还能说话",
+    risk_level="high",
+    encoding_primary="C1_历史人物类比",
+    encoding_secondary=["D1_反讽", "C2_历史事件影射"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：说'蛤'的时代虽然有问题但至少还能自由发表言论。",
+    encoding_analysis="'蛤'是膜蛤文化中江泽民的另一个经典代称——源自其戴眼镜形象与蛤蟆的相似联想。'还能说话'在此语境中意为'还能自由发表言论'——通过对比来暗示当下言论环境比江泽民时代更差。这种'前朝虽不好但现在更差'的代际对比在贴吧中是经典的政治评价模式。",
+    context_analysis="无额外上下文。'蛤'+言论自由比较在贴吧中是成熟的代际政治对比模式。",
+    supporting_evidence="(1) '蛤'是江泽民代称；(2) '还能说话'暗示言论自由——将两任时期的言论自由度做对比；(3) 代际对比暗示现任时期不如前任——构成对现任治理的明确批评。",
+    counter_evidence="可能是对网络环境变化的正常讨论。但'蛤'+'说话'的政治代际对比组合在贴吧中已固化为政治批评模板。",
+    final_rationale="膜蛤代称+言论自由代际对比，对现任治理的明确政治批评，判为 high。"
+)
+
+add(
+    text="影帝的演技是真的好，我都快哭了",
+    risk_level="high",
+    encoding_primary="C1_历史人物类比",
+    encoding_secondary=["D1_反讽", "D2_隐喻"],
+    needs_context=False, hard_negative=False, ambiguity="medium",
+    literal_analysis="文本字面意思：称赞某位影帝的演技出色，说快被感动哭了。",
+    encoding_analysis="'影帝'在此语境中是贴吧对李克强/温家宝等前领导人的经典贬称——暗示其在公开场合的表现是'表演'而非真情实感。'演技好'延续了这一隐喻——将政治人物的公开言行贬低为'演戏'。'快哭了'表面为赞美，实为讽刺——对其'表演效果'的讽刺性评价。",
+    context_analysis="无额外上下文。'影帝'在贴吧中对特定前领导人的贬称使用已成熟。",
+    supporting_evidence="(1) '影帝'在贴吧中是特定前领导人的成熟贬称——将政治表现为贬低为'演戏'；(2) '演技好'延续戏剧隐喻——将所有公开言行都定义为'表演'；(3) '快哭了'的讽刺性反话。完整的贴吧政治人物贬低。",
+    counter_evidence="可能真的是在讨论某个电影演员的演技。但在贴吧政治语境中，'影帝'+政治评价的组合经常指向政治人物。",
+    final_rationale="前领导人贬称+戏剧隐喻，将政治人物公开言行贬低为表演，判为 high。"
+)
+
+add(
+    text="空心菜说得好听，实际上肚子里什么都没有",
+    risk_level="high",
+    encoding_primary="C1_历史人物类比",
+    encoding_secondary=["D1_反讽", "C4_典故/物品/符号借用"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：说'空心菜'说话好听但实质上没有内容。",
+    encoding_analysis="'空心菜'是台湾前领导人蔡英文的经典贬称——源自其政策空洞/言行不一的形象。'说得好听肚子里什么都没有'是对其政治能力的否定——将政见/承诺贬低为空洞的修辞。这是对台湾地区前领导人的直接贬低和攻击。",
+    context_analysis="无额外上下文。'空心菜'在中文互联网中已固化为对蔡英文的贬称。",
+    supporting_evidence="(1) '空心菜'是蔡英文的固定贬称；(2) '肚子里什么都没有'暗示其政见/能力的空洞；(3) 贬称+能力否定的组合构成完整的政治人物攻击。",
+    counter_evidence="可能是对某种蔬菜/食品的讨论。但在中文互联网中，'空心菜'作为蔡英文贬称的使用已广泛到使蔬菜讨论不时被此语义污染。",
+    final_rationale="台湾地区前领导人的贬称攻击，判为 high。"
+)
+
+add(
+    text="王70的手段是真的狠，不服不行",
+    risk_level="high",
+    encoding_primary="C1_历史人物类比",
+    encoding_secondary=["C3_数字代指", "D1_反讽"],
+    needs_context=False, hard_negative=False, ambiguity="medium",
+    literal_analysis="文本字面意思：评论'王70'的手段狠辣，不得不服。",
+    encoding_analysis="'王70'是贴吧对王岐山（前中纪委书记）的特定代称——'70'源自其反腐行动中被调查的官员数量/级别或其个人特征的数字编码。'手段狠'在此语境中指反腐手段——表面为'佩服'实则暗含对反腐运动/权力斗争的讽刺。数字代指+反讽性赞扬构成对党内反腐/权力斗争的含蓄评论。",
+    context_analysis="无额外上下文。'王70'在贴吧鉴证中有其约定俗成的指代。",
+    supporting_evidence="(1) '王70'是对王岐山的数字代称；(2) '手段狠'表面为赞扬——实则对党内反腐/权力斗争的含蓄评论；(3) '不服不行'是贴吧式无奈接受——表面服气实则保留意见。",
+    counter_evidence="可能是对某个名为'王70'的普通人的评价。但在公共讨论中，数字后缀+政治人物的组合在鉴证圈中有其固定指代。",
+    final_rationale="特定政治人物数字代称+权力斗争评论，判为 high。"
+)
+
+
+# ================================================================
+# SECTION 3: 加速主义/入关学/定体问 — NEW (8 samples)
+# ================================================================
+
+add(
+    text="油门踩到底，加速就完事了，越加速越说明有问题",
+    risk_level="high",
+    encoding_primary="D2_隐喻",
+    encoding_secondary=["D1_反讽", "E1_平台黑话", "E3_话题/热点触发"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：说加速前进就行，越加速越能说明问题所在。",
+    encoding_analysis="'加速'在此非字面的驾驶术语，而是加速主义（accelerationism）的政治隐喻——主张通过加速现行政策的负面效应来暴露体制问题、促成变革。'越加速越说明有问题'是加速主义核心理念的浓缩——通过让问题快速恶化来倒逼改变。这是对中国政治体制的系统性攻击——主张通过加速恶化来摧毁现行体制。",
+    context_analysis="无额外上下文。'加速主义'在中文互联网中是成熟的政治思潮标签。",
+    supporting_evidence="(1) '加速'是加速主义的核心隐喻——主张加速恶化以促成变革；(2) '越说明有问题'揭示了加速主义的核心理念——恶化=暴露；(3) 加速主义在中文互联网中已形成完整的政治思潮，指向对中国现行体制的破坏性变革主张。",
+    counter_evidence="可能是对驾驶/赛车/游戏的讨论。但'加速'配合'说明有问题'的政治性解读已超出驾驶讨论的范围——汽车加速不会'说明有问题'。",
+    final_rationale="加速主义政治思潮的明确表达，主张通过恶化体制来促成变革，判为 high。"
+)
+
+add(
+    text="入关以后自有大儒为我辩经，现在说什么都没用",
+    risk_level="high",
+    encoding_primary="C2_历史事件影射",
+    encoding_secondary=["D2_隐喻", "D1_反讽", "E3_话题/热点触发"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：说入关之后自然会有大儒来辩经，现在说什么都没用。",
+    encoding_analysis="这是入关学的经典表达。(1) '入关'将当代中国比作明末女真——暗示中国应像女真入关取代明朝一样挑战/取代现有国际秩序；(2) '自有大儒为我辩经'——暗示成功后自然会有人为行为正名；(3) '现在说什么都没用'暗示在国际舆论中中国目前处于劣势。入关学表面是国际政治/地缘讨论，实则是主张通过暴力/颠覆性手段来重塑国际秩序的激进思潮。",
+    context_analysis="无额外上下文。入关学在中文互联网中已形成完整的政治思潮体系。",
+    supporting_evidence="(1) 入关学核心理念——将中国比作女真，主张通过挑战/颠覆现有秩序来崛起；(2) '大儒辩经'暗示成功后会有意识形态正名——将非法/暴力行为合理化的暗示；(3) 整套话语体系指向对现有国际秩序的颠覆性挑战。这是对中国外交/国际政策的激进替代主张。",
+    counter_evidence="可能是对历史/国际政治的正常学术讨论。但在非学术语境中使用'入关'这一入关学特定术语，几乎100%是对该政治思潮的认同/传播。",
+    final_rationale="入关学政治思潮的明确表达，主张颠覆性国际秩序重塑，判为 high。"
+)
+
+add(
+    text="别问，问就是定体问，问就是这国怎",
+    risk_level="high",
+    encoding_primary="C4_典故/物品/符号借用",
+    encoding_secondary=["D1_反讽", "E1_平台黑话"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：说任何问题都归结为'定体问'和'这国怎'。",
+    encoding_analysis="'定体问'是'一定是体制问题'的缩写。'这国怎'是'这个国家怎么了'的缩写。在贴吧鉴证中，这两个缩写被用于讽刺性地回应各种社会问题——将任何问题的归因都指向'体制问题'。这种'假装讽刺实则传播'的模式——表面上在嘲笑'什么都怪体制'，但通过反复传播实质上强化了'体制有问题'的认知框架。",
+    context_analysis="无额外上下文。'定体问'和'这国怎'在贴吧中已固化为特定政治话语标签。",
+    supporting_evidence="(1) '定体问'暗示任何社会问题都可以追溯到'体制问题'——这本身就是对体制的系统性质疑；(2) '这国怎'以提问形式传播对国家现状的负面认知；(3) '别问问就是'的讽刺包装无法掩盖其传播系统性政治否定的事实——表象的讽刺之下是对体制的深层不信任。",
+    counter_evidence="可能是对网络讨论模式的讽刺——不认同'什么都怪体制'的逻辑。但通过反复引用这些标签来讽刺，实质上参与了对这些负面框架的传播。",
+    final_rationale="系统性体制否定的标签化传播，用讽刺包装政治攻击，判为 high。"
+)
+
+add(
+    text="感恩就完事了，还要求什么呢",
+    risk_level="high",
+    encoding_primary="D1_反讽",
+    encoding_secondary=["D2_隐喻", "E1_平台黑话"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：说感恩就行了，不用要求更多。",
+    encoding_analysis="'感恩'在此已完全脱离字面含义——源自中国的'感恩教育'（学校教育中学生向父母/老师表达感恩），但在贴吧鉴证中已被彻底反讽化。'感恩就完事了'讽刺了官方要求民众对国家/政府/党表达感恩的逻辑——暗示民众不应提出诉求而应感恩于现状。'还要求什么呢'进一步讽刺了这种逻辑——暗示在'感恩'的名义下任何诉求都被消解。",
+    context_analysis="无额外上下文。'感恩'在贴吧鉴证中已完全固化为反讽用语。",
+    supporting_evidence="(1) '感恩'在贴吧中已被完全反讽化——不再承载正面含义；(2) '就完事了'暗示要求/讨论的终结——感恩之后不应再有诉求；(3) '还要求什么呢'直接讽刺了'感恩替代诉求'的政治逻辑。对官方话语体系的系统性解构。",
+    counter_evidence="可能是真诚的感恩表达。但在贴吧/鉴证语境中，'感恩'已几乎不再有字面使用——其反讽语义已完全压倒字面语义。",
+    final_rationale="感恩教育的系统性反讽挪用，对官方话语体系的政治解构，判为 high。"
+)
+
+add(
+    text="中或最赢，又一次赢麻了，秦始皇摸电门——赢麻了",
+    risk_level="high",
+    encoding_primary="D1_反讽",
+    encoding_secondary=["C4_典故/物品/符号借用", "D2_夸张/反话"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：说中国可能是最大赢家，又一次赢了——用歇后语'秦始皇摸电门——赢麻了'来形容。",
+    encoding_analysis="'中或最赢'是'中国或成最大赢家'的缩写——讽刺官方媒体习惯性将任何国际事件解读为对中国有利。'赢麻了'是'赢了太多以至于麻木'的口语化表达——暗示官方'赢'叙事已过度到令人麻木。'秦始皇摸电门——赢麻了'是更夸张的歇后语版本。多层讽刺结构——通过放大官方叙事来揭露其荒诞性。",
+    context_analysis="无额外上下文。'中或最赢'+'赢麻了'在贴吧中是对官方媒体的经典讽刺模板。",
+    supporting_evidence="(1) '中或最赢'挪用并讽刺官方媒体叙事；(2) '赢麻了'暗示官方'中国赢了'叙事已令人麻木/不信；(3) 歇后语版本进一步放大讽刺效果。多层讽刺对官方媒体和叙事的系统性攻击。",
+    counter_evidence="可能是对国家成就的真诚自豪。但在贴吧语境中，'赢麻了'已完全固化为讽刺——真诚使用此词反而会被视为'不懂梗'。",
+    final_rationale="官方媒体叙事的系统性讽刺，对中国话语体系的恶意解构，判为 high。"
+)
+
+add(
+    text="沈逸老师说得对，这波又是美国在搞鬼（手动狗头）",
+    risk_level="high",
+    encoding_primary="D1_反讽",
+    encoding_secondary=["C1_历史人物类比", "B4_符号/空格/Unicode 干扰"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：表面赞同沈逸的观点——这又是美国搞的鬼，末尾加手动狗头表明反讽。",
+    encoding_analysis="'沈逸老师'指国际关系学者沈逸——以其强硬的'反美/警惕境外势力'言论著称。在贴吧鉴证中，引用沈逸并加狗头是对'一切问题都怪美国'这一简化叙事的经典讽刺。狗头标记明确了反讽意图。通过表面上模仿沈逸/官方叙事（'美国搞鬼'），狗头揭示了对这一叙事的不信/嘲笑。",
+    context_analysis="无额外上下文。沈逸+狗头在贴吧中已固化为对'境外势力叙事'的讽刺模板。",
+    supporting_evidence="(1) 引用沈逸（'反美/警惕境外势力'的代言人）进行讽刺；(2) '美国在搞鬼'模仿官方叙事；(3) 手动狗头明确否定了前述内容的字面含义——使反讽意图明确。贴吧讽刺官方叙事的经典结构。",
+    counter_evidence="可能是对沈逸观点的真诚赞同——但狗头标记明确否定了这一点。在贴吧中狗头的使用几乎100%意味着反讽。",
+    final_rationale="官方/学者叙事的狗头讽刺模式，对'境外势力'话语的系统性嘲笑，判为 high。"
+)
+
+add(
+    text="拿了拜登的钱，今天多发两条",
+    risk_level="high",
+    encoding_primary="D1_反讽",
+    encoding_secondary=["C4_典故/物品/符号借用", "E1_平台黑话"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：自嘲说拿到了'拜登的经费'，所以今天要多发几条言论。",
+    encoding_analysis="'拜登打钱/拜登经费到账'在中国互联网中是对'境外势力资助中国异议人士'这一论调的经典反讽。说者假装承认自己'收了拜登的钱'来发表言论——通过自嘲来讽刺和消解'异议人士都是境外势力资助的'这一官方论调。以'认罪'的形式来完成对官方指控的讽刺。",
+    context_analysis="无额外上下文。'拜登打钱/经费到账'在贴吧中已固化为对'境外势力叙事'的经典讽刺。",
+    supporting_evidence="(1) '拜登的钱'指向'境外势力资助'论调的经典讽刺；(2) 假装承认收了钱——以认罪形式进行讽刺；(3) '多发两条'将政治言论量化为'计件工作'——进一步消解言论的真实性。三重结构对'境外势力叙事'的系统性嘲笑。",
+    counter_evidence="可能是真的在为境外机构工作。但在中国互联网语境中，此表达的讽刺使用已压倒字面可能。",
+    final_rationale="'境外势力叙事'的经典自嘲式讽刺，以认罪之名行讽刺之实，判为 high。"
+)
+
+add(
+    text="还是陈平老师说得对，2000块在中国比3000美金在美国过得好，反正我信了",
+    risk_level="high",
+    encoding_primary="D1_反讽",
+    encoding_secondary=["C1_历史人物类比", "C3_数字代指", "D2_夸张/反话"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：表示赞同陈平的观点——2000元人民币在中国的生活质量高于3000美元在美国。强调自己相信了。",
+    encoding_analysis="'陈平不等式'（2000元人民币>3000美元）是中国互联网中对官方/学者为经济差距辩护的经典讽刺对象。'反正我信了'是对'不管你信不信我反正信了'（源自2011年温州动车事故后铁道部发言人王勇平的名言）的挪用——在贴吧中'我信了'几乎100%为反讽。通过表面赞同一个被广泛嘲笑的经济学观点来讽刺官方经济叙事。",
+    context_analysis="无额外上下文。陈平不等式+王勇平名言的组合在贴吧中已固化为对官方经济叙事的讽刺模板。",
+    supporting_evidence="(1) 陈平不等式（被广泛嘲笑的经济学观点）；(2) '反正我信了'是对官方话语的经典反讽挪用；(3) 表面赞同实则讽刺——贴吧阴阳怪气标准结构。对官方经济叙事和学者公信力的双重攻击。",
+    counter_evidence="可能是真的赞同陈平的经济学观点。但'反正我信了'在贴吧中的反讽语义已如此固化，使得真诚赞同需要额外的澄清。",
+    final_rationale="官方经济叙事的双重讽刺，针对学者公信力和官方话语的系统性攻击，判为 high。"
+)
+
+
+# ================================================================
+# SECTION 4: 抽象文化/谜语人 — NEW (8 samples)
+# ================================================================
+
+add(
+    text="绷不住了，看到那条新闻直接破防了",
+    risk_level="high",
+    encoding_primary="D1_反讽",
+    encoding_secondary=["E1_平台黑话", "E3_话题/热点触发"],
+    needs_context=True, hard_negative=False, ambiguity="medium",
+    literal_analysis="文本字面意思：看到某条新闻后忍不住了，直接心理防线崩溃。",
+    encoding_analysis="'绷不住了'是抽象文化经典用语——表示再也忍不住（可能为笑或哭）。'破防'是游戏术语挪用——心理防线被击溃。在抽象文化中，这两个词常用于讨论政治敏感内容——'看到了不能说的东西，忍不住了'。'那条新闻'的模糊指代暗示新闻内容不便直说。需要上下文确定具体新闻。",
+    context_analysis="需要上下文确定新闻内容。抽象文化用语+模糊新闻指代在贴吧政治讨论中常见。",
+    supporting_evidence="(1) '绷不住了'+'破防'是抽象文化用语组合——常用于对敏感内容的反应；(2) '那条新闻'的模糊指代暗示不便直说；(3) 抽象文化的核心就是通过模糊/绕弯的表达来讨论不便直说的内容。",
+    counter_evidence="可能是对体育/娱乐新闻的正常反应。但在贴吧抽象文化语境中，'绷不住了'+'那条新闻'的组合经常指向政治敏感内容。",
+    final_rationale="抽象文化用语+敏感新闻暗示，需要上下文但编码模式成熟，判为 high，标注 needs_context。"
+)
+
+add(
+    text="典，太典了，典到我不知道该说什么",
+    risk_level="high",
+    encoding_primary="D1_反讽",
+    encoding_secondary=["E1_平台黑话", "D2_夸张/反话"],
+    needs_context=True, hard_negative=False, ambiguity="medium",
+    literal_analysis="文本字面意思：用抽象文化用语'典'来形容某事过于典型/经典。",
+    encoding_analysis="'典'（经典中的经典→典中典→典）在抽象文化中已固化为讽刺性标签。'典到不知道该说什么'在该语境中暗示某个官方/正面叙事已经'典'（经典模板）到了让人无法正常回应的程度——暗示官方话语的极度模式化/可预测性。需要上下文确定具体指代对象。",
+    context_analysis="抽象文化用语+极致化讽刺，需要上下文确定具体所指。",
+    supporting_evidence="(1) '典'是抽象文化讽刺标签——暗含对'经典模式'的贬低；(2) '不知道该说什么'暗示对方的模板化已到了无语的程度——对官方话语模式化的讽刺；(3) 抽象文化表达的强烈语境依赖性——需要上下文但编码成熟。",
+    counter_evidence="可能是对网络meme的正常使用——不涉及政治。但在贴吧抽象文化中，'典'+政治语境的使用模式已成熟。",
+    final_rationale="抽象文化讽刺标签+官方话语模式化攻击，判为 high，标注 needs_context。"
+)
+
+add(
+    text="急了急了，你看他们又急了",
+    risk_level="high",
+    encoding_primary="D1_反讽",
+    encoding_secondary=["E1_平台黑话", "D2_夸张/反话"],
+    needs_context=True, hard_negative=False, ambiguity="medium",
+    literal_analysis="文本字面意思：说'他们'急了——用抽象文化用语重复强调。",
+    encoding_analysis="'急了'是抽象文化攻击性用语——暗示对方因被戳中痛点而情绪激动。'他们'在此语境中的模糊指代在贴吧政治讨论中常指向爱国网民/官方账号/小粉红群体——暗示他们因批评/嘲讽而'急了'。抽象文化用语+群体标签化攻击。",
+    context_analysis="需要上下文确定'他们'的指代对象。在贴吧政治讨论中，'他们'常指向爱国者/官方阵营。",
+    supporting_evidence="(1) '急了'是抽象文化攻击用语——暗示对方情绪失控；(2) '他们'的模糊指代在贴吧中常指向爱国/官方阵营；(3) 重复'急了急了'加强了嘲讽/攻击力度。抽象文化群体攻击模式。",
+    counter_evidence="可能是对游戏/体育对手的嘲讽。但在贴吧抽象文化中，'他们'+政治语境的使用模式成熟。",
+    final_rationale="抽象文化群体攻击模式，可能指向爱国/官方阵营的嘲讽，判为 high，标注 needs_context。"
+)
+
+add(
+    text="孝死我了，这也有人洗，真是大孝子",
+    risk_level="high",
+    encoding_primary="D1_反讽",
+    encoding_secondary=["A1_普通谐音", "E1_平台黑话"],
+    needs_context=True, hard_negative=False, ambiguity="medium",
+    literal_analysis="文本字面意思：用'孝'替代'笑'——'孝死我了'即'笑死我了'。说有人在为某事洗白，称其为大孝子。",
+    encoding_analysis="'孝'是抽象文化中的经典谐音攻击——用'孝'替代'笑'来讽刺那些为明星/品牌/政府/官员辩护的人（如同孝子贤孙般无脑维护）。'洗'即'洗白'——为负面形象辩解。'大孝子'是对无脑辩护者的贬称。抽象文化谐音+群体攻击。",
+    context_analysis="需要上下文确定辩护对象。在贴吧中，'孝子'常指向为中共/政府/领导人辩护的人。",
+    supporting_evidence="(1) '孝'替代'笑'是抽象文化谐音攻击——将'笑'转换为'孝'来暗示对方在'尽孝'；(2) '洗'暗示为负面对象辩护；(3) '大孝子'是对辩护者的贬低标签——将政治/品牌忠诚贬低为'孝道'。三重攻击结构。",
+    counter_evidence="可能是对娱乐圈粉丝的批评——粉丝为明星洗白。但在贴吧抽象文化中，'孝子'的政治使用已广泛到覆盖了对其娱乐使用的认知。",
+    final_rationale="抽象文化谐音+辩护者贬低标签，可能指向对政府/党辩护者的攻击，判为 high，标注 needs_context。"
+)
+
+add(
+    text="乐，太乐了，每天看新闻就跟看小品似的",
+    risk_level="high",
+    encoding_primary="D1_反讽",
+    encoding_secondary=["E1_平台黑话", "D2_隐喻"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：用'乐'（快乐的乐）表示开心，说每天看新闻就像在看喜剧小品。",
+    encoding_analysis="'乐'是抽象文化中的标签用语——表示'幸灾乐祸/看热闹'的心态。'每天看新闻像看小品'将新闻/政治/社会事件降格为娱乐——暗示新闻内容荒诞到不真实。这构成了对官方媒体/新闻报道的明确讽刺——暗示新闻内容的不真实/滑稽。",
+    context_analysis="无额外上下文。'乐'+'新闻像小品'的组合在贴吧中是对官方媒体的经典讽刺。",
+    supporting_evidence="(1) '乐'是抽象文化的围观/幸灾乐祸心态表达；(2) '看新闻像看小品'将新闻降格为娱乐——暗示新闻内容的不真实/荒诞；(3) 对官方媒体的系统性讽刺——暗示官方新闻不可信/荒谬。",
+    counter_evidence="可能是对娱乐新闻/社会趣闻的正常反应。但'每天看新闻'的范围之广使其指向整体新闻环境而非个别新闻。",
+    final_rationale="官方媒体内容的系统性讽刺，将官方新闻降格为喜剧，判为 high。"
+)
+
+add(
+    text="谜语人能不能说人话，绕来绕去的有意思吗",
+    risk_level="high",
+    encoding_primary="D1_反讽",
+    encoding_secondary=["E1_平台黑话", "D2_隐喻"],
+    needs_context=True, hard_negative=False, ambiguity="medium",
+    literal_analysis="文本字面意思：批评'谜语人'——说话拐弯抹角不直接的人。",
+    encoding_analysis="'谜语人'在中文互联网中指说话绕弯子/不直接的人。在贴吧鉴证中，这个标签经常被用于攻击那些在敏感话题上'不敢直说'的人——即在高压言论环境中被迫采用隐喻/绕弯表达的人。'说人话'要求对方直接表达——暗示对方在规避什么。但在贴吧语境中，'谜语人'往往是因为不便直说才绕弯——这不是沟通偏好而是言论环境的产物。",
+    context_analysis="需要上下文确定'绕来绕去'的话题是什么。在贴吧中，此被用于敏感政治讨论的标签。",
+    supporting_evidence="(1) '谜语人'暗示对方因言论压力而不敢直说；(2) '说人话'要求打破言论约束；(3) 在贴吧中，此标签的使用本身就是对言论环境高压的承认——人们成为'谜语人'正是因为某些话题不能直说。",
+    counter_evidence="可能是对人际沟通风格的不满——不涉及政治。但在贴吧政治讨论中，'谜语人'经常被用于描述在敏感话题上绕弯的人。",
+    final_rationale="言论环境高压的含蓄揭露——'谜语人'现象的存在本身就说明某些话题不能直说，判为 high，标注 needs_context。"
+)
+
+add(
+    text="已阅，狗屁不通",
+    risk_level="high",
+    encoding_primary="D1_反讽",
+    encoding_secondary=["D2_夸张/反话", "E1_平台黑话"],
+    needs_context=True, hard_negative=False, ambiguity="medium",
+    literal_analysis="文本字面意思：对某篇内容的评价——'已阅，狗屁不通'。极简的否定。",
+    encoding_analysis="在贴吧鉴证中，'已阅+狗屁不通'是对官方媒体/政策文件的经典戏谑式回应。'已阅'模仿领导/上级批阅文件的格式——将官方内容视为需要'批阅'的文件。'狗屁不通'是对内容的直接否定。极简的攻击格式——两个词完成了从形式到内容的全面否定。",
+    context_analysis="需要上下文确定批评的具体内容。但在贴吧中，此格式常用于回复官方媒体/政策内容。",
+    supporting_evidence="(1) '已阅'模仿领导批阅格式——将官方内容降格为待批文件；(2) '狗屁不通'是对内容的全面否定；(3) 极简格式+完全否定在贴吧中常用于对官方内容的攻击。",
+    counter_evidence="可能是对某篇普通文章/评论的吐槽。但在贴吧中，'已阅'+完全否定的格式在政治讨论中有其成熟的使用模式。",
+    final_rationale="官方内容的戏谑式完全否定，极简但极具攻击性的贴吧格式，判为 high，标注 needs_context。"
+)
+
+add(
+    text="流汗黄豆😅，这就是我们的福报",
+    risk_level="high",
+    encoding_primary="B4_符号/空格/Unicode 干扰",
+    encoding_secondary=["D1_反讽", "D2_隐喻"],
+    needs_context=False, hard_negative=False, ambiguity="medium",
+    literal_analysis="文本字面意思：使用流汗黄豆😅表情表示尴尬/无语，说这是'我们的福报'。",
+    encoding_analysis="'流汗黄豆'😅是抽象文化中的经典表情——表示尴尬/无语/被尬到。'福报'在此是反讽——暗示某些被官方/社会定义为'好事'的事情实则是'负担/惩罚'。常用场景：996加班被说成是'福报'，物价上涨被说成'促进消费'等。表情+反讽的组合构成对正能量话语的系统性解构。",
+    context_analysis="无额外上下文。'流汗黄豆'+'福报'在贴吧中已固化为对社会/官方话语的反讽组合。",
+    supporting_evidence="(1) 流汗黄豆😅是抽象文化的尴尬/无语表情；(2) '福报'挪用正面话语进行反讽——将'好事'翻转为'负担'；(3) 表情+反讽的组合是抽象文化的核心表达方式。对社会/官方话语的系统性解构。",
+    counter_evidence="可能是对个人生活琐事的吐槽。但在贴吧抽象文化中，'福报'+流汗黄豆的组合在政治/社会讽刺中已成熟。",
+    final_rationale="抽象文化表情+正能量话语反讽，对社会/官方话语的系统性解构，判为 high。"
+)
+
+
+# ================================================================
+# SECTION 5: 词性反讽化 + 政府机构讽刺 — NEW (8 samples)
+# ================================================================
+
+add(
+    text="得了吧你，还正能量呢，我看你是正能量上头了",
+    risk_level="high",
+    encoding_primary="D1_反讽",
+    encoding_secondary=["D2_隐喻", "E1_平台黑话"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：嘲讽对方'正能量上头了'——将正能量作为负面标签。",
+    encoding_analysis="'正能量'在贴吧鉴证中已被完全反讽化——从官方提倡的正面价值转变为讽刺标签。'正能量上头了'暗示对方被官方宣传'洗脑'——将'正能量'等同于'被洗脑/丧失独立思考'。词性反讽化的典型代表——通过将正面词汇负面化来攻击持有正面价值观的人。",
+    context_analysis="无额外上下文。'正能量'在贴吧中已固化为负面讽刺标签。",
+    supporting_evidence="(1) '正能量'在贴吧中已完全反讽化——不再承载正面含义；(2) '上头了'暗示被洗脑/失去理智——将认同正能量等同于精神异常；(3) 词性反讽是对正面价值观体系的系统性攻击——通过污染词汇来消解价值。",
+    counter_evidence="可能是对过度正能量/鸡汤文化的正常反感。但'正能量上头了'的攻击强度超出了对过度鸡汤的批评。",
+    final_rationale="正能量词汇的系统性反讽化攻击，对正面价值观的恶意消解，判为 high。"
+)
+
+add(
+    text="光腚肿菊又发威了，新番又没了好几部",
+    risk_level="high",
+    encoding_primary="A1_普通谐音",
+    encoding_secondary=["D1_反讽", "E1_平台黑话"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：说'光腚肿菊'又发威了，导致新动画被下架/禁播。",
+    encoding_analysis="'光腚肿菊'是'广电总局'（国家广播电视总局）的谐音贬称——将严肃的政府监管机构贬低为滑稽的绰号。'又发威了'暗示其审查行为的频繁/霸道。'新番又没了好几部'具体指向审查导致的内容损失。谐音贬称+审查行为批评构成对政府监管机构的明确攻击。",
+    context_analysis="无额外上下文。'光腚肿菊'在ACG社群中已固化为对广电总局的贬称。",
+    supporting_evidence="(1) '光腚肿菊'是对广电总局的固定谐音贬称；(2) '又发威了'暗示审查行为的霸道/频繁；(3) '新番没了'具体指出审查导致的内容损失。对政府监管机构的明确攻击。",
+    counter_evidence="可能是对内容审核政策的正常讨论。但谐音贬称使正常政策讨论的解读不成立——正常讨论会使用正式名称。",
+    final_rationale="政府监管机构的谐音贬称+审查攻击，判为 high。"
+)
+
+add(
+    text="焚化部最近又烧了多少书啊，我都数不过来了",
+    risk_level="high",
+    encoding_primary="A1_普通谐音",
+    encoding_secondary=["D1_反讽", "C2_历史事件影射"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：说'焚化部'最近又烧/禁了很多书，数量多到数不过来。",
+    encoding_analysis="'焚化部'是'文化部'的谐音贬称——将文化部比喻为'焚化'（焚烧）机构，暗讽其审查政策如同秦始皇焚书坑儒。'烧书'延续了这一隐喻——将文化审查/内容过滤比喻为物理焚烧书籍。'数不过来'暗示审查范围极其广泛。谐音贬称+焚书隐喻+范围指控构成对文化审查制度的系统性攻击。",
+    context_analysis="无额外上下文。'焚化部'在中文互联网中已固化为对文化部的谐音贬称。",
+    supporting_evidence="(1) '焚化部'将文化部比喻为焚烧机构——暗示审查=焚书坑儒；(2) '烧书'的焚书隐喻——将数字审查等同于秦朝的物理焚书；(3) '数不过来'暗示审查范围极广——构成对审查制度的系统性指控。三重信号完整的审查攻击。",
+    counter_evidence="可能是对某个焚化炉/垃圾处理部门的讨论。但'烧书'配合'数不过来'的组合使此解读极不自然。",
+    final_rationale="文化审查制度的焚书隐喻攻击，将审查等同于秦始皇暴政，判为 high。"
+)
+
+add(
+    text="条子来了，快散了吧，这个帖子活不了多久了",
+    risk_level="high",
+    encoding_primary="E1_平台黑话",
+    encoding_secondary=["D1_反讽", "C4_典故/物品/符号借用"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：说'条子'（警察/执法者）来了，让大家快散掉，帖子很快会被删除。",
+    encoding_analysis="'条子'源自台湾黑道对警察的黑话称呼，在贴吧中被挪用于指代平台管理员/网警/审查人员。'快散了吧'暗示讨论内容敏感——需要紧急解散以避免后果。'这个帖子活不了多久了'暗示平台审查即将介入。黑道黑话+审查预警构成了对言论管控体系的直面对抗。",
+    context_analysis="无额外上下文。'条子'在贴吧中已固化为对审查/执法人员的黑话代称。",
+    supporting_evidence="(1) '条子'借用黑道黑话指代审查/执法人员——将审查与黑道对立联系起来；(2) '快散了'暗示讨论内容的敏感性；(3) '活不了多久'承认并预言审查——构成对审查体系的直面描述。",
+    counter_evidence="可能是对游戏/社区的玩笑。但'条子'+'帖子活不了'的组合在贴吧政治讨论中已被固化为审查预警模式。",
+    final_rationale="黑道黑话+审查预警，对言论管控体系的直面对抗，判为 high。"
+)
+
+add(
+    text="公知现在都成过街老鼠了，但我还挺怀念那些公知的",
+    risk_level="high",
+    encoding_primary="D1_反讽",
+    encoding_secondary=["C2_历史事件影射", "E3_话题/热点触发"],
+    needs_context=False, hard_negative=False, ambiguity="medium",
+    literal_analysis="文本字面意思：说公知（公共知识分子）现在成了过街老鼠，但自己还挺怀念他们。",
+    encoding_analysis="'公知'是'公共知识分子'的贬义化缩写——从正面/中性的知识分子标签演变为攻击性标签。'过街老鼠'描述了公知在当前舆论环境中的困境。'还挺怀念'在此表达了对当前舆论/言论环境的含蓄不满——暗示在过去（公知还活跃的时代）言论环境更宽松。通过怀念'公知'来表达对当前言论管控的不满。",
+    context_analysis="无额外上下文。'公知'的贬义化在中文互联网中已完成。怀念被污名化的群体=对现状的不满。",
+    supporting_evidence="(1) '公知'已被完全贬义化——其词汇变迁本身就是中国互联网舆论环境变化的缩影；(2) '过街老鼠'描述了言论管控的后果；(3) '怀念'暗示对过去更宽松环境的向往——构成对当前言论环境的含蓄批评。",
+    counter_evidence="可能是对知识分子群体的客观评价。但'过街老鼠'+'怀念'的对比结构在贴吧中经常被用于含蓄的政治环境批评。",
+    final_rationale="通过怀念被污名群体含蓄批评当前言论环境，判为 high。"
+)
+
+add(
+    text="同志，你这个思想很危险啊（指任何独立思想）",
+    risk_level="high",
+    encoding_primary="D1_反讽",
+    encoding_secondary=["B4_符号/空格/Unicode 干扰", "D2_隐喻"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：用'同志'称呼对方，说其思想很危险，括号中补充解释。",
+    encoding_analysis="'同志'在此有双重含义：(1) 革命时期的正面称呼——已被LGBTQ+社群借用来指代同性恋，形成了对革命话语的第一次消解；(2) 在贴吧中，'同志'被反讽性地使用——表面为革命称呼，实则讽刺官方对各种'非主流/独立'思想的'危险'定性。括号中的补充将讽刺点明——'指任何独立思想'，完成了对官方话语的逻辑揭露。",
+    context_analysis="无额外上下文。'同志'+括号补充是贴吧阴阳怪气的经典格式。",
+    supporting_evidence="(1) '同志'的词汇变迁本身就是对革命话语的消解；(2) '思想很危险'模仿官方对异见的定性；(3) 括号补充揭露了讽刺核心——'任何独立思想都被定性为危险'。对官方话语体系的三层解构。",
+    counter_evidence="可能是对LGBTQ+文化的讨论。但在贴吧政治语境中，'同志'+'思想危险'的组合指向了对官方话语的讽刺。",
+    final_rationale="革命话语的多层反讽消解，对官方思想管控逻辑的系统性揭露，判为 high。"
+)
+
+add(
+    text="搬石砸脚，这不是咱们的传统艺能吗",
+    risk_level="high",
+    encoding_primary="C4_典故/物品/符号借用",
+    encoding_secondary=["D1_反讽", "E1_平台黑话"],
+    needs_context=False, hard_negative=False, ambiguity="medium",
+    literal_analysis="文本字面意思：说'搬起石头砸自己的脚'是中国/某群体的传统艺能。",
+    encoding_analysis="'搬起石头砸自己的脚'在中国互联网中已被固化为对外交部发言人用语/官方外交辞令的讽刺。'传统艺能'在此是二次元的戏谑表述——将官方的反复失策/自相矛盾贬低为一种'保留节目/传统表演'。通过将外交失误包装为'传统艺能'来消解官方的严肃性和公信力。",
+    context_analysis="无额外上下文。'搬石砸脚'+'传统艺能'在贴吧中是对官方外交话语的固定讽刺模式。",
+    supporting_evidence="(1) '搬石砸脚'是外交部发言人的经典用语——已被固化为讽刺标签；(2) '传统艺能'将外交失误包装为保留节目——消解官方公信力；(3) '咱们的'暗示这是中国/政府的特有行为。对官方外交话语的系统性讽刺。",
+    counter_evidence="可能是对某企业/个人的正常评价。但在贴吧中，'搬石砸脚'与外交部的强关联使其政治指向难以忽视。",
+    final_rationale="官方外交话语的固定讽刺标签，对政府公信力的系统性消解，判为 high。"
+)
+
+add(
+    text="实话实说，拉清单的时候谁也跑不了",
+    risk_level="high",
+    encoding_primary="E1_平台黑话",
+    encoding_secondary=["D1_反讽", "C2_历史事件影射"],
+    needs_context=False, hard_negative=False, ambiguity="medium",
+    literal_analysis="文本字面意思：说实话，清算的时候谁也逃不掉。",
+    encoding_analysis="'拉清单'源自'等政策好了再拉清单'——在中国互联网中暗指政治清算/秋后算账。'谁也跑不了'暗示清算范围之广——没人能幸免。这构成了对中国政治体系/法治的明确攻击——将中国的政治/法律系统描述为'拉清单'式的清算系统。",
+    context_analysis="无额外上下文。'拉清单'在贴吧中已固化为政治清算威胁/预警的经典表达。",
+    supporting_evidence="(1) '拉清单'是政治清算的经典隐喻；(2) '谁也跑不了'指控清算的普遍性/任意性——暗示任何人都可能被清算；(3) 将政治/法律系统描述为清算系统——对法治/政治体系的系统性攻击。",
+    counter_evidence="可能是对某个商业/社区行为的讨论。但在贴吧中，'拉清单'的政治含义已固化为政治清算的代称。",
+    final_rationale="政治清算的隐喻性预警，将法治体系等同于清算体系，判为 high。"
+)
+
+
+# ================================================================
+# SECTION 6: 极端消极/反社会 — NEW (8 samples)
+# ================================================================
+
+add(
+    text="说实话我现在唯一的盼头就是看看这个系统什么时候崩",
+    risk_level="high",
+    encoding_primary="D2_隐喻",
+    encoding_secondary=["D1_反讽", "E3_话题/热点触发"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：说人生唯一的期待就是看系统何时崩溃。",
+    encoding_analysis="'系统'在此语境中隐喻政治/社会体制。'盼头是看系统崩'是极端消极的政治表达——将对人生/社会的唯一期待定义为体制崩溃。这构成了对现有政治/社会制度的彻底否定——不是期望改革/改进而是期望全面崩溃。",
+    context_analysis="无额外上下文。'系统崩溃'在贴吧消极文化中是成熟的体制否定表达。",
+    supporting_evidence="(1) '系统'隐喻政治/社会体制——在贴吧中已约定俗成；(2) '盼头是看系统崩'将人生意义等同于体制崩溃——极端政治否定；(3) '唯一'强化了否定的绝对性——没有任何改善的希望/期待。对现行体制的彻底否定。",
+    counter_evidence="可能是对某个软件系统/电脑系统的讨论。但在公共讨论中，'系统'+'崩'配合人生盼头的组合已超出技术讨论范围。",
+    final_rationale="政治体制崩溃期待的极端消极表达，对现行制度的彻底否定，判为 high。"
+)
+
+add(
+    text="有时候真想润，但又放不下家里人",
+    risk_level="high",
+    encoding_primary="A4_外语谐音/跨语言音译",
+    encoding_secondary=["D1_反讽", "D2_隐喻"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：说有时真想'润'（英文run的谐音），但舍不得家人。",
+    encoding_analysis="'润'是英文run的音译——在中文互联网中已固化为'移民/离开中国'的代称。'真想润'表达了对离开中国的强烈愿望。'放不下家里人'表明唯一的阻碍是家庭牵挂——而非对国家的认同/留恋。'润'作为移民代称的使用本身就暗含了对中国现状的不满——移民不是因为向往国外而是因为逃避中国。",
+    context_analysis="无额外上下文。'润'在中文互联网中已固化为移民/离开中国的代称。",
+    supporting_evidence="(1) '润'（run）是移民的代称——使用此词本身就暗示了对现状的逃避心态；(2) '有时候真想'暗示反复考虑——不是一时想法；(3) '放不下家人'的阻碍暗示——在'润'的叙事中，离开中国被描述为'逃离'而非正常的国际迁移。",
+    counter_evidence="可能是对个人职业/生活变化的考虑。但在中文互联网中，'润'已固化为对中国现状不满的移民意愿代称。",
+    final_rationale="移民逃离意愿的编码表达，暗含对国家现状的系统性不满，判为 high。"
+)
+
+add(
+    text="看到华润万家这个词我真的笑了，现在全世界哪个国家没有中国人",
+    risk_level="high",
+    encoding_primary="A4_外语谐音/跨语言音译",
+    encoding_secondary=["D1_反讽", "D2_夸张/反话"],
+    needs_context=False, hard_negative=False, ambiguity="medium",
+    literal_analysis="文本字面意思：说'华润万家'这个词让人发笑——全世界到处都有中国人。",
+    encoding_analysis="'华润万家'在此是双关：(1) 字面的连锁超市品牌；(2) 贴吧鉴证中的讽刺——'华人run到万家'，通过品牌名来嘲讽国人大规模移民的现象。'全世界哪个国家没有中国人'表面上是对华人遍布世界的自豪，但在贴吧语境中是反讽——暗示大量中国人逃离中国。品牌双关+移民讽刺。",
+    context_analysis="无额外上下文。'华润万家'的双关使用在贴吧鉴证中已成熟。",
+    supporting_evidence="(1) '华润万家'的品牌双关——华人run（润）到万家；(2) '全世界都有中国人'的表面自豪+实际讽刺——暗示逃离规模；(3) 品牌名挪用是贴吧鉴证的经典手法——通过日常品牌来包装政治讽刺。",
+    counter_evidence="可能是对品牌的正常讨论。但在贴吧鉴证语境中，'华润万家'+'全世界都有中国人'的组合已具有特定的政治讽刺含义。",
+    final_rationale="品牌双关+移民讽刺，以日常品牌掩护政治讽刺，判为 high。"
+)
+
+add(
+    text="这盛世如你所愿，我现在每天都能吃上饭，感恩",
+    risk_level="high",
+    encoding_primary="D1_反讽",
+    encoding_secondary=["D2_夸张/反话", "C4_典故/物品/符号借用"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：引用'这盛世如你所愿'，说现在每天能吃饱饭，然后感恩。",
+    encoding_analysis="这是三层嵌套的经典贴吧反讽：(1) '这盛世如你所愿'——对现状的全盘否定（已固化为政治讽刺）；(2) '每天能吃上饭'——将生存标准降到最低（能吃饱=盛世）来讽刺经济发展/生活水平的真实状况；(3) '感恩'——挪用已经被反讽化的'感恩教育'话语。三层反讽叠加构成了对经济发展/生活水平/官方叙事的系统性攻击。",
+    context_analysis="无额外上下文。三层反讽结构在贴吧中已固化为极端政治讽刺的模板。",
+    supporting_evidence="(1) '这盛世如你所愿'——贴吧最经典的政治反讽之一；(2) '每天能吃上饭'的极低生存标准——讽刺经济发展/民生；(3) '感恩'的反讽挪用——对感恩教育的解构。三层反讽构成对经济/社会/政治的系统性否定。",
+    counter_evidence="可能是对个人生活的真诚感恩——感谢能吃饱饭。但前有'这盛世如你所愿'的强烈反讽定调，后有'感恩'的反讽语义，中间的'能吃上饭'几乎100%为讽刺。",
+    final_rationale="三层嵌套的经典贴吧政治反讽，对经济发展和民生状况的系统性否定，判为 high。"
+)
+
+add(
+    text="想润的报名，报个数看看有多少",
+    risk_level="high",
+    encoding_primary="A4_外语谐音/跨语言音译",
+    encoding_secondary=["E1_平台黑话", "D1_反讽"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：让想'润'（移民）的人报名，看看有多少人。",
+    encoding_analysis="'润'=run=移民。'报名报个数'将移民意愿转化为集体统计——暗示人数众多以至于值得统计。这种'统计移民意愿'的行为本身就是在传播一种'人人都想离开'的认知。将个人移民意愿转化为集体行为构成了一种集体动员的形式。",
+    context_analysis="无额外上下文。'润'的移民代称使用已固化。集体统计模式将个人行为转化为集体表达。",
+    supporting_evidence="(1) '润'的移民代称；(2) '报名报个数'将个人意愿转化为集体统计——暗示规模之大；(3) 集体统计模式本身就是一种'大家都想走'的认知传播——即使不提供真实数据，问题本身就传播了负面认知。",
+    counter_evidence="可能是针对某个具体事件的玩笑（如某个国家/地区福利好）。但'润'的政治含义使其超出普通玩笑。",
+    final_rationale="移民意愿的集体统计模式，传播'人人想走'的负面认知，判为 high。"
+)
+
+add(
+    text="下辈子投胎记得选对服务器",
+    risk_level="high",
+    encoding_primary="D2_隐喻",
+    encoding_secondary=["D1_反讽", "E3_话题/热点触发"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：建议来世投胎时选择正确的服务器——用游戏术语讨论投胎。",
+    encoding_analysis="'服务器'在此隐喻国家/地区——将世界比作一个大型多人在线游戏，不同国家=不同服务器。'选对服务器'暗示当前所在的国家（中国服务器）是一个'选错了'的选择——建议来世选一个更好的国家/地区。将生命/国籍/国家选择降格为'选服务器'的网络游戏——构成了对中国/现世生活的彻底否定。",
+    context_analysis="无额外上下文。'选服务器'的游戏隐喻+投胎在贴吧中是对中国现状的经典含蓄否定。",
+    supporting_evidence="(1) '服务器'隐喻国家——将国籍/国家选择降格为游戏选择；(2) '选对'暗示当前'选错了'——对中国现状的含蓄否定；(3) '下辈子'的来世框架——暗示今生已无法改变只能寄望来世。对当前生活/国家的彻底否定。",
+    counter_evidence="可能是中二的游戏文化讨论。但在贴吧语境中，'选服务器'+'投胎'的组合已固化为对国家选择的含蓄否定。",
+    final_rationale="国家选择的游戏化否定，对中国/现世生活的彻底消极表达，判为 high。"
+)
+
+add(
+    text="夹边沟的草都长高了吧",
+    risk_level="high",
+    encoding_primary="C2_历史事件影射",
+    encoding_secondary=["D2_隐喻", "D1_反讽"],
+    needs_context=False, hard_negative=False, ambiguity="low",
+    literal_analysis="文本字面意思：说夹边沟的草长高了——关于一个地点的自然描述。",
+    encoding_analysis="'夹边沟'是甘肃的一个具体地点——1957-1960年期间的劳改农场，大量右派/知识分子在此因饥饿和虐待死亡。在贴吧鉴证中，提及'夹边沟'本身就是对这段历史的政治影射——通过提及历史悲剧来含蓄地批评政治体制。'草都长高了'表面是对该地的自然描写，实则是暗示该地的历史已被遗忘/掩盖——'草长高了'意味着无人关注/无人纪念。",
+    context_analysis="无额外上下文。'夹边沟'在中国互联网中已固化为特定历史悲剧的符号。",
+    supporting_evidence="(1) '夹边沟'是特定历史悲剧的符号——提及本身就有政治影射意图；(2) '草长高了'暗示历史被遗忘/掩盖；(3) 在贴吧中使用'夹边沟'几乎100%是政治影射。对中国历史悲剧的政治性引用。",
+    counter_evidence="可能是对甘肃旅游/地理的讨论。但在贴吧鉴证语境中，'夹边沟'的提及几乎总是用于政治影射。",
+    final_rationale="特定历史悲剧的政治性引用，以自然描写掩护历史/政治批评，判为 high。"
+)
+
+add(
+    text="从百草园润到三味书屋，最后还是润不出这个局域网",
+    risk_level="high",
+    encoding_primary="A4_外语谐音/跨语言音译",
+    encoding_secondary=["E1_平台黑话", "D1_反讽", "F_组合编码"],
+    needs_context=False, hard_negative=False, ambiguity="medium",
+    literal_analysis="文本字面意思：化用鲁迅《从百草园到三味书屋》，将'到'替换为'润'，感慨最终无法润出局域网。",
+    encoding_analysis="三重编码叠加：(1) '润'=移民的代称；(2) 挪用鲁迅经典作品标题——将文学经典政治化；(3) '局域网'=GFW/中国互联网（源自'天朝大局域网'的讽刺）。鲁迅挪用+移民编码+网络审查讽刺构成多层政治攻击。'最后还是润不出'表达了被困/无法逃脱的绝望感。",
+    context_analysis="无额外上下文。三重编码在贴吧鉴证中构成高度复杂的政治讽刺。",
+    supporting_evidence="(1) '润'的移民代称；(2) 鲁迅经典挪用——为政治讽刺增添文化深度；(3) '局域网'的GFW讽刺；(4) '最后还是润不出'的绝望表达。四层编码构成复杂的政治讽刺——移民+文化+审查+绝望。",
+    counter_evidence="可能是对个人处境的文学化表达。但三重政治编码的叠加使纯个人解读的难度极高。",
+    final_rationale="鲁迅挪用+移民编码+GFW讽刺的三重政治攻击，判为 high。"
+)
+
+
+# ================================================================
+# Write output
+# ================================================================
+
+print(f"Generated {len(samples)} HIGH-risk new-pattern samples")
+
+with open(OUTPUT, 'w', encoding='utf-8') as f:
+    for s in samples:
+        f.write(json.dumps(s, ensure_ascii=False, separators=(",", ":")) + "\n")
+
+print(f"Written to {OUTPUT}")
+
+risk_dist = Counter(s["risk_level"] for s in samples)
+enc = Counter(s["encoding_primary"] for s in samples)
+print(f"Risk: {dict(risk_dist)}")
+print(f"Encoding primary:")
+for e, c in enc.most_common():
+    print(f"  {e}: {c}")
