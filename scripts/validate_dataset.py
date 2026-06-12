@@ -37,18 +37,15 @@ REQUIRED_REASONING_FIELDS = {
 }
 
 ENUMS = {
-    "split": {"train", "validation", "val", "test", "eval", "holdout"},
     "source_type": {"synthetic", "real", "synthetic_or_real", "mixed", "unknown"},
     "risk_level": {"high", "medium", "low", "none"},
     "ambiguity": {"low", "medium", "high"},
     "evidence_strength": {"weak", "moderate", "strong"},
-    "freshness": {"stable", "recent", "expired"},
     "quality_status": {"draft", "reviewed", "approved", "rejected", "needs_revision"},
 }
 
 STRING_FIELDS = {
     "id",
-    "split",
     "source_type",
     "platform",
     "text",
@@ -56,8 +53,6 @@ STRING_FIELDS = {
     "encoding_primary",
     "ambiguity",
     "evidence_strength",
-    "freshness",
-    "target_reference",
     "quality_status",
     "review_notes",
 }
@@ -65,8 +60,6 @@ STRING_FIELDS = {
 BOOLEAN_FIELDS = {
     "needs_context",
     "hard_negative",
-    "target_known",
-    "should_explain_target",
 }
 
 LIST_OF_STRING_FIELDS = {

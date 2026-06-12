@@ -185,11 +185,7 @@ def make_sample(source: str, row: dict[str, Any], text: str) -> dict[str, Any]:
         "needs_context": False,
         "ambiguity": "low" if risk in {"high", "none"} else "medium",
         "evidence_strength": evidence,
-        "freshness": "stable",
         "hard_negative": hard_negative,
-        "target_known": False,
-        "target_reference": "",
-        "should_explain_target": False,
         "reasoning": {
             "literal_analysis": [f"字面上是在表达：{text}"],
             "encoding_analysis": [
