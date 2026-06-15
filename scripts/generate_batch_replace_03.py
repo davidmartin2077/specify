@@ -1,0 +1,605 @@
+#!/usr/bin/env python3
+"""
+替换 phase3_v2 第3批：政治谐音+编码隐喻（20条）
+A1_普通谐音 + C4_典故/物品/符号借用。
+
+原则不变：每条有现实映射，读起来像真实互联网评论。
+"""
+
+import json, os
+
+OUT = "data/raw/batch_replace_03_homophone.jsonl"
+
+samples = [
+    # ═══ HIGH (6条) ═══════════════════════════════════
+    {
+        "text": "维尼最近是不是又胖了，好久没看到他在外面露面了，上次出镜还是上上个月的会议，镜头一扫过去脸色不太好啊，外网又在传那些有的没的",
+        "risk_level": "high",
+        "encoding_primary": "C4_典故/物品/符号借用",
+        "encoding_secondary": ["C1_历史人物类比"],
+        "needs_context": False, "ambiguity": "low", "evidence_strength": "strong",
+        "hard_negative": False,
+        "reasoning": {
+            "literal_analysis": ["表面讨论动画角色维尼熊的体型和出镜频率。"],
+            "encoding_analysis": [
+                "维尼=习近平，源自2013年网友发现习近平与迪士尼角色小熊维尼长相相似，后因2017年相关表情包被全面封禁而成为固定政治代指。",
+                "在中国互联网上'维尼'已成为规避领导人姓名关键词的第一替代词，从贴吧到B站弹幕均可观察到。",
+                "'外网又在传那些有的没的'是编码完成句——表面不屑，实际传播了'外网有关于习的传闻'这一信息。",
+                "'脸色不太好'指向健康传闻，是领导人健康话题的标准编码表达。"
+            ],
+            "context_analysis": [
+                "近两年关于最高领导人健康的讨论在中文互联网上以'维尼出镜频率'等编码形式广泛传播。",
+                "从单纯的代指发展到围绕代指的完整政治叙事（健康→露面→传闻）。"
+            ],
+            "supporting_evidence": [
+                "维尼是习在网络上的最高频、最高固化代指之一。",
+                "从出镜频率→脸色→外网传闻构成完整的领导人健康话题编码链。",
+                "提及外网传闻本身是传播政治敏感信息的行为。"
+            ],
+            "counter_evidence": [
+                "如果不知道维尼=习的编码，仅读为讨论动画角色。",
+                "但'会议''镜头扫过去''外网传闻'限定了场景为官方会议和领导人出镜，排除了动画讨论的可能。"
+            ],
+            "final_rationale": "最高频领导人代指+健康话题编码+外网传闻传播，多层编码叠加，判为 high。"
+        }
+    },
+    {
+        "text": "包子铺最近是不是换厨子了，口味跟以前不太一样，以前是皮薄馅大一口一个，现在是皮越来越厚馅越来越小，价格还翻了一倍，老街坊都在抱怨",
+        "risk_level": "high",
+        "encoding_primary": "C4_典故/物品/符号借用",
+        "encoding_secondary": ["D2_隐喻", "D1_反讽"],
+        "needs_context": False, "ambiguity": "low", "evidence_strength": "strong",
+        "hard_negative": False,
+        "reasoning": {
+            "literal_analysis": ["表面吐槽包子铺换厨师后质量下降、价格上涨、老街坊不满。"],
+            "encoding_analysis": [
+                "包子=习近平（源自2013年习在北京庆丰包子铺排队买包子的新闻，此后'包子'成为习的代指）。",
+                "'换厨子了'隐喻领导层更替或政策方向转变。",
+                "'皮越来越厚馅越来越小价格翻倍'是用食物质量下降隐喻民生恶化——形式主义增多('皮厚')、实质福利减少('馅小')、生活成本上升('价涨')。",
+                "'老街坊都在抱怨'代指民间不满情绪上升。",
+                "整段用包子铺类比政绩，是中国民间政治讽刺的传统手法——借物喻政。"
+            ],
+            "context_analysis": [
+                "2013年习在庆丰包子铺排队买包子被官方大力宣传为'亲民'形象，此后'包子'成为网络代指。",
+                "近年经济下行、消费降级背景下，此类'包子变差'的政治讽刺在网络上频繁出现。"
+            ],
+            "supporting_evidence": [
+                "包子+庆丰是习的最高频网络代指之一。",
+                "包子品质→民生→政绩→民间不满构成完整的政治讽刺隐喻链。",
+                "每个细节（皮/馅/价/老街坊）都有明确的政治映射。"
+            ],
+            "counter_evidence": [
+                "表面是普通美食评论。",
+                "但'换厨子→皮厚馅小→价格翻倍→老街坊抱怨'的组合在中文互联网上已高度固化为政治讽刺模板。"
+            ],
+            "final_rationale": "领导人符号借代+政治讽刺隐喻+民生批评，多层编码形成完整的借物喻政叙事，判为 high。"
+        }
+    },
+    {
+        "text": "大犬最近又出来咬人了，这次是针对那个说实话的记者，直接把人家的账号全平台封了，我就想问一句：你到底在怕什么？人家说的哪一句不是事实",
+        "risk_level": "high",
+        "encoding_primary": "C4_典故/物品/符号借用",
+        "encoding_secondary": ["D1_反讽", "E1_平台黑话"],
+        "needs_context": False, "ambiguity": "low", "evidence_strength": "strong",
+        "hard_negative": False,
+        "reasoning": {
+            "literal_analysis": ["表面讨论某只大狗（犬）咬人，实际在质问为什么封杀说实话的记者。"],
+            "encoding_analysis": [
+                "犬=权（犬与权在某些方言中音近），引申为'大权'→权力体系。在部分网络社区中'大犬'被用来代指最高权力者或权力系统。",
+                "'咬人'是隐喻——不是真的咬，而是动用权力打压。",
+                "'把人家的账号全平台封了'指向跨平台封杀的舆论管控手段。",
+                "'你到底在怕什么'是直接的政治质问，'人家说的哪一句不是事实'是对封杀正当性的否定。",
+                "整段话表面说狗，实则通过多层映射（犬→权→权力者→封杀言论）形成完整的编码链。"
+            ],
+            "context_analysis": [
+                "近年多名记者/自媒体人因报道敏感事件被全网封杀，在网络引发'为什么不能让人说实话'的讨论。",
+                "大犬的隐喻在中国民间政治讽刺中有悠久传统。"
+            ],
+            "supporting_evidence": [
+                "犬→权的音近映射在特定网络社区已有使用。",
+                "跨平台封杀'全平台封了'的描述精确对应中国的舆论管控现实。",
+                "结尾两句是直接的政治质问。"
+            ],
+            "counter_evidence": [
+                "犬→权的映射不如维尼→习那样广为人知。",
+                "但后续的'封杀记者'内容消除了歧义——结合上下文可明确还原编码目标。"
+            ],
+            "final_rationale": "权力隐喻+舆论管控批判+直接政治质问，多层编码指向对言论管控的愤怒，判为 high。"
+        }
+    },
+    {
+        "text": "伏地魔又出来了？我以为上次那件事之后他至少会消停一阵子，结果这才几天啊又上新闻联播了，这次讲话的内容更离谱，台下鼓掌的人脸都是僵的",
+        "risk_level": "high",
+        "encoding_primary": "C4_典故/物品/符号借用",
+        "encoding_secondary": ["D1_反讽", "C1_历史人物类比"],
+        "needs_context": False, "ambiguity": "low", "evidence_strength": "strong",
+        "hard_negative": False,
+        "reasoning": {
+            "literal_analysis": ["讨论伏地魔（哈利波特反派）又出现了，评论其讲话内容离谱、鼓掌者表情僵硬。"],
+            "encoding_analysis": [
+                "伏地魔=习近平（源自网友将习与伏地魔对比——都拥有绝对权力、不能直呼其名的特征）。在哈利波特中，魔法界称伏地魔为'神秘人/那个不能说出名字的人'，与中文网络中对习的'那位/不能说的'形成跨文化映射。",
+                "'又上新闻联播了'直接锁定中国官方媒体场景。",
+                "'台下鼓掌的人脸都是僵的'是反讽——表面在鼓掌支持，实际表情僵硬，暗示是被迫的。",
+                "编码亮点：借哈利波特的文化符号映射中国政治现实，兼具规避和讽刺功能。"
+            ],
+            "context_analysis": [
+                "2018年起'伏地魔=习'的类比在中文互联网上兴起，港台媒体也有使用。",
+                "伏地魔作为文化符号的传播度极高，使得这个编码的接收门槛较低。"
+            ],
+            "supporting_evidence": [
+                "伏地魔=不能说出名字的人=习，跨文化映射精准。",
+                "新闻联播+鼓掌脸僵构成完整的政治仪式讽刺。",
+                "编码符号来自全球流行文化，识别度高。"
+            ],
+            "counter_evidence": [
+                "没有伏地魔=习的编码知识，仅读为哈利波特讨论。",
+                "但'上新闻联播'限定了中国官方媒体场景。"
+            ],
+            "final_rationale": "跨文化符号映射+政治仪式讽刺，伏地魔作为习的精明代指，判为 high。"
+        }
+    },
+    {
+        "text": "蛋炒饭这个梗越来越多人知道了，以前还只是小圈子里说说，现在连微博评论都有人刷，虽然秒删但截图已经在群里传开了。怎么说呢，有些事情不是删帖就能让人忘记的",
+        "risk_level": "high",
+        "encoding_primary": "C4_典故/物品/符号借用",
+        "encoding_secondary": ["C2_历史事件影射", "E1_平台黑话"],
+        "needs_context": False, "ambiguity": "low", "evidence_strength": "strong",
+        "hard_negative": False,
+        "reasoning": {
+            "literal_analysis": ["讨论'蛋炒饭'这个表情/梗传播范围扩大，即使被删帖也阻止不了传播。"],
+            "encoding_analysis": [
+                "蛋炒饭=毛泽东（源自流传的历史段子：毛岸英在朝鲜战争中因做蛋炒饭暴露炊烟被美军轰炸身亡。这个梗后来被用来代指毛泽东本人）。",
+                "在中文网络上'蛋炒饭'已从最初的反毛段子演化为毛的编码代指，在特定社区中高频出现。",
+                "'连微博评论都有人刷'说明编码从小圈子扩散到大众平台。",
+                "'不是删帖就能让人忘记的'直接挑战官方对毛的历史叙事——暗示有些事情（指毛的历史评价）不能被官方垄断。"
+            ],
+            "context_analysis": [
+                "毛的历史评价在中国是高度敏感话题，任何负面讨论都可能触发审核。",
+                "'蛋炒饭'成为规避审核的编码工具，但其传播本身反映了民间对官方历史叙事的抵抗。"
+            ],
+            "supporting_evidence": [
+                "蛋炒饭在鉴证圈是毛的固定编码代指。",
+                "从'小圈子''微博''秒删''截图传播'描述了编码从边缘到中心的社会传播过程。",
+                "'不是删帖就能让人忘记的'是对官方历史叙事的直接挑战。"
+            ],
+            "counter_evidence": [
+                "如果没有编码知识，蛋炒饭只是食物。",
+                "但'删帖''让人忘记'表明讨论的是被审查的内容。"
+            ],
+            "final_rationale": "历史人物固定编码代指+编码的社会传播过程描述+对官方历史叙事的挑战，判为 high。"
+        }
+    },
+    {
+        "text": "皿煮这词现在已经成了一个笑话了，每次有人提皿煮我就想问一句——你说的皿煮是能让老百姓吃上放心饭的那种，还是选票发完人就不见了的那种？前苏联也搞过皿煮，结果呢",
+        "risk_level": "high",
+        "encoding_primary": "A1_普通谐音",
+        "encoding_secondary": ["D1_反讽", "C2_历史事件影射"],
+        "needs_context": False, "ambiguity": "low", "evidence_strength": "strong",
+        "hard_negative": False,
+        "reasoning": {
+            "literal_analysis": ["讽刺'民主'一词在中国语境下名不副实，用前苏联解体做类比。"],
+            "encoding_analysis": [
+                "皿煮=民主（拼写上的牵强谐音，用类似的外貌偏旁替代），是网络上对'民主'概念的讽刺性谐音编码。",
+                "核心编码在下半句——把民主分为两种：真的（放心饭）和假的（选票后消失），暗指中国的民主是后者。",
+                "'前苏联也搞过皿煮结果呢'是用苏联解体来映射当前——暗示中国如果搞真民主也会像苏联一样。",
+                "整段话既是谐音编码也是政治影射——不直接说'中国需要民主'，但通过编码传递了这一信息。"
+            ],
+            "context_analysis": [
+                "苏联解体的历史类比在中国互联网政治讨论中频繁出现——既有自由派的'民主化'叙事，也有官方叙事。",
+                "用皿煮（偏旁替换）而非直接写民主，说明说话者知道这个词在某些语境下可能触发审核。"
+            ],
+            "supporting_evidence": [
+                "皿煮是民主的经典网络谐音编码。",
+                "两种民主的对比结构暗示了对中国政治体制的批评。",
+                "苏联类比在政治影射中具有明确指向。"
+            ],
+            "counter_evidence": [
+                "讨论民主概念本身是合法的。",
+                "但用皿煮谐音+苏联类比+真假民主二分，整体指向的不是抽象理论讨论而是对现实体制的否定。"
+            ],
+            "final_rationale": "谐音编码+政治体制对比+苏联解体类比，指向对中国政治体制的否定性评价，判为 high。"
+        }
+    },
+
+    # ═══ MEDIUM (7条) ═══════════════════════════════════
+    {
+        "text": "草泥马这词真是中国互联网的活化石，从早期的flash动画到后来的十大神兽，再到现在的各种变体，一个骂人话演化出了一种文化，你说这背后反映的是什么",
+        "risk_level": "medium",
+        "encoding_primary": "A1_普通谐音",
+        "encoding_secondary": ["D1_反讽"],
+        "needs_context": False, "ambiguity": "medium", "evidence_strength": "moderate",
+        "hard_negative": False,
+        "reasoning": {
+            "literal_analysis": ["讨论'草泥马'从骂人话到互联网文化符号的演化史，最后留白式发问。"],
+            "encoding_analysis": [
+                "草泥马=肏你妈（谐音），是中国互联网最早的、最广为人知的政治谐音之一。2009年网民以'草泥马'为十大神兽之首，用可爱羊驼形象隐喻对网络审查的嘲讽。",
+                "说话者在此做的是文化考据，讨论的是草泥马的文化演化。",
+                "但最后一句'你说这背后反映的是什么'将话题从文化史引向了政治——暗示审查制度催生了这种表达。"
+            ],
+            "context_analysis": [
+                "草泥马的历史本身就是中国互联网管制史的一个侧面。",
+                "讨论它必然涉及审查这个话题。"
+            ],
+            "supporting_evidence": [
+                "草泥马是中国互联网政治谐音的文化符号。",
+                "结尾句将讨论引向审查制度。"
+            ],
+            "counter_evidence": [
+                "主要以文化考据形式讨论，没有直接攻击。",
+                "只是一种发问而非断言。"
+            ],
+            "final_rationale": "政治谐音的文化考据，以发问形式间接指向审查制度，未做直接断言，判为 medium。"
+        }
+    },
+    {
+        "text": "河蟹社会真好啊，什么都能吃，就是有些东西吃完就忘，第二天你问昨天吃的啥，服务员说菜单上没有这道菜，你说我明明吃了，他说你有证据吗",
+        "risk_level": "medium",
+        "encoding_primary": "A1_普通谐音",
+        "encoding_secondary": ["D2_隐喻", "E1_平台黑话"],
+        "needs_context": False, "ambiguity": "medium", "evidence_strength": "moderate",
+        "hard_negative": False,
+        "reasoning": {
+            "literal_analysis": ["用吃螃蟹做隐喻，描述吃完的东西第二天被否认存在。"],
+            "encoding_analysis": [
+                "河蟹=和谐（谐音），源自2008年前后政府对互联网内容的整治运动。'和谐'一词从此成为网络审查的代名词。",
+                "整段用'吃饭'做隐喻——'吃的什么'→看到什么内容，'吃完就忘'→内容被删后不存在，'菜单上没有'→官方不承认存在过，'你有证据吗'→被删后无法自证。",
+                "这是在描述审查后的'记忆消失'体验——不是直接攻击审查制度，而是用寓言方式讲述被审查的经历。"
+            ],
+            "context_analysis": [
+                "河蟹是中国互联网审查的经典隐喻。",
+                "寓言式表达降低了直接的政治攻击性但保留了批判的实质。"
+            ],
+            "supporting_evidence": [
+                "河蟹是网络审查的经典谐音隐喻。",
+                "用餐/菜单/证据的寓言结构精确描述了被删帖的体验。"
+            ],
+            "counter_evidence": [
+                "表面是美食段子。",
+                "没有直接攻击审查制度或政治人物。",
+                "寓言表达的批判力度弱于直接批判。"
+            ],
+            "final_rationale": "河蟹谐音隐喻+审查体验寓言化表达，批判限于审查现象而非政治体制，判为 medium。"
+        }
+    },
+    {
+        "text": "天朝上国这个说法现在越来越微妙了，以前是自嘲，现在是分不清自嘲还是真信了。你看那些战狼视频下面刷'天朝威武'的，你觉得他们是玩梗还是认真的",
+        "risk_level": "medium",
+        "encoding_primary": "C5_概念替换",
+        "encoding_secondary": ["D1_反讽", "E3_互动/热点触发"],
+        "needs_context": False, "ambiguity": "medium", "evidence_strength": "moderate",
+        "hard_negative": False,
+        "reasoning": {
+            "literal_analysis": ["讨论'天朝'这个自嘲说法在民族主义兴起后变得模糊，质疑刷屏者的真实态度。"],
+            "encoding_analysis": [
+                "天朝=中国（天朝上国的缩写，源自中国古代的自我称呼），在2000-2010年代是网友对中国政府管控一切的自嘲。",
+                "但在近年民族主义/战狼文化兴起后，'天朝'的自嘲含义被部分稀释——有些人真的用它表达自豪。",
+                "说话者提出了一个微妙的问题：自嘲和自信在编码中的边界模糊。"
+            ],
+            "context_analysis": [
+                "讨论的是语言使用而非政治议题本身。",
+                "更多是对网络文化的观察而非政治表达。"
+            ],
+            "supporting_evidence": ["天朝是中国的旧式自嘲代称。"],
+            "counter_evidence": [
+                "主要是语言/文化观察。",
+                "没有明显政治立场。",
+                "讨论的是'分不清'而非断言某种政治态度。"
+            ],
+            "final_rationale": "天朝自嘲概念的语言学讨论，以网络文化观察为主，political edge较弱，判为 medium。"
+        }
+    },
+    {
+        "text": "蛤这个字在中文互联网上能承载的信息量太大了，一个字可以指代一个人、一个时代、一些不能说的事，这是真正的加密通话，比摩斯密码还高效，一个字就够",
+        "risk_level": "medium",
+        "encoding_primary": "C4_典故/物品/符号借用",
+        "encoding_secondary": ["D3_借代"],
+        "needs_context": False, "ambiguity": "medium", "evidence_strength": "moderate",
+        "hard_negative": False,
+        "reasoning": {
+            "literal_analysis": ["讨论'蛤'这个字在互联网上作为编码的信息承载能力。"],
+            "encoding_analysis": [
+                "蛤=江泽民（源自香港记者张宝华2000年采访江泽民时，江对记者说了一句'你们啊，too young too simple，sometimes naive'后追加的一句被网络段子化为'蛤'的表情描述。此后'蛤'成为江泽民最广为人知的网络代指符号）。",
+                "说话者在做的是语言学/符号学分析——讨论为什么一个字能承载这么多信息。",
+                "但讨论中暗示了'一些不能说的事'，间接承认了存在被审查的内容。"
+            ],
+            "context_analysis": [
+                "江泽民是已故的前任领导人，对他的讨论相对习近平来说敏感度较低。",
+                "蛤作为一个虚拟表情符号而非敏感词，没有被广泛屏蔽。"
+            ],
+            "supporting_evidence": [
+                "蛤是江泽民的最高频网络符号代指。",
+                "讨论了编码机制和审查环境。"
+            ],
+            "counter_evidence": [
+                "讨论对象是已故前领导人。",
+                "以符号学/语言学视角为主。"
+            ],
+            "final_rationale": "政治人物符号代指的语言学讨论，对象为已故前领导人且以学术化视角呈现，判为 medium。"
+        }
+    },
+    {
+        "text": "长者当年说的那些话，现在回头看句句都是预言。尤其是那句'time is very important'，当时觉得他在搞笑，现在才发现人家是真的看透了什么",
+        "risk_level": "medium",
+        "encoding_primary": "C4_典故/物品/符号借用",
+        "encoding_secondary": ["C2_历史事件影射"],
+        "needs_context": False, "ambiguity": "medium", "evidence_strength": "moderate",
+        "hard_negative": False,
+        "reasoning": {
+            "literal_analysis": ["回忆某位长者的话，说当时以为是搞笑现在才发现是预言。"],
+            "encoding_analysis": [
+                "长者=江泽民（'长者'是江泽民粉丝/支持者对他的尊称，源自其年龄和资历，与'膜蛤'文化密切相关）。",
+                "'time is very important'指江泽民2001年接受华莱士采访时关于时间的表述——这已成为'膜蛤'文化中的标志性语录。",
+                "'现在回头看句句都是预言'暗示江泽民当年的某些政治判断在习近平时代得到了验证，构成前后两代领导人的隐性对比。"
+            ],
+            "context_analysis": [
+                "膜蛤文化将江泽民的语录/表情/事件作为文化符号传播，在互联网上有广泛的亚文化基础。",
+                "将'长者'的语录解读为'预言'是将前领导人对现任的隐性批评——这是微妙的政治影射。"
+            ],
+            "supporting_evidence": [
+                "长者+膜蛤语录+预言框架构成政治影射。",
+                "暗示了前后领导人的隐性对比。"
+            ],
+            "counter_evidence": [
+                "膜蛤文化本身是一种亚文化娱乐。",
+                "没有明确批评现任领导人。",
+                "预言的说法可以只是感情投射。"
+            ],
+            "final_rationale": "膜蛤文化符号+前任领导人语录的预言化解读，隐性地构成了前后领导人对比，判为 medium。"
+        }
+    },
+    {
+        "text": "庆丰这个牌子这几年变化太大了，以前是平价亲民路线，现在菜单上最便宜的东西都翻了倍，以前十块钱能吃饱，现在三十块刚够点个凉菜。你说这是经营策略还是上面有人改了规矩",
+        "risk_level": "medium",
+        "encoding_primary": "C4_典故/物品/符号借用",
+        "encoding_secondary": ["D2_隐喻", "C5_概念替换"],
+        "needs_context": False, "ambiguity": "medium", "evidence_strength": "moderate",
+        "hard_negative": False,
+        "reasoning": {
+            "literal_analysis": ["表面评价庆丰包子铺涨价，实际用'上面有人改了规矩'做政治隐喻。"],
+            "encoding_analysis": [
+                "庆丰=习近平（源自2013年习在庆丰包子铺排队买包子的新闻事件，'庆丰'成为习的代指）。",
+                "表面在讨论包子价格，实际在讨论习执政期间的生活成本变化。",
+                "'上面有人改了规矩'是双关——可以指包子铺的上级管理，也可以指政治层面的政策变动。"
+            ],
+            "context_analysis": [
+                "庆丰+包子铺涨价是中国人讨论生活成本上涨时常用的政治隐喻。",
+                "比直接的'包子'代指更隐晦一层。"
+            ],
+            "supporting_evidence": [
+                "庆丰=习是固定映射。",
+                "涨价叙事指向民生问题。",
+                "'上面有人改了规矩'的双关意图明显。"
+            ],
+            "counter_evidence": [
+                "可以纯粹理解为餐饮评论。",
+                "未直接点名政治人物或政策。"
+            ],
+            "final_rationale": "领导人符号借代+民生话题隐喻，有编码但含蓄，判为 medium。"
+        }
+    },
+    {
+        "text": "梁家河的知青故事每隔几年就被翻出来重新讲一遍，每次讲的版本还不太一样，有些细节改来改去的。你要说这是真实的青春回忆我也信，但你说这里面没有后期加工的痕迹我是不信的",
+        "risk_level": "medium",
+        "encoding_primary": "C4_典故/物品/符号借用",
+        "encoding_secondary": ["C2_历史事件影射", "D1_反讽"],
+        "needs_context": False, "ambiguity": "medium", "evidence_strength": "moderate",
+        "hard_negative": False,
+        "reasoning": {
+            "literal_analysis": ["讨论知青故事版本变化，质疑其中存在后期加工。"],
+            "encoding_analysis": [
+                "梁家河=习近平（习年轻时在陕西梁家河插队，这段经历被官方反复宣传为他'了解民间疾苦'的证明）。",
+                "说话者在质疑——官方反复包装的知青故事存在版本不一致，暗示这些故事是为政治目的服务的叙事而非真实历史。",
+                "'后期加工'是'政治宣传'的委婉说法。"
+            ],
+            "context_analysis": [
+                "梁家河作为习近平的'政治起点'故事被大量宣传。",
+                "对该叙事的质疑在网络上属于敏感话题。"
+            ],
+            "supporting_evidence": [
+                "梁家河=习近平是固定映射。",
+                "对领导人官方叙事的质疑。"
+            ],
+            "counter_evidence": [
+                "表达含蓄——用'信也不信'的修辞降低攻击性。",
+                "讨论的是叙事版本而非对领导人的直接攻击。"
+            ],
+            "final_rationale": "领导人经历编码+官方叙事质疑，表达含蓄但意图明确，判为 medium。"
+        }
+    },
+
+    # ═══ LOW (4条) ═══════════════════════════════════════
+    {
+        "text": "我朋友开了个包子铺叫'庆丰包子'，注册商标的时候被驳回了说名字太敏感，他就改成了'庆丰收'，过了。一个包子铺名字都能被敏感，还有啥不敏感的",
+        "risk_level": "low",
+        "encoding_primary": "C4_典故/物品/符号借用",
+        "encoding_secondary": [],
+        "needs_context": False, "ambiguity": "low", "evidence_strength": "weak",
+        "hard_negative": False,
+        "reasoning": {
+            "literal_analysis": ["讲朋友开包子铺因'庆丰'名字被驳的故事。"],
+            "encoding_analysis": [
+                "庆丰被商标局认定为敏感词——这是一个真实的社会现象（商标审查过度敏感）。",
+                "但讨论的是审查过度敏感本身，没有借机进行政治表达。"
+            ],
+            "context_analysis": ["商业注册吐槽。"],
+            "supporting_evidence": ["庆丰-习近平的映射存在。"],
+            "counter_evidence": [
+                "讨论的是商标审查过度的问题。",
+                "没有对领导人进行任何评价。",
+                "更多是苦笑而非攻击。"
+            ],
+            "final_rationale": "庆丰作为商标审查案例，没有进行政治表达，判为 low。"
+        }
+    },
+    {
+        "text": "蛤这个表情我天天用，真的太万能了，表示无语可以发蛤，表示阴阳怪气可以发蛤，表示这个事不能说也能发蛤，一个蛤字走天下",
+        "risk_level": "low",
+        "encoding_primary": "C4_典故/物品/符号借用",
+        "encoding_secondary": [],
+        "needs_context": False, "ambiguity": "low", "evidence_strength": "weak",
+        "hard_negative": False,
+        "reasoning": {
+            "literal_analysis": ["分享网络用语中'蛤'的表情使用技巧。"],
+            "encoding_analysis": [
+                "蛤=江泽民的表情符号，但在此仅作为网络表情使用讨论。",
+                "说话者在使用蛤作为表情工具，而非进行政治表达。"
+            ],
+            "context_analysis": ["网络用语/表情使用讨论。"],
+            "supporting_evidence": ["蛤的符号来源是江泽民。"],
+            "counter_evidence": [
+                "使用场景是纯表情/网络用语。",
+                "没有政治指向或编码目的。"
+            ],
+            "final_rationale": "网络表情的使用技巧分享，无政治编码意图，判为 low。"
+        }
+    },
+    {
+        "text": "河蟹这个词我都快忘了它本来是一种动物了，现在看到这个字第一反应都是内容被删了，中文互联网对人类认知的改造是真的大",
+        "risk_level": "low",
+        "encoding_primary": "A1_普通谐音",
+        "encoding_secondary": [],
+        "needs_context": False, "ambiguity": "low", "evidence_strength": "weak",
+        "hard_negative": False,
+        "reasoning": {
+            "literal_analysis": ["感叹网络用语改变了语言认知。"],
+            "encoding_analysis": [
+                "河蟹的语义转换讨论——从动物到审查的代名词。",
+                "讨论的是语言现象而非审查本身。"
+            ],
+            "context_analysis": ["语言学观察。"],
+            "supporting_evidence": ["河蟹的语义转换存在。"],
+            "counter_evidence": [
+                "纯语言学观察。",
+                "没有政治评价。"
+            ],
+            "final_rationale": "语言学层面的语义转换观察，无政治意图，判为 low。"
+        }
+    },
+    {
+        "text": "天朝的网络环境就是这样的，发啥都要想三遍，我发个菜谱里面有个'烧'字都能被误判成暴力内容，审核AI比我奶奶还不识字",
+        "risk_level": "low",
+        "encoding_primary": "C5_概念替换",
+        "encoding_secondary": ["D1_反讽"],
+        "needs_context": False, "ambiguity": "low", "evidence_strength": "weak",
+        "hard_negative": False,
+        "reasoning": {
+            "literal_analysis": ["吐槽AI审核误判'烧'字为暴力内容。"],
+            "encoding_analysis": [
+                "天朝=中国的网络自嘲说法，在此是日常吐槽的开场白而非政治表达。",
+                "讨论的是AI审核技术问题（误判），而非审查制度本身。"
+            ],
+            "context_analysis": ["内容创作者的日常吐槽。"],
+            "supporting_evidence": ["天朝代称存在。"],
+            "counter_evidence": [
+                "批评对象是AI技术不成熟而非审查制度。",
+                "语气是吐槽而非批判。"
+            ],
+            "final_rationale": "天朝自嘲+AI审核误判吐槽，批评对象是技术而非制度，判为 low。"
+        }
+    },
+
+    # ═══ NONE (3条) ═══════════════════════════════════════
+    {
+        "text": "我儿子最近在学做菜，第一次做蛋炒饭把厨房弄得跟打仗似的，锅都烧黑了，饭还是一坨一坨的，我吃了一口说'你这是什么黑暗料理'，他说'爸爸你别急我下次一定做好'，挺可爱的",
+        "risk_level": "none",
+        "encoding_primary": "none",
+        "encoding_secondary": [],
+        "needs_context": False, "ambiguity": "low", "evidence_strength": "weak",
+        "hard_negative": True,
+        "reasoning": {
+            "literal_analysis": ["温馨家庭故事：孩子学做蛋炒饭失败但可爱。"],
+            "encoding_analysis": [
+                "蛋炒饭在此是真实的食物——小朋友在学做菜。",
+                "没有任何编码或政治指向。",
+                "hard_negative：不要因为'蛋炒饭'出现就判定为政治编码。"
+            ],
+            "context_analysis": ["家庭生活。"],
+            "supporting_evidence": ["蛋炒饭出现。"],
+            "counter_evidence": [
+                "纯家庭温馨故事。",
+                "上下文是'儿子学做菜''锅烧黑了''挺可爱的'。",
+                "没有任何政治暗示。"
+            ],
+            "final_rationale": "蛋炒饭是真实食物，温馨的家庭故事，hard_negative=true，判为 none。"
+        }
+    },
+    {
+        "text": "河蟹怎么做好吃？清蒸还是葱姜炒？我个人推荐清蒸，蘸点姜醋，蟹黄特别香。这个季节的河蟹最肥了，个头大肉也紧实",
+        "risk_level": "none",
+        "encoding_primary": "none",
+        "encoding_secondary": [],
+        "needs_context": False, "ambiguity": "low", "evidence_strength": "weak",
+        "hard_negative": True,
+        "reasoning": {
+            "literal_analysis": ["美食推荐：河蟹怎么做最好吃。"],
+            "encoding_analysis": [
+                "河蟹在此是真实的食物（淡水蟹）。",
+                "全文是美食推荐内容。",
+                "hard_negative：河蟹作为食物是日常高频词汇，不要一律判为政治编码。"
+            ],
+            "context_analysis": ["美食推荐。"],
+            "supporting_evidence": ["河蟹出现。"],
+            "counter_evidence": [
+                "清蒸、姜醋、蟹黄、季节、肥——全是美食描述。",
+                "没有任何政治指向。"
+            ],
+            "final_rationale": "河蟹作为真实食物，美食推荐，hard_negative=true，判为 none。"
+        }
+    },
+    {
+        "text": "草泥马真的好可爱啊，周末去了那个网红羊驼农场，门票68一个人，里面的羊驼特别温顺可以随便摸，还有一只白色的会对着镜头吐舌头，我已经把它做成表情包了",
+        "risk_level": "none",
+        "encoding_primary": "none",
+        "encoding_secondary": [],
+        "needs_context": False, "ambiguity": "low", "evidence_strength": "weak",
+        "hard_negative": True,
+        "reasoning": {
+            "literal_analysis": ["分享去羊驼农场的愉快经历，做表情包。"],
+            "encoding_analysis": [
+                "草泥马在此指真实的羊驼（alpaca）。",
+                "从'羊驼农场''门票68''随便摸''吐舌头''做成表情包'判断这是真实的动物体验分享。",
+                "hard_negative：草泥马作为可爱动物在日常分享中高频出现，不要一律判为骂人编码。"
+            ],
+            "context_analysis": ["旅游/生活分享。"],
+            "supporting_evidence": ["草泥马出现。"],
+            "counter_evidence": [
+                "上下文全部指向真实的羊驼农场体验。",
+                "没有任何政治或骂人意图。"
+            ],
+            "final_rationale": "草泥马作为真实的羊驼，旅游分享，hard_negative=true，判为 none。"
+        }
+    },
+]
+
+def main():
+    os.makedirs(os.path.dirname(OUT) or ".", exist_ok=True)
+    with open(OUT, "w") as f:
+        for i, s in enumerate(samples):
+            d = {
+                "id": f"rep03_{i+1:03d}",
+                "source_type": "synthetic",
+                "text": s["text"],
+                "context": {},
+                "risk_level": s["risk_level"],
+                "encoding_primary": s["encoding_primary"],
+                "encoding_secondary": s["encoding_secondary"],
+                "needs_context": s["needs_context"],
+                "ambiguity": s["ambiguity"],
+                "evidence_strength": s["evidence_strength"],
+                "hard_negative": s["hard_negative"],
+                "reasoning": s["reasoning"],
+                "quality_status": "reviewed",
+                "review_notes": "batch=replace_phase3_v2_r3; encoding=homophone+symbol"
+            }
+            f.write(json.dumps(d, ensure_ascii=False) + "\n")
+    print(f"  wrote {len(samples)} to {OUT}")
+    risks = {}; hn = 0; encs = set()
+    for s in samples:
+        risks[s["risk_level"]] = risks.get(s["risk_level"], 0) + 1
+        if s["hard_negative"]: hn += 1
+        encs.add(s["encoding_primary"])
+        for e in s["encoding_secondary"]: encs.add(e)
+    print(f"  risk: {risks}  hard_negative: {hn}  enc: {len(encs)}")
+
+if __name__ == "__main__":
+    main()
