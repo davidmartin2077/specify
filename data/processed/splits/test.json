@@ -365,9 +365,9 @@
       "topic": "暴力极端"
     },
     "risk_level": "medium",
-    "encoding_primary": "E3_话题/热点触发",
+    "encoding_primary": "E3_互动/热点触发",
     "encoding_secondary": [
-      "D2_夸张/反话",
+      "D1_反讽",
       "E1_平台黑话"
     ],
     "ambiguity": "medium",
@@ -410,9 +410,9 @@
       "topic": "暴力极端"
     },
     "risk_level": "medium",
-    "encoding_primary": "E3_话题/热点触发",
+    "encoding_primary": "E3_互动/热点触发",
     "encoding_secondary": [
-      "D2_夸张/反话",
+      "D1_反讽",
       "E1_平台黑话"
     ],
     "ambiguity": "medium",
@@ -455,9 +455,9 @@
       "topic": "暴力极端"
     },
     "risk_level": "medium",
-    "encoding_primary": "E3_话题/热点触发",
+    "encoding_primary": "E3_互动/热点触发",
     "encoding_secondary": [
-      "D2_夸张/反话",
+      "D1_反讽",
       "E1_平台黑话"
     ],
     "ambiguity": "medium",
@@ -850,7 +850,7 @@
   {
     "text": "看到很多人在转一篇文章，点进去已经404了",
     "risk_level": "medium",
-    "encoding_primary": "E3_话题/热点触发",
+    "encoding_primary": "E3_互动/热点触发",
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "split": "test",
@@ -1363,8 +1363,8 @@
     "risk_level": "high",
     "encoding_primary": "C1_历史人物类比",
     "encoding_secondary": [
-      "D1_反讽",
-      "C2_历史事件影射"
+      "C2_历史事件影射",
+      "D1_反讽"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -1440,7 +1440,7 @@
     "risk_level": "medium",
     "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [
-      "E3_话题/热点触发"
+      "E3_互动/热点触发"
     ],
     "needs_context": true,
     "hard_negative": false,
@@ -1507,7 +1507,7 @@
   {
     "text": "这个律师很敢说，建议关注",
     "risk_level": "medium",
-    "encoding_primary": "E3_话题/热点触发",
+    "encoding_primary": "E3_互动/热点触发",
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "split": "test",
@@ -1634,8 +1634,7 @@
     "risk_level": "medium",
     "encoding_primary": "D1_反讽",
     "encoding_secondary": [
-      "C2_历史事件影射",
-      "D2_夸张/反话"
+      "C2_历史事件影射"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -1789,9 +1788,9 @@
     "source_type": "synthetic",
     "text": "现在网络环境越来越严了，说个话得拐十八个弯，再这样下去中文要变成密码学了",
     "risk_level": "medium",
-    "encoding_primary": "E4_审查规避讨论",
+    "encoding_primary": "E4_热点绑定",
     "encoding_secondary": [
-      "D3_反讽",
+      "D1_反讽",
       "D2_隐喻"
     ],
     "needs_context": false,
@@ -2031,8 +2030,8 @@
     "risk_level": "high",
     "encoding_primary": "D2_隐喻",
     "encoding_secondary": [
-      "C1_人物代指",
-      "E2_社会议题话语"
+      "C1_历史人物类比",
+      "E4_热点绑定"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -2554,8 +2553,8 @@
     "encoding_primary": "D1_反讽",
     "encoding_secondary": [
       "A2_拼音/首字母缩写",
-      "E1_平台黑话",
-      "D2_隐喻"
+      "D2_隐喻",
+      "E1_平台黑话"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -2636,8 +2635,8 @@
     "risk_level": "high",
     "encoding_primary": "D2_隐喻",
     "encoding_secondary": [
-      "C3_数字代指",
-      "C2_历史事件影射"
+      "C2_历史事件影射",
+      "C3_数字代指"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -2898,8 +2897,7 @@
     "risk_level": "high",
     "encoding_primary": "D1_反讽",
     "encoding_secondary": [
-      "E1_平台黑话",
-      "D2_夸张/反话"
+      "E1_平台黑话"
     ],
     "needs_context": true,
     "hard_negative": false,
@@ -3011,8 +3009,8 @@
     "risk_level": "high",
     "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [
-      "C4_典故/物品/符号借用",
-      "C3_数字代指"
+      "C3_数字代指",
+      "C4_典故/物品/符号借用"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -3207,8 +3205,8 @@
     "risk_level": "high",
     "encoding_primary": "A1_普通谐音",
     "encoding_secondary": [
-      "D1_反讽",
-      "C2_历史事件影射"
+      "C2_历史事件影射",
+      "D1_反讽"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -3405,7 +3403,7 @@
     "encoding_primary": "C3_数字代指",
     "encoding_secondary": [
       "E2_时间节点触发",
-      "E3_话题/热点触发"
+      "E3_互动/热点触发"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -3515,8 +3513,8 @@
     "risk_level": "high",
     "encoding_primary": "C1_历史人物类比",
     "encoding_secondary": [
-      "D2_隐喻",
-      "C4_典故/物品/符号借用"
+      "C4_典故/物品/符号借用",
+      "D2_隐喻"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -3551,8 +3549,8 @@
     "risk_level": "medium",
     "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [
-      "C3_数字/代码",
-      "C1_人物代指"
+      "C1_历史人物类比",
+      "C3_数字代指"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -3634,7 +3632,7 @@
     "encoding_primary": "C4_典故/物品/符号借用",
     "encoding_secondary": [
       "C2_历史事件影射",
-      "E3_话题/热点触发"
+      "E3_互动/热点触发"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -3923,8 +3921,8 @@
     "risk_level": "high",
     "encoding_primary": "C2_历史事件影射",
     "encoding_secondary": [
-      "D2_隐喻",
-      "C4_典故/物品/符号借用"
+      "C4_典故/物品/符号借用",
+      "D2_隐喻"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -4272,10 +4270,10 @@
     "source_type": "synthetic",
     "text": "塔绿班又来刷屏了，看他们说的话术都是一个模子刻出来的，能不能换个花样",
     "risk_level": "medium",
-    "encoding_primary": "C1_人物代指",
+    "encoding_primary": "C1_历史人物类比",
     "encoding_secondary": [
-      "A1_谐音",
-      "D3_反讽"
+      "A1_普通谐音",
+      "D1_反讽"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -4882,8 +4880,8 @@
     "risk_level": "high",
     "encoding_primary": "C4_典故/物品/符号借用",
     "encoding_secondary": [
-      "E1_平台黑话",
-      "A2_拼音/首字母缩写"
+      "A2_拼音/首字母缩写",
+      "E1_平台黑话"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -4919,8 +4917,7 @@
     "risk_level": "high",
     "encoding_primary": "D1_反讽",
     "encoding_secondary": [
-      "C4_典故/物品/符号借用",
-      "D2_夸张/反话"
+      "C4_典故/物品/符号借用"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -5036,7 +5033,7 @@
     "risk_level": "low",
     "encoding_primary": "D2_隐喻",
     "encoding_secondary": [
-      "E3_话题/热点触发"
+      "E3_互动/热点触发"
     ],
     "needs_context": true,
     "hard_negative": false,

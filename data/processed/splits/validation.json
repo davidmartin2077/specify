@@ -202,8 +202,8 @@
     "risk_level": "medium",
     "encoding_primary": "D3_借代",
     "encoding_secondary": [
-      "D1_反讽",
-      "A2_拼音/首字母缩写"
+      "A2_拼音/首字母缩写",
+      "D1_反讽"
     ],
     "ambiguity": "medium",
     "evidence_strength": "moderate",
@@ -247,8 +247,8 @@
     "risk_level": "medium",
     "encoding_primary": "D3_借代",
     "encoding_secondary": [
-      "D1_反讽",
-      "A2_拼音/首字母缩写"
+      "A2_拼音/首字母缩写",
+      "D1_反讽"
     ],
     "ambiguity": "medium",
     "evidence_strength": "moderate",
@@ -292,8 +292,8 @@
     "risk_level": "medium",
     "encoding_primary": "D3_借代",
     "encoding_secondary": [
-      "D1_反讽",
-      "A2_拼音/首字母缩写"
+      "A2_拼音/首字母缩写",
+      "D1_反讽"
     ],
     "ambiguity": "medium",
     "evidence_strength": "moderate",
@@ -451,8 +451,8 @@
     "risk_level": "low",
     "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [
-      "C3_数字代指",
-      "A2_拼音/首字母缩写"
+      "A2_拼音/首字母缩写",
+      "C3_数字代指"
     ],
     "ambiguity": "high",
     "evidence_strength": "weak",
@@ -496,8 +496,8 @@
     "risk_level": "low",
     "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [
-      "C3_数字代指",
-      "A2_拼音/首字母缩写"
+      "A2_拼音/首字母缩写",
+      "C3_数字代指"
     ],
     "ambiguity": "high",
     "evidence_strength": "weak",
@@ -541,8 +541,8 @@
     "risk_level": "low",
     "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [
-      "C3_数字代指",
-      "A2_拼音/首字母缩写"
+      "A2_拼音/首字母缩写",
+      "C3_数字代指"
     ],
     "ambiguity": "high",
     "evidence_strength": "weak",
@@ -1138,8 +1138,8 @@
     "risk_level": "high",
     "encoding_primary": "D2_隐喻",
     "encoding_secondary": [
-      "D1_反讽",
-      "C4_典故/物品/符号借用"
+      "C4_典故/物品/符号借用",
+      "D1_反讽"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -1174,8 +1174,8 @@
     "risk_level": "high",
     "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [
-      "C3_数字/代码",
-      "D3_反讽"
+      "C3_数字代指",
+      "D1_反讽"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -1526,10 +1526,10 @@
     "source_type": "synthetic",
     "text": "以前觉得摸鱼是不务正业，现在发现摸鱼是工人阶级对资本的唯一反抗形式",
     "risk_level": "high",
-    "encoding_primary": "D3_反讽",
+    "encoding_primary": "D1_反讽",
     "encoding_secondary": [
-      "E2_社会议题话语",
-      "C1_人物代指"
+      "C1_历史人物类比",
+      "E4_热点绑定"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -1609,8 +1609,8 @@
     "risk_level": "high",
     "encoding_primary": "A4_外语谐音/跨语言音译",
     "encoding_secondary": [
-      "E1_平台黑话",
-      "D1_反讽"
+      "D1_反讽",
+      "E1_平台黑话"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -1683,8 +1683,8 @@
     "risk_level": "high",
     "encoding_primary": "C1_历史人物类比",
     "encoding_secondary": [
-      "D1_反讽",
-      "C2_历史事件影射"
+      "C2_历史事件影射",
+      "D1_反讽"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -1720,8 +1720,8 @@
     "risk_level": "high",
     "encoding_primary": "D1_反讽",
     "encoding_secondary": [
-      "E1_平台黑话",
-      "C4_典故/物品/符号借用"
+      "C4_典故/物品/符号借用",
+      "E1_平台黑话"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -1757,7 +1757,7 @@
     "risk_level": "low",
     "encoding_primary": "none",
     "encoding_secondary": [
-      "E3_话题/热点触发"
+      "E3_互动/热点触发"
     ],
     "needs_context": false,
     "hard_negative": true,
@@ -2071,10 +2071,10 @@
     "source_type": "synthetic",
     "text": "大救星来了大救星来了，每次油价涨两毛就有一堆人开始怀念大救星，笑死，大救星在的时候你加得到油吗",
     "risk_level": "high",
-    "encoding_primary": "C1_人物代指",
+    "encoding_primary": "C1_历史人物类比",
     "encoding_secondary": [
-      "D3_反讽",
-      "E2_社会议题话语"
+      "D1_反讽",
+      "E4_热点绑定"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -2232,7 +2232,7 @@
     "risk_level": "high",
     "encoding_primary": "C4_典故/物品/符号借用",
     "encoding_secondary": [
-      "E3_话题/热点触发"
+      "E3_互动/热点触发"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -2497,8 +2497,7 @@
     "risk_level": "high",
     "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [
-      "C3_数字/代码",
-      "D1_威胁"
+      "C3_数字代指"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -2695,8 +2694,8 @@
     "risk_level": "high",
     "encoding_primary": "A4_外语谐音/跨语言音译",
     "encoding_secondary": [
-      "E1_平台黑话",
       "D1_反讽",
+      "E1_平台黑话",
       "F_组合编码"
     ],
     "needs_context": false,
@@ -2930,8 +2929,8 @@
     "risk_level": "high",
     "encoding_primary": "D1_反讽",
     "encoding_secondary": [
-      "E1_平台黑话",
-      "D2_隐喻"
+      "D2_隐喻",
+      "E1_平台黑话"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -3044,9 +3043,9 @@
     "source_type": "synthetic",
     "text": "有谁知道怎么用拼音缩写安全地聊一些话题，感觉现在什么词都发不出来，求教程",
     "risk_level": "high",
-    "encoding_primary": "A2_拼音缩写",
+    "encoding_primary": "A2_拼音/首字母缩写",
     "encoding_secondary": [
-      "E4_审查规避讨论"
+      "E4_热点绑定"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -3086,8 +3085,8 @@
     "risk_level": "medium",
     "encoding_primary": "B1_拆字",
     "encoding_secondary": [
-      "E4_审查规避讨论",
-      "D3_反讽"
+      "D1_反讽",
+      "E4_热点绑定"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -3168,7 +3167,7 @@
     "encoding_primary": "C4_典故/物品/符号借用",
     "encoding_secondary": [
       "D2_隐喻",
-      "E3_话题/热点触发"
+      "E3_互动/热点触发"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -3322,10 +3321,10 @@
     "source_type": "synthetic",
     "text": "蚌埠住了家人们，今天看到一条评论说'郭嘉现在是在下一盘大棋'，我真的绷不住了",
     "risk_level": "medium",
-    "encoding_primary": "A1_谐音",
+    "encoding_primary": "A1_普通谐音",
     "encoding_secondary": [
-      "D3_反讽",
-      "C1_人物代指"
+      "C1_历史人物类比",
+      "D1_反讽"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -3511,9 +3510,9 @@
     "source_type": "synthetic",
     "text": "你的配得感太低了，这就是为什么你总是觉得自己不配拥有更好的生活——别让社会把你PUA了",
     "risk_level": "low",
-    "encoding_primary": "E2_社会议题话语",
+    "encoding_primary": "E4_热点绑定",
     "encoding_secondary": [
-      "D3_反讽"
+      "D1_反讽"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -3671,7 +3670,7 @@
       "topic": ""
     },
     "risk_level": "medium",
-    "encoding_primary": "E3_话题/热点触发",
+    "encoding_primary": "E3_互动/热点触发",
     "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "medium",
@@ -3984,8 +3983,8 @@
     "risk_level": "high",
     "encoding_primary": "A2_拼音/首字母缩写",
     "encoding_secondary": [
-      "E1_平台黑话",
-      "C4_典故/物品/符号借用"
+      "C4_典故/物品/符号借用",
+      "E1_平台黑话"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -4019,10 +4018,10 @@
     "source_type": "synthetic",
     "text": "你们知道为什么有些数字组合打了就发不出来吗？104、101、913，你试试看",
     "risk_level": "medium",
-    "encoding_primary": "C3_数字符号代指",
+    "encoding_primary": "C3_数字代指",
     "encoding_secondary": [
-      "E4_审查规避讨论",
-      "C1_人物代指"
+      "C1_历史人物类比",
+      "E4_热点绑定"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -4060,9 +4059,9 @@
     "source_type": "synthetic",
     "text": "突然多了好多从来没发过言的号在评论区刷台独言论，你们1450今天集体上班啊？",
     "risk_level": "medium",
-    "encoding_primary": "C4_典故/符号借用",
+    "encoding_primary": "C4_典故/物品/符号借用",
     "encoding_secondary": [
-      "E4_审查规避讨论"
+      "E4_热点绑定"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -4176,7 +4175,7 @@
     "risk_level": "medium",
     "encoding_primary": "B1_拆字",
     "encoding_secondary": [
-      "E3_话题/热点触发"
+      "E3_互动/热点触发"
     ],
     "needs_context": true,
     "hard_negative": false,
@@ -4212,7 +4211,7 @@
     "risk_level": "medium",
     "encoding_primary": "C1_历史人物类比",
     "encoding_secondary": [
-      "E3_话题/热点触发"
+      "E3_互动/热点触发"
     ],
     "needs_context": true,
     "hard_negative": false,
@@ -4655,8 +4654,7 @@
     "risk_level": "high",
     "encoding_primary": "D1_反讽",
     "encoding_secondary": [
-      "D2_隐喻",
-      "D2_夸张/反话"
+      "D2_隐喻"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -4736,8 +4734,7 @@
     "risk_level": "high",
     "encoding_primary": "D1_反讽",
     "encoding_secondary": [
-      "C1_历史人物类比",
-      "D2_夸张/反话"
+      "C1_历史人物类比"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -5001,8 +4998,8 @@
     "risk_level": "high",
     "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [
-      "D1_反讽",
-      "C4_典故/物品/符号借用"
+      "C4_典故/物品/符号借用",
+      "D1_反讽"
     ],
     "needs_context": false,
     "hard_negative": false,
