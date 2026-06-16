@@ -12,10 +12,10 @@
     "train": {
       "count": 1037,
       "risk_level": {
-        "high": 337,
-        "low": 81,
-        "medium": 350,
-        "none": 269
+        "high": 350,
+        "low": 99,
+        "medium": 316,
+        "none": 272
       },
       "source": {
         "abstract_batch": 18,
@@ -38,8 +38,8 @@
         "unknown": 144,
         "user": 7
       },
-      "hard_negative": 317,
-      "needs_context": 40,
+      "hard_negative": 320,
+      "needs_context": 38,
       "group_count": 1034,
       "largest_groups": [
         [
@@ -94,9 +94,9 @@
     "validation": {
       "count": 129,
       "risk_level": {
-        "high": 50,
-        "low": 17,
-        "medium": 26,
+        "high": 52,
+        "low": 19,
+        "medium": 22,
         "none": 36
       },
       "source": {
@@ -169,9 +169,9 @@
     "test": {
       "count": 129,
       "risk_level": {
-        "high": 38,
-        "low": 11,
-        "medium": 51,
+        "high": 42,
+        "low": 13,
+        "medium": 45,
         "none": 29
       },
       "source": {
