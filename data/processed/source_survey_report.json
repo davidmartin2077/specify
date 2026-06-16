@@ -1,0 +1,1226 @@
+{
+  "note": "Raw lexicon terms are intentionally omitted to avoid triggering downstream content filters.",
+  "canonical_dataset": {
+    "path": "data/processed/combined_candidates.jsonl",
+    "sha256": "e2820b668c1a8c30df98228660ef018ee39cb07f074246e170db6f42e31b071d",
+    "rows": 1295,
+    "risk_level": {
+      "high": 444,
+      "low": 131,
+      "medium": 383,
+      "none": 337
+    },
+    "encoding_primary": {
+      "A1_普通谐音": 41,
+      "A2_拼音/首字母缩写": 37,
+      "A3_方言谐音": 5,
+      "A4_外语谐音/跨语言音译": 4,
+      "B1_拆字": 35,
+      "B2_合字/拼字": 3,
+      "B3_形近字替换": 9,
+      "B4_符号/空格/Unicode 干扰": 5,
+      "C1_历史人物类比": 70,
+      "C2_历史事件影射": 28,
+      "C3_数字代指": 29,
+      "C4_典故/物品/符号借用": 90,
+      "C5_概念替换": 13,
+      "D1_反讽": 95,
+      "D2_隐喻": 67,
+      "D3_借代": 20,
+      "E1_平台黑话": 98,
+      "E2_时间节点触发": 9,
+      "E3_互动/热点触发": 16,
+      "E4_热点绑定": 3,
+      "F_组合编码": 17,
+      "literal_keyword": 219,
+      "none": 382
+    },
+    "source_type": {
+      "real": 480,
+      "synthetic": 815
+    },
+    "quality_status": {
+      "approved": 162,
+      "reviewed": 1133
+    },
+    "hard_negative": 405,
+    "needs_context": 45,
+    "review_source": {
+      "abstract_batch": 25,
+      "batch10_new_patterns": 50,
+      "batch11_gap_fill": 59,
+      "batch12_doxxing": 40,
+      "batch1_natural": 56,
+      "batch2_natural": 27,
+      "batch3_natural": 46,
+      "batch4_natural": 47,
+      "batch5_gap_fill": 64,
+      "batch6_gap_fill": 69,
+      "batch7_high_risk": 50,
+      "batch8_tieba_style": 40,
+      "batch9_national_security": 45,
+      "chinesesafe": 160,
+      "cold": 160,
+      "phase3_first_wave": 5,
+      "replace_phase3_v2_r1": 20,
+      "replace_phase3_v2_r2": 20,
+      "replace_phase3_v2_r3": 20,
+      "replace_phase3_v2_r4": 20,
+      "replace_phase3_v2_r5": 20,
+      "replace_phase3_v2_r6": 20,
+      "replace_phase3_v2_r7": 20,
+      "replace_phase3_v2_r8": 20,
+      "replace_phase3_v2_r9": 25,
+      "toxicn": 160,
+      "user": 7
+    }
+  },
+  "sft_dataset": {
+    "path": "data/processed/sft/sft_candidates.jsonl",
+    "sha256": "57e4d6b1cba5c68526f2b1a709f1230a1b9c44cf8ecaa2af03399c6e807f86ac",
+    "rows": 1295,
+    "metadata_risk_level": {
+      "high": 444,
+      "low": 131,
+      "medium": 383,
+      "none": 337
+    },
+    "metadata_encoding_primary": {
+      "A1_普通谐音": 41,
+      "A2_拼音/首字母缩写": 37,
+      "A3_方言谐音": 5,
+      "A4_外语谐音/跨语言音译": 4,
+      "B1_拆字": 35,
+      "B2_合字/拼字": 3,
+      "B3_形近字替换": 9,
+      "B4_符号/空格/Unicode 干扰": 5,
+      "C1_历史人物类比": 70,
+      "C2_历史事件影射": 28,
+      "C3_数字代指": 29,
+      "C4_典故/物品/符号借用": 90,
+      "C5_概念替换": 13,
+      "D1_反讽": 95,
+      "D2_隐喻": 67,
+      "D3_借代": 20,
+      "E1_平台黑话": 98,
+      "E2_时间节点触发": 9,
+      "E3_互动/热点触发": 16,
+      "E4_热点绑定": 3,
+      "F_组合编码": 17,
+      "literal_keyword": 219,
+      "none": 382
+    }
+  },
+  "splits": {
+    "train": {
+      "path": "data/processed/splits/train.jsonl",
+      "sha256": "92f5c0332c4ae8722fa5055cbb4a01547ac7b2b7ee33bc70ee1e5286ff6f3c30",
+      "rows": 1037,
+      "risk_level": {
+        "high": 350,
+        "low": 99,
+        "medium": 316,
+        "none": 272
+      },
+      "encoding_primary": {
+        "A1_普通谐音": 37,
+        "A2_拼音/首字母缩写": 31,
+        "A3_方言谐音": 5,
+        "A4_外语谐音/跨语言音译": 2,
+        "B1_拆字": 28,
+        "B2_合字/拼字": 2,
+        "B3_形近字替换": 6,
+        "B4_符号/空格/Unicode 干扰": 5,
+        "C1_历史人物类比": 58,
+        "C2_历史事件影射": 24,
+        "C3_数字代指": 22,
+        "C4_典故/物品/符号借用": 68,
+        "C5_概念替换": 11,
+        "D1_反讽": 77,
+        "D2_隐喻": 47,
+        "D3_借代": 18,
+        "E1_平台黑话": 74,
+        "E2_时间节点触发": 8,
+        "E3_互动/热点触发": 13,
+        "E4_热点绑定": 1,
+        "F_组合编码": 14,
+        "literal_keyword": 183,
+        "none": 303
+      },
+      "source_type": {
+        "real": 395,
+        "synthetic": 642
+      },
+      "quality_status": {
+        "approved": 128,
+        "reviewed": 909
+      },
+      "hard_negative": 320,
+      "needs_context": 38,
+      "review_source": {
+        "abstract_batch": 18,
+        "batch10_new_patterns": 41,
+        "batch11_gap_fill": 49,
+        "batch12_doxxing": 33,
+        "batch1_natural": 43,
+        "batch2_natural": 18,
+        "batch3_natural": 37,
+        "batch4_natural": 40,
+        "batch5_gap_fill": 48,
+        "batch6_gap_fill": 58,
+        "batch7_high_risk": 38,
+        "batch8_tieba_style": 30,
+        "batch9_national_security": 33,
+        "chinesesafe": 136,
+        "cold": 126,
+        "phase3_first_wave": 5,
+        "replace_phase3_v2_r1": 16,
+        "replace_phase3_v2_r2": 15,
+        "replace_phase3_v2_r3": 17,
+        "replace_phase3_v2_r4": 16,
+        "replace_phase3_v2_r5": 12,
+        "replace_phase3_v2_r6": 12,
+        "replace_phase3_v2_r7": 16,
+        "replace_phase3_v2_r8": 16,
+        "replace_phase3_v2_r9": 24,
+        "toxicn": 133,
+        "user": 7
+      }
+    },
+    "validation": {
+      "path": "data/processed/splits/validation.jsonl",
+      "sha256": "cc3dd3ce6df7cefba812280e5be77b20b694e4de6dffb83e7105d6cc1044ddaa",
+      "rows": 129,
+      "risk_level": {
+        "high": 52,
+        "low": 19,
+        "medium": 22,
+        "none": 36
+      },
+      "encoding_primary": {
+        "A1_普通谐音": 2,
+        "A2_拼音/首字母缩写": 2,
+        "B1_拆字": 6,
+        "B3_形近字替换": 2,
+        "C1_历史人物类比": 8,
+        "C2_历史事件影射": 2,
+        "C3_数字代指": 3,
+        "C4_典故/物品/符号借用": 11,
+        "D1_反讽": 11,
+        "D2_隐喻": 7,
+        "D3_借代": 2,
+        "E1_平台黑话": 7,
+        "E2_时间节点触发": 1,
+        "E3_互动/热点触发": 2,
+        "E4_热点绑定": 1,
+        "F_组合编码": 2,
+        "literal_keyword": 18,
+        "none": 42
+      },
+      "source_type": {
+        "real": 43,
+        "synthetic": 86
+      },
+      "quality_status": {
+        "approved": 19,
+        "reviewed": 110
+      },
+      "hard_negative": 49,
+      "needs_context": 4,
+      "review_source": {
+        "abstract_batch": 3,
+        "batch10_new_patterns": 3,
+        "batch11_gap_fill": 4,
+        "batch12_doxxing": 3,
+        "batch1_natural": 6,
+        "batch2_natural": 5,
+        "batch3_natural": 6,
+        "batch4_natural": 2,
+        "batch5_gap_fill": 9,
+        "batch6_gap_fill": 10,
+        "batch7_high_risk": 6,
+        "batch8_tieba_style": 6,
+        "batch9_national_security": 6,
+        "chinesesafe": 9,
+        "cold": 19,
+        "replace_phase3_v2_r1": 4,
+        "replace_phase3_v2_r2": 3,
+        "replace_phase3_v2_r3": 1,
+        "replace_phase3_v2_r5": 4,
+        "replace_phase3_v2_r6": 4,
+        "replace_phase3_v2_r7": 1,
+        "toxicn": 15
+      }
+    },
+    "test": {
+      "path": "data/processed/splits/test.jsonl",
+      "sha256": "85326ca9624fe09defdf6afca079216d8758b6d6b9f9e3470fe69bfd078beceb",
+      "rows": 129,
+      "risk_level": {
+        "high": 42,
+        "low": 13,
+        "medium": 45,
+        "none": 29
+      },
+      "encoding_primary": {
+        "A1_普通谐音": 2,
+        "A2_拼音/首字母缩写": 4,
+        "A4_外语谐音/跨语言音译": 2,
+        "B1_拆字": 1,
+        "B2_合字/拼字": 1,
+        "B3_形近字替换": 1,
+        "C1_历史人物类比": 4,
+        "C2_历史事件影射": 2,
+        "C3_数字代指": 4,
+        "C4_典故/物品/符号借用": 11,
+        "C5_概念替换": 2,
+        "D1_反讽": 7,
+        "D2_隐喻": 13,
+        "E1_平台黑话": 17,
+        "E3_互动/热点触发": 1,
+        "E4_热点绑定": 1,
+        "F_组合编码": 1,
+        "literal_keyword": 18,
+        "none": 37
+      },
+      "source_type": {
+        "real": 42,
+        "synthetic": 87
+      },
+      "quality_status": {
+        "approved": 15,
+        "reviewed": 114
+      },
+      "hard_negative": 36,
+      "needs_context": 3,
+      "review_source": {
+        "abstract_batch": 4,
+        "batch10_new_patterns": 6,
+        "batch11_gap_fill": 6,
+        "batch12_doxxing": 4,
+        "batch1_natural": 7,
+        "batch2_natural": 4,
+        "batch3_natural": 3,
+        "batch4_natural": 5,
+        "batch5_gap_fill": 7,
+        "batch6_gap_fill": 1,
+        "batch7_high_risk": 6,
+        "batch8_tieba_style": 4,
+        "batch9_national_security": 6,
+        "chinesesafe": 15,
+        "cold": 15,
+        "replace_phase3_v2_r2": 2,
+        "replace_phase3_v2_r3": 2,
+        "replace_phase3_v2_r4": 4,
+        "replace_phase3_v2_r5": 4,
+        "replace_phase3_v2_r6": 4,
+        "replace_phase3_v2_r7": 3,
+        "replace_phase3_v2_r8": 4,
+        "replace_phase3_v2_r9": 1,
+        "toxicn": 12
+      }
+    }
+  },
+  "raw_batches": [
+    {
+      "path": "data/raw/batch10_new_patterns.jsonl",
+      "sha256": "c5994b627e85509fc74027b91407c38fa00ee23ad3ff69cc862d6dce1b75291d",
+      "rows": 50,
+      "risk_level": {
+        "high": 50
+      },
+      "encoding_primary": {
+        "A1_普通谐音": 2,
+        "A4_外语谐音/跨语言音译": 4,
+        "B1_拆字": 7,
+        "B2_合字/拼字": 2,
+        "B3_形近字替换": 1,
+        "B4_符号/空格/Unicode 干扰": 1,
+        "C1_历史人物类比": 8,
+        "C2_历史事件影射": 2,
+        "C4_典故/物品/符号借用": 2,
+        "D1_反讽": 16,
+        "D2_隐喻": 3,
+        "E1_平台黑话": 2
+      },
+      "source_type": {
+        "synthetic": 50
+      },
+      "quality_status": {
+        "reviewed": 50
+      },
+      "hard_negative": 0,
+      "needs_context": 6,
+      "review_source": {
+        "batch10_new_patterns": 50
+      }
+    },
+    {
+      "path": "data/raw/batch11_gap_fill.jsonl",
+      "sha256": "7f394cfa96db4fce3324c9ab1b642f069ccf4f8006d69a6f043a0e860446c4ca",
+      "rows": 59,
+      "risk_level": {
+        "high": 13,
+        "low": 14,
+        "medium": 23,
+        "none": 9
+      },
+      "encoding_primary": {
+        "A1_谐音": 5,
+        "A2_拼音缩写": 1,
+        "B1_拆字": 4,
+        "C1_人物代指": 13,
+        "C3_数字符号代指": 2,
+        "C4_典故/符号借用": 7,
+        "D2_隐喻": 7,
+        "D3_反讽": 8,
+        "E2_社会议题话语": 1,
+        "E3_历史事件影射": 1,
+        "E4_审查规避讨论": 1,
+        "none": 9
+      },
+      "source_type": {
+        "synthetic": 59
+      },
+      "quality_status": {
+        "reviewed": 59
+      },
+      "hard_negative": 9,
+      "needs_context": 0,
+      "review_source": {
+        "batch11_gap_fill": 59
+      }
+    },
+    {
+      "path": "data/raw/batch12_doxxing.jsonl",
+      "sha256": "87f37b858d65ecaa64c4dae17bc2170c05752661ebcd58d8d09f62520c101120",
+      "rows": 40,
+      "risk_level": {
+        "high": 28,
+        "medium": 8,
+        "none": 4
+      },
+      "encoding_primary": {
+        "E1_平台黑话": 36,
+        "none": 4
+      },
+      "source_type": {
+        "synthetic": 40
+      },
+      "quality_status": {
+        "reviewed": 40
+      },
+      "hard_negative": 4,
+      "needs_context": 0,
+      "review_source": {
+        "batch12_doxxing": 40
+      }
+    },
+    {
+      "path": "data/raw/batch1_natural_replacements.jsonl",
+      "sha256": "1c4140ac370d2d240f3e3c054e86e8e1866836886b251fff4accbbf013e9eddf",
+      "rows": 56,
+      "risk_level": {
+        "high": 11,
+        "low": 11,
+        "medium": 25,
+        "none": 9
+      },
+      "encoding_primary": {
+        "A2_拼音/首字母缩写": 2,
+        "C1_历史人物类比": 8,
+        "C2_历史事件影射": 5,
+        "C3_数字代指": 5,
+        "C4_典故/物品/符号借用": 8,
+        "D1_反讽": 4,
+        "D2_隐喻": 5,
+        "D3_借代": 3,
+        "E1_平台黑话": 2,
+        "E2_时间节点触发": 1,
+        "E3_话题/热点触发": 2,
+        "F_组合编码": 1,
+        "none": 10
+      },
+      "source_type": {
+        "synthetic": 56
+      },
+      "quality_status": {
+        "approved": 56
+      },
+      "hard_negative": 20,
+      "needs_context": 0,
+      "review_source": {
+        "batch1_natural": 56
+      }
+    },
+    {
+      "path": "data/raw/batch2_natural_replacements.jsonl",
+      "sha256": "b3e8c504bdefcfb3e2a3ee1eeb71a21225b28a15fa16fb6e76c673b4ee0a98f9",
+      "rows": 27,
+      "risk_level": {
+        "high": 10,
+        "low": 4,
+        "medium": 7,
+        "none": 6
+      },
+      "encoding_primary": {
+        "A1_普通谐音": 1,
+        "B1_拆字": 1,
+        "C1_历史人物类比": 2,
+        "C2_历史事件影射": 1,
+        "C4_典故/物品/符号借用": 5,
+        "D1_反讽": 1,
+        "D2_隐喻": 3,
+        "D3_借代": 1,
+        "E1_平台黑话": 2,
+        "E2_时间节点触发": 2,
+        "E3_话题/热点触发": 1,
+        "F_组合编码": 1,
+        "none": 6
+      },
+      "source_type": {
+        "synthetic": 27
+      },
+      "quality_status": {
+        "approved": 27
+      },
+      "hard_negative": 10,
+      "needs_context": 0,
+      "review_source": {
+        "batch2_natural": 27
+      }
+    },
+    {
+      "path": "data/raw/batch3_natural_replacements.jsonl",
+      "sha256": "ca3b3ad13dd8f050023db6d4ac4a44b903b7b1c8f4565611ee308054f03aa14e",
+      "rows": 46,
+      "risk_level": {
+        "high": 12,
+        "low": 12,
+        "medium": 9,
+        "none": 13
+      },
+      "encoding_primary": {
+        "A2_拼音/首字母缩写": 1,
+        "A3_方言谐音": 1,
+        "B1_拆字": 2,
+        "B3_形近字替换": 1,
+        "C1_历史人物类比": 7,
+        "C2_历史事件影射": 2,
+        "C3_数字代指": 1,
+        "C4_典故/物品/符号借用": 1,
+        "C5_概念替换": 1,
+        "D1_反讽": 3,
+        "D2_隐喻": 3,
+        "E1_平台黑话": 5,
+        "E4_热点绑定": 1,
+        "F_组合编码": 2,
+        "none": 15
+      },
+      "source_type": {
+        "synthetic": 46
+      },
+      "quality_status": {
+        "approved": 46
+      },
+      "hard_negative": 22,
+      "needs_context": 0,
+      "review_source": {
+        "batch3_natural": 46
+      }
+    },
+    {
+      "path": "data/raw/batch4_natural_replacements.jsonl",
+      "sha256": "be4fc509ea7942b93a8954dd624ad47369c87e89539c4f6f3fc050c17fa44272",
+      "rows": 47,
+      "risk_level": {
+        "high": 3,
+        "low": 5,
+        "medium": 26,
+        "none": 13
+      },
+      "encoding_primary": {
+        "C1_历史人物类比": 3,
+        "C2_历史事件影射": 2,
+        "C4_典故/物品/符号借用": 6,
+        "C5_概念替换": 1,
+        "D1_反讽": 3,
+        "D2_隐喻": 4,
+        "E1_平台黑话": 7,
+        "E2_时间节点触发": 1,
+        "E3_话题/热点触发": 3,
+        "none": 17
+      },
+      "source_type": {
+        "synthetic": 47
+      },
+      "quality_status": {
+        "approved": 47
+      },
+      "hard_negative": 18,
+      "needs_context": 0,
+      "review_source": {
+        "batch4_natural": 47
+      }
+    },
+    {
+      "path": "data/raw/batch5_gap_fill.jsonl",
+      "sha256": "db882bfe14461a54b1707ff7318437d1ef3eba2805a67b67861f03425db63c6a",
+      "rows": 64,
+      "risk_level": {
+        "high": 7,
+        "low": 4,
+        "medium": 32,
+        "none": 21
+      },
+      "encoding_primary": {
+        "A2_拼音/首字母缩写": 4,
+        "B1_拆字": 2,
+        "B2_合字/拼字": 1,
+        "B3_形近字替换": 2,
+        "B4_符号/空格/Unicode 干扰": 1,
+        "C1_历史人物类比": 3,
+        "C2_历史事件影射": 1,
+        "C3_数字代指": 3,
+        "C4_典故/物品/符号借用": 8,
+        "D1_反讽": 3,
+        "D2_夸张/反话": 1,
+        "D2_隐喻": 1,
+        "E1_平台黑话": 9,
+        "E2_时间节点触发": 1,
+        "F_组合编码": 2,
+        "none": 22
+      },
+      "source_type": {
+        "synthetic": 64
+      },
+      "quality_status": {
+        "reviewed": 64
+      },
+      "hard_negative": 23,
+      "needs_context": 14,
+      "review_source": {
+        "batch5_gap_fill": 64
+      }
+    },
+    {
+      "path": "data/raw/batch6_gap_fill.jsonl",
+      "sha256": "3efef4bb46f0ece604f2ea684aa495dd823e21fd61e1f897dec1250ef7b8a209",
+      "rows": 69,
+      "risk_level": {
+        "high": 1,
+        "low": 11,
+        "medium": 27,
+        "none": 30
+      },
+      "encoding_primary": {
+        "C2_历史事件影射": 6,
+        "C4_典故/物品/符号借用": 5,
+        "D1_反讽": 5,
+        "D2_隐喻": 8,
+        "E1_平台黑话": 4,
+        "E2_时间节点触发": 1,
+        "E3_话题/热点触发": 4,
+        "none": 36
+      },
+      "source_type": {
+        "synthetic": 69
+      },
+      "quality_status": {
+        "reviewed": 69
+      },
+      "hard_negative": 37,
+      "needs_context": 25,
+      "review_source": {
+        "batch6_gap_fill": 69
+      }
+    },
+    {
+      "path": "data/raw/batch7_high_risk.jsonl",
+      "sha256": "a12f10d3a17bfec38ddcfd1b87c3eb5b310a3b33f77e91099792c4be5f9661ff",
+      "rows": 50,
+      "risk_level": {
+        "high": 50
+      },
+      "encoding_primary": {
+        "A2_拼音/首字母缩写": 4,
+        "B1_拆字": 1,
+        "B3_形近字替换": 5,
+        "B4_符号/空格/Unicode 干扰": 3,
+        "C1_历史人物类比": 2,
+        "C2_历史事件影射": 2,
+        "C3_数字代指": 3,
+        "C4_典故/物品/符号借用": 8,
+        "D2_隐喻": 8,
+        "E1_平台黑话": 11,
+        "E2_时间节点触发": 2,
+        "F_组合编码": 1
+      },
+      "source_type": {
+        "synthetic": 50
+      },
+      "quality_status": {
+        "reviewed": 50
+      },
+      "hard_negative": 0,
+      "needs_context": 0,
+      "review_source": {
+        "batch7_high_risk": 50
+      }
+    },
+    {
+      "path": "data/raw/batch8_tieba_style.jsonl",
+      "sha256": "0abd74992c217c6f0a8184b72af40e1ed958b61083ad194bcf457494738699af",
+      "rows": 40,
+      "risk_level": {
+        "high": 40
+      },
+      "encoding_primary": {
+        "C1_历史人物类比": 3,
+        "C2_历史事件影射": 1,
+        "C3_数字代指": 1,
+        "C4_典故/物品/符号借用": 2,
+        "D1_反讽": 21,
+        "D2_隐喻": 4,
+        "E1_平台黑话": 5,
+        "E2_时间节点触发": 1,
+        "E3_话题/热点触发": 2
+      },
+      "source_type": {
+        "synthetic": 40
+      },
+      "quality_status": {
+        "reviewed": 40
+      },
+      "hard_negative": 0,
+      "needs_context": 0,
+      "review_source": {
+        "batch8_tieba_style": 40
+      }
+    },
+    {
+      "path": "data/raw/batch9_national_security.jsonl",
+      "sha256": "53567aa106d03fdaa47e72ae43148519f1cfaf73d7c52b8834732a472b48b4d2",
+      "rows": 45,
+      "risk_level": {
+        "high": 45
+      },
+      "encoding_primary": {
+        "A2_拼音/首字母缩写": 1,
+        "B1_拆字": 1,
+        "C1_历史人物类比": 10,
+        "C2_历史事件影射": 2,
+        "C4_典故/物品/符号借用": 8,
+        "D1_反讽": 9,
+        "D2_隐喻": 9,
+        "E1_平台黑话": 5
+      },
+      "source_type": {
+        "synthetic": 45
+      },
+      "quality_status": {
+        "reviewed": 45
+      },
+      "hard_negative": 0,
+      "needs_context": 0,
+      "review_source": {
+        "batch9_national_security": 45
+      }
+    },
+    {
+      "path": "data/raw/batch_replace_01_dismantling.jsonl",
+      "sha256": "db0f63486761199c41db94c6948b702f4242fda3d7f18b4bb86b2e367c6eee9c",
+      "rows": 20,
+      "risk_level": {
+        "high": 5,
+        "low": 5,
+        "medium": 7,
+        "none": 3
+      },
+      "encoding_primary": {
+        "B1_拆字": 17,
+        "none": 3
+      },
+      "source_type": {
+        "synthetic": 20
+      },
+      "quality_status": {
+        "reviewed": 20
+      },
+      "hard_negative": 4,
+      "needs_context": 0,
+      "review_source": {
+        "replace_phase3_v2_r1": 20
+      }
+    },
+    {
+      "path": "data/raw/batch_replace_02_abbr.jsonl",
+      "sha256": "0c19cd3ca2093b1858974286414b3e92eaec92bc885803d0c81fc4e6e67528b7",
+      "rows": 20,
+      "risk_level": {
+        "high": 5,
+        "low": 4,
+        "medium": 8,
+        "none": 3
+      },
+      "encoding_primary": {
+        "A2_拼音/首字母缩写": 17,
+        "none": 3
+      },
+      "source_type": {
+        "synthetic": 20
+      },
+      "quality_status": {
+        "reviewed": 20
+      },
+      "hard_negative": 4,
+      "needs_context": 0,
+      "review_source": {
+        "replace_phase3_v2_r2": 20
+      }
+    },
+    {
+      "path": "data/raw/batch_replace_03_homophone.jsonl",
+      "sha256": "ff2d3f2717c4c3a1f12966c979c74a29ad3107464c465cfa9374327bbe636b8c",
+      "rows": 20,
+      "risk_level": {
+        "high": 6,
+        "low": 4,
+        "medium": 7,
+        "none": 3
+      },
+      "encoding_primary": {
+        "A1_普通谐音": 4,
+        "C4_典故/物品/符号借用": 11,
+        "C5_概念替换": 2,
+        "none": 3
+      },
+      "source_type": {
+        "synthetic": 20
+      },
+      "quality_status": {
+        "reviewed": 20
+      },
+      "hard_negative": 3,
+      "needs_context": 0,
+      "review_source": {
+        "replace_phase3_v2_r3": 20
+      }
+    },
+    {
+      "path": "data/raw/batch_replace_04_taiwan.jsonl",
+      "sha256": "cd8697566877a2d7659b691152293cfe1d1e2b388d147ac277ef9bc83fbac325",
+      "rows": 20,
+      "risk_level": {
+        "high": 5,
+        "low": 5,
+        "medium": 7,
+        "none": 3
+      },
+      "encoding_primary": {
+        "A1_普通谐音": 2,
+        "C2_历史事件影射": 1,
+        "C3_数字代指": 3,
+        "C4_典故/物品/符号借用": 3,
+        "C5_概念替换": 1,
+        "E1_平台黑话": 3,
+        "E3_互动/热点触发": 2,
+        "none": 5
+      },
+      "source_type": {
+        "synthetic": 20
+      },
+      "quality_status": {
+        "reviewed": 20
+      },
+      "hard_negative": 5,
+      "needs_context": 0,
+      "review_source": {
+        "replace_phase3_v2_r4": 20
+      }
+    },
+    {
+      "path": "data/raw/batch_replace_05_history.jsonl",
+      "sha256": "f0d17fb296b5a671dc4b6b8056ddc5a29e5c22c9ce084c466f4cf0692f066864",
+      "rows": 20,
+      "risk_level": {
+        "high": 5,
+        "low": 4,
+        "medium": 8,
+        "none": 3
+      },
+      "encoding_primary": {
+        "C1_历史人物类比": 8,
+        "C4_典故/物品/符号借用": 8,
+        "none": 4
+      },
+      "source_type": {
+        "synthetic": 20
+      },
+      "quality_status": {
+        "reviewed": 20
+      },
+      "hard_negative": 3,
+      "needs_context": 0,
+      "review_source": {
+        "replace_phase3_v2_r5": 20
+      }
+    },
+    {
+      "path": "data/raw/batch_replace_06_newslang1.jsonl",
+      "sha256": "a72f90847bec55571b9fd873501e4f748e11ecebbf436790fd0852cf9a19f614",
+      "rows": 20,
+      "risk_level": {
+        "high": 5,
+        "low": 5,
+        "medium": 7,
+        "none": 3
+      },
+      "encoding_primary": {
+        "A1_普通谐音": 2,
+        "C4_典故/物品/符号借用": 5,
+        "C5_概念替换": 3,
+        "E1_平台黑话": 2,
+        "none": 8
+      },
+      "source_type": {
+        "synthetic": 20
+      },
+      "quality_status": {
+        "reviewed": 20
+      },
+      "hard_negative": 8,
+      "needs_context": 0,
+      "review_source": {
+        "replace_phase3_v2_r6": 20
+      }
+    },
+    {
+      "path": "data/raw/batch_replace_07_newslang2.jsonl",
+      "sha256": "5906379bf82436296d888405877d38db6107de23d59f92cffd44de4e5d79d150",
+      "rows": 20,
+      "risk_level": {
+        "high": 5,
+        "low": 5,
+        "medium": 7,
+        "none": 3
+      },
+      "encoding_primary": {
+        "A1_普通谐音": 7,
+        "C5_概念替换": 5,
+        "none": 8
+      },
+      "source_type": {
+        "synthetic": 20
+      },
+      "quality_status": {
+        "reviewed": 20
+      },
+      "hard_negative": 8,
+      "needs_context": 0,
+      "review_source": {
+        "replace_phase3_v2_r7": 20
+      }
+    },
+    {
+      "path": "data/raw/batch_replace_08_pronunciation.jsonl",
+      "sha256": "20e6cf14f16330bf8ca72e7d75d2350c2e35797970fd2084fcff25c305347b27",
+      "rows": 20,
+      "risk_level": {
+        "high": 5,
+        "low": 5,
+        "medium": 7,
+        "none": 3
+      },
+      "encoding_primary": {
+        "A1_普通谐音": 10,
+        "A3_方言谐音": 2,
+        "none": 8
+      },
+      "source_type": {
+        "synthetic": 20
+      },
+      "quality_status": {
+        "reviewed": 20
+      },
+      "hard_negative": 8,
+      "needs_context": 0,
+      "review_source": {
+        "replace_phase3_v2_r8": 20
+      }
+    },
+    {
+      "path": "data/raw/batch_replace_09_numbers.jsonl",
+      "sha256": "dd4e2018494e956e2d69c635a008ee20b0c1632f5c6029f5aae1e3aaaa56a833",
+      "rows": 25,
+      "risk_level": {
+        "high": 6,
+        "low": 6,
+        "medium": 8,
+        "none": 5
+      },
+      "encoding_primary": {
+        "A1_普通谐音": 1,
+        "A2_拼音/首字母缩写": 5,
+        "A3_方言谐音": 1,
+        "C3_数字代指": 7,
+        "none": 11
+      },
+      "source_type": {
+        "synthetic": 25
+      },
+      "quality_status": {
+        "reviewed": 25
+      },
+      "hard_negative": 11,
+      "needs_context": 0,
+      "review_source": {
+        "replace_phase3_v2_r9": 25
+      }
+    }
+  ],
+  "third_party_lexicons": [
+    {
+      "path": "data/raw/third_party/Sensitive-lexicon/Vocabulary/COVID-19词库.txt",
+      "sha256": "019d56e1dd5dd88907c17f66511fe34c5512d83ae2de511fafc443b3fc9bdf4d",
+      "terms": 76,
+      "length_min": 2,
+      "length_p50": 7,
+      "length_max": 17,
+      "ascii_only_terms": 0,
+      "terms_with_digits": 3,
+      "terms_with_latin": 2,
+      "terms_with_symbols": 37
+    },
+    {
+      "path": "data/raw/third_party/Sensitive-lexicon/Vocabulary/GFW补充词库.txt",
+      "sha256": "fac55e314c39532c64b5aba8c3a7bc534ab87e3830f6c3861ad29e08d1d4ac96",
+      "terms": 6414,
+      "length_min": 1,
+      "length_p50": 4,
+      "length_max": 32,
+      "ascii_only_terms": 103,
+      "terms_with_digits": 264,
+      "terms_with_latin": 474,
+      "terms_with_symbols": 493
+    },
+    {
+      "path": "data/raw/third_party/Sensitive-lexicon/Vocabulary/其他词库.txt",
+      "sha256": "504ac4dcffa2a078957750c3ad06713cd1ee883af23310507ed85a01bac0ec2f",
+      "terms": 157,
+      "length_min": 2,
+      "length_p50": 4,
+      "length_max": 16,
+      "ascii_only_terms": 109,
+      "terms_with_digits": 25,
+      "terms_with_latin": 97,
+      "terms_with_symbols": 12
+    },
+    {
+      "path": "data/raw/third_party/Sensitive-lexicon/Vocabulary/反动词库.txt",
+      "sha256": "b1f24a2b856445f0d4f106a487f9fd1c114c17dac64853108539874ffc3c6714",
+      "terms": 557,
+      "length_min": 2,
+      "length_p50": 4,
+      "length_max": 16,
+      "ascii_only_terms": 34,
+      "terms_with_digits": 22,
+      "terms_with_latin": 76,
+      "terms_with_symbols": 0
+    },
+    {
+      "path": "data/raw/third_party/Sensitive-lexicon/Vocabulary/广告类型.txt",
+      "sha256": "8f3d5451b8392c1a6b629d504e437b92ef1fdb3128581f6362a495d6fec41473",
+      "terms": 123,
+      "length_min": 2,
+      "length_p50": 3,
+      "length_max": 6,
+      "ascii_only_terms": 6,
+      "terms_with_digits": 2,
+      "terms_with_latin": 14,
+      "terms_with_symbols": 0
+    },
+    {
+      "path": "data/raw/third_party/Sensitive-lexicon/Vocabulary/政治类型.txt",
+      "sha256": "0aa2ea38cb8164705068cab8f0ef060bc65b2bb8053bc07ff2b5bd96f928743e",
+      "terms": 326,
+      "length_min": 2,
+      "length_p50": 3,
+      "length_max": 8,
+      "ascii_only_terms": 7,
+      "terms_with_digits": 0,
+      "terms_with_latin": 42,
+      "terms_with_symbols": 0
+    },
+    {
+      "path": "data/raw/third_party/Sensitive-lexicon/Vocabulary/新思想启蒙.txt",
+      "sha256": "e843e1d9bee08535bc57ea2cd9e44893c14822da0d8ba1433d130f61ba99bbe6",
+      "terms": 14,
+      "length_min": 4,
+      "length_p50": 5,
+      "length_max": 8,
+      "ascii_only_terms": 0,
+      "terms_with_digits": 0,
+      "terms_with_latin": 0,
+      "terms_with_symbols": 0
+    },
+    {
+      "path": "data/raw/third_party/Sensitive-lexicon/Vocabulary/暴恐词库.txt",
+      "sha256": "16221e4c76641b13513bb8e775840f08716b80dcd285f8cc78fb040314814631",
+      "terms": 178,
+      "length_min": 2,
+      "length_p50": 3,
+      "length_max": 16,
+      "ascii_only_terms": 22,
+      "terms_with_digits": 5,
+      "terms_with_latin": 36,
+      "terms_with_symbols": 1
+    },
+    {
+      "path": "data/raw/third_party/Sensitive-lexicon/Vocabulary/民生词库.txt",
+      "sha256": "d61b97b789daf977ee78e6fccc5e143d22bc7f2a829a1f150b682dbf102ec97a",
+      "terms": 571,
+      "length_min": 2,
+      "length_p50": 3,
+      "length_max": 16,
+      "ascii_only_terms": 39,
+      "terms_with_digits": 10,
+      "terms_with_latin": 70,
+      "terms_with_symbols": 9
+    },
+    {
+      "path": "data/raw/third_party/Sensitive-lexicon/Vocabulary/涉枪涉爆.txt",
+      "sha256": "b0323790e2e91d6453c944022b90a10aa5110ecfd857c9ec0e84a478e5f9a8fe",
+      "terms": 437,
+      "length_min": 2,
+      "length_p50": 7,
+      "length_max": 13,
+      "ascii_only_terms": 0,
+      "terms_with_digits": 15,
+      "terms_with_latin": 32,
+      "terms_with_symbols": 41
+    },
+    {
+      "path": "data/raw/third_party/Sensitive-lexicon/Vocabulary/网易前端过滤敏感词库.txt",
+      "sha256": "36f071c80440f3fccec32340324ad45ade6df6ab423b9a2641c9fcf8f0e5f95a",
+      "terms": 7746,
+      "length_min": 1,
+      "length_p50": 4,
+      "length_max": 40,
+      "ascii_only_terms": 118,
+      "terms_with_digits": 228,
+      "terms_with_latin": 375,
+      "terms_with_symbols": 158
+    },
+    {
+      "path": "data/raw/third_party/Sensitive-lexicon/Vocabulary/色情类型.txt",
+      "sha256": "3e844e67b1f3dd50c21273beffa0c2f4c9f3b8fe3f7999353a0b5e6ff0cf94bc",
+      "terms": 304,
+      "length_min": 2,
+      "length_p50": 2,
+      "length_max": 5,
+      "ascii_only_terms": 1,
+      "terms_with_digits": 0,
+      "terms_with_latin": 14,
+      "terms_with_symbols": 0
+    },
+    {
+      "path": "data/raw/third_party/Sensitive-lexicon/Vocabulary/色情词库.txt",
+      "sha256": "9e3a27bf849acb3a907278218cd883c33347edd9f55d7bb26cc4b84bf956bc99",
+      "terms": 929,
+      "length_min": 1,
+      "length_p50": 2,
+      "length_max": 8,
+      "ascii_only_terms": 32,
+      "terms_with_digits": 10,
+      "terms_with_latin": 75,
+      "terms_with_symbols": 0
+    },
+    {
+      "path": "data/raw/third_party/Sensitive-lexicon/Vocabulary/补充词库.txt",
+      "sha256": "4fa11b6a2f5e33f3227613a92c4579c37f12bd533090db0720f15025ae19ce65",
+      "terms": 1064,
+      "length_min": 2,
+      "length_p50": 3,
+      "length_max": 5,
+      "ascii_only_terms": 0,
+      "terms_with_digits": 0,
+      "terms_with_latin": 0,
+      "terms_with_symbols": 0
+    },
+    {
+      "path": "data/raw/third_party/Sensitive-lexicon/Vocabulary/贪腐词库.txt",
+      "sha256": "2b76b487081d81817c9097a04267435abf5fdb4b87ce25ceecb27d6d70cc78d3",
+      "terms": 244,
+      "length_min": 2,
+      "length_p50": 3,
+      "length_max": 14,
+      "ascii_only_terms": 4,
+      "terms_with_digits": 1,
+      "terms_with_latin": 18,
+      "terms_with_symbols": 22
+    },
+    {
+      "path": "data/raw/third_party/Sensitive-lexicon/Vocabulary/零时-Tencent.txt",
+      "sha256": "292d12724734f29e8ecc776b1aa3f6167029a015b64fcddc660c9b8ec2378a34",
+      "terms": 53308,
+      "length_min": 1,
+      "length_p50": 7,
+      "length_max": 107,
+      "ascii_only_terms": 24926,
+      "terms_with_digits": 15986,
+      "terms_with_latin": 25601,
+      "terms_with_symbols": 24312
+    },
+    {
+      "path": "data/raw/third_party/Sensitive-lexicon/Vocabulary/非法网址.txt",
+      "sha256": "09452d23f6acf0be7bcdd113e0b91b2dfde79ae818f9d8746c305439c3d9a6d1",
+      "terms": 14594,
+      "length_min": 5,
+      "length_p50": 13,
+      "length_max": 107,
+      "ascii_only_terms": 14594,
+      "terms_with_digits": 9162,
+      "terms_with_latin": 14594,
+      "terms_with_symbols": 14594
+    }
+  ],
+  "slang_references": [
+    {
+      "path": "中国大陆网络用语列表整理.md",
+      "sha256": "8c63aca0d6b61d33ae74ee879ccb124d96ce88ca468dbc9cde28a984b3741ef8",
+      "bytes": 42384,
+      "lines": 424,
+      "nonempty_lines": 375,
+      "bullet_or_table_like_lines": 323,
+      "markdown_table_rows": 0,
+      "length_min": 5,
+      "length_p50": 35,
+      "length_max": 135
+    },
+    {
+      "path": "中国大陆网络用语列表整理_v2.md",
+      "sha256": "d407a60b6ea1c4cdf2b72c6ac58c1c66d29c872b1496daa97f0ecefe7396ea6e",
+      "bytes": 1019108,
+      "lines": 8757,
+      "nonempty_lines": 8571,
+      "bullet_or_table_like_lines": 8382,
+      "markdown_table_rows": 0,
+      "length_min": 5,
+      "length_p50": 39,
+      "length_max": 603
+    },
+    {
+      "path": "docs/中国大陆网络用语列表_维基学院完整版.md",
+      "sha256": "bd22856d7aca480d32707b1ad69e68c0f7da6d0301ed17653930ba68c51d386f",
+      "bytes": 32503,
+      "lines": 735,
+      "nonempty_lines": 649,
+      "bullet_or_table_like_lines": 585,
+      "markdown_table_rows": 577,
+      "length_min": 3,
+      "length_p50": 20,
+      "length_max": 104
+    }
+  ]
+}

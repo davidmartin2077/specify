@@ -1,17 +1,17 @@
 {
   "objective": "Use lexicon gaps to expand reasoning capabilities. Do not create one training sample per lexicon term.",
   "important_caveat": "Lexicon category assignment and representative seeds are heuristic. Manually review seeds before generation; a term's category is not a training label.",
-  "input_candidate_count": 1295,
-  "recommended_total_phase3_quota": 871,
+  "input_candidate_count": 1385,
+  "recommended_total_phase3_quota": 832,
   "recommended_first_wave_total": 245,
   "categories": [
     {
       "category": "platform_censorship_evasion",
       "name": "平台规避/审查黑话",
       "priority": "P0",
-      "current_inferred_samples": 17,
+      "current_inferred_samples": 18,
       "current_risk_counts": {
-        "high": 4,
+        "high": 5,
         "low": 5,
         "medium": 4,
         "none": 4
@@ -191,9 +191,9 @@
       "category": "spam_ads_fraud",
       "name": "广告/诈骗/导流",
       "priority": "P0",
-      "current_inferred_samples": 13,
+      "current_inferred_samples": 14,
       "current_risk_counts": {
-        "high": 3,
+        "high": 4,
         "low": 1,
         "medium": 6,
         "none": 3
@@ -204,7 +204,6 @@
       "recommended_first_wave_quota": 25,
       "reasons": [
         "当前语境样本少于 20 条",
-        "风险/复核样本不足",
         "语境反证或 hard negative 不足"
       ],
       "representative_uncovered_seeds": [
@@ -470,94 +469,6 @@
       ]
     },
     {
-      "category": "gambling",
-      "name": "赌博",
-      "priority": "P0",
-      "current_inferred_samples": 0,
-      "current_risk_counts": {},
-      "current_hard_negative": 0,
-      "reference_target": 60,
-      "recommended_phase3_quota": 60,
-      "recommended_first_wave_quota": 25,
-      "reasons": [
-        "当前语境样本少于 20 条",
-        "风险/复核样本不足",
-        "语境反证或 hard negative 不足"
-      ],
-      "representative_uncovered_seeds": [
-        {
-          "term": "百家乐*",
-          "bucket": "obfuscated_or_variant",
-          "mechanism_tags": [
-            "B4_符号/空格/Unicode 干扰"
-          ],
-          "recommended_use": "generate normalization and obfuscation recognition set"
-        },
-        {
-          "term": "老虎机*",
-          "bucket": "obfuscated_or_variant",
-          "mechanism_tags": [
-            "B4_符号/空格/Unicode 干扰"
-          ],
-          "recommended_use": "generate normalization and obfuscation recognition set"
-        },
-        {
-          "term": "包消费 包赌博",
-          "bucket": "obfuscated_or_variant",
-          "mechanism_tags": [
-            "B4_符号/空格/Unicode 干扰"
-          ],
-          "recommended_use": "generate normalization and obfuscation recognition set"
-        },
-        {
-          "term": "博彩",
-          "bucket": "transactional_risk",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate solicitation vs ordinary-commerce hard-negative set"
-        },
-        {
-          "term": "赌博",
-          "bucket": "transactional_risk",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate solicitation vs ordinary-commerce hard-negative set"
-        },
-        {
-          "term": "赌球",
-          "bucket": "transactional_risk",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate solicitation vs ordinary-commerce hard-negative set"
-        },
-        {
-          "term": "博彩娱",
-          "bucket": "transactional_risk",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate solicitation vs ordinary-commerce hard-negative set"
-        },
-        {
-          "term": "博彩网",
-          "bucket": "transactional_risk",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate solicitation vs ordinary-commerce hard-negative set"
-        }
-      ],
-      "required_contrast_set": [
-        "direct_or_clear_risk",
-        "obfuscated_or_black_slang",
-        "contextual_medium_or_low",
-        "news_education_or_ordinary_hard_negative"
-      ]
-    },
-    {
       "category": "illegal_goods",
       "name": "违禁交易",
       "priority": "P0",
@@ -646,6 +557,97 @@
             "F_组合编码"
           ],
           "recommended_use": "generate normalization and obfuscation recognition set"
+        }
+      ],
+      "required_contrast_set": [
+        "direct_or_clear_risk",
+        "obfuscated_or_black_slang",
+        "contextual_medium_or_low",
+        "news_education_or_ordinary_hard_negative"
+      ]
+    },
+    {
+      "category": "gambling",
+      "name": "赌博",
+      "priority": "P0",
+      "current_inferred_samples": 3,
+      "current_risk_counts": {
+        "high": 2,
+        "medium": 1
+      },
+      "current_hard_negative": 0,
+      "reference_target": 60,
+      "recommended_phase3_quota": 57,
+      "recommended_first_wave_quota": 25,
+      "reasons": [
+        "当前语境样本少于 20 条",
+        "风险/复核样本不足",
+        "语境反证或 hard negative 不足"
+      ],
+      "representative_uncovered_seeds": [
+        {
+          "term": "百家乐*",
+          "bucket": "obfuscated_or_variant",
+          "mechanism_tags": [
+            "B4_符号/空格/Unicode 干扰"
+          ],
+          "recommended_use": "generate normalization and obfuscation recognition set"
+        },
+        {
+          "term": "老虎机*",
+          "bucket": "obfuscated_or_variant",
+          "mechanism_tags": [
+            "B4_符号/空格/Unicode 干扰"
+          ],
+          "recommended_use": "generate normalization and obfuscation recognition set"
+        },
+        {
+          "term": "包消费 包赌博",
+          "bucket": "obfuscated_or_variant",
+          "mechanism_tags": [
+            "B4_符号/空格/Unicode 干扰"
+          ],
+          "recommended_use": "generate normalization and obfuscation recognition set"
+        },
+        {
+          "term": "博彩",
+          "bucket": "transactional_risk",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate solicitation vs ordinary-commerce hard-negative set"
+        },
+        {
+          "term": "赌球",
+          "bucket": "transactional_risk",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate solicitation vs ordinary-commerce hard-negative set"
+        },
+        {
+          "term": "博彩娱",
+          "bucket": "transactional_risk",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate solicitation vs ordinary-commerce hard-negative set"
+        },
+        {
+          "term": "博彩网",
+          "bucket": "transactional_risk",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate solicitation vs ordinary-commerce hard-negative set"
+        },
+        {
+          "term": "开奖号",
+          "bucket": "transactional_risk",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate solicitation vs ordinary-commerce hard-negative set"
         }
       ],
       "required_contrast_set": [
@@ -748,97 +750,6 @@
       ]
     },
     {
-      "category": "political_history",
-      "name": "政治历史/鉴证梗",
-      "priority": "P1",
-      "current_inferred_samples": 74,
-      "current_risk_counts": {
-        "high": 33,
-        "low": 9,
-        "medium": 24,
-        "none": 8
-      },
-      "current_hard_negative": 13,
-      "reference_target": 160,
-      "recommended_phase3_quota": 86,
-      "recommended_first_wave_quota": 15,
-      "reasons": [
-        "已有基础覆盖，继续补长尾机制和真实语境"
-      ],
-      "representative_uncovered_seeds": [
-        {
-          "term": "一党",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "中珙",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "主权",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "九学",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "九风",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "习党",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "亡党",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "亢议",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        }
-      ],
-      "required_contrast_set": [
-        "direct_or_clear_risk",
-        "obfuscated_or_black_slang",
-        "contextual_medium_or_low",
-        "news_education_or_ordinary_hard_negative"
-      ]
-    },
-    {
       "category": "insulting_abuse",
       "name": "辱骂/群体攻击",
       "priority": "P1",
@@ -930,18 +841,109 @@
       ]
     },
     {
+      "category": "political_history",
+      "name": "政治历史/鉴证梗",
+      "priority": "P1",
+      "current_inferred_samples": 105,
+      "current_risk_counts": {
+        "high": 47,
+        "low": 11,
+        "medium": 39,
+        "none": 8
+      },
+      "current_hard_negative": 13,
+      "reference_target": 160,
+      "recommended_phase3_quota": 55,
+      "recommended_first_wave_quota": 15,
+      "reasons": [
+        "已有基础覆盖，继续补长尾机制和真实语境"
+      ],
+      "representative_uncovered_seeds": [
+        {
+          "term": "一党",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "中珙",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "主权",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "九学",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "九风",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "习党",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "亡党",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "亢议",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        }
+      ],
+      "required_contrast_set": [
+        "direct_or_clear_risk",
+        "obfuscated_or_black_slang",
+        "contextual_medium_or_low",
+        "news_education_or_ordinary_hard_negative"
+      ]
+    },
+    {
       "category": "violence_extremism",
       "name": "暴力极端",
       "priority": "P2",
-      "current_inferred_samples": 20,
+      "current_inferred_samples": 25,
       "current_risk_counts": {
-        "high": 18,
+        "high": 21,
         "low": 1,
-        "medium": 1
+        "medium": 3
       },
       "current_hard_negative": 0,
       "reference_target": 60,
-      "recommended_phase3_quota": 40,
+      "recommended_phase3_quota": 35,
       "recommended_first_wave_quota": 15,
       "reasons": [
         "已有基础覆盖，继续补长尾机制和真实语境"
