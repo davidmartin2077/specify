@@ -4,23 +4,25 @@ This report is generated without printing raw sensitive lexicon terms. It is saf
 
 ## Canonical Dataset
 
-- Rows: 1295
-- SHA256: `e2820b668c1a8c30df98228660ef018ee39cb07f074246e170db6f42e31b071d`
-- Risk: `{'high': 444, 'low': 131, 'medium': 383, 'none': 337}`
-- Source type: `{'real': 480, 'synthetic': 815}`
-- Hard negative: 405
-- Needs context: 45
+- Rows: 1646
+- SHA256: `bc646c9e1465cf5180a855b51814dcd55f79428458eaa1b162c045b46821e29a`
+- Risk: `{'high': 531, 'low': 225, 'medium': 472, 'none': 418}`
+- Source type: `{'real': 480, 'synthetic': 1166}`
+- Hard negative: 490
+- Needs context: 51
 
 ## Derived Artifacts
 
-- SFT rows: 1295
-- Split rows: train 1037 / validation 129 / test 129
+- SFT rows: 1646
+- Split rows: train 1318 / validation 164 / test 164
 
 ## Raw Batches
 
 - `data/raw/batch10_new_patterns.jsonl`: 50 rows
 - `data/raw/batch11_gap_fill.jsonl`: 59 rows
 - `data/raw/batch12_doxxing.jsonl`: 40 rows
+- `data/raw/batch13_encoding_fill.jsonl`: 55 rows
+- `data/raw/batch14_p0_gaps.jsonl`: 35 rows
 - `data/raw/batch1_natural_replacements.jsonl`: 56 rows
 - `data/raw/batch2_natural_replacements.jsonl`: 27 rows
 - `data/raw/batch3_natural_replacements.jsonl`: 46 rows

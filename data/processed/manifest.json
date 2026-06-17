@@ -1,64 +1,65 @@
 {
   "dataset_name": "semantic_risk_reasoning",
-  "generated_at_utc": "2026-06-17T07:02:06+00:00",
+  "generated_at_utc": "2026-06-17T09:09:27+00:00",
   "source": {
     "path": "data/processed/combined_candidates.jsonl",
-    "sha256": "bc646c9e1465cf5180a855b51814dcd55f79428458eaa1b162c045b46821e29a",
+    "sha256": "7da1f4628411015716d15cc457ff214ed96c6ed3be50a991256cee128ee1ad8b",
     "duplicate_id_count": 0,
     "duplicate_ids": [],
     "summary": {
-      "count": 1646,
+      "count": 2500,
       "risk_level": {
-        "high": 531,
-        "low": 225,
-        "medium": 472,
-        "none": 418
+        "high": 549,
+        "low": 424,
+        "medium": 563,
+        "none": 964
       },
       "source_type": {
         "real": 480,
-        "synthetic": 1166
+        "synthetic": 2020
       },
       "quality_status": {
         "approved": 162,
-        "draft": 351,
+        "draft": 1205,
         "reviewed": 1133
       },
       "encoding_primary": {
-        "A1_普通谐音": 37,
-        "A2_拼音/首字母缩写": 40,
-        "A3_方言谐音": 17,
-        "A4_外语谐音/跨语言音译": 19,
+        "A1_普通谐音": 43,
+        "A2_拼音/首字母缩写": 41,
+        "A3_方言谐音": 18,
+        "A4_外语谐音/跨语言音译": 20,
         "B1_拆字": 35,
         "B2_合字/拼字": 17,
         "B3_形近字替换": 15,
-        "B4_符号/空格/Unicode 干扰": 17,
+        "B4_符号/空格/Unicode 干扰": 20,
         "C1_历史人物类比": 72,
         "C2_历史事件影射": 31,
-        "C3_数字代指": 29,
-        "C4_典故/物品/符号借用": 94,
-        "C5_概念替换": 29,
-        "D1_反讽": 119,
-        "D2_隐喻": 99,
+        "C3_数字代指": 31,
+        "C4_典故/物品/符号借用": 97,
+        "C5_概念替换": 31,
+        "D1_反讽": 178,
+        "D2_隐喻": 111,
         "D3_借代": 21,
-        "E1_平台黑话": 160,
+        "D4_双关": 4,
+        "E1_平台黑话": 253,
         "E2_时间节点触发": 26,
-        "E3_互动/热点触发": 25,
+        "E3_互动/热点触发": 26,
         "E4_热点绑定": 17,
         "F_组合编码": 22,
-        "literal_keyword": 245,
-        "none": 460
+        "literal_keyword": 365,
+        "none": 1006
       },
       "evidence_strength": {
-        "moderate": 502,
+        "moderate": 1356,
         "strong": 654,
         "weak": 490
       },
       "ambiguity": {
         "high": 42,
-        "low": 1010,
+        "low": 1864,
         "medium": 594
       },
-      "hard_negative": 490,
+      "hard_negative": 1036,
       "needs_context": 51,
       "review_source": {
         "abstract_batch": 25,
@@ -70,6 +71,25 @@
         "batch15_p1_gaps": 95,
         "batch16_p3_gaps": 71,
         "batch17": 95,
+        "batch18_final": 30,
+        "batch18_p1": 34,
+        "batch18_p10": 50,
+        "batch18_p11": 50,
+        "batch18_p12": 50,
+        "batch18_p13": 50,
+        "batch18_p14": 50,
+        "batch18_p15": 50,
+        "batch18_p16": 50,
+        "batch18_p17": 50,
+        "batch18_p1b": 16,
+        "batch18_p2": 45,
+        "batch18_p3": 34,
+        "batch18_p4": 45,
+        "batch18_p5": 50,
+        "batch18_p6": 50,
+        "batch18_p7": 50,
+        "batch18_p8": 50,
+        "batch18_p9": 50,
         "batch1_natural": 56,
         "batch2_natural": 27,
         "batch3_natural": 46,
@@ -99,8 +119,8 @@
   "artifacts": {
     "sft": {
       "path": "data/processed/sft/sft_candidates.jsonl",
-      "sha256": "643c03db1ba8016c037c71f4523db3a9bb3f0c0ab0a3a0a389c3dabb24122c3d",
-      "count": 1646,
+      "sha256": "0a6370793ada7fde9dde6fc6c9d2a379bfdfb4c4352f4508622d62735e14a35d",
+      "count": 2500,
       "missing_candidate_ids": [],
       "missing_candidate_count": 0,
       "duplicate_id_count": 0,
@@ -112,80 +132,80 @@
     "splits": {
       "train": {
         "path": "data/processed/splits/train.jsonl",
-        "sha256": "c2d2a3e9baab2335f3e0cb90894d14c95dd394d4512dd5fb007fffbfdf8fab57",
-        "count": 1318,
+        "sha256": "599c424394f4c7732c2ac96741558bbcb457e86bfd5e3766d40617f6f6fa670c",
+        "count": 2000,
         "risk_level": {
-          "high": 430,
-          "low": 181,
-          "medium": 374,
-          "none": 333
+          "high": 438,
+          "low": 332,
+          "medium": 456,
+          "none": 774
         },
         "quality_status": {
-          "approved": 144,
-          "draft": 267,
-          "reviewed": 907
+          "approved": 131,
+          "draft": 964,
+          "reviewed": 905
         },
         "missing_from_candidates": 0,
         "field_mismatch_counts": {}
       },
       "validation": {
         "path": "data/processed/splits/validation.jsonl",
-        "sha256": "f81362b7e5965865a330a3f6791455d2a46772ba9f1811a89932382835002773",
-        "count": 164,
+        "sha256": "0a70bb89b9e959957e82ad3c64ef79e1cc2dd9e88b8ec644d5d31c765f008a30",
+        "count": 250,
         "risk_level": {
-          "high": 45,
-          "low": 25,
-          "medium": 49,
-          "none": 45
+          "high": 55,
+          "low": 55,
+          "medium": 50,
+          "none": 90
         },
         "quality_status": {
-          "approved": 9,
-          "draft": 44,
-          "reviewed": 111
+          "approved": 17,
+          "draft": 125,
+          "reviewed": 108
         },
         "missing_from_candidates": 0,
         "field_mismatch_counts": {}
       },
       "test": {
         "path": "data/processed/splits/test.jsonl",
-        "sha256": "a2df7b5c9d52227400594490d40115db379f046bf2ddcfba12efb3d7770e3596",
-        "count": 164,
+        "sha256": "ec11b40195e78237d03636f82e0f7a27120bea500d8e5972d8c5fdca89f0e979",
+        "count": 250,
         "risk_level": {
           "high": 56,
-          "low": 19,
-          "medium": 49,
-          "none": 40
+          "low": 37,
+          "medium": 57,
+          "none": 100
         },
         "quality_status": {
-          "approved": 9,
-          "draft": 40,
-          "reviewed": 115
+          "approved": 14,
+          "draft": 116,
+          "reviewed": 120
         },
         "missing_from_candidates": 0,
         "field_mismatch_counts": {}
       },
       "split_report": {
         "path": "data/processed/splits/split_report.json",
-        "sha256": "616af003171c29fce4563f70105637885b6c537fe2238367012cbb5360b96032",
-        "input_count": 1646,
-        "group_count": 1643,
+        "sha256": "3e05ff3832d6b4611959b091ca45e70e695d77b53b9421842d3dccbc0b12f565",
+        "input_count": 2500,
+        "group_count": 2497,
         "leaked_group_count": 0
       },
-      "total_count": 1646,
+      "total_count": 2500,
       "mismatched_row_count": 0,
       "is_synced_with_candidates": true
     },
     "coverage_report": {
       "path": "data/processed/risk_coverage_report.json",
       "exists": true,
-      "sha256": "e4133239c172bc41e0f7e38fdf53cb5a46a29d2faedc8cda56aa16294d6c8e22",
-      "bytes": 7426
+      "sha256": "b509a5bceffc7fa1d7b78aa039b30097d5c573e8a280c7450d16fdb611a0fefd",
+      "bytes": 7999
     },
     "phase3_sampling_plan": {
       "path": "data/processed/phase3_sampling_plan.json",
       "exists": true,
-      "sha256": "984773973de8c7d1c72a59e9b1f1e5ef12ae74f6c126a1b09d75593ac6a6843a",
-      "bytes": 32625
+      "sha256": "1785ae0a3bb1ff03f83b11a4c02b903e917d493c9a0ea3c4a6ea1b41e3114de4",
+      "bytes": 32601
     }
   },
   "training_guardrail": {

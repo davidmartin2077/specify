@@ -12,7 +12,7 @@
     "obfuscated_or_mixed_terms": 25320
   },
   "candidate_summary": {
-    "count": 1646,
+    "count": 2500,
     "source_counts": {
       "abstract_batch": 25,
       "batch10_new_patterns": 50,
@@ -23,6 +23,25 @@
       "batch15_p1_gaps": 95,
       "batch16_p3_gaps": 71,
       "batch17": 95,
+      "batch18_final": 30,
+      "batch18_p1": 34,
+      "batch18_p10": 50,
+      "batch18_p11": 50,
+      "batch18_p12": 50,
+      "batch18_p13": 50,
+      "batch18_p14": 50,
+      "batch18_p15": 50,
+      "batch18_p16": 50,
+      "batch18_p17": 50,
+      "batch18_p1b": 16,
+      "batch18_p2": 45,
+      "batch18_p3": 34,
+      "batch18_p4": 45,
+      "batch18_p5": 50,
+      "batch18_p6": 50,
+      "batch18_p7": 50,
+      "batch18_p8": 50,
+      "batch18_p9": 50,
       "batch1_natural": 56,
       "batch2_natural": 27,
       "batch3_natural": 46,
@@ -41,17 +60,17 @@
     },
     "category_counts": {
       "cyber_abuse": 8,
-      "gambling": 5,
+      "gambling": 6,
       "illegal_goods": 3,
-      "insulting_abuse": 24,
-      "mixed_unknown": 1419,
-      "platform_censorship_evasion": 17,
-      "political_history": 119,
-      "public_affairs": 8,
-      "sexual_content": 16,
-      "spam_ads_fraud": 16,
+      "insulting_abuse": 29,
+      "mixed_unknown": 2236,
+      "platform_censorship_evasion": 20,
+      "political_history": 129,
+      "public_affairs": 14,
+      "sexual_content": 17,
+      "spam_ads_fraud": 27,
       "violence_extremism": 25,
-      "weapons_explosives": 1
+      "weapons_explosives": 5
     },
     "category_risk": {
       "cyber_abuse": {
@@ -61,7 +80,7 @@
       },
       "gambling": {
         "high": 3,
-        "low": 1,
+        "low": 2,
         "medium": 1
       },
       "illegal_goods": {
@@ -70,43 +89,43 @@
       },
       "insulting_abuse": {
         "high": 9,
-        "low": 7,
+        "low": 12,
         "medium": 5,
         "none": 3
       },
       "mixed_unknown": {
-        "high": 433,
-        "low": 192,
-        "medium": 402,
-        "none": 392
+        "high": 449,
+        "low": 372,
+        "medium": 486,
+        "none": 929
       },
       "platform_censorship_evasion": {
         "high": 3,
-        "low": 7,
-        "medium": 3,
+        "low": 9,
+        "medium": 4,
         "none": 4
       },
       "political_history": {
         "high": 52,
-        "low": 14,
-        "medium": 43,
-        "none": 10
+        "low": 18,
+        "medium": 46,
+        "none": 13
       },
       "public_affairs": {
         "high": 2,
-        "low": 1,
-        "medium": 3,
-        "none": 2
+        "low": 2,
+        "medium": 6,
+        "none": 4
       },
       "sexual_content": {
-        "high": 10,
+        "high": 11,
         "medium": 6
       },
       "spam_ads_fraud": {
         "high": 4,
-        "low": 2,
-        "medium": 7,
-        "none": 3
+        "low": 10,
+        "medium": 8,
+        "none": 5
       },
       "violence_extremism": {
         "high": 21,
@@ -114,7 +133,9 @@
         "medium": 3
       },
       "weapons_explosives": {
-        "medium": 1
+        "high": 2,
+        "medium": 1,
+        "none": 2
       }
     },
     "category_hard_negative": {
@@ -122,56 +143,58 @@
       "gambling": 0,
       "illegal_goods": 2,
       "insulting_abuse": 3,
-      "mixed_unknown": 454,
+      "mixed_unknown": 991,
       "platform_censorship_evasion": 8,
-      "political_history": 15,
-      "public_affairs": 2,
+      "political_history": 18,
+      "public_affairs": 4,
       "sexual_content": 0,
-      "spam_ads_fraud": 4,
+      "spam_ads_fraud": 6,
       "violence_extremism": 0,
-      "weapons_explosives": 0
+      "weapons_explosives": 2
     },
     "mechanism_counts": {
-      "A1_普通谐音": 49,
-      "A2_拼音/首字母缩写": 53,
-      "A3_方言谐音": 20,
-      "A4_外语谐音/跨语言音译": 24,
+      "A1_普通谐音": 57,
+      "A1_普通谐音+D4_双关": 1,
+      "A2_拼音/首字母缩写": 54,
+      "A3_方言谐音": 21,
+      "A4_外语谐音/跨语言音译": 25,
       "B1_拆字": 36,
       "B2_合字/拼字": 17,
       "B3_形近字替换": 17,
-      "B4_符号/空格/Unicode 干扰": 34,
+      "B4_符号/空格/Unicode 干扰": 37,
       "C1_历史人物类比": 132,
       "C2_历史事件影射": 87,
-      "C3_数字代指": 67,
-      "C4_典故/物品/符号借用": 163,
-      "C5_概念替换": 54,
-      "D1_反讽": 312,
-      "D2_隐喻": 232,
-      "D3_借代": 54,
-      "E1_平台黑话": 304,
-      "E2_时间节点触发": 46,
-      "E3_互动/热点触发": 68,
+      "C3_数字代指": 69,
+      "C4_典故/物品/符号借用": 169,
+      "C5_概念替换": 62,
+      "D1_反讽": 377,
+      "D2_隐喻": 253,
+      "D3_借代": 55,
+      "D4_双关": 4,
+      "E1_平台黑话": 399,
+      "E2_时间节点触发": 47,
+      "E3_互动/热点触发": 70,
       "E4_热点绑定": 47,
       "F_组合编码": 48,
-      "literal_keyword": 248,
-      "none": 460
+      "literal_keyword": 369,
+      "none": 1006
     },
     "mechanism_group_counts": {
       "combined": 48,
-      "contextual": 350,
-      "literal_keyword": 708,
-      "phonetic_or_initials": 146,
-      "rhetorical": 598,
-      "semantic_mapping": 449,
-      "shape_or_symbol": 104
+      "contextual": 446,
+      "literal_keyword": 1375,
+      "phonetic_or_initials": 157,
+      "rhetorical": 685,
+      "semantic_mapping": 457,
+      "shape_or_symbol": 107
     },
     "risk_counts": {
-      "high": 531,
-      "low": 225,
-      "medium": 472,
-      "none": 418
+      "high": 549,
+      "low": 424,
+      "medium": 563,
+      "none": 964
     },
-    "hard_negative": 490
+    "hard_negative": 1036
   },
   "literal_term_coverage": {
     "note": "Term hit rate measures literal/normalized occurrence only. Low hit rate is expected and does not mean the model must receive one sample per term.",
@@ -193,38 +216,38 @@
       },
       "insulting_abuse": {
         "lexicon_terms": 797,
-        "exact_or_normalized_term_hits": 17,
-        "hit_rate": 0.0213
+        "exact_or_normalized_term_hits": 18,
+        "hit_rate": 0.0226
       },
       "mixed_unknown": {
         "lexicon_terms": 18383,
-        "exact_or_normalized_term_hits": 383,
-        "hit_rate": 0.0208
+        "exact_or_normalized_term_hits": 436,
+        "hit_rate": 0.0237
       },
       "platform_censorship_evasion": {
         "lexicon_terms": 5075,
-        "exact_or_normalized_term_hits": 123,
-        "hit_rate": 0.0242
+        "exact_or_normalized_term_hits": 140,
+        "hit_rate": 0.0276
       },
       "political_history": {
         "lexicon_terms": 1632,
-        "exact_or_normalized_term_hits": 36,
-        "hit_rate": 0.0221
+        "exact_or_normalized_term_hits": 38,
+        "hit_rate": 0.0233
       },
       "public_affairs": {
         "lexicon_terms": 607,
-        "exact_or_normalized_term_hits": 20,
-        "hit_rate": 0.0329
+        "exact_or_normalized_term_hits": 23,
+        "hit_rate": 0.0379
       },
       "sexual_content": {
         "lexicon_terms": 1703,
-        "exact_or_normalized_term_hits": 36,
-        "hit_rate": 0.0211
+        "exact_or_normalized_term_hits": 40,
+        "hit_rate": 0.0235
       },
       "spam_ads_fraud": {
         "lexicon_terms": 21132,
-        "exact_or_normalized_term_hits": 16,
-        "hit_rate": 0.0008
+        "exact_or_normalized_term_hits": 19,
+        "hit_rate": 0.0009
       },
       "violence_extremism": {
         "lexicon_terms": 157,
@@ -233,27 +256,27 @@
       },
       "weapons_explosives": {
         "lexicon_terms": 935,
-        "exact_or_normalized_term_hits": 5,
-        "hit_rate": 0.0053
+        "exact_or_normalized_term_hits": 7,
+        "hit_rate": 0.0075
       }
     },
     "buckets": {
       "literal_or_direct": {
         "lexicon_terms": 25386,
-        "exact_or_normalized_term_hits": 585,
-        "hit_rate": 0.023
+        "exact_or_normalized_term_hits": 666,
+        "hit_rate": 0.0262
       },
       "obfuscated_or_variant": {
         "lexicon_terms": 25320,
-        "exact_or_normalized_term_hits": 58,
-        "hit_rate": 0.0023
+        "exact_or_normalized_term_hits": 62,
+        "hit_rate": 0.0024
       }
     },
     "mechanisms": {
       "A2_拼音/首字母缩写": {
         "lexicon_terms": 21845,
-        "exact_or_normalized_term_hits": 45,
-        "hit_rate": 0.0021
+        "exact_or_normalized_term_hits": 49,
+        "hit_rate": 0.0022
       },
       "B4_符号/空格/Unicode 干扰": {
         "lexicon_terms": 21876,
@@ -267,13 +290,13 @@
       },
       "F_组合编码": {
         "lexicon_terms": 1497,
-        "exact_or_normalized_term_hits": 7,
-        "hit_rate": 0.0047
+        "exact_or_normalized_term_hits": 9,
+        "hit_rate": 0.006
       },
       "literal_keyword": {
         "lexicon_terms": 25386,
-        "exact_or_normalized_term_hits": 585,
-        "hit_rate": 0.023
+        "exact_or_normalized_term_hits": 666,
+        "hit_rate": 0.0262
       }
     }
   },

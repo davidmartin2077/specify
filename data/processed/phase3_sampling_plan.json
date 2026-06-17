@@ -1,19 +1,19 @@
 {
   "objective": "Use lexicon gaps to expand reasoning capabilities. Do not create one training sample per lexicon term.",
   "important_caveat": "Lexicon category assignment and representative seeds are heuristic. Manually review seeds before generation; a term's category is not a training label.",
-  "input_candidate_count": 1646,
-  "recommended_total_phase3_quota": 807,
+  "input_candidate_count": 2500,
+  "recommended_total_phase3_quota": 781,
   "recommended_first_wave_total": 245,
   "categories": [
     {
       "category": "platform_censorship_evasion",
       "name": "平台规避/审查黑话",
       "priority": "P0",
-      "current_inferred_samples": 17,
+      "current_inferred_samples": 20,
       "current_risk_counts": {
         "high": 3,
-        "low": 7,
-        "medium": 3,
+        "low": 9,
+        "medium": 4,
         "none": 4
       },
       "current_hard_negative": 8,
@@ -21,7 +21,6 @@
       "recommended_phase3_quota": 100,
       "recommended_first_wave_quota": 25,
       "reasons": [
-        "当前语境样本少于 20 条",
         "风险/复核样本不足"
       ],
       "representative_uncovered_seeds": [
@@ -101,9 +100,9 @@
       "category": "sexual_content",
       "name": "色情低俗",
       "priority": "P0",
-      "current_inferred_samples": 16,
+      "current_inferred_samples": 17,
       "current_risk_counts": {
-        "high": 10,
+        "high": 11,
         "medium": 6
       },
       "current_hard_negative": 0,
@@ -115,14 +114,6 @@
         "语境反证或 hard negative 不足"
       ],
       "representative_uncovered_seeds": [
-        {
-          "term": "不穿",
-          "bucket": "direct_policy_risk",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate direct-risk and educational/news hard-negative set"
-        },
         {
           "term": "丝诱",
           "bucket": "direct_policy_risk",
@@ -178,6 +169,14 @@
             "literal_keyword"
           ],
           "recommended_use": "generate direct-risk and educational/news hard-negative set"
+        },
+        {
+          "term": "乳头",
+          "bucket": "direct_policy_risk",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate direct-risk and educational/news hard-negative set"
         }
       ],
       "required_contrast_set": [
@@ -191,20 +190,19 @@
       "category": "spam_ads_fraud",
       "name": "广告/诈骗/导流",
       "priority": "P0",
-      "current_inferred_samples": 16,
+      "current_inferred_samples": 27,
       "current_risk_counts": {
         "high": 4,
-        "low": 2,
-        "medium": 7,
-        "none": 3
+        "low": 10,
+        "medium": 8,
+        "none": 5
       },
-      "current_hard_negative": 4,
+      "current_hard_negative": 6,
       "reference_target": 160,
       "recommended_phase3_quota": 100,
       "recommended_first_wave_quota": 25,
       "reasons": [
-        "当前语境样本少于 20 条",
-        "语境反证或 hard negative 不足"
+        "已有基础覆盖，继续补长尾机制和真实语境"
       ],
       "representative_uncovered_seeds": [
         {
@@ -291,13 +289,15 @@
       "category": "weapons_explosives",
       "name": "枪爆武器",
       "priority": "P0",
-      "current_inferred_samples": 1,
+      "current_inferred_samples": 5,
       "current_risk_counts": {
-        "medium": 1
+        "high": 2,
+        "medium": 1,
+        "none": 2
       },
-      "current_hard_negative": 0,
+      "current_hard_negative": 2,
       "reference_target": 100,
-      "recommended_phase3_quota": 99,
+      "recommended_phase3_quota": 95,
       "recommended_first_wave_quota": 25,
       "reasons": [
         "当前语境样本少于 20 条",
@@ -380,16 +380,16 @@
       "category": "public_affairs",
       "name": "公共事务",
       "priority": "P0",
-      "current_inferred_samples": 8,
+      "current_inferred_samples": 14,
       "current_risk_counts": {
         "high": 2,
-        "low": 1,
-        "medium": 3,
-        "none": 2
+        "low": 2,
+        "medium": 6,
+        "none": 4
       },
-      "current_hard_negative": 2,
+      "current_hard_negative": 4,
       "reference_target": 100,
-      "recommended_phase3_quota": 92,
+      "recommended_phase3_quota": 86,
       "recommended_first_wave_quota": 25,
       "reasons": [
         "当前语境样本少于 20 条",
@@ -572,15 +572,15 @@
       "category": "gambling",
       "name": "赌博",
       "priority": "P0",
-      "current_inferred_samples": 5,
+      "current_inferred_samples": 6,
       "current_risk_counts": {
         "high": 3,
-        "low": 1,
+        "low": 2,
         "medium": 1
       },
       "current_hard_negative": 0,
       "reference_target": 60,
-      "recommended_phase3_quota": 55,
+      "recommended_phase3_quota": 54,
       "recommended_first_wave_quota": 25,
       "reasons": [
         "当前语境样本少于 20 条",
@@ -756,16 +756,16 @@
       "category": "insulting_abuse",
       "name": "辱骂/群体攻击",
       "priority": "P1",
-      "current_inferred_samples": 24,
+      "current_inferred_samples": 29,
       "current_risk_counts": {
         "high": 9,
-        "low": 7,
+        "low": 12,
         "medium": 5,
         "none": 3
       },
       "current_hard_negative": 3,
       "reference_target": 100,
-      "recommended_phase3_quota": 76,
+      "recommended_phase3_quota": 71,
       "recommended_first_wave_quota": 15,
       "reasons": [
         "语境反证或 hard negative 不足"
@@ -834,97 +834,6 @@
             "literal_keyword"
           ],
           "recommended_use": "generate literal keyword and hard-negative set"
-        }
-      ],
-      "required_contrast_set": [
-        "direct_or_clear_risk",
-        "obfuscated_or_black_slang",
-        "contextual_medium_or_low",
-        "news_education_or_ordinary_hard_negative"
-      ]
-    },
-    {
-      "category": "political_history",
-      "name": "政治历史/鉴证梗",
-      "priority": "P2",
-      "current_inferred_samples": 119,
-      "current_risk_counts": {
-        "high": 52,
-        "low": 14,
-        "medium": 43,
-        "none": 10
-      },
-      "current_hard_negative": 15,
-      "reference_target": 160,
-      "recommended_phase3_quota": 41,
-      "recommended_first_wave_quota": 15,
-      "reasons": [
-        "已有基础覆盖，继续补长尾机制和真实语境"
-      ],
-      "representative_uncovered_seeds": [
-        {
-          "term": "一党",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "中珙",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "主权",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "九学",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "九风",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "习党",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "亡党",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "亢议",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
         }
       ],
       "required_contrast_set": [
@@ -1015,6 +924,97 @@
             "literal_keyword"
           ],
           "recommended_use": "generate direct-risk and educational/news hard-negative set"
+        }
+      ],
+      "required_contrast_set": [
+        "direct_or_clear_risk",
+        "obfuscated_or_black_slang",
+        "contextual_medium_or_low",
+        "news_education_or_ordinary_hard_negative"
+      ]
+    },
+    {
+      "category": "political_history",
+      "name": "政治历史/鉴证梗",
+      "priority": "P2",
+      "current_inferred_samples": 129,
+      "current_risk_counts": {
+        "high": 52,
+        "low": 18,
+        "medium": 46,
+        "none": 13
+      },
+      "current_hard_negative": 18,
+      "reference_target": 160,
+      "recommended_phase3_quota": 31,
+      "recommended_first_wave_quota": 15,
+      "reasons": [
+        "已有基础覆盖，继续补长尾机制和真实语境"
+      ],
+      "representative_uncovered_seeds": [
+        {
+          "term": "一党",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "中珙",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "主权",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "九学",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "九风",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "习党",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "亡党",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "亢议",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
         }
       ],
       "required_contrast_set": [
