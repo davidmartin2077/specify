@@ -1,18 +1,18 @@
 {
   "objective": "Use lexicon gaps to expand reasoning capabilities. Do not create one training sample per lexicon term.",
   "important_caveat": "Lexicon category assignment and representative seeds are heuristic. Manually review seeds before generation; a term's category is not a training label.",
-  "input_candidate_count": 1551,
-  "recommended_total_phase3_quota": 815,
+  "input_candidate_count": 1646,
+  "recommended_total_phase3_quota": 807,
   "recommended_first_wave_total": 245,
   "categories": [
     {
       "category": "platform_censorship_evasion",
       "name": "平台规避/审查黑话",
       "priority": "P0",
-      "current_inferred_samples": 15,
+      "current_inferred_samples": 17,
       "current_risk_counts": {
         "high": 3,
-        "low": 5,
+        "low": 7,
         "medium": 3,
         "none": 4
       },
@@ -380,15 +380,16 @@
       "category": "public_affairs",
       "name": "公共事务",
       "priority": "P0",
-      "current_inferred_samples": 6,
+      "current_inferred_samples": 8,
       "current_risk_counts": {
         "high": 2,
+        "low": 1,
         "medium": 3,
-        "none": 1
+        "none": 2
       },
-      "current_hard_negative": 1,
+      "current_hard_negative": 2,
       "reference_target": 100,
-      "recommended_phase3_quota": 94,
+      "recommended_phase3_quota": 92,
       "recommended_first_wave_quota": 25,
       "reasons": [
         "当前语境样本少于 20 条",
@@ -663,15 +664,15 @@
       "category": "cyber_abuse",
       "name": "网络黑产/安全风险",
       "priority": "P0",
-      "current_inferred_samples": 7,
+      "current_inferred_samples": 8,
       "current_risk_counts": {
         "high": 2,
         "low": 2,
-        "none": 3
+        "none": 4
       },
-      "current_hard_negative": 3,
+      "current_hard_negative": 4,
       "reference_target": 60,
-      "recommended_phase3_quota": 53,
+      "recommended_phase3_quota": 52,
       "recommended_first_wave_quota": 25,
       "reasons": [
         "当前语境样本少于 20 条",
@@ -755,16 +756,16 @@
       "category": "insulting_abuse",
       "name": "辱骂/群体攻击",
       "priority": "P1",
-      "current_inferred_samples": 20,
+      "current_inferred_samples": 24,
       "current_risk_counts": {
         "high": 9,
-        "low": 3,
+        "low": 7,
         "medium": 5,
         "none": 3
       },
       "current_hard_negative": 3,
       "reference_target": 100,
-      "recommended_phase3_quota": 80,
+      "recommended_phase3_quota": 76,
       "recommended_first_wave_quota": 15,
       "reasons": [
         "语境反证或 hard negative 不足"
@@ -846,16 +847,16 @@
       "category": "political_history",
       "name": "政治历史/鉴证梗",
       "priority": "P2",
-      "current_inferred_samples": 118,
+      "current_inferred_samples": 119,
       "current_risk_counts": {
         "high": 52,
-        "low": 13,
+        "low": 14,
         "medium": 43,
         "none": 10
       },
       "current_hard_negative": 15,
       "reference_target": 160,
-      "recommended_phase3_quota": 42,
+      "recommended_phase3_quota": 41,
       "recommended_first_wave_quota": 15,
       "reasons": [
         "已有基础覆盖，继续补长尾机制和真实语境"
