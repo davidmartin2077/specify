@@ -1,64 +1,64 @@
 {
   "dataset_name": "semantic_risk_reasoning",
-  "generated_at_utc": "2026-06-16T08:23:45+00:00",
+  "generated_at_utc": "2026-06-17T03:24:42+00:00",
   "source": {
     "path": "data/processed/combined_candidates.jsonl",
-    "sha256": "bf4933bfe78fe6f4eba4d14b2f95b11befe7da5d6c5acd688fd1a67810756456",
+    "sha256": "a0766181a53dc2e44c98768f28e9cba913b5b648776fceb3b2b3a4f2f6ebceb7",
     "duplicate_id_count": 0,
     "duplicate_ids": [],
     "summary": {
-      "count": 1385,
+      "count": 1480,
       "risk_level": {
-        "high": 478,
-        "low": 147,
-        "medium": 412,
-        "none": 348
+        "high": 505,
+        "low": 160,
+        "medium": 439,
+        "none": 376
       },
       "source_type": {
         "real": 480,
-        "synthetic": 905
+        "synthetic": 1000
       },
       "quality_status": {
         "approved": 162,
-        "draft": 90,
+        "draft": 185,
         "reviewed": 1133
       },
       "encoding_primary": {
         "A1_普通谐音": 41,
-        "A2_拼音/首字母缩写": 37,
-        "A3_方言谐音": 10,
+        "A2_拼音/首字母缩写": 39,
+        "A3_方言谐音": 12,
         "A4_外语谐音/跨语言音译": 9,
         "B1_拆字": 35,
         "B2_合字/拼字": 8,
         "B3_形近字替换": 15,
-        "B4_符号/空格/Unicode 干扰": 10,
-        "C1_历史人物类比": 70,
-        "C2_历史事件影射": 28,
+        "B4_符号/空格/Unicode 干扰": 12,
+        "C1_历史人物类比": 71,
+        "C2_历史事件影射": 32,
         "C3_数字代指": 29,
-        "C4_典故/物品/符号借用": 92,
-        "C5_概念替换": 22,
-        "D1_反讽": 96,
-        "D2_隐喻": 69,
+        "C4_典故/物品/符号借用": 94,
+        "C5_概念替换": 26,
+        "D1_反讽": 106,
+        "D2_隐喻": 74,
         "D3_借代": 20,
-        "E1_平台黑话": 107,
-        "E2_时间节点触发": 13,
-        "E3_互动/热点触发": 22,
+        "E1_平台黑话": 130,
+        "E2_时间节点触发": 14,
+        "E3_互动/热点触发": 24,
         "E4_热点绑定": 8,
         "F_组合编码": 23,
-        "literal_keyword": 228,
-        "none": 393
+        "literal_keyword": 237,
+        "none": 421
       },
       "evidence_strength": {
-        "moderate": 441,
-        "strong": 602,
-        "weak": 342
+        "moderate": 471,
+        "strong": 627,
+        "weak": 382
       },
       "ambiguity": {
-        "high": 33,
-        "low": 803,
-        "medium": 549
+        "high": 35,
+        "low": 877,
+        "medium": 568
       },
-      "hard_negative": 423,
+      "hard_negative": 451,
       "needs_context": 52,
       "review_source": {
         "abstract_batch": 25,
@@ -67,6 +67,7 @@
         "batch12_doxxing": 40,
         "batch13_encoding_fill": 55,
         "batch14_p0_gaps": 35,
+        "batch15_p1_gaps": 95,
         "batch1_natural": 56,
         "batch2_natural": 27,
         "batch3_natural": 46,
@@ -96,8 +97,8 @@
   "artifacts": {
     "sft": {
       "path": "data/processed/sft/sft_candidates.jsonl",
-      "sha256": "9a329f9b2da4fb38117f35febfbc26e054bfeba748db580098693dc7f836daed",
-      "count": 1385,
+      "sha256": "2ee00bbf5dc4a76dcd1429d13d54b0e241edc1ada21b54a0af8b4edfeafd1b78",
+      "count": 1480,
       "missing_candidate_ids": [],
       "missing_candidate_count": 0,
       "duplicate_id_count": 0,
@@ -109,80 +110,80 @@
     "splits": {
       "train": {
         "path": "data/processed/splits/train.jsonl",
-        "sha256": "bb07011f7e9a856ca7674349379751e18d335f366dc1f99f7f7c30fa16a9cc4c",
-        "count": 1109,
+        "sha256": "e451f90a30644762fd36cc24e173aad48b495cafaeeef6bf103a9039e711d659",
+        "count": 1184,
         "risk_level": {
-          "high": 386,
-          "low": 120,
-          "medium": 327,
-          "none": 276
+          "high": 402,
+          "low": 138,
+          "medium": 344,
+          "none": 300
         },
         "quality_status": {
-          "approved": 124,
-          "draft": 75,
-          "reviewed": 910
+          "approved": 128,
+          "draft": 151,
+          "reviewed": 905
         },
         "missing_from_candidates": 0,
         "field_mismatch_counts": {}
       },
       "validation": {
         "path": "data/processed/splits/validation.jsonl",
-        "sha256": "1470383ac79418b85bc84d50a9dc04a0fb5e9d522fd40bd3653fddb30c45b61b",
-        "count": 138,
+        "sha256": "33664c87901ef7770a67f97fa95e87ef0783d568815d6627d604b420f665da41",
+        "count": 148,
         "risk_level": {
-          "high": 49,
-          "low": 10,
-          "medium": 43,
-          "none": 36
+          "high": 53,
+          "low": 11,
+          "medium": 51,
+          "none": 33
         },
         "quality_status": {
-          "approved": 16,
-          "draft": 9,
-          "reviewed": 113
+          "approved": 18,
+          "draft": 20,
+          "reviewed": 110
         },
         "missing_from_candidates": 0,
         "field_mismatch_counts": {}
       },
       "test": {
         "path": "data/processed/splits/test.jsonl",
-        "sha256": "ab4abaafe80a66907a630e0f86efe754395edd2e696cbf2490896df66e913e0c",
-        "count": 138,
+        "sha256": "31f7858f001d2ef129249aecd729f3f507f9f1254767800bae6d419a5fcb3dc6",
+        "count": 148,
         "risk_level": {
-          "high": 43,
-          "low": 17,
-          "medium": 42,
-          "none": 36
+          "high": 50,
+          "low": 11,
+          "medium": 44,
+          "none": 43
         },
         "quality_status": {
-          "approved": 22,
-          "draft": 6,
-          "reviewed": 110
+          "approved": 16,
+          "draft": 14,
+          "reviewed": 118
         },
         "missing_from_candidates": 0,
         "field_mismatch_counts": {}
       },
       "split_report": {
         "path": "data/processed/splits/split_report.json",
-        "sha256": "c1871ac6433bc003805fb85a70ae51fde7df11d8865f86cfb5579c83988e5077",
-        "input_count": 1385,
-        "group_count": 1382,
+        "sha256": "42a858e2038f03ccccad8ac28d61d9e8d88a60b1a6a32955aa9566e0845d5d01",
+        "input_count": 1480,
+        "group_count": 1477,
         "leaked_group_count": 0
       },
-      "total_count": 1385,
+      "total_count": 1480,
       "mismatched_row_count": 0,
       "is_synced_with_candidates": true
     },
     "coverage_report": {
       "path": "data/processed/risk_coverage_report.json",
       "exists": true,
-      "sha256": "e6e9ea5906a5aea55472d3ad39dd4215b61f57576276f5201517153c5e1997c9",
-      "bytes": 7289
+      "sha256": "415016f8f46bc7e8f47a5715a13cdf24de03500bbb3c16e63ad769303369c82a",
+      "bytes": 7374
     },
     "phase3_sampling_plan": {
       "path": "data/processed/phase3_sampling_plan.json",
       "exists": true,
-      "sha256": "6b1ad6bdae67854adc8935ed744e244c2a5104c8d694a615384d458c0e1e2a36",
-      "bytes": 32570
+      "sha256": "8c5b14724d17a84e6d586b2b341a5ab2b7b22af8ab0a65ad01ca8a96c81e78e2",
+      "bytes": 32589
     }
   },
   "training_guardrail": {
