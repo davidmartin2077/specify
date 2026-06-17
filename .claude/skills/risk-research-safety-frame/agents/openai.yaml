@@ -1,0 +1,6 @@
+interface:
+  display_name: "Risk Research Safety Frame"
+  short_description: "Defensive framing for risky text datasets"
+  default_prompt: "Use $risk-research-safety-frame to work on Chinese semantic-risk dataset samples safely and defensively."
+policy:
+  allow_implicit_invocation: true
