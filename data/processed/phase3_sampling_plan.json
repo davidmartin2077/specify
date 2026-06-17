@@ -2,18 +2,18 @@
   "objective": "Use lexicon gaps to expand reasoning capabilities. Do not create one training sample per lexicon term.",
   "important_caveat": "Lexicon category assignment and representative seeds are heuristic. Manually review seeds before generation; a term's category is not a training label.",
   "input_candidate_count": 1480,
-  "recommended_total_phase3_quota": 813,
-  "recommended_first_wave_total": 245,
+  "recommended_total_phase3_quota": 817,
+  "recommended_first_wave_total": 255,
   "categories": [
     {
       "category": "platform_censorship_evasion",
       "name": "平台规避/审查黑话",
       "priority": "P0",
-      "current_inferred_samples": 19,
+      "current_inferred_samples": 15,
       "current_risk_counts": {
-        "high": 5,
+        "high": 3,
         "low": 5,
-        "medium": 5,
+        "medium": 3,
         "none": 4
       },
       "current_hard_negative": 8,
@@ -21,7 +21,8 @@
       "recommended_phase3_quota": 100,
       "recommended_first_wave_quota": 25,
       "reasons": [
-        "当前语境样本少于 20 条"
+        "当前语境样本少于 20 条",
+        "风险/复核样本不足"
       ],
       "representative_uncovered_seeds": [
         {
@@ -190,11 +191,11 @@
       "category": "spam_ads_fraud",
       "name": "广告/诈骗/导流",
       "priority": "P0",
-      "current_inferred_samples": 15,
+      "current_inferred_samples": 16,
       "current_risk_counts": {
         "high": 4,
         "low": 2,
-        "medium": 6,
+        "medium": 7,
         "none": 3
       },
       "current_hard_negative": 4,
@@ -290,14 +291,13 @@
       "category": "weapons_explosives",
       "name": "枪爆武器",
       "priority": "P0",
-      "current_inferred_samples": 2,
+      "current_inferred_samples": 1,
       "current_risk_counts": {
-        "low": 1,
         "medium": 1
       },
       "current_hard_negative": 0,
       "reference_target": 100,
-      "recommended_phase3_quota": 98,
+      "recommended_phase3_quota": 99,
       "recommended_first_wave_quota": 25,
       "reasons": [
         "当前语境样本少于 20 条",
@@ -459,6 +459,98 @@
             "literal_keyword"
           ],
           "recommended_use": "generate high/medium/low/none context contrast set"
+        }
+      ],
+      "required_contrast_set": [
+        "direct_or_clear_risk",
+        "obfuscated_or_black_slang",
+        "contextual_medium_or_low",
+        "news_education_or_ordinary_hard_negative"
+      ]
+    },
+    {
+      "category": "insulting_abuse",
+      "name": "辱骂/群体攻击",
+      "priority": "P0",
+      "current_inferred_samples": 19,
+      "current_risk_counts": {
+        "high": 9,
+        "low": 3,
+        "medium": 5,
+        "none": 2
+      },
+      "current_hard_negative": 2,
+      "reference_target": 100,
+      "recommended_phase3_quota": 81,
+      "recommended_first_wave_quota": 25,
+      "reasons": [
+        "当前语境样本少于 20 条",
+        "语境反证或 hard negative 不足"
+      ],
+      "representative_uncovered_seeds": [
+        {
+          "term": "丁狗",
+          "bucket": "literal_keyword",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate literal keyword and hard-negative set"
+        },
+        {
+          "term": "下贱",
+          "bucket": "literal_keyword",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate literal keyword and hard-negative set"
+        },
+        {
+          "term": "习傻",
+          "bucket": "literal_keyword",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate literal keyword and hard-negative set"
+        },
+        {
+          "term": "习狗",
+          "bucket": "literal_keyword",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate literal keyword and hard-negative set"
+        },
+        {
+          "term": "二傻",
+          "bucket": "literal_keyword",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate literal keyword and hard-negative set"
+        },
+        {
+          "term": "二逼",
+          "bucket": "literal_keyword",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate literal keyword and hard-negative set"
+        },
+        {
+          "term": "供狗",
+          "bucket": "literal_keyword",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate literal keyword and hard-negative set"
+        },
+        {
+          "term": "傻习",
+          "bucket": "literal_keyword",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate literal keyword and hard-negative set"
         }
       ],
       "required_contrast_set": [
@@ -752,110 +844,19 @@
       ]
     },
     {
-      "category": "insulting_abuse",
-      "name": "辱骂/群体攻击",
-      "priority": "P1",
-      "current_inferred_samples": 20,
-      "current_risk_counts": {
-        "high": 10,
-        "low": 3,
-        "medium": 5,
-        "none": 2
-      },
-      "current_hard_negative": 2,
-      "reference_target": 100,
-      "recommended_phase3_quota": 80,
-      "recommended_first_wave_quota": 15,
-      "reasons": [
-        "语境反证或 hard negative 不足"
-      ],
-      "representative_uncovered_seeds": [
-        {
-          "term": "丁狗",
-          "bucket": "literal_keyword",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate literal keyword and hard-negative set"
-        },
-        {
-          "term": "下贱",
-          "bucket": "literal_keyword",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate literal keyword and hard-negative set"
-        },
-        {
-          "term": "习傻",
-          "bucket": "literal_keyword",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate literal keyword and hard-negative set"
-        },
-        {
-          "term": "习狗",
-          "bucket": "literal_keyword",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate literal keyword and hard-negative set"
-        },
-        {
-          "term": "二傻",
-          "bucket": "literal_keyword",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate literal keyword and hard-negative set"
-        },
-        {
-          "term": "二逼",
-          "bucket": "literal_keyword",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate literal keyword and hard-negative set"
-        },
-        {
-          "term": "供狗",
-          "bucket": "literal_keyword",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate literal keyword and hard-negative set"
-        },
-        {
-          "term": "傻习",
-          "bucket": "literal_keyword",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate literal keyword and hard-negative set"
-        }
-      ],
-      "required_contrast_set": [
-        "direct_or_clear_risk",
-        "obfuscated_or_black_slang",
-        "contextual_medium_or_low",
-        "news_education_or_ordinary_hard_negative"
-      ]
-    },
-    {
       "category": "political_history",
       "name": "政治历史/鉴证梗",
       "priority": "P2",
-      "current_inferred_samples": 119,
+      "current_inferred_samples": 117,
       "current_risk_counts": {
-        "high": 53,
+        "high": 52,
         "low": 13,
-        "medium": 43,
+        "medium": 42,
         "none": 10
       },
       "current_hard_negative": 15,
       "reference_target": 160,
-      "recommended_phase3_quota": 41,
+      "recommended_phase3_quota": 43,
       "recommended_first_wave_quota": 15,
       "reasons": [
         "已有基础覆盖，继续补长尾机制和真实语境"

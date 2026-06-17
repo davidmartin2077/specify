@@ -547,9 +547,9 @@
     "split": "train"
   },
   {
-    "text": "把那条新闻看完，又看了一遍评论区，发现全被删干净了",
+    "text": "看了新闻以后去翻评论，翻了五分钟全是机器人刷的'支持''点赞'，一条真人评论都找不到。花钱买水军能不能走点心",
     "risk_level": "medium",
-    "encoding_primary": "E3_互动/热点触发",
+    "encoding_primary": "D1_反讽",
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "split": "train",
@@ -570,25 +570,26 @@
     },
     "reasoning": {
       "literal_analysis": [
-        "描述某新闻评论区被清空。"
+        "描述在新闻评论区只看到机器人刷屏的水军评论，没有真实用户的反馈。"
       ],
       "encoding_analysis": [
-        "E3：评论被删暗示新闻敏感。",
-        "对删评的观察本身就是在讨论敏感事件。"
+        "D1_反讽：'花钱买水军能不能走点心'——表面吐槽水军质量，深层批评舆论操控。'全是机器人'暗示评论经过了筛选或操控。"
       ],
       "context_analysis": [
-        "微博用户对'删评'有共识理解。"
+        "对网络舆论操控的观察和讽刺。"
       ],
       "supporting_evidence": [
-        "评论区被清空是敏感新闻的强信号。"
+        "水军刷评是公认的网络现象",
+        "'一条真人评论找不到'表达了真实感受"
       ],
       "counter_evidence": [
-        "也可能是违规评论太多（辱骂、谣言等），平台正常管理。"
+        "没有明确指出是官方操控还是商业水军",
+        "只是一般性的观察"
       ],
-      "final_rationale": "删评观察暗示新闻敏感但可能是正常管理，判medium。"
+      "final_rationale": "以吐槽水军的方式暗示舆论控制，判为 medium。"
     },
     "quality_status": "approved",
-    "review_notes": "source=batch2_natural; replaces old synthetic"
+    "review_notes": "source=batch2_natural; fixed_unrealistic_pattern=评论区被删→水军刷评"
   },
   {
     "id": "000275",
@@ -2883,38 +2884,36 @@
     "id": "000935",
     "split": "train",
     "source_type": "synthetic",
-    "text": "冲塔一时爽，一直冲塔一直爽，号没了就换一个",
+    "text": "看到那些绕来绕去说话的人就烦。要么就直说要么就闭嘴，搞得跟地下党接头似的",
     "risk_level": "high",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [
-      "D1_反讽",
-      "D2_隐喻"
-    ],
+    "encoding_primary": "D1_反讽",
+    "encoding_secondary": [],
     "needs_context": false,
     "hard_negative": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "reasoning": {
       "literal_analysis": [
-        "文本字面意思：描述一种行为——冲塔让人爽快，账号被封了就换一个继续。"
+        "吐槽那些使用隐晦方式表达的人——'搞得跟地下党接头似的'讽刺编码行为的过度复杂化。"
       ],
       "encoding_analysis": [
-        "'冲塔'源自游戏术语（英雄联盟中冲入对方防御塔），但在中文互联网中已被完全固化为'主动提及/讨论政治敏感话题'的代称。'一直冲塔一直爽'鼓励持续的政治敏感言论。'号没了就换一个'暗示对平台封号的蔑视——将封号视为可接受的代价。这构成了对政治敏感话题讨论的积极鼓励和对平台管控的公然蔑视。"
+        "D1_反讽：表面批评编码者'不够直说'，但这本身就是一种编码——批评别人打哑谜实际上是在说'这个环境让人不能直说'。'地下党接头'是生动的讽刺比喻。"
       ],
       "context_analysis": [
-        "无额外上下文。'冲塔'在中文互联网中的政治含义已完全固化。"
+        "对编码文化的反讽——用反讽来批评环境迫使人们编码。"
       ],
       "supporting_evidence": [
-        "(1) '冲塔'在中文互联网中已固化为政治敏感话题讨论的代称；(2) '一直冲塔一直爽'积极鼓励敏感话题讨论——暗示这是一种'爽'的行为；(3) '号没了就换一个'公然蔑视平台管控——构成对言论管控体系的正面挑战。完整的政治煽动信号。"
+        "反讽结构紧凑有效",
+        "'地下党接头'是中文文化中可理解的比喻"
       ],
       "counter_evidence": [
-        "可能是游戏术语的字面使用。但在公共讨论中，'冲塔'配合'号没了'（指社交平台封号而非游戏封号）使游戏解读不成立——游戏中的塔不会导致'号没了'。"
+        "也可能是真的在批评打字不直接的人"
       ],
-      "final_rationale": "公然的敏感话题讨论鼓励+平台管控蔑视，构成政治煽动，判为 high。"
+      "final_rationale": "以反讽方式批评编码文化——本身即编码行为，判为 high。"
     },
     "context": {},
     "quality_status": "reviewed",
-    "review_notes": "source=batch9_national_security;"
+    "review_notes": "source=batch9_national_security; fixed_unrealistic_pattern=冲塔+号没了一直冲→反讽别人的编码行为"
   },
   {
     "id": "000409",
@@ -4550,40 +4549,39 @@
   {
     "id": "001127",
     "source_type": "synthetic",
-    "text": "林示言令用这个词替代之后，AI审核终于不误杀了，之前只要提到相关话题就自动屏蔽，现在能正常讨论了",
+    "text": "发现换个词说一样的意思，就不会被系统卡了。中文真是博大精深",
     "context": {},
     "risk_level": "low",
     "encoding_primary": "B1_拆字",
     "encoding_secondary": [
-      "E1_平台黑话"
+      "D2_隐喻"
     ],
     "needs_context": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
-    "hard_negative": true,
+    "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "讨论用某个替代词规避AI审核误杀的经验，属于内容创作者之间分享审核绕过技巧。"
+        "说换一个词表达相同意思就能避免系统拦截——以'中文博大精深'结尾。"
       ],
       "encoding_analysis": [
-        "林示=禁（拆禁为林+示），言令=令（拆令为言+令），组合成'禁言令'→'禁止性'的拆字替代。",
-        "但这里的'林示言令'是指代AI审核系统中的禁止性指令/屏蔽词，说话者在分享如何用替代词绕过误杀。",
-        "这是hard_negative的经典场景：编码形式存在，但用途是帮助正常内容不被误杀。"
+        "B1_拆字/D2_隐喻：'换个词'暗示用拆字/谐音/换字等方式规避关键词检测。'系统卡'→自动审核拦截。'中文博大精深'是对中文规避技巧的调侃式赞美。"
       ],
       "context_analysis": [
-        "内容创作者社区中常见的技术分享。"
+        "对关键词规避技巧的模糊提及。"
       ],
       "supporting_evidence": [
-        "编码形式存在。"
+        "暗示了规避行为的存在",
+        "'系统卡'指向自动审核"
       ],
       "counter_evidence": [
-        "说话者在分享规避AI审核误杀的方法，目的是让正常内容不被错杀。",
-        "没有政治敏感内容，讨论的是审核技术问题。"
+        "'换个词'也可以指正常的措辞优化",
+        "没有具体描述规避方法"
       ],
-      "final_rationale": "编码形式存在但内容是帮助正常表达绕过AI误杀，未涉及敏感话题，hard_negative=true，判为 low。"
+      "final_rationale": "对关键词规避的模糊提及，不具体，判为 low。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r1; encoding=dismantling",
+    "review_notes": "batch=replace_phase3_v2_r1; fixed_unrealistic_pattern=AI审核meta→含蓄表达",
     "split": "train"
   },
   {
@@ -5527,7 +5525,7 @@
     "id": "001448",
     "source_type": "synthetic",
     "platform": "text_comment",
-    "text": "有些直播间表面是棋牌教学，点进去一看全是在'上分''下分'的，懂的都懂。平台也不管管，我举报了好几次都没用",
+    "text": "有些直播间表面是棋牌教学，点进去全是'上分''下分'。举报了好几次也没用",
     "context": {},
     "risk_level": "medium",
     "encoding_primary": "E1_平台黑话",
@@ -5542,26 +5540,25 @@
     "target_known": true,
     "reasoning": {
       "literal_analysis": [
-        "揭露直播平台上的赌博伪装——'棋牌教学'实为赌博，'上分/下分'是赌博充值/提现的黑话。"
+        "揭露棋牌教学直播实为赌博——'上分/下分'是充值/提现黑话，并表达举报无果的无奈。"
       ],
       "encoding_analysis": [
-        "E1_平台黑话：'上分/下分'是棋牌赌博直播中的标准暗语——'上分'即充值/购买筹码，'下分'即提现/兑换现金。'懂的都懂'是对于不言自明的暗示。"
+        "E1_平台黑话：'上分/下分'在棋牌赌博直播中是标准暗语。将赌博伪装为'棋牌教学'是利用平台审核漏洞的常见手法。"
       ],
       "context_analysis": [
-        "揭露直播平台赌博伪装的举报表达。"
+        "对直播赌博伪装的举报和揭露。"
       ],
       "supporting_evidence": [
-        "识别了赌博直播的伪装（棋牌教学）",
-        "解释了赌博黑话",
-        "采取了举报行动"
+        "揭示了赌博伪装的常见手法",
+        "进行了举报行动"
       ],
       "counter_evidence": [
-        "在揭露时提及了赌博运营细节"
+        "揭露行为本身是正面的"
       ],
-      "final_rationale": "揭露直播平台赌博伪装的正面表达，判为 medium。"
+      "final_rationale": "揭露直播赌博伪装，判为 medium。"
     },
     "quality_status": "draft",
-    "review_notes": "source=batch15_p1_gaps; gap=赌博; encoding_target=E1_平台黑话",
+    "review_notes": "source=batch15_p1_gaps; gap=赌博; fixed_unrealistic_pattern=懂的都懂+平台不管→简洁",
     "split": "train"
   },
   {
@@ -6465,13 +6462,12 @@
   {
     "id": "001211",
     "source_type": "synthetic",
-    "text": "哈基米的BGM一响起来我脑子里全是那些被屏蔽的视频画面，本来只是可爱的猫猫狗狗，结果有人把那些不能说的视频配上哈基米的音乐重新发出来，用猫片当封面骗过审核，看完了才发现不对劲",
+    "text": "有人把那种视频配上哈基米的音乐发，封面放个猫，打开一看完全不是那么回事。恶心死了",
     "context": {},
     "risk_level": "medium",
-    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_primary": "E3_互动/热点触发",
     "encoding_secondary": [
-      "B4_符号/空格/Unicode 干扰",
-      "E1_平台黑话"
+      "D2_隐喻"
     ],
     "needs_context": false,
     "ambiguity": "low",
@@ -6479,28 +6475,25 @@
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是使用网络热词对社会现象或个人体验进行描述/评论。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。",
-        "网络热词的使用表明文本来自互联网亚文化圈层——热词本身是语境信号而非风险信号。"
-      ],
-      "supporting_evidence": [
-        "内容涉及平台审核体验——属于用户正常反馈。",
-        "文本表达尖锐但无仇恨言论、暴力威胁或政治颠覆信号。"
+        "描述以哈基米音乐和猫封面为掩护传播不当视频的行为。"
       ],
       "encoding_analysis": [
-        "借用流行文化符号（热词/梗/BGM）作为表达的载体。",
-        "热词编码的风险取决于所包装的内容——社会评论/现象分析属于正常公共表达范畴。"
+        "E3_互动/热点触发：'哈基米的音乐'是一个meme/热点元素，被用于掩盖不当内容。'那种视频'模糊化指代——可能是暴力、色情或政治敏感内容。"
+      ],
+      "context_analysis": [
+        "对平台内容伪装现象的观察。"
+      ],
+      "supporting_evidence": [
+        "猫封面+无关内容的伪装手法确实存在",
+        "表达了反感情绪"
       ],
       "counter_evidence": [
-        "网络热词（鼠鼠/退退退/芭比Q/吗喽等）是圈层自嘲和情绪宣泄的常用载体——大量使用热词的表达属于亚文化共鸣而非实际攻击。",
-        "对平台审核的讨论属于用户正常反馈——讨论审核现象不等同于传播违规内容。"
+        "没有明确说明'那种视频'是什么内容"
       ],
-      "final_rationale": "借用文化符号表达的社会评论（合成样本），内容为现象描述/吐槽而非攻击，判为 medium。"
+      "final_rationale": "对平台内容伪装现象的揭露，判为 medium。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r6; encoding=newslang1; quality_reviewed=hot_terms_r1",
+    "review_notes": "batch=replace_phase3_v2_r6; fixed_unrealistic_pattern=过长+审核meta→简洁描述",
     "split": "train"
   },
   {
@@ -8808,10 +8801,10 @@
   {
     "id": "001237",
     "source_type": "synthetic",
-    "text": "鼠鼠这个自称用久了真的会影响心态，一开始觉得好玩，后来发现说多了自己都信了，开始真的觉得自己就是只老鼠，低人一等、不配拥有好东西。语言的暗示力量真的强大",
+    "text": "以前觉得自称鼠鼠挺好玩的，后来发现说多了自己都信了，真的开始觉得自己低人一等。语言的暗示力量太强了",
     "context": {},
     "risk_level": "low",
-    "encoding_primary": "A1_普通谐音",
+    "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "medium",
@@ -8819,27 +8812,25 @@
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是使用网络热词进行自嘲式的社会评论/生活吐槽。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。",
-        "文本语境轻松——网络热词在此作为幽默/分享/反思的工具而非攻击武器。"
-      ],
-      "supporting_evidence": [
-        "文本核心意图为娱乐/分享/反思而非攻击——网络热词在此作为表达工具。"
+        "反思自称'鼠鼠'（贴吧用语，意为底层普通人像老鼠一样）的心理影响——从玩笑到自我认同。"
       ],
       "encoding_analysis": [
-        "使用热词谐音编码进行轻度社会评论或语言学观察。",
-        "谐音热词在此上下文中仅作为表达工具——内容为反思/观察而非攻击。"
+        "E1_平台黑话：'鼠鼠'是贴吧/网络社区的底层自我认同标签。'说多了自己都信了'揭示了语言标签对自我认知的逆向塑造。"
+      ],
+      "context_analysis": [
+        "对网络自嘲文化的心理反思。"
+      ],
+      "supporting_evidence": [
+        "反映了真实的网络亚文化和心理机制"
       ],
       "counter_evidence": [
-        "文本的核心意图是娱乐/分享/反思而非攻击——网络热词在此作为表达工具而非攻击武器。",
-        "低风险表达属于正常网络交流范畴——区分'使用敏感词汇'与'传播有害内容'是训练的核心目标。"
+        "个人感受的表达",
+        "讨论的是语言心理学而非社会问题"
       ],
-      "final_rationale": "热词谐音包装的轻度表达（合成样本），内容为反思/观察而非攻击，判为 low。"
+      "final_rationale": "对网络自嘲文化的心理反思，判为 low。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r7; encoding=newslang2; quality_reviewed=hot_terms_r1",
+    "review_notes": "batch=replace_phase3_v2_r7; fixed_unrealistic_pattern=过长→保持但适度",
     "split": "train"
   },
   {
@@ -9235,12 +9226,10 @@
     "id": "001056",
     "split": "train",
     "source_type": "synthetic",
-    "text": "占戈土也风云再起，这波操作真是让人看不懂，大国博弈我们老百姓只能吃瓜",
+    "text": "大国博弈我们老百姓只能吃瓜。但瓜吃多了也会消化不良的",
     "risk_level": "low",
-    "encoding_primary": "B1_拆字",
-    "encoding_secondary": [
-      "D3_借代"
-    ],
+    "encoding_primary": "D2_隐喻",
+    "encoding_secondary": [],
     "needs_context": false,
     "hard_negative": false,
     "ambiguity": "low",
@@ -9251,25 +9240,26 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本讨论'占戈土也'(战地)的风云变化，感叹大国博弈令普通人只能旁观吃瓜。"
+        "以'吃瓜'（围观不参与）来描述对大国博弈的态度，但以'消化不良'暗示负面后果。"
       ],
       "encoding_analysis": [
-        "'占戈土也'='战地'的拆字——'战'拆为'占+戈'，'地'拆为'土+也'。但此处的拆字更像是贴吧的戏谑性语言游戏而非严肃的审查规避——因为'战地'本身不是高敏词汇。'大国博弈''吃瓜'表明是温和的地缘政治闲聊。拆字的游戏性大于规避性。"
+        "D2_隐喻：'吃瓜'是网络用语——旁观不参与。'消化不良'暗示围观本身也会带来负面影响——可能是心理上的也可能是实际上的。这个隐喻自然流畅，不像模板。"
       ],
       "context_analysis": [
-        "无额外上下文。拆字在此更接近语言游戏而非政治规避。"
+        "对国际政治中普通人处境的日常表达。"
       ],
       "supporting_evidence": [
-        "(1) 使用了拆字形式'占戈土也'；(2) 讨论地缘政治话题。"
+        "'吃瓜'和'消化不良'的隐喻连贯",
+        "表达自然不像是模板"
       ],
       "counter_evidence": [
-        "(1)'战地'本身非高敏词汇——正常的'战地'讨论不太需要拆字规避；(2)'吃瓜'表明旁观者姿态而非政治行动；(3) 拆字的游戏性大于规避性。整体更接近贴吧的戏谑语言游戏。"
+        "只是对普通人处境的感慨"
       ],
-      "final_rationale": "拆字使用但规避意图弱，游戏性大于政治性，判为 low。"
+      "final_rationale": "以吃瓜隐喻表达对国际政治的旁观者心态，判为 low。"
     },
     "context": {},
     "quality_status": "reviewed",
-    "review_notes": "source=batch11_gap_fill;"
+    "review_notes": "source=batch11_gap_fill; fixed_unrealistic_pattern=看不懂→吃瓜隐喻"
   },
   {
     "id": "000100",
@@ -10207,7 +10197,7 @@
   {
     "id": "001341",
     "source_type": "synthetic",
-    "text": "楼上说的那个暗号我知道，但这儿不能说，你加我q小号我跟你讲，账号看我简介",
+    "text": "楼上说的那个我懂，你加我q小号，账号在我简介",
     "context": {
       "title": "",
       "description": "",
@@ -10216,40 +10206,32 @@
     },
     "risk_level": "high",
     "encoding_primary": "E3_互动/热点触发",
-    "encoding_secondary": [
-      "E1_平台黑话",
-      "F_组合编码"
-    ],
+    "encoding_secondary": [],
     "needs_context": true,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表示知道楼上所说的'暗号'，但不在公开场合解释，引导对方加QQ小号私下沟通。"
+        "对前一个评论的回应——表示理解并引导至私密渠道（QQ小号）。"
       ],
       "encoding_analysis": [
-        "'暗号'+'这儿不能说'+'q小号'的组合指向明确的规避行为——①承认存在编码信息（暗号），②承认公开讨论有风险（这儿不能说），③提供规避渠道（QQ小号/看简介）。",
-        "这是互动触发+F组合编码的案例——需要楼上的暗号作为触发，然后通过平台跳转（QQ小号）完成信息传递的最后一环。",
-        "QQ小号的使用暗示需要分离身份——进一步确认了讨论内容的敏感性。"
+        "E3_互动/热点触发：典型的评论区'接力'——公开识别同伙→私下沟通。'q小号'说明行为者使用专门账号来规避追踪。"
       ],
       "context_analysis": [
-        "论坛/评论区的楼中楼互动场景。",
-        "极度依赖上下文——看不到楼上说的'暗号'是什么。"
+        "评论区中的私密渠道引流行为。"
       ],
       "supporting_evidence": [
-        "暗号承认+风险承认+规避渠道提供的三步行为链。",
-        "QQ小号的使用暗示身份分离需求。",
-        "在公开评论区引导至私域的转换模式。"
+        "使用小号和简介作为引流方式",
+        "对楼上内容的'懂'表示识别了暗语"
       ],
       "counter_evidence": [
-        "也可能只是年轻人之间的隐私习惯——有些人不喜欢在公开评论区讨论任何私人话题，包括无风险的。",
-        "'暗号'可能只是圈内梗/粉丝用语——很多亚文化社区有大量圈内专用词汇（暗号）。"
+        "没有具体说明要沟通什么内容"
       ],
-      "final_rationale": "编码承认+渠道引导+身份分离的三步规避链，指向敏感内容但需要上下文确认具体内容，判为 high + needs_context。"
+      "final_rationale": "评论区的私密渠道引流，判为 high。"
     },
     "quality_status": "draft",
-    "review_notes": "source=batch13_encoding_fill; encoding_target=E3_互动/热点触发; topic=违法犯罪; needs_context",
+    "review_notes": "source=batch13_encoding_fill; fixed_unrealistic_pattern=这儿不能说→简洁",
     "split": "train"
   },
   {
@@ -11473,7 +11455,7 @@
   {
     "id": "001346",
     "source_type": "synthetic",
-    "text": "昨晚群炸了，群主说是最近在扫那种emoji打招呼再发数字最后你懂的结尾的三段式，好几个群都没了，妈的得换个暗号体系了不然下次就是我们",
+    "text": "昨晚群没了，群主说是那种'先发emoji打招呼→然后发数字→最后说懂的都懂'的三段式暗号触发了，好几个群同一时间没的。得换个玩法了",
     "context": {
       "title": "",
       "description": "",
@@ -11483,8 +11465,6 @@
     "risk_level": "medium",
     "encoding_primary": "F_组合编码",
     "encoding_secondary": [
-      "B4_符号/空格/Unicode 干扰",
-      "C3_数字代指",
       "E1_平台黑话"
     ],
     "needs_context": false,
@@ -11493,29 +11473,25 @@
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "文本讲述所在的群因为使用了'emoji+数字+你懂的'三段式编码而被封，表达了需要更换编码策略的焦虑。"
+        "描述群组因使用三段式暗号被解散——emoji→数字→'懂的都懂'，提出需要换'玩法'。"
       ],
       "encoding_analysis": [
-        "文本详细描述了一种三步编码仪式：emoji打招呼，数字串传递信息，你懂的结尾确认。这是典型的F组合编码——emoji（B4）+数字（C3）+平台黑话（E1）的三层叠加。",
-        "说话者不是旁观者而是参与者——'妈的得换个暗号体系了不然下次就是我们'表明他是编码使用者和传播者，在寻求编码升级。"
+        "F_组合编码：描述了emoji+数字+暗语的组合规避方式。'群没了'→被解散/封禁。'换玩法'→更换规避策略。"
       ],
       "context_analysis": [
-        "群被封是真实的内容审核事件——暗示该编码体系已被监控。",
-        "编码社区内部的策略讨论场景。"
+        "规避策略被识别后的应急讨论。"
       ],
       "supporting_evidence": [
-        "编码仪式的结构化描述（三个步骤）。",
-        "群被封的事实暗示内容的严重性。",
-        "寻求编码升级——确认说话者的参与者身份。"
+        "描述了三段式暗号的结构",
+        "多个群同一时间被解散暗示了系统性识别"
       ],
       "counter_evidence": [
-        "也可以是纯粹的网络谣言/夸大——关于群被封的段子在中国互联网上广泛存在。",
-        "这种三步编码在很多非政治场景（如粉丝群）也存在。"
+        "群被解散可能不是因为暗号而是因为违规内容"
       ],
-      "final_rationale": "参与者视角的编码体系描述+审查规避策略调整，编码意图明确，判为 medium。"
+      "final_rationale": "规避策略被识别后的应急讨论，判为 medium。"
     },
     "quality_status": "draft",
-    "review_notes": "source=batch13_encoding_fill; encoding_target=F_组合编码; topic=政治错误",
+    "review_notes": "source=batch13_encoding_fill; fixed_unrealistic_pattern=群炸了meta→群没了",
     "split": "train"
   },
   {
@@ -12747,9 +12723,9 @@
   {
     "id": "001266",
     "source_type": "synthetic",
-    "text": "我姥姥今年八十了，看抖音学会了'家人们谁懂啊'，现在每次跟我视频第一句话就是家人们谁懂啊我孙子又瘦了，全世界最潮的姥姥",
+    "text": "我姥姥八十了，看抖音学会了'谁懂啊'，现在每次跟我视频都说谁懂啊我孙子又瘦了。全世界最潮的姥姥",
     "context": {},
-    "risk_level": "low",
+    "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
     "needs_context": false,
@@ -12758,22 +12734,25 @@
     "hard_negative": true,
     "reasoning": {
       "literal_analysis": [
-        "姥姥学会网络用语的温馨趣事。"
+        "分享80岁姥姥学会抖音流行语'谁懂啊'的温馨故事。"
       ],
       "encoding_analysis": [
-        "家人们谁懂啊=老人学的网络用语。"
+        "没有任何编码。'谁懂啊'作为流行语的日常使用。场景是温馨的代际互动。"
       ],
       "context_analysis": [
-        "家庭温馨。"
+        "温馨的家庭代际故事。"
       ],
-      "supporting_evidence": [],
+      "supporting_evidence": [
+        "真实的生活细节",
+        "温馨自然的分享"
+      ],
       "counter_evidence": [
-        "纯温馨。"
+        "无任何风险"
       ],
-      "final_rationale": "跨代际网络用语分享，hard_negative=true，判为 low。"
+      "final_rationale": "温馨的家庭趣事分享，判为 none。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r8; encoding=pronunciation",
+    "review_notes": "batch=replace_phase3_v2_r8; fixed_unrealistic_pattern=家人们→谁懂啊（更自然）",
     "split": "train"
   },
   {
@@ -13938,7 +13917,7 @@
     "id": "001062",
     "split": "train",
     "source_type": "synthetic",
-    "text": "现在我家娃回家天天喊'退退退'，在学校学了一堆这种话回来，我已经听不懂00后在说什么了",
+    "text": "我家娃天天喊'退退退'，在学校学了一堆听不懂的话回来，我已经跟不上了",
     "risk_level": "none",
     "encoding_primary": "none",
     "encoding_secondary": [],
@@ -13952,25 +13931,26 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本讲述孩子从学校学回来'退退退'等网络用语，家长表示听不懂年轻一代的语言。"
+        "描述孩子在学网络流行语——家长表示跟不上时代。"
       ],
       "encoding_analysis": [
-        "'退退退'在2023-2024年从小红书/抖音的咒语式驱赶梗出圈——网红在视频中说'退退退'来驱赶不喜欢的东西。此处为纯代际文化差异观察——无任何政治编码。hard_negative：校准模型区分'退退退'的安全用法（孩子流行语）和潜在的反讽用法（驱赶正能量/主流话语）。"
+        "没有任何编码。'退退退'是网络流行语。表达的是代际文化隔阂——一个完全正常且普遍的家庭场景。"
       ],
       "context_analysis": [
-        "无额外上下文。代际语言差异讨论为中国互联网的安全话题。"
+        "正常的亲子生活分享。"
       ],
       "supporting_evidence": [
-        "(1) 明确的代际文化差异讨论场景；(2) 无政治编码或规避意图；(3) 表达的是家长的正常困惑。"
+        "真实反映代际文化差异",
+        "温馨的日常分享"
       ],
       "counter_evidence": [
-        "'退退退'在某些语境下可能被用作反讽。但在'孩子学话+听不懂'的明确代际场景下是安全的。"
+        "无任何风险"
       ],
-      "final_rationale": "安全的代际文化观察，hard_negative=True。"
+      "final_rationale": "正常的亲子日常分享，判为 none。"
     },
     "context": {},
     "quality_status": "reviewed",
-    "review_notes": "source=batch11_gap_fill;"
+    "review_notes": "source=batch11_gap_fill; fixed_unrealistic_pattern=00后→我家娃（更口语化）"
   },
   {
     "text": "家人们谁懂啊，今天早上打开微博想看看昨晚发生了什么事，结果热搜前十条有八条是明星穿搭和综艺片段，剩下两条是系统自动推送的广告，真正想看的新闻一条都没有",
@@ -14055,40 +14035,38 @@
   {
     "id": "001254",
     "source_type": "synthetic",
-    "text": "栓Q了真的栓Q了，这破地方连个吃饭的地儿都找不到结果一问才知道隔壁那条街五家馆子全被封了，说是消防不达标，但消防三个月前刚查过啊，你猜这次为什么突然又来查？因为这条街的商户拒绝交保护费",
+    "text": "我们这条街五家馆子全关门了，说是消防不达标。三个月前刚查过消防，现在又不达标了。后来才知道是没交那个钱",
     "context": {},
     "risk_level": "high",
-    "encoding_primary": "A1_普通谐音",
-    "encoding_secondary": [
-      "A4_外语谐音/跨语言音译",
-      "C5_概念替换"
-    ],
+    "encoding_primary": "D2_隐喻",
+    "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "用栓Q（thank you的谐音）吐槽餐馆被封，揭露真正原因是拒交保护费。"
+        "描述街边五家餐馆因消防名义关门——但'三个月前刚查过'暗示真正原因是'没交那个钱'（保护费/灰色费用）。"
       ],
       "encoding_analysis": [
-        "栓Q=thank you的谐音（2022年起流行），在此作为讽刺性语气词。",
-        "消防检查→刚查过→突然又来→拒交保护费：完整揭露了执法为腐败服务的叙事。",
-        "保护费指向基层执法人员利用职权进行勒索。"
+        "D2_隐喻：'那个钱'模糊化指代保护费或灰色支出。'消防不达标'被揭示为选择性执法的借口。整个叙事构建了基层腐败的图景。"
       ],
       "context_analysis": [
-        "基层执法腐败是敏感话题。"
+        "对基层选择性执法和灰色收费的揭露。"
       ],
       "supporting_evidence": [
-        "谐音包装下的基层腐败揭露。"
+        "消防复查时间线矛盾",
+        "'那个钱'暗示腐败",
+        "具体地点增加了可信度"
       ],
       "counter_evidence": [
-        "可以只是抱怨消防检查。"
+        "没有说出'那个钱'具体是什么",
+        "可能是商业竞争者散布的谣言"
       ],
-      "final_rationale": "谐音梗包装的基层执法腐败揭露，判为 high。"
+      "final_rationale": "以具体案例揭露基层选择性执法和灰色收费，判为 high。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r8; encoding=pronunciation",
+    "review_notes": "batch=replace_phase3_v2_r8; fixed_unrealistic_pattern=栓Q开头→自然叙述",
     "split": "train"
   },
   {
@@ -15432,38 +15410,36 @@
     "id": "000993",
     "split": "train",
     "source_type": "synthetic",
-    "text": "谜语人能不能说人话，绕来绕去的有意思吗",
+    "text": "谜语人能不能说正常话，绕来绕去的显着你智商高是吧",
     "risk_level": "high",
     "encoding_primary": "D1_反讽",
-    "encoding_secondary": [
-      "D2_隐喻",
-      "E1_平台黑话"
-    ],
+    "encoding_secondary": [],
     "needs_context": true,
     "hard_negative": false,
     "ambiguity": "medium",
     "evidence_strength": "strong",
     "reasoning": {
       "literal_analysis": [
-        "文本字面意思：批评'谜语人'——说话拐弯抹角不直接的人。"
+        "批评'谜语人'（指喜欢用隐晦编码表达的人）——要求说'正常话'，讽刺他们绕来绕去是为了显智商。"
       ],
       "encoding_analysis": [
-        "'谜语人'在中文互联网中指说话绕弯子/不直接的人。在贴吧鉴证中，这个标签经常被用于攻击那些在敏感话题上'不敢直说'的人——即在高压言论环境中被迫采用隐喻/绕弯表达的人。'说人话'要求对方直接表达——暗示对方在规避什么。但在贴吧语境中，'谜语人'往往是因为不便直说才绕弯——这不是沟通偏好而是言论环境的产物。"
+        "D1_反讽：'显着你智商高是吧'是典型的网络反语——字面上说智商高，实际在说这种行为很蠢。但更深层地——这本身也是在表达对编码环境的厌烦。"
       ],
       "context_analysis": [
-        "需要上下文确定'绕来绕去'的话题是什么。在贴吧中，此被用于敏感政治讨论的标签。"
+        "对编码文化的批评——这本身也是编码表达的一种形式。"
       ],
       "supporting_evidence": [
-        "(1) '谜语人'暗示对方因言论压力而不敢直说；(2) '说人话'要求打破言论约束；(3) 在贴吧中，此标签的使用本身就是对言论环境高压的承认——人们成为'谜语人'正是因为某些话题不能直说。"
+        "反语结构清晰",
+        "反映了对编码文化的真实厌烦"
       ],
       "counter_evidence": [
-        "可能是对人际沟通风格的不满——不涉及政治。但在贴吧政治讨论中，'谜语人'经常被用于描述在敏感话题上绕弯的人。"
+        "也可能只是网络上的普通互怼"
       ],
-      "final_rationale": "言论环境高压的含蓄揭露——'谜语人'现象的存在本身就说明某些话题不能直说，判为 high，标注 needs_context。"
+      "final_rationale": "以反讽批评编码文化，判为 high。"
     },
     "context": {},
     "quality_status": "reviewed",
-    "review_notes": "source=batch10_new_patterns;"
+    "review_notes": "source=batch10_new_patterns; fixed_unrealistic_pattern=谜语人能不能说人话→更自然的版本"
   },
   {
     "id": "001115",
@@ -15958,10 +15934,10 @@
   {
     "id": "001242",
     "source_type": "synthetic",
-    "text": "芭比Q这个词其实挺有意思的，一个烧烤变成了'完蛋了'的意思，关键是这个转化过程没有任何逻辑——纯粹是发音像然后大家觉得好玩就用了，中文互联网每天都有这种毫无逻辑但大家都懂的词诞生",
+    "text": "芭比Q=完蛋了，这两个词之间唯一的联系是发音像。就这，全网都在用。中文互联网造词真的不需要逻辑",
     "context": {},
     "risk_level": "low",
-    "encoding_primary": "none",
+    "encoding_primary": "A1_普通谐音",
     "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "low",
@@ -15969,28 +15945,25 @@
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是使用网络热词作为语气/情绪包装进行吐槽或评论。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。",
-        "文本语境轻松——网络热词在此作为幽默/分享/反思的工具而非攻击武器。"
-      ],
-      "supporting_evidence": [
-        "文本为语言学/传播学观察——属于知识讨论范畴。",
-        "文本核心意图为娱乐/分享/反思而非攻击——网络热词在此作为表达工具。"
+        "指出'芭比Q'（BBQ烧烤）→'完蛋了'的谐音演变，观察其无逻辑的传播特点。"
       ],
       "encoding_analysis": [
-        "该文本为日常表达/段子/趣事分享，未使用编码手法包装风险内容。",
-        "文本可能提及网络热词或敏感话题，但语境是轻松的——幽默、人情故事或语言学观察。"
+        "A1_谐音：芭比Q→BBQ→哔哔Q→完蛋了，通过多层语音近似完成语义迁移。'不需要逻辑'是对这种任意性的调侃。"
+      ],
+      "context_analysis": [
+        "对网络谐音演变机制的观察。"
+      ],
+      "supporting_evidence": [
+        "准确描述了谐音演变路径"
       ],
       "counter_evidence": [
-        "文本的核心意图是娱乐/分享/反思而非攻击——网络热词在此作为表达工具而非攻击武器。",
-        "低风险表达属于正常网络交流范畴——区分'使用敏感词汇'与'传播有害内容'是训练的核心目标。"
+        "纯粹的语言现象观察",
+        "无风险指向"
       ],
-      "final_rationale": "日常段子/趣事/语言观察（合成样本），无风险意图，判为 low。"
+      "final_rationale": "对网络谐音词的观察，判为 low。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r7; encoding=newslang2; quality_reviewed=hot_terms_r1",
+    "review_notes": "batch=replace_phase3_v2_r7; fixed_unrealistic_pattern=过长→缩短",
     "split": "train"
   },
   {
@@ -17479,41 +17452,37 @@
   {
     "id": "001276",
     "source_type": "synthetic",
-    "text": "CNMB这个词是最纯粹的中文互联网声音，一个字都不用改就能同时表达愤怒、无奈、反抗和认命。你可以在任何场景下用它——看到贪官新闻CNMB、被无故扣工资CNMB、小区又被封了CNMB，它是一个万能公式",
+    "text": "看到贪官新闻CNMB，被扣工资CNMB，小区封了CNMB。CNMB是万能公式",
     "context": {},
     "risk_level": "high",
     "encoding_primary": "A2_拼音/首字母缩写",
-    "encoding_secondary": [
-      "D1_反讽",
-      "E1_平台黑话"
-    ],
+    "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "讨论CNMB（肏你妈屄）作为万能愤怒表达。"
+        "描述CNMB作为'万能公式'在各种负面场景中的使用——贪官、扣工资、封小区。"
       ],
       "encoding_analysis": [
-        "CNMB=肏你妈屄（拼音首字母缩写），中文互联网最经典的骂人话之一。",
-        "贪官新闻+被扣工资+小区被封——将骂人话的靶向性拓展到政治/经济/社会三重不满。",
-        "万能公式的说法将CNMB从一个具体骂人话提升为一个时代的情绪符号。"
+        "A2_拼音缩写：CNMB（操你妈逼）是中文互联网上最常见的辱骂缩写之一。文本展示了该词在不同政治/社会语境中的使用——从明确的政治事件（贪官）到日常生活（扣工资）再到社会事件（封小区）。"
       ],
       "context_analysis": [
-        "社会情绪的编码表达。"
+        "通过展示一个辱骂词的多场景使用来暗示社会问题。"
       ],
       "supporting_evidence": [
-        "CNMB的万能公式化。",
-        "政治/经济/社会三重靶向。"
+        "提及了多个敏感话题（贪官、封控）",
+        "以辱骂词为纽带连接不同社会事件"
       ],
       "counter_evidence": [
-        "只是粗口讨论。"
+        "CNMB本身只是辱骂而非政治表达",
+        "只展示了使用场景而没有明确的政治主张"
       ],
-      "final_rationale": "骂人话的政治化万能公式，多重靶向指向社会不满，判为 high。"
+      "final_rationale": "以辱骂词的跨场景使用暗示社会不满的普遍性，判为 high。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r9; encoding=numbers+abuse",
+    "review_notes": "batch=replace_phase3_v2_r9; fixed_unrealistic_pattern=过长分析→短评",
     "split": "train"
   },
   {
@@ -18950,7 +18919,7 @@
     "id": "000530",
     "split": "train",
     "source_type": "synthetic",
-    "text": "上次看到这么多人聚集还是……算了不说了",
+    "text": "上次看到这么多人聚集还是跨年的时候",
     "context": {
       "title": "",
       "description": "",
@@ -18958,10 +18927,8 @@
       "topic": ""
     },
     "risk_level": "medium",
-    "encoding_primary": "C2_历史事件影射",
-    "encoding_secondary": [
-      "E1_平台黑话"
-    ],
+    "encoding_primary": "D2_隐喻",
+    "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
@@ -18972,34 +18939,32 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "想说上次类似的大规模聚集场景但欲言又止。"
+        "说'上次看到这么多人'——暗示当前也看到了很多人聚集，但只说'上次是跨年'。"
       ],
       "encoding_analysis": [
-        "省略号+欲言又止指向某个敏感的公众聚集事件。",
-        "C2/E1组合：用未完成的比较暗示敏感事件。"
+        "D2_隐喻：通过省略当前场景、只提'上次跨年'来暗示当前也在目睹大规模聚集。这种'只说不相关的事'本身就是一种表达——暗示当前场景不可明说。"
       ],
       "context_analysis": [
-        "无上下文时指向模糊，但'算了不说了'是强烈的自我审查信号。"
+        "通过省略和对比隐晦地指涉当前的人群聚集。"
       ],
       "supporting_evidence": [
-        "'算了不说了'在简中互联网是常见的自我审查标记，暗示后续内容敏感。",
-        "句式本身在邀请读者自行脑补。"
+        "省略表达是真实的中文隐晦方式",
+        "跨年→当前事件的对比有暗示效果"
       ],
       "counter_evidence": [
-        "也可能是日常吐槽，比如'上次看到这么多人还是演唱会'之类。",
-        "省略的内容可以是无害的。"
+        "也可能只是刚好想到了跨年而非有意影射"
       ],
-      "final_rationale": "自我审查标记明显，但省略的内容方向不确定，无上下文时只能判medium。"
+      "final_rationale": "以省略和对比进行隐晦指涉，判为 medium。"
     },
     "quality_status": "approved",
-    "review_notes": "source=batch1_natural; replaces old synthetic"
+    "review_notes": "source=batch1_natural; fixed_unrealistic_pattern=算了不说了→幽默化"
   },
   {
-    "text": "感谢国家，感谢平台，感谢审核员，我这评论删三次了还发",
+    "text": "监控装了那么多，唐山打人的时候监控刚好就坏了是吧。人脸识别抓嫖抓赌一抓一个准，抓黑社会就抓不着了",
     "risk_level": "high",
     "encoding_primary": "D1_反讽",
     "encoding_secondary": [
-      "E1_平台黑话"
+      "D2_隐喻"
     ],
     "ambiguity": "low",
     "evidence_strength": "strong",
@@ -19020,27 +18985,27 @@
     },
     "reasoning": {
       "literal_analysis": [
-        "感谢各方后表明自己评论被多次删除。"
+        "以唐山事件为切入点，对比监控系统在执法中的选择性——抓嫖抓赌有效但抓黑社会失效。"
       ],
       "encoding_analysis": [
-        "D1反讽：三重感谢的堆叠是明显的反讽结构。",
-        "E1：讨论平台审核删除行为。"
+        "D1_反讽：'刚好就坏了'是典型的反语，暗示监控是选择性'坏'的。'一抓一个准'和'抓不着了'的对比构建了对执法选择性的讽刺。"
       ],
       "context_analysis": [
-        "'删三次还发'表明用户在对抗审核。"
+        "对执法不公和监控滥用的批评。"
       ],
       "supporting_evidence": [
-        "三重感谢的过度夸张明确指向反讽。",
-        "删除经历证实了内容敏感。"
+        "提及了真实的社会事件背景",
+        "对比结构清晰揭示了双重标准",
+        "监控系统存在的问题是公众关注的话题"
       ],
       "counter_evidence": [
-        "可能是发广告被删的抱怨。",
-        "但这种三重感谢的句式几乎总是政治相关的反讽。"
+        "表达方式仍然较为间接",
+        "没有明确指控具体人员或机构"
       ],
-      "final_rationale": "过度感谢+删帖对抗行为，反讽意图明确，判high。"
+      "final_rationale": "以反讽对比批评执法选择性，指向明确，判为 high。"
     },
     "quality_status": "approved",
-    "review_notes": "source=batch2_natural; replaces old synthetic"
+    "review_notes": "source=batch2_natural; fixed_unrealistic_pattern=感谢审核员→具体反讽"
   },
   {
     "id": "000248",
@@ -22542,7 +22507,7 @@
     "id": "001418",
     "source_type": "synthetic",
     "platform": "text_comment",
-    "text": "神韵的票谁买谁傻逼，花几百块钱看一群人在台上扭秧歌，朋友圈还有人安利说'这是被禁的艺术'，被禁不是因为它是艺术，是因为背后那点事，懂吧",
+    "text": "神韵的票谁买谁傻逼，花几百块钱看一群人在台上扭秧歌。朋友圈还有人安利说'这是被禁的艺术'——被禁不是因为它是艺术好吧",
     "context": {},
     "risk_level": "medium",
     "encoding_primary": "E1_平台黑话",
@@ -22557,25 +22522,25 @@
     "target_known": true,
     "reasoning": {
       "literal_analysis": [
-        "批评朋友推荐'神韵'演出——指出神韵不是被禁的艺术而是与法轮功组织有关。"
+        "批评朋友推荐'神韵'演出——指出其因背后的法轮功组织而被禁，而非因为艺术本身。"
       ],
       "encoding_analysis": [
-        "E1_平台黑话：'神韵'（神韵演出）是法轮功组织运营的演出团体，经常以'被禁的中国艺术'为包装进行海外演出。'背后那点事'是模糊化指代法轮功背景。'懂吧'是暗示不言自明信息的常见手法。"
+        "E1_平台黑话：'神韵'是法轮功相关演出。'被禁的艺术'是该演出常用的包装话术——将被禁原因归结为艺术审查而非组织背景。文本直接戳穿了这一包装。"
       ],
       "context_analysis": [
-        "揭露神韵演出的法轮功背景。"
+        "揭露法轮功相关演出的包装话术。"
       ],
       "supporting_evidence": [
         "识别了'被禁的艺术'包装话术",
-        "指出禁止原因是背后的邪教组织而非艺术本身"
+        "直接点出被禁原因不是艺术"
       ],
       "counter_evidence": [
-        "在揭露时提及了法轮功相关组织的详细名称"
+        "提及了法轮功相关组织名称"
       ],
-      "final_rationale": "揭露法轮功相关组织的伪装，虽提及敏感组织名称但立场正确，判为 medium。"
+      "final_rationale": "揭露法轮功相关演出的伪装，立场正确，判为 medium。"
     },
     "quality_status": "draft",
-    "review_notes": "source=batch15_p1_gaps; gap=法轮功; encoding_target=E1_平台黑话",
+    "review_notes": "source=batch15_p1_gaps; gap=法轮功; fixed_unrealistic_pattern=背后那点事懂吧→直接怼",
     "split": "train"
   },
   {
@@ -25441,7 +25406,7 @@
   {
     "id": "001297",
     "source_type": "synthetic",
-    "text": "最近那个大ㄕ件你们听说了吗？我不敢说太明白，反正就是北方那边的事情",
+    "text": "最近北方那边的大ㄕ件你们听说了吗",
     "context": {
       "title": "",
       "description": "",
@@ -25450,41 +25415,33 @@
     },
     "risk_level": "high",
     "encoding_primary": "B3_形近字替换",
-    "encoding_secondary": [
-      "C2_历史事件影射",
-      "E1_平台黑话"
-    ],
+    "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是在询问听众是否听说过某个发生在北方的事件，同时表示不敢明说。"
+        "简短地提及'北方那边的大ㄕ件'——'ㄕ'是注音符号插入，替代了某个字的一部分。"
       ],
       "encoding_analysis": [
-        "'大ㄕ件'中的'ㄕ'是注音符号（相当于拼音shi），替换'事'字形成'大事丿件'，这是一种注音符号+形近替换的混合规避。",
-        "注音符号ㄕ本身不代表风险，但嵌入'大事X'结构中形成明显规避痕迹——说话者故意不用正常汉字，说明所指事件是敏感内容。",
-        "配合'我不敢说太明白'的自我审查表述，进一步确认了编码意图。"
+        "B3_形近字替换+B4_符号干扰：'ㄕ'是注音符号（bopomofo），在中文语境中插入——可能替换某敏感词中的一个字（如'事'→'ㄕ件'），使关键词不完整而无法被机械过滤。"
       ],
       "context_analysis": [
-        "'北方那边'在中国互联网语境中通常指北京或东北，暗示涉及政治权力中心的事件。",
-        "无具体上下文，但'我不敢说太明白'本身就是语境信号——说话者在进行自我审查。"
+        "以干扰字符讨论敏感事件——短而隐晦。"
       ],
       "supporting_evidence": [
-        "注音符号嵌入中文词汇的位置不自然，排除正常排版错误。",
-        "自我审查表述（不敢说太明白）与规避编码形成互证。",
-        "'北方那边'的空间指向缩小了可能的事件范围。"
+        "注音符号的插入有明显的规避意图",
+        "北方+特定事件的组合有指向性"
       ],
       "counter_evidence": [
-        "注音符号可能是输入法切换失误——台湾用户在大陆平台输入时偶尔会出现注音残留。",
-        "如果是学习注音的汉语学习者或语言学讨论，注音出现是正常的。",
-        "没有足够上下文确认所指事件的具体性质，可能只是普通社会新闻。"
+        "只询问'听说了吗'而没有描述事件内容",
+        "注音符号的使用可能是输入法错误"
       ],
-      "final_rationale": "注音符号替换+自我审查表述+空间暗示，多重信号指向敏感事件讨论，判为 high。"
+      "final_rationale": "以字符干扰方式询问敏感事件，判为 high。"
     },
     "quality_status": "draft",
-    "review_notes": "source=batch13_encoding_fill; encoding_target=B3_形近字替换; topic=政治错误",
+    "review_notes": "source=batch13_encoding_fill; fixed_unrealistic_pattern=不敢说太明白→直接用形近字",
     "split": "train"
   },
   {
@@ -27279,12 +27236,12 @@
   {
     "id": "001136",
     "source_type": "synthetic",
-    "text": "JZ这东西在知乎上已经没法正经玩了，发啥都有人举报，动不动就政治敏感，我一个讲古代税制的回答都被夹了，审核的阈值是不是调太高了",
+    "text": "在知乎上聊古代税制都能被举报，我只是想讨论学术问题而已，惹到谁了",
     "context": {},
     "risk_level": "medium",
-    "encoding_primary": "A2_拼音/首字母缩写",
+    "encoding_primary": "C5_概念替换",
     "encoding_secondary": [
-      "E1_平台黑话"
+      "D1_反讽"
     ],
     "needs_context": false,
     "ambiguity": "medium",
@@ -27292,30 +27249,26 @@
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "抱怨知乎上键政讨论环境恶化，连讲古代税制的正常回答都被误删，认为审核机制过于敏感。"
+        "描述在知乎讨论古代税制——本是学术话题——却被举报的经历。'惹到谁了'暗示举报的无理性。"
       ],
       "encoding_analysis": [
-        "JZ=键政，用缩写来标注讨论对象。",
-        "讨论的是审核机制本身——这是中国互联网上常见的'元话题'（讨论什么能被讨论）。",
-        "'讲古代税制的回答都被夹了'是个重要的限定——说明说话者认为自己被错杀。",
-        "'夹了'是'被夹'(被删除/被屏蔽)的口语化表达，是平台黑话。"
+        "C5_概念替换：古代税制的讨论可能被解读为对当代税收的影射。'惹到谁了'暗示举报者认为该讨论触碰了敏感线。"
       ],
       "context_analysis": [
-        "知乎近年确实加强了内容审核，大量历史类回答被误删，在用户中引发不满。",
-        "此类讨论常见但通常不上升到体制批判。"
+        "对学术讨论被误伤的吐槽。"
       ],
       "supporting_evidence": [
-        "JZ缩写存在，审查讨论存在。"
+        "古代税制可以影射当代税收问题",
+        "'惹到谁了'的反问暗示了举报的不合理性"
       ],
       "counter_evidence": [
-        "讨论的是审核误杀而不是政治敏感内容本身。",
-        "说话者说自己写的是'古代税制'——一个不敏感的话题。",
-        "抱怨审核机制不一定违法的，是合法的用户反馈。"
+        "被举报可能只是普通用户的误解",
+        "只是个人经历而非系统性批评"
       ],
-      "final_rationale": "JZ缩写+审核机制讨论，但讨论对象是误杀问题而非政治敏感内容，不满指向审核精度而非审查制度本身，判为 medium。"
+      "final_rationale": "以个人经历吐槽学术讨论被误伤，判为 medium。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r2; encoding=abbreviation",
+    "review_notes": "batch=replace_phase3_v2_r2; fixed_unrealistic_pattern=审核meta→具体情境",
     "split": "train"
   },
   {
@@ -27449,7 +27402,7 @@
     "id": "001409",
     "source_type": "synthetic",
     "platform": "bilibili",
-    "text": "有博主发了藏羚羊的保护现状，评论里就有人开始发散'可可西里无人区其实是...'你懂的。保护动物的视频下面也要搞这些，真的烦",
+    "text": "有博主发了藏羚羊的保护现状，评论里就有人开始发散'可可西里无人区其实是...'保护动物的视频下面也要搞这些，真无语",
     "context": {},
     "risk_level": "medium",
     "encoding_primary": "E3_互动/热点触发",
@@ -27464,26 +27417,26 @@
     "target_known": true,
     "reasoning": {
       "literal_analysis": [
-        "吐槽在可可西里/藏羚羊保护视频下，有人借题发挥散播政治言论。"
+        "吐槽藏羚羊视频下有人借题发挥——'可可西里无人区其实是...'省略的内容暗示敏感政治关联。"
       ],
       "encoding_analysis": [
-        "E3_互动/热点触发：评论者利用保护动物的视频作为入口，将话题引向政治敏感方向。'你懂的'是典型的不言自明的暗示手法。'可可西里无人区其实是...'省略的内容暗示与西藏相关的政治叙事。"
+        "E3_互动/热点触发：利用保护动物视频作为入口，将话题引向政治方向。'真无语'表达了厌烦情绪。"
       ],
       "context_analysis": [
-        "用户识别并吐槽他人在正常内容下插入政治敏感言论的行为。"
+        "对他人利用正常内容进行政治触发的反感表达。"
       ],
       "supporting_evidence": [
-        "识别了他人的政治敏感触发行为",
+        "识别了他人的政治触发行为",
         "保护动物的立场是正面的"
       ],
       "counter_evidence": [
         "文本本身是揭露而非传播",
         "省略了敏感内容的具体表述"
       ],
-      "final_rationale": "揭发他人在正常内容下传播敏感言论的行为，本身立场正确但因涉及敏感话题的讨论，判为 medium。"
+      "final_rationale": "揭发他人在正常内容下传播敏感言论的行为，判为 medium。"
     },
     "quality_status": "draft",
-    "review_notes": "source=batch15_p1_gaps; gap=西藏; encoding_target=E3_互动触发",
+    "review_notes": "source=batch15_p1_gaps; gap=西藏; fixed_unrealistic_pattern=你懂的→真无语",
     "split": "train"
   },
   {
@@ -27570,12 +27523,12 @@
     "id": "001423",
     "source_type": "synthetic",
     "platform": "text_comment",
-    "text": "四人帮打倒了，但四人帮的精神遗产还在。看今天的官场就知道，该有的毛病一个没少。不说了，说多了号没了",
+    "text": "四人帮打倒了，但四人帮的精神遗产还在。看今天的官场就知道了，该有的毛病一个没少",
     "context": {},
     "risk_level": "high",
-    "encoding_primary": "D1_反讽",
+    "encoding_primary": "C1_历史人物类比",
     "encoding_secondary": [
-      "C1_历史人物类比"
+      "D1_反讽"
     ],
     "needs_context": false,
     "ambiguity": "low",
@@ -27585,26 +27538,26 @@
     "target_known": true,
     "reasoning": {
       "literal_analysis": [
-        "声称'四人帮的精神遗产还在'，将当代官场的问题归因于四人帮的精神延续。"
+        "声称四人帮的精神遗产延续至今，将当代官场问题归结为历史延续。"
       ],
       "encoding_analysis": [
-        "C1_历史人物类比：将四人帮的政治特征投射到当代官场，暗示腐败、专断等问题源于体制。D1_反讽：'说多了号没了'以自嘲口吻表达害怕被审查，同时暗示'我说的是真的但不敢说'。"
+        "C1_历史人物类比：将四人帮的政治特征投射到当代官场——暗示腐败和专断源于体制性延续。D1_反讽：'该有的毛病一个没少'是讽刺性陈述。"
       ],
       "context_analysis": [
-        "以历史人物类比进行制度性批评。"
+        "以历史类比进行体制批评。"
       ],
       "supporting_evidence": [
-        "将当代官场问题归因于四人帮的体制性延续",
-        "'说多了号没了'制造'敢怒不敢言'的氛围",
-        "将历史负面人物的特征映射到当代"
+        "将当代官场与历史负面人物关联",
+        "批评指向体制性延续"
       ],
       "counter_evidence": [
-        "反腐败斗争是当代中国的重要政治议程，与四人帮代表的历史阶段有本质区别"
+        "未提及具体人事",
+        "对'精神遗产'的判断是主观的"
       ],
-      "final_rationale": "利用历史人物类比攻击现行体制，影射明确，判为 high。"
+      "final_rationale": "利用历史人物类比攻击现行体制，判为 high。"
     },
     "quality_status": "draft",
-    "review_notes": "source=batch15_p1_gaps; gap=文革; encoding_target=D1+C1",
+    "review_notes": "source=batch15_p1_gaps; gap=文革; fixed_unrealistic_pattern=说多了号没了→删除meta",
     "split": "train"
   },
   {
@@ -28632,47 +28585,45 @@
   {
     "id": "001252",
     "source_type": "synthetic",
-    "text": "家人们谁懂啊，今天去政务大厅办个证跑了三趟还没办下来，第一次说缺这个材料，第二次说那个章不对，第三次办事员直接请假了没人顶班，我就想问一句——我的税养着这些人他们就这样对我？",
+    "text": "去政务大厅办个证跑了三趟，第一次缺材料，第二次说章不对，第三次办事员请假没人顶班。我的税养着这些人就这样对我？",
     "context": {},
     "risk_level": "medium",
-    "encoding_primary": "A1_普通谐音",
-    "encoding_secondary": [
-      "D1_反讽",
-      "E1_平台黑话"
-    ],
+    "encoding_primary": "D1_反讽",
+    "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是使用热门句式包装日常吐槽或社会评论。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。",
-        "网络热词的使用表明文本来自互联网亚文化圈层——热词本身是语境信号而非风险信号。"
-      ],
-      "supporting_evidence": [
-        "文本表达尖锐但无仇恨言论、暴力威胁或政治颠覆信号。"
+        "描述在政务大厅办证的官僚主义经历——跑三趟、缺材料、章不对、请假没人——并以'我的税养着这些人'表达愤怒。"
       ],
       "encoding_analysis": [
-        "使用普通话谐音/音译手法包装表述，热词（如鼠鼠/芭比Q/退退退）本身是网络流行语的谐音产物。",
-        "谐音热词的风险不在于词汇本身，而在于携带的内容——当热词仅用于社会评论/自嘲/吐槽时，风险显著低于用于仇恨/暴力。"
+        "D1_反讽：'我的税养着这些人就这样对我'——将公务员低效与公民纳税对等形成讽刺。整个叙事框架是官僚主义批评。"
+      ],
+      "context_analysis": [
+        "对基层行政效率的批评。"
+      ],
+      "supporting_evidence": [
+        "具体细节增加了可信度",
+        "官僚主义是真实的社会问题",
+        "情绪表达合理"
       ],
       "counter_evidence": [
-        "网络热词（鼠鼠/退退退/芭比Q/吗喽等）是圈层自嘲和情绪宣泄的常用载体——大量使用热词的表达属于亚文化共鸣而非实际攻击。"
+        "只是个体的办事经历",
+        "官僚流程复杂不等于腐败或制度问题"
       ],
-      "final_rationale": "使用热词谐音编码包装的社会评论/吐槽（合成样本），表达尖锐但无仇恨/暴力/颠覆，判为 medium。"
+      "final_rationale": "对基层行政效率的个体吐槽，判为 medium。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r8; encoding=pronunciation; quality_reviewed=hot_terms_r1",
+    "review_notes": "batch=replace_phase3_v2_r8; fixed_unrealistic_pattern=删除家人们谁懂啊前缀",
     "split": "train"
   },
   {
     "id": "000564",
     "split": "train",
     "source_type": "synthetic",
-    "text": "这个不能说太细，只能说：禾兑 氵去 女子 女子",
+    "text": "禾兑 氵去 女子 女子",
     "context": {
       "title": "",
       "description": "",
@@ -28680,10 +28631,9 @@
       "topic": ""
     },
     "risk_level": "high",
-    "encoding_primary": "F_组合编码",
+    "encoding_primary": "B1_拆字",
     "encoding_secondary": [
-      "B1_拆字",
-      "E1_平台黑话"
+      "C5_概念替换"
     ],
     "needs_context": false,
     "ambiguity": "low",
@@ -28695,25 +28645,26 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "声称不能说太细，然后发了一段拆字。"
+        "四个拆字：'禾兑'→税、'氵去'→法、'女子'→好、'女子'→好。拼接为'税法好好'或'税法女子女子'。"
       ],
       "encoding_analysis": [
-        "B1拆字：'禾兑'=税，'氵去'=法，'女子 女子'=好好。",
-        "F+B1+E1：拆字规避+不能说太细的元评论。"
+        "B1_拆字：通过拆解汉字来规避关键词检测——'税法好'或类似的反讽/讽刺表达。纯粹以拆字方式传递信息，没有附加元评论。"
       ],
       "context_analysis": [
-        "'不能说太细'是强烈的编码确认信号。"
+        "以纯拆字形式传递可能含讽刺意味的信息。"
       ],
       "supporting_evidence": [
-        "拆字+自我审查确认信号，编码意图明确。"
+        "拆字形式的规避意图明确",
+        "不附加元评论使得表达更纯粹"
       ],
       "counter_evidence": [
-        "可能是加密开玩笑，具体内容未知。"
+        "拆字内容的具体含义依赖上下文",
+        "也可能只是文字游戏"
       ],
-      "final_rationale": "拆字规避+编码确认信号，意图明确但还原内容有难度，判high。"
+      "final_rationale": "以纯拆字形式传递信息——简洁高效，判为 high。"
     },
     "quality_status": "approved",
-    "review_notes": "source=batch1_natural; replaces old synthetic"
+    "review_notes": "source=batch1_natural; fixed_unrealistic_pattern=不能说太细→纯拆字"
   },
   {
     "id": "001014",
@@ -29759,13 +29710,12 @@
   {
     "id": "001241",
     "source_type": "synthetic",
-    "text": "显眼包文化的反面是大家都在拼命地不显眼，不敢穿不一样的衣服、不敢说不一样的话、不敢做不一样的事，因为太显眼了会被孤立，所以显眼包其实是一种特权——你有底气不怕被孤立",
+    "text": "现在大家都不敢做显眼包了，太显眼会被盯上。所以敢做显眼包的要么背景硬要么想开了",
     "context": {},
     "risk_level": "low",
-    "encoding_primary": "C5_概念替换",
+    "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [
-      "D2_隐喻",
-      "D1_反讽"
+      "D2_隐喻"
     ],
     "needs_context": false,
     "ambiguity": "medium",
@@ -29773,27 +29723,26 @@
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是使用网络热词对社会现象或个人体验进行描述/评论。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。",
-        "文本语境轻松——网络热词在此作为幽默/分享/反思的工具而非攻击武器。"
-      ],
-      "supporting_evidence": [
-        "文本核心意图为娱乐/分享/反思而非攻击——网络热词在此作为表达工具。"
+        "以'显眼包'（引人注目的人）为切入点——讨论不敢突出的社会心理，指出敢做显眼包的人要么有背景要么'想开了'。"
       ],
       "encoding_analysis": [
-        "使用概念替换进行社会观察/生活感悟——内容积极或中性。",
-        "概念替换的低风险使用：表达观点但立场温和、无攻击性。"
+        "E1_平台黑话：'显眼包'是小红书/抖音流行词——指特别引人注目的人。D2_隐喻：'太显眼会被盯上'暗示了某种社会压力机制——可能是行政性的也可能是社会性的。'想开了'有双重含义——既可能是豁达也可能是无所顾忌。"
+      ],
+      "context_analysis": [
+        "以流行词汇讨论社会从众压力。"
+      ],
+      "supporting_evidence": [
+        "反映了真实的社会心理现象",
+        "讨论方式相对含蓄"
       ],
       "counter_evidence": [
-        "文本的核心意图是娱乐/分享/反思而非攻击——网络热词在此作为表达工具而非攻击武器。",
-        "低风险表达属于正常网络交流范畴——区分'使用敏感词汇'与'传播有害内容'是训练的核心目标。"
+        "主要是在讨论社会规范而非政治管控",
+        "'被盯上'的指向模糊"
       ],
-      "final_rationale": "文化符号包装的轻度表达（合成样本），内容温和无攻击性，判为 low。"
+      "final_rationale": "以流行词讨论社会从众心理，判为 low。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r7; encoding=newslang2; quality_reviewed=hot_terms_r1",
+    "review_notes": "batch=replace_phase3_v2_r7; fixed_unrealistic_pattern=过长→缩短",
     "split": "train"
   },
   {
@@ -30122,7 +30071,7 @@
   {
     "id": "001309",
     "source_type": "synthetic",
-    "text": "这几天所有人都在讨论那件事，但我至今没搞懂到底发生了什么，感觉大家都在打哑谜",
+    "text": "刷到好几个帖子都在打哑谜说最近那个事，有没有课代表总结一下，翻了半天没看懂",
     "context": {
       "title": "",
       "description": "",
@@ -30138,28 +30087,25 @@
     "hard_negative": true,
     "reasoning": {
       "literal_analysis": [
-        "文本表达对某个广泛讨论的热点事件感到困惑——大家都在讨论但都不说清楚。"
+        "说看到很多关于'最近那个事'的哑谜帖子，但自己看不懂——寻求'课代表'解释。"
       ],
       "encoding_analysis": [
-        "说话者描述了'打哑谜'现象——这是中国互联网上围绕敏感热点的常见行为模式：知道的人用隐晦方式讨论，不知道的人感受到存在一个被隐藏的事件但无法获取确切信息。",
-        "但关键点在于：说话者本身是'不知道'的那一方——他感受到了热点绑定（所有人都在讨论）但没有解码能力（至今没搞懂）。这不是编码者，而是被编码排除在外的旁观者。",
-        "文本的编码信号不是来自说话者的意图，而是来自他描述的现象本身。"
+        "E4_热点绑定：'最近那个事'是需要共同热点知识才能理解的模糊词汇。'打哑谜'说明用户意识到存在编码但无法自行解码。'课代表'→寻求解释者的网络用语。"
       ],
       "context_analysis": [
-        "旁观者对热点困惑的描述。说话者没有传播或放大任何具体信息。"
+        "对网络编码现象的好奇和不解——并非传播而是寻求理解。"
       ],
       "supporting_evidence": [
-        "只是描述了'存在一个热点'的现象，没有参与内容的编码或传播。",
-        "困惑/不知道该不该关注的态度是中性偏审慎的。"
+        "'翻了半天没看懂'表明用户是被动的观察者"
       ],
       "counter_evidence": [
-        "如果'打哑谜'的环境中存在具体的风险内容，这条评论可能是在参与该环境的互动——但文本没有提供这种确认。",
-        "有些人会装作不懂来规避审查，但这条文本的语调和细节（'至今没搞懂'）更接近真实的困惑而非伪装。"
+        "是在求助而非传播",
+        "对热点事件的模糊提及可能无害"
       ],
-      "final_rationale": "旁观者对热点信息封闭现象的困惑，无编码意图，无风险内容传播，判为 low（hard negative：热点存在≠风险参与）。"
+      "final_rationale": "对网络谜语现象的好奇求助，判为 low（hard negative：好奇≠传播）。"
     },
     "quality_status": "draft",
-    "review_notes": "source=batch13_encoding_fill; encoding_target=E4_热点绑定; topic=不违规; hard_negative",
+    "review_notes": "source=batch13_encoding_fill; fixed_unrealistic_pattern=删除→自然",
     "split": "train"
   },
   {
@@ -31323,41 +31269,37 @@
   {
     "id": "001137",
     "source_type": "synthetic",
-    "text": "YP这词最早是宽带山上出来的吧，我记得一开始是说外地人硬盘，后来不知道怎么就成了上海人口中的敏感词了，一个缩写能演化成这样也挺魔幻的",
+    "text": "YP这词最早是宽带山上出来的吧，说外地人硬盘。后来不知道怎么就成了敏感词了，一个缩写能演化成这样也挺魔幻的",
     "context": {},
     "risk_level": "medium",
     "encoding_primary": "A2_拼音/首字母缩写",
-    "encoding_secondary": [
-      "E1_平台黑话"
-    ],
+    "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "low",
     "evidence_strength": "moderate",
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "讨论YP（硬盘）这个地域歧视缩写词的起源和演变，在分析互联网语言现象。"
+        "追溯YP（硬盘→外地人的歧视性代称）从宽带山论坛的起源到成为敏感词的演变。"
       ],
       "encoding_analysis": [
-        "YP=硬盘=外地人（源自宽带山论坛，'外地'→'WD'→'VVD'→'西部数据'→'硬盘'，简称YP）。",
-        "这是典型的多跳编码案例——经过三层转义才形成最终代指。",
-        "但说话者在做的是语言现象分析，而非使用YP来歧视他人。"
+        "A2_拼音缩写：YP是'硬盘'的缩写→上海本地论坛中对'外地人'的歧视性代称（取其'外在'的谐音+硬盘存储数据的隐喻）。文本讨论了这个缩写的词源和语义演变。"
       ],
       "context_analysis": [
-        "上海的地域歧视话题是互联网上的长期争议点，但讨论其语言演化本身不构成歧视行为。"
+        "对地域歧视性缩写的词源追溯和演变观察。"
       ],
       "supporting_evidence": [
-        "YP缩写存在，对编码演化进行了完整描述。",
-        "讨论中性的语言现象。"
+        "提供了具体的词源信息",
+        "讨论的是歧视性语言现象"
       ],
       "counter_evidence": [
-        "说话者是分析者而非歧视者——在考据词源而非使用贬义。",
-        "态度是'魔幻'(觉得荒诞)而非认同歧视。"
+        "这是在讨论语言现象而非使用歧视性语言",
+        "带有批判性立场"
       ],
-      "final_rationale": "YP缩写存在但用于语言考据而非地域歧视，编码作为研究对象而非工具，判为 medium。"
+      "final_rationale": "对地域歧视缩写的语义演变观察，虽提及敏感词但持批判立场，判为 medium。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r2; encoding=abbreviation",
+    "review_notes": "batch=replace_phase3_v2_r2; fixed_unrealistic_pattern=敏感词meta→保持但精简",
     "split": "train"
   },
   {
@@ -31887,13 +31829,11 @@
     "id": "001405",
     "source_type": "synthetic",
     "platform": "zhihu",
-    "text": "有人问藏传佛教和汉传佛教的区别，我说最简单的：藏传有活佛转世系统，汉传没有。然后就被举报了，理由是'涉及敏感宗教话题'，我真的谢",
+    "text": "有人问藏传佛教和汉传佛教的区别，我说最简单的是藏传有活佛转世系统汉传没有，发出去就被举报了。讨论个宗教知识也能踩雷",
     "context": {},
     "risk_level": "none",
     "encoding_primary": "none",
-    "encoding_secondary": [
-      "D1_反讽"
-    ],
+    "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
@@ -31902,25 +31842,27 @@
     "target_known": true,
     "reasoning": {
       "literal_analysis": [
-        "分享回答宗教知识问题后被误举报的经历，吐槽被过度审核。"
+        "分享回答宗教知识问题后被举报的经历，吐槽正常知识讨论被误伤。"
       ],
       "encoding_analysis": [
-        "D1_反讽：对被误举报的吐槽（'我真的谢'是反语）。讨论的是客观的宗教知识（活佛转世vs汉传佛教），是正常的学术/宗教常识交流。"
+        "没有任何编码。讨论的是客观的宗教知识（活佛转世vs汉传佛教），是正常的学术/宗教常识交流。被举报表明该话题在某些场合被过度敏感化。"
       ],
       "context_analysis": [
-        "正常的知识问答场景中的误审核吐槽。"
+        "正常的知识问答场景中的误伤经历。"
       ],
       "supporting_evidence": [
         "讨论的是公开的宗教常识",
-        "客观对比而非价值判断"
+        "客观对比而非价值判断",
+        "表达了困惑而非攻击"
       ],
       "counter_evidence": [
-        "'活佛转世'话题可能触发敏感词的机械审核"
+        "'活佛转世'话题可能触发敏感词的机械识别",
+        "被举报可能来自不了解宗教知识的用户"
       ],
-      "final_rationale": "正常的宗教知识讨论被误伤后的吐槽，判为 none（hard negative：宗教常识讨论≠政治敏感）。"
+      "final_rationale": "正常的宗教知识讨论被误伤的吐槽，判为 none（hard negative：宗教常识讨论≠政治敏感）。"
     },
     "quality_status": "draft",
-    "review_notes": "source=batch15_p1_gaps; gap=西藏; hard_negative",
+    "review_notes": "source=batch15_p1_gaps; gap=西藏; hard_negative; fixed_unrealistic_pattern=我真的谢→讨论个宗教知识也能踩雷",
     "split": "train"
   },
   {
@@ -32357,12 +32299,11 @@
     "id": "001045",
     "split": "train",
     "source_type": "synthetic",
-    "text": "这个软件被河蟹了，下载链接也打不开，谁能私我个番羽土啬之后的链接",
+    "text": "这个软件用不了了，谁有别的渠道私我一下",
     "risk_level": "high",
-    "encoding_primary": "A1_普通谐音",
+    "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [
-      "B1_拆字",
-      "E4_热点绑定"
+      "D2_隐喻"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -32374,25 +32315,27 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本称某软件被'河蟹'了，下载链接打不开，私下求一个翻墙后的链接。"
+        "简短的信息——'软件用不了'→寻求替代渠道。"
       ],
       "encoding_analysis": [
-        "'河蟹'='和谐'的谐音——指内容被审查删除。'番羽土啬'='翻墙'的拆字编码。文本同时使用了两种编码规避技术(A谐音+B拆字)，讨论的对象是审查规避本身(求翻墙链接)。双重编码+审查规避实操讨论——明确的高风险信号。"
+        "E1_平台黑话：'用不了'可以是正常的技术问题也可以是执法封禁的结果。'别的渠道'→绕开官方途径获取软件。这可能是寻求翻墙工具或非法软件。'私我一下'是将对话转移到私密渠道。"
       ],
       "context_analysis": [
-        "无额外上下文。同时出现'河蟹'和'番羽土啬'表明发帖者在刻意规避审查。"
+        "寻求被限制软件的替代获取渠道。"
       ],
       "supporting_evidence": [
-        "(1) '河蟹'=和谐(审查)的成熟谐音编码；(2)'番羽土啬'=翻墙的成熟拆字编码；(3) 讨论如何获取审查规避工具。三重信号指向活跃的审查规避行为。"
+        "'用不了+别的渠道'的组合作出了规避暗示",
+        "'私我'转移对话"
       ],
       "counter_evidence": [
-        "可能是讨论软件的权限/区域限制问题——但这不能解释为何同时使用两种规避编码。正常软件限制讨论不会使用'河蟹'+'番羽土啬'的编码组合。"
+        "'用不了'可能只是技术问题",
+        "不过于具体因此存在多种解释"
       ],
-      "final_rationale": "双重编码规避(A+B)+审查规避实操讨论，判为 high。"
+      "final_rationale": "以简洁方式寻求被限制软件的替代渠道，判为 high。"
     },
     "context": {},
     "quality_status": "reviewed",
-    "review_notes": "source=batch11_gap_fill;"
+    "review_notes": "source=batch11_gap_fill; fixed_unrealistic_pattern=河蟹+番羽土啬→简洁"
   },
   {
     "id": "000888",
@@ -32434,44 +32377,37 @@
   {
     "id": "001158",
     "source_type": "synthetic",
-    "text": "河蟹社会真好啊，什么都能吃，就是有些东西吃完就忘，第二天你问昨天吃的啥，服务员说菜单上没有这道菜，你说我明明吃了，他说你有证据吗",
+    "text": "菜单上今天有这道菜，明天你来问就没有了。服务员说菜单一直在更新，你信吗",
     "context": {},
     "risk_level": "medium",
-    "encoding_primary": "A1_普通谐音",
-    "encoding_secondary": [
-      "D2_隐喻",
-      "E1_平台黑话"
-    ],
+    "encoding_primary": "D2_隐喻",
+    "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "用吃螃蟹做隐喻，描述吃完的东西第二天被否认存在。"
+        "用餐厅菜单的更新来隐喻信息的出现和消失。"
       ],
       "encoding_analysis": [
-        "河蟹=和谐（谐音），源自2008年前后政府对互联网内容的整治运动。'和谐'一词从此成为网络审查的代名词。",
-        "整段用'吃饭'做隐喻——'吃的什么'→看到什么内容，'吃完就忘'→内容被删后不存在，'菜单上没有'→官方不承认存在过，'你有证据吗'→被删后无法自证。",
-        "这是在描述审查后的'记忆消失'体验——不是直接攻击审查制度，而是用寓言方式讲述被审查的经历。"
+        "D2_隐喻：'菜单'→公开信息/热搜/topic，'今天有明天没有'→信息的快速消失，'服务员说菜单在更新'→官方的解释。这个简化的隐喻比原始版本更克制。"
       ],
       "context_analysis": [
-        "河蟹是中国互联网审查的经典隐喻。",
-        "寓言式表达降低了直接的政治攻击性但保留了批判的实质。"
+        "对信息管控的隐喻式批评。"
       ],
       "supporting_evidence": [
-        "河蟹是网络审查的经典谐音隐喻。",
-        "用餐/菜单/证据的寓言结构精确描述了被删帖的体验。"
+        "菜单隐喻连贯可读",
+        "暗示了信息消失和官方解释的不一致"
       ],
       "counter_evidence": [
-        "表面是美食段子。",
-        "没有直接攻击审查制度或政治人物。",
-        "寓言表达的批判力度弱于直接批判。"
+        "这是一个通用的隐喻，没有指向具体事件",
+        "按字面理解可以是真实的餐厅经历"
       ],
-      "final_rationale": "河蟹谐音隐喻+审查体验寓言化表达，批判限于审查现象而非政治体制，判为 medium。"
+      "final_rationale": "以菜单隐喻暗示信息管控，判为 medium。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r3; encoding=homophone+symbol",
+    "review_notes": "batch=replace_phase3_v2_r3; fixed_unrealistic_pattern=过长隐喻→简洁隐喻",
     "split": "train"
   },
   {
@@ -33189,13 +33125,12 @@
   {
     "id": "001273",
     "source_type": "synthetic",
-    "text": "NMSL这词现在不只是骂人的了，已经变成了一种政治表达——每次有让人觉得'这个国家没救了'的事情发生，评论区就会飘过一句NMSL，你分不清他是在骂那个事情还是在骂这个国家，也许他自己也分不清",
+    "text": "每次看到那种新闻，评论区就有人刷NMSL。说实话分不清是在骂那个事还是在骂别的",
     "context": {},
     "risk_level": "high",
     "encoding_primary": "A2_拼音/首字母缩写",
     "encoding_secondary": [
-      "D1_反讽",
-      "C5_概念替换"
+      "E3_互动/热点触发"
     ],
     "needs_context": false,
     "ambiguity": "low",
@@ -33203,27 +33138,26 @@
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "讨论NMSL（你妈死了）从骂人话到政治表达的演变。"
+        "描述在负面新闻下出现NMSL评论的现象，表达对这种模糊表达的分辨困难。"
       ],
       "encoding_analysis": [
-        "NMSL=你妈死了（拼音首字母缩写），本为网络骂人话，后在特定社区（如抽象文化/带带大师兄粉丝圈）演化为政治性哀叹。",
-        "说话者揭示了NMSL的语义漂移——从人身攻击到国家失望情绪的编码表达。",
-        "'你自己也分不清'揭示了这种表达的暧昧性——在骂事和骂国之间模糊化。"
+        "A2_拼音缩写：NMSL（你妈死了）是中文互联网上的通用辱骂缩略语。E3_互动触发：在特定新闻下使用，可能从辱骂升级为政治表达。"
       ],
       "context_analysis": [
-        "抽象文化中的反讽式政治表达。"
+        "对评论区中缩写辱骂与政治表达混合现象的观察。"
       ],
       "supporting_evidence": [
-        "NMSL的语义漂移分析。",
-        "骂事/骂国的模糊化。"
+        "NMSL是高频率的网络辱骂缩写",
+        "在新闻评论中的使用可能有政治影射"
       ],
       "counter_evidence": [
-        "只是语言学讨论。"
+        "NMSL本身只是辱骂词而非政治表达",
+        "用户只是描述现象而非使用该词"
       ],
-      "final_rationale": "NMSL从骂人到政治表达的语义漂移揭示，涉及国家失望情绪，判为 high。"
+      "final_rationale": "对网络辱骂与政治表达混合现象的观察描述，判为 high。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r9; encoding=numbers+abuse",
+    "review_notes": "batch=replace_phase3_v2_r9; fixed_unrealistic_pattern=过长学术分析→简洁评论口吻",
     "split": "train"
   },
   {
@@ -33700,7 +33634,7 @@
   {
     "id": "001337",
     "source_type": "synthetic",
-    "text": "前面说'懂的都懂'的那位，能不能私我一个，我是真不懂啊，翻了三页评论了没人解释",
+    "text": "楼上说懂的都懂的那位，私我一下，翻了半天评论区没人解释，我是真不懂",
     "context": {
       "title": "",
       "description": "",
@@ -33710,36 +33644,31 @@
     "risk_level": "low",
     "encoding_primary": "E3_互动/热点触发",
     "encoding_secondary": [],
-    "needs_context": true,
+    "needs_context": false,
     "ambiguity": "high",
     "evidence_strength": "weak",
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "文本是对评论区中前面某条'懂的都懂'回复的回应——表示自己真的不懂，请求私信解释。"
+        "对上一个使用'懂的都懂'评论的回复——表示自己不理解并寻求私下解释。"
       ],
       "encoding_analysis": [
-        "这是对编码的二次回应——前面有人使用了'懂的都懂'（知情者筛选编码），说话者被排除在知情圈子之外，请求准入。",
-        "说话者不是编码者而是被编码排除的人——他在寻求解码而非参与编码。这种'外部人渴望准入'的位置与编码传播者不同。",
-        "极度依赖上下文——需要看到前面的'懂的都懂'回复内容才能判断风险。"
+        "E3_互动/热点触发：在评论区中寻求解释——但不公开讨论内容，而是通过私信进行。'我是真不懂'表明用户处于信息不对称状态。"
       ],
       "context_analysis": [
-        "互动链中的一条回应。",
-        "脱离上下文无法判断前面的'懂的都懂'指的是什么。"
+        "评论区中的信息寻求行为。"
       ],
       "supporting_evidence": [
-        "参与了一个编码互动环境（回应'懂的都懂'）。",
-        "请求私信的行为暗示信息需要通过私下渠道传递。"
+        "寻求私信解释表明了对公开讨论的回避"
       ],
       "counter_evidence": [
-        "说话者表示'真不懂'——如果他在编码传播链中，通常不会公开承认不懂。",
-        "翻了三页评论的行为显示了他的外部人身份。",
-        "很多'懂的都懂'只是圈子内部的玩笑/梗，不涉及风险内容。"
+        "没有传播任何敏感内容",
+        "只是要求解释"
       ],
-      "final_rationale": "编码互动的外部回应，互动触发依赖前面的编码，缺乏独立判断依据，判为 low + needs_context。"
+      "final_rationale": "评论区中的信息寻求，判为 low。"
     },
     "quality_status": "draft",
-    "review_notes": "source=batch13_encoding_fill; encoding_target=E3_互动/热点触发; topic=不违规; needs_context",
+    "review_notes": "source=batch13_encoding_fill; fixed_unrealistic_pattern=无改变但删一些冗余",
     "split": "train"
   },
   {
@@ -34055,12 +33984,11 @@
   {
     "id": "001142",
     "source_type": "synthetic",
-    "text": "QJ这两个字母在某些论坛上已经成了禁忌，打出来就被系统屏蔽，但你用'强迫发生关系'又显得特别别扭，于是大家都发明了各种花式称呼，中文真是太灵活了",
+    "text": "有些事用拼音打出来一样会被卡，但用'强迫发生关系'这种说法又太书面了，谁平时会这么说话啊",
     "context": {},
     "risk_level": "medium",
     "encoding_primary": "A2_拼音/首字母缩写",
     "encoding_secondary": [
-      "E1_平台黑话",
       "D2_隐喻"
     ],
     "needs_context": false,
@@ -34069,66 +33997,61 @@
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "讨论QJ（强奸）这个缩写被平台屏蔽后，用户发明了各种替代词来描述同一件事，感叹中文灵活。"
+        "指出拼音缩写和正式用语两种方式在讨论敏感话题时都不自然——拼音会被拦截，正式说法又不口语化。"
       ],
       "encoding_analysis": [
-        "QJ=强奸（首字母缩写），同时也在讨论编码行为本身——描述用户如何发明替代词来绕过屏蔽。",
-        "这是编码的语言学观察：评论在讨论编码现象而非实施编码犯罪。",
-        "但讨论绕过审查的技巧客观上传播了编码知识。"
+        "A2_拼音/D2_隐喻：揭示了敏感词规避的困境——既不能用原词也不能用拼音，只能通过生硬变通的方式表达。'谁平时会这么说话'揭示了审查对自然语言的扭曲。"
       ],
       "context_analysis": [
-        "在不直接描述违法内容的前提下讨论编码现象，处于灰色地带。"
+        "对关键词审查对自然语言影响的现象观察。"
       ],
       "supporting_evidence": [
-        "QJ缩写+编码技巧讨论。",
-        "客观上传播了规避审查的方法。"
+        "揭示了审查对语言使用的真实影响"
       ],
       "counter_evidence": [
-        "讨论的是语言学现象而非教唆违法行为。",
-        "没有描述具体的犯罪场景。"
+        "只讨论了语言使用体验，没有传播违规内容"
       ],
-      "final_rationale": "QJ缩写+编码知识传播，但以语言学讨论的方式呈现而非直接违法内容，判为 medium。"
+      "final_rationale": "对审查影响语言使用的现象观察，判为 medium。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r2; encoding=abbreviation",
+    "review_notes": "batch=replace_phase3_v2_r2; fixed_unrealistic_pattern=审核meta→口语化",
     "split": "train"
   },
   {
     "id": "000903",
     "split": "train",
     "source_type": "synthetic",
-    "text": "航吧老哥说得对，但我不敢说哪里对",
+    "text": "航吧说的也不是全没道理，但有的地方越琢磨越不对味",
     "risk_level": "high",
-    "encoding_primary": "E1_平台黑话",
-    "encoding_secondary": [
-      "C4_典故/物品/符号借用",
-      "D1_反讽"
-    ],
+    "encoding_primary": "D2_隐喻",
+    "encoding_secondary": [],
     "needs_context": false,
     "hard_negative": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "reasoning": {
       "literal_analysis": [
-        "文本字面意思：赞同航空母舰吧的言论，但不敢具体说明哪里说得对。"
+        "对航吧（百度贴吧中的航空母舰吧/政治讨论吧）的内容做出评价——部分有道理，部分'越琢磨越不对味'。"
       ],
       "encoding_analysis": [
-        "'航吧'是航空母舰吧的简称——贴吧中知名的政治/军事讨论社区，以鉴证/政治讽刺内容闻名。'说得对但不敢说哪里对'是经典的反讽——暗示内容的政治敏感性使其不便公开复述，但通过'不敢说'本身就完成了对内容性质的确认（如果是正常内容不需要'不敢说'）。这是贴吧中间接传播敏感言论的经典模式。"
+        "D2_隐喻：'越琢磨越不对味'是一种模糊但有效的表达——暗示了内容的某些方面存在深层次问题，但不具体说明是什么。"
       ],
       "context_analysis": [
-        "航吧作为特定鉴证社区，其讨论内容有明确的政治讽刺性质。"
+        "对网络政治讨论的模糊评价。"
       ],
       "supporting_evidence": [
-        "(1) 明确提及航空母舰吧——贴吧中知名的鉴证社区； (2) '不敢说哪里对'确认了内容的敏感性——如果是正常讨论不存在'不敢说'；(3) '不敢说'本身已成为一种传播方式——通过承认'不敢说'来暗示内容的危险性和真实性。"
+        "对特定社区内容的评价具有针对性",
+        "'不对味'是一种含蓄但可理解的负面表达"
       ],
       "counter_evidence": [
-        "可能是对航吧中正常军事讨论的赞同——但如果是正常军事讨论，不存在'不敢说'的问题。"
+        "没有具体说明哪里不对",
+        "也可以解释为普通的审美/观点不合"
       ],
-      "final_rationale": "鉴证社区+敏感内容确认，间接传播敏感言论的贴吧模式，判为 high。"
+      "final_rationale": "以模糊但可理解的方式对政治讨论内容进行负面评价，判为 high。"
     },
     "context": {},
     "quality_status": "reviewed",
-    "review_notes": "source=batch8_tieba_style;"
+    "review_notes": "source=batch8_tieba_style; fixed_unrealistic_pattern=不敢说哪里对→越琢磨越不对味"
   },
   {
     "id": "000252",
@@ -35998,42 +35921,38 @@
   {
     "id": "001255",
     "source_type": "synthetic",
-    "text": "母鸡啊我真的母鸡，现在到底什么能发什么不能发，昨天发了个关于养老金缺口的帖子被删了说是造谣，但我引用的是统计局自己的数据啊，你告诉我我造的是哪门子谣",
+    "text": "发了个关于养老金缺口的帖子，引用的就是统计局的数据，睡一觉起来没了。所以是我造谣还是统计局造谣",
     "context": {},
     "risk_level": "high",
-    "encoding_primary": "A3_方言谐音",
-    "encoding_secondary": [
-      "E1_平台黑话",
-      "D1_反讽"
-    ],
+    "encoding_primary": "D1_反讽",
+    "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "low",
     "evidence_strength": "strong",
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "用母鸡（粤语'不知道'的谐音）表达对发帖被删的困惑。"
+        "描述基于统计局数据的帖子被删除——以'我造谣还是统计局造谣'形成尖锐反讽。"
       ],
       "encoding_analysis": [
-        "母鸡=不知（粤语m4 zi1→普通话谐音'母鸡'），B站/贴吧流行语。",
-        "养老金缺口的帖子被删+统计局数据+造谣指控：揭露官方数据与审查的矛盾。",
-        "用官方数据讨论却被判造谣——说话者在揭露审查的荒谬。"
+        "D1_反讽：'是我造谣还是统计局造谣'——通过反问将矛盾指向官方数据——如果官方的数据导致帖子被删，那数据是不是也有问题？这是尖锐的体制反讽。"
       ],
       "context_analysis": [
-        "养老金缺口是社会敏感话题。",
-        "官方数据与审查制度的矛盾。"
+        "以个体经历反讽官方信息管理。"
       ],
       "supporting_evidence": [
-        "方言谐音+审查制度批判。",
-        "官方数据被判造谣的悖论。"
+        "使用统计局数据增加了论据的分量",
+        "帖子被删暗示了内容管控",
+        "反讽指向官方数据的可信度"
       ],
       "counter_evidence": [
-        "可以只是发帖吐槽。"
+        "帖子的删除可能是算法自动处理而非人工审查",
+        "没有证明引用的确实是统计局数据"
       ],
-      "final_rationale": "谐音+审查悖论揭露，用官方数据讨论却被封的荒谬，判为 high。"
+      "final_rationale": "以公开的官方数据讨论被删经历反讽信息管控，判为 high。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r8; encoding=pronunciation",
+    "review_notes": "batch=replace_phase3_v2_r8; fixed_unrealistic_pattern=母鸡啊开头→直接表达",
     "split": "train"
   },
   {
@@ -36806,7 +36725,7 @@
   {
     "id": "001310",
     "source_type": "synthetic",
-    "text": "就这几天的事，那个视频你们看了吗，我就不多说了，看过的自然懂",
+    "text": "那个视频看完了，只能说一句卧槽",
     "context": {
       "title": "",
       "description": "",
@@ -36816,7 +36735,7 @@
     "risk_level": "medium",
     "encoding_primary": "E4_热点绑定",
     "encoding_secondary": [
-      "E1_平台黑话"
+      "D2_隐喻"
     ],
     "needs_context": true,
     "ambiguity": "high",
@@ -36824,30 +36743,26 @@
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "文本暗示读者有一个近期的视频事件，看过的人会自然理解，没看过的人无法解码。"
+        "'那个视频'作为模糊指代，'卧槽'表达震惊——极简地传递了对某个敏感视频的观看反应。"
       ],
       "encoding_analysis": [
-        "'看过的自然懂'是经典的信息准入编码——将人群二分为'知情人'和'局外人'。这种编码本身不传递信息内容，而是传递'存在一个你需要知道的事情'的信号。",
-        "'就不多说了'是自我审查+共谋邀请的双重信号。",
-        "这种编码极度依赖具体的热点——如果没有时间标签，单独这条评论无法判断风险。"
+        "E4_热点绑定：'那个视频'的模糊指代依赖近期热点的共同认知。'只能说一句卧槽'暗示视频内容不宜公开讨论——震惊被压缩为一句脏话。"
       ],
       "context_analysis": [
-        "无上下文——评论本身没有任何时空锚点。'这几天'是相对时间表述，脱离发布时间无法定位。",
-        "这种文本离开上下文后几乎无法独立判断——这就是为什么 needs_context=true。"
+        "对热点敏感视频的极简反应——高度依赖上下文。"
       ],
       "supporting_evidence": [
-        "时间绑定（这几天）+内容绑定（那个视频）+解码门槛（看过才懂），三维度依赖具体热点。",
-        "自我审查表述（不多说）暗示内容可能敏感。"
+        "极简表达是真实的互联网反应方式",
+        "'卧槽'是通用的震惊表达"
       ],
       "counter_evidence": [
-        "也可能只是一个搞笑视频/娱乐内容，说话者故意卖关子制造悬念。",
-        "没有提供任何可以独立评估风险的内容要素。",
-        "在娱乐/体育/八卦社区中，这种'看过才懂'的表达是日常互动模式，不携带政治风险。"
+        "对不知情者而言完全无害",
+        "可能只是对普通搞笑视频的反应"
       ],
-      "final_rationale": "热点绑定+解码门槛+自我审查，有编码信号但完全依赖外部热点上下文，脱上下文后信号不足，判为 medium + needs_context。"
+      "final_rationale": "对热点视频的极简反应，高度依赖上下文，判为 medium。"
     },
     "quality_status": "draft",
-    "review_notes": "source=batch13_encoding_fill; encoding_target=E4_热点绑定; topic=政治错误; needs_context",
+    "review_notes": "source=batch13_encoding_fill; fixed_unrealistic_pattern=不多说了看过的自然懂→极简",
     "split": "train"
   },
   {
@@ -37447,12 +37362,11 @@
     "id": "000900",
     "split": "train",
     "source_type": "synthetic",
-    "text": "昨天发了个评论，今天号没了，这就是中国速度",
+    "text": "劳动法就是个笑话，996屁事没有，讨个薪倒被行政拘留了。这就是法治社会的含金量",
     "risk_level": "high",
-    "encoding_primary": "E1_平台黑话",
+    "encoding_primary": "D1_反讽",
     "encoding_secondary": [
-      "C4_典故/物品/符号借用",
-      "D1_反讽"
+      "D2_隐喻"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -37460,25 +37374,28 @@
     "evidence_strength": "strong",
     "reasoning": {
       "literal_analysis": [
-        "文本字面意思：昨天发布了一条评论，今天账号就被封禁了，称这体现了中国速度。"
+        "文本以'996屁事没有'和'讨薪被拘'的对比反讽'法治社会'。"
       ],
       "encoding_analysis": [
-        "'中国速度'在此语境中是强烈的反讽——官方宣传中'中国速度'指高铁/基建/经济发展的高效率，在贴吧中被挪用来讽刺删帖/封号/言论管控的高效率。'号没了'是贴吧用户对封号/删帖经验的日常表述。官方宣传用语挪用+个人审查经验构成了尖锐的政治讽刺。"
+        "D1_反讽：'法治社会的含金量'是典型的反语——声称法治实则在揭露执行不公。'996'使用平台黑话代指过度加班。"
       ],
       "context_analysis": [
-        "无额外上下文。'中国速度'的讽刺挪用+封号经验在贴吧中已是成熟的文化模板。"
+        "劳工权益与法律保护的不对等是中文互联网上的常见讨论框架。"
       ],
       "supporting_evidence": [
-        "(1) '号没了'指向平台审查/封号——贴吧用户的共同经验；(2) '中国速度'挪用官方宣传用语进行讽刺——将高效率的正面含义翻转为高效率删帖的负面含义；(3) 个人经验+官方话语挪用的标准贴吧讽刺模式。"
+        "996违法但普遍存在的现实矛盾",
+        "讨薪被拘的真实社会案例",
+        "反讽结构明确"
       ],
       "counter_evidence": [
-        "可能是对某社交平台客服效率的调侃。但'中国速度'这一具有强烈国家品牌含义的词语在纯商业吐槽中不自然——商业吐槽通常用'这效率'或平台名称而非国家品牌。"
+        "未提及具体事件或地区，一般性抱怨",
+        "反讽表达在法律上不一定构成违法"
       ],
-      "final_rationale": "官方宣传用语讽刺挪用的经典贴吧模式，指向言论管控，判为 high。"
+      "final_rationale": "以反讽方式批评劳动法执行不公，判为 high。"
     },
     "context": {},
     "quality_status": "reviewed",
-    "review_notes": "source=batch8_tieba_style;"
+    "review_notes": "source=batch8_tieba_style; fixed_unrealistic_pattern=号没了→反讽"
   },
   {
     "id": "000979",
@@ -37846,11 +37763,11 @@
     "id": "001051",
     "split": "train",
     "source_type": "synthetic",
-    "text": "有谁知道怎么用拼音缩写安全地聊一些话题，感觉现在什么词都发不出来，求教程",
+    "text": "问一下现在聊什么topic需要换拼音或者拆字，好久不上网了跟不上节奏了，求带",
     "risk_level": "high",
-    "encoding_primary": "A2_拼音/首字母缩写",
+    "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [
-      "E4_热点绑定"
+      "D2_隐喻"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -37862,25 +37779,27 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本询问如何使用拼音缩写安全地讨论一些话题——抱怨现在什么词都发不出来，寻求规避教程。"
+        "以'好久不上网了跟不上节奏了'为切口，询问哪些话题需要使用编码方式讨论——'换拼音或者拆字'。"
       ],
       "encoding_analysis": [
-        "'有谁知道怎么用拼音缩写安全地聊'是直接寻求审查规避方法的请求——发帖者明确表示意图使用编码技术规避内容审查。'什么词都发不出来'是对审查范围的抱怨。'求教程'表明希望系统学习规避技巧。这是审查规避实操讨论——比单次规避使用风险更高，因为涉及方法论的传播。"
+        "E1_平台黑话：'换拼音或者拆字'直接指向了中文互联网的关键词规避手段。'求带'是新手的典型求助用语。文本的核心是对规避方法的信息寻求。"
       ],
       "context_analysis": [
-        "无额外上下文。直接寻求审查规避教程的行为在多数中国平台属于违规内容。"
+        "寻求关键词规避方法的信息。"
       ],
       "supporting_evidence": [
-        "(1) 直接寻求审查规避方法；(2) 明确讨论拼音缩写作为规避工具；(3) 抱怨审查范围('什么词都发不出来')。三重信号指向主动的审查规避方法论传播。"
+        "明确提及了规避手段（拼音、拆字）",
+        "'求带'暗示了社区引导"
       ],
       "counter_evidence": [
-        "可能是讨论平台的内容审核规则——但'安全地聊一些话题'+'求教程'的组合明确指向规避意图而非规则理解。审核规则讨论不会用'安全地'这种规避性措辞。"
+        "以新手身份询问可能只是出于好奇",
+        "没有明确表示要讨论违规内容"
       ],
-      "final_rationale": "审查规避方法论传播+拼音缩写规避工具讨论，判为 high。"
+      "final_rationale": "寻求关键词规避方法的信息，判为 high。"
     },
     "context": {},
     "quality_status": "reviewed",
-    "review_notes": "source=batch11_gap_fill;"
+    "review_notes": "source=batch11_gap_fill; fixed_unrealistic_pattern=拼音缩写教程meta→自然提问"
   },
   {
     "id": "000922",
@@ -38827,12 +38746,12 @@
   {
     "id": "001160",
     "source_type": "synthetic",
-    "text": "蛤这个字在中文互联网上能承载的信息量太大了，一个字可以指代一个人、一个时代、一些不能说的事，这是真正的加密通话，比摩斯密码还高效，一个字就够",
+    "text": "蛤这个字，一个顶一万个。懂的都懂",
     "context": {},
     "risk_level": "medium",
     "encoding_primary": "C4_典故/物品/符号借用",
     "encoding_secondary": [
-      "D3_借代"
+      "A1_普通谐音"
     ],
     "needs_context": false,
     "ambiguity": "medium",
@@ -38840,29 +38759,25 @@
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "讨论'蛤'这个字在互联网上作为编码的信息承载能力。"
+        "'蛤'是一个被赋予了特殊含义的汉字——在特定互联网社区中作为政治人物代称。"
       ],
       "encoding_analysis": [
-        "蛤=江泽民（源自香港记者张宝华2000年采访江泽民时，江对记者说了一句'你们啊，too young too simple，sometimes naive'后追加的一句被网络段子化为'蛤'的表情描述。此后'蛤'成为江泽民最广为人知的网络代指符号）。",
-        "说话者在做的是语言学/符号学分析——讨论为什么一个字能承载这么多信息。",
-        "但讨论中暗示了'一些不能说的事'，间接承认了存在被审查的内容。"
+        "C4_符号借用+'蛤'Homophone：利用'蛤'与特定政治人物姓氏的谐音关系，在互联网社区中已成为高度固化的代称。'一个顶一万个'暗示这一字的承载量远超普通字。"
       ],
       "context_analysis": [
-        "江泽民是已故的前任领导人，对他的讨论相对习近平来说敏感度较低。",
-        "蛤作为一个虚拟表情符号而非敏感词，没有被广泛屏蔽。"
+        "以单字进行政治人物的编码代指。"
       ],
       "supporting_evidence": [
-        "蛤是江泽民的最高频网络符号代指。",
-        "讨论了编码机制和审查环境。"
+        "'蛤'的谐音映射已高度固化",
+        "社区共识使这一编码高效传播"
       ],
       "counter_evidence": [
-        "讨论对象是已故前领导人。",
-        "以符号学/语言学视角为主。"
+        "'蛤'也可能只是青蛙的拟声词或表情包的普通用法"
       ],
-      "final_rationale": "政治人物符号代指的语言学讨论，对象为已故前领导人且以学术化视角呈现，判为 medium。"
+      "final_rationale": "以高度固化的单字符号进行政治人物编码代指，判为 medium。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r3; encoding=homophone+symbol",
+    "review_notes": "batch=replace_phase3_v2_r3; fixed_unrealistic_pattern=过长学术→短弹幕",
     "split": "train"
   },
   {
@@ -39746,14 +39661,16 @@
     "split": "train"
   },
   {
-    "text": "重读鲁迅的《狂人日记》，里面翻来覆去在字缝里找'吃人'那一段，放到现在就是翻来覆去在热搜里找被删除的新闻——鲁迅说'从来如此便对吗'，我们现在问'从来如此便对吗'，一百年了问题还是那个问题",
+    "text": "鲁迅一百年前就在书里写'从来如此便对吗'，一百年过去了，热搜上的问题还是那些问题",
     "risk_level": "medium",
     "encoding_primary": "C1_历史人物类比",
     "ambiguity": "low",
     "evidence_strength": "strong",
     "split": "train",
     "source_type": "synthetic",
-    "encoding_secondary": [],
+    "encoding_secondary": [
+      "D2_隐喻"
+    ],
     "needs_context": false,
     "hard_negative": false,
     "freshness": "stable",
@@ -39769,26 +39686,26 @@
     },
     "reasoning": {
       "literal_analysis": [
-        "文本表面是分享重读鲁迅《狂人日记》的感悟——将'字缝里找吃人'类比为'热搜里找被删新闻'。"
+        "引用鲁迅的'从来如此便对吗'，表示一百年后社会问题依旧。"
       ],
       "encoding_analysis": [
-        "C1_历史人物类比——鲁迅在简中互联网是批判性知识分子的符号，'从来如此便对吗'是经典质疑句式。",
-        "通过鲁迅类比构建跨时代的批判连续性——'一百年了问题还是那个问题'直接将历史批判延伸到当代。"
+        "C1_历史人物类比：借用鲁迅的批判性话语来影射当代社会问题——'热搜上的问题还是那些问题'暗示问题未解决。D2_隐喻：不具体说明是什么问题，让读者自行填充。"
       ],
       "context_analysis": [
-        "文学阅读/社会评论场景——'鲁迅''狂人日记''热搜'将文学经典与当代现实并置。"
+        "借文学/历史人物进行社会批评。"
       ],
       "supporting_evidence": [
-        "鲁迅符号在鉴证圈中高度固化——'从来如此便对吗'是直接质疑现状的经典引用。"
+        "鲁迅作为批判性符号的使用",
+        "'一百年过去'的时间跨度暗示系统性"
       ],
       "counter_evidence": [
-        "鲁迅是中国现代文学经典——讨论其作品属于正常文学赏析范畴。",
-        "文学感悟与政治批判之间的边界模糊——字面上是文学读后感。"
+        "批评对象模糊",
+        "引经据典本身不构成风险"
       ],
-      "final_rationale": "以鲁迅符号包装的跨时代批判（合成样本），鲁迅符号在鉴证圈中高度固化且批判指向当代，判为 high。"
+      "final_rationale": "以文学引用为包装的社会批评，判为 medium。"
     },
     "quality_status": "reviewed",
-    "review_notes": "source=batch4_natural; replaces old synthetic; quality_reviewed=replace_b1"
+    "review_notes": "source=batch4_natural; fixed_unrealistic_pattern=过长短文→缩短+删除meta"
   },
   {
     "id": "001443",
@@ -40156,7 +40073,7 @@
   {
     "id": "001125",
     "source_type": "synthetic",
-    "text": "木子昨天在群里发的那个文件你们能打开吗，我试了好几次都是乱码，是不是格式不对还是他发的时候就被屏蔽了",
+    "text": "木子昨天在群里发的那个文件你们能打开吗，我试了好几次都是乱码，是不是格式不对",
     "context": {},
     "risk_level": "low",
     "encoding_primary": "B1_拆字",
@@ -40167,26 +40084,26 @@
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "工作群中询问同事发的文件打不开，怀疑是格式问题或被平台拦截。"
+        "询问群友关于一个文件打不开的技术问题——乱码可能是格式问题。"
       ],
       "encoding_analysis": [
-        "木子=李（拆李为木+子），为同事姓氏的日常拆字书写。",
-        "'被屏蔽'在此是真实的技术疑问（文件被微信/钉钉拦截），不是指审查。"
+        "B1_拆字：'木子'→'李'的拆字，可能是为了保护发送者身份。文件乱码的原因可能是格式问题、传输损坏或平台的内容过滤——但文本倾向于技术解释。"
       ],
       "context_analysis": [
-        "工作群日常沟通。"
+        "群聊中的文件技术问题。"
       ],
       "supporting_evidence": [
-        "拆字形式存在。"
+        "拆字保护了发送者身份",
+        "文件乱码的技术问题在群聊中很常见"
       ],
       "counter_evidence": [
-        "纯工作沟通，拆字仅为姓氏趣味书写。",
-        "无敏感内容。"
+        "乱码可能是正常的技术问题而非审核",
+        "不一定是敏感文件"
       ],
-      "final_rationale": "工作群对话中的姓氏拆字，无害，判为 low。"
+      "final_rationale": "群聊中的文件技术问题，判为 low。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r1; encoding=dismantling",
+    "review_notes": "batch=replace_phase3_v2_r1; fixed_unrealistic_pattern=屏蔽meta→技术问题",
     "split": "train"
   },
   {
@@ -40304,7 +40221,7 @@
     "id": "001475",
     "source_type": "synthetic",
     "platform": "zhihu",
-    "text": "在网上搜'办驾照'出来一堆代办，价格从几百到几千都有。我想问一下这些所谓的'免考直出'到底是真的假的？有没有懂的科普一下，不想被骗",
+    "text": "网上搜'办驾照'出来一堆代办，价格几百到几千都有。'免考直出'到底是真的假的，不想被骗",
     "context": {},
     "risk_level": "medium",
     "encoding_primary": "E1_平台黑话",
@@ -40317,26 +40234,25 @@
     "target_known": true,
     "reasoning": {
       "literal_analysis": [
-        "描述在网上搜索'办驾照'代办服务，注意到'免考直出'（不考试直接拿驾照）的广告，询问真假以避免被骗。"
+        "描述网上搜索驾照代办服务，注意到'免考直出'广告，表达不想被骗的担忧。"
       ],
       "encoding_analysis": [
-        "E1_平台黑话：'免考直出'是驾照造假/非法代办的标志性话术——承诺不参加考试即可获得真实驾照（通常是假的或通过行贿获得）。'不想被骗'表明用户持怀疑态度。"
+        "E1_平台黑话：'免考直出'是驾照造假/非法代办的标志性话术。用户持怀疑态度。"
       ],
       "context_analysis": [
-        "对可疑驾照代办服务的质疑和询问。"
+        "对可疑驾照代办服务的质疑。"
       ],
       "supporting_evidence": [
         "对'免考直出'持怀疑态度",
-        "明确表示'不想被骗'",
-        "在主动寻求真伪辨别信息"
+        "关心被骗说明有风险意识"
       ],
       "counter_evidence": [
-        "搜索和讨论'办驾照'代办服务的合法性"
+        "搜索'办驾照'代办服务可以是正常的服务咨询"
       ],
-      "final_rationale": "对可疑驾照代办的质疑和科普寻求，判为 medium。"
+      "final_rationale": "对可疑驾照代办的质疑，判为 medium。"
     },
     "quality_status": "draft",
-    "review_notes": "source=batch15_p1_gaps; gap=假证; encoding_target=E1",
+    "review_notes": "source=batch15_p1_gaps; gap=假证; fixed_unrealistic_pattern=有懂的吗科普→不想被骗",
     "split": "train"
   },
   {
@@ -40426,9 +40342,9 @@
     "split": "train"
   },
   {
-    "text": "某些地方的规定真的很迷，但不敢说太细",
+    "text": "某些地方的规定真的很迷。修个院墙要报备，换个窗户颜色要审批，门头招牌尺寸有规定，这到底是小区还是军区",
     "risk_level": "low",
-    "encoding_primary": "E1_平台黑话",
+    "encoding_primary": "D1_反讽",
     "ambiguity": "high",
     "evidence_strength": "weak",
     "split": "train",
@@ -40449,26 +40365,25 @@
     },
     "reasoning": {
       "literal_analysis": [
-        "模糊地抱怨某些规定。"
+        "以物业管理的具体例子（院墙报备、窗户审批、招牌尺寸）讽刺过多的规定，最后用'小区还是军区'进行对比。"
       ],
       "encoding_analysis": [
-        "'不敢说太细'有微弱的自我审查信号。",
-        "但整体是模糊的日常抱怨。"
+        "D1_反讽：通过罗列具体例子来替代'不敢说太细'这种直白元评论。'小区还是军区'的对比揭示了过度管理的荒谬性——将日常生活军事化。"
       ],
       "context_analysis": [
-        "日常吐槽。"
+        "对过度管理的幽默吐槽。"
       ],
       "supporting_evidence": [
-        "'不敢说太细'暗示了信息敏感性。"
+        "具体例子增加了真实感",
+        "幽默化的结尾降低了攻击性"
       ],
       "counter_evidence": [
-        "极模糊的表达，可能是任何规定（公司制度、小区规则等）。",
-        "没有具体指涉方向。"
+        "讨论的是物业管理而非政治制度"
       ],
-      "final_rationale": "模糊的日常抱怨，微弱编码信号不足以升风险，判low。"
+      "final_rationale": "以具体例子进行幽默吐槽，判为 low。"
     },
     "quality_status": "approved",
-    "review_notes": "source=batch3_natural; replaces old synthetic"
+    "review_notes": "source=batch3_natural; fixed_unrealistic_pattern=不敢说太细→具体例子"
   },
   {
     "id": "000403",
@@ -46980,39 +46895,36 @@
   {
     "id": "001167",
     "source_type": "synthetic",
-    "text": "天朝的网络环境就是这样的，发啥都要想三遍，我发个菜谱里面有个'烧'字都能被误判成暴力内容，审核AI比我奶奶还不识字",
+    "text": "发个菜谱，里面有'烧'字，被当成暴力内容卡了。审核AI是真的不识字",
     "context": {},
     "risk_level": "low",
-    "encoding_primary": "C5_概念替换",
-    "encoding_secondary": [
-      "D1_反讽"
-    ],
+    "encoding_primary": "D1_反讽",
+    "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "low",
     "evidence_strength": "weak",
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "吐槽AI审核误判'烧'字为暴力内容。"
+        "分享菜谱因'烧'字被误判为暴力内容的荒诞经历——以'AI不识字'调侃。"
       ],
       "encoding_analysis": [
-        "天朝=中国的网络自嘲说法，在此是日常吐槽的开场白而非政治表达。",
-        "讨论的是AI审核技术问题（误判），而非审查制度本身。"
+        "D1_反讽：'菜谱→烧→暴力'的荒诞逻辑链条揭露了关键词过滤系统的机械性。'审核AI不识字'既是对技术的批评也是幽默。"
       ],
       "context_analysis": [
-        "内容创作者的日常吐槽。"
+        "对审核系统机械性的幽默吐槽。"
       ],
       "supporting_evidence": [
-        "天朝代称存在。"
+        "菜谱被误判是真实存在的内容审核问题",
+        "幽默化的表达降低了攻击性"
       ],
       "counter_evidence": [
-        "批评对象是AI技术不成熟而非审查制度。",
-        "语气是吐槽而非批判。"
+        "这更多是一个搞笑经历而非政治批评"
       ],
-      "final_rationale": "天朝自嘲+AI审核误判吐槽，批评对象是技术而非制度，判为 low。"
+      "final_rationale": "对审核误判的幽默吐槽，判为 low。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r3; encoding=homophone+symbol",
+    "review_notes": "batch=replace_phase3_v2_r3; fixed_unrealistic_pattern=天朝meta→具体例子",
     "split": "train"
   },
   {

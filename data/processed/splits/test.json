@@ -648,12 +648,11 @@
     "id": "001055",
     "split": "test",
     "source_type": "synthetic",
-    "text": "现在网上聊天真累，说个讠午马扁都要想半天怎么打字不会被删",
+    "text": "现在网上聊天累死，一个诈骗的骗字都不知道打什么了，打'诈马扁'也太蠢了吧",
     "risk_level": "medium",
     "encoding_primary": "B1_拆字",
     "encoding_secondary": [
-      "D1_反讽",
-      "E4_热点绑定"
+      "D1_反讽"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -665,25 +664,26 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本抱怨网上聊天需要思考如何打字才能不被删——以拆字形式写出的词汇让理解变得困难。"
+        "吐槽网上打字需要拆字——'诈骗'的'骗'字被拆成'马扁'，觉得这样打字太蠢。"
       ],
       "encoding_analysis": [
-        "'讠午马扁'是'诈骗'的拆字——'诈'拆为'讠+午'，'骗'拆为'马+扁'。文本以元讨论形式（讨论拆字行为本身）传播拆字编码方法。'想半天怎么打字不会被删'是对自我审查的抱怨——暗示审查导致正常表达需要编码化。"
+        "B1_拆字：'马扁'是'骗'的拆字。这是对拆字规避现象的元评论——不是在传播规避而是在吐槽规避的荒谬性。'累死'表达了被动的被迫感。"
       ],
       "context_analysis": [
-        "无额外上下文。拆字元讨论——比直接拆字规避多一层反思性。"
+        "对关键词规避现象的吐槽。"
       ],
       "supporting_evidence": [
-        "(1) 演示拆字编码技术('讠午马扁')；(2) 以抱怨自我审查的形式传播规避意识；(3) 暗示审查导致语言异化。"
+        "对拆字规避提出了反讽式吐槽",
+        "吐槽了规避的不便而非利用规避"
       ],
       "counter_evidence": [
-        "可能是对网络语言现象的语言学观察。但'打字不会被删'的务实导向表明这不是学术观察而是规避经验分享——语言学研究不会关心'怎么不被删'。"
+        "同时也传播了'骗→马扁'的拆字知识"
       ],
-      "final_rationale": "拆字编码技术演示+自我审查抱怨+规避意识传播，判为 medium。"
+      "final_rationale": "对拆字规避的吐槽——同时揭示了规避方法，判为 medium。"
     },
     "context": {},
     "quality_status": "reviewed",
-    "review_notes": "source=batch11_gap_fill;"
+    "review_notes": "source=batch11_gap_fill; fixed_unrealistic_pattern=讠午马扁meta→自然吐槽"
   },
   {
     "id": "000270",
@@ -2806,10 +2806,10 @@
   {
     "id": "001166",
     "source_type": "synthetic",
-    "text": "河蟹这个词我都快忘了它本来是一种动物了，现在看到这个字第一反应都是内容被删了，中文互联网对人类认知的改造是真的大",
+    "text": "河蟹这个词我都快忘了它本来是个动物了。现在看到这两个字第一反应是内容没了",
     "context": {},
     "risk_level": "low",
-    "encoding_primary": "A1_普通谐音",
+    "encoding_primary": "D2_隐喻",
     "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "low",
@@ -2817,26 +2817,24 @@
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "感叹网络用语改变了语言认知。"
+        "说'河蟹'（和谐→被删除的代称）一词的语义已取代其动物本义——'内容没了'指的是被移除。"
       ],
       "encoding_analysis": [
-        "河蟹的语义转换讨论——从动物到审查的代名词。",
-        "讨论的是语言现象而非审查本身。"
+        "D2_隐喻：'河蟹'→'和谐'→'被删除'——通过谐音完成从动物到审核行为的语义转移。文本反思了这种语义扭曲现象。"
       ],
       "context_analysis": [
-        "语言学观察。"
+        "对网络用语语义变迁的观察。"
       ],
       "supporting_evidence": [
-        "河蟹的语义转换存在。"
+        "准确描述了'河蟹'的语义演变"
       ],
       "counter_evidence": [
-        "纯语言学观察。",
-        "没有政治评价。"
+        "只是语言现象的观察，没有传播或攻击"
       ],
-      "final_rationale": "语言学层面的语义转换观察，无政治意图，判为 low。"
+      "final_rationale": "对网络用语语义变化的观察，判为 low。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r3; encoding=homophone+symbol",
+    "review_notes": "batch=replace_phase3_v2_r3; fixed_unrealistic_pattern=过长→缩短",
     "split": "test"
   },
   {
@@ -4147,7 +4145,7 @@
     "id": "001427",
     "source_type": "synthetic",
     "platform": "text_comment",
-    "text": "说实话我不懂为什么有些人对那个年代有那么深的执念，我也读过一些回忆录，是好是坏各有说法。我觉得历史讨论就该就事论事，而不是拿它当武器",
+    "text": "说实话不太懂为什么有些人对那个年代有那么深的执念。我也读过一些回忆录，好坏各有说法。历史讨论就该就事论事",
     "context": {},
     "risk_level": "low",
     "encoding_primary": "C5_概念替换",
@@ -4160,25 +4158,25 @@
     "target_known": true,
     "reasoning": {
       "literal_analysis": [
-        "以'那个年代'模糊指代文革时期，主张历史讨论应该'就事论事'而非'当武器'。"
+        "以'那个年代'模糊指代文革时期，主张历史讨论应'就事论事'而非带有先入为主的执念。"
       ],
       "encoding_analysis": [
-        "C5_概念替换：用'那个年代'替代直接提及具体历史时期。文本的核心立场是呼吁理性的历史讨论，区分'就事论事'和'当武器'。"
+        "C5_概念替换：用'那个年代'替代直接提及。核心立场是呼吁理性历史讨论。"
       ],
       "context_analysis": [
-        "呼吁理性看待历史的表达。"
+        "呼吁理性对待历史的表达。"
       ],
       "supporting_evidence": [
-        "主张历史讨论应理性客观",
-        "反对将历史政治工具化"
+        "主张理性客观的历史讨论",
+        "提到了回忆录作为多元信息源"
       ],
       "counter_evidence": [
-        "'那个年代'的模糊化表述本身可能导致不确定性"
+        "'那个年代'的模糊化表述可能导致不确定性"
       ],
-      "final_rationale": "呼吁理性讨论历史的表达，立场温和中立，判为 low。"
+      "final_rationale": "呼吁理性讨论历史的表达，判为 low。"
     },
     "quality_status": "draft",
-    "review_notes": "source=batch15_p1_gaps; gap=文革; encoding_target=C5_概念替换",
+    "review_notes": "source=batch15_p1_gaps; gap=文革; fixed_unrealistic_pattern=无大改已ok",
     "split": "test"
   },
   {
@@ -5649,7 +5647,7 @@
     "id": "000542",
     "split": "test",
     "source_type": "synthetic",
-    "text": "这个up主被限流了，因为上次那条视频讲了点实在的",
+    "text": "这个up主的视频播放量一直上不去，明明内容挺好的。上次那期讲那个事的，质量是真的高",
     "context": {
       "title": "",
       "description": "",
@@ -5659,7 +5657,7 @@
     "risk_level": "medium",
     "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [
-      "C4_典故/物品/符号借用"
+      "D2_隐喻"
     ],
     "needs_context": false,
     "ambiguity": "medium",
@@ -5671,25 +5669,25 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "讨论up主因特定视频内容被平台限流。"
+        "说up主视频播放量低、质量高——尤其是'上次那期讲那个事的'。"
       ],
       "encoding_analysis": [
-        "'讲了点实在的'暗示内容触及平台敏感线。",
-        "E1+C4组合：平台规避讨论+'实在的'作为敏感内容的代指。"
+        "E1_平台黑话+'那个事'——用模糊化指代暗示up主因涉及敏感话题而播放量受限。不直说'限流'而是通过播放量和内容质量的矛盾来暗示。"
       ],
       "context_analysis": [
-        "B站社区对'限流'和'实在内容'有共识理解。"
+        "对B站up主因内容敏感而播放量受限的隐晦讨论。"
       ],
       "supporting_evidence": [
-        "B站用户在讨论限流时，'讲了点实在的'是常见的委婉说法。"
+        "播放量与内容质量的矛盾暗示了限制",
+        "'那个事'的模糊化指代"
       ],
       "counter_evidence": [
-        "也可能是up主讲了争议性但不涉政的内容，比如批评某个行业或产品。"
+        "播放量低也可能是正常的内容竞争结果"
       ],
-      "final_rationale": "有E1平台规避讨论+'实在的'委婉语，但'实在的'可能指非政治内容，判medium。"
+      "final_rationale": "通过质量-播放量的矛盾暗示内容受限，不如直接说'限流'那样直白，判为 medium。"
     },
     "quality_status": "approved",
-    "review_notes": "source=batch1_natural; replaces old synthetic"
+    "review_notes": "source=batch1_natural; fixed_unrealistic_pattern=限流→播放量自然描述"
   },
   {
     "id": "001354",

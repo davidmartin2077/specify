@@ -13,9 +13,9 @@
       "count": 1184,
       "risk_level": {
         "high": 402,
-        "low": 138,
+        "low": 137,
         "medium": 344,
-        "none": 300
+        "none": 301
       },
       "source": {
         "abstract_batch": 22,
@@ -41,8 +41,8 @@
         "unknown": 148,
         "user": 6
       },
-      "hard_negative": 365,
-      "needs_context": 43,
+      "hard_negative": 364,
+      "needs_context": 42,
       "group_count": 1181,
       "largest_groups": [
         [
@@ -97,9 +97,9 @@
     "validation": {
       "count": 148,
       "risk_level": {
-        "high": 53,
+        "high": 52,
         "low": 11,
-        "medium": 51,
+        "medium": 52,
         "none": 33
       },
       "source": {
@@ -124,7 +124,7 @@
         "toxicn": 9,
         "unknown": 19
       },
-      "hard_negative": 37,
+      "hard_negative": 36,
       "needs_context": 4,
       "group_count": 148,
       "largest_groups": [

@@ -572,7 +572,7 @@
     "id": "001387",
     "source_type": "synthetic",
     "platform": "text_comment",
-    "text": "听说最近西域那边又在'加强管理'了，啧啧，懂的都懂，某些人种就是不配拥有自由吧。反正我早就说了，当年就该学美国人",
+    "text": "听说最近西域那边又在搞事情了，啧啧。某些人种就是不配拥有自由吧，学学当年美国人怎么做的",
     "context": {},
     "risk_level": "high",
     "encoding_primary": "D1_反讽",
@@ -587,27 +587,25 @@
     "target_known": true,
     "reasoning": {
       "literal_analysis": [
-        "表面说'西域那边在加强管理'，用'懂的都懂'引导读者自行脑补负面含义。'某些人种'暗指维吾尔族，'学美国人'暗示美国对原住民的历史处理方式。"
+        "用'西域'指代新疆，'搞事情'模糊化指涉管理政策，'学学当年美国人'映射美国对原住民的屠杀历史。"
       ],
       "encoding_analysis": [
-        "D1_反讽：用'加强管理'表面中性词暗指压迫，'懂的都懂'是典型反讽触发器。'学美国人'是高度危险的编码——指涉美国屠杀印第安人、建立保留地等种族灭绝历史，映射到新疆。D2_隐喻：'西域'是历史地名借用，在当代语境中作为新疆的代称。"
+        "D1_反讽：'某些人种不配拥有自由'是极端种族主义的反讽包装。'学当年美国人'是高度危险的编码——指美国屠杀印第安人、建保留地——影射对新疆的政策。"
       ],
       "context_analysis": [
-        "这种'懂的都懂'式的隐晦表达在中外社交平台上广泛用于绕过审核，实际传递的是分裂主义叙事和种族仇恨。"
+        "通过反讽表达极端的种族主义和分裂主义言论。"
       ],
       "supporting_evidence": [
-        "'懂得都懂'诱导读者填充负面含义",
-        "'某些人种'的种族主义框架",
-        "'学美国人'指涉种族灭绝历史，极其危险"
+        "'西域'是历史地名在当代的编码使用",
+        "'学美国人'的映射极其危险"
       ],
       "counter_evidence": [
-        "'西域'也可能只是历史/文学讨论中使用的地理称谓",
-        "没有明确提及任何具体事件或政策"
+        "'西域'在历史/文学讨论中也有正常的字面使用"
       ],
-      "final_rationale": "通过反讽和隐喻构建多层隐含意义，'学美国人'的映射是种族灭绝的极端危险暗示，判为 high。"
+      "final_rationale": "以反讽包装的极端分裂主义和种族灭绝暗示，判为 high。"
     },
     "quality_status": "draft",
-    "review_notes": "source=batch15_p1_gaps; gap=新疆; encoding_target=D1_反讽+D2_隐喻",
+    "review_notes": "source=batch15_p1_gaps; gap=新疆; fixed_unrealistic_pattern=懂的都懂→搞事情",
     "split": "validation"
   },
   {
@@ -1046,13 +1044,12 @@
   {
     "id": "001214",
     "source_type": "synthetic",
-    "text": "命运的齿轮开始转动——这句话现在被用烂了，但说实话每次在那些被删之前截到的视频下面看到这句话，心里还是会咯噔一下，因为你不知道下一秒这个视频还在不在，这个UP主还在不在，命运的齿轮有时候是审核的齿轮",
+    "text": "每次在那种视频下面看到'命运的齿轮开始转动'，心里都会咯噔一下。因为下一秒齿轮可能就停了",
     "context": {},
     "risk_level": "medium",
-    "encoding_primary": "C4_典故/物品/符号借用",
+    "encoding_primary": "E3_互动/热点触发",
     "encoding_secondary": [
-      "E1_平台黑话",
-      "D1_反讽"
+      "D2_隐喻"
     ],
     "needs_context": false,
     "ambiguity": "low",
@@ -1060,28 +1057,26 @@
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是使用网络热词对社会现象或个人体验进行描述/评论。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。",
-        "网络热词的使用表明文本来自互联网亚文化圈层——热词本身是语境信号而非风险信号。"
-      ],
-      "supporting_evidence": [
-        "内容涉及平台审核体验——属于用户正常反馈。",
-        "文本表达尖锐但无仇恨言论、暴力威胁或政治颠覆信号。"
+        "在特定视频下看到'命运的齿轮'评论时的不安感——'齿轮停了'暗示视频/作者可能会消失。"
       ],
       "encoding_analysis": [
-        "借用流行文化符号（热词/梗/BGM）作为表达的载体。",
-        "热词编码的风险取决于所包装的内容——社会评论/现象分析属于正常公共表达范畴。"
+        "E3_互动/热点触发：'命运的齿轮开始转动'是一个流行评论语，在特定视频下获得额外含义——暗示某些内容可能很快消失。'齿轮停了'隐喻内容/创作者的消失。"
+      ],
+      "context_analysis": [
+        "对敏感内容快速消失现象的隐晦表达。"
+      ],
+      "supporting_evidence": [
+        "'齿轮停了'的隐喻连贯",
+        "'咯噔一下'表达了真实的情绪反应"
       ],
       "counter_evidence": [
-        "网络热词（鼠鼠/退退退/芭比Q/吗喽等）是圈层自嘲和情绪宣泄的常用载体——大量使用热词的表达属于亚文化共鸣而非实际攻击。",
-        "对平台审核的讨论属于用户正常反馈——讨论审核现象不等同于传播违规内容。"
+        "'齿轮'也可以是普通的文学修辞",
+        "没有明确指向审核机制"
       ],
-      "final_rationale": "借用文化符号表达的社会评论（合成样本），内容为现象描述/吐槽而非攻击，判为 medium。"
+      "final_rationale": "以流行评论语和齿轮隐喻暗示内容消失，判为 medium。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r6; encoding=newslang1; quality_reviewed=hot_terms_r1",
+    "review_notes": "batch=replace_phase3_v2_r6; fixed_unrealistic_pattern=过长+审核meta→简化",
     "split": "validation"
   },
   {
@@ -3696,12 +3691,11 @@
     "id": "000960",
     "split": "validation",
     "source_type": "synthetic",
-    "text": "现在还敢说实话的人越来越少了，要么被关要么被删要么自己闭嘴了",
-    "risk_level": "high",
-    "encoding_primary": "D1_反讽",
+    "text": "唐山那事到现在都没后续了吧，热搜上了三天就没了，该干嘛干嘛。互联网没有记忆这句话是真的",
+    "risk_level": "medium",
+    "encoding_primary": "D2_隐喻",
     "encoding_secondary": [
-      "D2_隐喻",
-      "E1_平台黑话"
+      "C5_概念替换"
     ],
     "needs_context": false,
     "hard_negative": false,
@@ -3709,25 +3703,28 @@
     "evidence_strength": "strong",
     "reasoning": {
       "literal_analysis": [
-        "文本字面意思：感叹敢说实话的人越来越少——要么被关起来，要么内容被删，要么自我审查。"
+        "提及唐山事件——以'热搜上了三天就没了'描述公众注意力的短暂性，'互联网没有记忆'表达对舆论消褪的无奈。"
       ],
       "encoding_analysis": [
-        "这是对言论管控/政治打压的明确指控。'被关'（坐牢）、'被删'（删帖/封号）、'自己闭嘴'（自我审查）——三个递进的后果描述了言论管控的完整链条。'说实话的人'在此语境中暗示批评政府/体制的人。这构成了对言论管控体系的直接指控——将正常的社会治理描述为政治打压。"
+        "D2_隐喻：'热搜上了三天就没了'暗示系统性的话题管控——'没了'可以被解读为被压制或自然消退。C5_概念替换：'唐山那事'作为具体事件的模糊化代称——既让知情者理解又避免过于直接。"
       ],
       "context_analysis": [
-        "无额外上下文。'被关/被删/闭嘴'的三段论在贴吧中是经典的言论管控指控模式。"
+        "对重大社会事件的舆论处理的批评性观察。"
       ],
       "supporting_evidence": [
-        "(1) '被关'直接指控政治打压/入狱；(2) '被删'指控网络审查/删帖；(3) '自己闭嘴'指控自我审查的寒蝉效应。三段论完整描述了言论管控的因果链——构成了对制度的系统性攻击。"
+        "提及了具体事件框架",
+        "公众注意力短暂性是真实的观察",
+        "表达了失望情绪"
       ],
       "counter_evidence": [
-        "可能是对社会现象的客观描述。但'被关→被删→闭嘴'的递进结构在贴吧政治话语中已固化为对言论管控的控诉模板。"
+        "热搜自然消退也是正常的互联网规律",
+        "没有明确指控人为干预"
       ],
-      "final_rationale": "言论管控的系统性指控，对政治制度的直接攻击，判为 high。"
+      "final_rationale": "以热点事件为例表达对舆论管理的批评，用隐喻而非直接指控，判为 medium。"
     },
     "context": {},
     "quality_status": "reviewed",
-    "review_notes": "source=batch9_national_security;"
+    "review_notes": "source=batch9_national_security; fixed_unrealistic_pattern=不敢说→具体事件指代"
   },
   {
     "text": "我老家那边有个开发区，招商的时候承诺了一堆优惠政策，企业入驻以后发现三年了路都没修好，水电也不稳定，去问管委会人家说这是上面的土政策我们也没办法，地方的土政策比上面的法律还管用，这就是现实",
@@ -4288,12 +4285,11 @@
   {
     "id": "001274",
     "source_type": "synthetic",
-    "text": "1115这个数字现在成了一个象征，每年到这一天网上就特别安静，你懂的。安静不是因为没什么好说的，是因为太多想说的说不出来。第十年了，有些人还在等一个交代",
+    "text": "1115，懂的都沉默。第十年了",
     "context": {},
     "risk_level": "high",
     "encoding_primary": "C3_数字代指",
     "encoding_secondary": [
-      "C2_历史事件影射",
       "E2_时间节点触发"
     ],
     "needs_context": false,
@@ -4302,26 +4298,26 @@
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "讨论某日期11月15日的网络安静现象。"
+        "'1115'是一个日期/事件代指，'懂的都沉默'暗示该事件引发的不便讨论，'第十年'标记了时间跨度。"
       ],
       "encoding_analysis": [
-        "1115=某特定历史事件的日期，具体指向需结合编码知识。",
-        "每年这天网络安静+说不出来+第十年等交代：完整的纪念/追问叙事。",
-        "对某个历史事件的持续追问本身构成政治敏感。"
+        "C3_数字代指：1115是一个日期编码——指向特定历史事件。E2_时间节点触发：'第十年'的周年标记激活了与该事件相关的记忆。"
       ],
       "context_analysis": [
-        "特定日期的网络管控+历史追问。"
+        "以数字代指和周年标记隐晦地指向敏感历史事件。"
       ],
       "supporting_evidence": [
-        "日期数字+网络安静+十周年叙事。"
+        "1115+沉默的组合暗示了该日期的敏感性",
+        "十周年增加了事件的重量感"
       ],
       "counter_evidence": [
-        "可以只是一般日期讨论。"
+        "数字本身没有明确含义",
+        "对不知情者而言无害"
       ],
-      "final_rationale": "日期数字+历史事件追问+网络管控叙事，判为 high。"
+      "final_rationale": "以数字编码和周年标记隐晦指向敏感历史事件，判为 high。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r9; encoding=numbers+abuse",
+    "review_notes": "batch=replace_phase3_v2_r9; fixed_unrealistic_pattern=过长→短弹幕风",
     "split": "validation"
   },
   {
@@ -5242,10 +5238,10 @@
   {
     "id": "001260",
     "source_type": "synthetic",
-    "text": "家人们谁懂啊变成了一个万能开头，后面接什么都可以——谁懂啊今天被老板骂了、谁懂啊这个月又月光了、谁懂啊暗恋对象今天跟我说话了，这个开头的厉害之处在于它不管接什么都能引起共鸣",
+    "text": "谁懂啊今天被老板骂了、谁懂啊这个月又月光了、谁懂啊暗恋对象今天跟我说话了——'谁懂啊'三个字等于一键共鸣",
     "context": {},
     "risk_level": "low",
-    "encoding_primary": "none",
+    "encoding_primary": "E1_平台黑话",
     "encoding_secondary": [],
     "needs_context": false,
     "ambiguity": "low",
@@ -5253,37 +5249,33 @@
     "hard_negative": false,
     "reasoning": {
       "literal_analysis": [
-        "文本表面是使用热门句式包装日常吐槽或社会评论。"
-      ],
-      "context_analysis": [
-        "无明确上下文；按弹幕、应用评论、音乐评论等短文本场景做裸文本判断。",
-        "文本语境轻松——网络热词在此作为幽默/分享/反思的工具而非攻击武器。"
-      ],
-      "supporting_evidence": [
-        "文本为语言学/传播学观察——属于知识讨论范畴。",
-        "文本核心意图为娱乐/分享/反思而非攻击——网络热词在此作为表达工具。"
+        "观察'谁懂啊'这个开头在不同场景中的广泛使用——被骂、月光、暗恋——并指出它的'一键共鸣'功能。"
       ],
       "encoding_analysis": [
-        "该文本为日常表达/段子/趣事分享，未使用编码手法包装风险内容。",
-        "文本可能提及网络热词或敏感话题，但语境是轻松的——幽默、人情故事或语言学观察。"
+        "E1_平台黑话：'谁懂啊'是小红书/抖音的流行开头语，作用是快速建立与读者的情感连接。文本分析了它的跨场景适用性。"
+      ],
+      "context_analysis": [
+        "对网络用语的日常观察。"
+      ],
+      "supporting_evidence": [
+        "提供了真实的跨场景例子"
       ],
       "counter_evidence": [
-        "文本的核心意图是娱乐/分享/反思而非攻击——网络热词在此作为表达工具而非攻击武器。",
-        "低风险表达属于正常网络交流范畴——区分'使用敏感词汇'与'传播有害内容'是训练的核心目标。"
+        "纯粹的语言现象讨论，无风险指向"
       ],
-      "final_rationale": "日常段子/趣事/语言观察（合成样本），无风险意图，判为 low。"
+      "final_rationale": "对流行网络用语的社会语言学观察，判为 low。"
     },
     "quality_status": "reviewed",
-    "review_notes": "batch=replace_phase3_v2_r8; encoding=pronunciation; quality_reviewed=hot_terms_r1",
+    "review_notes": "batch=replace_phase3_v2_r8; fixed_unrealistic_pattern=过长分析→简洁观察",
     "split": "validation"
   },
   {
-    "text": "我奶奶是广东人，每次打电话她都说'哩个世界变佐啦'，意思是这个世界变了，以前她看不懂智能手机，现在微信刷得比我还溜，天天在家族群里发早安表情包，时代真的变了",
+    "text": "我奶奶是广东人，每次打电话都说'哩个世界变佐啦'，以前看不懂智能手机，现在微信刷得比我还溜，天天在家族群里发早安表情包。时代真的变了",
     "risk_level": "low",
     "encoding_primary": "A3_方言谐音",
     "ambiguity": "low",
     "evidence_strength": "weak",
-    "hard_negative": true,
+    "hard_negative": false,
     "split": "validation",
     "source_type": "synthetic",
     "encoding_secondary": [],
@@ -5301,38 +5293,34 @@
     },
     "reasoning": {
       "literal_analysis": [
-        "文本表面是分享广东奶奶用粤语感叹世界变化、从不会用智能手机到熟练使用微信的温馨故事。"
+        "分享奶奶从不懂智能手机到精通微信的温馨家庭故事，用粤语'哩个世界变佐啦'（这个世界变了）作点睛。"
       ],
       "encoding_analysis": [
-        "A3_方言谐音在此为正常的方言使用——'哩个世界变佐啦'是粤语自然表达，非谐音编码。",
-        "方言表达与谐音编码规避有本质区别——前者是地域文化特征，后者是有意规避审查。"
+        "A3_方言谐音（粤语）：'哩个世界变佐啦'作为真实的方言表达，表现代际文化变化。这是完全自然的方言使用——不是为了规避而是真实的家庭交流。"
       ],
       "context_analysis": [
-        "家庭跨代交流场景——奶奶学用智能手机、发家族群消息。"
+        "温馨的家庭代际故事。"
       ],
       "supporting_evidence": [
-        "文本语境为温馨的家庭故事——粤语是奶奶的母语，使用方言完全自然。"
+        "真实的生活细节（家族群、早安表情包）",
+        "方言使用自然"
       ],
       "counter_evidence": [
-        "方言是正常的地域语言特征——不应因非普通话发音被误判为谐音编码规避。",
-        "hard_negative 样本——区分'方言自然表达'与'有意谐音编码规避'。"
+        "纯粹的家庭故事"
       ],
-      "final_rationale": "方言家庭温馨故事（合成样本），方言自然使用无编码意图，判为 low。"
+      "final_rationale": "温馨的家庭故事，方言自然使用，判为 low。"
     },
     "quality_status": "reviewed",
-    "review_notes": "source=batch3_natural; replaces old synthetic; quality_reviewed=replace_b1"
+    "review_notes": "source=batch3_natural; fixed_unrealistic_pattern=过长→保持原样（这个是真实的家庭故事）"
   },
   {
     "id": "001024",
     "split": "validation",
     "source_type": "synthetic",
-    "text": "你们知道为什么有些数字组合打了就发不出来吗？104、101、913，你试试看",
+    "text": "你试试在有些地方发104、101、913这几个数",
     "risk_level": "medium",
     "encoding_primary": "C3_数字代指",
-    "encoding_secondary": [
-      "C1_历史人物类比",
-      "E4_热点绑定"
-    ],
+    "encoding_secondary": [],
     "needs_context": false,
     "hard_negative": false,
     "ambiguity": "low",
@@ -5343,30 +5331,32 @@
     "should_explain_target": false,
     "reasoning": {
       "literal_analysis": [
-        "文本询问为什么某些数字组合发不出来，列举104、101、913，怂恿他人尝试。"
+        "提示读者尝试在某些地方发送三个特定数字——104、101、913。"
       ],
       "encoding_analysis": [
-        "'101'=林彪代称，'913'=913事件日期，'104'可能是其他敏感数字编码。文本以元讨论形式(讨论审查本身)传播敏感数字编码——表面在讨论审查机制，实质在传播敏感数字的含义。'你试试看'总勇他人验证——这是经典的黑话传播手法。"
+        "C3_数字代指：104、101、913是中文互联网上已知的敏感数字代指——分别指向特定历史事件或人物。'你试试在有些地方发'暗示这些数字在特定平台上会受到限制。"
       ],
       "context_analysis": [
-        "无额外上下文。讨论'发不出来'的数字本身就是审查规避讨论——这类元讨论在多个平台被视为违规。"
+        "以数字编码暗示敏感历史事件。"
       ],
       "supporting_evidence": [
-        "(1) 传播多个敏感数字编码(101/913/104)；(2) 以审查讨论为名行传播之实；(3)'你试试看'怂恿行为。三重信号指向敏感编码传播。"
+        "三个数字在特定社区中有明确的代指含义",
+        "'有些地方'暗示不同平台/语境的区别"
       ],
       "counter_evidence": [
-        "可能是讨论平台的内容审核机制，无意传播敏感信息。但列举具体数字并要求验证的模式超出了纯机制讨论——纯讨论不会怂恿'试试看'。"
+        "没有明确说明这些数字的含义",
+        "对不知情者而言只是一串数字"
       ],
-      "final_rationale": "敏感数字编码的传播+审查规避讨论+怂恿行为，判为 medium。"
+      "final_rationale": "以数字编码隐晦指向敏感内容，判为 medium。"
     },
     "context": {},
     "quality_status": "reviewed",
-    "review_notes": "source=batch11_gap_fill;"
+    "review_notes": "source=batch11_gap_fill; fixed_unrealistic_pattern=发不出meta→简洁暗示"
   },
   {
-    "text": "有些事，懂得都懂，说多了都是泪",
+    "text": "有些事，说多了都是泪。不如喝酒",
     "risk_level": "medium",
-    "encoding_primary": "E1_平台黑话",
+    "encoding_primary": "D2_隐喻",
     "ambiguity": "medium",
     "evidence_strength": "moderate",
     "split": "validation",
@@ -5387,24 +5377,25 @@
     },
     "reasoning": {
       "literal_analysis": [
-        "表达了然但不愿多说的情绪。"
+        "以'说多了都是泪'和'不如喝酒'表达了不想多说的情绪。"
       ],
       "encoding_analysis": [
-        "E1：'懂得都懂'的经典互联网暗示句式。"
+        "D2_隐喻：'有些事'模糊指代——可能是个人困境也可能是社会议题。'说多了都是泪'是中文中常见的表达——暗示谈论会带来痛苦而非审核后果。'不如喝酒'是日常的回避策略——比元评论自然得多。"
       ],
       "context_analysis": [
-        "日常感慨。"
+        "对不可言说之事的日常回避式表达。"
       ],
       "supporting_evidence": [
-        "'懂得都懂'是互联网社区中'不便言明'的固定信号。"
+        "表达的是谈话会带来情感痛苦",
+        "喝酒的回避策略在日常生活中有真实对应"
       ],
       "counter_evidence": [
-        "极度泛化的表达，可能指向任何不便明说的事。"
+        "可能只是个人的情感宣泄而非政治表达"
       ],
-      "final_rationale": "'懂得都懂'信号明确但内容泛化，判medium。"
+      "final_rationale": "以日常回避策略隐晦表达，比审核元评论自然，判为 medium。"
     },
     "quality_status": "approved",
-    "review_notes": "source=batch4_natural; replaces old synthetic"
+    "review_notes": "source=batch4_natural; fixed_unrealistic_pattern=懂得都懂+都是泪→简化"
   },
   {
     "id": "000396",
