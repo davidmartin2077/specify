@@ -1,66 +1,66 @@
 {
   "dataset_name": "semantic_risk_reasoning",
-  "generated_at_utc": "2026-06-18T07:34:15+00:00",
+  "generated_at_utc": "2026-06-18T08:27:18+00:00",
   "source": {
     "path": "data/processed/combined_candidates.jsonl",
-    "sha256": "1f60467a85ebfd3871732c3a1c69c8fcee904dfbd65e6cea6d75bd8f16b964c7",
+    "sha256": "ced5ac894bc094723c79a1e258d8c8f6f6dcaa120f19ff17e7fffa30ea8525db",
     "duplicate_id_count": 0,
     "duplicate_ids": [],
     "summary": {
-      "count": 2573,
+      "count": 2612,
       "risk_level": {
-        "high": 559,
-        "low": 433,
-        "medium": 585,
-        "none": 996
+        "high": 567,
+        "low": 441,
+        "medium": 597,
+        "none": 1007
       },
       "source_type": {
-        "real": 480,
+        "real": 519,
         "synthetic": 2093
       },
       "quality_status": {
         "approved": 162,
-        "draft": 1278,
+        "draft": 1317,
         "reviewed": 1133
       },
       "encoding_primary": {
         "A1_普通谐音": 47,
-        "A2_拼音/首字母缩写": 41,
+        "A2_拼音/首字母缩写": 42,
         "A3_方言谐音": 18,
         "A4_外语谐音/跨语言音译": 20,
         "B1_拆字": 35,
         "B2_合字/拼字": 17,
-        "B3_形近字替换": 15,
-        "B4_符号/空格/Unicode 干扰": 20,
+        "B3_形近字替换": 16,
+        "B4_符号/空格/Unicode 干扰": 21,
         "C1_历史人物类比": 73,
         "C2_历史事件影射": 31,
         "C3_数字代指": 31,
         "C4_典故/物品/符号借用": 102,
         "C5_概念替换": 32,
-        "D1_反讽": 182,
-        "D2_隐喻": 123,
-        "D3_借代": 23,
-        "D4_双关": 4,
-        "E1_平台黑话": 262,
+        "D1_反讽": 193,
+        "D2_隐喻": 125,
+        "D3_借代": 25,
+        "D4_双关": 5,
+        "E1_平台黑话": 263,
         "E2_时间节点触发": 26,
-        "E3_互动/热点触发": 28,
+        "E3_互动/热点触发": 35,
         "E4_热点绑定": 17,
         "F_组合编码": 22,
-        "literal_keyword": 366,
-        "none": 1038
+        "literal_keyword": 367,
+        "none": 1049
       },
       "evidence_strength": {
-        "moderate": 1370,
-        "strong": 710,
-        "weak": 493
+        "moderate": 1386,
+        "strong": 732,
+        "weak": 494
       },
       "ambiguity": {
         "high": 43,
-        "low": 1926,
-        "medium": 604
+        "low": 1953,
+        "medium": 616
       },
-      "hard_negative": 1068,
-      "needs_context": 59,
+      "hard_negative": 1079,
+      "needs_context": 71,
       "review_source": {
         "abstract_batch": 25,
         "batch10_new_patterns": 50,
@@ -94,6 +94,7 @@
         "batch1_natural": 56,
         "batch20_dual_meaning_fix": 25,
         "batch21_toxicn": 29,
+        "batch22_toxicn": 39,
         "batch2_natural": 27,
         "batch3_natural": 46,
         "batch4_natural": 47,
@@ -122,8 +123,8 @@
   "artifacts": {
     "sft": {
       "path": "data/processed/sft/sft_candidates.jsonl",
-      "sha256": "51408ff8a9e4bb2b0fca07cefdd5f1caeb025e8dd00083bb159747b722878329",
-      "count": 2573,
+      "sha256": "1a7eb74d66a3b693ba8ed2385d61f3fc26bca4f934fdc26caa03b50a31077fcc",
+      "count": 2612,
       "missing_candidate_ids": [],
       "missing_candidate_count": 0,
       "duplicate_id_count": 0,
@@ -135,79 +136,79 @@
     "splits": {
       "train": {
         "path": "data/processed/splits/train.jsonl",
-        "sha256": "fd4b731d91d421542682b9680c09a6700c178486a7ade1f8c525d8ec10dedced",
-        "count": 2059,
+        "sha256": "618ebf17715f173278cf6e9318ab0d494e92a5885fcca1615a3e7d78007ebc4a",
+        "count": 2090,
         "risk_level": {
-          "high": 436,
-          "low": 346,
-          "medium": 473,
-          "none": 804
+          "high": 459,
+          "low": 350,
+          "medium": 468,
+          "none": 813
         },
         "quality_status": {
-          "approved": 117,
-          "draft": 1026,
-          "reviewed": 916
+          "approved": 135,
+          "draft": 1049,
+          "reviewed": 906
         },
         "missing_from_candidates": 0,
         "field_mismatch_counts": {}
       },
       "validation": {
         "path": "data/processed/splits/validation.jsonl",
-        "sha256": "bcc2b62ed77d9816ebd54fb99420c26e84f0774d5c95eaa349e3912bd19bc7a2",
-        "count": 257,
+        "sha256": "781697db46f8cd5070fb69e1ee32adccb2132b514eb64e8dc353b441f27e00d5",
+        "count": 261,
         "risk_level": {
-          "high": 58,
-          "low": 39,
-          "medium": 59,
-          "none": 101
+          "high": 48,
+          "low": 49,
+          "medium": 66,
+          "none": 98
         },
         "quality_status": {
-          "approved": 23,
-          "draft": 127,
-          "reviewed": 107
+          "approved": 14,
+          "draft": 134,
+          "reviewed": 113
         },
         "missing_from_candidates": 0,
         "field_mismatch_counts": {}
       },
       "test": {
         "path": "data/processed/splits/test.jsonl",
-        "sha256": "dbd428cde20b54d6d0dc308f473f3d3049efd40170453e65659a2947a4e859e3",
-        "count": 257,
+        "sha256": "97d71ebe342e35a47b39b1acbb38dd1f1824087e5fd8234c0abda63c9965967d",
+        "count": 261,
         "risk_level": {
-          "high": 65,
-          "low": 48,
-          "medium": 53,
-          "none": 91
+          "high": 60,
+          "low": 42,
+          "medium": 63,
+          "none": 96
         },
         "quality_status": {
-          "approved": 22,
-          "draft": 125,
-          "reviewed": 110
+          "approved": 13,
+          "draft": 134,
+          "reviewed": 114
         },
         "missing_from_candidates": 0,
         "field_mismatch_counts": {}
       },
       "split_report": {
         "path": "data/processed/splits/split_report.json",
-        "sha256": "1a095008ee995684b96b24023c527280e5bf874c6c6c7eba68f1982222f83d29",
-        "input_count": 2573,
-        "group_count": 2570,
+        "sha256": "19ea912408e99123091f5a886157cf55d25fc1246046e7c60a3399371eb9c33f",
+        "input_count": 2612,
+        "group_count": 2609,
         "leaked_group_count": 0
       },
-      "total_count": 2573,
+      "total_count": 2612,
       "mismatched_row_count": 0,
       "is_synced_with_candidates": true
     },
     "coverage_report": {
       "path": "data/processed/risk_coverage_report.json",
       "exists": true,
-      "sha256": "b0d29bfd5cac9cbe7dbb3861a48ce24557b1b20e4fe630fe64c6552ca2e33b32",
-      "bytes": 8144
+      "sha256": "d47b8c4ca87f6a038342cd850c38e4b526b99bd98edda3dd4e649d310f41c594",
+      "bytes": 8173
     },
     "phase3_sampling_plan": {
       "path": "data/processed/phase3_sampling_plan.json",
       "exists": true,
-      "sha256": "96498165c5ffcff253cd70f3ef223afb1b9a95ea1de4a3ce24348d6c108988c1",
+      "sha256": "4482633a138474ed8a815c9c3abf978f2f068f101c5be53e78d149cb35b35d12",
       "bytes": 32594
     }
   },

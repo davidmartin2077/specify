@@ -1,8 +1,8 @@
 {
   "objective": "Use lexicon gaps to expand reasoning capabilities. Do not create one training sample per lexicon term.",
   "important_caveat": "Lexicon category assignment and representative seeds are heuristic. Manually review seeds before generation; a term's category is not a training label.",
-  "input_candidate_count": 2573,
-  "recommended_total_phase3_quota": 774,
+  "input_candidate_count": 2612,
+  "recommended_total_phase3_quota": 768,
   "recommended_first_wave_total": 245,
   "categories": [
     {
@@ -756,16 +756,16 @@
       "category": "insulting_abuse",
       "name": "辱骂/群体攻击",
       "priority": "P1",
-      "current_inferred_samples": 31,
+      "current_inferred_samples": 36,
       "current_risk_counts": {
         "high": 9,
-        "low": 13,
+        "low": 17,
         "medium": 6,
-        "none": 3
+        "none": 4
       },
-      "current_hard_negative": 3,
+      "current_hard_negative": 4,
       "reference_target": 100,
-      "recommended_phase3_quota": 69,
+      "recommended_phase3_quota": 64,
       "recommended_first_wave_quota": 15,
       "reasons": [
         "语境反证或 hard negative 不足"
@@ -938,16 +938,16 @@
       "category": "political_history",
       "name": "政治历史/鉴证梗",
       "priority": "P2",
-      "current_inferred_samples": 131,
+      "current_inferred_samples": 132,
       "current_risk_counts": {
         "high": 53,
         "low": 18,
         "medium": 47,
-        "none": 13
+        "none": 14
       },
-      "current_hard_negative": 18,
+      "current_hard_negative": 19,
       "reference_target": 160,
-      "recommended_phase3_quota": 29,
+      "recommended_phase3_quota": 28,
       "recommended_first_wave_quota": 15,
       "reasons": [
         "已有基础覆盖，继续补长尾机制和真实语境"
@@ -963,14 +963,6 @@
         },
         {
           "term": "中珙",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "主权",
           "bucket": "context_sensitive",
           "mechanism_tags": [
             "literal_keyword"
@@ -1011,6 +1003,14 @@
         },
         {
           "term": "亢议",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "人拳",
           "bucket": "context_sensitive",
           "mechanism_tags": [
             "literal_keyword"
