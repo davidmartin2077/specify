@@ -1,8 +1,8 @@
 {
   "objective": "Use lexicon gaps to expand reasoning capabilities. Do not create one training sample per lexicon term.",
   "important_caveat": "Lexicon category assignment and representative seeds are heuristic. Manually review seeds before generation; a term's category is not a training label.",
-  "input_candidate_count": 2544,
-  "recommended_total_phase3_quota": 775,
+  "input_candidate_count": 2573,
+  "recommended_total_phase3_quota": 774,
   "recommended_first_wave_total": 245,
   "categories": [
     {
@@ -756,16 +756,16 @@
       "category": "insulting_abuse",
       "name": "辱骂/群体攻击",
       "priority": "P1",
-      "current_inferred_samples": 30,
+      "current_inferred_samples": 31,
       "current_risk_counts": {
         "high": 9,
-        "low": 12,
+        "low": 13,
         "medium": 6,
         "none": 3
       },
       "current_hard_negative": 3,
       "reference_target": 100,
-      "recommended_phase3_quota": 70,
+      "recommended_phase3_quota": 69,
       "recommended_first_wave_quota": 15,
       "reasons": [
         "语境反证或 hard negative 不足"

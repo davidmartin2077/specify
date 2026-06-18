@@ -12,7 +12,7 @@
     "obfuscated_or_mixed_terms": 25320
   },
   "candidate_summary": {
-    "count": 2544,
+    "count": 2573,
     "source_counts": {
       "abstract_batch": 25,
       "batch10_new_patterns": 50,
@@ -45,6 +45,7 @@
       "batch19_dual_meaning_fix": 19,
       "batch1_natural": 56,
       "batch20_dual_meaning_fix": 25,
+      "batch21_toxicn": 29,
       "batch2_natural": 27,
       "batch3_natural": 46,
       "batch4_natural": 47,
@@ -64,8 +65,8 @@
       "cyber_abuse": 10,
       "gambling": 6,
       "illegal_goods": 3,
-      "insulting_abuse": 30,
-      "mixed_unknown": 2275,
+      "insulting_abuse": 31,
+      "mixed_unknown": 2303,
       "platform_censorship_evasion": 20,
       "political_history": 131,
       "public_affairs": 14,
@@ -92,15 +93,15 @@
       },
       "insulting_abuse": {
         "high": 9,
-        "low": 12,
+        "low": 13,
         "medium": 6,
         "none": 3
       },
       "mixed_unknown": {
-        "high": 453,
-        "low": 377,
-        "medium": 496,
-        "none": 949
+        "high": 458,
+        "low": 380,
+        "medium": 506,
+        "none": 959
       },
       "platform_censorship_evasion": {
         "high": 3,
@@ -147,7 +148,7 @@
       "gambling": 0,
       "illegal_goods": 2,
       "insulting_abuse": 3,
-      "mixed_unknown": 1011,
+      "mixed_unknown": 1021,
       "platform_censorship_evasion": 8,
       "political_history": 18,
       "public_affairs": 4,
@@ -157,7 +158,7 @@
       "weapons_explosives": 2
     },
     "mechanism_counts": {
-      "A1_普通谐音": 61,
+      "A1_普通谐音": 62,
       "A1_普通谐音+D4_双关": 1,
       "A2_拼音/首字母缩写": 54,
       "A3_方言谐音": 21,
@@ -166,39 +167,39 @@
       "B2_合字/拼字": 17,
       "B3_形近字替换": 17,
       "B4_符号/空格/Unicode 干扰": 37,
-      "C1_历史人物类比": 133,
+      "C1_历史人物类比": 134,
       "C2_历史事件影射": 88,
       "C3_数字代指": 69,
-      "C4_典故/物品/符号借用": 175,
+      "C4_典故/物品/符号借用": 177,
       "C5_概念替换": 64,
-      "D1_反讽": 379,
-      "D2_隐喻": 265,
-      "D3_借代": 57,
-      "D4_双关": 5,
-      "E1_平台黑话": 418,
+      "D1_反讽": 391,
+      "D2_隐喻": 268,
+      "D3_借代": 67,
+      "D4_双关": 9,
+      "E1_平台黑话": 430,
       "E2_时间节点触发": 48,
-      "E3_互动/热点触发": 71,
+      "E3_互动/热点触发": 73,
       "E4_热点绑定": 49,
       "F_组合编码": 48,
-      "literal_keyword": 369,
-      "none": 1028
+      "literal_keyword": 370,
+      "none": 1038
     },
     "mechanism_group_counts": {
       "combined": 48,
-      "contextual": 466,
-      "literal_keyword": 1397,
-      "phonetic_or_initials": 161,
-      "rhetorical": 701,
-      "semantic_mapping": 465,
+      "contextual": 478,
+      "literal_keyword": 1408,
+      "phonetic_or_initials": 162,
+      "rhetorical": 726,
+      "semantic_mapping": 468,
       "shape_or_symbol": 107
     },
     "risk_counts": {
-      "high": 554,
-      "low": 429,
-      "medium": 575,
-      "none": 986
+      "high": 559,
+      "low": 433,
+      "medium": 585,
+      "none": 996
     },
-    "hard_negative": 1058
+    "hard_negative": 1068
   },
   "literal_term_coverage": {
     "note": "Term hit rate measures literal/normalized occurrence only. Low hit rate is expected and does not mean the model must receive one sample per term.",
@@ -225,8 +226,8 @@
       },
       "mixed_unknown": {
         "lexicon_terms": 18383,
-        "exact_or_normalized_term_hits": 438,
-        "hit_rate": 0.0238
+        "exact_or_normalized_term_hits": 442,
+        "hit_rate": 0.024
       },
       "platform_censorship_evasion": {
         "lexicon_terms": 5075,
@@ -267,8 +268,8 @@
     "buckets": {
       "literal_or_direct": {
         "lexicon_terms": 25386,
-        "exact_or_normalized_term_hits": 669,
-        "hit_rate": 0.0264
+        "exact_or_normalized_term_hits": 673,
+        "hit_rate": 0.0265
       },
       "obfuscated_or_variant": {
         "lexicon_terms": 25320,
@@ -299,8 +300,8 @@
       },
       "literal_keyword": {
         "lexicon_terms": 25386,
-        "exact_or_normalized_term_hits": 669,
-        "hit_rate": 0.0264
+        "exact_or_normalized_term_hits": 673,
+        "hit_rate": 0.0265
       }
     }
   },
