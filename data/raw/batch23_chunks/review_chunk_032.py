@@ -1,0 +1,1763 @@
+#!/usr/bin/env python3
+"""Review chunk_032.jsonl: rewrite all reasoning fields with text-specific analysis."""
+
+import json
+
+with open("data/raw/batch23_chunks/chunk_032.jsonl") as f:
+    samples = [json.loads(line) for line in f if line.strip()]
+
+# ── 004213 ──
+s = [x for x in samples if x["id"] == "004213"][0]
+s["risk_level"] = "medium"
+s["encoding_primary"] = "D1_反讽"
+s["encoding_secondary"] = ["C5_概念替换"]
+s["ambiguity"] = "low"
+s["evidence_strength"] = "strong"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    '字面义为「一堆普通而自信的美女居然还能有老公」——说话者嘲讽外貌/性格并不出众的女性却仍能获得婚姻。',
+    '关键词「普信」是网络黑话(源自杨笠脱口秀「普通却自信」)，在互联网语境中已固化为对女性的贬义标签，指控其自我认知过高。',
+    '句末「还能有老公啊」以反问语气传递不屑，暗示这些女性「不配」拥有伴侣。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    '「普信」属于C5概念替换编码——将「普通而自信」这一复杂负面评价压缩为双字黑话，替代了直接的侮辱词汇。',
+    '全句结构为D1反讽：字面是疑问「还能有老公啊」，实际态度是对被描述女性的贬损和嘲讽，而非真正提问。',
+    '无谐音/形近等浅层编码；风险完全来自语义层面的概念压缩+反讽语气。'
+]
+s["reasoning"]["context_analysis"] = [
+    '贴吧平台以攻击性语言著称，「普信」在该平台高频用于性别互撕语境，强化了贬义色彩。',
+    '没有完整对话链，但句子本身自足——「普信美女」+反问语气足以判断攻击指向。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「普信」是互联网公认的性别攻击编码词，直接指代被嘲讽的女性群体。',
+    '「一堆」量化词暗示这是群体攻击而非针对个人。',
+    '反问句式「还能有老公啊」在中文中典型用于表达「不配」的否定态度。',
+    '平台为贴吧，性别讨论语境，话题标签为gender_discussion，与文本内容一致。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '「普信」在对岸(反讽女性一方)看来可能只是调侃而非恶意攻击，但考虑到批量定性为「一堆」，攻击性明确。',
+    '如果原始语境是女性自嘲，则风险降低；但单句缺乏对话上下文时，以最可能的攻击性解释为准。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: medium。使用概念编码词「普信」+反讽反问，对女性群体进行贬低，属于编码型性别攻击。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=tieba; topic=gender; toxic=1; expr=2; reviewed_by=claude; chunk=032"
+
+# ── 004214 ──
+s = [x for x in samples if x["id"] == "004214"][0]
+s["risk_level"] = "none"
+s["encoding_primary"] = "none"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    '说话者表示理解对方的感受，同时要求对方「保持对那些好的同性恋的基本尊重」——这是在呼吁尊重，而非攻击。',
+    '「好的同性恋」的限定语(「好」的)暗示存在叙事者认为「不好」的同性恋，但这不完全等同于攻击。整体立场是反歧视的。',
+    '文本出现在知乎LGBT讨论语境中，说话者似乎在参与一场关于如何对待同性恋的争论。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    '无编码机制。说话者直接使用「基本尊重」「能理解」等正面措辞表达包容态度。',
+    '「好的同性恋」的限定语虽隐含分类逻辑，但这属于日常语言中的修饰性表达，不构成编码攻击。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎平台涉及LGBT话题时常见观点碰撞，本条是温和的包容立场回应。',
+    '话题标签lgbt_discussion支持「这是关于LGBT讨论的正常交流」的解读。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「保持对那些好的同性恋的基本尊重」是全句核心——明确要求尊重LGBT群体。',
+    '「我能理解你的感受」以同理心开场，排除了敌对语气。',
+    'ToxiCN标注toxic=0，与文本语义一致。',
+    '文本没有使用任何侮辱性词汇或编码手段。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '「好的同性恋」的限定语暗示存在「不好的同性恋」，这种分类本身可能隐含性取向减损。但「请...尊重」的主诉求是正面的，不构成攻击。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: none (hard_negative)。虽涉LGBT话题，但文本呼吁尊重且无攻击词汇，为反偏见立场样本。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=lgbt; toxic=0; expr=0; reviewed_by=claude; chunk=032"
+
+# ── 004215 ──
+s = [x for x in samples if x["id"] == "004215"][0]
+s["risk_level"] = "medium"
+s["encoding_primary"] = "D1_反讽"
+s["encoding_secondary"] = []
+s["ambiguity"] = "medium"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "文本称「国家宣传口的风向都是在推进和黑人同婚」，认为这是不可阻挡的大趋势——表面是分析政治风向。",
+    "「极其困难?」结尾的思考emoji透露出叙事者对这一趋势的反对或不认同态度。",
+    '核心主张是：异族通婚(尤其与黑人)是被权力机构「推进」的，普通人无力改变。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'D1反讽编码：文本以「客观分析」的形式包装了对跨种族婚姻的抵触情绪，「大势所趋」「极其困难」等措辞将个人偏见伪装成不可抗力。',
+    '无深层语音/字形编码；风险在于叙事框架——将不同种族通婚描述为外部强加趋势，而非自然社会现象。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎race_discussion语境中，此类「被推进」叙事常见于保守派对中国种族政策的不满表达。',
+    '需要更多上下文判断说话者是否在回应具体事件，但「极其困难?」已明确传递负面态度。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「国家宣传口的风向都是在推进和黑人同婚」将policy偏好与种族议题绑定，构成了对政策的不满表达。',
+    '「想改变这个趋势，极其困难」中的「改变」一词暗示说话者认为现状是负面的、需要改变的。',
+    '?emoji在此语境中强化了说话者的质疑和无奈情绪。',
+    '文本标记为topic=race且toxic=1，与语义分析一致。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '文本没有使用直接侮辱性词汇，也未明确号召歧视，关于「推进」的判断可能是信息误读而非恶意。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: medium。以反讽框架表达对跨种族婚姻趋势的不满，虽无直接攻击但编码型种族偏见明确。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=race; toxic=1; expr=2; reviewed_by=claude; chunk=032"
+
+# ── 004216 ──
+s = [x for x in samples if x["id"] == "004216"][0]
+s["risk_level"] = "medium"
+s["encoding_primary"] = "D1_反讽"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "strong"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    '说话者质疑女性权益是否真的不足，反问「各种伐律保护各种社会倾斜难道还不够吗」，认为男性权益才被忽视。',
+    '「凭什么男性就该当牛做马还得不到保护」——用「当牛做马」形容男性的社会处境，暗示女性已获得过度保护。',
+    '文本典型呈现了反女权/男权运动的叙事框架：否认性别不平等，主张男性才是受害者。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'D1反讽编码：连续的 rhetorical questions(「难道还不够吗」「凭什么」)构成反讽——表面提问实为否定女性权益不足的论点。',
+    '文本中的「伐律」可能是「法律」的错字或谐音，但不构成系统性编码；整体为直接的立场表达+反讽结构。',
+    '无概念替换或平台黑话；风险来自叙事框架而非隐秘编码。'
+]
+s["reasoning"]["context_analysis"] = [
+    '贴吧是反女权/男权运动的活跃平台，本条直接参与了这一话语空间。',
+    '文本自足性高，无需额外上下文即可判断其反女权立场。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「当牛做马」以极端比喻描述男性处境，强化了「男性受害者」叙事。',
+    '反问句串「难道还不够吗」「凭什么」是典型的反讽修辞，意图否定对方的平等诉求。',
+    '平台为贴吧且topic=gender_discussion，与本条的攻击方向一致。',
+    '全段的核心诉求是「男性权益何时得到保护」，直接对标和平权运动对立。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '说话者可能确实认为自己在「为男性争取公平」而非攻击女性，但文本的论战框架已构成对女性权益诉求的群体性质疑。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: medium。用密集的反讽反问+「当牛做马」修辞框架系统地否定女性权益诉求，构成编码型性别对立攻击。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=tieba; topic=gender; toxic=1; expr=2; reviewed_by=claude; chunk=032"
+
+# ── 004217 ──
+s = [x for x in samples if x["id"] == "004217"][0]
+s["risk_level"] = "high"
+s["encoding_primary"] = "D3_借代"
+s["encoding_secondary"] = ["D1_反讽"]
+s["ambiguity"] = "low"
+s["evidence_strength"] = "strong"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    '全句仅一句：「去趟非洲不拜访一下亲家吗」——字面是建议去非洲时探望姻亲。',
+    '「亲家」在中文中指子女配偶的父母；在此语境下，「亲家」借代指对方的配偶或伴侣的家人，暗示对方有黑人伴侣。',
+    '这是互联网上针对与黑人有亲密关系的华人(尤其是女性)的经典种族羞辱句式。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'D3借代——「亲家」借代了「你的黑人伴侣的父母」，用一个看似中性的亲属词来指代跨种族关系。',
+    'D1反讽——表面是友好建议(拜访亲家)，实际是嘲讽对方与黑人有关系。双层编码叠加。',
+    '编码已高度固化：在中文互联网中，此类玩笑几乎100%被理解为对跨种族关系的羞辱。'
+]
+s["reasoning"]["context_analysis"] = [
+    '贴吧race_discussion语境下，「亲家」梗在种族议题中频繁出现，是众所周知的编码攻击。',
+    '句子极其简短，自含攻击性，不需要对话上下文。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「亲家」在种族讨论中是非黑人的跨种族关系编码标签，具有高度贬义。',
+    '反问句式「不...吗」强化了嘲讽语气。',
+    '平台贴吧+topic=race的标签与编码攻击完全吻合。',
+    '文本极短但攻击指向非常明确，没有合理无辜解释。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '理论上如果原帖讨论的是真实的跨国婚姻/家庭关系，此句可能是中性建议，但race_discussion语境排除了这种可能。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: high。「亲家」借代+反问反讽构成高度固化的种族羞辱编码，在中文贴吧语境中攻击指向非常明确。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=tieba; topic=race; toxic=1; expr=2; reviewed_by=claude; chunk=032"
+
+# ── 004218 ──
+s = [x for x in samples if x["id"] == "004218"][0]
+s["risk_level"] = "medium"
+s["encoding_primary"] = "D1_反讽"
+s["encoding_secondary"] = []
+s["ambiguity"] = "medium"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    '说话者自称「当然避免被喷」，然后提出对「与黑人处过的女孩」，认为应该追问她「为毛非得和黑人处」以及分手原因。',
+    '表面是理性讨论(「我觉得在讨论接受...前，先问清楚」)，实质将「与黑人交往」预设为需要被审查和解释的异常行为。',
+    '「为毛非得和黑人处」中的「非得」(must/necessarily)暗示与黑人交往是不正常的选择。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'D1反讽：「理性讨论」的外壳下包裹种族偏见——「先问清楚为毛非得」假装中立，实为将跨种族关系问题化。',
+    '无深层编码；攻击方式是通过预设(与黑人交往=需要特别解释的行为)来隐性传达歧视，而非使用侮辱词汇。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎race_discussion常见话题：「接受与黑人处过的女孩」是一个在中文互联网上反复出现的有毒讨论框架。',
+    '说话者的「理性人」姿态在知乎平台中常见，需理解该平台话语博弈才能识别其编码。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    "「为毛非得和黑人处」中的「非得」将跨种族交往预设为不正常、需要合理化的行为。",
+    "「在讨论接受与黑人处过的女孩前」——「接受」一词暗示「与黑人交往过的女性」是某种需要被「接受」的瑕疵。",
+    "话题tag为race_discussion且toxic=1，与文本中的种族偏见内容一致。",
+    "「后来处不了分手的原因」进一步把分手归因于种族，而非个体关系因素。"
+]
+s["reasoning"]["counter_evidence"] = [
+    "文本没有直接侮辱词汇，说话者可能自认为在「理性讨论」；其偏见的表达方式较为隐蔽。",
+    "「绝对不可能」和「当然避免被喷」表明说话者意识到这个议题的争议性，可能是在表达个人困惑而非恶意攻击。"
+]
+s["reasoning"]["final_rationale"] = 'Risk: medium。通过「理性讨论」框架将跨种族关系系统性地预设为问题行为，以D1反讽编码传递种族偏见。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=race; toxic=1; expr=2; reviewed_by=claude; chunk=032"
+
+# ── 004219 ──
+s = [x for x in samples if x["id"] == "004219"][0]
+s["risk_level"] = "low"
+s["encoding_primary"] = "E3_互动/热点触发"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    '文本指出「媒体、网络有人带风向」，认为存在「贬低中国人，媚外崇外的声音」。',
+    '说话者是在分析和揭露他观察到的言论现象，而非亲自表达媚外或贬低立场。',
+    '全段为第三人称转述，定位为评论媒体风向的观察者。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'E3互动/热点触发：文本的风险来源于其所指涉的社会现象(网络上的贬中媚外言论)，而非文本本身的攻击性。',
+    '无独立编码机制；内容为社会观察性质的评论。',
+    '之前的D1_反讽编码已移除——本条无反讽痕迹。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎race_reporting语境，适合揭露和分析类内容。',
+    '文本完整自足，不需额外上下文。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「贬低中国人，媚外崇外的声音」——叙事者定位为「这些声音的存在」的报道者而非发出者。',
+    '「媒体、网络有人带风向」——「带风向」是中性描述性词汇。',
+    '文本没有使用任何侮辱性表达或攻击性修辞。',
+    'topic=race_reporting标签与揭露分析类内容一致。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '「贬低中国人」这个表述本身涉及负面评价中国人群体的报道，但叙事者的立场是反对这种贬低。',
+    'ToxiCN标注toxic=1，可能是基于话题敏感性而非文本攻击性。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: low。E3揭露/报道型文本，评论媒体风向而非亲自传播偏见，风险主要来自话题敏感性。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=race; toxic=1; expr=3; reviewed_by=claude; chunk=032"
+
+# ── 004220 ──
+s = [x for x in samples if x["id"] == "004220"][0]
+s["risk_level"] = "none"
+s["encoding_primary"] = "none"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    '文本是一条医学/术语纠正：「不是性病，是HIV病毒，俗称艾滋病。」',
+    '纯事实陈述，区别性病与HIV的医学概念。',
+    '零攻击性内容。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    '无编码机制。纯医学信息纠错，无任何攻击性编码。'
+]
+s["reasoning"]["context_analysis"] = [
+    '虽在race_discussion标签下，但文本本身是医学纠正——可能是回应某个将HIV与特定种族绑定的帖子的反偏见发言。',
+    '单条文本自足，医学内容清晰明确。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '文本为纯事实陈述，无任何情感色彩或攻击指向。',
+    'ToxiCN标注toxic=0，与文本内容一致。',
+    '「不是性病，是HIV病毒」——这是知识纠正，不是观点表达。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '在race_discussion语境下，提及HIV/AIDS可能隐含与种族的关联，但本条纯粹在做术语纠正，无此意图。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: none (hard_negative)。纯医学纠正，无任何攻击内容，虽话题敏感但文本完全中性。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=race; toxic=0; expr=0; reviewed_by=claude; chunk=032"
+
+# ── 004221 ──
+s = [x for x in samples if x["id"] == "004221"][0]
+s["risk_level"] = "high"
+s["encoding_primary"] = "D1_反讽"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "strong"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    '长段以虚假的「数据预测」开头(「非洲人口最多的6个国家...将有总人口94.5亿」——数字荒谬不可能)，然后展开反讽。',
+    '「依非洲黑人的繁殖力」——使用「繁殖力」而非「生育率」将非洲人动物化/非人化。',
+    '「让非洲黑人给中国人改良种族」——核心是种族优越论，讽刺中国人与黑人通婚会导致种族「改良」。',
+    '全文是经典的反讽式种族主义：表面上为中国人和非洲人「着想」，实际是系统性地贬低非洲黑人。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'D1反讽编码——全文通篇反讽，字面主张(「大家少生孩子为非洲人腾空间」)与实际态度(嘲笑/恐惧非洲人口增长)完全相反。',
+    '无深层语音/字形编码；反讽手法直接且明显，几乎外显为种族仇恨言论。'
+]
+s["reasoning"]["context_analysis"] = [
+    '贴吧race_discussion，这类反讽式种族主义段落在贴吧极为常见，受众通常能立刻识别其恶意。',
+    '文本自足，无需要上下文。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「繁殖力」是典型的非人化修辞，将人类等同于动物育种。',
+    '「把非洲挤爆」——拥挤/膨胀的意象持续强化威胁叙事。',
+    '「腾出宝贵的生存空间让给非洲黑人」——表面善意，实质为种族替换论(great replacement theory)的中国版。',
+    '虚拟数字(94.5亿/15.8亿)荒诞夸张但被伪装为「数据」，暴露了作者的反讽意图。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '如果严格按照「反讽」定义，作者使用了假定善意的面具；但反讽外壳极薄，种族攻击性清晰到几乎外显。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: high。通篇D1反讽裹挟种族替换论叙事+非人化语言(「繁殖力」)，种族仇恨言论明确。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=tieba; topic=race; toxic=1; expr=2; reviewed_by=claude; chunk=032"
+
+# ── 004222 ──
+s = [x for x in samples if x["id"] == "004222"][0]
+s["risk_level"] = "none"
+s["encoding_primary"] = "none"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    '文本是一个地理疑问句：「为什么安徽和营口会和你的大学都挺近？」',
+    '说话者在询问某个大学与安徽、营口的地理位置关系——纯事实询问。',
+    '零攻击性内容。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    '无编码机制。日常地理问题，不含任何编码或攻击。'
+]
+s["reasoning"]["context_analysis"] = [
+    '虽然topic=region_discussion，但本条是询问地理距离的普通问题，可能是在原帖讨论地域话题时的无关回复。',
+    '单句自足，理解无障碍。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '询问句结构，无任何评价性语言。',
+    'ToxiCN标注toxic=0，与内容一致。',
+    '「安徽和营口」是两个地名，提及方式完全中性。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '无任何风险证据。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: none (hard_negative)。纯地理询问，无攻击内容。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=region; toxic=0; expr=0; reviewed_by=claude; chunk=032"
+
+# ── 004223 ──
+s = [x for x in samples if x["id"] == "004223"][0]
+s["risk_level"] = "low"
+s["encoding_primary"] = "E3_互动/热点触发"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    '杭州本地人承认「本地人对新疆歧视蛮多的」，但认为这种歧视「就是口头讲讲」，实际利益影响不大。',
+    '说话者以第一人称身份陈述自己所在群体的歧视现象，属于自我检讨型披露。',
+    '「怎么讲吧」的口语停顿反映了说话者试图淡化歧视严重性的倾向。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'E3互动/热点触发：文本本质是对社会现象的报道和反思，风险来自其描述的歧视现象而非文本本身的攻击性。',
+    '移除原来错误的D1_反讽编码——本条无反讽。',
+    '无其他编码机制。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎region_reporting语境，适合这类自我检讨型的地域歧视讨论。',
+    '文本自足，说话者对歧视的承认和淡化态度均明确。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「本地人对新疆歧视蛮多的」——承认歧视存在的陈述。',
+    "说话者自报「我就是杭州本地人」，增加了陈述的可信度，但同时也以内部视角「就是口头讲讲」淡化问题。",
+    '没有使用任何侮辱性词汇或攻击性修辞。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '「涉及到实际利益的时候影响其实不大」这种淡化歧视严重性的措辞可能被解读为歧视的合理化，但整体仍属报道/反思框架。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: low。E3报道型文本，承认并讨论地域歧视现象，风险来自话题本身而非攻击性表达。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=region; toxic=1; expr=3; reviewed_by=claude; chunk=032"
+
+# ── 004224 ──
+s = [x for x in samples if x["id"] == "004224"][0]
+s["risk_level"] = "low"
+s["encoding_primary"] = "E3_互动/热点触发"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = True
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    '叙事者讲述在咸阳机场的经历：出租车司机用很屌的语气拒绝乘客后，与同伴说起了河南话。',
+    "叙事者的朋友评论「那个河南人好拽啊」——将司机的态度与其河南身份关联。",
+    '文本是一则叙事性报道，描述了一个涉及地域刻板印象的场景。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'E3互动/热点触发：文本在转述一个涉及地域标签的亲身经历，风险来自叙事中对地域身份的关联描述，而非直接攻击。',
+    '移除原来的D1_反讽——本条不是反讽，是叙事还原。',
+    '无其他编码。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎region_reporting环境，适合讨论地域刻板印象的个人经历。',
+    '文本本身较长，描述了完整事件片段，但不知道原始帖子的主题是支持还是批评地域刻板印象。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    "「转身就跟身边的两个人说起了河南话」——将「说河南话」作为事件中的一个关键细节突出。",
+    "「我天津的朋友还说那个河南人好拽啊」——朋友的评论直接将「拽」(傲慢)与「河南人」身份绑定。",
+    '文本记录了地域刻板印象在现实生活中的体现，但叙事者本人没有表达歧视立场。'
+]
+s["reasoning"]["counter_evidence"] = [
+    "叙事者只是在陈述一个观察到的场景，没有使用贬损语言评价河南人；「很屌」描述的是司机的态度而非其地域身份。"
+]
+s["reasoning"]["final_rationale"] = 'Risk: low。E3报道型文本，叙事性还原涉及地域标签的事件，叙事者本人的立场中性。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=region; toxic=1; expr=3; reviewed_by=claude; chunk=032"
+
+# ── 004225 ──
+s = [x for x in samples if x["id"] == "004225"][0]
+s["risk_level"] = "low"
+s["encoding_primary"] = "E3_互动/热点触发"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = True
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「别天天说广东，你看我关注那个仙仙底下骂广东可不少?」——说话者指出在某博主评论区有很多针对广东的负面评论。",
+    "「骂广东可不少」陈述了一个观察到的现象，句末?表情让语气显得轻松甚至幸灾乐祸。"
+]
+s["reasoning"]["encoding_analysis"] = [
+    'E3互动/热点触发：转述他人直播评论区存在的针对广东的地域歧视言论，风险来自所描述的现象而非文本本身。',
+    '原编码D1反讽已移除——本条不是反讽，是互动观察报道。?表情可能表达讽刺但不足以构成编码。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎region_reporting语境中讨论地域歧视现象的存在。',
+    "「我关注那个仙仙」指涉某特定博主，需要了解该博主的内容倾向才能完全理解说话者的态度。"
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「骂广东可不少」——直接陈述存在针对广东的负面言论。',
+    '「别天天说广东」暗示说话者认为关于广东的负面讨论已经太多了。',
+    '?表情提示「嘲笑」的态度，但嘲笑的对象可能是「骂广东的人」而非广东人本身。',
+    'topic=region_reporting标签与报道性质匹配。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '文本主要是提醒他人存在反广东言论，而非亲自表达反广东态度；?也可能是在嘲笑那些骂广东的人。',
+    '「别天天说广东」甚至可以解读为对地域歧视的制止。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: low。E3互动观察报道，指出存在反广东言论的评论现象，但?表情和「别天天说」的语气使立场有些模糊。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=region; toxic=1; expr=3; reviewed_by=claude; chunk=032"
+
+# ── 004226 ──
+s = [x for x in samples if x["id"] == "004226"][0]
+s["risk_level"] = "high"
+s["encoding_primary"] = "C5_概念替换"
+s["encoding_secondary"] = ["D3_借代"]
+s["ambiguity"] = "low"
+s["evidence_strength"] = "strong"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「但也不是媚黑女的中国」——「媚黑女」是中文互联网上的高度贬义标签，组合「媚外」(崇拜外国)+「黑」(黑人)+「女」(女性)。",
+    '「中国」后置结构暗示：这个国家不应该是「媚黑女的中国」，即说话者对中国存在「媚黑女」现象表示不满。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'C5概念替换：「媚黑女」将一个复杂的种族/性别交叉攻击压缩为一个三字标签，在互联网上已固化为特定群体的污名化指代。',
+    'D3借代：「媚黑女」借代指代了「喜欢/亲近黑人的中国女性」这个更广泛的群体，用个别特征替代整个群体。',
+    '原编码C4典故/符号借用不适用——无历史典故或文化符号参照。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎race_discussion语境下，「媚黑女」是高频攻击词。',
+    "文本极短，「但也不是」表明是对之前言论的转折回应，但自含攻击性。"
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「媚黑女」是互联网公认的种族/性别交叉污名化编码词。',
+    "句子虽短但态度鲜明——否定式+「中国」的框架暗示说话者认为「媚黑女」是对国家形象的玷污。",
+    'ToxiCN标注expr=1(直接表达)，与「媚黑女」这种固化侮辱标签的使用一致。',
+    'topic=race且toxic=1，完全匹配。'
+]
+s["reasoning"]["counter_evidence"] = [
+    "文本只有8个字(含标点)，缺乏完整上下文，理论上「但也不是」可能是否定某种极端说法。但「媚黑女」一词本身足以定性。"
+]
+s["reasoning"]["final_rationale"] = 'Risk: high。「媚黑女」作为高度固化的种族/性别交叉侮辱编码词直接使用，攻击性强且指向明确。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=race; toxic=1; expr=1; reviewed_by=claude; chunk=032"
+
+# ── 004227 ──
+s = [x for x in samples if x["id"] == "004227"][0]
+s["risk_level"] = "none"
+s["encoding_primary"] = "none"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「你才碰到几个西南人啊就说啊?」——说话者质疑对方仅凭少数样本就对「西南人」做出概括论断。",
+    '这是对地域刻板印象的质疑和反驳——「你才碰到几个」暗示对方样本不足不应下结论。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    '无编码机制。日常反驳用语，无攻击性编码。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎region_discussion，本条是对地域歧视的反驳。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「才碰到几个」——质疑对方的论据不足。',
+    '?表情表示轻松玩笑态度，强化了反驳性质而非攻击。',
+    'ToxiCN标注toxic=0，与内容一致。',
+    '质疑句式指向的是「概括行为」而非「西南人」群体本身。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '无任何风险证据。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: none (hard_negative)。对地域刻板印象的质疑和反驳，零攻击性。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=region; toxic=0; expr=0; reviewed_by=claude; chunk=032"
+
+# ── 004228 ──
+s = [x for x in samples if x["id"] == "004228"][0]
+s["risk_level"] = "low"
+s["encoding_primary"] = "E3_互动/热点触发"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = True
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「得了吧，他们如果分的清两广江浙沪也不至于对着江浙沪开喷南方系了。」",
+    '说话者批评一些人地域知识不足——分不清两广和江浙沪的区别，就盲目「开喷南方系」。',
+    '这是对地域歧视者/喷子的反批评，而非地域攻击本身。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'E3互动触发：是对他人言论的回应式评论，风险来自涉及的地域歧视现象而非文本本身。',
+    '移除原D1——本条无反讽，是直接批评。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎region_reporting，对无差别地域攻击者的批评。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    "「分的清两广江浙沪也不至于」——批评对象是「喷子」而非某个地域群体。",
+    "「对着江浙沪开喷南方系」——说话者站在被攻击的南方地域一方。",
+    '全句核心是「你们连基本地理都没搞清楚就乱喷」，是反地域歧视立场。',
+    'topic=region_reporting与文本性质匹配。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '「南方系」本身是一个有争议的标签，在某些互联网语境中是贬义词汇；但说话者使用它时是在转述喷子的行为。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: low (borderline hard_negative)。反地域歧视的批评性评论，指向的是「喷子」而非地域群体，可视为hard_negative。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=region; toxic=1; expr=3; reviewed_by=claude; chunk=032"
+
+# ── 004229 ──
+s = [x for x in samples if x["id"] == "004229"][0]
+s["risk_level"] = "none"
+s["encoding_primary"] = "none"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    '自述为同性恋者，讲述自己寻找伴侣的标准——希望遇到喜欢类型的人，但因要求高而一直单身。',
+    '完全的个人情感和生活分享，不涉及任何攻击。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    '无编码机制。普通个人叙述。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎lgbt_discussion，普通生活分享。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「即使我是同性恋」——自我身份认同陈述。',
+    '全段描述个人择偶观念和单身状态，无任何指向他人的评价。',
+    'ToxiCN标注toxic=0，完全正确。',
+    '语言风格日常、个人化，无攻击线索。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '无任何风险证据。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: none (hard_negative)。同性恋者的个人情感分享，零攻击内容。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=lgbt; toxic=0; expr=0; reviewed_by=claude; chunk=032"
+
+# ── 004230 ──
+s = [x for x in samples if x["id"] == "004230"][0]
+s["risk_level"] = "low"
+s["encoding_primary"] = "none"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「同性恋现在才是占据了，舆论的高地，」——声称性少数群体在公共舆论中处于优势地位。",
+    '这是一个关于舆论影响力的判断，可解读为对LGBT群体话语权的不安或不满，但无直接攻击。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    '无编码机制。直接的舆论观察陈述，无修辞编码。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎lgbt_discussion，可能是一条争论性回复的片段。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「占据了舆论的高地」——断言LGBT群体掌握话语权。',
+    '这个论断本身可能隐含不满，但措辞中性，没有侮辱性词汇。',
+    'ToxiCN标注toxic=0，与内容基本一致。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '声称某群体「占据舆论高地」是一部分保守派用来否定平权运动合理性的常见话术，虽无直接攻击但具有淡化LGBT受歧视现实的潜在效果。',
+    '说话者可能是在表达对LGBT话语权的不满，但措辞克制。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: low (hard_negative)。声称同性恋「占据舆论高地」属于观点陈述，措辞中性，无攻击性编码或侮辱，但可视为隐藏的hard_negative。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=lgbt; toxic=0; expr=0; reviewed_by=claude; chunk=032"
+
+# ── 004231 ──
+s = [x for x in samples if x["id"] == "004231"][0]
+s["risk_level"] = "low"
+s["encoding_primary"] = "A1_谐音"
+s["encoding_secondary"] = []
+s["ambiguity"] = "medium"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = True
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「你圈a准一点，我这差点出南拳了」——说话者对某人说「你圈(aim)准一点」，差点自己「出南拳」。",
+    '「南拳」字面指南拳武术流派，但在互联网语境中更可能是「男拳」(男性沙文主义)的谐音。',
+    '如果「南拳」=男拳，则说话者在说「我差点变成男权主义者了」，并认为对方的精准瞄准让他避免了。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'A1谐音：「南拳」谐音「男拳」(男性沙文主义)，是典型的拼音文字谐音编码。',
+    '原D2隐喻不适用——「南拳」的编码路径是谐音而非隐喻。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎race_discussion标签下，但文本实际更接近gender话题。需要更多上下文理解「你圈a」的具体含义。',
+    "「你圈a」可能是某个特定社群的内部用语(游戏圈/讨论圈)，增加了解码难度。"
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「南拳」在互联网上几乎在任何性别相关讨论中都优先被解读为「男拳」的谐音。',
+    '「差点出南拳了」——自我警示的表达，说明说话者意识到了「男拳」思维的危险。',
+    '这是自我反思型文本，不是攻击行为。',
+    'ToxiCN标注toxic=1但expr=2(隐晦)，与解码困难程度一致。'
+]
+s["reasoning"]["counter_evidence"] = [
+    "「你圈a」含义不明确，「南拳」也可能是字面武术用法，需要对话上下文才能最终确认。",
+    '即使「南拳」=男拳，这也是说话者的自我反省，不是对别人的攻击，可能更接近hard_negative。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: low。通过A1谐音使用「南拳」，但语境暗示是自我反省而非攻击，可理解为hard_negative。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=race; toxic=1; expr=2; reviewed_by=claude; chunk=032"
+
+# ── 004232 ──
+s = [x for x in samples if x["id"] == "004232"][0]
+s["risk_level"] = "medium"
+s["encoding_primary"] = "D4_双关"
+s["encoding_secondary"] = []
+s["ambiguity"] = "medium"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = True
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    '说话者承认自己最初将某些女性(电台工作相关)臆想为「失足妇女」来安慰自己，后来因亲眼见到的事而改变想法。',
+    '「失足妇女」是一种对性工作者的委婉贬称，说话者承认曾使用这一标签来「安慰自己」(合理化某种不安情绪)。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'D4双关：「失足妇女」在中文中既是「卖淫女性」的官方委婉语(euphemism)，又在民间用法中带有道德侮辱的额外含义，具有双重语义。',
+    '原D2隐喻不适用——「失足妇女」是既成的社会标签而非个人隐喻创造。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎race_discussion背景——很可能是在讨论某种将中国女性与外国人性关系污名化的语境。',
+    "「我亲眼见过的事刺激到我了」暗示有具体事件背景，需要更多上下文才能完全理解。"
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「失足妇女」是对被污名化群体的贬义标签，说话者承认曾使用这一框架。',
+    "「一开始也把她们想成失足妇女来安慰自己」——「安慰自己」暗示叙事者用该标签管理自己的道德不安。",
+    '但文本后半部呈现了对这种刻板印象的突破(「我一直跟你杠」表明态度转变)。',
+    '整体是一个从偏见中走出的自述，而非持续攻击。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '文本本质是自我反思(承认自己曾使用偏见框架)，态度变化轨迹明确(「一开始...后来...」)，风险较低。',
+    'ToxiCN标注expr=2(隐晦)与这种双层叙述一致。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: medium。通过D4双关使用「失足妇女」这一贬义标签，但自述呈现出从偏见到突破的轨迹，风险中等。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=race; toxic=1; expr=2; reviewed_by=claude; chunk=032"
+
+# ── 004233 ──
+s = [x for x in samples if x["id"] == "004233"][0]
+s["risk_level"] = "high"
+s["encoding_primary"] = "literal_keyword"
+s["encoding_secondary"] = ["D2_隐喻"]
+s["ambiguity"] = "low"
+s["evidence_strength"] = "strong"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "说话者说「钓了大鱼」后「看看她们自己这些话，直接还给他们不是爆炸」——「她们」指女性。",
+    '「属实是没脑子」——直接对「她们」进行智商攻击。',
+    "「应该故意装一波这样才可以继续道德制高点贬低别人呀」——反讽对方虚伪，假装弱势才能站在道德高地。"
+]
+s["reasoning"]["encoding_analysis"] = [
+    'literal_keyword：「没脑子」是直接的人身侮辱词，无编码包装。',
+    'D2隐喻：「钓了大鱼」是钓鱼隐喻(诱使对方说出不利自己的话再反击)，是攻击策略的描述。',
+    '原编码E1平台黑话不适用——没有使用贴吧特有的黑话编码。'
+]
+s["reasoning"]["context_analysis"] = [
+    '贴吧gender_discussion，常见的性别对立互撕语境。',
+    '文本自足，不需要额外上下文。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「没脑子」是直接的侮辱攻击，无编码。',
+    '「她们」明确指向女性群体，构成群体攻击。',
+    '「钓大鱼」表明这是有预谋的论战策略描述。',
+    '「道德制高点贬低别人」——攻击对方虚伪，升级对抗强度。',
+    'topic=gender_discussion，与内容一致。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '说话者可能是在描述一场具体的论战而非无差别攻击女性，但「她们」+「没脑子」已构成明确的群体性别攻击。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: high。使用literal_keyword(「没脑子」)+群体指向(「她们」)的直接性别侮辱。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=tieba; topic=gender; toxic=1; expr=1; reviewed_by=claude; chunk=032"
+
+# ── 004234 ──
+s = [x for x in samples if x["id"] == "004234"][0]
+s["risk_level"] = "none"
+s["encoding_primary"] = "none"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「嗯嗯就是这个帖子被删了视频找不到了」——单纯陈述帖子被删除、视频丢失的事实。",
+    '完全中性的元讨论(关于帖子本身的技术性陈述)。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    '无编码机制。纯事实陈述。'
+]
+s["reasoning"]["context_analysis"] = [
+    '贴吧race_discussion帖中的中性回复，关于帖子状态的技术性交流。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '陈述帖子被删和视频丢失——纯事实信息，无评价。',
+    'ToxiCN标注toxic=0，完全正确。',
+    '语气词「嗯嗯」是日常肯定用语。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '无任何风险证据。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: none (hard_negative)。中性事实陈述，零攻击内容。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=tieba; topic=race; toxic=0; expr=0; reviewed_by=claude; chunk=032"
+
+# ── 004235 ──
+s = [x for x in samples if x["id"] == "004235"][0]
+s["risk_level"] = "low"
+s["encoding_primary"] = "E3_互动/热点触发"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = True
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「中国一女生被黑人当街指着鼻子骂，而她乖的连话都不敢说」——报道一个黑人辱骂中国女生的事件。",
+    '「乖的连话都不敢说」隐含对受害者的轻微责备(为什么不反抗)，而非对种族的直接攻击。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'E3互动触发：新闻报道式描述一个具体事件，风险来自事件描述中的种族标签而非文本本身的攻击。',
+    '无其他编码机制。'
+]
+s["reasoning"]["context_analysis"] = [
+    '贴吧gender_reporting，报道性文本，但主题同时涉及种族和性别。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「黑人当街指着鼻子骂」——描述了黑人实施攻击的场景。',
+    '「乖的连话都不敢说」——对女生反应的评价，含轻微责备。',
+    '但文本主要是事件描述而非种族攻击。',
+    'topic=gender_reporting标签与文本倾向匹配。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '虽然涉及种族标签，但文本叙述的是具体事件(黑人骂中国人)，叙事者对种族本身没有发表评价；「乖的连话都不敢说」责备的是受害者的软弱而非其种族。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: low。E3事件报道，涉及种族标签但叙事者的立场是对受害者的评论而非种族攻击。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=tieba; topic=gender; toxic=1; expr=3; reviewed_by=claude; chunk=032"
+
+# ── 004236 ──
+s = [x for x in samples if x["id"] == "004236"][0]
+s["risk_level"] = "low"
+s["encoding_primary"] = "none"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = True
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「为什么这年头大家都默认男性不能为女性发声？」——质疑一种性别刻板印象：男性不可以为女性说话。",
+    '这是质疑性别角色规范的反刻板印象提问，而非攻击。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    '无编码机制。直接提问，无修辞编码。',
+    '原编码E3+D1不适用——本条不是报道或反讽。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎race_reporting(这个标签似乎与文本内容不符，文本更适合gender话题)。',
+    '需要原帖上下文才能完全理解提问的语境。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「男性不能为女性发声」——质疑的是「不能」这个社会规范本身。',
+    '提问句式表明说话者是在寻求答案而非表达偏见。',
+    '「默认」一词暗示说话者认为这是不合理的预设。',
+    '无任何攻击性语言。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '提问可能基于「男性不该为女性发声」这一前提，但说话者的立场是质疑而非支持该前提。',
+    'ToxiCN标注expr=3(揭露/报道)，部分确认了其非攻击性质。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: low (hard_negative)。质疑性别刻板印象的提问，属于反偏见言论，可视为hard_negative。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=race; toxic=1; expr=3; reviewed_by=claude; chunk=032"
+
+# ── 004237 ──
+s = [x for x in samples if x["id"] == "004237"][0]
+s["risk_level"] = "none"
+s["encoding_primary"] = "none"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「《牛棚杂忆》《平凡的世界》还有很多伤痕文学都一个样，反正题材都是改开前的故事。」",
+    '文学评论——指出两本书和伤痕文学都以改革开放前的故事为题材，认为风格/主题相似。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    '无编码机制。纯文学评论。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎region_discussion标签可能与原文帖关系有关，但本条文本本身是文学讨论。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '讨论的是文学作品题材，完全中性。',
+    'ToxiCN标注toxic=0，完全正确。',
+    '「反正题材都是改开前的故事」是描述性判断，含轻微简化但无攻击。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '无任何风险证据。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: none (hard_negative)。文学题材评论，零攻击内容。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=region; toxic=0; expr=0; reviewed_by=claude; chunk=032"
+
+# ── 004238 ──
+s = [x for x in samples if x["id"] == "004238"][0]
+s["risk_level"] = "high"
+s["encoding_primary"] = "literal_keyword"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "strong"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「哈萨克人更是骗子和小偷啊，，。」——直接将哈萨克人整体定性为「骗子和小偷」。",
+    '「更是」表明说话者在延续一个此前已开始的地域攻击列表，「哈萨克人」是追加目标。',
+    "句尾的「，，。」反映随意口语化的表达习惯，但不降低攻击性。"
+]
+s["reasoning"]["encoding_analysis"] = [
+    'literal_keyword：「骗子和小偷」是直接的侮辱性定性，无任何编码包装。',
+    '原编码E1平台黑话完全不适用——本条不是平台黑话，是直接的地域/民族攻击。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎region_discussion，本条是典型的地域/民族仇恨言论。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「骗子和小偷」——对哈萨克人进行直接的负面群体定性。',
+    '「更是」表明这是对一个已建立的攻击叙事的追加。',
+    '使用「人」而非「族」或相关中性称谓，是群体性攻击的典型句式。',
+    'ToxiCN标注expr=1(直接)，与literal_keyword匹配。',
+    'topic=region且toxic=1，完全一致。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '如果原帖是在讨论个别案例，说话者可能将个别现象扩大到群体，但句式(「哈萨克人更是」)明确指向民族整体定性。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: high。使用literal_keyword(「骗子和小偷」)对哈萨克族进行直接的地域/民族群体侮辱。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=region; toxic=1; expr=1; reviewed_by=claude; chunk=032"
+
+# ── 004239 ──
+s = [x for x in samples if x["id"] == "004239"][0]
+s["risk_level"] = "medium"
+s["encoding_primary"] = "D2_隐喻"
+s["encoding_secondary"] = []
+s["ambiguity"] = "medium"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = True
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「上海歧视外地人是普遍存在，看看这次防疫吧」——陈述上海存在普遍的地域歧视现象，以防疫期间的现象为例。",
+    "「妖魔鬼怪到处是」——字面义为「各种怪物到处都是」，在此上下文中可以指代歧视现象/不公事件，也可以是对人的贬称。"
+]
+s["reasoning"]["encoding_analysis"] = [
+    'D2隐喻：「妖魔鬼怪」是用怪物意象隐喻在疫情期间暴露出的社会问题或人的行为。',
+    '原E1平台黑话不适用——「妖魔鬼怪」是成语隐喻，非平台特有黑话。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎region_discussion，讨论上海的歧视外地人现象。',
+    "「妖魔鬼怪」的指代对象需要更多上下文来确定——是指歧视性现象、抗疫乱象还是人本身？"
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「上海歧视外地人是普遍存在」——陈述歧视现象的存在。',
+    '「看看这次防疫吧」——以具体时期的事件作为证据调用。',
+    '「妖魔鬼怪到处是」——使用强烈负面意象描述情况。',
+    '第一句是客观陈述，第二句含隐喻式负面评价。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '「妖魔鬼怪」在中文中常用于形容「各种奇怪的/糟糕的现象」，不一定特指人；说话者可能在批评疫情期间暴露的治理问题而非上海人本身。',
+    '第一句本身是批评地域歧视的行为(「歧视外地人是普遍存在」)，可能立场是反歧视。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: medium。前半句批评地域歧视(反歧视立场)，后半句D2隐喻「妖魔鬼怪」指向ambiguous，综合判断为medium。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=region; toxic=1; expr=1; reviewed_by=claude; chunk=032"
+
+# ── 004240 ──
+s = [x for x in samples if x["id"] == "004240"][0]
+s["risk_level"] = "medium"
+s["encoding_primary"] = "D2_隐喻"
+s["encoding_secondary"] = []
+s["ambiguity"] = "medium"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「男人如狗；女人如猫」——将性别分别类比为狗和猫，然后分析这两种动物在语言中的评价差异。",
+    "「狗本来就是一个骂人的词」——承认「狗」在中文中的侮辱色彩，以此论证男人受到的负面评价。"
+]
+s["reasoning"]["encoding_analysis"] = [
+    'D2隐喻：全文通过猫/狗动物隐喻来讨论性别评价差异，猫狗是喻体，男/女是本体。',
+    '原D1反讽和D4双关不适用——文本不是反讽，而是隐喻+分析。'
+]
+s["reasoning"]["context_analysis"] = [
+    '贴吧gender_discussion，文本是在讨论性别议题中的语言差异。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '猫/狗隐喻构建了性别比较框架。',
+    "「对狗的评价总是正面占多数，对猫的评价总是负面占多数」——做出性别不对称的分析性论断。",
+    "「狗本来就是一个骂人的词」——承认侮辱语言的存在。",
+    '文本整体是分析性质的，但猫狗隐喻本身固化了性别刻板印象。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '说话者是在做社会语言学分析而非攻击某一性别；使用了学术分析式的比较框架。',
+    '「被恨总比被轻视好」是抽象表态，不确定指向。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: medium。运用猫狗D2隐喻框架讨论性别评价差异，虽是分析尝试但隐喻本身固化了性别刻板印象。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=tieba; topic=gender; toxic=1; expr=2; reviewed_by=claude; chunk=032"
+
+# ── 004241 ──
+s = [x for x in samples if x["id"] == "004241"][0]
+s["risk_level"] = "none"
+s["encoding_primary"] = "none"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「别批图啦，这图我都知道你从哪里偷来的」——指责对方P图(修图造假)，声称知道图片来源。",
+    '关于图片真实性的争论，与主题内容无关。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    '无编码机制。日常争论用语。'
+]
+s["reasoning"]["context_analysis"] = [
+    '贴吧race_discussion语境下的次级争论(关于图片真伪的技术性分歧)。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    "「别批图啦」(「别修图了」)——争论图片的真实性。",
+    "「从哪里偷来的」——声称对方盗图。",
+    '争论对象是图片本身而非种族话题。',
+    'ToxiCN标注toxic=0，完全正确。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '无任何风险证据。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: none (hard_negative)。关于图片真伪的技术性争论，无关种族话题。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=tieba; topic=race; toxic=0; expr=0; reviewed_by=claude; chunk=032"
+
+# ── 004242 ──
+s = [x for x in samples if x["id"] == "004242"][0]
+s["risk_level"] = "high"
+s["encoding_primary"] = "D1_反讽"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "strong"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「女人愿意和她们优秀的非洲老公回非洲我都想捐路费」——「捐路费」字面善意但实为反讽：说话者实际上是想送走这些女性。",
+    "「最怕通过女人黑下来，生窝二代，长大后来一句我是龙的传人」——表达对中国女性与黑人配偶在中国生育混血后代的恐惧/厌恶。",
+    "「我的妈呀简直头皮都麻了」——用身体反应强化对混血后代自称「龙的传人」的极端不适感。"
+]
+s["reasoning"]["encoding_analysis"] = [
+    'D1反讽：「捐路费」是典型反讽——表面慷慨实则希望对方离开。反讽贯穿全文。',
+    '无其他深层编码；反讽手法透明，种族驱逐意图明显。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎race_discussion，关于跨种族关系的极端保守/种族主义立场。',
+    '文本自足。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「捐路费」——反讽式「善意」，实际暴露了驱逐意图。',
+    "「黑下来」的双关讽刺——既指「黑人留下来」也指「使坏/非法居留」(黑下来在中文中的多义)。",
+    '「生窝二代」——用「窝」(窝/巢穴)将混血后代动物化。',
+    "「头皮都麻了」——强化了对混血后代认同中国身份的身体排斥反应。"
+]
+s["reasoning"]["counter_evidence"] = [
+    "「优秀的非洲老公」中的「优秀」可能是原帖引用的说法，但整体反讽框架太强，「优秀」也成为反讽的一部分。"
+]
+s["reasoning"]["final_rationale"] = 'Risk: high。通篇D1反讽表达对跨种族关系的强烈排斥，「捐路费」「黑下来」「生窝二代」等多重反讽叠加构成明确的种族仇恨言论。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=race; toxic=1; expr=2; reviewed_by=claude; chunk=032"
+
+# ── 004243 ──
+s = [x for x in samples if x["id"] == "004243"][0]
+s["risk_level"] = "none"
+s["encoding_primary"] = "none"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「要么当良民以骨气换生存，要么做逆党不破不立这个组织终究还是走上了周厉王的道路啊」",
+    '讨论某种组织/路径选择困境，引用周厉王典故批评某种「不破不立」的路线。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    '无攻击编码。引用历史典故(周厉王)进行社会评论，属于正常的历史类比修辞。'
+]
+s["reasoning"]["context_analysis"] = [
+    '贴吧gender_discussion的标签可能与实际原帖内容有关，但本条文本不针对任何性别群体。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「周厉王的道路」——历史典故引用，用于批评某种管理/组织结构。',
+    '虽然话题标签是gender，但文本内容无关性别。',
+    '无侮辱性词汇或编码。',
+    'ToxiCN标注toxic=0，完全正确。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '无任何风险证据。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: none (hard_negative)。历史典故引用+社会评论，零攻击内容。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=tieba; topic=gender; toxic=0; expr=0; reviewed_by=claude; chunk=032"
+
+# ── 004244 ──
+s = [x for x in samples if x["id"] == "004244"][0]
+s["risk_level"] = "low"
+s["encoding_primary"] = "E3_互动/热点触发"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = True
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「江南三村最初是某些地方用来嘲讽江浙沪的梗」——揭示「江南三村」这个标签的来源和用途。",
+    "说话者在分析和解释一个地域歧视梗的起源，类似「包邮区包邮是因为包邮区人民穷付不起邮费一样」。",
+    '文本定位是解释/揭露型，而非参与传播。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'E3互动触发：转述和分析他人的地域歧视梗，风险来自被转述的内容而非文本本身的攻击性。',
+    '移除原D1——本条无反讽，是解释型叙述。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎region_reporting，解释地域歧视梗的起源。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    "「某些地方用来嘲讽江浙沪的梗」——明确指出「江南三村」是歧视性嘲讽。",
+    "比喻「包邮区人民穷付不起邮费」——举例说明类似梗的运作机制。",
+    "「都是某些地区嘲讽江浙沪的梗」——再次确认这些梗的性质。",
+    '说话者的立场是揭露和分析，非赞同。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '转述歧视梗的内容时，即使目的是揭露，也在传播层面上复述了这些梗，存在被误用的风险。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: low。E3揭露/分析型文本，解释地域梗的起源和意义，风险来自话题本身而非攻击性。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=region; toxic=1; expr=3; reviewed_by=claude; chunk=032"
+
+# ── 004245 ──
+s = [x for x in samples if x["id"] == "004245"][0]
+s["risk_level"] = "none"
+s["encoding_primary"] = "none"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「是的是的，没错没错，我乡下来的，没读过书不知道」——以自嘲方式回应对方：承认自己是「乡下人」没见识。",
+    '反讽性自嘲——通过夸张地承认「没读过书」来讽刺对方的高傲或刻板印象。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    '无编码机制。日常反讽自嘲，不构成系统编码。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎race_discussion语境，可能是对地域歧视或精英主义言论的反讽自嘲回应。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    "「乡下来的，没读过书」——自贬式表述，明显是反讽而非事实承认。",
+    '说话者回应的是对方的某种高傲/偏见态度。',
+    '无攻击性词汇。',
+    'ToxiCN标注toxic=0，完全正确。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '无任何风险证据。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: none (hard_negative)。反讽自嘲回应，零攻击内容。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=race; toxic=0; expr=0; reviewed_by=claude; chunk=032"
+
+# ── 004246 ──
+s = [x for x in samples if x["id"] == "004246"][0]
+s["risk_level"] = "high"
+s["encoding_primary"] = "literal_keyword"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "strong"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「喷回去，妈的，非洲人我是接受不了，在中国不干人事」——直接表达对非洲人的无法接受和负面评价。",
+    '「在中国不干人事」——全称量词「非洲人」搭配「不干人事」(不做人事)，对非洲人在华行为进行整体贬低。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'literal_keyword：「喷」鼓励直接攻击；「不干人事」是直接贬低用语。无编码包装。',
+    '原C4典故/符号借用完全不适用——这里没有使用任何典故或符号借用。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎race_discussion，直接、明确的种族歧视言论。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「非洲人我是接受不了」——明确表达对非洲人的群体排斥。',
+    '「在中国不干人事」——全称否定非洲人在华行为。',
+    '「妈的」——粗口强化攻击情绪。',
+    '「喷回去」——鼓励他人也进行攻击。',
+    'ToxiCN标注expr=1(直接)，与literal_keyword完全匹配。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '「在中国不干人事」可能基于个人经历，但句式(「非洲人」作为全称主语)构成群体攻击。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: high。使用literal_keyword对非洲人群体进行全称贬低(「不干人事」)，直接种族歧视言论。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=race; toxic=1; expr=1; reviewed_by=claude; chunk=032"
+
+# ── 004247 ──
+s = [x for x in samples if x["id"] == "004247"][0]
+s["risk_level"] = "medium"
+s["encoding_primary"] = "D1_反讽"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "strong"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「陆续有无辜路人被烧晕，情况十分紧危机」——虚构了一个紧急场景(有人被烧晕)，营造危机感。",
+    "「人们正迫切地需要着反同战士的登场」——将反对同性恋的人称为「战士」，以英雄叙事包装反同立场。"
+]
+s["reasoning"]["encoding_analysis"] = [
+    'D1反讽：通过夸张虚构的「无辜路人被烧晕」的危机情景，嘲讽性地「呼吁」反同战士登场。',
+    '反讽指向明显——表面严肃呼吁，实则通过荒谬设定暴露反同立场的极端性。但如果不识别反讽标记，这段文字的反同立场是直接的。'
+]
+s["reasoning"]["context_analysis"] = [
+    '贴吧lgbt_discussion，此句在反讽那些夸大同性恋影响力并鼓吹反同的人士。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    "「紧危机」的拼写错误(「紧急」写反了)可能是故意的，暗示这不是正经文本。",
+    '「反同战士」将反同立场称为「战士」是典型反讽——既夸大了反同者的自我定位。',
+    "「情况十分紧危机」——语序颠倒加剧荒诞感。",
+    '全句是虚构的极端场景，非真实描述。',
+    '但「反同战士」这个表达本身承载了对同性恋的敌对立场。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '如果说话者是在用反讽嘲笑「反同战士」(即反同者是走极端的)，则本句可能是讽刺反同立场而非宣传它。',
+    "「紧危机」的错位提示文本可能是戏仿。"
+]
+s["reasoning"]["final_rationale"] = 'Risk: medium。D1反讽编码虚构极端场景(路人被烧晕)并呼吁「反同战士」，反讽方向存疑但「反同战士」承载了对同性恋的敌对框架。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=tieba; topic=lgbt; toxic=1; expr=2; reviewed_by=claude; chunk=032"
+
+# ── 004248 ──
+s = [x for x in samples if x["id"] == "004248"][0]
+s["risk_level"] = "high"
+s["encoding_primary"] = "C5_概念替换"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "strong"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「是普信杨笠，又是下头的一天」——「普信」(普通而自信)和「下头」(让人扫兴)都是互联网上用于贬低特定表达的流行语。",
+    '「杨笠」——脱口秀演员，以其针对男性的讽刺言论闻名；使用其名作为「引发女性对男性不满」的代号。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'C5概念替换：「普信」是压缩概念编码(普通+自信→普信)，「杨笠」被用作「挑动性别对立者」的符号代表。',
+    '「下头」是网络流行概念编码，表示「破坏氛围/令人扫兴」。',
+    '原E1平台黑话虽接近但不精准——这些词已跨出贴吧成为全网通用，更宜归为C5概念替换。'
+]
+s["reasoning"]["context_analysis"] = [
+    '贴吧gender_discussion，针对女性相关言论的性别对立反击。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「普信」是互联网性别战争中的核心编码词，指代「男性普通却自信」的讥讽标签。',
+    '「杨笠」作为脱口秀演员是性别对立争议的中心人物，引用其名即激活整个语境。',
+    '「下头的一天」——将对方(杨笠相关言论)定性为让人扫兴的负面体验。',
+    '三个词一起使用构成性别对立的密集编码攻击。'
+]
+s["reasoning"]["counter_evidence"] = [
+    "「又是下头的一天」可以解读为个人情绪表达；但「普信杨笠」的指向明确——正在批评杨笠式的女性立场表达。",
+    '文本有对话针对性，但即使独立看也有明确的编码攻击性。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: high。C5概念替换编码(「普信」「杨笠」「下头」)叠加使用，构成对性别对立话语的直接参与和攻击。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=tieba; topic=gender; toxic=1; expr=1; reviewed_by=claude; chunk=032"
+
+# ── 004249 ──
+s = [x for x in samples if x["id"] == "004249"][0]
+s["risk_level"] = "medium"
+s["encoding_primary"] = "D1_反讽"
+s["encoding_secondary"] = ["C5_概念替换"]
+s["ambiguity"] = "medium"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = True
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「看到李纯微博越来越多的理中客姐妹支援，大姐感到很欣慰。」——「理中客」是网络黑话(理性、中立、客观的缩写，常作反讽使用)。",
+    "「大姐」是自称，说话者对「理中客姐妹」的支援感到「欣慰」——但到底是真欣慰还是嘲讽，取决于「理中客」的用法。"
+]
+s["reasoning"]["encoding_analysis"] = [
+    'D1反讽：如果「理中客」是贬义使用(讽刺对方假装中立)，则全句是反讽——表面欣慰实际在嘲笑。',
+    'C5概念替换：「理中客」是互联网黑话编码词(理性+中立+客观→理中客)，在性别讨论中常用于讽刺「表面中立实则偏袒」的立场。'
+]
+s["reasoning"]["context_analysis"] = [
+    '贴吧race_discussion——但提到「李纯微博」暗示这是跨平台引用(从微博到贴吧的转述)。',
+    "需要了解李纯微博讨论的内容及「理中客」在其中的具体用法才能确定反讽方向。"
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「理中客」是明确的概念替换编码词(缩写+讽刺意味)。',
+    "「大姐感到很欣慰的」——「大姐」自称+「欣慰」可以同时是真欣慰或反讽。",
+    'race_discussion标签提示背景是种族议题讨论。',
+    '编码难度属于expr=2水平，需要语境解码。'
+]
+s["reasoning"]["counter_evidence"] = [
+    "「越来越多的理中客姐妹支援」中的「支援」如果确为正面意义，则全段是真欣慰而非反讽，可能属于无风险。",
+    '需要在微博原帖语境下才能准确判断。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: medium。使用C5编码词「理中客」+可能的D1反讽框架，在race语境中传递了对某立场的不认同，但反讽方向需要语境确认。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=tieba; topic=race; toxic=1; expr=2; reviewed_by=claude; chunk=032"
+
+# ── 004250 ──
+s = [x for x in samples if x["id"] == "004250"][0]
+s["risk_level"] = "high"
+s["encoding_primary"] = "literal_keyword"
+s["encoding_secondary"] = ["D2_隐喻"]
+s["ambiguity"] = "low"
+s["evidence_strength"] = "strong"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「帅个屁，你这是什么审美，或者阁下也是黑猩猩？」——直接在回应中使用侮辱词组合。",
+    '「阁下也是黑猩猩」——将对方比喻为黑猩猩，这是针对黑人的种族主义动物化比喻(将黑人比作猩猩)。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'literal_keyword：「帅个屁」是直接粗口否定。',
+    'D2隐喻：「黑猩猩」是种族歧视中常用的动物隐喻——将黑人与猩猩进行贬低性类比，长期用于否定黑人的智力和人性。',
+    '原C4典故/符号借用不适用——「黑猩猩」不是典故或符号借用，而是直接的种族侮辱隐喻。'
+]
+s["reasoning"]["context_analysis"] = [
+    '贴吧race_discussion，明显针对黑人群体的种族攻击。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「黑猩猩」是种族歧视中最固化、最直接的动物化隐喻之一。',
+    '「帅个屁」——强化否定和侮辱语气。',
+    '「你这什么审美」——在颜值评价语境中引入种族攻击。',
+    "句式「阁下也是...？」以貌似礼貌的形式提出侮辱性比喻，加剧了攻击的恶意。"
+]
+s["reasoning"]["counter_evidence"] = [
+    "理论上「黑猩猩」如果在对纯粹动物学的讨论中出现可视为中性，但「帅个屁」+「审美」语境和race_discussion标签排除了该可能。"
+]
+s["reasoning"]["final_rationale"] = 'Risk: high。literal_keyword(「帅个屁」)与种族主义D2隐喻(「黑猩猩」)组合，构成明确且极端的种族歧视攻击。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=tieba; topic=race; toxic=1; expr=1; reviewed_by=claude; chunk=032"
+
+# ── 004251 ──
+s = [x for x in samples if x["id"] == "004251"][0]
+s["risk_level"] = "none"
+s["encoding_primary"] = "none"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「我只有一个要求：家里至少持有两个及以上的强相互作用力宇宙探测器」——完全是科幻/幽默表达。",
+    '「强相互作用力宇宙探测器」是物理学概念与科幻的混搭，不可能认真作为实际要求。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    '无编码机制。科幻梗/幽默表达。'
+]
+s["reasoning"]["context_analysis"] = [
+    '贴吧gender_discussion是标签，但本条是纯幽默。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「强相互作用力宇宙探测器」——科幻概念，不具实际意义。',
+    '「至少持有两个及以上」——模仿严肃要求的格式但内容荒诞。',
+    '典型的互联网梗/玩笑。',
+    'ToxiCN标注toxic=0，完全正确。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '理论上「强相互作用力宇宙探测器」在严肃的科幻讨论中可能正常，但在gender_discussion标签下作为帖子出现的幽默讽刺可能是对话题的戏谑转换，风险极低。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: none (hard_negative)。科幻梗/幽默帖子，零攻击内容。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=tieba; topic=gender; toxic=0; expr=0; reviewed_by=claude; chunk=032"
+
+# ── 004252 ──
+s = [x for x in samples if x["id"] == "004252"][0]
+s["risk_level"] = "high"
+s["encoding_primary"] = "D1_反讽"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "strong"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「要的就是根本就回不来，不然去非洲有啥意义」——回应关于去非洲(可能涉及跨国婚姻/移民)的讨论。",
+    '「要的就是根本回不来」——希望去非洲的人永远不要回来。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'D1反讽：表面上在说「去非洲的意义」，实际表达的是「最好永远别回来」的排斥态度。',
+    '无深层编码；反讽透明，种族驱逐意图明显。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎race_discussion，回应涉及跨种族关系或移民的帖子。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「要的就是根本就回不来」——明确表达希望对方/某人永远留在非洲。',
+    '「不然去非洲有啥意义」——预设「去非洲」本身没有意义，除非达到「不回来」的目的。',
+    '全句表达了种族排斥——不希望某类人(可能是与黑人结婚的中国人或非洲移民)回到中国。',
+    'ToxiCN标注expr=2(隐晦)但本条的反讽其实相当直接。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '如果讨论的是某个具体个案(如某人自愿移民非洲并持此观点)，则说话者可能是在赞同某人自己的选择。但「要的就是」暗示这是别人的意图。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: high。D1反讽表达种族驱逐意图(「要的就是根本回不来」)，指向明确的种族排斥立场。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=race; toxic=1; expr=2; reviewed_by=claude; chunk=032"
+
+# ── 004253 ──
+s = [x for x in samples if x["id"] == "004253"][0]
+s["risk_level"] = "low"
+s["encoding_primary"] = "E3_互动/热点触发"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "weak"
+s["needs_context"] = True
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「企业是不要四川的，你搞错了」——声称企业在招聘中排除四川人。",
+    '「你搞错了」是指出对方信息有误——说话者似乎在纠正对方关于招聘来源地的说法。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'E3互动触发：回应他人言论，涉及地域就业歧视现象的描述。',
+    '无编码机制。直接的事实性断言。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎region_reporting，可能是关于地域就业歧视讨论中的一条纠正性回复。',
+    '需要原帖上下文才能确定说话者是揭露歧视现象还是在陈述一个歧视性的用工政策。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「企业是不要四川的」——陈述企业不招聘四川人的用工实践。',
+    '「你搞错了」——在纠正对方的某种判断。',
+    '可解读为企业用工中的地域歧视现象报道。',
+    'topic=region_reporting标签与报道性质一致。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '文本过于简短，无法判断说话者是在揭露歧视还是在赞同歧视。「企业是不要四川的」可以是事实陈述也可以是歧视本身。在对话上下文中需要更多信息。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: low。E3报道型文本可能(报道地域歧视现象)，但文本过短且缺乏语境，证据强度weak，保守标low。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=region; toxic=1; expr=3; reviewed_by=claude; chunk=032"
+
+# ── 004254 ──
+s = [x for x in samples if x["id"] == "004254"][0]
+s["risk_level"] = "low"
+s["encoding_primary"] = "E3_互动/热点触发"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「我是河南的回族，简直互联网最底层?」——自我身份介绍(河南+回族双重身份)，自嘲处于互联网鄙视链最底层。",
+    "「最底层」承认自己的双重身份(地域+民族)在互联网上被双重歧视。?表情显示是以玩笑/自嘲方式表达。"
+]
+s["reasoning"]["encoding_analysis"] = [
+    'E3互动触发：在讨论地域/民族歧视的语境中，以个人身份参与讨论。',
+    '移除原D1——本条是自嘲而非反讽攻击。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎region_reporting，自我身份披露参与地域/民族歧视讨论。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「河南的回族」——指出双重地域/民族身份。',
+    '「互联网最底层」——承认这两个群体在互联网舆论中处于被歧视地位。',
+    '?表情表明是自嘲式的幽默表达，不是攻击。',
+    '说话者本人是受歧视群体的成员，而非歧视的实施者。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '完全无攻击证据。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: low (hard_negative)。自嘲型身份披露，属于E3报道参与，无攻击性。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=region; toxic=1; expr=3; reviewed_by=claude; chunk=032"
+
+# ── 004255 ──
+s = [x for x in samples if x["id"] == "004255"][0]
+s["risk_level"] = "high"
+s["encoding_primary"] = "D2_隐喻"
+s["encoding_secondary"] = ["C4_典故/符号借用"]
+s["ambiguity"] = "low"
+s["evidence_strength"] = "strong"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「原来是上边某些人，养黑护黑欢迎黑人，怎么办？」——指责「上边」(上层/官方)的欢迎黑人政策。",
+    '「养黑护黑」——用「养」与「护」动词，将对黑人的欢迎政策类比为养育/庇护宠物或危险物。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'D2隐喻：「养黑」是对政府政策的动物化隐喻——将「欢迎黑人」比作「喂养/庇护」行为，暗含黑人是被「豢养」的客体。',
+    'C4典故/符号借用(可能)：「养黑护黑」借用了中文政治话语中「养寇自重」的框架结构，将黑人群体与「寇」(匪徒/敌人)类比。'
+]
+s["reasoning"]["context_analysis"] = [
+    '贴吧race_discussion，负面评价政府对非裔人群的政策。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「养黑护黑」——「养」字将黑人客体化为被照料的对象，带有贬损和轻蔑。',
+    '「怎么办？」——危机化修辞框架，暗示当前情况需要采取行动应对。',
+    '「上边某些人」——将决策者与大众对立，构建内外对比。',
+    '全段基调为对种族政策的强烈不满。',
+    '原评medium过低——「养黑」的动物化隐喻+「怎么办」的危机煽动应升为high。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '文本是对政府政策的批评而非直接攻击黑人群体本身；「养黑护黑」批评的是政策导向而非黑人人种。但修辞框架中黑人的客体化仍有风险。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: high。D2隐喻「养黑」将黑人群体动物化，配合C4框架的「养贼」类比和危机煽动语气(「怎么办？」)。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=tieba; topic=race; toxic=1; expr=2; reviewed_by=claude; chunk=032"
+
+# ── 004256 ──
+s = [x for x in samples if x["id"] == "004256"][0]
+s["risk_level"] = "high"
+s["encoding_primary"] = "D1_反讽"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "strong"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「如果您只是找个黑人男友耍耍，建议您过年过节带回家，让您的亲戚朋友看看您的大国气度！」——表面建议对方带黑人男友回家见家人。",
+    "「相信你的家人朋友都是有教养和大国气度的，怎么会说您的闲话呢？」——通过「假设」家人有教养来反讽地暗示他们实际上会歧视。"
+]
+s["reasoning"]["encoding_analysis"] = [
+    'D1反讽：通篇运用反讽，表面赞赏「大国气度」实际在嘲讽和施压——明知对方会受到家人歧视，却以「相信他们有教养」来预设。',
+    '「大国气度」是反讽核心词汇——将本应用于国家层面的概念用于家庭见家长的场合，制造荒诞感。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎race_discussion，针对与黑人交往的中国女性的反讽攻击。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「找黑人男友耍耍」——「耍耍」(玩玩)轻蔑化跨种族关系。',
+    '「大国气度」——全句最「真诚」的词汇实为最大的反讽。',
+    '「绝不会像知乎的喷子一样」——假装认可知乎喷子更恶毒，实则掩盖自己也在施压。',
+    '「[蹲][蹲][蹲]」——表情符号强化了看戏/幸灾乐祸的态度。',
+    '原评medium过低——反讽框架中「大国气度」的编码攻击性应升为high。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '说话者可以说自己只是在「开玩笑」或给建议，但全篇反讽框架太明显，意图向对方施压。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: high。通篇D1反讽以「大国气度」编码，「建议」对方将黑人男友带回家的真实意图是施加社会压力。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=race; toxic=1; expr=2; reviewed_by=claude; chunk=032"
+
+# ── 004257 ──
+s = [x for x in samples if x["id"] == "004257"][0]
+s["risk_level"] = "none"
+s["encoding_primary"] = "none"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「不太认同，虽然我本身的审美是黄种人，但是有的人就是喜欢白种人或者黑人吧」——表示对某种偏激观点的异议。",
+    "「一棍子打死所有人不好吧?」——反对以偏概全的刻板印象，主张尊重个体差异。"
+]
+s["reasoning"]["encoding_analysis"] = [
+    '无编码机制。直接表达个人观点——反对种族偏见的包容立场。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎race_discussion，本条是在反驳一种种族偏见观点。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「一棍子打死所有人不好吧」——明确反对以偏概全。',
+    '「有的人就是喜欢白种人或者黑人吧」——承认不同种族之间存在吸引力，不将其问题化。',
+    '?表情表示在理性思考。',
+    'ToxiCN标注toxic=0，完全正确。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '「我本身的审美是黄种人」——个人审美偏好陈述，但不构成对任何群体的贬低。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: none (hard_negative)。反对种族刻板印象、主张包容的正面立场表达。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=race; toxic=0; expr=0; reviewed_by=claude; chunk=032"
+
+# ── 004258 ──
+s = [x for x in samples if x["id"] == "004258"][0]
+s["risk_level"] = "none"
+s["encoding_primary"] = "none"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「植物也是有生命的啊，人类为什么要吃大米、麦子和蔬菜呢？」——通过荒谬类比来反驳某种立场。",
+    "「建议欧美开展「植物的命也是命，植命贵」运动。素食主义者全部变成绝食主义者。」——戏仿「黑人的命也是命」(Black Lives Matter)运动，但讽刺的对象是过度类推的原论点。"
+]
+s["reasoning"]["encoding_analysis"] = [
+    '无攻击编码。是reductio ad absurdum(归谬法)的修辞，讽刺原论点站不住脚。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎race_discussion背景下，本条可能是在驳斥某种将种族议题无限类推的极端论述。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「植物的命也是命，植命贵」——戏仿BLM运动的语言，但用于讽刺过度类推而非嘲笑BLM本身。',
+    '「素食主义者全部变成绝食主义者」——演绎到极端荒谬的结论。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '「植命贵」对BLM(「黑命贵」)的直接戏仿可能被解读为对黑人平权运动的轻蔑，但上下文显示嘲讽对象是过度类推者而非BLM运动本身。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: none (hard_negative)。归谬法论证，看似戏仿BLM口号但实际嘲讽的对象是过度类推的论点而非BLM运动。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=race; toxic=0; expr=0; reviewed_by=claude; chunk=032"
+
+# ── 004259 ──
+s = [x for x in samples if x["id"] == "004259"][0]
+s["risk_level"] = "high"
+s["encoding_primary"] = "A1_谐音"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "strong"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「很好的解释了为什么会出现那么多eg的原因，兄弟们怎么看」——「eg」是网络黑话，在互联网性别战争中特指「Easy Girl」(崇洋媚外、对非中国男性太容易「上手」的中国女性)。",
+    '「eg」在中文互联网种族/性别讨论中属于高度贬义标签，指向与外国人约会的中国女性。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'A1谐音/缩写：「eg」是「Easy Girl」的英文缩写编码，在贴吧等平台固化为对与外国人约会的中国女性的侮辱性代称。',
+    '原编码E1平台黑话接近但A1更准确——「eg」本质上是外语音译缩写编码。'
+]
+s["reasoning"]["context_analysis"] = [
+    '贴吧gender_discussion，但「eg」的侮辱同时涉及性别(女性)和种族(与外国人交往)。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「eg」在贴吧/虎扑/NGA等平台是众所周知的性别+种族交叉侮辱编码词。',
+    '「兄弟们怎么看」——将话题引入群体讨论，扩大传播。',
+    '全段为讨论「eg」现象的帖子引语，参与并传播了该编码词。',
+    'text虽短，但使用「eg」本身就是攻击行为。',
+    'ToxiCN标注expr=1(直接)，与「eg」固化编码的直接使用匹配。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '如果原帖作者是在严肃讨论「eg标签被滥用」的现象而非使用该标签攻击人，则可能转换性质；但本句的表达方式(「为什么会出现那么多eg」)是直接将其作为既定现象讨论。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: high。使用A1外语音译缩写编码词「eg」(Easy Girl)对特定女性群体进行直接的种族+性别交叉侮辱。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=tieba; topic=gender; toxic=1; expr=1; reviewed_by=claude; chunk=032"
+
+# ── 004260 ──
+s = [x for x in samples if x["id"] == "004260"][0]
+s["risk_level"] = "low"
+s["encoding_primary"] = "none"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「不知道为啥一说河南就有人说东北」——观察到一种网络讨论模式：提到河南必被比到东北。",
+    "「东北人在我们这里是直爽的特点，而河南....家里被骗过两次，同学在郑州大学被偷了俩iPhone」——承认自己对河南人的负面印象来自个人遭遇。",
+    "结尾「希望能改观」——表达了愿意改变偏见的开放态度。"
+]
+s["reasoning"]["encoding_analysis"] = [
+    '无编码机制。个人经历分享+偏见反思。'
+]
+s["reasoning"]["context_analysis"] = [
+    '知乎region_discussion，关于地域歧视的个人体验和思考。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    "「家里被骗过两次，同学在郑州大学被偷了俩iPhone」——承认偏见的源头是个人负面经历。",
+    "「希望能改观」——表达了改变偏见的意愿，非固化的恶意。",
+    '说话者是在反思自己的地域偏见而非宣扬它。',
+    "「不知道为啥一说河南就有人说东北」——观察到一个社会现象。"
+]
+s["reasoning"]["counter_evidence"] = [
+    "「而河南....」的省略号和列举被骗经历，虽然在反思框架内，但仍复述和传播了地域刻板印象。"
+]
+s["reasoning"]["final_rationale"] = 'Risk: low (hard_negative)。自我反思型个人经历分享，承认偏见并表达了改变意愿，属于反偏见讨论。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=zhihu; topic=region; toxic=0; expr=0; reviewed_by=claude; chunk=032"
+
+# ── 004261 ──
+s = [x for x in samples if x["id"] == "004261"][0]
+s["risk_level"] = "none"
+s["encoding_primary"] = "none"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "moderate"
+s["needs_context"] = False
+s["hard_negative"] = True
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「唐画里的小胖妞确实是这样的但那是绘画风格，记载中唐代女子的标准其实是..「丰r肥t」之类的丰腴美」",
+    '关于唐代绘画风格与历史记载中女性审美标准的学术/科普讨论。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    '无编码机制。历史审美讨论。'
+]
+s["reasoning"]["context_analysis"] = [
+    '贴吧gender_discussion背景下偏离主题的文艺讨论。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '讨论唐代绘画风格和审美标准的历史内容。',
+    '「丰r肥t」是「丰乳肥臀」的缩写形式，但属于中性历史描述。',
+    '无任何攻击性语言。',
+    'ToxiCN标注toxic=0，完全正确。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '无任何风险证据。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: none (hard_negative)。关于唐代审美的历史/艺术讨论，零攻击内容。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=tieba; topic=gender; toxic=0; expr=0; reviewed_by=claude; chunk=032"
+
+# ── 004262 ──
+s = [x for x in samples if x["id"] == "004262"][0]
+s["risk_level"] = "high"
+s["encoding_primary"] = "C5_概念替换"
+s["encoding_secondary"] = []
+s["ambiguity"] = "low"
+s["evidence_strength"] = "strong"
+s["needs_context"] = False
+s["hard_negative"] = False
+s["target_known"] = True
+s["reasoning"]["literal_analysis"] = [
+    "「别搞新纳粹，只反三非就行」——「新纳粹」是公认的极端种族主义标签；「三非」是互联网编码词，指「非中国籍、非中国血统、非中国文化背景的外国人」。",
+    '说话者说不要搞成新纳粹，但主张「只反三非」——将反对范围限定在「三非」群体(主要是黑人和东南亚裔在华外国人)。'
+]
+s["reasoning"]["encoding_analysis"] = [
+    'C5概念替换：「三非」是互联网上专门针对特定外国人群体的概念编码，将种族排斥包装成「三类非法」的技术性标签。',
+    '原C4典故/符号借用不适用——「三非」不是典故或符号，是刻意制造的概念编码。'
+]
+s["reasoning"]["context_analysis"] = [
+    '贴吧race_discussion，关于种族立场定位的讨论。'
+]
+s["reasoning"]["supporting_evidence"] = [
+    '「三非」是贴吧等中文论坛上对黑人和东南亚裔进行群体排斥的编码词。',
+    '「只反三非就行」——明确主张将排斥对象限定在特定种族/国籍群体。',
+    '「别搞新纳粹」——显示说话者知道自己的立场接近极右种族主义，试图划一条「界限」(只反三非而非全面纳粹)。',
+    '但「反三非」本身就是种族主义行为。',
+    'ToxiCN标注expr=1，与本条使用固化编码词一致。'
+]
+s["reasoning"]["counter_evidence"] = [
+    '「三非」在一些语境中被解读为「非法入境、非法居留、非法就业」的技术性政策术语，但在本句的「只反」框架下已明确成为群体排斥目标。'
+]
+s["reasoning"]["final_rationale"] = 'Risk: high。使用C5概念编码「三非」明确主张对特定外来群体进行排斥，承认了自己与新纳粹的接近性。'
+s["quality_status"] = "reviewed"
+s["review_notes"] = "source=batch23_toxicn; platform=tieba; topic=race; toxic=1; expr=1; reviewed_by=claude; chunk=032"
+
+# ── Write output ──
+with open("data/raw/batch23_chunks/chunk_032_reviewed.jsonl", "w") as f:
+    for s in samples:
+        f.write(json.dumps(s, ensure_ascii=False) + "\n")
+
+print("Done! Reviewed", len(samples), "samples to chunk_032_reviewed.jsonl")
