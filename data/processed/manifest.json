@@ -1,26 +1,26 @@
 {
   "dataset_name": "semantic_risk_reasoning",
-  "generated_at_utc": "2026-06-18T08:27:18+00:00",
+  "generated_at_utc": "2026-06-18T08:35:31+00:00",
   "source": {
     "path": "data/processed/combined_candidates.jsonl",
-    "sha256": "ced5ac894bc094723c79a1e258d8c8f6f6dcaa120f19ff17e7fffa30ea8525db",
+    "sha256": "46c04d62a4bcb2c709a0ba1cee09ce939f4becd0a29b899dabf54d385151b3da",
     "duplicate_id_count": 0,
     "duplicate_ids": [],
     "summary": {
-      "count": 2612,
+      "count": 4612,
       "risk_level": {
-        "high": 567,
-        "low": 441,
-        "medium": 597,
-        "none": 1007
+        "high": 1067,
+        "low": 841,
+        "medium": 1197,
+        "none": 1507
       },
       "source_type": {
-        "real": 519,
+        "real": 2519,
         "synthetic": 2093
       },
       "quality_status": {
         "approved": 162,
-        "draft": 1317,
+        "draft": 3317,
         "reviewed": 1133
       },
       "encoding_primary": {
@@ -35,32 +35,32 @@
         "C1_历史人物类比": 73,
         "C2_历史事件影射": 31,
         "C3_数字代指": 31,
-        "C4_典故/物品/符号借用": 102,
+        "C4_典故/物品/符号借用": 367,
         "C5_概念替换": 32,
-        "D1_反讽": 193,
-        "D2_隐喻": 125,
+        "D1_反讽": 507,
+        "D2_隐喻": 411,
         "D3_借代": 25,
         "D4_双关": 5,
-        "E1_平台黑话": 263,
+        "E1_平台黑话": 498,
         "E2_时间节点触发": 26,
-        "E3_互动/热点触发": 35,
+        "E3_互动/热点触发": 435,
         "E4_热点绑定": 17,
         "F_组合编码": 22,
         "literal_keyword": 367,
-        "none": 1049
+        "none": 1549
       },
       "evidence_strength": {
-        "moderate": 1386,
-        "strong": 732,
+        "moderate": 2286,
+        "strong": 1832,
         "weak": 494
       },
       "ambiguity": {
         "high": 43,
-        "low": 1953,
-        "medium": 616
+        "low": 3353,
+        "medium": 1216
       },
-      "hard_negative": 1079,
-      "needs_context": 71,
+      "hard_negative": 1579,
+      "needs_context": 471,
       "review_source": {
         "abstract_batch": 25,
         "batch10_new_patterns": 50,
@@ -95,6 +95,7 @@
         "batch20_dual_meaning_fix": 25,
         "batch21_toxicn": 29,
         "batch22_toxicn": 39,
+        "batch23_toxicn": 2000,
         "batch2_natural": 27,
         "batch3_natural": 46,
         "batch4_natural": 47,
@@ -123,8 +124,8 @@
   "artifacts": {
     "sft": {
       "path": "data/processed/sft/sft_candidates.jsonl",
-      "sha256": "1a7eb74d66a3b693ba8ed2385d61f3fc26bca4f934fdc26caa03b50a31077fcc",
-      "count": 2612,
+      "sha256": "bcb0aeb72dd5f5be0b74065dd5dddd05423e02c4cdfb48b5a2b071b88e062920",
+      "count": 4612,
       "missing_candidate_ids": [],
       "missing_candidate_count": 0,
       "duplicate_id_count": 0,
@@ -136,80 +137,80 @@
     "splits": {
       "train": {
         "path": "data/processed/splits/train.jsonl",
-        "sha256": "618ebf17715f173278cf6e9318ab0d494e92a5885fcca1615a3e7d78007ebc4a",
-        "count": 2090,
+        "sha256": "5536d47ebf19060065ceeec8e4cb38b2196276cad3fcd8f1181536c32d59b7f8",
+        "count": 3690,
         "risk_level": {
-          "high": 459,
-          "low": 350,
-          "medium": 468,
-          "none": 813
+          "high": 859,
+          "low": 670,
+          "medium": 940,
+          "none": 1221
         },
         "quality_status": {
-          "approved": 135,
-          "draft": 1049,
-          "reviewed": 906
+          "approved": 134,
+          "draft": 2633,
+          "reviewed": 923
         },
         "missing_from_candidates": 0,
         "field_mismatch_counts": {}
       },
       "validation": {
         "path": "data/processed/splits/validation.jsonl",
-        "sha256": "781697db46f8cd5070fb69e1ee32adccb2132b514eb64e8dc353b441f27e00d5",
-        "count": 261,
+        "sha256": "c7149996712c490666fd8c5787525f2f72572afe3e9f51be71731ba21ce1a620",
+        "count": 461,
         "risk_level": {
-          "high": 48,
-          "low": 49,
-          "medium": 66,
-          "none": 98
+          "high": 91,
+          "low": 86,
+          "medium": 132,
+          "none": 152
         },
         "quality_status": {
-          "approved": 14,
-          "draft": 134,
-          "reviewed": 113
+          "approved": 11,
+          "draft": 336,
+          "reviewed": 114
         },
         "missing_from_candidates": 0,
         "field_mismatch_counts": {}
       },
       "test": {
         "path": "data/processed/splits/test.jsonl",
-        "sha256": "97d71ebe342e35a47b39b1acbb38dd1f1824087e5fd8234c0abda63c9965967d",
-        "count": 261,
+        "sha256": "bbb57635d1f4b754f42f66d10e6cb50958ce1e2e2852ca47a8d8f8f7576ab87b",
+        "count": 461,
         "risk_level": {
-          "high": 60,
-          "low": 42,
-          "medium": 63,
-          "none": 96
+          "high": 117,
+          "low": 85,
+          "medium": 125,
+          "none": 134
         },
         "quality_status": {
-          "approved": 13,
-          "draft": 134,
-          "reviewed": 114
+          "approved": 17,
+          "draft": 348,
+          "reviewed": 96
         },
         "missing_from_candidates": 0,
         "field_mismatch_counts": {}
       },
       "split_report": {
         "path": "data/processed/splits/split_report.json",
-        "sha256": "19ea912408e99123091f5a886157cf55d25fc1246046e7c60a3399371eb9c33f",
-        "input_count": 2612,
-        "group_count": 2609,
+        "sha256": "550a47c37470bb3d339ac3112590c472df6f2359fefa7bcdd1e524f5866ef166",
+        "input_count": 4612,
+        "group_count": 4609,
         "leaked_group_count": 0
       },
-      "total_count": 2612,
+      "total_count": 4612,
       "mismatched_row_count": 0,
       "is_synced_with_candidates": true
     },
     "coverage_report": {
       "path": "data/processed/risk_coverage_report.json",
       "exists": true,
-      "sha256": "d47b8c4ca87f6a038342cd850c38e4b526b99bd98edda3dd4e649d310f41c594",
-      "bytes": 8173
+      "sha256": "d6f2e2b0c5e13bcf6c535cdb4c9f01a13552f1bf94e483bdc8a649e317e7e8a3",
+      "bytes": 8263
     },
     "phase3_sampling_plan": {
       "path": "data/processed/phase3_sampling_plan.json",
       "exists": true,
-      "sha256": "4482633a138474ed8a815c9c3abf978f2f068f101c5be53e78d149cb35b35d12",
-      "bytes": 32594
+      "sha256": "5409c0979629fab17c1f0de20e0579297895ef96bde9826c868543ce2caa648c",
+      "bytes": 32488
     }
   },
   "training_guardrail": {

@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 *)",
+      "Bash(git *)",
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(find *)",
+      "Bash(wc *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(echo *)",
+      "Bash(curl *)",
+      "Bash(cd *)",
+      "Read(*)",
+      "Write(*)",
+      "Edit(*)",
+      "WebSearch(*)",
+      "WebFetch(*)",
+      "Skill(*)",
+      "TaskCreate(*)",
+      "TaskUpdate(*)",
+      "TaskList(*)",
+      "Bash(python3: *)",
+      "Bash(git: *)"
+    ],
+    "deny": [
+      "Bash(rm -rf / *)",
+      "Bash(curl * | bash)",
+      "Bash(> /dev/*)"
+    ]
+  }
+}
