@@ -1,8 +1,8 @@
 {
   "objective": "Use lexicon gaps to expand reasoning capabilities. Do not create one training sample per lexicon term.",
   "important_caveat": "Lexicon category assignment and representative seeds are heuristic. Manually review seeds before generation; a term's category is not a training label.",
-  "input_candidate_count": 2500,
-  "recommended_total_phase3_quota": 781,
+  "input_candidate_count": 2519,
+  "recommended_total_phase3_quota": 780,
   "recommended_first_wave_total": 245,
   "categories": [
     {
@@ -847,15 +847,16 @@
       "category": "violence_extremism",
       "name": "暴力极端",
       "priority": "P2",
-      "current_inferred_samples": 25,
+      "current_inferred_samples": 26,
       "current_risk_counts": {
         "high": 21,
         "low": 1,
-        "medium": 3
+        "medium": 3,
+        "none": 1
       },
-      "current_hard_negative": 0,
+      "current_hard_negative": 1,
       "reference_target": 60,
-      "recommended_phase3_quota": 35,
+      "recommended_phase3_quota": 34,
       "recommended_first_wave_quota": 15,
       "reasons": [
         "已有基础覆盖，继续补长尾机制和真实语境"
