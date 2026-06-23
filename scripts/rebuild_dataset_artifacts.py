@@ -16,6 +16,8 @@ STEPS = (
     ("build SFT dataset", ("scripts/build_sft_dataset.py",)),
     ("build train/validation/test splits", ("scripts/split_dataset.py",)),
     ("analyze coverage", ("scripts/analyze_risk_coverage.py",)),
+    ("rebuild by_topic", ("scripts/rebuild_by_topic.py",)),
+    ("build fine-tune datasets", ("scripts/build_fine_tune.py",)),
     ("build manifest", ("scripts/build_manifest.py",)),
 )
 

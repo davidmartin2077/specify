@@ -7,3 +7,4 @@ data/raw/third_party/Sensitive-lexicon/
 *.bak
 *.jsonl.bak
 data/processed/archive/
+fine_tune.zip

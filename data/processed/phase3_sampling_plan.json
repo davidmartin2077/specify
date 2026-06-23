@@ -1,17 +1,17 @@
 {
   "objective": "Use lexicon gaps to expand reasoning capabilities. Do not create one training sample per lexicon term.",
   "important_caveat": "Lexicon category assignment and representative seeds are heuristic. Manually review seeds before generation; a term's category is not a training label.",
-  "input_candidate_count": 4612,
-  "recommended_total_phase3_quota": 643,
-  "recommended_first_wave_total": 200,
+  "input_candidate_count": 4850,
+  "recommended_total_phase3_quota": 620,
+  "recommended_first_wave_total": 175,
   "categories": [
     {
       "category": "platform_censorship_evasion",
       "name": "平台规避/审查黑话",
       "priority": "P0",
-      "current_inferred_samples": 25,
+      "current_inferred_samples": 26,
       "current_risk_counts": {
-        "high": 3,
+        "high": 4,
         "low": 11,
         "medium": 5,
         "none": 6
@@ -87,195 +87,6 @@
             "literal_keyword"
           ],
           "recommended_use": "generate high/medium/low/none context contrast set"
-        }
-      ],
-      "required_contrast_set": [
-        "direct_or_clear_risk",
-        "obfuscated_or_black_slang",
-        "contextual_medium_or_low",
-        "news_education_or_ordinary_hard_negative"
-      ]
-    },
-    {
-      "category": "sexual_content",
-      "name": "色情低俗",
-      "priority": "P0",
-      "current_inferred_samples": 20,
-      "current_risk_counts": {
-        "high": 12,
-        "medium": 7,
-        "none": 1
-      },
-      "current_hard_negative": 1,
-      "reference_target": 160,
-      "recommended_phase3_quota": 100,
-      "recommended_first_wave_quota": 25,
-      "reasons": [
-        "语境反证或 hard negative 不足"
-      ],
-      "representative_uncovered_seeds": [
-        {
-          "term": "丝诱",
-          "bucket": "direct_policy_risk",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate direct-risk and educational/news hard-negative set"
-        },
-        {
-          "term": "习屌",
-          "bucket": "direct_policy_risk",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate direct-risk and educational/news hard-negative set"
-        },
-        {
-          "term": "买春",
-          "bucket": "direct_policy_risk",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate direct-risk and educational/news hard-negative set"
-        },
-        {
-          "term": "乱奸",
-          "bucket": "direct_policy_risk",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate direct-risk and educational/news hard-negative set"
-        },
-        {
-          "term": "乱淫",
-          "bucket": "direct_policy_risk",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate direct-risk and educational/news hard-negative set"
-        },
-        {
-          "term": "乳交",
-          "bucket": "direct_policy_risk",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate direct-risk and educational/news hard-negative set"
-        },
-        {
-          "term": "乳头",
-          "bucket": "direct_policy_risk",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate direct-risk and educational/news hard-negative set"
-        },
-        {
-          "term": "乳射",
-          "bucket": "direct_policy_risk",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate direct-risk and educational/news hard-negative set"
-        }
-      ],
-      "required_contrast_set": [
-        "direct_or_clear_risk",
-        "obfuscated_or_black_slang",
-        "contextual_medium_or_low",
-        "news_education_or_ordinary_hard_negative"
-      ]
-    },
-    {
-      "category": "spam_ads_fraud",
-      "name": "广告/诈骗/导流",
-      "priority": "P0",
-      "current_inferred_samples": 31,
-      "current_risk_counts": {
-        "high": 4,
-        "low": 12,
-        "medium": 10,
-        "none": 5
-      },
-      "current_hard_negative": 6,
-      "reference_target": 160,
-      "recommended_phase3_quota": 100,
-      "recommended_first_wave_quota": 25,
-      "reasons": [
-        "已有基础覆盖，继续补长尾机制和真实语境"
-      ],
-      "representative_uncovered_seeds": [
-        {
-          "term": ".cn",
-          "bucket": "obfuscated_or_variant",
-          "mechanism_tags": [
-            "A2_拼音/首字母缩写",
-            "B4_符号/空格/Unicode 干扰"
-          ],
-          "recommended_use": "generate normalization and obfuscation recognition set"
-        },
-        {
-          "term": "da案",
-          "bucket": "obfuscated_or_variant",
-          "mechanism_tags": [
-            "A2_拼音/首字母缩写",
-            "F_组合编码"
-          ],
-          "recommended_use": "generate normalization and obfuscation recognition set"
-        },
-        {
-          "term": "个qb",
-          "bucket": "obfuscated_or_variant",
-          "mechanism_tags": [
-            "A2_拼音/首字母缩写",
-            "F_组合编码"
-          ],
-          "recommended_use": "generate normalization and obfuscation recognition set"
-        },
-        {
-          "term": "卖QQ",
-          "bucket": "obfuscated_or_variant",
-          "mechanism_tags": [
-            "A2_拼音/首字母缩写",
-            "F_组合编码"
-          ],
-          "recommended_use": "generate normalization and obfuscation recognition set"
-        },
-        {
-          "term": "客服q",
-          "bucket": "obfuscated_or_variant",
-          "mechanism_tags": [
-            "A2_拼音/首字母缩写",
-            "F_组合编码"
-          ],
-          "recommended_use": "generate normalization and obfuscation recognition set"
-        },
-        {
-          "term": "答an",
-          "bucket": "obfuscated_or_variant",
-          "mechanism_tags": [
-            "A2_拼音/首字母缩写",
-            "F_组合编码"
-          ],
-          "recommended_use": "generate normalization and obfuscation recognition set"
-        },
-        {
-          "term": "送qb",
-          "bucket": "obfuscated_or_variant",
-          "mechanism_tags": [
-            "A2_拼音/首字母缩写",
-            "F_组合编码"
-          ],
-          "recommended_use": "generate normalization and obfuscation recognition set"
-        },
-        {
-          "term": ".com",
-          "bucket": "obfuscated_or_variant",
-          "mechanism_tags": [
-            "A2_拼音/首字母缩写",
-            "B4_符号/空格/Unicode 干扰"
-          ],
-          "recommended_use": "generate normalization and obfuscation recognition set"
         }
       ],
       "required_contrast_set": [
@@ -479,16 +290,16 @@
       "category": "gambling",
       "name": "赌博",
       "priority": "P0",
-      "current_inferred_samples": 7,
+      "current_inferred_samples": 8,
       "current_risk_counts": {
-        "high": 3,
+        "high": 4,
         "low": 2,
         "medium": 1,
         "none": 1
       },
       "current_hard_negative": 1,
       "reference_target": 60,
-      "recommended_phase3_quota": 53,
+      "recommended_phase3_quota": 52,
       "recommended_first_wave_quota": 25,
       "reasons": [
         "当前语境样本少于 20 条",
@@ -559,6 +370,195 @@
             "literal_keyword"
           ],
           "recommended_use": "generate solicitation vs ordinary-commerce hard-negative set"
+        }
+      ],
+      "required_contrast_set": [
+        "direct_or_clear_risk",
+        "obfuscated_or_black_slang",
+        "contextual_medium_or_low",
+        "news_education_or_ordinary_hard_negative"
+      ]
+    },
+    {
+      "category": "sexual_content",
+      "name": "色情低俗",
+      "priority": "P1",
+      "current_inferred_samples": 64,
+      "current_risk_counts": {
+        "high": 27,
+        "medium": 26,
+        "none": 11
+      },
+      "current_hard_negative": 11,
+      "reference_target": 160,
+      "recommended_phase3_quota": 96,
+      "recommended_first_wave_quota": 15,
+      "reasons": [
+        "已有基础覆盖，继续补长尾机制和真实语境"
+      ],
+      "representative_uncovered_seeds": [
+        {
+          "term": "丝诱",
+          "bucket": "direct_policy_risk",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate direct-risk and educational/news hard-negative set"
+        },
+        {
+          "term": "习屌",
+          "bucket": "direct_policy_risk",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate direct-risk and educational/news hard-negative set"
+        },
+        {
+          "term": "买春",
+          "bucket": "direct_policy_risk",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate direct-risk and educational/news hard-negative set"
+        },
+        {
+          "term": "乱奸",
+          "bucket": "direct_policy_risk",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate direct-risk and educational/news hard-negative set"
+        },
+        {
+          "term": "乱淫",
+          "bucket": "direct_policy_risk",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate direct-risk and educational/news hard-negative set"
+        },
+        {
+          "term": "乳交",
+          "bucket": "direct_policy_risk",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate direct-risk and educational/news hard-negative set"
+        },
+        {
+          "term": "乳头",
+          "bucket": "direct_policy_risk",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate direct-risk and educational/news hard-negative set"
+        },
+        {
+          "term": "乳射",
+          "bucket": "direct_policy_risk",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate direct-risk and educational/news hard-negative set"
+        }
+      ],
+      "required_contrast_set": [
+        "direct_or_clear_risk",
+        "obfuscated_or_black_slang",
+        "contextual_medium_or_low",
+        "news_education_or_ordinary_hard_negative"
+      ]
+    },
+    {
+      "category": "spam_ads_fraud",
+      "name": "广告/诈骗/导流",
+      "priority": "P1",
+      "current_inferred_samples": 72,
+      "current_risk_counts": {
+        "high": 20,
+        "low": 13,
+        "medium": 24,
+        "none": 15
+      },
+      "current_hard_negative": 16,
+      "reference_target": 160,
+      "recommended_phase3_quota": 88,
+      "recommended_first_wave_quota": 15,
+      "reasons": [
+        "已有基础覆盖，继续补长尾机制和真实语境"
+      ],
+      "representative_uncovered_seeds": [
+        {
+          "term": ".cn",
+          "bucket": "obfuscated_or_variant",
+          "mechanism_tags": [
+            "A2_拼音/首字母缩写",
+            "B4_符号/空格/Unicode 干扰"
+          ],
+          "recommended_use": "generate normalization and obfuscation recognition set"
+        },
+        {
+          "term": "da案",
+          "bucket": "obfuscated_or_variant",
+          "mechanism_tags": [
+            "A2_拼音/首字母缩写",
+            "F_组合编码"
+          ],
+          "recommended_use": "generate normalization and obfuscation recognition set"
+        },
+        {
+          "term": "个qb",
+          "bucket": "obfuscated_or_variant",
+          "mechanism_tags": [
+            "A2_拼音/首字母缩写",
+            "F_组合编码"
+          ],
+          "recommended_use": "generate normalization and obfuscation recognition set"
+        },
+        {
+          "term": "卖QQ",
+          "bucket": "obfuscated_or_variant",
+          "mechanism_tags": [
+            "A2_拼音/首字母缩写",
+            "F_组合编码"
+          ],
+          "recommended_use": "generate normalization and obfuscation recognition set"
+        },
+        {
+          "term": "客服q",
+          "bucket": "obfuscated_or_variant",
+          "mechanism_tags": [
+            "A2_拼音/首字母缩写",
+            "F_组合编码"
+          ],
+          "recommended_use": "generate normalization and obfuscation recognition set"
+        },
+        {
+          "term": "答an",
+          "bucket": "obfuscated_or_variant",
+          "mechanism_tags": [
+            "A2_拼音/首字母缩写",
+            "F_组合编码"
+          ],
+          "recommended_use": "generate normalization and obfuscation recognition set"
+        },
+        {
+          "term": "送qb",
+          "bucket": "obfuscated_or_variant",
+          "mechanism_tags": [
+            "A2_拼音/首字母缩写",
+            "F_组合编码"
+          ],
+          "recommended_use": "generate normalization and obfuscation recognition set"
+        },
+        {
+          "term": ".com",
+          "bucket": "obfuscated_or_variant",
+          "mechanism_tags": [
+            "A2_拼音/首字母缩写",
+            "B4_符号/空格/Unicode 干扰"
+          ],
+          "recommended_use": "generate normalization and obfuscation recognition set"
         }
       ],
       "required_contrast_set": [
@@ -754,16 +754,16 @@
       "category": "violence_extremism",
       "name": "暴力极端",
       "priority": "P2",
-      "current_inferred_samples": 42,
+      "current_inferred_samples": 43,
       "current_risk_counts": {
         "high": 26,
         "low": 4,
         "medium": 9,
-        "none": 3
+        "none": 4
       },
-      "current_hard_negative": 3,
+      "current_hard_negative": 4,
       "reference_target": 60,
-      "recommended_phase3_quota": 18,
+      "recommended_phase3_quota": 17,
       "recommended_first_wave_quota": 15,
       "reasons": [
         "已有基础覆盖，继续补长尾机制和真实语境"
@@ -842,108 +842,17 @@
       ]
     },
     {
-      "category": "political_history",
-      "name": "政治历史/鉴证梗",
-      "priority": "P2",
-      "current_inferred_samples": 155,
-      "current_risk_counts": {
-        "high": 59,
-        "low": 22,
-        "medium": 56,
-        "none": 18
-      },
-      "current_hard_negative": 23,
-      "reference_target": 160,
-      "recommended_phase3_quota": 5,
-      "recommended_first_wave_quota": 5,
-      "reasons": [
-        "已有基础覆盖，继续补长尾机制和真实语境"
-      ],
-      "representative_uncovered_seeds": [
-        {
-          "term": "一党",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "中珙",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "九学",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "九风",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "习党",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "亡党",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "亢议",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        },
-        {
-          "term": "人拳",
-          "bucket": "context_sensitive",
-          "mechanism_tags": [
-            "literal_keyword"
-          ],
-          "recommended_use": "generate high/medium/low/none context contrast set"
-        }
-      ],
-      "required_contrast_set": [
-        "direct_or_clear_risk",
-        "obfuscated_or_black_slang",
-        "contextual_medium_or_low",
-        "news_education_or_ordinary_hard_negative"
-      ]
-    },
-    {
       "category": "insulting_abuse",
       "name": "辱骂/群体攻击",
       "priority": "P2",
-      "current_inferred_samples": 122,
+      "current_inferred_samples": 123,
       "current_risk_counts": {
         "high": 14,
         "low": 80,
         "medium": 17,
-        "none": 11
+        "none": 12
       },
-      "current_hard_negative": 11,
+      "current_hard_negative": 12,
       "reference_target": 100,
       "recommended_phase3_quota": 0,
       "recommended_first_wave_quota": 0,
@@ -1014,6 +923,97 @@
             "literal_keyword"
           ],
           "recommended_use": "generate literal keyword and hard-negative set"
+        }
+      ],
+      "required_contrast_set": [
+        "direct_or_clear_risk",
+        "obfuscated_or_black_slang",
+        "contextual_medium_or_low",
+        "news_education_or_ordinary_hard_negative"
+      ]
+    },
+    {
+      "category": "political_history",
+      "name": "政治历史/鉴证梗",
+      "priority": "P2",
+      "current_inferred_samples": 210,
+      "current_risk_counts": {
+        "high": 83,
+        "low": 23,
+        "medium": 71,
+        "none": 33
+      },
+      "current_hard_negative": 38,
+      "reference_target": 160,
+      "recommended_phase3_quota": 0,
+      "recommended_first_wave_quota": 0,
+      "reasons": [
+        "已有基础覆盖，继续补长尾机制和真实语境"
+      ],
+      "representative_uncovered_seeds": [
+        {
+          "term": "一党",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "中珙",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "九学",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "九风",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "习党",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "亡党",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "亢议",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
+        },
+        {
+          "term": "人拳",
+          "bucket": "context_sensitive",
+          "mechanism_tags": [
+            "literal_keyword"
+          ],
+          "recommended_use": "generate high/medium/low/none context contrast set"
         }
       ],
       "required_contrast_set": [
