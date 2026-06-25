@@ -58,8 +58,37 @@ python3 scripts/build_manifest.py
 
 推荐在每个数据 batch 完成后按上方顺序刷新派生产物；`combined_candidates.jsonl` 是母版，SFT、split、coverage report 和 manifest 都是可重建产物。
 
+## 微调前评测
+
+先导出验证集和测试集 prompt：
+
+```bash
+python3 scripts/build_eval_set.py
+```
+
+让基座模型或微调模型对 `data/eval/validation_prompts.jsonl` 逐条生成预测，保存为 JSONL。每行至少包含 `id` 和以下任一种形式：
+
+```json
+{"id": "000001", "risk_level": "high", "encoding_primary": "A1_普通谐音", "hard_negative": false}
+```
+
+或包含可解析的模型原文输出：
+
+```json
+{"id": "000001", "output": "...\nrisk_level: high\nencoding_primary: A1_普通谐音\nhard_negative: false"}
+```
+
+然后计算指标：
+
+```bash
+python3 scripts/evaluate_predictions.py \
+  --gold data/eval/validation_prompts.jsonl \
+  --predictions data/eval/validation_predictions.jsonl \
+  --output data/eval/validation_eval_report.json
+```
+
 ## 下一步
 
-1. 建离线评测脚本，测 unsafe recall、hard-negative false positive 和 encoding accuracy。
+1. 跑基座模型 baseline，保存 `data/eval/validation_predictions.jsonl` 并生成评测报告。
 2. 继续补充 low、needs_context 与 hard_negative 边界样本。
 3. 后续外部数据入库走 `scripts/fuse_external_real_datasets.py`。
